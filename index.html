@@ -3,172 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Institutional FX Fundamental Dashboard</title>
-    <!-- Tailwind CSS Institutional Core CDN -->
-    <script src="https://tailwindcss.com"></script>
+    <title>Institutional FX Fundamental Dashboard</title>
     <style>
-        @import url('https://googleapis.com');
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
+        /* Raw Terminal Palette Configuration */
+        body {
+            background-color: #0c101b;
+            color: #d1d5db;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        /* Top Ribbon */
+        .top-ticker {
+            background-color: #090d16;
+            border-b: 1px solid #1f2937;
+            padding: 10px 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            color: #9ca3af;
+            border-bottom: 1px solid #1e293b;
+        }
+        .ticker-live {
+            color: #22d3ee;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .ticker-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22d3ee;
+            border-radius: 50%;
+        }
+        /* Header Profile */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #1e293b;
+            margin-bottom: 24px;
+        }
+        h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+        }
+        .subtitle {
+            color: #06b6d4;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+        .interval-badge {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #9ca3af;
+        }
+        /* Workspace Framework Split */
+        .workspace {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .workspace { grid-template-columns: 1fr; }
+        }
+        /* Content Block Containers */
+        .panel {
+            background-color: #111827;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+        }
+        .panel-title {
+            background-color: #1f293b;
+            padding: 14px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #f3f4f6;
+            border-bottom: 1px solid #1e293b;
+        }
+        /* Scoring Table Layout */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 13px;
+        }
+        th {
+            background-color: #0f172a;
+            color: #9ca3af;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            padding: 12px;
+            border-bottom: 1px solid #1e293b;
+        }
+        td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #1e293b;
+            color: #e5e7eb;
+        }
+        tr:hover { background-color: #1e293b; }
+        .currency-code {
+            font-weight: 800;
+            color: #22d3ee;
+            text-align: left;
+            padding-left: 20px;
+        }
+        /* Status Dynamic Badges */
+        .badge {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .bullish { background-color: #064e3b; color: #34d399; border: 1px solid #059669; }
+        .bearish { background-color: #4c0519; color: #f43f5e; border: 1px solid #e11d48; }
+        .neutral { background-color: #1f293b; color: #9ca3af; border: 1px solid #374151; }
+        
+        /* Grid Lists */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            padding: 20px;
+        }
+        @media (max-width: 600px) {
+            .matrix-grid { grid-template-columns: 1fr; }
+        }
+        .matrix-column h4 {
+            margin: 0 0 12px 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .long-title { color: #34d399; }
+        .short-title { color: #f43f5e; }
+        .pair-card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 12px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+        .pair-name { font-weight: bold; color: #ffffff; }
+        .pair-spread {
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .spread-up { background-color: #064e3b; color: #34d399; }
+        .spread-down { background-color: #4c0519; color: #f43f5e; }
+
+        /* News Cards Layout */
+        .news-container { padding: 16px; display: flex; flex-col: column; gap: 12px; flex-direction: column; }
+        .news-card {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 14px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .news-tag {
+            font-size: 9px;
+            font-weight: 900;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .news-headline { font-size: 12px; font-weight: 500; line-height: 1.5; color: #f3f4f6; margin: 0; }
+        .news-weight { font-size: 10px; color: #6b7280; font-weight: bold; }
+
+        /* Sandbox Box */
+        .sandbox {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .sandbox-title { color: #fbbf24; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; }
+        .sandbox-text { font-size: 12px; line-height: 1.6; color: #9ca3af; margin: 0 0 10px 0; }
+        .sandbox-action { font-size: 11px; color: #22d3ee; font-weight: bold; margin: 0; }
     </style>
 </head>
-<body class="text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-900">
+<body>
 
-    <!-- Bloomberg Style Live Top Ticker Status Bar -->
-    <div class="bg-[#0f172a] text-slate-400 text-[11px] font-bold tracking-wider uppercase px-4 py-2.5 border-b border-slate-800 flex justify-between items-center shadow-md">
-        <div class="flex items-center space-x-4">
-            <span class="text-cyan-400 font-extrabold tracking-tight">QUANT-INTELLIGENCE // TERMINAL v3.0</span>
-            <span class="text-slate-700">|</span>
-            <span class="text-slate-300">CORE FEED: CONNECTED</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-            <span class="text-cyan-400 text-[10px]">LIVE DATA RE-SCORING STABLE</span>
-        </div>
+    <!-- Top Info Bar -->
+    <div class="top-ticker">
+        <div>QUANT-INTELLIGENCE // TERMINAL WORKSPACE v3.0</div>
+        <div class="ticker-live"><div class="ticker-dot"></div>CORE DATA FEED ONLINE</div>
     </div>
 
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
-        
-        <!-- Dashboard Premium Header -->
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
+    <div class="container">
+        <!-- Main Web Header -->
+        <header>
             <div>
-                <h1 class="text-3xl font-black text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                    Global Macro Dashboard
-                </h1>
-                <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-1">Relative quantitative central banking metrics & risk analysis</p>
+                <h1>Global Currency Fundamentals</h1>
+                <div class="subtitle">Relative Quantitative Macro Matrix & Sentiment Overrides</div>
             </div>
-            <div class="text-[11px] text-slate-400 font-bold bg-[#111827] px-4 py-2.5 rounded-xl border border-slate-800 shadow-xl mono">
-                CLIENT REFRESH: <span class="text-cyan-400">5-MINUTE CYCLES</span>
-            </div>
+            <div class="interval-badge">REFRESH: 5-MIN CYCLES</div>
         </header>
 
-        <!-- Main Workspace Terminal Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Two Column Terminal Grid Layout -->
+        <div class="workspace">
             
-            <!-- Left & Center Space: Scoreboard Matrix & Divergence Pairs -->
-            <div class="lg:col-span-2 space-y-6">
-                
-                <!-- Macro Standings Table Dashboard Card -->
-                <section class="bg-[#111827] rounded-xl border border-slate-800/80 shadow-2xl overflow-hidden">
-                    <div class="p-4 bg-[#1e293b] border-b border-slate-800 text-slate-200 font-bold text-xs tracking-wider uppercase flex justify-between items-center">
-                        <span class="flex items-center gap-2 text-white">📋 Core Fundamental Matrix Rankings</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
+            <!-- Left Side Element Panel -->
+            <div>
+                <div class="panel">
+                    <div class="panel-title">📋 Macroeconomic Performance Scorecard</div>
+                    <div style="overflow-x: auto;">
+                        <table>
                             <thead>
-                                <tr class="bg-[#0f172a] text-slate-400 uppercase text-[10px] font-bold tracking-widest border-b border-slate-800 text-center">
-                                    <th class="p-4 text-left font-bold text-slate-300">FX Code</th>
-                                    <th class="p-4 font-bold text-slate-300">Quant Rank Score</th>
-                                    <th class="p-4 font-bold text-slate-300">Interest Rate</th>
-                                    <th class="p-4 font-bold text-slate-300">CPI (Inflation)</th>
-                                    <th class="p-4 font-bold text-slate-300">GDP Growth</th>
-                                    <th class="p-4 font-bold text-slate-300">Unemployment</th>
-                                    <th class="p-4 text-left font-bold text-slate-300">Calculated Metrics Driver flags</th>
+                                <tr>
+                                    <th style="text-align: left; padding-left: 20px;">Asset</th>
+                                    <th>Rank Score</th>
+                                    <th>Yield Rate</th>
+                                    <th>CPI (Inflation)</th>
+                                    <th>GDP Growth</th>
+                                    <th>Unemployment</th>
+                                    <th style="text-align: left;">Attribution Drivers</th>
                                 </tr>
                             </thead>
-                            <tbody id="currency-table-body" class="divide-y divide-slate-800/60">
-                                <!-- Injected instantly by embedded engine -->
+                            <tbody id="currency-table-body">
+                                <!-- Loaded dynamically via engine script -->
                             </tbody>
                         </table>
                     </div>
-                </section>
+                </div>
 
-                <!-- Trading Pair Divergences Workspace -->
-                <section class="bg-[#111827] rounded-xl p-6 border border-slate-800/80 shadow-2xl">
-                    <div class="mb-4 border-b border-slate-800 pb-3">
-                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
-                            ⚡ Institutional Cross-Pair Divergence Matrix
-                        </h3>
-                        <p class="text-xs text-slate-400 mt-1">Highlights structural baseline score discrepancies to isolate systemic currency trade trends.</p>
+                <div class="panel">
+                    <div class="panel-title">⚡ Institutional Cross-Pair Divergence Rankings</div>
+                    <div id="pair-rankings-container" class="matrix-grid">
+                        <!-- Loaded dynamically via engine script -->
                     </div>
-                    <div id="pair-rankings-container"></div>
-                </section>
+                </div>
             </div>
 
-            <!-- Right Workspace Sidebar Panel: News Wire Shocks -->
-            <div class="space-y-6">
-                
-                <!-- BBC/Reuters Sentiment Live Panel -->
-                <section class="bg-[#111827] rounded-xl border border-slate-800/80 p-5 space-y-4 shadow-2xl">
-                    <div>
-                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
-                            📰 Geopolitical Shocks & Risk Wire
-                        </h3>
-                        <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-0.5">Asymmetric risk feed overrides</p>
+            <!-- Right Side Sidebar Element Panel -->
+            <div>
+                <div class="panel">
+                    <div class="panel-title">📰 Geopolitical Shocks & Risk Wire</div>
+                    <div id="news-feed-container" class="news-container">
+                        <!-- Loaded dynamically via engine script -->
                     </div>
-                    
-                    <!-- Dynamic News Container -->
-                    <div id="news-feed-container" class="space-y-3.5"></div>
-                </section>
+                </div>
 
-                <!-- Premium Informational Analyst Playbook -->
-                <section class="bg-[#0f172a] text-slate-300 rounded-xl p-5 border border-slate-800 space-y-3 shadow-xl">
-                    <div class="flex items-center space-x-2 text-amber-400 font-bold text-[10px] tracking-widest uppercase">
-                        <span>⚠️ Analyst Operational Warning</span>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-400 font-medium">
-                        Widespread European cost-of-living demonstrations and public-sector general strikes create heavy fiscal risk premiums. This forces sovereign yields to widen over German benchmarks, crushing domestic euro metrics.
-                    </p>
-                    <p class="text-[11px] text-cyan-400/90 font-bold italic border-t border-slate-800 pt-2 tracking-wide">
-                        Playbook Action: Selling vulnerable currencies (EUR) against sound safe-haven models (USD/CHF) maximizes target structural capture odds.
-                    </p>
-                </section>
-            </div>
-        </div>
-
-        <!-- Terminal System Footer -->
-        <footer class="text-center text-xs font-bold tracking-widest text-slate-600 pt-8 border-t border-slate-800 mono uppercase">
-            System Status: Connected // Zero-Latency Execution Pipeline Ready
-        </footer>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- EMBEDDED JAVASCRIPT AUTOMATION SCORES ENGINE -->
-    <!-- ========================================== -->
-    <script>
-        const CURRENCIES = ['USD', 'EUR', 'GBP', 'AUD', 'NZD', 'CAD', 'CHF', 'JPY'];
-
-        // Raw institutional macroeconomic data inputs
-        const defaultMacroData = {
-            USD: { rate: 4.75, cpi: 2.7, gdp: 2.6, unemp: 4.1 },
-            EUR: { rate: 3.25, cpi: 2.1, gdp: 0.9, unemp: 6.3 },
-            GBP: { rate: 4.75, cpi: 3.2, gdp: 1.0, unemp: 4.3 },
-            AUD: { rate: 4.35, cpi: 2.8, gdp: 1.5, unemp: 4.1 },
-            NZD: { rate: 4.25, cpi: 2.2, gdp: -0.2, unemp: 4.8 },
-            CAD: { rate: 3.75, cpi: 1.6, gdp: 1.2, unemp: 6.5 },
-            CHF: { rate: 1.00, cpi: 0.6, gdp: 1.4, unemp: 2.5 },
-            JPY: { rate: 0.25, cpi: 2.1, gdp: 0.5, unemp: 2.4 }
-        };
-
-        // Geopolitical intelligence inputs (BBC News Wire Feed Overlay)
-        const globalNewsOverrides = {
-            EUR: { 
-                penalty: -1.5, 
-                headline: "BBC Alert: Severe Eurozone anti-cost-of-living riots & public general strikes intensify, widening regional yield spreads and harming domestic growth trajectories.",
-                type: "CRITICAL RISK"
-            },
-            USD: { 
-                penalty: 0.5, 
-                headline: "Reuters News: Safe-haven flows surge directly into the Greenback as geopolitical tensions and European spending concerns persist.",
-                type: "BULLISH BIAS"
-            },
-            GBP: {
-                penalty: -0.5,
-                headline: "FT Wire: Spillover sentiment from Eurozone social instability challenges near-term cross-channel equity capital flows.",
-                type: "SENTIMENT DRAG"
-            }
-        };
-
-        function calculateScores(macroData) {
-            let scores = {};
-            const rates = Object.values(macroData).map(d => d.rate);
-            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
-
-            for (const currency of CURRENCIES) {
-                const stats = macroData[currency];
-                let score = 0;
-                let reasons = [];
-
-                // 1. Interest Rate Yield Spread Rules
-                if (stats.rate > avgRate + 1) {
-                    score += 1.5;
+                <div class="sandbox">
+                    <div class="sandbox-title">⚠️ Analyst Operational Playbook</div>
+                    <p class="sandbox-text">
