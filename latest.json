@@ -1,0 +1,59 @@
+{
+  "generated_at": "Awaiting first GitHub Actions run",
+  "currencies": [
+    {
+      "code": "USD",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "EUR",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "GBP",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "JPY",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "CHF",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "CAD",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "AUD",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    },
+    {
+      "code": "NZD",
+      "score": 0,
+      "confidence": "Low",
+      "summary": "Awaiting official-source data build; neutral placeholder."
+    }
+  ],
+  "events": [],
+  "sources": [],
+  "limitations": [
+    "No live data until deployed and GitHub Actions runs.",
+    "Neutral placeholder scores; not trading signals."
+  ]
+}

@@ -1,0 +1,24 @@
+name: Refresh macro dashboard data
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub scheduled workflows are best-effort; do not treat as tick-level alerts.
+    - cron: "7,22,37,52 * * * *"
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build free-source macro snapshot
+        run: python scripts/update_data.py
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json
+          git diff --cached --quiet || (git commit -m "Refresh FX macro dashboard data" && git push)
