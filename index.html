@@ -3,116 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Institutional FX Fundamental Dashboard</title>
+    <title>MacroPulse // Institutional FX Fundamental Dashboard</title>
     <style>
-        /* Base Reset & Colors */
+        /* Pure Trading Terminal Layout Matrix */
         body {
-            background-color: #0c101b;
-            color: #d1d5db;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #0b0f19;
+            color: #cbd5e1;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px;
         }
         
-        /* Top Navigation Ribbon Bar */
-        .top-bar {
-            background-color: #090d16;
+        /* Premium Top Ribbon */
+        .top-ticker {
+            background-color: #030712;
+            border-bottom: 1px solid #1e293b;
             padding: 12px 24px;
             display: flex;
             justify-content: space-between;
             font-size: 11px;
-            font-weight: bold;
-            letter-spacing: 0.05em;
-            color: #8892b0;
-            border-bottom: 1px solid #1e293b;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            color: #64748b;
         }
-        .live-indicator {
+        .ticker-live {
             color: #22d3ee;
             display: flex;
             align-items: center;
+            gap: 6px;
         }
-        .live-dot {
-            width: 8px;
-            height: 8px;
+        .ticker-dot {
+            width: 7px;
+            height: 7px;
             background-color: #22d3ee;
             border-radius: 50%;
-            margin-right: 6px;
-            display: inline-block;
+            box-shadow: 0 0 8px #22d3ee;
         }
 
-        /* Header Setup */
+        /* Workspace Header Profile */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #1e293b;
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
         h1 {
             color: #ffffff;
             margin: 0;
             font-size: 26px;
-            font-weight: 800;
+            font-weight: 900;
+            letter-spacing: -0.02em;
         }
         .subtitle {
             color: #06b6d4;
-            font-size: 12px;
+            font-size: 11px;
             text-transform: uppercase;
             font-weight: 700;
-            margin-top: 4px;
-            letter-spacing: 0.05em;
+            margin-top: 6px;
+            letter-spacing: 0.08em;
         }
-        .cycle-badge {
-            background-color: #111827;
+        .interval-badge {
+            background-color: #0f172a;
             border: 1px solid #1e293b;
             padding: 8px 16px;
             border-radius: 6px;
             font-size: 11px;
-            font-weight: bold;
-            color: #9ca3af;
+            font-weight: 700;
+            color: #94a3b8;
+            font-family: monospace;
         }
 
-        /* 2-Column Responsive Desktop Grid Layout */
-        .workspace-grid {
+        /* HARD-CODED SIDE-BY-SIDE WORKING LAYOUT GRID */
+        .workspace-wrapper {
             display: flex;
-            gap: 24px;
+            flex-direction: row;
+            gap: 28px;
+            align-items: flex-start;
         }
-        .main-content {
-            flex: 2;
+        .left-main-panel {
+            width: 66%;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
         }
-        .sidebar-content {
-            flex: 1;
+        .right-sidebar-panel {
+            width: 34%;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
         }
-        @media (max-width: 900px) {
-            .workspace-grid { flex-direction: column; }
+        
+        /* Mobile responsive fail-safe override */
+        @media (max-width: 1024px) {
+            .workspace-wrapper { flex-direction: column; }
+            .left-main-panel { width: 100%; }
+            .right-sidebar-panel { width: 100%; }
         }
 
-        /* Terminal Window Cards */
-        .card {
+        /* Professional Content Block Containers */
+        .panel {
             background-color: #111827;
             border: 1px solid #1e293b;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
         }
-        .card-header {
+        .panel-title {
             background-color: #1e293b;
-            padding: 12px 20px;
-            font-size: 12px;
-            font-weight: bold;
+            padding: 14px 20px;
+            font-size: 11px;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: #ffffff;
+            letter-spacing: 0.06em;
+            color: #f1f5f9;
             border-bottom: 1px solid #1e293b;
         }
 
-        /* Premium Scoring Table Styles */
+        /* Scoring Table Layout */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -121,180 +135,164 @@
         }
         th {
             background-color: #0f172a;
-            color: #9ca3af;
-            font-size: 11px;
+            color: #94a3b8;
+            font-size: 10px;
             text-transform: uppercase;
-            font-weight: bold;
-            padding: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            padding: 14px 12px;
             border-bottom: 1px solid #1e293b;
         }
         td {
-            padding: 14px 12px;
+            padding: 16px 12px;
             border-bottom: 1px solid #1e293b;
-            color: #e5e7eb;
+            color: #e2e8f0;
         }
-        tr:hover {
-            background-color: #172237;
-        }
-        .currency-title {
-            font-weight: bold;
-            color: #ffffff;
+        tr:hover { background-color: #1e293b; }
+        .currency-code {
+            font-weight: 800;
+            color: #22d3ee;
             text-align: left;
             padding-left: 20px;
             font-size: 14px;
         }
 
-        /* Dynamic Trend Badges */
-        .status-badge {
+        /* Status Dynamic Badges */
+        .badge {
             padding: 4px 10px;
             border-radius: 4px;
             font-size: 10px;
-            font-weight: bold;
+            font-weight: 700;
             text-transform: uppercase;
             display: inline-block;
         }
-        .bullish { background-color: #064e3b; color: #34d399; border: 1px solid #059669; }
-        .bearish { background-color: #4c0519; color: #f43f5e; border: 1px solid #e11d48; }
-        .neutral { background-color: #1f293b; color: #9ca3af; border: 1px solid #374151; }
+        .bullish { background-color: rgba(6, 78, 59, 0.6); color: #34d399; border: 1px solid #059669; }
+        .bearish { background-color: rgba(76, 5, 25, 0.6); color: #f43f5e; border: 1px solid #e11d48; }
+        .neutral { background-color: rgba(31, 41, 55, 0.8); color: #94a3b8; border: 1px solid #475569; }
         
-        /* Matrix Cross Rankings Row Elements */
-        .matrix-row {
+        /* Grid Lists for Pair Rankings */
+        .matrix-grid {
             display: flex;
-            gap: 16px;
+            gap: 20px;
             padding: 20px;
         }
-        .matrix-col {
+        .matrix-column {
             flex: 1;
         }
-        .matrix-col h4 {
-            margin: 0 0 12px 0;
+        .matrix-column h4 {
+            margin: 0 0 14px 0;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-weight: 800;
         }
         .long-title { color: #34d399; }
         .short-title { color: #f43f5e; }
         
-        .pair-strip {
+        .pair-card {
             background-color: #0f172a;
             border: 1px solid #1e293b;
-            padding: 12px;
-            border-radius: 6px;
+            padding: 12px 16px;
+            border-radius: 8px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
-            font-size: 13px;
+            margin-bottom: 10px;
+            font-size: 12px;
         }
-        .pair-label { font-weight: bold; color: #ffffff; font-family: monospace; }
-        .spread-label {
+        .pair-name { font-weight: 700; color: #ffffff; font-family: monospace; font-size: 13px; }
+        .pair-spread {
             font-size: 11px;
-            font-weight: bold;
-            padding: 2px 6px;
+            font-weight: 700;
+            padding: 3px 8px;
             border-radius: 4px;
             font-family: monospace;
         }
-        .bg-green { background-color: #064e3b; color: #34d399; }
-        .bg-red { background-color: #4c0519; color: #f43f5e; }
+        .spread-up { background-color: #064e3b; color: #34d399; }
+        .spread-down { background-color: #4c0519; color: #f43f5e; }
 
-        /* News Widget Blocks */
-        .news-box { padding: 16px; }
-        .news-element {
-            background-color: #0f172a;
-            border: 1px solid #1e293b;
-            padding: 14px;
-            border-radius: 6px;
-            margin-bottom: 12px;
-        }
-        .news-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 6px;
-        }
-        .news-badge {
-            font-size: 9px;
-            font-weight: bold;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #ffffff;
-        }
-        .news-headline { font-size: 12px; font-weight: 500; line-height: 1.5; color: #e5e7eb; margin: 0; }
-        .news-impact { font-size: 10px; color: #6b7280; font-weight: bold; }
-
-        /* Manual Operational Strategy Box */
-        .playbook-box {
+        /* News Cards Layout */
+        .news-container { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+        .news-card {
             background-color: #0f172a;
             border: 1px solid #1e293b;
             padding: 16px;
             border-radius: 8px;
-            margin: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-        .playbook-title { color: #fbbf24; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-bottom: 6px; }
-        .playbook-text { font-size: 12px; line-height: 1.5; color: #9ca3af; margin: 0 0 8px 0; }
-        .playbook-tip { font-size: 11px; color: #22d3ee; font-weight: bold; margin: 0; }
+        .news-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .news-tag {
+            font-size: 9px;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #fff;
+            letter-spacing: 0.03em;
+        }
+        .news-headline { font-size: 12px; font-weight: 500; line-height: 1.6; color: #e2e8f0; margin: 0; }
+        .news-weight { font-size: 10px; color: #64748b; font-weight: 700; font-family: monospace; }
+
+        /* Playbook Strategic Box */
+        .playbook-container {
+            background-color: #0f172a;
+            border: 1px solid #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+        .playbook-title { color: #f59e0b; font-size: 11px; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; letter-spacing: 0.05em; }
+        .playbook-text { font-size: 12px; line-height: 1.6; color: #94a3b8; margin: 0 0 12px 0; }
+        .playbook-action { font-size: 12px; color: #22d3ee; font-weight: 700; margin: 0; }
     </style>
 </head>
 <body>
 
-    <!-- Top Ribbon Menu -->
-    <div class="top-bar">
-        <div>QUANT-INTELLIGENCE // WORKSPACE CONTAINER TERMINAL</div>
-        <div class="live-indicator"><span class="live-dot"></span>CORE DATA PIPELINE FEED: CONNECTED</div>
+    <!-- Top Info Bar -->
+    <div class="top-ticker">
+        <div>MACROPULSE // TERMINAL INTERFACE v3.2</div>
+        <div class="ticker-live"><div class="ticker-dot"></div>CORE DATA PIPELINE FEED: ONLINE</div>
     </div>
 
     <div class="container">
-        <!-- Main Web Header Profile -->
+        <!-- Main Web Header -->
         <header>
             <div>
                 <h1>Global Currency Fundamentals</h1>
                 <div class="subtitle">Relative Quantitative Macro Matrix & Sentiment Overrides</div>
             </div>
-            <div class="cycle-badge">REFRESH RATE: 5-MIN CYCLES</div>
+            <div class="interval-badge">REFRESH RATE: 5-MIN CYCLES</div>
         </header>
 
-        <!-- Two Column Content Grid Workspace -->
-        <div class="workspace-grid">
+        <!-- Dynamic Horizontal Layout Split Container -->
+        <div class="workspace-wrapper">
             
-            <!-- Left Side Area: Main Table & Pair Cross Rankings -->
-            <div class="main-content">
-                <div class="card">
-                    <div class="card-header">📋 Macroeconomic Performance Scorecard</div>
+            <!-- Left Main Column (66% Width) -->
+            <div class="left-main-panel">
+                <div class="panel">
+                    <div class="panel-title">📋 Macroeconomic Performance Scorecard</div>
                     <div style="overflow-x: auto;">
                         <table>
                             <thead>
                                 <tr>
-                                    <th style="text-align: left; padding-left: 20px;">Asset</th>
-                                    <th>Quant Score Bias</th>
-                                    <th>Interest Rate</th>
-                                    <th>CPI Inflation</th>
-                                    <th>GDP Growth</th>
-                                    <th>Unemployment</th>
-                                    <th style="text-align: left;">Structural Attribution Matrix Flags</th>
+                                    <th style="text-align: left; padding-left: 20px; width: 10%;">Asset</th>
+                                    <th style="width: 18%;">Quant Score Bias</th>
+                                    <th style="width: 14%;">Yield Rate</th>
+                                    <th style="width: 14%;">CPI Inflation</th>
+                                    <th style="width: 14%;">GDP Growth</th>
+                                    <th style="width: 14%;">Unemployment</th>
+                                    <th style="text-align: left; width: 16%;">Attribution Drivers</th>
                                 </tr>
                             </thead>
                             <tbody id="currency-table-body">
-                                <!-- Loaded completely instantly by script inside -->
+                                <!-- Loaded dynamically via scripts below -->
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">⚡ Institutional Cross-Pair Divergence Rankings</div>
-                    <div id="pair-rankings-container" class="matrix-row">
-                        <!-- Loaded completely instantly by script inside -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Side Area: News Wire Widgets & Risk Panels -->
-            <div class="sidebar-content">
-                <div class="card">
-                    <div class="card-header">📰 Geopolitical Shocks & Risk Wire</div>
-                    <div id="news-feed-container" class="news-box">
-                        <!-- Loaded completely instantly by script inside -->
-                    </div>
-                </div>
-
-                <div class="card" style="background-color: #0f172a;">
