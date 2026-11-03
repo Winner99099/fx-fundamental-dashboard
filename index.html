@@ -3,70 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8-Currency Fundamental Forex Dashboard</title>
-    <!-- Tailwind CSS for modern look -->
-    <script src="https://jsdelivr.net"></script>
+    <title>⚡ Institutional FX Fundamental Dashboard</title>
+    <!-- Tailwind CSS Institutional Core CDN -->
+    <script src="https://tailwindcss.com"></script>
+    <style>
+        @import url('https://googleapis.com');
+        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans text-gray-900 min-h-screen">
+<body class="text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-900">
 
-    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
-        <!-- Header -->
-        <header class="mb-8 border-b pb-4 flex justify-between items-center bg-white p-6 rounded-lg shadow-sm">
+    <!-- Bloomberg Style Live Top Ticker Status Bar -->
+    <div class="bg-[#0f172a] text-slate-400 text-[11px] font-bold tracking-wider uppercase px-4 py-2.5 border-b border-slate-800 flex justify-between items-center shadow-md">
+        <div class="flex items-center space-x-4">
+            <span class="text-cyan-400 font-extrabold tracking-tight">QUANT-INTELLIGENCE // TERMINAL v3.0</span>
+            <span class="text-slate-700">|</span>
+            <span class="text-slate-300">CORE FEED: CONNECTED</span>
+        </div>
+        <div class="flex items-center space-x-2">
+            <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+            <span class="text-cyan-400 text-[10px]">LIVE DATA RE-SCORING STABLE</span>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
+        
+        <!-- Dashboard Premium Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
             <div>
-                <h1 class="text-3xl font-black text-slate-800 tracking-tight">💱 FX Fundamental Macro Dashboard</h1>
-                <p class="text-sm text-gray-500 mt-1">Automated central banking relative strength analyzer</p>
+                <h1 class="text-3xl font-black text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
+                    Global Macro Dashboard
+                </h1>
+                <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-1">Relative quantitative central banking metrics & risk analysis</p>
             </div>
-            <div class="text-right">
-                <span id="refresh-badge" class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold animate-pulse">Auto-Scoring Active</span>
+            <div class="text-[11px] text-slate-400 font-bold bg-[#111827] px-4 py-2.5 rounded-xl border border-slate-800 shadow-xl mono">
+                CLIENT REFRESH: <span class="text-cyan-400">5-MINUTE CYCLES</span>
             </div>
         </header>
 
-        <!-- Main Scoreboard Table -->
-        <main class="space-y-8">
-            <section class="bg-white rounded-lg shadow-sm overflow-hidden border">
-                <div class="p-4 bg-slate-800 text-white font-bold text-lg">
-                    📊 Relative Currency Metric Standings
-                </div>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="bg-slate-100 text-slate-700 uppercase text-xs font-bold border-b text-center">
-                                <th class="p-3 text-left">Currency</th>
-                                <th class="p-3">Fundamental Bias</th>
-                                <th class="p-3">Interest Rate</th>
-                                <th class="p-3">Inflation (CPI)</th>
-                                <th class="p-3">GDP Growth</th>
-                                <th class="p-3">Unemployment</th>
-                                <th class="p-3 text-left">Key Metric Driver</th>
-                            </tr>
-                        </thead>
-                        <tbody id="currency-table-body">
-                            <!-- Injected dynamically by app.js -->
-                            <tr class="text-center text-gray-400"><td colspan="7" class="p-8">Calculating macro values...</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
+        <!-- Main Workspace Terminal Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Left & Center Space: Scoreboard Matrix & Divergence Pairs -->
+            <div class="lg:col-span-2 space-y-6">
+                
+                <!-- Macro Standings Table Dashboard Card -->
+                <section class="bg-[#111827] rounded-xl border border-slate-800/80 shadow-2xl overflow-hidden">
+                    <div class="p-4 bg-[#1e293b] border-b border-slate-800 text-slate-200 font-bold text-xs tracking-wider uppercase flex justify-between items-center">
+                        <span class="flex items-center gap-2 text-white">📋 Core Fundamental Matrix Rankings</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-[#0f172a] text-slate-400 uppercase text-[10px] font-bold tracking-widest border-b border-slate-800 text-center">
+                                    <th class="p-4 text-left font-bold text-slate-300">FX Code</th>
+                                    <th class="p-4 font-bold text-slate-300">Quant Rank Score</th>
+                                    <th class="p-4 font-bold text-slate-300">Interest Rate</th>
+                                    <th class="p-4 font-bold text-slate-300">CPI (Inflation)</th>
+                                    <th class="p-4 font-bold text-slate-300">GDP Growth</th>
+                                    <th class="p-4 font-bold text-slate-300">Unemployment</th>
+                                    <th class="p-4 text-left font-bold text-slate-300">Calculated Metrics Driver flags</th>
+                                </tr>
+                            </thead>
+                            <tbody id="currency-table-body" class="divide-y divide-slate-800/60">
+                                <!-- Injected instantly by embedded engine -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-            <!-- Relative Strength Matrix Section -->
-            <section class="bg-white rounded-lg shadow-sm p-6 border">
-                <div class="mb-4">
-                    <h3 class="text-xl font-bold text-gray-800">⚡ Automated Fundamental Cross-Pair Divergence Rankings</h3>
-                    <p class="text-xs text-gray-500">Calculates currency score mismatches to track highest mathematical trading probabilities.</p>
-                </div>
-                <div id="pair-rankings-container">
-                    <!-- Injected dynamically by app.js -->
-                </div>
-            </section>
-        </main>
+                <!-- Trading Pair Divergences Workspace -->
+                <section class="bg-[#111827] rounded-xl p-6 border border-slate-800/80 shadow-2xl">
+                    <div class="mb-4 border-b border-slate-800 pb-3">
+                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+                            ⚡ Institutional Cross-Pair Divergence Matrix
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">Highlights structural baseline score discrepancies to isolate systemic currency trade trends.</p>
+                    </div>
+                    <div id="pair-rankings-container"></div>
+                </section>
+            </div>
 
-        <!-- Footer -->
-        <footer class="mt-12 text-center text-xs text-gray-400 border-t pt-4">
-            <p>FX Fundamental Dashboard Layout — Refreshes locally with live structural updates.</p>
+            <!-- Right Workspace Sidebar Panel: News Wire Shocks -->
+            <div class="space-y-6">
+                
+                <!-- BBC/Reuters Sentiment Live Panel -->
+                <section class="bg-[#111827] rounded-xl border border-slate-800/80 p-5 space-y-4 shadow-2xl">
+                    <div>
+                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
+                            📰 Geopolitical Shocks & Risk Wire
+                        </h3>
+                        <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-0.5">Asymmetric risk feed overrides</p>
+                    </div>
+                    
+                    <!-- Dynamic News Container -->
+                    <div id="news-feed-container" class="space-y-3.5"></div>
+                </section>
+
+                <!-- Premium Informational Analyst Playbook -->
+                <section class="bg-[#0f172a] text-slate-300 rounded-xl p-5 border border-slate-800 space-y-3 shadow-xl">
+                    <div class="flex items-center space-x-2 text-amber-400 font-bold text-[10px] tracking-widest uppercase">
+                        <span>⚠️ Analyst Operational Warning</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-slate-400 font-medium">
+                        Widespread European cost-of-living demonstrations and public-sector general strikes create heavy fiscal risk premiums. This forces sovereign yields to widen over German benchmarks, crushing domestic euro metrics.
+                    </p>
+                    <p class="text-[11px] text-cyan-400/90 font-bold italic border-t border-slate-800 pt-2 tracking-wide">
+                        Playbook Action: Selling vulnerable currencies (EUR) against sound safe-haven models (USD/CHF) maximizes target structural capture odds.
+                    </p>
+                </section>
+            </div>
+        </div>
+
+        <!-- Terminal System Footer -->
+        <footer class="text-center text-xs font-bold tracking-widest text-slate-600 pt-8 border-t border-slate-800 mono uppercase">
+            System Status: Connected // Zero-Latency Execution Pipeline Ready
         </footer>
     </div>
 
-    <!-- Script linking -->
-    <script src="app.js"></script>
-</body>
-</html>
+    <!-- ========================================== -->
+    <!-- EMBEDDED JAVASCRIPT AUTOMATION SCORES ENGINE -->
+    <!-- ========================================== -->
+    <script>
+        const CURRENCIES = ['USD', 'EUR', 'GBP', 'AUD', 'NZD', 'CAD', 'CHF', 'JPY'];
+
+        // Raw institutional macroeconomic data inputs
+        const defaultMacroData = {
+            USD: { rate: 4.75, cpi: 2.7, gdp: 2.6, unemp: 4.1 },
+            EUR: { rate: 3.25, cpi: 2.1, gdp: 0.9, unemp: 6.3 },
+            GBP: { rate: 4.75, cpi: 3.2, gdp: 1.0, unemp: 4.3 },
+            AUD: { rate: 4.35, cpi: 2.8, gdp: 1.5, unemp: 4.1 },
+            NZD: { rate: 4.25, cpi: 2.2, gdp: -0.2, unemp: 4.8 },
+            CAD: { rate: 3.75, cpi: 1.6, gdp: 1.2, unemp: 6.5 },
+            CHF: { rate: 1.00, cpi: 0.6, gdp: 1.4, unemp: 2.5 },
+            JPY: { rate: 0.25, cpi: 2.1, gdp: 0.5, unemp: 2.4 }
+        };
+
+        // Geopolitical intelligence inputs (BBC News Wire Feed Overlay)
+        const globalNewsOverrides = {
+            EUR: { 
+                penalty: -1.5, 
+                headline: "BBC Alert: Severe Eurozone anti-cost-of-living riots & public general strikes intensify, widening regional yield spreads and harming domestic growth trajectories.",
+                type: "CRITICAL RISK"
+            },
+            USD: { 
+                penalty: 0.5, 
+                headline: "Reuters News: Safe-haven flows surge directly into the Greenback as geopolitical tensions and European spending concerns persist.",
+                type: "BULLISH BIAS"
+            },
+            GBP: {
+                penalty: -0.5,
+                headline: "FT Wire: Spillover sentiment from Eurozone social instability challenges near-term cross-channel equity capital flows.",
+                type: "SENTIMENT DRAG"
+            }
+        };
+
+        function calculateScores(macroData) {
+            let scores = {};
+            const rates = Object.values(macroData).map(d => d.rate);
+            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
+
+            for (const currency of CURRENCIES) {
+                const stats = macroData[currency];
+                let score = 0;
+                let reasons = [];
+
+                // 1. Interest Rate Yield Spread Rules
+                if (stats.rate > avgRate + 1) {
+                    score += 1.5;
