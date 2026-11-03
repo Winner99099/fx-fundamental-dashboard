@@ -1,7 +1,7 @@
-// 8-Currency Fundamental FX Dashboard - Scoring Engine with Geopolitical News Override
+// 8-Currency Fundamental FX Dashboard Engine
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'AUD', 'NZD', 'CAD', 'CHF', 'JPY'];
 
-// Core macroeconomic raw baseline statistics
+// Core macroeconomic raw baseline institutional statistics
 const defaultMacroData = {
     USD: { rate: 4.75, cpi: 2.7, gdp: 2.6, unemp: 4.1 },
     EUR: { rate: 3.25, cpi: 2.1, gdp: 0.9, unemp: 6.3 },
@@ -13,22 +13,22 @@ const defaultMacroData = {
     JPY: { rate: 0.25, cpi: 2.1, gdp: 0.5, unemp: 2.4 }
 };
 
-// Real-world geopolitical risk factors mapped to currencies (e.g., BBC / Reuters tracking)
+// Global sentiment adjustments (BBC News Alerts Integration Matrix)
 const globalNewsOverrides = {
     EUR: { 
         penalty: -1.5, 
-        headline: "BBC: Severe anti-cost-of-living riots & public service strikes expand across France and Italy, widening sovereign bond yield spreads.",
-        type: "BEARISH RISK"
+        headline: "BBC Alert: Extensive Eurozone cost-of-living riots and civil strikes across major capitals expand risk premiums and strain fiscal stability.",
+        type: "CRITICAL RISK"
     },
     USD: { 
         penalty: 0.5, 
-        headline: "Reuters: Safe-haven demand increases capital inflows into the greenback amid regional European fiscal uncertainties.",
+        headline: "Reuters News: Institutional safe-haven capital routing shifts to USD amid lingering Western European sovereign debt anxieties.",
         type: "BULLISH BIAS"
     },
     GBP: {
         penalty: -0.5,
-        headline: "Financial Times: Regional European unrest ripples slightly into British banking stock sentiment.",
-        type: "NEUTRAL DRAG"
+        headline: "FT News: Continental European civil unrest slightly pressures cross-channel financial asset values and equity confidence indexes.",
+        type: "RISK DRAG"
     }
 };
 
@@ -42,7 +42,7 @@ function calculateScores(macroData) {
         let score = 0;
         let reasons = [];
 
-        // Rule 1: Interest Rate Discrepancy
+        // Yield Rate Attribution Rules
         if (stats.rate > avgRate + 1) {
             score += 1.5;
             reasons.push("Yield Advantage");
@@ -53,36 +53,35 @@ function calculateScores(macroData) {
             score += 0.5;
         }
 
-        // Rule 2: GDP Economic Expansion Status
+        // GDP Output Rules
         if (stats.gdp > 2.0) {
             score += 1.0;
-            reasons.push("Robust Expansion");
+            reasons.push("Robust Growth");
         } else if (stats.gdp < 0) {
             score -= 1.5;
-            reasons.push("Recession Risk");
+            reasons.push("Recession Shock");
         }
 
-        // Rule 3: Inflation Drift (Central Bank Target is 2.0%)
+        // Inflation Tracking Rules
         if (stats.cpi > 3.0) {
             score -= 0.5;
-            reasons.push("Stubborn Inflation");
+            reasons.push("Sticky Inflation");
         } else {
             score += 0.5;
         }
 
-        // Rule 4: Unemployment / Labor Slack
+        // Employment Market Slack
         if (stats.unemp > 6.0) {
             score -= 0.5;
-            reasons.push("Labor Weakness");
+            reasons.push("Labor Slack");
         }
 
-        // Rule 5: Dynamic Geopolitical News Overrides (Protests, Riots, Tariffs)
+        // Geopolitical Overrides Mapped
         if (globalNewsOverrides[currency]) {
             score += globalNewsOverrides[currency].penalty;
-            reasons.push(`Geopolitical: ${globalNewsOverrides[currency].type}`);
+            reasons.push(`Geopolitical ${globalNewsOverrides[currency].type}`);
         }
 
-        // Enforce boundary caps
         const finalScore = Math.max(-5, Math.min(5, score));
         let bias = "NEUTRAL";
         if (finalScore >= 1.0) bias = "BULLISH";
@@ -107,19 +106,20 @@ function renderDashboard(scoredData) {
 
     sortedCurrencies.forEach(curr => {
         const item = scoredData[curr];
-        let badgeStyle = 'bg-gray-100 text-gray-800';
-        if (item.bias === 'BULLISH') badgeStyle = 'bg-emerald-100 text-emerald-800 font-bold border border-emerald-300';
-        if (item.bias === 'BEARISH') badgeStyle = 'bg-rose-100 text-rose-800 font-bold border border-rose-300';
+        
+        let badgeStyle = 'bg-slate-50 text-slate-600 border border-slate-200';
+        if (item.bias === 'BULLISH') badgeStyle = 'bg-emerald-50/70 text-emerald-700 font-bold border border-emerald-200';
+        if (item.bias === 'BEARISH') badgeStyle = 'bg-rose-50/70 text-rose-700 font-bold border border-rose-200';
 
         const row = `
-            <tr class="border-b border-gray-200 hover:bg-slate-50 transition-colors text-center text-sm">
-                <td class="p-4 font-black text-slate-900 text-left text-base">${curr}</td>
-                <td class="p-4"><span class="px-2.5 py-1 rounded text-xs tracking-wide uppercase ${badgeStyle}">${item.bias} (${item.score})</span></td>
-                <td class="p-4 font-semibold text-slate-700">${item.rate.toFixed(2)}%</td>
-                <td class="p-4 text-slate-600">${item.cpi.toFixed(1)}%</td>
-                <td class="p-4 text-slate-600">${item.gdp.toFixed(1)}%</td>
-                <td class="p-4 text-slate-600">${item.unemp.toFixed(1)}%</td>
-                <td class="p-4 text-left text-xs font-medium text-slate-500">${item.reasons}</td>
+            <tr class="border-b border-slate-100 hover:bg-slate-50/80 transition-colors text-center text-xs font-medium">
+                <td class="p-3.5 font-bold text-slate-900 text-left text-sm tracking-tight">${curr}</td>
+                <td class="p-3.5"><span class="px-2 py-0.5 rounded tracking-wide text-[10px] font-bold uppercase ${badgeStyle}">${item.bias} (${item.score > 0 ? '+' : ''}${item.score})</span></td>
+                <td class="p-3.5 mono text-slate-700 font-semibold">${item.rate.toFixed(2)}%</td>
+                <td class="p-3.5 mono text-slate-600">${item.cpi.toFixed(1)}%</td>
+                <td class="p-3.5 mono text-slate-600">${item.gdp.toFixed(1)}%</td>
+                <td class="p-3.5 mono text-slate-600">${item.unemp.toFixed(1)}%</td>
+                <td class="p-3.5 text-left text-[11px] font-medium text-slate-400 tracking-tight">${item.reasons}</td>
             </tr>
         `;
         tableBody.insertAdjacentHTML('beforeend', row);
@@ -134,17 +134,21 @@ function renderNewsTicker() {
     if (!newsContainer) return;
     newsContainer.innerHTML = '';
 
-    let newsHtml = '<div class="space-y-3">';
+    let newsHtml = '<div class="space-y-3.5">';
     Object.keys(globalNewsOverrides).forEach(curr => {
         const entry = globalNewsOverrides[curr];
-        const labelColor = entry.penalty < 0 ? 'bg-rose-500' : 'bg-emerald-500';
+        const statusColors = entry.penalty < 0 
+            ? 'bg-rose-50 text-rose-700 border-rose-200 tag-danger' 
+            : 'bg-emerald-50 text-emerald-700 border-emerald-200 tag-success';
+        const labelBadge = entry.penalty < 0 ? 'bg-rose-600' : 'bg-emerald-600';
+
         newsHtml += `
-            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start space-x-3 shadow-xs">
-                <span class="text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded mt-0.5 ${labelColor}">${curr} IMPACT</span>
-                <div class="flex-1">
-                    <p class="text-xs font-semibold text-slate-800">${entry.headline}</p>
-                    <p class="text-[10px] text-slate-400 mt-0.5">Scoring Engine Impact Weight: <span class="font-bold">${entry.penalty > 0 ? '+' : ''}${entry.penalty} points</span></p>
+            <div class="p-3.5 bg-white rounded-xl border border-slate-100 shadow-2xs flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-white text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded ${labelBadge}">${curr} DATA FEED</span>
+                    <span class="mono text-[10px] font-bold text-slate-400">${entry.penalty > 0 ? '+' : ''}${entry.penalty.toFixed(1)} Weight Adjustment</span>
                 </div>
+                <p class="text-xs font-semibold text-slate-700 leading-normal">${entry.headline}</p>
             </div>
         `;
     });
@@ -174,21 +178,21 @@ function renderPairMatrix(scoredData) {
     const topBuys = pairs.slice(0, 4);
     let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">';
     
-    html += '<div><h4 class="font-bold text-sm uppercase tracking-wider text-emerald-700 mb-3 flex items-center">📈 Top Long Opportunities</h4><div class="space-y-2">';
+    html += '<div><h4 class="font-bold text-[10px] tracking-wider uppercase text-emerald-600 mb-3">📈 High-Alpha Long Pairs (Strength Mismatch)</h4><div class="space-y-2">';
     topBuys.forEach(p => {
-        html += `<div class="p-3 bg-emerald-50/60 border border-emerald-200 rounded-lg flex justify-between items-center">
-            <span class="font-bold text-slate-800 text-sm">${p.pair}</span>
-            <span class="text-xs bg-emerald-600 text-white font-bold px-2 py-0.5 rounded shadow-xs">+${p.spread.toFixed(1)} spread</span>
+        html += `<div class="p-3 bg-slate-50 border border-slate-200/60 rounded-xl flex justify-between items-center transition-all hover:bg-white shadow-2xs">
+            <span class="font-extrabold text-slate-800 text-xs mono tracking-tight">${p.pair}</span>
+            <span class="mono text-xs text-emerald-600 font-bold px-2 py-0.5 bg-emerald-50 rounded border border-emerald-100">+${p.spread.toFixed(1)}</span>
         </div>`;
     });
     html += '</div></div>';
 
     const topSells = pairs.slice(-4).reverse();
-    html += '<div><h4 class="font-bold text-sm uppercase tracking-wider text-rose-700 mb-3 flex items-center">📉 Top Short Opportunities</h4><div class="space-y-2">';
+    html += '<div><h4 class="font-bold text-[10px] tracking-wider uppercase text-rose-600 mb-3">📉 Underperforming Short Pairs (Weakness Target)</h4><div class="space-y-2">';
     topSells.forEach(p => {
-        html += `<div class="p-3 bg-rose-50/60 border border-rose-200 rounded-lg flex justify-between items-center">
-            <span class="font-bold text-slate-800 text-sm">${p.pair}</span>
-            <span class="text-xs bg-rose-600 text-white font-bold px-2 py-0.5 rounded shadow-xs">${p.spread.toFixed(1)} spread</span>
+        html += `<div class="p-3 bg-slate-50 border border-slate-200/60 rounded-xl flex justify-between items-center transition-all hover:bg-white shadow-2xs">
+            <span class="font-extrabold text-slate-800 text-xs mono tracking-tight">${p.pair}</span>
+            <span class="mono text-xs text-rose-600 font-bold px-2 py-0.5 bg-rose-50 rounded border border-rose-100">${p.spread.toFixed(1)}</span>
         </div>`;
     });
     html += '</div></div></div>';
@@ -196,7 +200,14 @@ function renderPairMatrix(scoredData) {
     matrixContainer.innerHTML = html;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// Guaranteed layout execution wrapper
+function initializeDashboard() {
     const scored = calculateScores(defaultMacroData);
     renderDashboard(scored);
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeDashboard);
+} else {
+    initializeDashboard();
+}
