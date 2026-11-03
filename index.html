@@ -1,25 +1,72 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FX Fundamental Intelligence | 8 Currencies</title>
-<style>
-:root{color-scheme:dark;--bg:#09111e;--panel:#111d2e;--panel2:#17263b;--line:#293b54;--txt:#edf3fb;--muted:#9aacc3;--green:#36ce91;--red:#ff727e;--amber:#f1c16a;--blue:#7eafff}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.5 system-ui,Segoe UI,Arial}header{padding:22px max(18px,calc((100vw - 1240px)/2));background:#0d192a;border-bottom:1px solid var(--line)}h1{font-size:24px;margin:0}h2{font-size:16px;margin:0 0 12px}.muted,.small{color:var(--muted)}.small{font-size:12px}.wrap{max-width:1240px;margin:auto;padding:20px;display:grid;gap:16px}.head,.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.tag{border:1px solid var(--line);border-radius:99px;padding:4px 9px;color:var(--amber);font-size:11px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.panel,.tile{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px}.metric{font-size:24px;font-weight:750}.green{color:var(--green)}.red{color:var(--red)}.amber{color:var(--amber)}.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}table{border-collapse:collapse;width:100%}th,td{padding:9px 7px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--muted)}input,select,button,textarea{background:var(--panel2);color:var(--txt);border:1px solid var(--line);border-radius:7px;padding:8px;font:inherit}button{cursor:pointer}button.primary{background:#245da7;border-color:#3677cb}.bar{height:6px;background:#263a54;border-radius:8px;overflow:hidden}.bar i{display:block;height:100%;background:var(--blue)}.event{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:85px 1fr auto;gap:10px}.badge{font-size:10px;border-radius:4px;padding:3px 6px;height:max-content}.high{background:#53242e;color:#ff9da7}.medium{background:#4d3b1d;color:#f5d18a}.low{background:#203a56;color:#b2d3ff}.notice{border-left:3px solid var(--amber);background:#1d2a3c;padding:10px;border-radius:6px;font-size:12px}.list{display:grid;gap:8px}.pair{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}textarea{width:100%;min-height:90px}a{color:#9dc4ff}@media(max-width:820px){.cols{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.wrap{padding:12px}.event{grid-template-columns:65px 1fr}.event .badge{grid-column:2}}
-</style></head>
-<body><header><div class="head"><div><h1>Fundamental FX Intelligence</h1><div class="muted">USD · EUR · GBP · JPY · CHF · CAD · AUD · NZD | Singapore time</div></div><span class="tag" id="status">CONNECTING TO FREE DATA</span></div></header>
-<main class="wrap">
-<div class="head"><div><b id="clock">—</b><div class="small" id="updated">Waiting for data refresh…</div></div><div class="head"><button id="refresh" class="primary">Refresh now</button><button id="export">Export snapshot</button></div></div>
-<div class="notice"><b>How to read this dashboard:</b> Currency scores combine macro direction, policy stance and available official-source updates. They are a transparent rules-based watchlist—not institutional positioning data, not a prediction, and not a trade signal. Data may be delayed. Check source timestamps before acting.</div>
-<section class="grid" id="tiles"></section>
-<section class="cols"><div class="panel"><h2>8-currency fundamental scorecard</h2><div class="small">Score: −5 very weak to +5 very strong. “Provisional” means official indicators are incomplete or stale.</div><div style="overflow:auto"><table><thead><tr><th>CCY</th><th>Score</th><th>Bias</th><th>Confidence</th><th>Latest context</th></tr></thead><tbody id="scores"></tbody></table></div></div>
-<div class="panel"><h2>Relative-strength pair shortlist</h2><div class="small">Ranked by score spread. Validate with yields, positioning and price action.</div><div id="pairs" class="list"></div></div></section>
-<section class="cols"><div class="panel"><h2>Major releases & official news</h2><div class="small">Official-source headlines / feed updates. A headline is not automatically a positive or negative currency surprise.</div><div id="events"></div></div>
-<div class="panel"><h2>Post-release reaction checklist</h2><div class="list" id="checks">
-<label><input type="checkbox"> Actual vs consensus and prior revisions assessed</label>
-<label><input type="checkbox"> Central-bank reaction function: hawkish / neutral / dovish</label>
-<label><input type="checkbox"> Two-year yields / OIS expectations confirm</label>
-<label><input type="checkbox"> Currency price reaction confirms the narrative</label>
-<label><input type="checkbox"> Daily and H4 market structure align</label>
-<label><input type="checkbox"> Stop, size, event risk and invalidation defined</label></div><p class="notice">“Better than forecast” does not always mean a stronger currency: expectations, revisions, guidance and positioning matter.</p></div></section>
-<section class="panel"><h2>Sources & data health</h2><div id="sources" class="small"></div></section>
-<section class="panel"><h2>Daily trading journal</h2><textarea id="journal" placeholder="What changed today? Which currency view changed, why, what confirms it, and what invalidates it?"></textarea><div class="small">Journal is stored in this browser only. Do not enter account credentials or sensitive information.</div></section>
-</main><script src="app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Currency Fundamental Forex Dashboard</title>
+    <!-- Tailwind CSS for modern look -->
+    <script src="https://jsdelivr.net"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900 min-h-screen">
+
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Header -->
+        <header class="mb-8 border-b pb-4 flex justify-between items-center bg-white p-6 rounded-lg shadow-sm">
+            <div>
+                <h1 class="text-3xl font-black text-slate-800 tracking-tight">💱 FX Fundamental Macro Dashboard</h1>
+                <p class="text-sm text-gray-500 mt-1">Automated central banking relative strength analyzer</p>
+            </div>
+            <div class="text-right">
+                <span id="refresh-badge" class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-semibold animate-pulse">Auto-Scoring Active</span>
+            </div>
+        </header>
+
+        <!-- Main Scoreboard Table -->
+        <main class="space-y-8">
+            <section class="bg-white rounded-lg shadow-sm overflow-hidden border">
+                <div class="p-4 bg-slate-800 text-white font-bold text-lg">
+                    📊 Relative Currency Metric Standings
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 uppercase text-xs font-bold border-b text-center">
+                                <th class="p-3 text-left">Currency</th>
+                                <th class="p-3">Fundamental Bias</th>
+                                <th class="p-3">Interest Rate</th>
+                                <th class="p-3">Inflation (CPI)</th>
+                                <th class="p-3">GDP Growth</th>
+                                <th class="p-3">Unemployment</th>
+                                <th class="p-3 text-left">Key Metric Driver</th>
+                            </tr>
+                        </thead>
+                        <tbody id="currency-table-body">
+                            <!-- Injected dynamically by app.js -->
+                            <tr class="text-center text-gray-400"><td colspan="7" class="p-8">Calculating macro values...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Relative Strength Matrix Section -->
+            <section class="bg-white rounded-lg shadow-sm p-6 border">
+                <div class="mb-4">
+                    <h3 class="text-xl font-bold text-gray-800">⚡ Automated Fundamental Cross-Pair Divergence Rankings</h3>
+                    <p class="text-xs text-gray-500">Calculates currency score mismatches to track highest mathematical trading probabilities.</p>
+                </div>
+                <div id="pair-rankings-container">
+                    <!-- Injected dynamically by app.js -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-xs text-gray-400 border-t pt-4">
+            <p>FX Fundamental Dashboard Layout — Refreshes locally with live structural updates.</p>
+        </footer>
+    </div>
+
+    <!-- Script linking -->
+    <script src="app.js"></script>
+</body>
+</html>
