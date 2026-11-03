@@ -80,7 +80,7 @@
             font-family: monospace;
         }
 
-        /* HARD-CODED SIDE-BY-SIDE WORKING LAYOUT GRID */
+        /* SIDE-BY-SIDE WORKING LAYOUT GRID */
         .workspace-wrapper {
             display: flex;
             flex-direction: row;
@@ -255,7 +255,7 @@
 
     <!-- Top Info Bar -->
     <div class="top-ticker">
-        <div>MACROPULSE // TERMINAL INTERFACE v3.5</div>
+        <div>MACROPULSE // TERMINAL INTERFACE v3.6</div>
         <div class="ticker-live"><div class="ticker-dot"></div>CORE DATA PIPELINE FEED: ONLINE</div>
     </div>
 
@@ -290,10 +290,9 @@
                                 </tr>
                             </thead>
                             <tbody id="currency-table-body">
-                                <!-- Loaded dynamically via engine script -->
+                                <tr>
+                                    <td colspan="7" style="padding: 30px; color: #64748b;">Awaiting client scoring script sequence...</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-
-                <div class="panel">
