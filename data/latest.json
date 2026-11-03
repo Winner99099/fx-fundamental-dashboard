@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T09:40:50.180317+00:00",
+  "generated_at": "2026-11-03T10:41:42.673013+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -102,6 +102,14 @@
       "impact": "High"
     },
     {
+      "currency": "GBP",
+      "title": "Regulators explore credit union reforms to support growth, innovation and better outcomes for members",
+      "summary": "Credit unions could benefit from several ideas put forward today by the Prudential Regulation Authority and Financial Conduct Authority aimed at helping the sector grow, innovate and meet the changing needs of their members.",
+      "url": "https://www.bankofengland.co.uk/news/2026/november/regulators-explore-credit-union-reforms-to-support-growth-innovation-and-better-outcomes-for-members",
+      "time": "Tue, 03 Nov 2026 10:00:00 Z",
+      "impact": "High"
+    },
+    {
       "currency": "NZD",
       "title": "RBNZ registers Revolut as a bank in New Zealand",
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
@@ -195,14 +203,6 @@
       "summary": "Published for the Treasury Select Committee",
       "url": "https://www.bankofengland.co.uk/news/2026/october/david-roberts-tsc-reappointment",
       "time": "Thu, 15 Oct 2026 10:52:41 +0100",
-      "impact": "High"
-    },
-    {
-      "currency": "GBP",
-      "title": "Minutes of the SONIA Stakeholder Advisory Group - 25 September 2026",
-      "summary": "The SONIA Stakeholder Advisory Group supports the Bank\u2019s administration of SONIA by providing advice and technical input to the Bank and the SONIA Oversight Committee",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/sonia-stakeholder-advisory-group-25-september-2026",
-      "time": "Thu, 15 Oct 2026 09:27:59 +0100",
       "impact": "High"
     },
     {
@@ -375,6 +375,14 @@
     },
     {
       "currency": "CHF",
+      "title": "2026-11-03 - Martin Schlegel: Die Schweizer Wirtschaft im globalen Umfeld",
+      "summary": "",
+      "url": "https://www.snb.ch/en/publications/communication/speeches/2026/ref_20261103_msl",
+      "time": "",
+      "impact": "High"
+    },
+    {
+      "currency": "CHF",
       "title": "2026-11-02 - Data portal - Interest rates and exchange rates, November 2026",
       "summary": "",
       "url": "https://www.snb.ch/en/publications/statistical-publications/data-portal/2026/11/statpub_news_20261102_a",
@@ -428,14 +436,6 @@
       "url": "https://www.snb.ch/en/publications/research/economic-notes/2026/economic_note_2026_08",
       "time": "",
       "impact": "High"
-    },
-    {
-      "currency": "CHF",
-      "title": "2026-10-29 - Data portal - Swiss Financial Accounts, Q2 2026",
-      "summary": "",
-      "url": "https://www.snb.ch/en/publications/statistical-publications/data-portal/2026/10/statpub_news_20261029_fin",
-      "time": "",
-      "impact": "High"
     }
   ],
   "sources": [
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-03T09:40:50.180317+00:00"
+      "checked_at": "2026-11-03T10:41:42.673013+00:00"
     }
   ],
   "limitations": [
