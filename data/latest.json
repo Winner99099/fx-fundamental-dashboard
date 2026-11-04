@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T07:15:27.964969+00:00",
+  "generated_at": "2026-11-04T08:29:39.488522+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -83,6 +83,22 @@
       "summary": "Monetary Policy Review media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/ocr-held-at-2-75-percent",
       "time": "Wed, 28 Oct 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261030.xlsx",
+      "time": "Wed, 04 Nov 2026 17:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Collateral Accepted by the Bank of Japan (End of  Oct.)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
+      "time": "Wed, 04 Nov 2026 17:00:00 +0900",
       "impact": "High"
     },
     {
@@ -326,22 +342,6 @@
       "impact": "High"
     },
     {
-      "currency": "JPY",
-      "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
-      "time": "Fri, 30 Oct 2026 14:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Outlook for Economic Activity and Prices (October 2026, The Bank's View)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
-      "time": "Fri, 30 Oct 2026 13:00:00 +0900",
-      "impact": "High"
-    },
-    {
       "currency": "EUR",
       "title": "Results of the ECB Survey of Professional Forecasters for the fourth quarter of 2026",
       "summary": "",
@@ -371,6 +371,14 @@
       "summary": "Meeting held 15 July 2026",
       "url": "https://www.bankofengland.co.uk/minutes/2026/july/banknote-advisory-minutes-15-july",
       "time": "Fri, 16 Oct 2026 12:00:00 +0100",
+      "impact": "High"
+    },
+    {
+      "currency": "CHF",
+      "title": "WP - 2026-11-04 - Simon Beyeler: Forecasting the post-COVID inflation surge in Switzerland",
+      "summary": "The surge in inflation after the COVID-19 pandemic caught forecasters and policy makers by surprise: shocks treated as transitory turned out to be persistent, producing large forecast errors. Watson (2026) asks whether the U.S. surge could instead have been recognised as persistent in real time usin",
+      "url": "https://www.snb.ch/en/publications/research/working-papers/2026/working_paper_2026_14",
+      "time": "",
       "impact": "High"
     },
     {
@@ -428,14 +436,6 @@
       "url": "https://www.snb.ch/en/publications/communication/speeches/2026/ref_20261029_gpetmo",
       "time": "",
       "impact": "High"
-    },
-    {
-      "currency": "CHF",
-      "title": "ES - 2026-10-29 - Damien Klossner, Igor Mlikota and Sabrina Stadelmann: What collateral is used in the Swiss interbank repo market?",
-      "summary": "Collateral is a key component of repurchase agreement transactions. We document collateral usage in the Swiss interbank repo market using an extensive transaction-level dataset. We find that a substantial share of securities eligible for the SNB General Collateral Basket is actively used, particular",
-      "url": "https://www.snb.ch/en/publications/research/economic-notes/2026/economic_note_2026_08",
-      "time": "",
-      "impact": "High"
     }
   ],
   "sources": [
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-04T07:15:27.964969+00:00"
+      "checked_at": "2026-11-04T08:29:39.488522+00:00"
     }
   ],
   "limitations": [
