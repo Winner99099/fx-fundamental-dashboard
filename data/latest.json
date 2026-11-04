@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T04:59:27.716263+00:00",
+  "generated_at": "2026-11-04T06:00:16.723427+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -89,7 +89,7 @@
       "currency": "JPY",
       "title": "Bank of Japan Accounts (October 31)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
       "time": "Wed, 04 Nov 2026 10:00:00 +0900",
       "impact": "High"
     },
@@ -97,7 +97,7 @@
       "currency": "JPY",
       "title": "Monetary Base (Oct.)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
       "time": "Wed, 04 Nov 2026 08:50:00 +0900",
       "impact": "High"
     },
@@ -265,7 +265,7 @@
       "currency": "JPY",
       "title": "Outlook for Economic Activity and Prices (October 2026, full text)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
+      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
       "time": "Mon, 02 Nov 2026 14:00:00 +0900",
       "impact": "High"
     },
@@ -273,7 +273,7 @@
       "currency": "JPY",
       "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
+      "url": "https://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
       "time": "Mon, 02 Nov 2026 13:00:00 +0900",
       "impact": "High"
     },
@@ -305,7 +305,7 @@
       "currency": "JPY",
       "title": "Quarterly Schedule of Outright Purchases of Japanese Government Bonds (Competitive Auction Method) (October-December 2026) (Schedule Updates)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030c.pdf",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030c.pdf",
       "time": "Fri, 30 Oct 2026 17:00:00 +0900",
       "impact": "High"
     },
@@ -313,7 +313,7 @@
       "currency": "JPY",
       "title": "Timetable and Schedule of U.S. Dollar Funds-Supplying Operations  (November 2026-March 2027)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030b.pdf",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030b.pdf",
       "time": "Fri, 30 Oct 2026 17:00:00 +0900",
       "impact": "High"
     },
@@ -329,7 +329,7 @@
       "currency": "JPY",
       "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
       "time": "Fri, 30 Oct 2026 14:00:00 +0900",
       "impact": "High"
     },
@@ -337,7 +337,7 @@
       "currency": "JPY",
       "title": "Outlook for Economic Activity and Prices (October 2026, The Bank's View)",
       "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
+      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
       "time": "Fri, 30 Oct 2026 13:00:00 +0900",
       "impact": "High"
     },
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-04T04:59:27.716263+00:00"
+      "checked_at": "2026-11-04T06:00:16.723427+00:00"
     }
   ],
   "limitations": [
