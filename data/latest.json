@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T23:57:14.793090+00:00",
+  "generated_at": "2026-11-04T01:04:14.073558+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -83,6 +83,14 @@
       "summary": "Monetary Policy Review media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/ocr-held-at-2-75-percent",
       "time": "Wed, 28 Oct 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Bank of Japan Accounts (October 31)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
+      "time": "Wed, 04 Nov 2026 10:00:00 +0900",
       "impact": "High"
     },
     {
@@ -334,14 +342,6 @@
       "impact": "High"
     },
     {
-      "currency": "JPY",
-      "title": "Statement on Monetary Policy",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf",
-      "time": "Fri, 30 Oct 2026 13:00:00 +0900",
-      "impact": "High"
-    },
-    {
       "currency": "EUR",
       "title": "Results of the ECB Survey of Professional Forecasters for the fourth quarter of 2026",
       "summary": "",
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-03T23:57:14.793090+00:00"
+      "checked_at": "2026-11-04T01:04:14.073558+00:00"
     }
   ],
   "limitations": [
