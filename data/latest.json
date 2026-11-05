@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T06:48:59.272694+00:00",
+  "generated_at": "2026-11-05T08:09:16.066214+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -190,22 +190,6 @@
       "impact": "High"
     },
     {
-      "currency": "EUR",
-      "title": "Christine Lagarde, Boris Vuj\u010di\u0107: Monetary policy statement (with Q&A)",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/press_conference/monetary-policy-statement/2026/html/ecb.is261029~5c5ffe99e5.en.html",
-      "time": "Thu, 29 Oct 2026 15:00:00 +0100",
-      "impact": "High"
-    },
-    {
-      "currency": "EUR",
-      "title": "Monetary policy decisions",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
-      "time": "Thu, 29 Oct 2026 14:15:00 +0100",
-      "impact": "High"
-    },
-    {
       "currency": "GBP",
       "title": "Minutes of the Meeting of the Court of Directors held on 17 September 2026",
       "summary": "The Bank's Court of Directors acts as a unitary board, setting the organisation's strategy and budget and taking key decisions on resourcing and appointments. Required to meet a minimum seven times per year, it has five executive members from the Bank and up to nine non-executive members.",
@@ -263,6 +247,22 @@
     },
     {
       "currency": "JPY",
+      "title": "Holding the Twenty-fifth Round of the \"Bond Market Group\" Meetings",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
+      "time": "Thu, 05 Nov 2026 16:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "EUR",
+      "title": "Isabel Schnabel: Navigating stormy waters: reflections on monetary policy",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
+      "time": "Thu, 05 Nov 2026 09:00:00 +0100",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
       "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
       "summary": "",
       "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
@@ -275,6 +275,14 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/mpmsche_minu/minu_2026/g260918.pdf",
       "time": "Thu, 05 Nov 2026 08:50:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "EUR",
+      "title": "Piero Cipollone: Shaping the future of money",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105~6495a0df6f.en.html",
+      "time": "Thu, 05 Nov 2026 08:30:00 +0100",
       "impact": "High"
     },
     {
@@ -299,14 +307,6 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
       "time": "Mon, 02 Nov 2026 14:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
-      "time": "Mon, 02 Nov 2026 13:00:00 +0900",
       "impact": "High"
     },
     {
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-05T06:48:59.272694+00:00"
+      "checked_at": "2026-11-05T08:09:16.066214+00:00"
     }
   ],
   "limitations": [
