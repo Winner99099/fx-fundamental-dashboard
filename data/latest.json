@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T12:44:31.131961+00:00",
+  "generated_at": "2026-11-05T14:02:05.220866+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -70,6 +70,14 @@
       "impact": "High"
     },
     {
+      "currency": "GBP",
+      "title": "Remit for the Monetary Policy Committee - October 2026",
+      "summary": "Letter from the Chancellor to the Governor",
+      "url": "https://www.bankofengland.co.uk/letter/2026/mpc-remit-2026",
+      "time": "Wed, 28 Oct 2026 14:16:49 Z",
+      "impact": "High"
+    },
+    {
       "currency": "NZD",
       "title": "OCR held at 2.75%",
       "summary": "Monetary Policy Review media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
@@ -91,6 +99,14 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
       "time": "Wed, 04 Nov 2026 17:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "GBP",
+      "title": "Summary of the RTGS CHAPS Industry Forum - 13 October 2026",
+      "summary": "The second meeting of the RTGS CHAPS Industry Forum",
+      "url": "https://www.bankofengland.co.uk/minutes/2026/october/rtgs-chaps-industry-forum-13-october-2026",
+      "time": "Wed, 04 Nov 2026 14:51:45 Z",
       "impact": "High"
     },
     {
@@ -134,6 +150,14 @@
       "impact": "High"
     },
     {
+      "currency": "GBP",
+      "title": "Regulators explore credit union reforms to support growth, innovation and better outcomes for members",
+      "summary": "Credit unions could benefit from several ideas put forward today by the Prudential Regulation Authority and Financial Conduct Authority aimed at helping the sector grow, innovate and meet the changing needs of their members.",
+      "url": "https://www.bankofengland.co.uk/news/2026/november/regulators-explore-credit-union-reforms-to-support-growth-innovation-and-better-outcomes-for-members",
+      "time": "Tue, 03 Nov 2026 10:00:00 Z",
+      "impact": "High"
+    },
+    {
       "currency": "NZD",
       "title": "RBNZ registers Revolut as a bank in New Zealand",
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
@@ -166,6 +190,38 @@
       "impact": "High"
     },
     {
+      "currency": "GBP",
+      "title": "Minutes of the Meeting of the Court of Directors held on 17 September 2026",
+      "summary": "The Bank's Court of Directors acts as a unitary board, setting the organisation's strategy and budget and taking key decisions on resourcing and appointments. Required to meet a minimum seven times per year, it has five executive members from the Bank and up to nine non-executive members.",
+      "url": "https://www.bankofengland.co.uk/minutes/2026/september/court-minutes-17-september-2026",
+      "time": "Thu, 29 Oct 2026 14:00:00 Z",
+      "impact": "High"
+    },
+    {
+      "currency": "GBP",
+      "title": "Bank of England sets out approach to tokenised collateral in central clearing",
+      "summary": "The Bank of England has today launched a consultation supporting central counterparties (CCPs) acceptance of tokenised forms of eligible collateral.",
+      "url": "https://www.bankofengland.co.uk/news/2026/october/bank-of-england-sets-out-approach-to-tokenised-collateral-in-central-clearing",
+      "time": "Thu, 29 Oct 2026 10:00:00 Z",
+      "impact": "High"
+    },
+    {
+      "currency": "GBP",
+      "title": "Regulators unveil plans to simplify Senior Manager and Certification Regime",
+      "summary": "The number of financial services roles required to face enhanced checks from regulators will fall significantly under proposals that will support growth.",
+      "url": "https://www.bankofengland.co.uk/news/2026/october/regulators-unveil-plans-to-simplify-senior-manager-and-certification-regime",
+      "time": "Thu, 22 Oct 2026 21:00:00 +0100",
+      "impact": "High"
+    },
+    {
+      "currency": "GBP",
+      "title": "Minutes of the Securities Lending Committee meeting \u2013 September 2026",
+      "summary": "The Securities Lending Committee is a forum for market participants and authorities to discuss the UK securities lending market.",
+      "url": "https://www.bankofengland.co.uk/minutes/2026/september/securities-lending-committee-meeting-september-2026",
+      "time": "Thu, 22 Oct 2026 16:35:53 +0100",
+      "impact": "High"
+    },
+    {
       "currency": "NZD",
       "title": "APRA and RBNZ complete joint bank stress test to promote trans-Tasman resilience",
       "summary": "The Australian Prudential Regulation Authority (APRA) and the Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) have completed the 2026 Trans-Tasman Stress Test, their first joint stress testing exercise since 2017.",
@@ -195,6 +251,14 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
       "time": "Thu, 05 Nov 2026 16:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "GBP",
+      "title": "Bank rate increased to 4% - November 2026 Monetary Policy Summary and Minutes",
+      "summary": "The Bank of England\u2019s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
+      "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "time": "Thu, 05 Nov 2026 12:00:00 Z",
       "impact": "High"
     },
     {
@@ -379,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-05T12:44:31.131961+00:00"
+      "checked_at": "2026-11-05T14:02:05.220866+00:00"
     }
   ],
   "limitations": [
