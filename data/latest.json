@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T14:33:03.650361+00:00",
+  "generated_at": "2026-11-06T15:23:18.074383+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -53,6 +53,22 @@
     }
   ],
   "events": [
+    {
+      "currency": "USD",
+      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "summary": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
+      "time": "Wed, 7 Oct 2026 18:00:00 GMT",
+      "impact": "High"
+    },
+    {
+      "currency": "USD",
+      "title": "Federal Reserve issues FOMC statement",
+      "summary": "Federal Reserve issues FOMC statement",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+      "time": "Wed, 28 Oct 2026 18:00:00 GMT",
+      "impact": "High"
+    },
     {
       "currency": "GBP",
       "title": "Remit for the Monetary Policy Committee - October 2026",
@@ -110,6 +126,14 @@
       "impact": "High"
     },
     {
+      "currency": "USD",
+      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
+      "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
+      "time": "Tue, 13 Oct 2026 18:00:00 GMT",
+      "impact": "High"
+    },
+    {
       "currency": "GBP",
       "title": "Regulators explore credit union reforms to support growth, innovation and better outcomes for members",
       "summary": "Credit unions could benefit from several ideas put forward today by the Prudential Regulation Authority and Financial Conduct Authority aimed at helping the sector grow, innovate and meet the changing needs of their members.",
@@ -123,6 +147,30 @@
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-registers-revolut-as-a-bank-in-new-zealand",
       "time": "Tue, 03 Nov 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "USD",
+      "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm\u2019s failure to sufficiently detect and report certain suspicious activity related to money launde",
+      "summary": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm\u2019s failure to sufficiently detect and report certain suspicious activity related to money laundering",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
+      "time": "Thu, 8 Oct 2026 20:30:00 GMT",
+      "impact": "High"
+    },
+    {
+      "currency": "USD",
+      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+      "summary": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
+      "time": "Thu, 5 Nov 2026 16:00:00 GMT",
+      "impact": "High"
+    },
+    {
+      "currency": "USD",
+      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
+      "time": "Thu, 29 Oct 2026 20:30:00 GMT",
       "impact": "High"
     },
     {
@@ -246,6 +294,14 @@
       "impact": "High"
     },
     {
+      "currency": "USD",
+      "title": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
+      "summary": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261009a.htm",
+      "time": "Fri, 9 Oct 2026 14:00:00 GMT",
+      "impact": "High"
+    },
+    {
       "currency": "EUR",
       "title": "Philip R. Lane: AI adoption in Europe",
       "summary": "",
@@ -275,6 +331,14 @@
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has appointed Stan Christian as Director of Prudential Supervision following an extensive recruitment process.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/rbnz-appoints-director-of-prudential-supervision",
       "time": "Fri, 30 Oct 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "USD",
+      "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+      "summary": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
+      "time": "Fri, 16 Oct 2026 15:00:00 GMT",
       "impact": "High"
     },
     {
@@ -378,50 +442,50 @@
     {
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
-      "status": "error: HTTP Error 404: Not Found",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "status": "ok",
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-06T14:33:03.650361+00:00"
+      "checked_at": "2026-11-06T15:23:18.074383+00:00"
     }
   ],
   "limitations": [
