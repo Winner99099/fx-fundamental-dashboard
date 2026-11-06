@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T08:59:33.788655+00:00",
+  "generated_at": "2026-11-06T10:05:14.904462+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -171,14 +171,6 @@
       "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
       "time": "Thu, 29 Oct 2026 20:30:00 GMT",
-      "impact": "High"
-    },
-    {
-      "currency": "EUR",
-      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe\u2019s financial infrastructure",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
-      "time": "Thu, 29 Oct 2026 16:50:00 +0100",
       "impact": "High"
     },
     {
@@ -366,6 +358,14 @@
       "impact": "High"
     },
     {
+      "currency": "EUR",
+      "title": "ECB publishes consolidated banking data for end-June 2026",
+      "summary": "",
+      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
+      "time": "Fri, 06 Nov 2026 10:00:00 +0100",
+      "impact": "High"
+    },
+    {
       "currency": "NZD",
       "title": "Reserve Bank files DCS disclosure charge against Westpac New Zealand Limited",
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-06T08:59:33.788655+00:00"
+      "checked_at": "2026-11-06T10:05:14.904462+00:00"
     }
   ],
   "limitations": [
