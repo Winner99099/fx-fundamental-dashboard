@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T00:16:33.911587+00:00",
+  "generated_at": "2026-11-06T01:37:12.686661+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -139,14 +139,6 @@
       "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
       "time": "Tue, 13 Oct 2026 18:00:00 GMT",
-      "impact": "High"
-    },
-    {
-      "currency": "NZD",
-      "title": "Updates to the October Monetary Policy Review and November Financial Stability Report",
-      "summary": "We have updated the media conference and publication arrangements for the October 2026 MPR and the November 2026 FSR.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/updates-to-the-october-mpr-and-november-fsr",
-      "time": "Tue, 06 Oct 2026 00:00:00 +1300",
       "impact": "High"
     },
     {
@@ -374,6 +366,14 @@
       "impact": "High"
     },
     {
+      "currency": "NZD",
+      "title": "Reserve Bank files DCS disclosure charge against Westpac New Zealand Limited",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
+      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/reserve-bank-files-dcs-disclosure-charge-against-westpac-new-zealand-limited",
+      "time": "Fri, 06 Nov 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
       "currency": "CHF",
       "title": "2026-11-05 - Martin Schlegel: Transmission and conduct of monetary policy in Switzerland",
       "summary": "To achieve its mandate, a central bank needs to understand how its actions affect the financial system and the economy. Switzerland is a small open economy with a stable political and institutional environment. This creates a special setting for monetary policy. Our main tool is the SNB policy rate.",
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-06T00:16:33.911587+00:00"
+      "checked_at": "2026-11-06T01:37:12.686661+00:00"
     }
   ],
   "limitations": [
