@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T03:31:25.203074+00:00",
+  "generated_at": "2026-11-08T04:30:10.069063+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -83,6 +83,22 @@
       "summary": "Monetary Policy Review media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/ocr-held-at-2-75-percent",
       "time": "Wed, 28 Oct 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261030.xlsx",
+      "time": "Wed, 04 Nov 2026 17:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Collateral Accepted by the Bank of Japan (End of  Oct.)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
+      "time": "Wed, 04 Nov 2026 17:00:00 +0900",
       "impact": "High"
     },
     {
@@ -206,6 +222,14 @@
       "impact": "High"
     },
     {
+      "currency": "JPY",
+      "title": "Holding the Twenty-fifth Round of the \"Bond Market Group\" Meetings",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
+      "time": "Thu, 05 Nov 2026 16:00:00 +0900",
+      "impact": "High"
+    },
+    {
       "currency": "GBP",
       "title": "Bank rate increased to 4% - November 2026 Monetary Policy Summary and Minutes",
       "summary": "The Bank of England\u2019s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
@@ -222,6 +246,22 @@
       "impact": "High"
     },
     {
+      "currency": "JPY",
+      "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
+      "time": "Thu, 05 Nov 2026 08:50:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Minutes of the Monetary Policy Meeting on September 17 and 18, 2026",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/mopo/mpmsche_minu/minu_2026/g260918.pdf",
+      "time": "Thu, 05 Nov 2026 08:50:00 +0900",
+      "impact": "High"
+    },
+    {
       "currency": "EUR",
       "title": "Piero Cipollone: Shaping the future of money",
       "summary": "",
@@ -235,6 +275,14 @@
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
       "time": "Sat, 07 Nov 2026 15:00:00 +0100",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Speech by Governor UEDA at the 2026 Michel Camdessus Central Banking Lecture, International Monetary Fund",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/about/press/koen_2026/ko261107a.htm",
+      "time": "Sat, 07 Nov 2026 01:00:00 +0900",
       "impact": "High"
     },
     {
@@ -291,6 +339,22 @@
       "summary": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
       "time": "Fri, 16 Oct 2026 15:00:00 GMT",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
+      "time": "Fri, 06 Nov 2026 16:00:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "IMES Discussion Paper Series (2026)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/research/imes/dps/dps26.htm",
+      "time": "Fri, 06 Nov 2026 11:00:00 +0900",
       "impact": "High"
     },
     {
@@ -379,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
-      "status": "error: not well-formed (invalid token): line 10, column 69",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "status": "ok",
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-08T03:31:25.203074+00:00"
+      "checked_at": "2026-11-08T04:30:10.069063+00:00"
     }
   ],
   "limitations": [
