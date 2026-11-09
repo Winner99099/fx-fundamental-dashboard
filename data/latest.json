@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T08:31:54.151104+00:00",
+  "generated_at": "2026-11-09T09:40:23.186497+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -238,59 +238,11 @@
       "impact": "High"
     },
     {
-      "currency": "JPY",
-      "title": "Speech by Governor UEDA at the 2026 Michel Camdessus Central Banking Lecture, International Monetary Fund",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/about/press/koen_2026/ko261107a.htm",
-      "time": "Sat, 07 Nov 2026 01:00:00 +0900",
-      "impact": "High"
-    },
-    {
       "currency": "NZD",
       "title": "New framework supports access to basic transaction services",
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) has brought together public and private sector organisations to sign a Memorandum of Understanding (MoU) aimed at supporting access to basic transaction services in New Zealand.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/new-framework-supports-access-to-basic-transaction-services",
       "time": "Mon, 19 Oct 2026 00:00:00 +1300",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Amounts Outstanding in the Call Money Market (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/market/short/call/call.xlsx",
-      "time": "Mon, 09 Nov 2026 15:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Consumption Activity Index",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/research_data/cai/index.htm",
-      "time": "Mon, 09 Nov 2026 14:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Market Operations by the Bank of Japan (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
-      "time": "Mon, 09 Nov 2026 08:50:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Monetary Base and the Bank of Japan's Transactions (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mbt/mbt2610.pdf",
-      "time": "Mon, 09 Nov 2026 08:50:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Bank of Japan's Transactions with the Government (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
-      "time": "Mon, 09 Nov 2026 08:50:00 +0900",
       "impact": "High"
     },
     {
@@ -342,22 +294,6 @@
       "impact": "High"
     },
     {
-      "currency": "JPY",
-      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
-      "time": "Fri, 06 Nov 2026 16:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "IMES Discussion Paper Series (2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/imes/dps/dps26.htm",
-      "time": "Fri, 06 Nov 2026 11:00:00 +0900",
-      "impact": "High"
-    },
-    {
       "currency": "EUR",
       "title": "ECB publishes consolidated banking data for end-June 2026",
       "summary": "",
@@ -371,6 +307,14 @@
       "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/reserve-bank-files-dcs-disclosure-charge-against-westpac-new-zealand-limited",
       "time": "Fri, 06 Nov 2026 00:00:00 +1300",
+      "impact": "High"
+    },
+    {
+      "currency": "CHF",
+      "title": "2026-11-09 - Data portal - Important monetary policy data, 9 November 2026",
+      "summary": "",
+      "url": "https://www.snb.ch/en/publications/statistical-publications/data-portal/2026/11/statpub_news_20261109_gwd",
+      "time": "",
       "impact": "High"
     },
     {
@@ -428,14 +372,6 @@
       "url": "https://www.snb.ch/en/publications/statistical-publications/data-portal/2026/11/statpub_news_20261102_a",
       "time": "",
       "impact": "High"
-    },
-    {
-      "currency": "CHF",
-      "title": "2026-11-02 - Data portal - Important monetary policy data, 2 November 2026",
-      "summary": "",
-      "url": "https://www.snb.ch/en/publications/statistical-publications/data-portal/2026/11/statpub_news_20261102_gwd",
-      "time": "",
-      "impact": "High"
     }
   ],
   "sources": [
@@ -443,49 +379,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
-      "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "status": "error: not well-formed (invalid token): line 10, column 69",
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-09T08:31:54.151104+00:00"
+      "checked_at": "2026-11-09T09:40:23.186497+00:00"
     }
   ],
   "limitations": [
