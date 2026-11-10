@@ -53,6 +53,20 @@ INDICATORS = {
 }
 WEIGHTS = {"inflation": 25.0, "gdp_growth": 20.0, "unemployment": 15.0}
 
+# Headline policy rates verified against central-bank publications on 10 Nov 2026.
+# USD uses the upper end of the Fed target range for numeric comparisons; the
+# display label preserves the full target range. Recheck after each policy decision.
+POLICY_RATES = {
+    "USD": {"value": 4.00, "display": "3.75–4.00%", "basis": "Fed target range", "as_of": "2026-10-29", "url": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm"},
+    "EUR": {"value": 2.50, "display": "2.50%", "basis": "ECB deposit facility", "as_of": "2026-09-16", "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/index.en.html"},
+    "GBP": {"value": 4.00, "display": "4.00%", "basis": "BoE Bank Rate", "as_of": "2026-11-05", "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026"},
+    "JPY": {"value": 1.25, "display": "1.25%", "basis": "BoJ short-term policy rate", "as_of": "2026-10-30", "url": "https://www.boj.or.jp/en/"},
+    "CHF": {"value": 0.00, "display": "0.00%", "basis": "SNB policy rate", "as_of": "2026-09-24", "url": "https://www.snb.ch/en/"},
+    "CAD": {"value": 2.50, "display": "2.50%", "basis": "BoC overnight rate target", "as_of": "2026-10-28", "url": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/"},
+    "AUD": {"value": 4.85, "display": "4.85%", "basis": "RBA cash rate target", "as_of": "2026-11-04", "url": "https://www.rba.gov.au/"},
+    "NZD": {"value": 2.75, "display": "2.75%", "basis": "RBNZ official cash rate", "as_of": "2026-10-28", "url": "https://www.rbnz.govt.nz/"},
+}
+
 
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": "MacroPulseFXDashboard/3.3 (public-data research)"})
@@ -182,7 +196,11 @@ def build_currency(code, country, country_name):
         "data_status": f"Partial · {len(available)}/3 macro series · annual data",
         "country_proxy": country_name,
         "data_year": latest_year,
-        "policy_rate": None,
+        "policy_rate": POLICY_RATES[code]["value"],
+        "policy_rate_display": POLICY_RATES[code]["display"],
+        "policy_rate_basis": POLICY_RATES[code]["basis"],
+        "policy_rate_as_of": POLICY_RATES[code]["as_of"],
+        "policy_rate_source": POLICY_RATES[code]["url"],
         "inflation": metrics["inflation"]["value"],
         "inflation_year": metrics["inflation"]["year"],
         "gdp_growth": metrics["gdp_growth"]["value"],
@@ -284,7 +302,7 @@ output = {
     "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v3.3-official-macro-partial-score",
+    "model": "v3.4-policy-rates-and-2dp-display",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
