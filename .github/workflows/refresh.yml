@@ -2,8 +2,8 @@ name: Refresh macro dashboard data
 on:
   workflow_dispatch:
   schedule:
-    # GitHub scheduled workflows are best-effort; do not treat as tick-level alerts.
-    - cron: "7,22,37,52 * * * *"
+    # Five-minute target; GitHub scheduled runs are best-effort and may be delayed.
+    - cron: "*/5 * * * *"
 permissions:
   contents: write
 jobs:
