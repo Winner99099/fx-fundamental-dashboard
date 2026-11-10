@@ -26,7 +26,7 @@ CFTC module and economic calendar are clearly marked pending; no fake values or 
 6. Confirm **Settings → Pages** still deploys from `main` / root. Wait for deployment, then open the existing Pages URL.
 
 ## Update timing
-- GitHub Actions target: every four hours at minute 7 UTC (03:07, 07:07, 11:07, 15:07, 19:07, 23:07 Singapore time).
+- GitHub Actions target: every 5 minutes (`*/5 * * * *`, UTC). GitHub scheduled runs are best-effort and may be delayed; they are not guaranteed to start exactly every 5 minutes.
 - GitHub schedule is best-effort and may be delayed.
 - Browser polling: every five minutes while the page is open. This only reloads the latest snapshot; it does not trigger the data collector.
 

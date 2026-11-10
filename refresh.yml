@@ -2,8 +2,8 @@ name: Refresh FX macro dashboard
 on:
   workflow_dispatch:
   schedule:
-    # Every four hours at minute 7 UTC (best-effort GitHub schedule).
-    - cron: "7 */4 * * *"
+    # Every five minutes (best-effort GitHub schedule).
+    - cron: "*/5 * * * *"
 permissions:
   contents: write
 concurrency:
