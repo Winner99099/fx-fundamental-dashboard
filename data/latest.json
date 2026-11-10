@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-10T04:40:01.601092+00:00",
+  "generated_at": "2026-11-10T05:35:00.265113+00:00",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v3.3-official-macro-partial-score",
+  "model": "v3.4-policy-rates-and-2dp-display",
   "history_window_days": 90,
   "scoring": {
     "scale": "-5 to +5",
@@ -32,7 +32,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "United States",
       "data_year": 2024,
-      "policy_rate": null,
+      "policy_rate": 4.0,
+      "policy_rate_display": "3.75\u20134.00%",
+      "policy_rate_basis": "Fed target range",
+      "policy_rate_as_of": "2026-10-29",
+      "policy_rate_source": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
       "inflation": 2.94952520485207,
       "inflation_year": 2024,
       "gdp_growth": 2.16138195623856,
@@ -159,7 +163,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "Euro area",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 2.5,
+      "policy_rate_display": "2.50%",
+      "policy_rate_basis": "ECB deposit facility",
+      "policy_rate_as_of": "2026-09-16",
+      "policy_rate_source": "https://www.ecb.europa.eu/press/pr/date/2026/html/index.en.html",
       "inflation": 2.46605755272817,
       "inflation_year": 2025,
       "gdp_growth": 1.4110724231835,
@@ -286,7 +294,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "United Kingdom",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 4.0,
+      "policy_rate_display": "4.00%",
+      "policy_rate_basis": "BoE Bank Rate",
+      "policy_rate_as_of": "2026-11-05",
+      "policy_rate_source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
       "inflation": 3.88306881625999,
       "inflation_year": 2025,
       "gdp_growth": 1.38844207858726,
@@ -413,7 +425,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "Japan",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 1.25,
+      "policy_rate_display": "1.25%",
+      "policy_rate_basis": "BoJ short-term policy rate",
+      "policy_rate_as_of": "2026-10-30",
+      "policy_rate_source": "https://www.boj.or.jp/en/",
       "inflation": 3.17253034260247,
       "inflation_year": 2025,
       "gdp_growth": 1.19311288444599,
@@ -540,7 +556,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "Switzerland",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 0.0,
+      "policy_rate_display": "0.00%",
+      "policy_rate_basis": "SNB policy rate",
+      "policy_rate_as_of": "2026-09-24",
+      "policy_rate_source": "https://www.snb.ch/en/",
       "inflation": 0.154376978290185,
       "inflation_year": 2025,
       "gdp_growth": 1.30007790958307,
@@ -667,7 +687,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "Canada",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 2.5,
+      "policy_rate_display": "2.50%",
+      "policy_rate_basis": "BoC overnight rate target",
+      "policy_rate_as_of": "2026-10-28",
+      "policy_rate_source": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/",
       "inflation": 2.07232411149103,
       "inflation_year": 2025,
       "gdp_growth": 1.74268536175708,
@@ -794,7 +818,11 @@
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "Australia",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 4.85,
+      "policy_rate_display": "4.85%",
+      "policy_rate_basis": "RBA cash rate target",
+      "policy_rate_as_of": "2026-11-04",
+      "policy_rate_source": "https://www.rba.gov.au/",
       "inflation": 2.87403791660173,
       "inflation_year": 2025,
       "gdp_growth": 1.35039785076631,
@@ -916,16 +944,20 @@
     },
     {
       "code": "NZD",
-      "score": -0.7,
-      "confidence": "Low",
-      "data_status": "Partial \u00b7 2/3 macro series \u00b7 annual data",
+      "score": -1.01,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
       "country_proxy": "New Zealand",
       "data_year": 2025,
-      "policy_rate": null,
+      "policy_rate": 2.75,
+      "policy_rate_display": "2.75%",
+      "policy_rate_basis": "RBNZ official cash rate",
+      "policy_rate_as_of": "2026-10-28",
+      "policy_rate_source": "https://www.rbnz.govt.nz/",
       "inflation": 2.8397963180572,
       "inflation_year": 2025,
-      "gdp_growth": null,
-      "gdp_growth_year": null,
+      "gdp_growth": 0.462871830681081,
+      "gdp_growth_year": 2025,
       "unemployment": 5.076,
       "unemployment_year": 2025,
       "metrics": {
@@ -964,10 +996,35 @@
           "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=NZL"
         },
         "gdp_growth": {
-          "value": null,
-          "year": null,
-          "history": [],
-          "score": null,
+          "value": 0.462871830681081,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 0.462871830681081
+            },
+            {
+              "year": 2024,
+              "value": -0.868722371893952
+            },
+            {
+              "year": 2023,
+              "value": 1.81389453412019
+            },
+            {
+              "year": 2022,
+              "value": 3.34521847792682
+            },
+            {
+              "year": 2021,
+              "value": 4.29916005216614
+            },
+            {
+              "year": 2020,
+              "value": -0.240916114758988
+            }
+          ],
+          "score": -1.63,
           "label": "GDP growth (annual %)",
           "source": "World Bank",
           "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=NZL"
@@ -1009,13 +1066,12 @@
       },
       "component_weights_available": {
         "inflation": 25.0,
+        "gdp_growth": 20.0,
         "unemployment": 15.0
       },
-      "available_weight_pct": 40.0,
-      "summary": "Partial macro score based on 2 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": [
-        "gdp_growth: The read operation timed out"
-      ]
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     }
   ],
   "events": [
@@ -2591,7 +2647,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -2599,7 +2655,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -2607,7 +2663,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 38,
       "new_releases_added": 0
     },
@@ -2615,7 +2671,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 47,
       "new_releases_added": 0
     },
@@ -2623,7 +2679,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2631,7 +2687,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2639,7 +2695,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2647,7 +2703,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "dated_releases_in_feed_90d": 26,
       "new_releases_added": 0
     },
@@ -2655,7 +2711,7 @@
       "name": "World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2024,
       "indicators_available": 3
     },
@@ -2663,7 +2719,7 @@
       "name": "World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2671,7 +2727,7 @@
       "name": "World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2679,7 +2735,7 @@
       "name": "World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2687,7 +2743,7 @@
       "name": "World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2695,7 +2751,7 @@
       "name": "World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2703,7 +2759,7 @@
       "name": "World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2711,9 +2767,9 @@
       "name": "World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "checked_at": "2026-11-10T05:35:00.265113+00:00",
       "data_year": 2025,
-      "indicators_available": 2
+      "indicators_available": 3
     }
   ],
   "limitations": [
