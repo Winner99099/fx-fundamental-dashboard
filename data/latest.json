@@ -1,56 +1,1021 @@
 {
-  "generated_at": "2026-11-10T03:58:43.939016+00:00",
+  "schema_version": 3,
+  "generated_at": "2026-11-10T04:40:01.601092+00:00",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v3.2-90d-central-bank-history",
+  "model": "v3.3-official-macro-partial-score",
   "history_window_days": 90,
+  "scoring": {
+    "scale": "-5 to +5",
+    "method": "Latest annual indicator versus the preceding up to five annual observations; standardised by historical dispersion and smoothed with tanh.",
+    "weights": {
+      "inflation": 25.0,
+      "gdp_growth": 20.0,
+      "unemployment": 15.0
+    },
+    "direction": {
+      "inflation": "Lower than own recent history scores positively; this is a momentum proxy, not an inflation-target assessment.",
+      "gdp_growth": "Higher than own recent history scores positively.",
+      "unemployment": "Lower than own recent history scores positively."
+    },
+    "excluded_until_integrated": [
+      "policy-rate level and expected path (30%)",
+      "central-bank communication (10%)",
+      "market consensus-versus-actual surprises"
+    ],
+    "important": "Scores are partial macro context, not standalone FX trading signals. Available component weights are renormalised; no missing input is treated as zero."
+  },
   "currencies": [
     {
       "code": "USD",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": 0.23,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "United States",
+      "data_year": 2024,
+      "policy_rate": null,
+      "inflation": 2.94952520485207,
+      "inflation_year": 2024,
+      "gdp_growth": 2.16138195623856,
+      "gdp_growth_year": 2025,
+      "unemployment": 4.198,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 2.94952520485207,
+          "year": 2024,
+          "history": [
+            {
+              "year": 2024,
+              "value": 2.94952520485207
+            },
+            {
+              "year": 2023,
+              "value": 4.11633838374487
+            },
+            {
+              "year": 2022,
+              "value": 8.00279982052121
+            },
+            {
+              "year": 2021,
+              "value": 4.69785886363742
+            },
+            {
+              "year": 2020,
+              "value": 1.23358439630629
+            },
+            {
+              "year": 2019,
+              "value": 1.8122100752602
+            }
+          ],
+          "score": 1.19,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=USA"
+        },
+        "gdp_growth": {
+          "value": 2.16138195623856,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.16138195623856
+            },
+            {
+              "year": 2024,
+              "value": 2.79318715363841
+            },
+            {
+              "year": 2023,
+              "value": 2.93436322440155
+            },
+            {
+              "year": 2022,
+              "value": 2.52421385073222
+            },
+            {
+              "year": 2021,
+              "value": 6.15202247867526
+            },
+            {
+              "year": 2020,
+              "value": -2.081375977796
+            }
+          ],
+          "score": -0.6,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=USA"
+        },
+        "unemployment": {
+          "value": 4.198,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 4.198
+            },
+            {
+              "year": 2024,
+              "value": 4.022
+            },
+            {
+              "year": 2023,
+              "value": 3.638
+            },
+            {
+              "year": 2022,
+              "value": 3.65
+            },
+            {
+              "year": 2021,
+              "value": 5.349
+            },
+            {
+              "year": 2020,
+              "value": 8.055
+            }
+          ],
+          "score": -0.26,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=USA"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "EUR",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": 0.56,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "Euro area",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 2.46605755272817,
+      "inflation_year": 2025,
+      "gdp_growth": 1.4110724231835,
+      "gdp_growth_year": 2025,
+      "unemployment": 6.28355946264135,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 2.46605755272817,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.46605755272817
+            },
+            {
+              "year": 2024,
+              "value": 2.2564981433876
+            },
+            {
+              "year": 2023,
+              "value": 5.94643667725823
+            },
+            {
+              "year": 2022,
+              "value": 8.54686993188457
+            },
+            {
+              "year": 2021,
+              "value": 2.52692009066166
+            },
+            {
+              "year": 2020,
+              "value": 0.219064904841984
+            }
+          ],
+          "score": 0.05,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=EMU"
+        },
+        "gdp_growth": {
+          "value": 1.4110724231835,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.4110724231835
+            },
+            {
+              "year": 2024,
+              "value": 0.938707263867116
+            },
+            {
+              "year": 2023,
+              "value": 0.460070365687699
+            },
+            {
+              "year": 2022,
+              "value": 3.66468497532753
+            },
+            {
+              "year": 2021,
+              "value": 6.44349747359809
+            },
+            {
+              "year": 2020,
+              "value": -6.04374915754508
+            }
+          ],
+          "score": 0.28,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=EMU"
+        },
+        "unemployment": {
+          "value": 6.28355946264135,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 6.28355946264135
+            },
+            {
+              "year": 2024,
+              "value": 6.34778064605911
+            },
+            {
+              "year": 2023,
+              "value": 6.52267389015226
+            },
+            {
+              "year": 2022,
+              "value": 6.72976967374639
+            },
+            {
+              "year": 2021,
+              "value": 7.69446992680361
+            },
+            {
+              "year": 2020,
+              "value": 7.78262585986041
+            }
+          ],
+          "score": 1.77,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=EMU"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "GBP",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": -0.79,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "United Kingdom",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 3.88306881625999,
+      "inflation_year": 2025,
+      "gdp_growth": 1.38844207858726,
+      "gdp_growth_year": 2025,
+      "unemployment": 4.746,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 3.88306881625999,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 3.88306881625999
+            },
+            {
+              "year": 2024,
+              "value": 3.2715729463592
+            },
+            {
+              "year": 2023,
+              "value": 6.79396706793962
+            },
+            {
+              "year": 2022,
+              "value": 7.92204883147902
+            },
+            {
+              "year": 2021,
+              "value": 2.51837109614213
+            },
+            {
+              "year": 2020,
+              "value": 0.989486703772491
+            }
+          ],
+          "score": -0.58,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=GBR"
+        },
+        "gdp_growth": {
+          "value": 1.38844207858726,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.38844207858726
+            },
+            {
+              "year": 2024,
+              "value": 1.08027716858781
+            },
+            {
+              "year": 2023,
+              "value": 0.271650048355255
+            },
+            {
+              "year": 2022,
+              "value": 5.14970388522993
+            },
+            {
+              "year": 2021,
+              "value": 8.5431118453255
+            },
+            {
+              "year": 2020,
+              "value": -10.047896637362
+            }
+          ],
+          "score": 0.12,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=GBR"
+        },
+        "unemployment": {
+          "value": 4.746,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 4.746
+            },
+            {
+              "year": 2024,
+              "value": 4.361
+            },
+            {
+              "year": 2023,
+              "value": 4.025
+            },
+            {
+              "year": 2022,
+              "value": 3.768
+            },
+            {
+              "year": 2021,
+              "value": 4.864
+            },
+            {
+              "year": 2020,
+              "value": 4.472
+            }
+          ],
+          "score": -2.35,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=GBR"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "JPY",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": 0.41,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "Japan",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 3.17253034260247,
+      "inflation_year": 2025,
+      "gdp_growth": 1.19311288444599,
+      "gdp_growth_year": 2025,
+      "unemployment": 2.451,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 3.17253034260247,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 3.17253034260247
+            },
+            {
+              "year": 2024,
+              "value": 2.7385368163524
+            },
+            {
+              "year": 2023,
+              "value": 3.26813365933163
+            },
+            {
+              "year": 2022,
+              "value": 2.49770278172254
+            },
+            {
+              "year": 2021,
+              "value": -0.233352779398263
+            },
+            {
+              "year": 2020,
+              "value": -0.024995834027731
+            }
+          ],
+          "score": -1.12,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=JPN"
+        },
+        "gdp_growth": {
+          "value": 1.19311288444599,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.19311288444599
+            },
+            {
+              "year": 2024,
+              "value": -0.240084236041696
+            },
+            {
+              "year": 2023,
+              "value": 0.720785304749811
+            },
+            {
+              "year": 2022,
+              "value": 1.33164750653741
+            },
+            {
+              "year": 2021,
+              "value": 3.56419531474475
+            },
+            {
+              "year": 2020,
+              "value": -4.28327942675573
+            }
+          ],
+          "score": 0.46,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=JPN"
+        },
+        "unemployment": {
+          "value": 2.451,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.451
+            },
+            {
+              "year": 2024,
+              "value": 2.5
+            },
+            {
+              "year": 2023,
+              "value": 2.6
+            },
+            {
+              "year": 2022,
+              "value": 2.614
+            },
+            {
+              "year": 2021,
+              "value": 2.808
+            },
+            {
+              "year": 2020,
+              "value": 2.809
+            }
+          ],
+          "score": 2.91,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=JPN"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "CHF",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": -0.04,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "Switzerland",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 0.154376978290185,
+      "inflation_year": 2025,
+      "gdp_growth": 1.30007790958307,
+      "gdp_growth_year": 2025,
+      "unemployment": 4.873,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 0.154376978290185,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 0.154376978290185
+            },
+            {
+              "year": 2024,
+              "value": 1.06234041976594
+            },
+            {
+              "year": 2023,
+              "value": 2.13540088016386
+            },
+            {
+              "year": 2022,
+              "value": 2.83502798644451
+            },
+            {
+              "year": 2021,
+              "value": 0.581814168489855
+            },
+            {
+              "year": 2020,
+              "value": -0.725874933313402
+            }
+          ],
+          "score": 1.76,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CHE"
+        },
+        "gdp_growth": {
+          "value": 1.30007790958307,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.30007790958307
+            },
+            {
+              "year": 2024,
+              "value": 1.39033363875791
+            },
+            {
+              "year": 2023,
+              "value": 0.825560934124624
+            },
+            {
+              "year": 2022,
+              "value": 3.53430286842426
+            },
+            {
+              "year": 2021,
+              "value": 6.17622836050151
+            },
+            {
+              "year": 2020,
+              "value": -2.2552579425106
+            }
+          ],
+          "score": -0.08,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=CHE"
+        },
+        "unemployment": {
+          "value": 4.873,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 4.873
+            },
+            {
+              "year": 2024,
+              "value": 4.343
+            },
+            {
+              "year": 2023,
+              "value": 4.043
+            },
+            {
+              "year": 2022,
+              "value": 4.122
+            },
+            {
+              "year": 2021,
+              "value": 5.013
+            },
+            {
+              "year": 2020,
+              "value": 4.817
+            }
+          ],
+          "score": -2.99,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CHE"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "CAD",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": 0.38,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "Canada",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 2.07232411149103,
+      "inflation_year": 2025,
+      "gdp_growth": 1.74268536175708,
+      "gdp_growth_year": 2025,
+      "unemployment": 6.907,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 2.07232411149103,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.07232411149103
+            },
+            {
+              "year": 2024,
+              "value": 2.38158383281173
+            },
+            {
+              "year": 2023,
+              "value": 3.87900159788425
+            },
+            {
+              "year": 2022,
+              "value": 6.80280115341612
+            },
+            {
+              "year": 2021,
+              "value": 3.39519318527527
+            },
+            {
+              "year": 2020,
+              "value": 0.716999632307827
+            }
+          ],
+          "score": 1.59,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CAN"
+        },
+        "gdp_growth": {
+          "value": 1.74268536175708,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.74268536175708
+            },
+            {
+              "year": 2024,
+              "value": 2.04626605401701
+            },
+            {
+              "year": 2023,
+              "value": 1.95308552199025
+            },
+            {
+              "year": 2022,
+              "value": 4.69541985045903
+            },
+            {
+              "year": 2021,
+              "value": 5.95052804984759
+            },
+            {
+              "year": 2020,
+              "value": -5.03823342794087
+            }
+          ],
+          "score": -0.2,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=CAN"
+        },
+        "unemployment": {
+          "value": 6.907,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 6.907
+            },
+            {
+              "year": 2024,
+              "value": 6.351
+            },
+            {
+              "year": 2023,
+              "value": 5.415
+            },
+            {
+              "year": 2022,
+              "value": 5.279
+            },
+            {
+              "year": 2021,
+              "value": 7.527
+            },
+            {
+              "year": 2020,
+              "value": 9.657
+            }
+          ],
+          "score": -0.85,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CAN"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "AUD",
-      "score": 0.0,
-      "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "score": -0.28,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "country_proxy": "Australia",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 2.87403791660173,
+      "inflation_year": 2025,
+      "gdp_growth": 1.35039785076631,
+      "gdp_growth_year": 2025,
+      "unemployment": 4.09,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 2.87403791660173,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.87403791660173
+            },
+            {
+              "year": 2024,
+              "value": 3.16656665428797
+            },
+            {
+              "year": 2023,
+              "value": 5.59701792296707
+            },
+            {
+              "year": 2022,
+              "value": 6.59409658717841
+            },
+            {
+              "year": 2021,
+              "value": 2.86391284709318
+            },
+            {
+              "year": 2020,
+              "value": 0.846900734607273
+            }
+          ],
+          "score": 0.36,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=AUS"
+        },
+        "gdp_growth": {
+          "value": 1.35039785076631,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 1.35039785076631
+            },
+            {
+              "year": 2024,
+              "value": 1.37340773365975
+            },
+            {
+              "year": 2023,
+              "value": 3.58382100798981
+            },
+            {
+              "year": 2022,
+              "value": 4.25304559238732
+            },
+            {
+              "year": 2021,
+              "value": 2.00694844335034
+            },
+            {
+              "year": 2020,
+              "value": -0.133531904304775
+            }
+          ],
+          "score": -1.03,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=AUS"
+        },
+        "unemployment": {
+          "value": 4.09,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 4.09
+            },
+            {
+              "year": 2024,
+              "value": 3.942
+            },
+            {
+              "year": 2023,
+              "value": 3.668
+            },
+            {
+              "year": 2022,
+              "value": 3.728
+            },
+            {
+              "year": 2021,
+              "value": 5.022
+            },
+            {
+              "year": 2020,
+              "value": 6.394
+            }
+          ],
+          "score": -0.35,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=AUS"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "NZD",
-      "score": 0.0,
+      "score": -0.7,
       "confidence": "Low",
-      "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected."
+      "data_status": "Partial \u00b7 2/3 macro series \u00b7 annual data",
+      "country_proxy": "New Zealand",
+      "data_year": 2025,
+      "policy_rate": null,
+      "inflation": 2.8397963180572,
+      "inflation_year": 2025,
+      "gdp_growth": null,
+      "gdp_growth_year": null,
+      "unemployment": 5.076,
+      "unemployment_year": 2025,
+      "metrics": {
+        "inflation": {
+          "value": 2.8397963180572,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.8397963180572
+            },
+            {
+              "year": 2024,
+              "value": 2.92279782301956
+            },
+            {
+              "year": 2023,
+              "value": 5.73316283034957
+            },
+            {
+              "year": 2022,
+              "value": 7.17222476016441
+            },
+            {
+              "year": 2021,
+              "value": 3.94112060778728
+            },
+            {
+              "year": 2020,
+              "value": 1.71456170007244
+            }
+          ],
+          "score": 1.38,
+          "label": "Inflation, consumer prices (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=NZL"
+        },
+        "gdp_growth": {
+          "value": null,
+          "year": null,
+          "history": [],
+          "score": null,
+          "label": "GDP growth (annual %)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=NZL"
+        },
+        "unemployment": {
+          "value": 5.076,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 5.076
+            },
+            {
+              "year": 2024,
+              "value": 4.724
+            },
+            {
+              "year": 2023,
+              "value": 3.734
+            },
+            {
+              "year": 2022,
+              "value": 3.299
+            },
+            {
+              "year": 2021,
+              "value": 3.776
+            },
+            {
+              "year": 2020,
+              "value": 4.595
+            }
+          ],
+          "score": -4.16,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=NZL"
+        }
+      },
+      "component_weights_available": {
+        "inflation": 25.0,
+        "unemployment": 15.0
+      },
+      "available_weight_pct": 40.0,
+      "summary": "Partial macro score based on 2 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": [
+        "gdp_growth: The read operation timed out"
+      ]
     }
   ],
   "events": [
@@ -1626,7 +2591,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -1634,7 +2599,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -1642,7 +2607,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 38,
       "new_releases_added": 0
     },
@@ -1650,7 +2615,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 47,
       "new_releases_added": 0
     },
@@ -1658,7 +2623,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -1666,7 +2631,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -1674,7 +2639,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -1682,17 +2647,82 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-10T03:58:43.939016+00:00",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
       "dated_releases_in_feed_90d": 26,
       "new_releases_added": 0
+    },
+    {
+      "name": "World Bank \u00b7 United States",
+      "url": "https://data.worldbank.org/country/usa",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2024,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 Euro area",
+      "url": "https://data.worldbank.org/country/emu",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 United Kingdom",
+      "url": "https://data.worldbank.org/country/gbr",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 Japan",
+      "url": "https://data.worldbank.org/country/jpn",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 Switzerland",
+      "url": "https://data.worldbank.org/country/che",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 Canada",
+      "url": "https://data.worldbank.org/country/can",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 Australia",
+      "url": "https://data.worldbank.org/country/aus",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
+    },
+    {
+      "name": "World Bank \u00b7 New Zealand",
+      "url": "https://data.worldbank.org/country/nzl",
+      "status": "ok",
+      "checked_at": "2026-11-10T04:40:01.601092+00:00",
+      "data_year": 2025,
+      "indicators_available": 2
     }
   ],
   "limitations": [
-    "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window.",
-    "RSS archive depth varies by central bank; the first run cannot recover older releases that a feed no longer exposes.",
-    "Historical records already collected are retained between workflow runs and removed after 90 days.",
-    "Scores are neutral placeholders, not trading signals; comparable macro surprises and rate expectations are not yet connected.",
-    "Official RSS feeds are not a complete economic calendar and may publish with delay.",
+    "Macro indicators are official World Bank annual series; they are not real-time release surprises and may lag current conditions.",
+    "EUR uses the World Bank euro-area aggregate; other currencies use the corresponding national economy.",
+    "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
+    "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
+    "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
+    "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
     "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval."
   ]
 }
