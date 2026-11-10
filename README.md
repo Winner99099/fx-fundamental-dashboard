@@ -2,33 +2,21 @@
 
 A static GitHub Pages research dashboard with a transparent official-source news pipeline.
 
-## What's repaired / rebuilt
-- Removed the incomplete embedded script and the hardcoded geopolitical narratives / sample macro numbers.
-- Replaced the invalid Tailwind CDN and malformed font import with a self-contained responsive stylesheet.
-- Added a robust `app.js` that fetches `data/latest.json` using a cache-busting URL and validates the response.
-- Added navigation for overview, currency fundamentals, pair analysis, news, event watch, CFTC positioning and a browser-local trading journal.
-- Added empty/error/stale-data states so a failed feed cannot look like a live signal.
-- Added official central-bank RSS ingestion for all eight currencies.
-- Changed GitHub Actions to a four-hour target schedule (`7 */4 * * *` UTC) and manual dispatch.
-- Writes both `data/latest.json` (dashboard source) and root `latest.json` (download convenience).
+## Current live-update behaviour
+- GitHub Actions target schedule: every 5 minutes (`*/5 * * * *` UTC), plus manual workflow dispatch.
+- Browser polling: every five minutes while the dashboard is open. It fetches `data/latest.json` with a cache-busting query and `cache: no-store`.
+- GitHub scheduled workflows are best-effort and may be delayed or skipped; a five-minute cron is a target, not a guaranteed real-time SLA.
+- The collector currently refreshes official central-bank RSS/news feeds. It does not yet fetch live FX spot prices or consensus/actual macro surprises.
 
-## Important data integrity notes
-This is a working dashboard shell and official central-bank news collector, **not yet a complete institutional FX model**. Numerical currency scores and macro indicators are deliberately `null` rather than fabricated. A credible score requires comparable official time series (policy rates, CPI, GDP, labour), historical standardisation, rate expectations / yield differentials, CFTC data and preferably market confirmation. Official RSS does not provide a complete calendar with consensus, actual and revisions.
+## Data integrity
+This is a working dashboard shell and official central-bank news collector, **not yet a complete institutional FX model**. Numerical currency scores and macro indicators must not be treated as verified trading signals. The current free-source collector uses neutral placeholder scores until comparable official macro series, historical standardisation and rate-expectation inputs are connected. Official RSS is not a complete economic calendar.
 
-CFTC module and economic calendar are clearly marked pending; no fake values or trade signals are displayed. Journal entries use browser `localStorage` and remain on that device/browser.
+CFTC positioning, yield curves, FX spot prices and consensus-versus-actual surprise data are not yet integrated. Do not interpret a five-minute refresh interval as five-minute changes in economic fundamentals.
 
-## Deploy to your existing GitHub Pages repository
-1. Extract this ZIP.
-2. Upload/replace the repository-root contents with the contents of this folder (not the containing folder itself). Keep `.github/workflows/refresh.yml`.
-3. Commit to the existing `main` branch.
-4. In GitHub, open **Actions** and enable workflows if prompted.
-5. Run **Refresh FX macro dashboard** once using **Run workflow**.
-6. Confirm **Settings → Pages** still deploys from `main` / root. Wait for deployment, then open the existing Pages URL.
+Journal entries use browser `localStorage` and remain on that device/browser.
 
-## Update timing
-- GitHub Actions target: every 5 minutes (`*/5 * * * *`, UTC). GitHub scheduled runs are best-effort and may be delayed; they are not guaranteed to start exactly every 5 minutes.
-- GitHub schedule is best-effort and may be delayed.
-- Browser polling: every five minutes while the page is open. This only reloads the latest snapshot; it does not trigger the data collector.
+## Deployment
+GitHub Pages remains configured to publish from `main` / root. The workflow writes `data/latest.json`; the dashboard reads that file.
 
 ## Data schema
-`data/latest.json` includes `schema_version`, `generated_at`, `currencies`, `events`, `sources`, and `limitations`. Numerical macro fields and scores are nullable. The UI treats null as unavailable.
+`data/latest.json` includes `schema_version`, `generated_at`, `currencies`, `events`, `sources`, and `limitations`. Missing numerical macro fields should remain unavailable rather than fabricated.
