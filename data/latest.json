@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:43:15.869016+00:00",
+  "generated_at": "2026-11-10T00:24:20.457213+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v2-free-source-bootstrap",
   "currencies": [
@@ -99,6 +99,22 @@
       "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
       "time": "Tue, 13 Oct 2026 18:00:00 GMT",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Principal Figures of Financial Institutions (Oct.)",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2610.pdf",
+      "time": "Tue, 10 Nov 2026 08:50:00 +0900",
+      "impact": "High"
+    },
+    {
+      "currency": "JPY",
+      "title": "Summary of Opinions at the Monetary Policy Meeting on October 29 and 30, 2026",
+      "summary": "",
+      "url": "http://www.boj.or.jp/en/mopo/mpmsche_minu/opinion_2026/opi261030.pdf",
+      "time": "Tue, 10 Nov 2026 08:50:00 +0900",
       "impact": "High"
     },
     {
@@ -342,22 +358,6 @@
       "impact": "High"
     },
     {
-      "currency": "JPY",
-      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
-      "time": "Fri, 06 Nov 2026 16:00:00 +0900",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "IMES Discussion Paper Series (2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/imes/dps/dps26.htm",
-      "time": "Fri, 06 Nov 2026 11:00:00 +0900",
-      "impact": "High"
-    },
-    {
       "currency": "EUR",
       "title": "ECB publishes consolidated banking data for end-June 2026",
       "summary": "",
@@ -443,49 +443,49 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     },
     {
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-09T23:43:15.869016+00:00"
+      "checked_at": "2026-11-10T00:24:20.457213+00:00"
     }
   ],
   "limitations": [
