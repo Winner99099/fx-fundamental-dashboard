@@ -1,39 +1,34 @@
-# 8-Currency Fundamental FX Dashboard — Version 2 (free-source starter)
+# MacroPulse V3 — Eight-Currency FX Intelligence
 
-## What this version does
-- Static responsive dashboard suitable for GitHub Pages.
-- Displays eight currency rows and a relative-strength pair ranking.
-- Refreshes the browser view every 5 minutes.
-- GitHub Actions attempts to rebuild the data snapshot every 15 minutes.
-- Pulls public official central-bank RSS/news feeds where available.
-- Exports the latest snapshot as JSON; journal is stored in the browser's local storage.
+A static GitHub Pages research dashboard with a transparent official-source news pipeline.
 
-## Important limitations (please read)
-This is a free-source starter, **not yet a complete live fundamental trading system**.
-The first data builder deliberately leaves currency scores neutral with Low confidence. It does
-not infer bullish/bearish scores from headline wording. It does not include a proper economic
-calendar with consensus/actual/revisions, real-time FX prices, OIS/forward curves, bond yields,
-or CFTC positioning. Official RSS feed availability and publication timing can vary.
-GitHub Actions cron is best-effort, not a guaranteed event-triggered alert service. The browser
-refreshes every 5 minutes only while the page is open.
+## What's repaired / rebuilt
+- Removed the incomplete embedded script and the hardcoded geopolitical narratives / sample macro numbers.
+- Replaced the invalid Tailwind CDN and malformed font import with a self-contained responsive stylesheet.
+- Added a robust `app.js` that fetches `data/latest.json` using a cache-busting URL and validates the response.
+- Added navigation for overview, currency fundamentals, pair analysis, news, event watch, CFTC positioning and a browser-local trading journal.
+- Added empty/error/stale-data states so a failed feed cannot look like a live signal.
+- Added official central-bank RSS ingestion for all eight currencies.
+- Changed GitHub Actions to a four-hour target schedule (`7 */4 * * *` UTC) and manual dispatch.
+- Writes both `data/latest.json` (dashboard source) and root `latest.json` (download convenience).
 
-## Deploy online free with GitHub Pages
-1. Create a new public GitHub repository, e.g. `fx-fundamental-dashboard`.
-2. Upload the contents of this folder to the repository root (keep `.github` and `scripts`).
-3. In repository Settings → Pages, choose **Deploy from a branch**, branch `main`, folder `/ (root)`.
-4. In Actions, enable workflows if prompted; run **Refresh macro dashboard data** once manually.
-5. Wait for Pages deployment, then open the GitHub Pages URL shown in Settings → Pages.
+## Important data integrity notes
+This is a working dashboard shell and official central-bank news collector, **not yet a complete institutional FX model**. Numerical currency scores and macro indicators are deliberately `null` rather than fabricated. A credible score requires comparable official time series (policy rates, CPI, GDP, labour), historical standardisation, rate expectations / yield differentials, CFTC data and preferably market confirmation. Official RSS does not provide a complete calendar with consensus, actual and revisions.
 
-## How the updates work
-- GitHub Actions attempts to run at minutes 7, 22, 37 and 52 each hour (UTC).
-- The workflow fetches official central-bank RSS feeds and commits `data/latest.json`.
-- Open dashboard clients fetch that JSON every five minutes.
-- A post-release reaction model is **not activated** until consensus/actual release data and market
-  confirmation feeds are integrated. Do not treat RSS headlines as release surprises.
+CFTC module and economic calendar are clearly marked pending; no fake values or trade signals are displayed. Journal entries use browser `localStorage` and remain on that device/browser.
 
-## Next technical step for a credible scoring model
-Add comparable free macro series per currency (inflation, labour market, growth, policy rate),
-standardise each series by its own history, incorporate revisions and rate expectations, and
-require price/yield confirmation before changing the directional score. A true rapid event trigger
-needs a dependable release calendar/API or push/webhook source; free official sources may not
-provide a uniform low-latency feed across all eight economies.
+## Deploy to your existing GitHub Pages repository
+1. Extract this ZIP.
+2. Upload/replace the repository-root contents with the contents of this folder (not the containing folder itself). Keep `.github/workflows/refresh.yml`.
+3. Commit to the existing `main` branch.
+4. In GitHub, open **Actions** and enable workflows if prompted.
+5. Run **Refresh FX macro dashboard** once using **Run workflow**.
+6. Confirm **Settings → Pages** still deploys from `main` / root. Wait for deployment, then open the existing Pages URL.
+
+## Update timing
+- GitHub Actions target: every four hours at minute 7 UTC (03:07, 07:07, 11:07, 15:07, 19:07, 23:07 Singapore time).
+- GitHub schedule is best-effort and may be delayed.
+- Browser polling: every five minutes while the page is open. This only reloads the latest snapshot; it does not trigger the data collector.
+
+## Data schema
+`data/latest.json` includes `schema_version`, `generated_at`, `currencies`, `events`, `sources`, and `limitations`. Numerical macro fields and scores are nullable. The UI treats null as unavailable.

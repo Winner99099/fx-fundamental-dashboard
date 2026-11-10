@@ -1,0 +1,30 @@
+name: Refresh FX macro dashboard
+on:
+  workflow_dispatch:
+  schedule:
+    # Every four hours at minute 7 UTC (best-effort GitHub schedule).
+    - cron: "7 */4 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: refresh-macro-dashboard
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build official-source snapshot
+        run: python scripts/update_data.py
+      - name: Validate JSON snapshot
+        run: python -m json.tool data/latest.json > /dev/null
+      - name: Commit refreshed snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/latest.json latest.json
+          git diff --cached --quiet || (git commit -m "Refresh FX macro snapshot" && git push)

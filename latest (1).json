@@ -1,0 +1,111 @@
+{
+  "schema_version": 3,
+  "generated_at": null,
+  "timezone": "UTC (display in SGT)",
+  "model": "v3-awaiting-first-build",
+  "refresh_target_hours": 4,
+  "currencies": [
+    {
+      "code": "USD",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "EUR",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "GBP",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "JPY",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "CHF",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "CAD",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "AUD",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    },
+    {
+      "code": "NZD",
+      "score": null,
+      "bias": "UNRANKED",
+      "policy_rate": null,
+      "inflation": null,
+      "gdp_growth": null,
+      "unemployment": null,
+      "confidence": "Low",
+      "data_status": "Awaiting official-source build",
+      "summary": "No verified comparable macro series loaded."
+    }
+  ],
+  "events": [],
+  "sources": [],
+  "limitations": [
+    "No verified data build yet.",
+    "Numerical scores remain unavailable until comparable macroeconomic inputs are integrated."
+  ]
+}

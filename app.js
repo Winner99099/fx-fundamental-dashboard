@@ -1,213 +1,105 @@
-// 8-Currency Fundamental FX Dashboard Engine
-const CURRENCIES = ['USD', 'EUR', 'GBP', 'AUD', 'NZD', 'CAD', 'CHF', 'JPY'];
+const CURRENCIES = ["USD","EUR","GBP","JPY","CHF","CAD","AUD","NZD"];
+const $ = (id) => document.getElementById(id);
+let snapshot = null;
 
-// Core macroeconomic raw baseline institutional statistics
-const defaultMacroData = {
-    USD: { rate: 4.75, cpi: 2.7, gdp: 2.6, unemp: 4.1 },
-    EUR: { rate: 3.25, cpi: 2.1, gdp: 0.9, unemp: 6.3 },
-    GBP: { rate: 4.75, cpi: 3.2, gdp: 1.0, unemp: 4.3 },
-    AUD: { rate: 4.35, cpi: 2.8, gdp: 1.5, unemp: 4.1 },
-    NZD: { rate: 4.25, cpi: 2.2, gdp: -0.2, unemp: 4.8 },
-    CAD: { rate: 3.75, cpi: 1.6, gdp: 1.2, unemp: 6.5 },
-    CHF: { rate: 1.00, cpi: 0.6, gdp: 1.4, unemp: 2.5 },
-    JPY: { rate: 0.25, cpi: 2.1, gdp: 0.5, unemp: 2.4 }
-};
-
-// Global sentiment adjustments (BBC News Alerts Integration Matrix)
-const globalNewsOverrides = {
-    EUR: { 
-        penalty: -1.5, 
-        headline: "BBC Alert: Extensive Eurozone cost-of-living riots and civil strikes across major capitals expand risk premiums and strain fiscal stability.",
-        type: "CRITICAL RISK"
-    },
-    USD: { 
-        penalty: 0.5, 
-        headline: "Reuters News: Institutional safe-haven capital routing shifts to USD amid lingering Western European sovereign debt anxieties.",
-        type: "BULLISH BIAS"
-    },
-    GBP: {
-        penalty: -0.5,
-        headline: "FT News: Continental European civil unrest slightly pressures cross-channel financial asset values and equity confidence indexes.",
-        type: "RISK DRAG"
-    }
-};
-
-function calculateScores(macroData) {
-    let scores = {};
-    const rates = Object.values(macroData).map(d => d.rate);
-    const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
-
-    for (const currency of CURRENCIES) {
-        const stats = macroData[currency];
-        let score = 0;
-        let reasons = [];
-
-        // Yield Rate Attribution Rules
-        if (stats.rate > avgRate + 1) {
-            score += 1.5;
-            reasons.push("Yield Advantage");
-        } else if (stats.rate < 1.5) {
-            score -= 1.5;
-            reasons.push("Low Yield Drag");
-        } else {
-            score += 0.5;
-        }
-
-        // GDP Output Rules
-        if (stats.gdp > 2.0) {
-            score += 1.0;
-            reasons.push("Robust Growth");
-        } else if (stats.gdp < 0) {
-            score -= 1.5;
-            reasons.push("Recession Shock");
-        }
-
-        // Inflation Tracking Rules
-        if (stats.cpi > 3.0) {
-            score -= 0.5;
-            reasons.push("Sticky Inflation");
-        } else {
-            score += 0.5;
-        }
-
-        // Employment Market Slack
-        if (stats.unemp > 6.0) {
-            score -= 0.5;
-            reasons.push("Labor Slack");
-        }
-
-        // Geopolitical Overrides Mapped
-        if (globalNewsOverrides[currency]) {
-            score += globalNewsOverrides[currency].penalty;
-            reasons.push(`Geopolitical ${globalNewsOverrides[currency].type}`);
-        }
-
-        const finalScore = Math.max(-5, Math.min(5, score));
-        let bias = "NEUTRAL";
-        if (finalScore >= 1.0) bias = "BULLISH";
-        if (finalScore <= -1.0) bias = "BEARISH";
-
-        scores[currency] = {
-            score: finalScore.toFixed(1),
-            bias: bias,
-            reasons: reasons.join(", "),
-            ...stats
-        };
-    }
-    return scores;
+function safeText(value, fallback="—") {
+  return value === null || value === undefined || value === "" ? fallback : String(value);
 }
-
-function renderDashboard(scoredData) {
-    const tableBody = document.getElementById('currency-table-body');
-    if (!tableBody) return;
-    tableBody.innerHTML = '';
-
-    const sortedCurrencies = Object.keys(scoredData).sort((a, b) => scoredData[b].score - scoredData[a].score);
-
-    sortedCurrencies.forEach(curr => {
-        const item = scoredData[curr];
-        
-        let badgeStyle = 'bg-slate-50 text-slate-600 border border-slate-200';
-        if (item.bias === 'BULLISH') badgeStyle = 'bg-emerald-50/70 text-emerald-700 font-bold border border-emerald-200';
-        if (item.bias === 'BEARISH') badgeStyle = 'bg-rose-50/70 text-rose-700 font-bold border border-rose-200';
-
-        const row = `
-            <tr class="border-b border-slate-100 hover:bg-slate-50/80 transition-colors text-center text-xs font-medium">
-                <td class="p-3.5 font-bold text-slate-900 text-left text-sm tracking-tight">${curr}</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded tracking-wide text-[10px] font-bold uppercase ${badgeStyle}">${item.bias} (${item.score > 0 ? '+' : ''}${item.score})</span></td>
-                <td class="p-3.5 mono text-slate-700 font-semibold">${item.rate.toFixed(2)}%</td>
-                <td class="p-3.5 mono text-slate-600">${item.cpi.toFixed(1)}%</td>
-                <td class="p-3.5 mono text-slate-600">${item.gdp.toFixed(1)}%</td>
-                <td class="p-3.5 mono text-slate-600">${item.unemp.toFixed(1)}%</td>
-                <td class="p-3.5 text-left text-[11px] font-medium text-slate-400 tracking-tight">${item.reasons}</td>
-            </tr>
-        `;
-        tableBody.insertAdjacentHTML('beforeend', row);
-    });
-
-    renderNewsTicker();
-    renderPairMatrix(scoredData);
+function fmtDate(value) {
+  if (!value || value.includes("Awaiting")) return "No successful build yet";
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? value : d.toLocaleString("en-SG",{timeZone:"Asia/Singapore",dateStyle:"medium",timeStyle:"short"})+" SGT";
 }
-
-function renderNewsTicker() {
-    const newsContainer = document.getElementById('news-feed-container');
-    if (!newsContainer) return;
-    newsContainer.innerHTML = '';
-
-    let newsHtml = '<div class="space-y-3.5">';
-    Object.keys(globalNewsOverrides).forEach(curr => {
-        const entry = globalNewsOverrides[curr];
-        const statusColors = entry.penalty < 0 
-            ? 'bg-rose-50 text-rose-700 border-rose-200 tag-danger' 
-            : 'bg-emerald-50 text-emerald-700 border-emerald-200 tag-success';
-        const labelBadge = entry.penalty < 0 ? 'bg-rose-600' : 'bg-emerald-600';
-
-        newsHtml += `
-            <div class="p-3.5 bg-white rounded-xl border border-slate-100 shadow-2xs flex flex-col gap-2">
-                <div class="flex items-center justify-between">
-                    <span class="text-white text-[9px] font-black uppercase tracking-wider px-1.5 py-0.5 rounded ${labelBadge}">${curr} DATA FEED</span>
-                    <span class="mono text-[10px] font-bold text-slate-400">${entry.penalty > 0 ? '+' : ''}${entry.penalty.toFixed(1)} Weight Adjustment</span>
-                </div>
-                <p class="text-xs font-semibold text-slate-700 leading-normal">${entry.headline}</p>
-            </div>
-        `;
-    });
-    newsHtml += '</div>';
-    newsContainer.innerHTML = newsHtml;
+function setStatus(ok, message) {
+  $("data-status").textContent = message;
+  $("status-dot").style.background = ok ? "var(--green)" : "var(--amber)";
+  $("pipeline-label").textContent = ok ? "Snapshot loaded" : "Data needs attention";
 }
-
-function renderPairMatrix(scoredData) {
-    const matrixContainer = document.getElementById('pair-rankings-container');
-    if (!matrixContainer) return;
-    matrixContainer.innerHTML = '';
-
-    let pairs = [];
-    for (let i = 0; i < CURRENCIES.length; i++) {
-        for (let j = 0; j < CURRENCIES.length; j++) {
-            if (i !== j) {
-                const base = CURRENCIES[i];
-                const quote = CURRENCIES[j];
-                const divergence = scoredData[base].score - scoredData[quote].score;
-                pairs.push({ pair: `${base}/${quote}`, spread: divergence });
-            }
-        }
-    }
-
-    pairs.sort((a, b) => b.spread - a.spread);
-
-    const topBuys = pairs.slice(0, 4);
-    let html = '<div class="grid grid-cols-1 md:grid-cols-2 gap-6">';
-    
-    html += '<div><h4 class="font-bold text-[10px] tracking-wider uppercase text-emerald-600 mb-3">📈 High-Alpha Long Pairs (Strength Mismatch)</h4><div class="space-y-2">';
-    topBuys.forEach(p => {
-        html += `<div class="p-3 bg-slate-50 border border-slate-200/60 rounded-xl flex justify-between items-center transition-all hover:bg-white shadow-2xs">
-            <span class="font-extrabold text-slate-800 text-xs mono tracking-tight">${p.pair}</span>
-            <span class="mono text-xs text-emerald-600 font-bold px-2 py-0.5 bg-emerald-50 rounded border border-emerald-100">+${p.spread.toFixed(1)}</span>
-        </div>`;
-    });
-    html += '</div></div>';
-
-    const topSells = pairs.slice(-4).reverse();
-    html += '<div><h4 class="font-bold text-[10px] tracking-wider uppercase text-rose-600 mb-3">📉 Underperforming Short Pairs (Weakness Target)</h4><div class="space-y-2">';
-    topSells.forEach(p => {
-        html += `<div class="p-3 bg-slate-50 border border-slate-200/60 rounded-xl flex justify-between items-center transition-all hover:bg-white shadow-2xs">
-            <span class="font-extrabold text-slate-800 text-xs mono tracking-tight">${p.pair}</span>
-            <span class="mono text-xs text-rose-600 font-bold px-2 py-0.5 bg-rose-50 rounded border border-rose-100">${p.spread.toFixed(1)}</span>
-        </div>`;
-    });
-    html += '</div></div></div>';
-
-    matrixContainer.innerHTML = html;
+function metric(value, suffix="") { return value === null || value === undefined ? "N/A" : `${value}${suffix}`; }
+function currencyRows(targetId) {
+  const rows = (snapshot?.currencies || []).map(c => `<tr>
+    <td>${safeText(c.code)}</td><td class="score-na">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(1)}</td>
+    <td>${metric(c.policy_rate,"%")}</td><td>${metric(c.inflation,"%")}</td><td>${metric(c.gdp_growth,"%")}</td><td>${metric(c.unemployment,"%")}</td>
+    <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
+  $(targetId).innerHTML = rows || `<tr><td colspan="7" class="empty">No currency data in snapshot.</td></tr>`;
 }
-
-// Guaranteed layout execution wrapper
-function initializeDashboard() {
-    const scored = calculateScores(defaultMacroData);
-    renderDashboard(scored);
+function renderNews(targetId, filter="ALL", limit=100) {
+  const items = (snapshot?.events || []).filter(e => filter==="ALL" || e.currency===filter).slice(0,limit);
+  $(targetId).innerHTML = items.length ? items.map(e => {
+    const href = /^https?:\/\//i.test(e.url || "") ? e.url : "#";
+    return `<article class="news-item"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time,"Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a><p>${safeText(e.summary,"No summary supplied.")}</p></article>`;
+  }).join("") : `<div class="empty">No matching official releases in the current snapshot.</div>`;
 }
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeDashboard);
-} else {
-    initializeDashboard();
+function renderPairs() {
+  const valid = (snapshot?.currencies || []).filter(c => Number.isFinite(Number(c.score)) && c.score !== null);
+  if (valid.length < 2) {
+    const msg = `<div class="empty">Not enough verified currency scores to rank pairs. No artificial pair signals are generated.</div>`;
+    $("overview-pairs").innerHTML = msg; $("pair-table").innerHTML = msg; return;
+  }
+  const pairs=[];
+  valid.forEach(base=>valid.forEach(quote=>{if(base.code!==quote.code)pairs.push({pair:base.code+"/"+quote.code,spread:Number(base.score)-Number(quote.score)});}));
+  pairs.sort((a,b)=>b.spread-a.spread);
+  $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><b>${p.pair}</b><span class="score-na">${p.spread>0?"+":""}${p.spread.toFixed(1)}</span></div>`).join("");
+  $("pair-table").innerHTML=`<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Relative score spread</th><th>Directional read</th></tr></thead><tbody>${pairs.map(p=>`<tr><td>${p.pair}</td><td>${p.spread>0?"+":""}${p.spread.toFixed(1)}</td><td>${p.spread>0?"Base stronger":p.spread<0?"Quote stronger":"Neutral"}</td></tr>`).join("")}</tbody></table></div>`;
 }
+function renderSources() {
+  const sources=snapshot?.sources||[];
+  $("source-directory").innerHTML=sources.length?sources.map(s=>`<div class="source-row"><div><b>${safeText(s.name)}</b><small>${safeText(s.status)} · checked ${fmtDate(s.checked_at)}</small></div><a href="${s.url}" target="_blank" rel="noopener">Open ↗</a></div>`).join(""):`<div class="empty">No source metadata.</div>`;
+}
+async function loadSnapshot() {
+  $("refresh-btn").disabled=true; $("refresh-btn").textContent="↻ Loading";
+  try {
+    const response=await fetch(`data/latest.json?ts=${Date.now()}`,{cache:"no-store"});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
+    snapshot=data;
+    currencyRows("currency-rows"); currencyRows("currency-rows-full");
+    renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value);
+    renderPairs(); renderSources();
+    $("metric-news").textContent=data.events.length;
+    const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
+    $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
+    $("updated-at").textContent=`Built ${fmtDate(data.generated_at)}`;
+    $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
+    const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
+    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} official feeds responding`);
+  } catch(error) {
+    setStatus(false,`Unable to load data snapshot: ${error.message}`);
+    $("updated-at").textContent="Check GitHub Pages deployment and data/latest.json";
+    $("currency-rows").innerHTML=`<tr><td colspan="7" class="empty">Data unavailable. ${error.message}</td></tr>`;
+  } finally { $("refresh-btn").disabled=false; $("refresh-btn").textContent="↻ Refresh"; }
+}
+const titles={overview:"Market overview",currencies:"Currency strength",pairs:"FX pair analysis",news:"News intelligence",calendar:"Event watch",positioning:"CFTC positioning",journal:"Trading journal"};
+function navigate(view) {
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${view}`));
+  document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
+  $("page-title").textContent=titles[view]||"Market overview";
+}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.view)));
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.go)));
+$("refresh-btn").addEventListener("click",loadSnapshot);
+$("news-filter").addEventListener("change",()=>renderNews("news-list",$("news-filter").value));
+function clock(){ $("clock").textContent=new Date().toLocaleTimeString("en-SG",{timeZone:"Asia/Singapore",hour12:false})+" SGT"; }
+clock(); setInterval(clock,1000); loadSnapshot(); setInterval(loadSnapshot,5*60*1000);
+
+// Local-only trading journal
+function journalRead(){try{return JSON.parse(localStorage.getItem("macropulse-journal")||"[]")}catch{return[]}}
+function journalRender(){
+  const entries=journalRead();
+  $("journal-list").innerHTML=entries.length?entries.map((e,i)=>`<div class="journal-entry"><div><b>${escapeHtml(e.pair)} · ${escapeHtml(e.bias)}</b><small class="news-meta">${escapeHtml(e.date)}</small><p>${escapeHtml(e.thesis)}</p></div><button class="text-button" data-delete="${i}">Delete</button></div>`).join(""):`<div class="empty">No journal entries yet.</div>`;
+  document.querySelectorAll("[data-delete]").forEach(b=>b.addEventListener("click",()=>{const a=journalRead();a.splice(Number(b.dataset.delete),1);localStorage.setItem("macropulse-journal",JSON.stringify(a));journalRender()}));
+}
+function escapeHtml(v){return String(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+$("journal-add").addEventListener("click",()=>{
+  const pair=$("journal-pair").value.trim().toUpperCase(), thesis=$("journal-thesis").value.trim();
+  if(!pair||!thesis){alert("Please enter a pair and a trading thesis.");return;}
+  const entries=journalRead();entries.unshift({pair,bias:$("journal-bias").value,thesis,date:new Date().toLocaleString()});
+  localStorage.setItem("macropulse-journal",JSON.stringify(entries));$("journal-pair").value="";$("journal-thesis").value="";journalRender();
+});
+$("journal-export").addEventListener("click",()=>{
+  const rows=[["Date","Pair","Bias","Thesis"],...journalRead().map(e=>[e.date,e.pair,e.bias,e.thesis])];
+  const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
+  const url=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));const a=document.createElement("a");a.href=url;a.download="macropulse-journal.csv";a.click();URL.revokeObjectURL(url);
+});
+journalRender();

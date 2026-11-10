@@ -1,174 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>⚡ Institutional FX Fundamental Dashboard</title>
-    <!-- Tailwind CSS Institutional Core CDN -->
-    <script src="https://tailwindcss.com"></script>
-    <style>
-        @import url('https://googleapis.com');
-        body { font-family: 'Inter', sans-serif; background-color: #0b0f19; }
-        .mono { font-family: 'JetBrains Mono', monospace; }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1020">
+<title>MacroPulse V3 | FX Intelligence</title>
+<meta name="description" content="Eight-currency macroeconomic and FX research dashboard.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-slate-100 antialiased min-h-screen selection:bg-cyan-500 selection:text-slate-900">
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V3</small></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <nav id="navigation">
+      <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
+      <button class="nav-item" data-view="currencies"><span>◎</span> Currency strength</button>
+      <button class="nav-item" data-view="pairs"><span>⇄</span> FX pair analysis</button>
+      <button class="nav-item" data-view="news"><span>▤</span> News intelligence</button>
+      <button class="nav-item" data-view="calendar"><span>▦</span> Event watch</button>
+      <button class="nav-item" data-view="positioning"><span>◉</span> CFTC positioning</button>
+      <button class="nav-item" data-view="journal"><span>▧</span> Trading journal</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span><span id="pipeline-label">Connecting to data…</span><small>FREE PUBLIC-SOURCE BUILD</small></div>
+  </aside>
 
-    <!-- Bloomberg Style Live Top Ticker Status Bar -->
-    <div class="bg-[#0f172a] text-slate-400 text-[11px] font-bold tracking-wider uppercase px-4 py-2.5 border-b border-slate-800 flex justify-between items-center shadow-md">
-        <div class="flex items-center space-x-4">
-            <span class="text-cyan-400 font-extrabold tracking-tight">QUANT-INTELLIGENCE // TERMINAL v3.0</span>
-            <span class="text-slate-700">|</span>
-            <span class="text-slate-300">CORE FEED: CONNECTED</span>
-        </div>
-        <div class="flex items-center space-x-2">
-            <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
-            <span class="text-cyan-400 text-[10px]">LIVE DATA RE-SCORING STABLE</span>
-        </div>
-    </div>
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow">GLOBAL MACRO RESEARCH TERMINAL</div><h1 id="page-title">Market overview</h1></div>
+      <div class="top-actions"><span class="market-clock" id="clock">--:--:-- SGT</span><button class="btn btn-quiet" id="refresh-btn">↻ Refresh</button></div>
+    </header>
 
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6">
-        
-        <!-- Dashboard Premium Header -->
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center pb-6 border-b border-slate-800 gap-4">
-            <div>
-                <h1 class="text-3xl font-black text-white tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
-                    Global Macro Dashboard
-                </h1>
-                <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-1">Relative quantitative central banking metrics & risk analysis</p>
-            </div>
-            <div class="text-[11px] text-slate-400 font-bold bg-[#111827] px-4 py-2.5 rounded-xl border border-slate-800 shadow-xl mono">
-                CLIENT REFRESH: <span class="text-cyan-400">5-MINUTE CYCLES</span>
-            </div>
-        </header>
+    <section class="status-strip">
+      <div><span class="status-dot" id="status-dot"></span><b id="data-status">Checking data snapshot</b><span class="muted" id="updated-at">—</span></div>
+      <div class="status-right"><span>MODEL <b>TRANSPARENT / PROVISIONAL</b></span><span>CLIENT POLL <b>5 MIN</b></span></div>
+    </section>
 
-        <!-- Main Workspace Terminal Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            
-            <!-- Left & Center Space: Scoreboard Matrix & Divergence Pairs -->
-            <div class="lg:col-span-2 space-y-6">
-                
-                <!-- Macro Standings Table Dashboard Card -->
-                <section class="bg-[#111827] rounded-xl border border-slate-800/80 shadow-2xl overflow-hidden">
-                    <div class="p-4 bg-[#1e293b] border-b border-slate-800 text-slate-200 font-bold text-xs tracking-wider uppercase flex justify-between items-center">
-                        <span class="flex items-center gap-2 text-white">📋 Core Fundamental Matrix Rankings</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left border-collapse">
-                            <thead>
-                                <tr class="bg-[#0f172a] text-slate-400 uppercase text-[10px] font-bold tracking-widest border-b border-slate-800 text-center">
-                                    <th class="p-4 text-left font-bold text-slate-300">FX Code</th>
-                                    <th class="p-4 font-bold text-slate-300">Quant Rank Score</th>
-                                    <th class="p-4 font-bold text-slate-300">Interest Rate</th>
-                                    <th class="p-4 font-bold text-slate-300">CPI (Inflation)</th>
-                                    <th class="p-4 font-bold text-slate-300">GDP Growth</th>
-                                    <th class="p-4 font-bold text-slate-300">Unemployment</th>
-                                    <th class="p-4 text-left font-bold text-slate-300">Calculated Metrics Driver flags</th>
-                                </tr>
-                            </thead>
-                            <tbody id="currency-table-body" class="divide-y divide-slate-800/60">
-                                <!-- Injected instantly by embedded engine -->
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
+    <section class="view active" id="view-overview">
+      <div class="metric-grid">
+        <article class="metric-card"><div class="metric-label">CURRENCIES TRACKED</div><div class="metric-value">08</div><div class="metric-note">USD · EUR · GBP · JPY · CHF · CAD · AUD · NZD</div></article>
+        <article class="metric-card"><div class="metric-label">OFFICIAL NEWS ITEMS</div><div class="metric-value" id="metric-news">—</div><div class="metric-note">Latest available central-bank releases</div></article>
+        <article class="metric-card"><div class="metric-label">FEEDS RESPONDING</div><div class="metric-value" id="metric-feeds">—</div><div class="metric-note">Official central-bank sources</div></article>
+        <article class="metric-card"><div class="metric-label">NEXT DATA BUILD</div><div class="metric-value">4H</div><div class="metric-note">GitHub Actions · best-effort schedule</div></article>
+      </div>
 
-                <!-- Trading Pair Divergences Workspace -->
-                <section class="bg-[#111827] rounded-xl p-6 border border-slate-800/80 shadow-2xl">
-                    <div class="mb-4 border-b border-slate-800 pb-3">
-                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
-                            ⚡ Institutional Cross-Pair Divergence Matrix
-                        </h3>
-                        <p class="text-xs text-slate-400 mt-1">Highlights structural baseline score discrepancies to isolate systemic currency trade trends.</p>
-                    </div>
-                    <div id="pair-rankings-container"></div>
-                </section>
-            </div>
+      <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
+      <div class="panel">
+        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Scores are withheld until comparable, sourced macro inputs are available.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
+        <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Fundamental score</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th><th>Confidence / data status</th></tr></thead><tbody id="currency-rows"><tr><td colspan="7" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
+      </div>
+      <div class="two-col">
+        <div class="panel"><div class="panel-head"><div><b>Pair divergence watch</b><p>Base currency relative to quote currency</p></div><button class="text-button" data-go="pairs">View pairs ↗</button></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
+        <div class="panel"><div class="panel-head"><div><b>Latest official releases</b><p>Source-linked central-bank news</p></div><button class="text-button" data-go="news">News wire ↗</button></div><div id="overview-news" class="news-list"><div class="empty">Loading releases…</div></div></div>
+      </div>
+    </section>
 
-            <!-- Right Workspace Sidebar Panel: News Wire Shocks -->
-            <div class="space-y-6">
-                
-                <!-- BBC/Reuters Sentiment Live Panel -->
-                <section class="bg-[#111827] rounded-xl border border-slate-800/80 p-5 space-y-4 shadow-2xl">
-                    <div>
-                        <h3 class="text-base font-bold text-white tracking-tight flex items-center gap-2">
-                            📰 Geopolitical Shocks & Risk Wire
-                        </h3>
-                        <p class="text-xs text-cyan-500/80 font-semibold tracking-wide uppercase mt-0.5">Asymmetric risk feed overrides</p>
-                    </div>
-                    
-                    <!-- Dynamic News Container -->
-                    <div id="news-feed-container" class="space-y-3.5"></div>
-                </section>
+    <section class="view" id="view-currencies">
+      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Comparable historical macro series and policy expectations are required before assigning directional scores.</p></div></div>
+      <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Score</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
+      <div class="notice"><b>Scoring methodology</b><p>V3 does not rank currencies from policy-rate levels alone or invent missing macro data. A future scored model should standardise inflation, labour, growth and policy-rate changes against each economy's own history, then add rate-expectation and market confirmation. Until those inputs are connected, the score remains N/A.</p></div>
+    </section>
 
-                <!-- Premium Informational Analyst Playbook -->
-                <section class="bg-[#0f172a] text-slate-300 rounded-xl p-5 border border-slate-800 space-y-3 shadow-xl">
-                    <div class="flex items-center space-x-2 text-amber-400 font-bold text-[10px] tracking-widest uppercase">
-                        <span>⚠️ Analyst Operational Warning</span>
-                    </div>
-                    <p class="text-xs leading-relaxed text-slate-400 font-medium">
-                        Widespread European cost-of-living demonstrations and public-sector general strikes create heavy fiscal risk premiums. This forces sovereign yields to widen over German benchmarks, crushing domestic euro metrics.
-                    </p>
-                    <p class="text-[11px] text-cyan-400/90 font-bold italic border-t border-slate-800 pt-2 tracking-wide">
-                        Playbook Action: Selling vulnerable currencies (EUR) against sound safe-haven models (USD/CHF) maximizes target structural capture odds.
-                    </p>
-                </section>
-            </div>
-        </div>
+    <section class="view" id="view-pairs">
+      <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>FX pair analysis</h2><p>Potential long/short candidates require valid, comparable currency scores.</p></div></div>
+      <div class="panel"><div class="panel-head"><b>28 directional combinations</b><span class="tag tag-neutral">WAITING FOR VALID SCORES</span></div><div id="pair-table" class="empty">Pair signals are intentionally disabled until the fundamental model has verified inputs. This prevents neutral placeholders being mistaken for trading opportunities.</div></div>
+    </section>
 
-        <!-- Terminal System Footer -->
-        <footer class="text-center text-xs font-bold tracking-widest text-slate-600 pt-8 border-t border-slate-800 mono uppercase">
-            System Status: Connected // Zero-Latency Execution Pipeline Ready
-        </footer>
-    </div>
+    <section class="view" id="view-news">
+      <div class="section-heading"><div><div class="eyebrow">OFFICIAL SOURCES</div><h2>News intelligence</h2><p>Central-bank publications are context, not automatically bullish or bearish trade signals.</p></div><select id="news-filter" class="select"><option value="ALL">All currencies</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option><option>CHF</option><option>CAD</option><option>AUD</option><option>NZD</option></select></div>
+      <div class="panel"><div id="news-list" class="news-list"><div class="empty">Loading news…</div></div></div>
+    </section>
 
-    <!-- ========================================== -->
-    <!-- EMBEDDED JAVASCRIPT AUTOMATION SCORES ENGINE -->
-    <!-- ========================================== -->
-    <script>
-        const CURRENCIES = ['USD', 'EUR', 'GBP', 'AUD', 'NZD', 'CAD', 'CHF', 'JPY'];
+    <section class="view" id="view-calendar">
+      <div class="section-heading"><div><div class="eyebrow">EVENT RISK</div><h2>Economic event watch</h2><p>Official news feeds are not a structured consensus/actual economic calendar.</p></div></div>
+      <div class="notice notice-warn"><b>Calendar integration not yet connected</b><p>This version does not fabricate release dates, consensus forecasts or actual results. Use the source links below and treat this page as a release-news monitor, not a complete economic calendar.</p></div>
+      <div class="panel"><div class="panel-head"><b>Official central-bank source directory</b></div><div id="source-directory" class="source-grid"></div></div>
+    </section>
 
-        // Raw institutional macroeconomic data inputs
-        const defaultMacroData = {
-            USD: { rate: 4.75, cpi: 2.7, gdp: 2.6, unemp: 4.1 },
-            EUR: { rate: 3.25, cpi: 2.1, gdp: 0.9, unemp: 6.3 },
-            GBP: { rate: 4.75, cpi: 3.2, gdp: 1.0, unemp: 4.3 },
-            AUD: { rate: 4.35, cpi: 2.8, gdp: 1.5, unemp: 4.1 },
-            NZD: { rate: 4.25, cpi: 2.2, gdp: -0.2, unemp: 4.8 },
-            CAD: { rate: 3.75, cpi: 1.6, gdp: 1.2, unemp: 6.5 },
-            CHF: { rate: 1.00, cpi: 0.6, gdp: 1.4, unemp: 2.5 },
-            JPY: { rate: 0.25, cpi: 2.1, gdp: 0.5, unemp: 2.4 }
-        };
+    <section class="view" id="view-positioning">
+      <div class="section-heading"><div><div class="eyebrow">INSTITUTIONAL POSITIONING</div><h2>CFTC positioning</h2><p>Commitment of Traders data is weekly, not a live intraday feed.</p></div></div>
+      <div class="notice"><b>CFTC data connector pending</b><p>No CFTC positions are included in this build. The next implementation should map CFTC futures contracts to the eight currencies, show non-commercial net positions, weekly changes and historical percentiles, with report dates and contract mapping disclosed.</p></div>
+      <div class="panel"><div class="panel-head"><b>Reference</b></div><div class="source-row"><div><b>U.S. Commodity Futures Trading Commission</b><small>Official Commitments of Traders reports</small></div><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm" target="_blank" rel="noopener">Open CFTC ↗</a></div></div>
+    </section>
 
-        // Geopolitical intelligence inputs (BBC News Wire Feed Overlay)
-        const globalNewsOverrides = {
-            EUR: { 
-                penalty: -1.5, 
-                headline: "BBC Alert: Severe Eurozone anti-cost-of-living riots & public general strikes intensify, widening regional yield spreads and harming domestic growth trajectories.",
-                type: "CRITICAL RISK"
-            },
-            USD: { 
-                penalty: 0.5, 
-                headline: "Reuters News: Safe-haven flows surge directly into the Greenback as geopolitical tensions and European spending concerns persist.",
-                type: "BULLISH BIAS"
-            },
-            GBP: {
-                penalty: -0.5,
-                headline: "FT Wire: Spillover sentiment from Eurozone social instability challenges near-term cross-channel equity capital flows.",
-                type: "SENTIMENT DRAG"
-            }
-        };
+    <section class="view" id="view-journal">
+      <div class="section-heading"><div><div class="eyebrow">PERSONAL WORKSPACE</div><h2>Trading journal</h2><p>Entries are saved in this browser only; they are not uploaded to GitHub.</p></div></div>
+      <div class="panel journal-form"><label>Pair<input id="journal-pair" placeholder="e.g. NZDUSD"></label><label>Bias<select id="journal-bias"><option>Long</option><option>Short</option><option>Watch</option></select></label><label>Thesis<textarea id="journal-thesis" placeholder="Fundamental thesis, technical confirmation, invalidation level…"></textarea></label><button class="btn btn-primary" id="journal-add">Save journal entry</button></div>
+      <div class="panel"><div class="panel-head"><b>Saved entries</b><button class="text-button" id="journal-export">Export CSV ↓</button></div><div id="journal-list" class="journal-list"></div></div>
+    </section>
 
-        function calculateScores(macroData) {
-            let scores = {};
-            const rates = Object.values(macroData).map(d => d.rate);
-            const avgRate = rates.reduce((a, b) => a + b, 0) / rates.length;
-
-            for (const currency of CURRENCIES) {
-                const stats = macroData[currency];
-                let score = 0;
-                let reasons = [];
-
-                // 1. Interest Rate Yield Spread Rules
-                if (stats.rate > avgRate + 1) {
-                    score += 1.5;
+    <footer><span>MACROPULSE V3 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
+  </main>
+</div>
+<script src="app.js" defer></script>
+</body></html>
