@@ -19,7 +19,7 @@ function metric(value, suffix="") { return value === null || value === undefined
 function currencyRows(targetId) {
   const rows = (snapshot?.currencies || []).map(c => `<tr>
     <td>${safeText(c.code)}</td><td class="score-na">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(1)}</td>
-    <td>${metric(c.policy_rate,"%")}</td><td>${metric(c.inflation,"%")}</td><td>${metric(c.gdp_growth,"%")}</td><td>${metric(c.unemployment,"%")}</td>
+    <td>${metric(c.policy_rate,"%")}</td><td>${metric(c.inflation,"%")} <small>${c.inflation_year||""}</small></td><td>${metric(c.gdp_growth,"%")} <small>${c.gdp_growth_year||""}</small></td><td>${metric(c.unemployment,"%")} <small>${c.unemployment_year||""}</small></td>
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
   $(targetId).innerHTML = rows || `<tr><td colspan="7" class="empty">No currency data in snapshot.</td></tr>`;
 }
@@ -58,12 +58,12 @@ async function loadSnapshot() {
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value);
     renderPairs(); renderSources();
     $("metric-news").textContent=data.events.length;
-    const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
+    const ok=(data.sources||[]).filter(s=>s.status==="ok").length;\n    const macro=(data.sources||[]).filter(s=>String(s.name||"").startsWith("World Bank"));\n    const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
     $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
     $("updated-at").textContent=`Built ${fmtDate(data.generated_at)}`;
     $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
     const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
-    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} official feeds responding`);
+    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} central-bank feeds responding · ${macroOk}/${macro.length} macro sources available`);
   } catch(error) {
     setStatus(false,`Unable to load data snapshot: ${error.message}`);
     $("updated-at").textContent="Check GitHub Pages deployment and data/latest.json";
