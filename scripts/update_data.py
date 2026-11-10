@@ -1,26 +1,28 @@
 #!/usr/bin/env python3
-"""Collect and retain a rolling 90-day archive of official central-bank releases.
+"""MacroPulse V3.3: official news archive + comparable World Bank macro indicators.
 
-The collector uses public RSS/Atom feeds, merges each run with the previous
-snapshot, and retains dated releases for 90 days. RSS archives differ by bank;
-this is a rolling archive of releases exposed by each feed, not a guarantee
-that every bank's complete 90-day website archive is exposed by RSS.
+The macro score is deliberately a partial score until policy-rate expectations
+and release-surprise data are connected. Missing inputs are null, never zero.
 """
 import json
 import datetime
 import urllib.request
+import urllib.parse
 import xml.etree.ElementTree as ET
 import re
 import hashlib
+import math
 from email.utils import parsedate_to_datetime
 from pathlib import Path
 from html import unescape
+import statistics
 
 UTC = datetime.timezone.utc
 now = datetime.datetime.now(UTC)
 WINDOW_DAYS = 90
 cutoff = now - datetime.timedelta(days=WINDOW_DAYS)
 DATA_PATH = Path("data/latest.json")
+CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"]
 
 FEEDS = [
     ("Federal Reserve", "https://www.federalreserve.gov/feeds/press_all.xml", "USD"),
@@ -32,14 +34,29 @@ FEEDS = [
     ("Reserve Bank of Australia", "https://www.rba.gov.au/rss/rss-cb-media-releases.xml", "AUD"),
     ("Reserve Bank of New Zealand", "https://www.rbnz.govt.nz/feeds/news", "NZD"),
 ]
-CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"]
+
+# Currency area / country proxy. EUR uses the World Bank euro-area aggregate.
+WB_COUNTRIES = {
+    "USD": ("USA", "United States"),
+    "EUR": ("EMU", "Euro area"),
+    "GBP": ("GBR", "United Kingdom"),
+    "JPY": ("JPN", "Japan"),
+    "CHF": ("CHE", "Switzerland"),
+    "CAD": ("CAN", "Canada"),
+    "AUD": ("AUS", "Australia"),
+    "NZD": ("NZL", "New Zealand"),
+}
+INDICATORS = {
+    "inflation": ("FP.CPI.TOTL.ZG", "Inflation, consumer prices (annual %)"),
+    "gdp_growth": ("NY.GDP.MKTP.KD.ZG", "GDP growth (annual %)"),
+    "unemployment": ("SL.UEM.TOTL.ZS", "Unemployment, total (% of labour force)"),
+}
+WEIGHTS = {"inflation": 25.0, "gdp_growth": 20.0, "unemployment": 15.0}
 
 
 def fetch(url):
-    req = urllib.request.Request(
-        url, headers={"User-Agent": "Mozilla/5.0 FXMacroDashboard/1.0"}
-    )
-    with urllib.request.urlopen(req, timeout=25) as response:
+    req = urllib.request.Request(url, headers={"User-Agent": "MacroPulseFXDashboard/3.3 (public-data research)"})
+    with urllib.request.urlopen(req, timeout=30) as response:
         return response.read()
 
 
@@ -69,13 +86,125 @@ def event_key(currency, link, title, published_at):
     return hashlib.sha256((currency + "|" + identity).encode("utf-8")).hexdigest()[:24]
 
 
-# Load the previous snapshot first so old releases are not lost when a feed
-# rotates its RSS window or becomes temporarily unavailable.
+def fetch_world_bank(country, indicator):
+    url = (
+        "https://api.worldbank.org/v2/country/"
+        + urllib.parse.quote(country)
+        + "/indicator/"
+        + urllib.parse.quote(indicator)
+        + "?format=json&per_page=20"
+    )
+    payload = json.loads(fetch(url).decode("utf-8"))
+    if not isinstance(payload, list) or len(payload) < 2 or not payload[1]:
+        return []
+    values = []
+    for row in payload[1]:
+        value = row.get("value")
+        year = row.get("date")
+        if value is not None and year:
+            try:
+                values.append({"year": int(year), "value": float(value)})
+            except (TypeError, ValueError):
+                pass
+    return sorted(values, key=lambda x: x["year"], reverse=True)
+
+
+def clamp(value, low=-5.0, high=5.0):
+    return max(low, min(high, value))
+
+
+def component_score(values, direction):
+    # Compare the latest annual reading with the preceding five observations.
+    if len(values) < 3:
+        return None
+    latest = values[0]["value"]
+    history = [x["value"] for x in values[1:6]]
+    if len(history) < 2:
+        return None
+    baseline = statistics.median(history)
+    dispersion = statistics.pstdev(history)
+    if dispersion < 0.05:
+        dispersion = max(abs(baseline) * 0.05, 0.25)
+    delta = (latest - baseline) / dispersion
+    if direction == "lower_is_better":
+        delta = -delta
+    # Smooth and cap extreme annual observations; output is a -5 to +5 component.
+    return round(clamp(5.0 * math.tanh(delta / 2.0)), 2)
+
+
+def build_currency(code, country, country_name):
+    metrics = {}
+    indicator_sources = []
+    errors = []
+    for key, (indicator, label) in INDICATORS.items():
+        try:
+            observations = fetch_world_bank(country, indicator)
+            metrics[key] = {
+                "value": observations[0]["value"] if observations else None,
+                "year": observations[0]["year"] if observations else None,
+                "history": observations[:6],
+                "score": component_score(
+                    observations,
+                    "lower_is_better" if key in ("inflation", "unemployment") else "higher_is_better",
+                ),
+                "label": label,
+                "source": "World Bank",
+                "url": f"https://data.worldbank.org/indicator/{indicator}?locations={country}",
+            }
+            if not observations:
+                errors.append(key + ": no observations")
+        except Exception as error:
+            metrics[key] = {
+                "value": None, "year": None, "history": [], "score": None,
+                "label": label, "source": "World Bank",
+                "url": f"https://data.worldbank.org/indicator/{indicator}?locations={country}",
+            }
+            errors.append(key + ": " + str(error)[:120])
+
+    available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
+    score = None
+    if available:
+        score = round(sum(s * w for _, s, w in available) / sum(w for _, _, w in available), 2)
+
+    years = [m["year"] for m in metrics.values() if m["year"] is not None]
+    latest_year = min(years) if years else None
+    if len(available) == 3 and latest_year is not None:
+        confidence = "Medium"
+    elif len(available) >= 2:
+        confidence = "Low"
+    else:
+        confidence = "Low"
+
+    return {
+        "code": code,
+        "score": score,
+        "confidence": confidence,
+        "data_status": f"Partial · {len(available)}/3 macro series · annual data",
+        "country_proxy": country_name,
+        "data_year": latest_year,
+        "policy_rate": None,
+        "inflation": metrics["inflation"]["value"],
+        "inflation_year": metrics["inflation"]["year"],
+        "gdp_growth": metrics["gdp_growth"]["value"],
+        "gdp_growth_year": metrics["gdp_growth"]["year"],
+        "unemployment": metrics["unemployment"]["value"],
+        "unemployment_year": metrics["unemployment"]["year"],
+        "metrics": metrics,
+        "component_weights_available": {key: WEIGHTS[key] for key, _, _ in available},
+        "available_weight_pct": sum(w for _, _, w in available),
+        "summary": (
+            f"Partial macro score based on {len(available)} of 3 annual World Bank indicators; "
+            "policy-rate outlook and market expectations are not yet included."
+        ),
+        "errors": errors,
+    }
+
+
+# Preserve prior 90-day releases when RSS feeds rotate or fail.
 previous_events = []
 if DATA_PATH.exists():
     try:
-        previous = json.loads(DATA_PATH.read_text(encoding="utf-8"))
-        previous_events = previous.get("events", [])
+        previous_events = json.loads(DATA_PATH.read_text(encoding="utf-8")).get("events", [])
     except Exception:
         previous_events = []
 
@@ -85,23 +214,12 @@ for event in previous_events:
     if published and cutoff <= published <= now + datetime.timedelta(days=1):
         event["published_at"] = published.isoformat()
         event["time"] = published.isoformat()
-        event.setdefault(
-            "event_id",
-            event_key(
-                event.get("currency", ""),
-                event.get("url", ""),
-                event.get("title", ""),
-                published.isoformat(),
-            ),
-        )
+        event.setdefault("event_id", event_key(event.get("currency", ""), event.get("url", ""), event.get("title", ""), published.isoformat()))
         events_by_id[event["event_id"]] = event
 
-sources = []
+news_sources = []
 for name, url, currency in FEEDS:
-    status = "unavailable"
-    checked_at = now.isoformat()
-    feed_count = 0
-    added_count = 0
+    status, feed_count, added_count = "unavailable", 0, 0
     try:
         root = ET.fromstring(fetch(url))
         status = "ok"
@@ -111,96 +229,89 @@ for name, url, currency in FEEDS:
             ns = {"a": "http://www.w3.org/2005/Atom"}
             items = root.findall(".//a:entry", ns)
             atom = True
-
         for item in items:
             def get(tag):
                 element = item.find(tag)
-                if element is None:
-                    return ""
-                return "".join(element.itertext()).strip()
-
+                return "".join(element.itertext()).strip() if element is not None else ""
             title = get("title")
             if atom:
-                published_raw = (
-                    get("{http://www.w3.org/2005/Atom}published")
-                    or get("{http://www.w3.org/2005/Atom}updated")
-                )
+                published_raw = get("{http://www.w3.org/2005/Atom}published") or get("{http://www.w3.org/2005/Atom}updated")
                 link_element = item.find("{http://www.w3.org/2005/Atom}link")
                 link = link_element.attrib.get("href", "") if link_element is not None else ""
                 description = get("{http://www.w3.org/2005/Atom}summary")
             else:
                 published_raw = get("pubDate") or get("published") or get("date")
-                link = get("link")
-                description = get("description") or get("summary")
-
+                link, description = get("link"), get("description") or get("summary")
             published = parse_date(published_raw)
             if not title or not published or not (cutoff <= published <= now + datetime.timedelta(days=1)):
                 continue
-
             feed_count += 1
             published_iso = published.isoformat()
             eid = event_key(currency, link, title, published_iso)
-            if eid in events_by_id:
-                continue
-
-            events_by_id[eid] = {
-                "event_id": eid,
-                "currency": currency,
-                "title": clean_text(title, 220),
-                "summary": clean_text(description, 500),
-                "url": link or url,
-                "time": published_iso,
-                "published_at": published_iso,
-                "source": name,
-                "impact": "High",
-            }
-            added_count += 1
-
+            if eid not in events_by_id:
+                events_by_id[eid] = {
+                    "event_id": eid, "currency": currency, "title": clean_text(title, 220),
+                    "summary": clean_text(description, 500), "url": link or url,
+                    "time": published_iso, "published_at": published_iso, "source": name, "impact": "High",
+                }
+                added_count += 1
     except Exception as error:
         status = "error: " + str(error)[:160]
+    news_sources.append({
+        "name": name, "url": url, "status": status, "checked_at": now.isoformat(),
+        "dated_releases_in_feed_90d": feed_count, "new_releases_added": added_count,
+    })
 
-    sources.append({
-        "name": name,
-        "url": url,
-        "status": status,
-        "checked_at": checked_at,
-        "dated_releases_in_feed_90d": feed_count,
-        "new_releases_added": added_count,
+macro_sources = []
+currencies = []
+for code in CURRENCIES:
+    country, country_name = WB_COUNTRIES[code]
+    item = build_currency(code, country, country_name)
+    currencies.append(item)
+    macro_sources.append({
+        "name": f"World Bank · {country_name}",
+        "url": f"https://data.worldbank.org/country/{country.lower()}",
+        "status": "ok" if len([k for k in INDICATORS if item["metrics"][k]["value"] is not None]) else "partial",
+        "checked_at": now.isoformat(),
+        "data_year": item["data_year"],
+        "indicators_available": sum(1 for k in INDICATORS if item["metrics"][k]["value"] is not None),
     })
 
 events = list(events_by_id.values())
 events.sort(key=lambda event: event.get("published_at", ""), reverse=True)
 
-# Scores remain neutral until comparable official macro series and surprise
-# data are integrated; news headlines are not converted into invented signals.
-currencies = [
-    {
-        "code": code,
-        "score": 0.0,
-        "confidence": "Low",
-        "summary": "Historical central-bank releases collected; comparable macro surprise / rate-expectation model not yet connected.",
-    }
-    for code in CURRENCIES
-]
-
 output = {
+    "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v3.2-90d-central-bank-history",
+    "model": "v3.3-official-macro-partial-score",
     "history_window_days": WINDOW_DAYS,
+    "scoring": {
+        "scale": "-5 to +5",
+        "method": "Latest annual indicator versus the preceding up to five annual observations; standardised by historical dispersion and smoothed with tanh.",
+        "weights": WEIGHTS,
+        "direction": {
+            "inflation": "Lower than own recent history scores positively; this is a momentum proxy, not an inflation-target assessment.",
+            "gdp_growth": "Higher than own recent history scores positively.",
+            "unemployment": "Lower than own recent history scores positively.",
+        },
+        "excluded_until_integrated": ["policy-rate level and expected path (30%)", "central-bank communication (10%)", "market consensus-versus-actual surprises"],
+        "important": "Scores are partial macro context, not standalone FX trading signals. Available component weights are renormalised; no missing input is treated as zero.",
+    },
     "currencies": currencies,
     "events": events,
-    "sources": sources,
+    "sources": news_sources + macro_sources,
     "limitations": [
-        "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window.",
-        "RSS archive depth varies by central bank; the first run cannot recover older releases that a feed no longer exposes.",
-        "Historical records already collected are retained between workflow runs and removed after 90 days.",
-        "Scores are neutral placeholders, not trading signals; comparable macro surprises and rate expectations are not yet connected.",
-        "Official RSS feeds are not a complete economic calendar and may publish with delay.",
+        "Macro indicators are official World Bank annual series; they are not real-time release surprises and may lag current conditions.",
+        "EUR uses the World Bank euro-area aggregate; other currencies use the corresponding national economy.",
+        "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
+        "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
+        "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
+        "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
     ],
 }
 DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
 DATA_PATH.write_text(json.dumps(output, indent=2), encoding="utf-8")
-print("Wrote data/latest.json; retained 90-day dated releases:", len(events))
-print("Newly discovered releases:", sum(s["new_releases_added"] for s in sources))
+print("Wrote V3.3 macro snapshot for", len(currencies), "currencies and", len(events), "news events.")
+print("Macro series available:", sum(1 for c in currencies for k in INDICATORS if c["metrics"][k]["value"] is not None), "of", len(currencies) * len(INDICATORS))
