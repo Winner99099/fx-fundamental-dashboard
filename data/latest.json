@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-10T11:26:24.260485+00:00",
+  "generated_at": "2026-11-10T12:17:11.915066+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v3.4-policy-rates-and-2dp-display",
   "history_window_days": 90,
@@ -1075,6 +1075,17 @@
     }
   ],
   "events": [
+    {
+      "event_id": "33a470554eec0a7efdca0ef8",
+      "currency": "GBP",
+      "title": "Exchange of letters between the Governor and the Chancellor on the Asset Purchase Facility - November 2026",
+      "summary": "Exchange of letters between the Governor and the Chancellor",
+      "url": "https://www.bankofengland.co.uk/letter/2026/asset-purchase-facility-november-2026",
+      "time": "2026-11-10T12:00:00+00:00",
+      "published_at": "2026-11-10T12:00:00+00:00",
+      "source": "Bank of England",
+      "impact": "High"
+    },
     {
       "currency": "JPY",
       "title": "Principal Figures of Financial Institutions (Oct.)",
@@ -2618,28 +2629,6 @@
       "published_at": "2026-08-13T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
       "impact": "High"
-    },
-    {
-      "event_id": "5bc7f0af9fc66bffd3b19081",
-      "currency": "NZD",
-      "title": "RBNZ outlines priorities for a resilient and enabling financial system",
-      "summary": "Assistant Governor Financial Stability Angus McGregor highlighted the importance of financial stability and outlined priorities shaping our prudential regulation approach in remarks delivered today at the Financial Services Council Conference.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/08/rbnz-outlines-priorities-for-a-resilient-and-enabling-financial-system",
-      "time": "2026-08-12T12:00:00+00:00",
-      "published_at": "2026-08-12T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "fa13fcf9f0dd937167c223e8",
-      "currency": "NZD",
-      "title": "Strong relationships maintained in latest RBNZ Relationship Charter survey",
-      "summary": "The Reserve Bank of New Zealand Te P\u016btea Matua's engagement with regulated entities continues to be based on strong relationships, according to the results of the 2026 Relationship Charter survey. In this year\u2019s survey, 89% of respondents rated their relationship with the Reserve Bank as \u2018good\u2019 or \u2018very good.\u2019",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/08/strong-relationships-maintained-in-latest-rbnz-relationship-charter-survey",
-      "time": "2026-08-12T12:00:00+00:00",
-      "published_at": "2026-08-12T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
     }
   ],
   "sources": [
@@ -2647,7 +2636,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -2655,7 +2644,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -2663,15 +2652,15 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
-      "dated_releases_in_feed_90d": 38,
-      "new_releases_added": 0
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
+      "dated_releases_in_feed_90d": 39,
+      "new_releases_added": 1
     },
     {
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -2679,7 +2668,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2687,7 +2676,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2695,7 +2684,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -2703,15 +2692,15 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
-      "dated_releases_in_feed_90d": 26,
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
+      "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
     {
       "name": "World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2024,
       "indicators_available": 3
     },
@@ -2719,7 +2708,7 @@
       "name": "World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2727,7 +2716,7 @@
       "name": "World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2735,7 +2724,7 @@
       "name": "World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2743,7 +2732,7 @@
       "name": "World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2751,7 +2740,7 @@
       "name": "World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2759,7 +2748,7 @@
       "name": "World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -2767,7 +2756,7 @@
       "name": "World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-10T11:26:24.260485+00:00",
+      "checked_at": "2026-11-10T12:17:11.915066+00:00",
       "data_year": 2025,
       "indicators_available": 3
     }
