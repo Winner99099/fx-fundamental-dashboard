@@ -198,7 +198,7 @@ def fetch_oecd_high_frequency():
     )
     gdp_url = (
         base + "OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD,1.1/"
-        + "Q.....B1GQ......G1."
+        + "Q.....B1GQ......GY."
         + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     result = {"inflation": {}, "gdp_growth": {}, "errors": []}
