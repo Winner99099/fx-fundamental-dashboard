@@ -5,6 +5,8 @@ The macro score is deliberately a partial score until policy-rate expectations
 and release-surprise data are connected. Missing inputs are null, never zero.
 """
 import json
+import csv
+import io
 import datetime
 import urllib.request
 import urllib.parse
@@ -146,6 +148,69 @@ def component_score(values, direction):
     return round(clamp(5.0 * math.tanh(delta / 2.0)), 2)
 
 
+
+OECD_AREAS = {
+    "USD": "USA", "EUR": "EA21", "GBP": "GBR", "JPY": "JPN",
+    "CHF": "CHE", "CAD": "CAN", "AUD": "AUS", "NZD": "NZL",
+}
+
+def fetch_oecd_csv(url):
+    raw = fetch(url).decode("utf-8-sig")
+    return list(csv.DictReader(io.StringIO(raw)))
+
+def latest_oecd_rows(rows):
+    grouped = {}
+    for row in rows:
+        area = (row.get("REF_AREA") or row.get("Reference area") or "").strip()
+        period = (row.get("TIME_PERIOD") or row.get("Time period") or "").strip()
+        raw_value = row.get("OBS_VALUE") or row.get("Observation value") or ""
+        try:
+            value = float(raw_value)
+        except (TypeError, ValueError):
+            continue
+        if not area or not period:
+            continue
+        grouped.setdefault(area, []).append({"period": period, "value": value})
+    return {
+        area: sorted(values, key=lambda x: x["period"])[-6:][::-1]
+        for area, values in grouped.items()
+    }
+
+def fetch_oecd_high_frequency():
+    """Return latest comparable monthly/quarterly CPI and quarterly real GDP YoY."""
+    base = "https://sdmx.oecd.org/public/rest/data/"
+    monthly_areas = "+".join(OECD_AREAS[c] for c in CURRENCIES if c not in ("AUD", "NZD"))
+    quarterly_areas = "+".join(OECD_AREAS[c] for c in ("AUD", "NZD"))
+    cpi_monthly_url = (
+        base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0/"
+        + monthly_areas + ".M.N.CPI.PA._T.N.GY"
+        + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
+    cpi_quarterly_url = (
+        base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0/"
+        + quarterly_areas + ".Q.N.CPI.PA._T.N.GY"
+        + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
+    gdp_url = (
+        base + "OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD,1.1/"
+        + "Q.....B1GQ......G1."
+        + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
+    result = {"inflation": {}, "gdp_growth": {}, "errors": []}
+    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("quarterly GDP", gdp_url)):
+        try:
+            rows = fetch_oecd_csv(url)
+            parsed = latest_oecd_rows(rows)
+            if label.endswith("CPI"):
+                result["inflation"].update(parsed)
+            else:
+                result["gdp_growth"].update(parsed)
+            print("OECD", label, "rows:", len(rows), "areas:", len(parsed))
+        except Exception as error:
+            result["errors"].append(label + ": " + str(error)[:180])
+            print("OECD", label, "unavailable:", str(error)[:180])
+    return result
+
 def build_currency(code, country, country_name):
     metrics = {}
     indicator_sources = []
@@ -175,6 +240,25 @@ def build_currency(code, country, country_name):
             }
             errors.append(key + ": " + str(error)[:120])
 
+    # Prefer current OECD high-frequency readings. Retain World Bank annual series only
+    # as a clearly dated fallback when OECD does not yet publish an observation.
+    high_frequency = fetch_oecd_high_frequency()
+    area = OECD_AREAS[code]
+    for key in ("inflation", "gdp_growth"):
+        observations = high_frequency[key].get(area, [])
+        if observations:
+            latest = observations[0]
+            metrics[key] = {
+                "value": latest["value"],
+                "period": latest["period"],
+                "year": int(latest["period"][:4]),
+                "history": observations,
+                "score": component_score(observations, "lower_is_better" if key == "inflation" else "higher_is_better"),
+                "label": "CPI inflation, year-on-year (%)" if key == "inflation" else "Real GDP growth, year-on-year (%)",
+                "source": "OECD",
+                "url": "https://data-explorer.oecd.org/",
+            }
+
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
     score = None
     if available:
@@ -203,8 +287,10 @@ def build_currency(code, country, country_name):
         "policy_rate_source": POLICY_RATES[code]["url"],
         "inflation": metrics["inflation"]["value"],
         "inflation_year": metrics["inflation"]["year"],
+        "inflation_period": metrics["inflation"].get("period", str(metrics["inflation"]["year"]) if metrics["inflation"]["year"] else None),
         "gdp_growth": metrics["gdp_growth"]["value"],
         "gdp_growth_year": metrics["gdp_growth"]["year"],
+        "gdp_growth_period": metrics["gdp_growth"].get("period", str(metrics["gdp_growth"]["year"]) if metrics["gdp_growth"]["year"] else None),
         "unemployment": metrics["unemployment"]["value"],
         "unemployment_year": metrics["unemployment"]["year"],
         "metrics": metrics,
@@ -287,7 +373,7 @@ for code in CURRENCIES:
     item = build_currency(code, country, country_name)
     currencies.append(item)
     macro_sources.append({
-        "name": f"World Bank · {country_name}",
+        "name": f"OECD / World Bank · {country_name}",
         "url": f"https://data.worldbank.org/country/{country.lower()}",
         "status": "ok" if len([k for k in INDICATORS if item["metrics"][k]["value"] is not None]) else "partial",
         "checked_at": now.isoformat(),
@@ -302,7 +388,7 @@ output = {
     "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v3.4-policy-rates-and-2dp-display",
+    "model": "v3.5-monthly-cpi-quarterly-gdp",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
@@ -320,7 +406,7 @@ output = {
     "events": events,
     "sources": news_sources + macro_sources,
     "limitations": [
-        "Macro indicators are official World Bank annual series; they are not real-time release surprises and may lag current conditions.",
+        "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
         "EUR uses the World Bank euro-area aggregate; other currencies use the corresponding national economy.",
         "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
         "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
@@ -331,5 +417,5 @@ output = {
 }
 DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
 DATA_PATH.write_text(json.dumps(output, indent=2), encoding="utf-8")
-print("Wrote V3.3 macro snapshot for", len(currencies), "currencies and", len(events), "news events.")
+print("Wrote V3.5 higher-frequency macro snapshot for", len(currencies), "currencies and", len(events), "news events.")
 print("Macro series available:", sum(1 for c in currencies for k in INDICATORS if c["metrics"][k]["value"] is not None), "of", len(currencies) * len(INDICATORS))
