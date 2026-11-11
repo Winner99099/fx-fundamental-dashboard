@@ -184,7 +184,7 @@ def fetch_oecd_high_frequency():
     if OECD_HIGH_FREQUENCY_CACHE is not None:
         return OECD_HIGH_FREQUENCY_CACHE
     base = "https://sdmx.oecd.org/public/rest/data/"
-    monthly_areas = "+".join(OECD_AREAS[c] for c in CURRENCIES if c not in ("AUD", "NZD"))
+    monthly_areas = "+".join(OECD_AREAS[c] for c in CURRENCIES if c not in ("AUD", "NZD", "EUR", "JPY"))
     quarterly_areas = "+".join(OECD_AREAS[c] for c in ("AUD", "NZD"))
     cpi_monthly_url = (
         base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0/"
@@ -196,13 +196,23 @@ def fetch_oecd_high_frequency():
         + quarterly_areas + ".Q.N.CPI.PA._T.N.GY"
         + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
+    japan_cpi_url = (
+        base + "OECD.SDD.TPS,DSD_PRICES_COICOP2018@DF_PRICES_C2018_ALL,1.0/"
+        + "JPN.M.N.CPI.PA._T.N.GY"
+        + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
+    euro_cpi_url = (
+        base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_HICP,1.0/"
+        + "EA21.M.HICP.CPI.PA._T.N.GY"
+        + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
     gdp_url = (
         base + "OECD.SDD.NAD,DSD_NAMAIN1@DF_QNA_EXPENDITURE_GROWTH_OECD,1.1/"
         + "Q.....B1GQ......GY."
         + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     result = {"inflation": {}, "gdp_growth": {}, "errors": []}
-    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("quarterly GDP", gdp_url)):
+    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("Japan CPI", japan_cpi_url), ("Euro area CPI", euro_cpi_url), ("quarterly GDP", gdp_url)):
         try:
             rows = fetch_oecd_csv(url)
             parsed = latest_oecd_rows(rows)
@@ -252,6 +262,8 @@ def build_currency(code, country, country_name):
     area = OECD_AREAS[code]
     for key in ("inflation", "gdp_growth"):
         observations = high_frequency[key].get(area, [])
+        if key == "gdp_growth" and code == "EUR" and not observations:
+            observations = high_frequency[key].get("EA21", [])
         if observations:
             latest = observations[0]
             metrics[key] = {
