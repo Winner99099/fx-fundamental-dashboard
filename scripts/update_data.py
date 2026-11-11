@@ -202,7 +202,7 @@ def fetch_oecd_high_frequency():
         + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     euro_cpi_url = (
-        base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_HICP,1.0/"
+        base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_HICP,/"
         + "EA21.M.HICP.CPI.PA._T.N.GY"
         + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
