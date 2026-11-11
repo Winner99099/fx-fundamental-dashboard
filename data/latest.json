@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-11T01:27:39.436342+00:00",
+  "generated_at": "2026-11-11T01:42:43.847165+00:00",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v3.4-policy-rates-and-2dp-display",
+  "model": "v3.5-monthly-cpi-quarterly-gdp",
   "history_window_days": 90,
   "scoring": {
     "scale": "-5 to +5",
@@ -27,90 +27,94 @@
   "currencies": [
     {
       "code": "USD",
-      "score": 0.23,
+      "score": -0.19,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United States",
-      "data_year": 2024,
+      "data_year": 2025,
       "policy_rate": 4.0,
       "policy_rate_display": "3.75\u20134.00%",
       "policy_rate_basis": "Fed target range",
       "policy_rate_as_of": "2026-10-29",
       "policy_rate_source": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
-      "inflation": 2.94952520485207,
-      "inflation_year": 2024,
-      "gdp_growth": 2.16138195623856,
-      "gdp_growth_year": 2025,
+      "inflation": 3.737685,
+      "inflation_year": 2026,
+      "inflation_period": "2026-09",
+      "gdp_growth": 0.831964555,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 4.198,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 2.94952520485207,
-          "year": 2024,
+          "value": 3.737685,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
-              "year": 2024,
-              "value": 2.94952520485207
+              "period": "2026-09",
+              "value": 3.737685
             },
             {
-              "year": 2023,
-              "value": 4.11633838374487
+              "period": "2026-08",
+              "value": 3.396548
             },
             {
-              "year": 2022,
-              "value": 8.00279982052121
+              "period": "2026-07",
+              "value": 3.364825
             },
             {
-              "year": 2021,
-              "value": 4.69785886363742
+              "period": "2026-06",
+              "value": 3.531425
             },
             {
-              "year": 2020,
-              "value": 1.23358439630629
+              "period": "2026-05",
+              "value": 4.248674
             },
             {
-              "year": 2019,
-              "value": 1.8122100752602
+              "period": "2026-04",
+              "value": 3.810845
             }
           ],
-          "score": 1.19,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=USA"
+          "score": -1.52,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 2.16138195623856,
-          "year": 2025,
+          "value": 0.831964555,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 2.16138195623856
+              "period": "2026-Q3",
+              "value": 0.831964555
             },
             {
-              "year": 2024,
-              "value": 2.79318715363841
+              "period": "2026-Q2",
+              "value": 0.55048979
             },
             {
-              "year": 2023,
-              "value": 2.93436322440155
+              "period": "2026-Q1",
+              "value": 0.617206398
             },
             {
-              "year": 2022,
-              "value": 2.52421385073222
+              "period": "2025-Q4",
+              "value": 0.051893243
             },
             {
-              "year": 2021,
-              "value": 6.15202247867526
+              "period": "2025-Q3",
+              "value": 0.956278748
             },
             {
-              "year": 2020,
-              "value": -2.081375977796
+              "period": "2025-Q2",
+              "value": 0.990900167
             }
           ],
-          "score": -0.6,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=USA"
+          "score": 1.53,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.198,
@@ -153,14 +157,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "EUR",
       "score": 0.56,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Euro area",
       "data_year": 2025,
       "policy_rate": 2.5,
@@ -170,8 +174,10 @@
       "policy_rate_source": "https://www.ecb.europa.eu/press/pr/date/2026/html/index.en.html",
       "inflation": 2.46605755272817,
       "inflation_year": 2025,
+      "inflation_period": "2025",
       "gdp_growth": 1.4110724231835,
       "gdp_growth_year": 2025,
+      "gdp_growth_period": "2025",
       "unemployment": 6.28355946264135,
       "unemployment_year": 2025,
       "metrics": {
@@ -284,14 +290,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "GBP",
-      "score": -0.79,
+      "score": -1.64,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United Kingdom",
       "data_year": 2025,
       "policy_rate": 4.0,
@@ -299,80 +305,84 @@
       "policy_rate_basis": "BoE Bank Rate",
       "policy_rate_as_of": "2026-11-05",
       "policy_rate_source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
-      "inflation": 3.88306881625999,
-      "inflation_year": 2025,
-      "gdp_growth": 1.38844207858726,
-      "gdp_growth_year": 2025,
+      "inflation": 3.6,
+      "inflation_year": 2026,
+      "inflation_period": "2026-09",
+      "gdp_growth": 0.532606626,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
       "unemployment": 4.746,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 3.88306881625999,
-          "year": 2025,
+          "value": 3.6,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 3.88306881625999
+              "period": "2026-09",
+              "value": 3.6
             },
             {
-              "year": 2024,
-              "value": 3.2715729463592
+              "period": "2026-08",
+              "value": 3.3
             },
             {
-              "year": 2023,
-              "value": 6.79396706793962
+              "period": "2026-07",
+              "value": 3.1
             },
             {
-              "year": 2022,
-              "value": 7.92204883147902
+              "period": "2026-06",
+              "value": 2.8
             },
             {
-              "year": 2021,
-              "value": 2.51837109614213
+              "period": "2026-05",
+              "value": 3.0
             },
             {
-              "year": 2020,
-              "value": 0.989486703772491
+              "period": "2026-04",
+              "value": 3.0
             }
           ],
-          "score": -0.58,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=GBR"
+          "score": -4.76,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 1.38844207858726,
-          "year": 2025,
+          "value": 0.532606626,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 1.38844207858726
+              "period": "2026-Q2",
+              "value": 0.532606626
             },
             {
-              "year": 2024,
-              "value": 1.08027716858781
+              "period": "2026-Q1",
+              "value": 0.641214693
             },
             {
-              "year": 2023,
-              "value": 0.271650048355255
+              "period": "2025-Q4",
+              "value": 0.011009773
             },
             {
-              "year": 2022,
-              "value": 5.14970388522993
+              "period": "2025-Q3",
+              "value": 0.18206007
             },
             {
-              "year": 2021,
-              "value": 8.5431118453255
+              "period": "2025-Q2",
+              "value": 0.007081372
             },
             {
-              "year": 2020,
-              "value": -10.047896637362
+              "period": "2025-Q1",
+              "value": 0.600186317
             }
           ],
-          "score": 0.12,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=GBR"
+          "score": 2.78,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.746,
@@ -415,14 +425,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "JPY",
-      "score": 0.41,
+      "score": 0.52,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Japan",
       "data_year": 2025,
       "policy_rate": 1.25,
@@ -432,8 +442,10 @@
       "policy_rate_source": "https://www.boj.or.jp/en/",
       "inflation": 3.17253034260247,
       "inflation_year": 2025,
-      "gdp_growth": 1.19311288444599,
-      "gdp_growth_year": 2025,
+      "inflation_period": "2025",
+      "gdp_growth": 0.360456187,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
       "unemployment": 2.451,
       "unemployment_year": 2025,
       "metrics": {
@@ -472,38 +484,39 @@
           "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=JPN"
         },
         "gdp_growth": {
-          "value": 1.19311288444599,
-          "year": 2025,
+          "value": 0.360456187,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 1.19311288444599
+              "period": "2026-Q2",
+              "value": 0.360456187
             },
             {
-              "year": 2024,
-              "value": -0.240084236041696
+              "period": "2026-Q1",
+              "value": 0.47819799
             },
             {
-              "year": 2023,
-              "value": 0.720785304749811
+              "period": "2025-Q4",
+              "value": 0.261897427
             },
             {
-              "year": 2022,
-              "value": 1.33164750653741
+              "period": "2025-Q3",
+              "value": -0.373694818
             },
             {
-              "year": 2021,
-              "value": 3.56419531474475
+              "period": "2025-Q2",
+              "value": 0.123506452
             },
             {
-              "year": 2020,
-              "value": -4.28327942675573
+              "period": "2025-Q1",
+              "value": 0.502532887
             }
           ],
-          "score": 0.46,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=JPN"
+          "score": 0.77,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 2.451,
@@ -546,14 +559,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "CHF",
-      "score": -0.04,
+      "score": 1.82,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Switzerland",
       "data_year": 2025,
       "policy_rate": 0.0,
@@ -561,80 +574,84 @@
       "policy_rate_basis": "SNB policy rate",
       "policy_rate_as_of": "2026-09-24",
       "policy_rate_source": "https://www.snb.ch/en/",
-      "inflation": 0.154376978290185,
+      "inflation": 0.06316037,
       "inflation_year": 2025,
-      "gdp_growth": 1.30007790958307,
-      "gdp_growth_year": 2025,
+      "inflation_period": "2025-12",
+      "gdp_growth": 1.884747305,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
       "unemployment": 4.873,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 0.154376978290185,
+          "value": 0.06316037,
+          "period": "2025-12",
           "year": 2025,
           "history": [
             {
-              "year": 2025,
-              "value": 0.154376978290185
+              "period": "2025-12",
+              "value": 0.06316037
             },
             {
-              "year": 2024,
-              "value": 1.06234041976594
+              "period": "2025-11",
+              "value": 0.0211354
             },
             {
-              "year": 2023,
-              "value": 2.13540088016386
+              "period": "2025-10",
+              "value": 0.09591489
             },
             {
-              "year": 2022,
-              "value": 2.83502798644451
+              "period": "2025-09",
+              "value": 0.2244198
             },
             {
-              "year": 2021,
-              "value": 0.581814168489855
+              "period": "2025-08",
+              "value": 0.1521525
             },
             {
-              "year": 2020,
-              "value": -0.725874933313402
+              "period": "2025-07",
+              "value": 0.2179674
             }
           ],
-          "score": 1.76,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CHE"
+          "score": 2.61,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 1.30007790958307,
-          "year": 2025,
+          "value": 1.884747305,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 1.30007790958307
+              "period": "2026-Q2",
+              "value": 1.884747305
             },
             {
-              "year": 2024,
-              "value": 1.39033363875791
+              "period": "2026-Q1",
+              "value": 0.632053178
             },
             {
-              "year": 2023,
-              "value": 0.825560934124624
+              "period": "2025-Q4",
+              "value": 0.517623842
             },
             {
-              "year": 2022,
-              "value": 3.53430286842426
+              "period": "2025-Q3",
+              "value": -0.414328909
             },
             {
-              "year": 2021,
-              "value": 6.17622836050151
+              "period": "2025-Q2",
+              "value": -0.017102983
             },
             {
-              "year": 2020,
-              "value": -2.2552579425106
+              "period": "2025-Q1",
+              "value": 0.938069724
             }
           ],
-          "score": -0.08,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=CHE"
+          "score": 4.44,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.873,
@@ -677,14 +694,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "CAD",
-      "score": 0.38,
+      "score": -0.17,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Canada",
       "data_year": 2025,
       "policy_rate": 2.5,
@@ -692,80 +709,84 @@
       "policy_rate_basis": "BoC overnight rate target",
       "policy_rate_as_of": "2026-10-28",
       "policy_rate_source": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/",
-      "inflation": 2.07232411149103,
-      "inflation_year": 2025,
-      "gdp_growth": 1.74268536175708,
-      "gdp_growth_year": 2025,
+      "inflation": 3.092783,
+      "inflation_year": 2026,
+      "inflation_period": "2026-09",
+      "gdp_growth": 0.299984906,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 6.907,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 2.07232411149103,
-          "year": 2025,
+          "value": 3.092783,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 2.07232411149103
+              "period": "2026-09",
+              "value": 3.092783
             },
             {
-              "year": 2024,
-              "value": 2.38158383281173
+              "period": "2026-08",
+              "value": 3.033981
             },
             {
-              "year": 2023,
-              "value": 3.87900159788425
+              "period": "2026-07",
+              "value": 3.032141
             },
             {
-              "year": 2022,
-              "value": 6.80280115341612
+              "period": "2026-06",
+              "value": 2.798054
             },
             {
-              "year": 2021,
-              "value": 3.39519318527527
+              "period": "2026-05",
+              "value": 3.225806
             },
             {
-              "year": 2020,
-              "value": 0.716999632307827
+              "period": "2026-04",
+              "value": 2.815177
             }
           ],
-          "score": 1.59,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=CAN"
+          "score": -0.94,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 1.74268536175708,
-          "year": 2025,
+          "value": 0.299984906,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 1.74268536175708
+              "period": "2026-Q3",
+              "value": 0.299984906
             },
             {
-              "year": 2024,
-              "value": 2.04626605401701
+              "period": "2026-Q2",
+              "value": 0.819738265
             },
             {
-              "year": 2023,
-              "value": 1.95308552199025
+              "period": "2026-Q1",
+              "value": 0.081188916
             },
             {
-              "year": 2022,
-              "value": 4.69541985045903
+              "period": "2025-Q4",
+              "value": -0.246475531
             },
             {
-              "year": 2021,
-              "value": 5.95052804984759
+              "period": "2025-Q3",
+              "value": 0.471919791
             },
             {
-              "year": 2020,
-              "value": -5.03823342794087
+              "period": "2025-Q2",
+              "value": -0.242322459
             }
           ],
-          "score": -0.2,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=CAN"
+          "score": 1.29,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 6.907,
@@ -808,14 +829,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "AUD",
-      "score": -0.28,
+      "score": -0.74,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Australia",
       "data_year": 2025,
       "policy_rate": 4.85,
@@ -823,80 +844,84 @@
       "policy_rate_basis": "RBA cash rate target",
       "policy_rate_as_of": "2026-11-04",
       "policy_rate_source": "https://www.rba.gov.au/",
-      "inflation": 2.87403791660173,
-      "inflation_year": 2025,
-      "gdp_growth": 1.35039785076631,
-      "gdp_growth_year": 2025,
+      "inflation": 3.920717,
+      "inflation_year": 2026,
+      "inflation_period": "2026-Q3",
+      "gdp_growth": 0.419502713,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
       "unemployment": 4.09,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 2.87403791660173,
-          "year": 2025,
+          "value": 3.920717,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 2.87403791660173
+              "period": "2026-Q3",
+              "value": 3.920717
             },
             {
-              "year": 2024,
-              "value": 3.16656665428797
+              "period": "2026-Q2",
+              "value": 3.963146
             },
             {
-              "year": 2023,
-              "value": 5.59701792296707
+              "period": "2026-Q1",
+              "value": 4.048293
             },
             {
-              "year": 2022,
-              "value": 6.59409658717841
+              "period": "2025-Q4",
+              "value": 3.671937
             },
             {
-              "year": 2021,
-              "value": 2.86391284709318
+              "period": "2025-Q3",
+              "value": 3.236715
             },
             {
-              "year": 2020,
-              "value": 0.846900734607273
+              "period": "2025-Q2",
+              "value": 2.120447
             }
           ],
-          "score": 0.36,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=AUS"
+          "score": -0.87,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 1.35039785076631,
-          "year": 2025,
+          "value": 0.419502713,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 1.35039785076631
+              "period": "2026-Q2",
+              "value": 0.419502713
             },
             {
-              "year": 2024,
-              "value": 1.37340773365975
+              "period": "2026-Q1",
+              "value": 0.286228081
             },
             {
-              "year": 2023,
-              "value": 3.58382100798981
+              "period": "2025-Q4",
+              "value": 0.912431295
             },
             {
-              "year": 2022,
-              "value": 4.25304559238732
+              "period": "2025-Q3",
+              "value": 0.503634521
             },
             {
-              "year": 2021,
-              "value": 2.00694844335034
+              "period": "2025-Q2",
+              "value": 0.780404963
             },
             {
-              "year": 2020,
-              "value": -0.133531904304775
+              "period": "2025-Q1",
+              "value": 0.392250142
             }
           ],
-          "score": -1.03,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=AUS"
+          "score": -0.88,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.09,
@@ -939,14 +964,14 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "NZD",
-      "score": -1.01,
+      "score": -3.07,
       "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "New Zealand",
       "data_year": 2025,
       "policy_rate": 2.75,
@@ -954,80 +979,84 @@
       "policy_rate_basis": "RBNZ official cash rate",
       "policy_rate_as_of": "2026-10-28",
       "policy_rate_source": "https://www.rbnz.govt.nz/",
-      "inflation": 2.8397963180572,
-      "inflation_year": 2025,
-      "gdp_growth": 0.462871830681081,
-      "gdp_growth_year": 2025,
+      "inflation": 3.714936,
+      "inflation_year": 2026,
+      "inflation_period": "2026-Q3",
+      "gdp_growth": 0.247110069,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
       "unemployment": 5.076,
       "unemployment_year": 2025,
       "metrics": {
         "inflation": {
-          "value": 2.8397963180572,
-          "year": 2025,
+          "value": 3.714936,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 2.8397963180572
+              "period": "2026-Q3",
+              "value": 3.714936
             },
             {
-              "year": 2024,
-              "value": 2.92279782301956
+              "period": "2026-Q2",
+              "value": 4.058193
             },
             {
-              "year": 2023,
-              "value": 5.73316283034957
+              "period": "2026-Q1",
+              "value": 3.079292
             },
             {
-              "year": 2022,
-              "value": 7.17222476016441
+              "period": "2025-Q4",
+              "value": 3.108003
             },
             {
-              "year": 2021,
-              "value": 3.94112060778728
+              "period": "2025-Q3",
+              "value": 3.046875
             },
             {
-              "year": 2020,
-              "value": 1.71456170007244
+              "period": "2025-Q2",
+              "value": 2.672956
             }
           ],
-          "score": 1.38,
-          "label": "Inflation, consumer prices (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=NZL"
+          "score": -2.99,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.462871830681081,
-          "year": 2025,
+          "value": 0.247110069,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 0.462871830681081
+              "period": "2026-Q2",
+              "value": 0.247110069
             },
             {
-              "year": 2024,
-              "value": -0.868722371893952
+              "period": "2026-Q1",
+              "value": 0.921464198
             },
             {
-              "year": 2023,
-              "value": 1.81389453412019
+              "period": "2025-Q4",
+              "value": 0.467130967
             },
             {
-              "year": 2022,
-              "value": 3.34521847792682
+              "period": "2025-Q3",
+              "value": 0.892614862
             },
             {
-              "year": 2021,
-              "value": 4.29916005216614
+              "period": "2025-Q2",
+              "value": -0.616013513
             },
             {
-              "year": 2020,
-              "value": -0.240916114758988
+              "period": "2025-Q1",
+              "value": 0.837293181
             }
           ],
-          "score": -1.63,
-          "label": "GDP growth (annual %)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=NZL"
+          "score": -2.34,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 5.076,
@@ -1070,7 +1099,7 @@
         "unemployment": 15.0
       },
       "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 annual World Bank indicators; policy-rate outlook and market expectations are not yet included.",
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     }
   ],
@@ -3164,7 +3193,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -3172,7 +3201,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -3180,7 +3209,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 39,
       "new_releases_added": 0
     },
@@ -3188,7 +3217,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 46,
       "new_releases_added": 0
     },
@@ -3196,7 +3225,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3204,7 +3233,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3212,7 +3241,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3220,77 +3249,77 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
     {
-      "name": "World Bank \u00b7 United States",
+      "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
-      "data_year": 2024,
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 Euro area",
+      "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 United Kingdom",
+      "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 Japan",
+      "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 Switzerland",
+      "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 Canada",
+      "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 Australia",
+      "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
     {
-      "name": "World Bank \u00b7 New Zealand",
+      "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-11T01:27:39.436342+00:00",
+      "checked_at": "2026-11-11T01:42:43.847165+00:00",
       "data_year": 2025,
       "indicators_available": 3
     }
   ],
   "limitations": [
-    "Macro indicators are official World Bank annual series; they are not real-time release surprises and may lag current conditions.",
+    "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
     "EUR uses the World Bank euro-area aggregate; other currencies use the corresponding national economy.",
     "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
     "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
