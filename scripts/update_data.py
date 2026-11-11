@@ -150,7 +150,7 @@ def component_score(values, direction):
 
 
 OECD_AREAS = {
-    "USD": "USA", "EUR": "EA20", "GBP": "GBR", "JPY": "JPN",
+    "USD": "USA", "EUR": "EA", "GBP": "GBR", "JPY": "JPN",
     "CHF": "CHE", "CAD": "CAN", "AUD": "AUS", "NZD": "NZL",
 }
 
@@ -203,7 +203,7 @@ def fetch_oecd_high_frequency():
     )
     euro_cpi_url = (
         base + "OECD.SDD.TPS,DSD_PRICES@DF_PRICES_HICP,/"
-        + "EA21.M.HICP.CPI.PA._T.N.GY"
+        + "EA.M.HICP.CPI.PA._T.N.GY"
         + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     gdp_url = (
@@ -261,10 +261,10 @@ def build_currency(code, country, country_name):
     high_frequency = fetch_oecd_high_frequency()
     area = OECD_AREAS[code]
     for key in ("inflation", "gdp_growth"):
-        lookup_area = "EA21" if key == "inflation" and code == "EUR" else area
+        lookup_area = area
         observations = high_frequency[key].get(lookup_area, [])
         if key == "gdp_growth" and code == "EUR" and not observations:
-            observations = high_frequency[key].get("EA21", [])
+            observations = high_frequency[key].get("EA", [])
         if observations:
             latest = observations[0]
             metrics[key] = {
