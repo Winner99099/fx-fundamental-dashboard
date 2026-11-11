@@ -176,6 +176,61 @@ def latest_oecd_rows(rows):
         for area, values in grouped.items()
     }
 
+def fetch_us_bls_cpi():
+    """Fetch official monthly U.S. CPI-U index and calculate 12-month inflation."""
+    body = json.dumps({
+        "seriesid": ["CUUR0000SA0"],
+        "startyear": str(now.year - 2),
+        "endyear": str(now.year),
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+        data=body,
+        headers={"Content-Type": "application/json", "User-Agent": "MacroPulseFXDashboard/3.5"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=30) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+    if payload.get("status") != "REQUEST_SUCCEEDED":
+        raise RuntimeError("BLS API did not return REQUEST_SUCCEEDED")
+    observations = {}
+    series = payload.get("Results", {}).get("series", [])
+    for item in (series[0].get("data", []) if series else []):
+        period = item.get("period", "")
+        if not period.startswith("M") or period == "M13":
+            continue
+        try:
+            year = int(item["year"])
+            month = int(period[1:])
+            observations[(year, month)] = float(item["value"])
+        except (KeyError, TypeError, ValueError):
+            continue
+    yoy = []
+    for (year, month), value in observations.items():
+        prior = observations.get((year - 1, month))
+        if prior:
+            yoy.append({"period": f"{year:04d}-{month:02d}", "value": (value / prior - 1.0) * 100.0})
+    return sorted(yoy, key=lambda x: x["period"], reverse=True)[:6]
+
+def fetch_eurostat_hicp():
+    """Fetch euro-area monthly HICP annual rate of change from Eurostat."""
+    url = (
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_manr"
+        "?format=JSON&lang=EN&freq=M&coicop=CP00&unit=RCH_A&geo=EA&lastTimePeriod=12"
+    )
+    payload = json.loads(fetch(url).decode("utf-8"))
+    time_index = payload.get("dimension", {}).get("time", {}).get("category", {}).get("index", {})
+    values = payload.get("value", {})
+    observations = []
+    for period, index in time_index.items():
+        raw = values.get(str(index)) if isinstance(values, dict) else (values[index] if index < len(values) else None)
+        try:
+            observations.append({"period": period, "value": float(raw)})
+        except (TypeError, ValueError):
+            continue
+    return sorted(observations, key=lambda x: x["period"], reverse=True)[:6]
+
+
 OECD_HIGH_FREQUENCY_CACHE = None
 
 def fetch_oecd_high_frequency():
@@ -224,6 +279,18 @@ def fetch_oecd_high_frequency():
         except Exception as error:
             result["errors"].append(label + ": " + str(error)[:180])
             print("OECD", label, "unavailable:", str(error)[:180])
+    try:
+        result["inflation"]["USA"] = fetch_us_bls_cpi()
+        print("BLS U.S. CPI observations:", len(result["inflation"]["USA"]))
+    except Exception as error:
+        result["errors"].append("U.S. BLS CPI: " + str(error)[:180])
+        print("BLS U.S. CPI unavailable:", str(error)[:180])
+    try:
+        result["inflation"]["EA20"] = fetch_eurostat_hicp()
+        print("Eurostat euro-area HICP observations:", len(result["inflation"]["EA20"]))
+    except Exception as error:
+        result["errors"].append("Eurostat HICP: " + str(error)[:180])
+        print("Eurostat HICP unavailable:", str(error)[:180])
     OECD_HIGH_FREQUENCY_CACHE = result
     return result
 
@@ -274,8 +341,8 @@ def build_currency(code, country, country_name):
                 "history": observations,
                 "score": component_score(observations, "lower_is_better" if key == "inflation" else "higher_is_better"),
                 "label": "CPI inflation, year-on-year (%)" if key == "inflation" else "Real GDP growth, year-on-year (%)",
-                "source": "OECD",
-                "url": "https://data-explorer.oecd.org/",
+                "source": "BLS" if key == "inflation" and code == "USD" else "Eurostat" if key == "inflation" and code == "EUR" else "OECD",
+                "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_manr/default/table?lang=en" if key == "inflation" and code == "EUR" else "https://data-explorer.oecd.org/",
             }
 
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
