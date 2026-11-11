@@ -150,7 +150,7 @@ def component_score(values, direction):
 
 
 OECD_AREAS = {
-    "USD": "USA", "EUR": "EA21", "GBP": "GBR", "JPY": "JPN",
+    "USD": "USA", "EUR": "EA20", "GBP": "GBR", "JPY": "JPN",
     "CHF": "CHE", "CAD": "CAN", "AUD": "AUS", "NZD": "NZL",
 }
 
@@ -261,7 +261,8 @@ def build_currency(code, country, country_name):
     high_frequency = fetch_oecd_high_frequency()
     area = OECD_AREAS[code]
     for key in ("inflation", "gdp_growth"):
-        observations = high_frequency[key].get(area, [])
+        lookup_area = "EA21" if key == "inflation" and code == "EUR" else area
+        observations = high_frequency[key].get(lookup_area, [])
         if key == "gdp_growth" and code == "EUR" and not observations:
             observations = high_frequency[key].get("EA21", [])
         if observations:
