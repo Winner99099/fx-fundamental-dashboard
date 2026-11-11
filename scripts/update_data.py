@@ -198,7 +198,7 @@ def fetch_oecd_high_frequency():
     )
     japan_cpi_url = (
         base + "OECD.SDD.TPS,DSD_PRICES_COICOP2018@DF_PRICES_C2018_ALL,1.0/"
-        + "JPN.M.N.CPI.PA._T.N.GY"
+        + "CHE+JPN.M.N.CPI.PA._T.N.GY"
         + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     euro_cpi_url = (
@@ -261,7 +261,7 @@ def build_currency(code, country, country_name):
     high_frequency = fetch_oecd_high_frequency()
     area = OECD_AREAS[code]
     for key in ("inflation", "gdp_growth"):
-        lookup_area = area
+        lookup_area = "EA20" if key == "inflation" and code == "EUR" else area
         observations = high_frequency[key].get(lookup_area, [])
         if key == "gdp_growth" and code == "EUR" and not observations:
             observations = high_frequency[key].get("EA", [])
