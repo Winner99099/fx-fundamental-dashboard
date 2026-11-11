@@ -47,7 +47,7 @@
 
       <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
       <div class="panel">
-        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Partial scores use official annual inflation, GDP and unemployment data; policy-rate expectations are not yet included.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
+        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Partial scores use monthly CPI, quarterly GDP growth and annual unemployment where higher-frequency coverage is unavailable; policy-rate expectations are not yet included.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
         <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Fundamental score</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th><th>Confidence / data status</th></tr></thead><tbody id="currency-rows"><tr><td colspan="7" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
       </div>
       <div class="two-col">
@@ -57,9 +57,9 @@
     </section>
 
     <section class="view" id="view-currencies">
-      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores currently compare annual indicators with each economy's own recent history. Check the data year and coverage before using them.</p></div></div>
+      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores compare the latest available monthly CPI, quarterly GDP and annual unemployment readings with each economy's own recent history. Check each observation period and source.</p></div></div>
       <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Score</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
-      <div class="notice"><b>Scoring methodology</b><p>V3 does not rank currencies from policy-rate levels alone or invent missing macro data. V3.3 compares the latest annual inflation, GDP-growth and unemployment readings with up to five preceding annual observations. Inflation and unemployment below their own recent history, and GDP growth above its own recent history, contribute positively. Available component weights (25% inflation, 20% GDP, 15% labour) are renormalised. Policy-rate outlook (30%), central-bank communication (10%), consensus surprises and market confirmation are not yet scored. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
+      <div class="notice"><b>Scoring methodology</b><p>V3 does not rank currencies from policy-rate levels alone or invent missing macro data. V3.5 compares the latest available monthly CPI, quarterly GDP-growth and annual unemployment readings with up to five preceding observations at the same frequency. Inflation and unemployment below their own recent history, and GDP growth above its own recent history, contribute positively. Unemployment currently remains an annual World Bank series. Available component weights (25% inflation, 20% GDP, 15% labour) are renormalised. Policy-rate outlook (30%), central-bank communication (10%), consensus surprises and market confirmation are not yet scored. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
     </section>
 
     <section class="view" id="view-pairs">
@@ -90,7 +90,7 @@
       <div class="panel"><div class="panel-head"><b>Saved entries</b><button class="text-button" id="journal-export">Export CSV ↓</button></div><div id="journal-list" class="journal-list"></div></div>
     </section>
 
-    <footer><span>MACROPULSE V3.3 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
+    <footer><span>MACROPULSE V3.5 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
 <script src="app.js?v=20261111-2" defer></script>
