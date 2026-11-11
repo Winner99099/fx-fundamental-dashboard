@@ -176,8 +176,13 @@ def latest_oecd_rows(rows):
         for area, values in grouped.items()
     }
 
+OECD_HIGH_FREQUENCY_CACHE = None
+
 def fetch_oecd_high_frequency():
     """Return latest comparable monthly/quarterly CPI and quarterly real GDP YoY."""
+    global OECD_HIGH_FREQUENCY_CACHE
+    if OECD_HIGH_FREQUENCY_CACHE is not None:
+        return OECD_HIGH_FREQUENCY_CACHE
     base = "https://sdmx.oecd.org/public/rest/data/"
     monthly_areas = "+".join(OECD_AREAS[c] for c in CURRENCIES if c not in ("AUD", "NZD"))
     quarterly_areas = "+".join(OECD_AREAS[c] for c in ("AUD", "NZD"))
@@ -277,7 +282,7 @@ def build_currency(code, country, country_name):
         "code": code,
         "score": score,
         "confidence": confidence,
-        "data_status": f"Partial · {len(available)}/3 macro series · annual data",
+        "data_status": f"Partial · {len(available)}/3 macro series · mixed monthly/quarterly/annual data",
         "country_proxy": country_name,
         "data_year": latest_year,
         "policy_rate": POLICY_RATES[code]["value"],
@@ -297,7 +302,7 @@ def build_currency(code, country, country_name):
         "component_weights_available": {key: WEIGHTS[key] for key, _, _ in available},
         "available_weight_pct": sum(w for _, _, w in available),
         "summary": (
-            f"Partial macro score based on {len(available)} of 3 annual World Bank indicators; "
+            f"Partial macro score based on {len(available)} of 3 macro indicators; "
             "policy-rate outlook and market expectations are not yet included."
         ),
         "errors": errors,
