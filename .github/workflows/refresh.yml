@@ -1,6 +1,10 @@
 name: Refresh macro dashboard data
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/update_data.py'
+      - '.github/workflows/refresh.yml'
   schedule:
     # Five-minute target; GitHub scheduled runs are best-effort and may be delayed.
     - cron: "*/5 * * * *"
