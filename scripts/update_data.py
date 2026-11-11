@@ -130,7 +130,7 @@ def clamp(value, low=-5.0, high=5.0):
 
 
 def component_score(values, direction):
-    # Compare the latest annual reading with the preceding five observations.
+    # Compare the latest reading with up to five preceding observations at the same frequency.
     if len(values) < 3:
         return None
     latest = values[0]["value"]
@@ -144,7 +144,7 @@ def component_score(values, direction):
     delta = (latest - baseline) / dispersion
     if direction == "lower_is_better":
         delta = -delta
-    # Smooth and cap extreme annual observations; output is a -5 to +5 component.
+    # Smooth and cap extreme observations; output is a -5 to +5 component.
     return round(clamp(5.0 * math.tanh(delta / 2.0)), 2)
 
 
@@ -212,7 +212,7 @@ def fetch_oecd_high_frequency():
         + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
     result = {"inflation": {}, "gdp_growth": {}, "errors": []}
-    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("Japan CPI", japan_cpi_url), ("Euro area CPI", euro_cpi_url), ("quarterly GDP", gdp_url)):
+    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("COICOP 2018 CPI", japan_cpi_url), ("Euro area CPI", euro_cpi_url), ("quarterly GDP", gdp_url)):
         try:
             rows = fetch_oecd_csv(url)
             parsed = latest_oecd_rows(rows)
@@ -411,7 +411,7 @@ output = {
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
-        "method": "Latest annual indicator versus the preceding up to five annual observations; standardised by historical dispersion and smoothed with tanh.",
+        "method": "Latest available reading versus up to five preceding observations at the same frequency; standardised by historical dispersion and smoothed with tanh.",
         "weights": WEIGHTS,
         "direction": {
             "inflation": "Lower than own recent history scores positively; this is a momentum proxy, not an inflation-target assessment.",
@@ -426,7 +426,7 @@ output = {
     "sources": news_sources + macro_sources,
     "limitations": [
         "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
-        "EUR uses the World Bank euro-area aggregate; other currencies use the corresponding national economy.",
+        "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
         "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
         "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
         "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
