@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-11T01:42:43.847165+00:00",
+  "generated_at": "2026-11-11T01:43:20.443077+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v3.5-monthly-cpi-quarterly-gdp",
   "history_window_days": 90,
@@ -27,7 +27,7 @@
   "currencies": [
     {
       "code": "USD",
-      "score": -0.19,
+      "score": -1.78,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United States",
@@ -40,7 +40,7 @@
       "inflation": 3.737685,
       "inflation_year": 2026,
       "inflation_period": "2026-09",
-      "gdp_growth": 0.831964555,
+      "gdp_growth": 2.065739238,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q3",
       "unemployment": 4.198,
@@ -82,36 +82,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.831964555,
+          "value": 2.065739238,
           "period": "2026-Q3",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
-              "value": 0.831964555
+              "value": 2.065739238
             },
             {
               "period": "2026-Q2",
-              "value": 0.55048979
+              "value": 2.191574533
             },
             {
               "period": "2026-Q1",
-              "value": 0.617206398
+              "value": 2.639172848
             },
             {
               "period": "2025-Q4",
-              "value": 0.051893243
+              "value": 2.046040652
             },
             {
               "period": "2025-Q3",
-              "value": 0.956278748
+              "value": 2.600681821
             },
             {
               "period": "2025-Q2",
-              "value": 0.990900167
+              "value": 2.420614103
             }
           ],
-          "score": 1.53,
+          "score": -3.24,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -295,7 +295,7 @@
     },
     {
       "code": "GBP",
-      "score": -1.64,
+      "score": -2.03,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United Kingdom",
@@ -308,7 +308,7 @@
       "inflation": 3.6,
       "inflation_year": 2026,
       "inflation_period": "2026-09",
-      "gdp_growth": 0.532606626,
+      "gdp_growth": 1.372599483,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
       "unemployment": 4.746,
@@ -350,36 +350,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.532606626,
+          "value": 1.372599483,
           "period": "2026-Q2",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
-              "value": 0.532606626
+              "value": 1.372599483
             },
             {
               "period": "2026-Q1",
-              "value": 0.641214693
+              "value": 0.842683241
             },
             {
               "period": "2025-Q4",
-              "value": 0.011009773
+              "value": 0.801572732
             },
             {
               "period": "2025-Q3",
-              "value": 0.18206007
+              "value": 1.152854639
             },
             {
               "period": "2025-Q2",
-              "value": 0.007081372
+              "value": 1.142021345
             },
             {
               "period": "2025-Q1",
-              "value": 0.600186317
+              "value": 1.762323934
             }
           ],
-          "score": 2.78,
+          "score": 1.62,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -430,7 +430,7 @@
     },
     {
       "code": "JPY",
-      "score": 0.52,
+      "score": 0.37,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Japan",
@@ -443,7 +443,7 @@
       "inflation": 3.17253034260247,
       "inflation_year": 2025,
       "inflation_period": "2025",
-      "gdp_growth": 0.360456187,
+      "gdp_growth": 0.726654038,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
       "unemployment": 2.451,
@@ -484,36 +484,36 @@
           "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=JPN"
         },
         "gdp_growth": {
-          "value": 0.360456187,
+          "value": 0.726654038,
           "period": "2026-Q2",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
-              "value": 0.360456187
+              "value": 0.726654038
             },
             {
               "period": "2026-Q1",
-              "value": 0.47819799
+              "value": 0.488839715
             },
             {
               "period": "2025-Q4",
-              "value": 0.261897427
+              "value": 0.513177189
             },
             {
               "period": "2025-Q3",
-              "value": -0.373694818
+              "value": 0.650208425
             },
             {
               "period": "2025-Q2",
-              "value": 0.123506452
+              "value": 1.871578645
             },
             {
               "period": "2025-Q1",
-              "value": 0.502532887
+              "value": 1.628183516
             }
           ],
-          "score": 0.77,
+          "score": 0.32,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -564,7 +564,7 @@
     },
     {
       "code": "CHF",
-      "score": 1.82,
+      "score": 1.65,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Switzerland",
@@ -577,7 +577,7 @@
       "inflation": 0.06316037,
       "inflation_year": 2025,
       "inflation_period": "2025-12",
-      "gdp_growth": 1.884747305,
+      "gdp_growth": 2.632421156,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
       "unemployment": 4.873,
@@ -619,36 +619,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 1.884747305,
+          "value": 2.632421156,
           "period": "2026-Q2",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
-              "value": 1.884747305
+              "value": 2.632421156
             },
             {
               "period": "2026-Q1",
-              "value": 0.632053178
+              "value": 0.716614277
             },
             {
               "period": "2025-Q4",
-              "value": 0.517623842
+              "value": 1.022887968
             },
             {
               "period": "2025-Q3",
-              "value": -0.414328909
+              "value": 0.893734405
             },
             {
               "period": "2025-Q2",
-              "value": -0.017102983
+              "value": 1.816882705
             },
             {
               "period": "2025-Q1",
-              "value": 0.938069724
+              "value": 2.748080972
             }
           ],
-          "score": 4.44,
+          "score": 3.94,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -699,7 +699,7 @@
     },
     {
       "code": "CAD",
-      "score": -0.17,
+      "score": -0.81,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Canada",
@@ -712,7 +712,7 @@
       "inflation": 3.092783,
       "inflation_year": 2026,
       "inflation_period": "2026-09",
-      "gdp_growth": 0.299984906,
+      "gdp_growth": 0.954838473,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q3",
       "unemployment": 6.907,
@@ -754,36 +754,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.299984906,
+          "value": 0.954838473,
           "period": "2026-Q3",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
-              "value": 0.299984906
+              "value": 0.954838473
             },
             {
               "period": "2026-Q2",
-              "value": 0.819738265
+              "value": 1.127895912
             },
             {
               "period": "2026-Q1",
-              "value": 0.081188916
+              "value": 0.062588977
             },
             {
               "period": "2025-Q4",
-              "value": -0.246475531
+              "value": 0.696867197
             },
             {
               "period": "2025-Q3",
-              "value": 0.471919791
+              "value": 1.653737783
             },
             {
               "period": "2025-Q2",
-              "value": -0.242322459
+              "value": 2.005056984
             }
           ],
-          "score": 1.29,
+          "score": -0.63,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -834,7 +834,7 @@
     },
     {
       "code": "AUD",
-      "score": -0.74,
+      "score": -0.44,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Australia",
@@ -847,7 +847,7 @@
       "inflation": 3.920717,
       "inflation_year": 2026,
       "inflation_period": "2026-Q3",
-      "gdp_growth": 0.419502713,
+      "gdp_growth": 2.137635765,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
       "unemployment": 4.09,
@@ -889,36 +889,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.419502713,
+          "value": 2.137635765,
           "period": "2026-Q2",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
-              "value": 0.419502713
+              "value": 2.137635765
             },
             {
               "period": "2026-Q1",
-              "value": 0.286228081
+              "value": 2.504712893
             },
             {
               "period": "2025-Q4",
-              "value": 0.912431295
+              "value": 2.613080323
             },
             {
               "period": "2025-Q3",
-              "value": 0.503634521
+              "value": 2.13327002
             },
             {
               "period": "2025-Q2",
-              "value": 0.780404963
+              "value": 1.898634352
             },
             {
               "period": "2025-Q1",
-              "value": 0.392250142
+              "value": 1.28031431
             }
           ],
-          "score": -0.88,
+          "score": 0.02,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -969,7 +969,7 @@
     },
     {
       "code": "NZD",
-      "score": -3.07,
+      "score": -1.39,
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "New Zealand",
@@ -982,7 +982,7 @@
       "inflation": 3.714936,
       "inflation_year": 2026,
       "inflation_period": "2026-Q3",
-      "gdp_growth": 0.247110069,
+      "gdp_growth": 2.550736229,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
       "unemployment": 5.076,
@@ -1024,36 +1024,36 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.247110069,
+          "value": 2.550736229,
           "period": "2026-Q2",
           "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
-              "value": 0.247110069
+              "value": 2.550736229
             },
             {
               "period": "2026-Q1",
-              "value": 0.921464198
+              "value": 1.667778519
             },
             {
               "period": "2025-Q4",
-              "value": 0.467130967
+              "value": 1.582985058
             },
             {
               "period": "2025-Q3",
-              "value": 0.892614862
+              "value": 1.200469874
             },
             {
               "period": "2025-Q2",
-              "value": -0.616013513
+              "value": -0.858053097
             },
             {
               "period": "2025-Q1",
-              "value": 0.837293181
+              "value": -0.715886191
             }
           ],
-          "score": -2.34,
+          "score": 2.69,
           "label": "Real GDP growth, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -3193,7 +3193,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -3201,7 +3201,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -3209,7 +3209,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 39,
       "new_releases_added": 0
     },
@@ -3217,7 +3217,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 46,
       "new_releases_added": 0
     },
@@ -3225,7 +3225,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3233,7 +3233,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3241,7 +3241,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3249,7 +3249,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -3257,7 +3257,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3265,7 +3265,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3273,7 +3273,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3281,7 +3281,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3289,7 +3289,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3297,7 +3297,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3305,7 +3305,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3313,7 +3313,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-11T01:42:43.847165+00:00",
+      "checked_at": "2026-11-11T01:43:20.443077+00:00",
       "data_year": 2025,
       "indicators_available": 3
     }
