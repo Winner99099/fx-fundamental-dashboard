@@ -6,7 +6,8 @@ from pathlib import Path
 UTC = datetime.timezone.utc
 NOW = datetime.datetime.now(UTC)
 OUT = Path("data/us_macro.json")
-UA = "Mozilla/5.0 (compatible; MacroPulseUSMonitor/1.1)"
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
+FRED_CACHE = {}
 SERIES = {
     "CPILFESL": "core_cpi",
     "PCEPILFE": "core_pce",
@@ -17,10 +18,12 @@ SERIES = {
 
 def get(url, headers=None):
     req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=35) as response:
+    with urllib.request.urlopen(req, timeout=60) as response:
         return response.read()
 
 def fred_series(series):
+    if series in FRED_CACHE:
+        return FRED_CACHE[series]
     url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=" + urllib.parse.quote(series) + "&cosd=2018-01-01"
     raw = get(url).decode("utf-8-sig")
     rows = []
@@ -32,6 +35,9 @@ def fred_series(series):
                 rows.append({"date": date, "value": float(value)})
             except ValueError:
                 continue
+    if not rows:
+        raise RuntimeError("FRED CSV contained no usable observations for " + series)
+    FRED_CACHE[series] = rows
     return rows
 
 def pct_change(current, base):
@@ -77,7 +83,7 @@ def make_metric(series, kind):
     }
 
 def dxy_data():
-    url = "https://query1.finance.yahoo.com/v8/finance/chart/%5EDXY?range=1y&interval=1d"
+    url = "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1y&interval=1d"
     try:
         payload = json.loads(get(url).decode("utf-8"))
         result = payload["chart"]["result"][0]
@@ -152,7 +158,7 @@ def main():
         "errors": errors,
         "sources": {
             "fred": "https://fred.stlouisfed.org/",
-            "dxy": "Yahoo Finance chart endpoint; delayed/indicative; ICE DXY is the benchmark",
+            "dxy": "Yahoo Finance DX-Y.NYB chart endpoint; delayed/indicative ICE US Dollar Index quote",
         },
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
