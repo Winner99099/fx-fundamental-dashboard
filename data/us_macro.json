@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "generated_at": "Awaiting first scheduled GitHub Actions run",
+  "source_status": "PENDING",
+  "indicators": {
+    "core_cpi": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "core_pce": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "nfp": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "treasury_2y": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "treasury_10y": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "dxy": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
+    "yield_spread": null
+  },
+  "sources": {
+    "fred": "https://fred.stlouisfed.org/",
+    "dxy": "Yahoo Finance chart endpoint; delayed/indicative; ICE DXY is the benchmark"
+  }
+}
