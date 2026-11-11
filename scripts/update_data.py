@@ -214,6 +214,7 @@ def fetch_oecd_high_frequency():
         except Exception as error:
             result["errors"].append(label + ": " + str(error)[:180])
             print("OECD", label, "unavailable:", str(error)[:180])
+    OECD_HIGH_FREQUENCY_CACHE = result
     return result
 
 def build_currency(code, country, country_name):
