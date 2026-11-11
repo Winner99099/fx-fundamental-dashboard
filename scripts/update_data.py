@@ -212,7 +212,7 @@ def fetch_us_bls_cpi():
             yoy.append({"period": f"{year:04d}-{month:02d}", "value": (value / prior - 1.0) * 100.0})
     return sorted(yoy, key=lambda x: x["period"], reverse=True)[:6]
 
-def fetch_eurostat_hicp():
+def fetch_eurostat_hicp(geo_code="EA21"):
     """Fetch euro-area monthly HICP annual rate of change from Eurostat."""
     url = (
         "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr"
@@ -291,6 +291,12 @@ def fetch_oecd_high_frequency():
     except Exception as error:
         result["errors"].append("Eurostat HICP: " + str(error)[:180])
         print("Eurostat HICP unavailable:", str(error)[:180])
+    try:
+        result["inflation"]["CHE"] = fetch_eurostat_hicp("CH")
+        print("Eurostat Swiss HICP observations:", len(result["inflation"]["CHE"]))
+    except Exception as error:
+        result["errors"].append("Eurostat Swiss HICP: " + str(error)[:180])
+        print("Eurostat Swiss HICP unavailable:", str(error)[:180])
     OECD_HIGH_FREQUENCY_CACHE = result
     return result
 
@@ -341,8 +347,8 @@ def build_currency(code, country, country_name):
                 "history": observations,
                 "score": component_score(observations, "lower_is_better" if key == "inflation" else "higher_is_better"),
                 "label": "CPI inflation, year-on-year (%)" if key == "inflation" else "Real GDP growth, year-on-year (%)",
-                "source": "BLS" if key == "inflation" and code == "USD" else "Eurostat" if key == "inflation" and code == "EUR" else "OECD",
-                "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_manr/default/table?lang=en" if key == "inflation" and code == "EUR" else "https://data-explorer.oecd.org/",
+                "source": "BLS" if key == "inflation" and code == "USD" else "Eurostat" if key == "inflation" and code in ("EUR", "CHF") else "OECD",
+                "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en" if key == "inflation" and code in ("EUR", "CHF") else "https://data-explorer.oecd.org/",
             }
 
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
