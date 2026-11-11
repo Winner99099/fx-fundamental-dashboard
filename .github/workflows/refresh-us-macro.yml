@@ -1,14 +1,22 @@
 name: Refresh US macro dashboard
+
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "scripts/update_us_macro.py"
+      - ".github/workflows/refresh-us-macro.yml"
   schedule:
-    # Refresh market data periodically; official macro releases update only when published.
+    # Refresh the snapshot periodically; official macro releases update only when published.
     - cron: "*/15 * * * *"
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,6 +24,22 @@ jobs:
           python-version: "3.12"
       - name: Collect FRED and DXY data
         run: python scripts/update_us_macro.py
+      - name: Validate generated snapshot
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("data/us_macro.json").read_text())
+          indicators = data.get("indicators", {})
+          required = ["core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "dxy"]
+          for key in required:
+              item = indicators.get(key, {})
+              print(f"{key}: {item.get('value')} ({item.get('date')})")
+          print("source_status:", data.get("source_status"))
+          print("errors:", data.get("errors", {}))
+          if not any(indicators.get(key, {}).get("value") is not None for key in required):
+              raise SystemExit("Collector returned no usable indicator values")
+          PY
       - name: Commit refreshed US macro snapshot
         run: |
           git config user.name "github-actions[bot]"
