@@ -215,7 +215,7 @@ def fetch_us_bls_cpi():
 def fetch_eurostat_hicp():
     """Fetch euro-area monthly HICP annual rate of change from Eurostat."""
     url = (
-        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_manr"
+        "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_minr"
         "?format=JSON&lang=EN&freq=M&coicop=CP00&unit=RCH_A&geo=EA&lastTimePeriod=12"
     )
     payload = json.loads(fetch(url).decode("utf-8"))
