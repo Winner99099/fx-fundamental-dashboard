@@ -220,7 +220,7 @@ def fetch_oecd_high_frequency():
                 result["inflation"].update(parsed)
             else:
                 result["gdp_growth"].update(parsed)
-            print("OECD", label, "rows:", len(rows), "areas:", len(parsed))
+            print("OECD", label, "rows:", len(rows), "areas:", len(parsed), "codes:", sorted(parsed))
         except Exception as error:
             result["errors"].append(label + ": " + str(error)[:180])
             print("OECD", label, "unavailable:", str(error)[:180])
