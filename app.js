@@ -64,7 +64,8 @@ async function loadSnapshot() {
     renderPairs(); renderSources();
     $("metric-news").textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
-    const macro=(data.sources||[]).filter(s=>String(s.name||"").startsWith("World Bank"));\n    const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
+    const macro=(data.sources||[]).filter(s=>String(s.name||"").startsWith("World Bank"));
+    const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
     $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
     $("updated-at").textContent=`Built ${fmtDate(data.generated_at)}`;
     $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
