@@ -88,7 +88,7 @@ async function loadSnapshot() {
     $("updated-at").textContent=`Built ${fmtDate(data.generated_at)}`;
     $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
     const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
-    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} central-bank feeds responding · ${macroOk}/${macro.length} macro sources available`);
+    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} news feeds responding · ${macroOk}/${macro.length} macro sources available`);
   } catch(error) {
     setStatus(false,`Unable to load data snapshot: ${error.message}`);
     $("updated-at").textContent="Check GitHub Pages deployment and data/latest.json";
