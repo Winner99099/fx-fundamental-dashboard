@@ -8,7 +8,7 @@
 .ff-figures{display:flex;flex-wrap:wrap;gap:9px;margin:11px 0 8px}
 .ff-figure{display:flex;align-items:center;gap:8px;min-width:105px;padding:7px 10px;border:1px solid #34445e;border-radius:6px;background:#0c1729}
 .ff-figure small{font:9px 'DM Mono';letter-spacing:.7px;color:#8fa2bd}
-.ff-figure b{font:800 15px 'DM Mono';letter-spacing:.1px}
+.ff-figure b{font:500 12px 'DM Mono';letter-spacing:0}
 .ff-actual{border-color:#267b68;background:#102d2b}.ff-actual b{color:#62edb2}
 .ff-forecast{border-color:#286b91;background:#10283a}.ff-forecast b{color:#66d5ff}
 .ff-previous{border-color:#66512b;background:#2a2419}.ff-previous b{color:#ffd27b}
