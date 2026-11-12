@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "generated_at": "2026-11-12T02:47:56.042610+00:00",
-  "source_status": "OK",
+  "source_status": "PARTIAL",
   "available_indicators": 5,
   "indicators": {
     "core_cpi": {
