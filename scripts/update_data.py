@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""MacroPulse V3.3: official news archive + comparable World Bank macro indicators.
+"""MacroPulse V4: relative eight-currency macro scoring with transparent missing inputs.
 
 The macro score is deliberately a partial score until policy-rate expectations
 and release-surprise data are connected. Missing inputs are null, never zero.
@@ -507,6 +507,70 @@ for code in CURRENCIES:
         "indicators_available": sum(1 for k in INDICATORS if item["metrics"][k]["value"] is not None),
     })
 
+
+# V4 cross-sectional relative macro score. Economic surprises remain unavailable until
+# reliable consensus-versus-actual data is connected; missing inputs are never fabricated.
+INFLATION_TARGETS = {"USD": 2.0, "EUR": 2.0, "GBP": 2.0, "JPY": 2.0,
+                     "CHF": 2.0, "CAD": 2.0, "AUD": 2.5, "NZD": 2.0}
+V4_WEIGHTS = {"policy_rate_level": 30.0, "inflation_vs_target": 15.0,
+              "gdp_growth": 20.0, "employment": 15.0, "economic_surprises": 20.0}
+
+def robust_relative_scores(values):
+    valid = {k: float(v) for k, v in values.items() if v is not None}
+    if len(valid) < 3:
+        return {}
+    sample = list(valid.values())
+    center = statistics.median(sample)
+    mad = statistics.median([abs(x - center) for x in sample])
+    scale = 1.4826 * mad
+    if scale < 1e-9:
+        scale = statistics.pstdev(sample)
+    if scale < 1e-9:
+        return {k: 0.0 for k in valid}
+    return {k: round(clamp(((v - center) / scale) * 1.75), 2) for k, v in valid.items()}
+
+def apply_v4_scores(items):
+    raw = {
+        "policy_rate_level": {c["code"]: c.get("policy_rate") for c in items},
+        "inflation_vs_target": {
+            c["code"]: -abs(float(c["inflation"]) - INFLATION_TARGETS[c["code"]])
+            if c.get("inflation") is not None else None for c in items
+        },
+        "gdp_growth": {c["code"]: c.get("gdp_growth") for c in items},
+        "employment": {
+            c["code"]: -float(c["unemployment"]) if c.get("unemployment") is not None else None
+            for c in items
+        },
+    }
+    component_scores = {name: robust_relative_scores(values) for name, values in raw.items()}
+    for c in items:
+        code = c["code"]
+        parts = {name: component_scores.get(name, {}).get(code) for name in V4_WEIGHTS}
+        weighted = sum(parts[name] * weight for name, weight in V4_WEIGHTS.items()
+                       if parts.get(name) is not None)
+        available_weight = sum(weight for name, weight in V4_WEIGHTS.items()
+                               if parts.get(name) is not None)
+        c["score"] = round(weighted / available_weight, 2) if available_weight else None
+        c["score_components"] = parts
+        c["component_weights_available"] = {
+            name: V4_WEIGHTS[name] for name, value in parts.items() if value is not None
+        }
+        c["available_weight_pct"] = available_weight
+        c["confidence"] = "Low" if available_weight < 100 else "Medium"
+        c["data_status"] = (f"Provisional · {int(available_weight)}% model weight covered · "
+                            "economic-surprise data not connected")
+        c["summary"] = ("Relative macro score across the eight tracked currencies. "
+                        "Policy-rate level is a carry proxy, not an expected policy path; "
+                        "economic surprises are excluded until consensus data is available.")
+        for metric_key, component_key in (("inflation", "inflation_vs_target"),
+                                          ("gdp_growth", "gdp_growth"),
+                                          ("unemployment", "employment")):
+            if metric_key in c.get("metrics", {}):
+                c["metrics"][metric_key]["score"] = parts.get(component_key)
+    return items
+
+currencies = apply_v4_scores(currencies)
+
 events = list(events_by_id.values())
 events.sort(key=lambda event: event.get("published_at", ""), reverse=True)
 
@@ -514,19 +578,16 @@ output = {
     "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v3.5-monthly-cpi-quarterly-gdp",
+    "model": "v4-relative-macro-provisional",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
-        "method": "Latest available reading versus up to five preceding observations at the same frequency; standardised by historical dispersion and smoothed with tanh.",
-        "weights": WEIGHTS,
-        "direction": {
-            "inflation": "Lower than own recent history scores positively; this is a momentum proxy, not an inflation-target assessment.",
-            "gdp_growth": "Higher than own recent history scores positively.",
-            "unemployment": "Lower than own recent history scores positively.",
-        },
-        "excluded_until_integrated": ["policy-rate level and expected path (30%)", "central-bank communication (10%)", "market consensus-versus-actual surprises"],
-        "important": "Scores are partial macro context, not standalone FX trading signals. Available component weights are renormalised; no missing input is treated as zero.",
+        "method": "Cross-sectional robust z-scores across the eight currencies, clipped to -5..+5; same latest overview readings feed the displayed macro table and score.",
+        "weights": V4_WEIGHTS,
+        "inflation_method": "Closeness to each central bank inflation target; target assumptions are listed in INFLATION_TARGETS in scripts/update_data.py.",
+        "directions": {"policy_rate_level": "Higher policy rate is treated as a carry-support proxy, not a forecast of future policy.", "inflation_vs_target": "Closer to target is preferred.", "gdp_growth": "Higher quarterly growth is preferred.", "employment": "Lower unemployment is preferred."},
+        "excluded_until_integrated": ["economic surprises versus market consensus (20%)", "expected policy path and 2-year yield differentials", "spot FX momentum confirmation"],
+        "important": "Only 80% of intended model weight is currently covered; available components are renormalised. Scores are relative macro context, not standalone trading signals.",
     },
     "currencies": currencies,
     "events": events,
@@ -534,8 +595,8 @@ output = {
     "limitations": [
         "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
         "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
-        "Inflation is scored as a change relative to the economy's own recent history, not as distance from its central-bank target.",
-        "Policy-rate expectations, central-bank communication scoring, CFTC positioning and market confirmation are not yet included in the numerical score.",
+        "V4 scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths, economic surprises and market-price confirmation are not yet integrated.",
+        "Economic-surprise data, expected policy paths, 2-year yield differentials and market-price confirmation are not yet included in the numerical score.",
         "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
         "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
