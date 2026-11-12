@@ -351,6 +351,26 @@ def build_currency(code, country, country_name):
                 "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en" if key == "inflation" and code in ("EUR", "CHF") else "https://data-explorer.oecd.org/",
             }
 
+    # Trading Economics overview values supplied/confirmed by the user for the USD row.
+    # Keep the headline series aligned to the same provider and latest overview readings.
+    if code == "USD":
+        POLICY_RATES["USD"].update({
+            "value": 4.00, "display": "4.00%",
+            "basis": "Trading Economics Interest Rate",
+            "url": "https://tradingeconomics.com/united-states/indicators",
+        })
+        te_usd = {
+            "inflation": (3.70, "2026-09", "Inflation Rate, year-on-year (%)", "BLS"),
+            "gdp_growth": (3.40, "2026-Q3", "GDP Growth Rate (%)", "BEA"),
+            "unemployment": (4.10, "2026-10", "Unemployment Rate (%)", "BLS"),
+        }
+        for key, (value, period, label, source) in te_usd.items():
+            metrics[key].update({
+                "value": value, "period": period, "year": int(period[:4]),
+                "label": label, "source": source,
+                "url": "https://tradingeconomics.com/united-states/indicators",
+            })
+
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
     score = None
     if available:
