@@ -76,7 +76,7 @@ def treasury_series():
             fields={child.tag.split("}")[-1]:child.text for child in list(props)}
             date=fields.get("NEW_DATE") or fields.get("NEW_DATE1")
             if not date: continue
-            try: rows.append({"date":date[:10],"y2":float(fields["BC_2YEAR"]),"y10":float(fields["TC_10YEAR"])})
+            try: rows.append({"date":date[:10],"y2":float(fields["BC_2YEAR"]),"y10":float(fields["BC_10YEAR"])})
             except (TypeError,ValueError,KeyError): continue
     unique={r["date"]:r for r in rows}
     return [unique[k] for k in sorted(unique)]
