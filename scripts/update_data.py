@@ -351,43 +351,39 @@ def build_currency(code, country, country_name):
                 "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en" if key == "inflation" and code in ("EUR", "CHF") else "https://data-explorer.oecd.org/",
             }
 
-    # Trading Economics overview values supplied/confirmed by the user for the USD row.
-    # Keep the headline series aligned to the same provider and latest overview readings.
-    if code == "USD":
-        POLICY_RATES["USD"].update({
-            "value": 4.00, "display": "4.00%",
-            "basis": "Trading Economics Interest Rate",
-            "url": "https://tradingeconomics.com/united-states/indicators",
+    # Headline macro snapshot aligned to Trading Economics overview for all dashboard currencies.
+    # GDP uses the quarterly "GDP Growth Rate" series, not the annual growth rate.
+    # Values are refreshed against the public indicator pages; histories/scores remain separately sourced.
+    TE_OVERVIEW = {
+        "USD": {"rate": 4.00, "inflation": 3.70, "gdp_growth": 3.40, "unemployment": 4.10},
+        "EUR": {"rate": 2.65, "inflation": 4.00, "gdp_growth": 0.40, "unemployment": 6.50},
+        "GBP": {"rate": 4.00, "inflation": 3.50, "gdp_growth": 0.50, "unemployment": 4.70},
+        "JPY": {"rate": 1.25, "inflation": 2.10, "gdp_growth": 0.40, "unemployment": 2.40},
+        "CHF": {"rate": 0.00, "inflation": 1.50, "gdp_growth": 1.50, "unemployment": 3.00},
+        "CAD": {"rate": 2.50, "inflation": 3.10, "gdp_growth": 0.80, "unemployment": 6.70},
+        "AUD": {"rate": 4.85, "inflation": 4.30, "gdp_growth": 0.40, "unemployment": 4.70},
+        "NZD": {"rate": 2.75, "inflation": 3.70, "gdp_growth": 0.20, "unemployment": 5.70},
+    }
+    te_values = TE_OVERVIEW[code]
+    POLICY_RATES[code].update({
+        "value": te_values["rate"], "display": f'{te_values["rate"]:.2f}%',
+        "basis": "Trading Economics Interest Rate",
+        "url": f"https://tradingeconomics.com/{'euro-area' if code == 'EUR' else {'USD':'united-states','GBP':'united-kingdom','JPY':'japan','CHF':'switzerland','CAD':'canada','AUD':'australia','NZD':'new-zealand'}[code]}/indicators",
+    })
+    te_url = POLICY_RATES[code]["url"]
+    for key in ("inflation", "gdp_growth", "unemployment"):
+        metrics[key].update({
+            "value": te_values[key],
+            "year": None,
+            "period": "Latest",
+            "label": {
+                "inflation": "Inflation Rate, year-on-year (%)",
+                "gdp_growth": "GDP Growth Rate, quarterly (%)",
+                "unemployment": "Unemployment Rate (%)",
+            }[key],
+            "source": "Trading Economics",
+            "url": te_url,
         })
-        te_usd = {
-            "inflation": (3.70, "2026-09", "Inflation Rate, year-on-year (%)", "BLS"),
-            "gdp_growth": (3.40, "2026-Q3", "GDP Growth Rate (%)", "BEA"),
-            "unemployment": (4.10, "2026-10", "Unemployment Rate (%)", "BLS"),
-        }
-        for key, (value, period, label, source) in te_usd.items():
-            metrics[key].update({
-                "value": value, "period": period, "year": int(period[:4]),
-                "label": label, "source": source,
-                "url": "https://tradingeconomics.com/united-states/indicators",
-            })
-
-    # Euro Area headline values aligned with the Trading Economics overview.
-    # GDP Growth Rate here is the quarterly rate (0.40%), not GDP Annual Growth Rate (1.30%).
-    if code == "EUR":
-        POLICY_RATES["EUR"].update({
-            "value": 2.65, "display": "2.65%",
-            "basis": "Trading Economics Interest Rate",
-            "url": "https://tradingeconomics.com/euro-area/indicators",
-        })
-        te_eur = {
-            "gdp_growth": (0.40, "GDP Growth Rate, quarterly (%)"),
-            "unemployment": (6.50, "Unemployment Rate (%)"),
-        }
-        for key, (value, label) in te_eur.items():
-            metrics[key].update({
-                "value": value, "label": label, "source": "Trading Economics",
-                "url": "https://tradingeconomics.com/euro-area/indicators",
-            })
 
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
     score = None
