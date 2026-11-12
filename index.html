@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0a1020">
-<title>MacroPulse V3 | FX Intelligence</title>
+<title>MacroPulse V4 | FX Intelligence</title>
 <meta name="description" content="Eight-currency macroeconomic and FX research dashboard.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
     <section class="view" id="view-currencies">
       <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores are cross-sectional comparisons across all eight currencies. Policy-rate level is a carry proxy, not an expected policy path; economic-surprise data is not yet connected. Check each observation period and source.</p></div></div>
       <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Score</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
-      <div class="notice"><b>Scoring methodology</b><p>V3 does not rank currencies from policy-rate levels alone or invent missing macro data. V3.5 compares the latest available monthly CPI, quarterly GDP-growth and annual unemployment readings with up to five preceding observations at the same frequency. Inflation and unemployment below their own recent history, and GDP growth above its own recent history, contribute positively. Unemployment currently remains an annual World Bank series. Available component weights (25% inflation, 20% GDP, 15% labour) are renormalised. Policy-rate outlook (30%), central-bank communication (10%), consensus surprises and market confirmation are not yet scored. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
+      <div class="notice"><b>Scoring methodology</b><p>V4 compares all eight currencies cross-sectionally using robust standardised scores: policy-rate level as a carry proxy (30%), inflation distance from central-bank target (15%), quarterly GDP growth (20%) and unemployment (15%). Economic surprises versus market consensus (20%) are not yet connected, so available weights are renormalised to 100%. The policy-rate component is not an expected policy path. Two-year yield differentials and spot-FX momentum are not yet included. Scores are relative macro context, not standalone trade signals. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
     </section>
 
     <section class="view" id="view-pairs">
@@ -90,7 +90,7 @@
       <div class="panel"><div class="panel-head"><b>Saved entries</b><button class="text-button" id="journal-export">Export CSV ↓</button></div><div id="journal-list" class="journal-list"></div></div>
     </section>
 
-    <footer><span>MACROPULSE V3.5 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
+    <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
 <script src="app.js?v=20261111-2" defer></script>
