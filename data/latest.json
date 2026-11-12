@@ -2,7 +2,7 @@
   "schema_version": 3,
   "generated_at": "2026-11-12T08:58:00.775Z",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v4-relative-macro-provisional",
+  "model": "v4-relative-macro-provisional-news-v2",
   "history_window_days": 90,
   "scoring": {
     "scale": "-5 to +5",
@@ -1192,7 +1192,9 @@
       "time": "2026-11-12T01:30:00+00:00",
       "published_at": "2026-11-12T01:30:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "04e11f037972e1e4b48f24f2",
@@ -1203,7 +1205,9 @@
       "time": "2026-11-11T23:50:00+00:00",
       "published_at": "2026-11-11T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "13c2e37d8cf09b5ea4aa9e20",
@@ -1214,7 +1218,9 @@
       "time": "2026-11-10T16:45:00+00:00",
       "published_at": "2026-11-10T16:45:00+00:00",
       "source": "European Central Bank",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "JPY",
@@ -1222,10 +1228,12 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/mpmsche_minu/opinion_2026/opi261030.pdf",
       "time": "2026-11-09T23:50:00+00:00",
-      "impact": "High",
+      "impact": "Low",
       "published_at": "2026-11-09T23:50:00+00:00",
       "event_id": "56cf29b69482b2dfc69f5e3d",
-      "source": "Bank of Japan"
+      "source": "Bank of Japan",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "6257884544fda85b6fc65d96",
@@ -1236,7 +1244,9 @@
       "time": "2026-11-09T23:50:00+00:00",
       "published_at": "2026-11-09T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "JPY",
@@ -1244,10 +1254,12 @@
       "summary": "",
       "url": "http://www.boj.or.jp/en/about/press/koen_2026/ko261107a.htm",
       "time": "2026-11-06T16:00:00+00:00",
-      "impact": "High",
+      "impact": "Medium",
       "published_at": "2026-11-06T16:00:00+00:00",
       "event_id": "29f7f08535a892d5b94a9b40",
-      "source": "Bank of Japan"
+      "source": "Bank of Japan",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "634c4bbc53b68963fe0b8585",
@@ -1258,7 +1270,9 @@
       "time": "2026-11-06T16:00:00+00:00",
       "published_at": "2026-11-06T16:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "GBP",
@@ -1266,10 +1280,12 @@
       "summary": "The Bank of England’s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
       "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
       "time": "2026-11-05T12:00:00+00:00",
-      "impact": "High",
+      "impact": "Low",
       "published_at": "2026-11-05T12:00:00+00:00",
       "event_id": "d8679f85bbc4e9e108b229f7",
-      "source": "Bank of England"
+      "source": "Bank of England",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "EUR",
@@ -1277,10 +1293,12 @@
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105_1~5e97d9d5a0.en.html",
       "time": "2026-11-05T08:00:00+00:00",
-      "impact": "High",
+      "impact": "Low",
       "published_at": "2026-11-05T08:00:00+00:00",
       "event_id": "2f85e2fe0575edf30c3640b9",
-      "source": "European Central Bank"
+      "source": "European Central Bank",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "f9cc4c7d5e1344d140440cd3",
@@ -1291,7 +1309,9 @@
       "time": "2026-11-04T23:50:00+00:00",
       "published_at": "2026-11-04T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "33dd271f2b031003a1a2b5ac",
@@ -1302,7 +1322,9 @@
       "time": "2026-11-04T23:50:00+00:00",
       "published_at": "2026-11-04T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "EUR",
@@ -1313,7 +1335,9 @@
       "impact": "High",
       "published_at": "2026-11-04T00:00:00+00:00",
       "event_id": "8e9ef04f9ae819372f4f5788",
-      "source": "European Central Bank"
+      "source": "European Central Bank",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "EUR",
@@ -1321,10 +1345,12 @@
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/govcdec/otherdec/2026/html/ecb.gc261030~e40f864093.en.html",
       "time": "2026-10-30T14:00:00+00:00",
-      "impact": "High",
+      "impact": "Low",
       "published_at": "2026-10-30T14:00:00+00:00",
       "event_id": "ecc1258d819c57c8713ae2df",
-      "source": "European Central Bank"
+      "source": "European Central Bank",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "df3bde59eb76123734f5cb2f",
@@ -1335,7 +1361,9 @@
       "time": "2026-10-30T04:00:00+00:00",
       "published_at": "2026-10-30T04:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "d4baf043aca6bb6646af57a4",
@@ -1346,7 +1374,9 @@
       "time": "2026-10-30T04:00:00+00:00",
       "published_at": "2026-10-30T04:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "01b5dbc5107b51ad04b6ad22",
@@ -1357,7 +1387,9 @@
       "time": "2026-10-30T03:02:00+00:00",
       "published_at": "2026-10-30T03:02:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "cac7cfde95c5ae2fb4d45b82",
@@ -1368,7 +1400,9 @@
       "time": "2026-10-30T03:02:00+00:00",
       "published_at": "2026-10-30T03:02:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "5801d6cc614cca05bd3b602e",
@@ -1379,7 +1413,9 @@
       "time": "2026-10-29T14:00:00+00:00",
       "published_at": "2026-10-29T14:00:00+00:00",
       "source": "European Central Bank",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "56b6004b4a7727ac5ffb03a1",
@@ -1390,7 +1426,9 @@
       "time": "2026-10-29T13:15:00+00:00",
       "published_at": "2026-10-29T13:15:00+00:00",
       "source": "European Central Bank",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "GBP",
@@ -1398,10 +1436,12 @@
       "summary": "Letter from the Chancellor to the Governor",
       "url": "https://www.bankofengland.co.uk/letter/2026/mpc-remit-2026",
       "time": "2026-10-28T14:16:49+00:00",
-      "impact": "High",
+      "impact": "Medium",
       "published_at": "2026-10-28T14:16:49+00:00",
       "event_id": "aed1131aaa59bace98691775",
-      "source": "Bank of England"
+      "source": "Bank of England",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "NZD",
@@ -1409,10 +1449,12 @@
       "summary": "Monetary Policy Review media release and the MPC’s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/ocr-held-at-2-75-percent",
       "time": "2026-10-27T11:00:00+00:00",
-      "impact": "High",
+      "impact": "Low",
       "published_at": "2026-10-27T11:00:00+00:00",
       "event_id": "2b3ef7072ff474887ee2ca4c",
-      "source": "Reserve Bank of New Zealand"
+      "source": "Reserve Bank of New Zealand",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "d7740e76d5e942f8d7a91fb5",
@@ -1423,7 +1465,9 @@
       "time": "2026-10-27T05:00:00+00:00",
       "published_at": "2026-10-27T05:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "486037e8f05127957e02d13d",
@@ -1434,7 +1478,9 @@
       "time": "2026-10-27T05:00:00+00:00",
       "published_at": "2026-10-27T05:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "83dc3f3db8255177572cd291",
@@ -1445,7 +1491,9 @@
       "time": "2026-10-27T00:00:00+00:00",
       "published_at": "2026-10-27T00:00:00+00:00",
       "source": "European Central Bank",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "bf8ff934697cb28b48496127",
@@ -1456,7 +1504,9 @@
       "time": "2026-10-26T23:50:00+00:00",
       "published_at": "2026-10-26T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "01911a1b45e665c7abaf2e90",
@@ -1467,7 +1517,9 @@
       "time": "2026-10-26T23:50:00+00:00",
       "published_at": "2026-10-26T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "424fd790bbe112dbe81e5588",
@@ -1478,7 +1530,9 @@
       "time": "2026-10-12T23:50:00+00:00",
       "published_at": "2026-10-12T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "2d52d74228edf55db3e0ea2f",
@@ -1489,7 +1543,9 @@
       "time": "2026-10-12T23:50:00+00:00",
       "published_at": "2026-10-12T23:50:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "d69d1b8dcb7a8bbc1a322b2c",
@@ -1500,7 +1556,9 @@
       "time": "2026-10-09T09:00:00+00:00",
       "published_at": "2026-10-09T09:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "cd283b7d41427eda64bd0521",
@@ -1511,7 +1569,9 @@
       "time": "2026-10-07T13:36:25+00:00",
       "published_at": "2026-10-07T13:36:25+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "currency": "NZD",
@@ -1519,10 +1579,12 @@
       "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has commenced recruitment for the two new roles of Assistant Governor Monetary Policy and Assistant Governor Payments and Cash.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/recruitment-for-two-new-assistant-governors-and-chief-of-staff-underway",
       "time": "2026-10-07T11:00:00+00:00",
-      "impact": "High",
+      "impact": "Medium",
       "published_at": "2026-10-07T11:00:00+00:00",
       "event_id": "9b45fbd8548e610925fa49e3",
-      "source": "Reserve Bank of New Zealand"
+      "source": "Reserve Bank of New Zealand",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "aa507ba7872b77f3cbf25c21",
@@ -1533,7 +1595,9 @@
       "time": "2026-10-07T09:49:25+00:00",
       "published_at": "2026-10-07T09:49:25+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "d44e7a323e5da450aef39856",
@@ -1544,7 +1608,9 @@
       "time": "2026-10-07T09:08:40+00:00",
       "published_at": "2026-10-07T09:08:40+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "2f9b17158c3c896c2fa7546b",
@@ -1555,7 +1621,9 @@
       "time": "2026-10-05T11:00:00+00:00",
       "published_at": "2026-10-05T11:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "2864c024a2d0bfdeace602fd",
@@ -1566,7 +1634,9 @@
       "time": "2026-09-30T09:30:00+00:00",
       "published_at": "2026-09-30T09:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "043ba8581410592df53d97f5",
@@ -1577,7 +1647,9 @@
       "time": "2026-09-25T06:30:00+00:00",
       "published_at": "2026-09-25T06:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "bb95011f5f5bb9a6e6daad79",
@@ -1588,7 +1660,9 @@
       "time": "2026-09-24T12:00:00+00:00",
       "published_at": "2026-09-24T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "76f1f2fb295ef9e11462f9f3",
@@ -1599,7 +1673,9 @@
       "time": "2026-09-22T15:30:00+00:00",
       "published_at": "2026-09-22T15:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "4a8527ada69495938bb79172",
@@ -1610,7 +1686,9 @@
       "time": "2026-09-21T12:00:00+00:00",
       "published_at": "2026-09-21T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "05c3eabd07234e3c0510140c",
@@ -1621,7 +1699,9 @@
       "time": "2026-09-21T12:00:00+00:00",
       "published_at": "2026-09-21T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "c1af7f9c797f87a9f5e3d7cf",
@@ -1632,7 +1712,9 @@
       "time": "2026-09-21T11:30:00+00:00",
       "published_at": "2026-09-21T11:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "02e7cc33495d9d83d129e990",
@@ -1643,7 +1725,9 @@
       "time": "2026-09-17T13:30:00+00:00",
       "published_at": "2026-09-17T13:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "93488b1c00e55de451d4b0bb",
@@ -1654,7 +1738,9 @@
       "time": "2026-09-17T13:30:00+00:00",
       "published_at": "2026-09-17T13:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "09c1e9807a3c787a477bddef",
@@ -1665,7 +1751,9 @@
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "6daf087cb4c8a0aa87db2758",
@@ -1676,7 +1764,9 @@
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "93b3d42bd7f723de3c8bc23f",
@@ -1687,7 +1777,9 @@
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "d6896b128ec489ba3352818d",
@@ -1698,7 +1790,9 @@
       "time": "2026-09-08T12:00:00+00:00",
       "published_at": "2026-09-08T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "f733a11308ac37f8b8662bf0",
@@ -1709,7 +1803,9 @@
       "time": "2026-09-01T12:00:00+00:00",
       "published_at": "2026-09-01T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
-      "impact": "High"
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     }
   ],
   "sources": [
@@ -1855,5 +1951,10 @@
     "method": "FX-relevant central-bank keyword filter; duplicate URL copies removed",
     "removed": 152,
     "checked_at": "2026-11-12T08:58:00.772Z"
+  },
+  "news_intelligence": {
+    "classification": "Keyword-based triage; not AI-generated and not a trading signal",
+    "impact_levels": "High = core policy/macro releases; Medium = outlook/speeches/financial conditions; Low = other feed items",
+    "bias_rule": "Only explicit hawkish/dovish language is labelled; all other items are context only."
   }
 }
