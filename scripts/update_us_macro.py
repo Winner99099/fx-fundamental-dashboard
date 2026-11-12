@@ -81,6 +81,24 @@ def treasury_series():
     unique={r["date"]:r for r in rows}
     return [unique[k] for k in sorted(unique)]
 
+def treasury_real_10y_series():
+    """Official US Treasury daily 10-year par real yield (TIPS) curve."""
+    rows=[]
+    for year in range(NOW.year-1,NOW.year+1):
+        url=("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml"
+             f"?data=daily_treasury_real_yield_curve&field_tdr_date_value={year}")
+        root=ET.fromstring(request(url,timeout=30))
+        for props in root.iter():
+            if not props.tag.endswith("properties"): continue
+            fields={child.tag.split("}")[-1]:child.text for child in list(props)}
+            date=fields.get("NEW_DATE") or fields.get("NEW_DATE1")
+            if not date: continue
+            try: rows.append({"date":date[:10],"value":float(fields["BC_10YEAR"])})
+            except (TypeError,ValueError,KeyError): continue
+    unique={r["date"]:r for r in rows}
+    if not unique: raise RuntimeError("Treasury real-yield feed returned no 10-year observations")
+    return metric([{"date":k,"value":v["value"]} for k,v in sorted(unique.items())])
+
 def core_pce_series():
     # USD Core PCE official BEA series, via the no-key public 90-day endpoint.
     url="https://api.fxmacrodata.com/v1/announcements/usd/core_pce?frequency=yoy&limit=20"
@@ -127,13 +145,13 @@ def ecb_dxy_series():
     return direct_metric(rows)
 
 def main():
-    indicators={k:empty() for k in ["core_cpi","core_pce","nfp","treasury_2y","treasury_10y","dxy","yield_spread"]}
+    indicators={k:empty() for k in ["core_cpi","core_pce","nfp","treasury_2y","treasury_10y","treasury_10y_real","dxy","yield_spread"]}
     errors={}
     sources={
       "core_cpi":"BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
       "core_pce":"BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
       "nfp":"BLS series CES0000000001 (total nonfarm payrolls, thousands)",
-      "treasury":"US Treasury daily par yield curve XML feed",
+      "treasury":"US Treasury daily par nominal and real yield curve XML feeds; 10-year real yield is the TIPS par real yield",
       "dxy":"Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote"
     }
     try:
@@ -148,12 +166,13 @@ def main():
         indicators["treasury_2y"]=metric([{"date":r["date"],"value":r["y2"]} for r in rates])
         indicators["treasury_10y"]=metric([{"date":r["date"],"value":r["y10"]} for r in rates])
         indicators["yield_spread"]=metric([{"date":r["date"],"value":r["y10"]-r["y2"]} for r in rates])
+        indicators["treasury_10y_real"]=treasury_real_10y_series()
     except Exception as e: errors["treasury"]=str(e)[:250]
     try: indicators["core_pce"]=core_pce_series()
     except Exception as e: errors["core_pce"]=str(e)[:250]
     try: indicators["dxy"]=ecb_dxy_series()
     except Exception as e: errors["dxy"]=str(e)[:250]
-    required=["core_cpi","nfp","treasury_2y","treasury_10y","yield_spread","core_pce","dxy"]
+    required=["core_cpi","nfp","treasury_2y","treasury_10y","treasury_10y_real","yield_spread","core_pce","dxy"]
     good=sum(indicators[k]["value"] is not None for k in required)
     status="OK" if good==len(required) else ("PARTIAL" if good else "ERROR")
     data={"schema_version":3,"generated_at":NOW.isoformat(),"source_status":status,
