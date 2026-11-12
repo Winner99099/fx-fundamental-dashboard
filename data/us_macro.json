@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T02:35:08.569383+00:00",
-  "source_status": "OK",
+  "generated_at": "2026-11-12T02:45:30.107189+00:00",
+  "source_status": "PARTIAL",
   "available_indicators": 7,
   "indicators": {
     "core_cpi": {
@@ -431,6 +431,12 @@
         }
       ]
     },
+    "treasury_10y_real": {
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
+    },
     "dxy": {
       "value": 102.5951,
       "date": "2026-11-11",
@@ -638,12 +644,14 @@
       ]
     }
   },
-  "errors": {},
+  "errors": {
+    "treasury": "Treasury real-yield feed returned no 10-year observations"
+  },
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
     "nfp": "BLS series CES0000000001 (total nonfarm payrolls, thousands)",
-    "treasury": "US Treasury daily par yield curve XML feed",
+    "treasury": "US Treasury daily par nominal and real yield curve XML feeds; 10-year real yield is the TIPS par real yield",
     "dxy": "Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote"
   }
 }
