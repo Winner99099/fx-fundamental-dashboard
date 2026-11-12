@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "Awaiting first scheduled GitHub Actions run",
-  "source_status": "PENDING",
+  "generated_at": "2026-11-12T02:01:01.481178+00:00",
+  "source_status": "PARTIAL",
   "indicators": {
     "core_cpi": {
       "value": null,
@@ -37,12 +37,23 @@
       "value": null,
       "date": null,
       "change": null,
-      "history": []
+      "history": [],
+      "error": "HTTP Error 429: Too Many Requests",
+      "provider": "Yahoo Finance chart API"
     },
     "yield_spread": null
   },
+  "errors": {
+    "core_cpi": "The read operation timed out",
+    "core_pce": "The read operation timed out",
+    "nfp": "The read operation timed out",
+    "treasury_2y": "The read operation timed out",
+    "treasury_10y": "The read operation timed out",
+    "dxy": "HTTP Error 429: Too Many Requests",
+    "yield_spread": "The read operation timed out"
+  },
   "sources": {
     "fred": "https://fred.stlouisfed.org/",
-    "dxy": "Yahoo Finance chart endpoint; delayed/indicative; ICE DXY is the benchmark"
+    "dxy": "Yahoo Finance DX-Y.NYB chart endpoint; delayed/indicative ICE US Dollar Index quote"
   }
 }
