@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'scripts/update_data.py'
+      - 'scripts/update_us_macro.py'
       - '.github/workflows/refresh.yml'
   schedule:
     # Five-minute target; GitHub scheduled runs are best-effort and may be delayed.
@@ -19,12 +20,16 @@ jobs:
         with:
           python-version: "3.12"
       - name: Validate collector syntax
-        run: python -m py_compile scripts/update_data.py
-      - name: Build free-source macro snapshot
+        run: |
+          python -m py_compile scripts/update_data.py
+          python -m py_compile scripts/update_us_macro.py
+      - name: Build FX fundamentals snapshot
         run: python scripts/update_data.py
-      - name: Commit refreshed snapshot
+      - name: Build US macro snapshot
+        run: python scripts/update_us_macro.py
+      - name: Commit refreshed snapshots
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/latest.json
-          git diff --cached --quiet || (git commit -m "Refresh FX macro dashboard data" && git push)
+          git add data/latest.json data/us_macro.json
+          git diff --cached --quiet || (git commit -m "Refresh FX and US macro snapshots" && git push)
