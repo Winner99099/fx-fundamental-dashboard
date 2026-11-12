@@ -7,8 +7,11 @@ on:
       - "scripts/update_us_macro.py"
       - ".github/workflows/refresh-us-macro.yml"
   schedule:
-    # Refresh the snapshot periodically; official macro releases update only when published.
     - cron: "*/15 * * * *"
+
+concurrency:
+  group: fx-dashboard-data-refresh
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -22,7 +25,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Collect FRED and DXY data
+      - name: Collect US macro data
         run: python scripts/update_us_macro.py
       - name: Validate generated snapshot
         run: |
@@ -31,18 +34,25 @@ jobs:
           from pathlib import Path
           data = json.loads(Path("data/us_macro.json").read_text())
           indicators = data.get("indicators", {})
-          required = ["core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "dxy"]
+          required = ["core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "dxy", "yield_spread"]
           for key in required:
               item = indicators.get(key, {})
               print(f"{key}: {item.get('value')} ({item.get('date')})")
           print("source_status:", data.get("source_status"))
           print("errors:", data.get("errors", {}))
-          if not any(indicators.get(key, {}).get("value") is not None for key in required):
-              raise SystemExit("Collector returned no usable indicator values")
+          if sum(indicators.get(key, {}).get("value") is not None for key in required) < 5:
+              raise SystemExit("Collector returned insufficient usable indicator values")
           PY
-      - name: Commit refreshed US macro snapshot
+      - name: Commit refreshed US macro snapshot safely
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/us_macro.json
-          git diff --cached --quiet || (git commit -m "Refresh US macro dashboard data" && git push)
+          if git diff --cached --quiet; then
+            echo "No macro data changes."
+            exit 0
+          fi
+          git commit -m "Refresh US macro dashboard data"
+          git fetch origin main
+          git rebase origin/main
+          git push origin HEAD:main
