@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T15:41:33.877179+00:00",
+  "generated_at": "2026-11-12T16:42:51.614766+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v4-relative-macro-provisional-news-v2",
   "history_window_days": 90,
@@ -1274,24 +1274,6 @@
       "direction": "Compare actual vs forecast"
     },
     {
-      "event_id": "0ab648e9e18301d2167c5513",
-      "currency": "USD",
-      "title": "Mortgage Delinquencies",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: 4.37%",
-      "url": "https://www.forexfactory.com/calendar/489-us-mortgage-delinquencies",
-      "time": "2026-11-12T20:21:00+00:00",
-      "published_at": "2026-11-12T20:21:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": null,
-      "previous": "4.37%",
-      "calendar_time_label": "3:21pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
-    {
       "event_id": "fa7b52a44cd1255e897ba769",
       "currency": "AUD",
       "title": "CB Leading Index m/m",
@@ -1341,6 +1323,24 @@
       "forecast": "-0.6M",
       "previous": "-0.9M",
       "calendar_time_label": "5:00pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "0ab648e9e18301d2167c5513",
+      "currency": "USD",
+      "title": "Mortgage Delinquencies",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: 4.37%",
+      "url": "https://www.forexfactory.com/calendar/489-us-mortgage-delinquencies",
+      "time": "2026-11-12T22:59:00+00:00",
+      "published_at": "2026-11-12T22:59:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": null,
+      "previous": "4.37%",
+      "calendar_time_label": "5:59pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
       "direction": "Compare actual vs forecast"
@@ -1812,6 +1812,19 @@
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
       "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "9f08aa22bd9bdfbe78c8f8d0",
+      "currency": "USD",
+      "title": "Federal Reserve Board issues enforcement action with former employee of United Community Bank",
+      "summary": "Federal Reserve published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261112a.htm",
+      "time": "2026-11-12T16:00:00+00:00",
+      "published_at": "2026-11-12T16:00:00+00:00",
+      "source": "Federal Reserve",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "52d386ae0ea0836532cfa89b",
@@ -4781,15 +4794,15 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 20,
-      "new_releases_added": 0
+      "new_releases_added": 1
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -4797,7 +4810,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 39,
       "new_releases_added": 0
     },
@@ -4805,7 +4818,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 51,
       "new_releases_added": 0
     },
@@ -4813,7 +4826,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4821,7 +4834,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4829,7 +4842,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4837,7 +4850,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -4845,7 +4858,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "events_in_rolling_window": 95,
       "new_or_updated_events": 95,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -4854,7 +4867,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4862,7 +4875,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4870,7 +4883,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4878,7 +4891,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4886,7 +4899,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4894,7 +4907,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4902,7 +4915,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4910,7 +4923,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-12T15:41:33.877179+00:00",
+      "checked_at": "2026-11-12T16:42:51.614766+00:00",
       "data_year": null,
       "indicators_available": 3
     }
