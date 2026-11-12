@@ -97,6 +97,19 @@ def clean_text(value, limit):
     return re.sub(r"\s+", " ", value).strip()[:limit]
 
 
+NEWS_RELEVANCE = re.compile(
+    r"\b(monetary policy|policy rate|interest rate|rate decision|rate statement|"
+    r"inflation|consumer price|cpi|pce|price index|gdp|gross domestic product|"
+    r"economic outlook|economic forecast|growth forecast|employment|unemployment|"
+    r"labour market|labor market|wage|pay growth|business survey|pmi|"
+    r"financial stability|financial conditions|exchange rate|foreign exchange|"
+    r"currency|bank lending|credit conditions|minutes of the monetary policy|"
+    r"monetary policy meeting|governor.*speech|speech.*governor)\b", re.I
+)
+def relevant_news(title, summary=""):
+    text = (title or "") + " " + (summary or "")
+    return bool(NEWS_RELEVANCE.search(text))
+
 def event_key(currency, link, title, published_at):
     identity = link.strip() or (title.strip() + "|" + published_at)
     return hashlib.sha256((currency + "|" + identity).encode("utf-8")).hexdigest()[:24]
