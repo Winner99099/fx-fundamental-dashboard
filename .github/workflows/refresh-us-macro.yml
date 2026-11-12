@@ -34,7 +34,7 @@ jobs:
           from pathlib import Path
           data = json.loads(Path("data/us_macro.json").read_text())
           indicators = data.get("indicators", {})
-          required = ["core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "dxy", "yield_spread"]
+          required = ["core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "treasury_10y_real", "dxy", "yield_spread"]
           for key in required:
               item = indicators.get(key, {})
               print(f"{key}: {item.get('value')} ({item.get('date')})")
