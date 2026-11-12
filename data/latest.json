@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T05:31:29.708837+00:00",
+  "generated_at": "2026-11-12T06:16:10.604615+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v3.5-monthly-cpi-quarterly-gdp",
   "history_window_days": 90,
@@ -31,23 +31,23 @@
       "confidence": "Medium",
       "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United States",
-      "data_year": 2025,
+      "data_year": 2026,
       "policy_rate": 4.0,
-      "policy_rate_display": "3.75\u20134.00%",
-      "policy_rate_basis": "Fed target range",
+      "policy_rate_display": "4.00%",
+      "policy_rate_basis": "Trading Economics Interest Rate",
       "policy_rate_as_of": "2026-10-29",
-      "policy_rate_source": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
-      "inflation": 3.737684729064039,
+      "policy_rate_source": "https://tradingeconomics.com/united-states/indicators",
+      "inflation": 3.7,
       "inflation_year": 2026,
       "inflation_period": "2026-09",
-      "gdp_growth": 2.065739238,
+      "gdp_growth": 3.4,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q3",
-      "unemployment": 4.198,
-      "unemployment_year": 2025,
+      "unemployment": 4.1,
+      "unemployment_year": 2026,
       "metrics": {
         "inflation": {
-          "value": 3.737684729064039,
+          "value": 3.7,
           "period": "2026-09",
           "year": 2026,
           "history": [
@@ -77,12 +77,12 @@
             }
           ],
           "score": -1.52,
-          "label": "CPI inflation, year-on-year (%)",
+          "label": "Inflation Rate, year-on-year (%)",
           "source": "BLS",
-          "url": "https://www.bls.gov/cpi/"
+          "url": "https://tradingeconomics.com/united-states/indicators"
         },
         "gdp_growth": {
-          "value": 2.065739238,
+          "value": 3.4,
           "period": "2026-Q3",
           "year": 2026,
           "history": [
@@ -112,13 +112,13 @@
             }
           ],
           "score": -3.24,
-          "label": "Real GDP growth, year-on-year (%)",
-          "source": "OECD",
-          "url": "https://data-explorer.oecd.org/"
+          "label": "GDP Growth Rate (%)",
+          "source": "BEA",
+          "url": "https://tradingeconomics.com/united-states/indicators"
         },
         "unemployment": {
-          "value": 4.198,
-          "year": 2025,
+          "value": 4.1,
+          "year": 2026,
           "history": [
             {
               "year": 2025,
@@ -146,9 +146,10 @@
             }
           ],
           "score": -0.26,
-          "label": "Unemployment, total (% of labour force)",
-          "source": "World Bank",
-          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=USA"
+          "label": "Unemployment Rate (%)",
+          "source": "BLS",
+          "url": "https://tradingeconomics.com/united-states/indicators",
+          "period": "2026-10"
         }
       },
       "component_weights_available": {
@@ -162,11 +163,11 @@
     },
     {
       "code": "EUR",
-      "score": -0.79,
-      "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
+      "score": -1.65,
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 2/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Euro area",
-      "data_year": 2025,
+      "data_year": 2026,
       "policy_rate": 2.5,
       "policy_rate_display": "2.50%",
       "policy_rate_basis": "ECB deposit facility",
@@ -178,8 +179,8 @@
       "gdp_growth": 1.300603531,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q3",
-      "unemployment": 6.28355946264135,
-      "unemployment_year": 2025,
+      "unemployment": null,
+      "unemployment_year": null,
       "metrics": {
         "inflation": {
           "value": 4.0,
@@ -252,35 +253,10 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": 6.28355946264135,
-          "year": 2025,
-          "history": [
-            {
-              "year": 2025,
-              "value": 6.28355946264135
-            },
-            {
-              "year": 2024,
-              "value": 6.34778064605911
-            },
-            {
-              "year": 2023,
-              "value": 6.52267389015226
-            },
-            {
-              "year": 2022,
-              "value": 6.72976967374639
-            },
-            {
-              "year": 2021,
-              "value": 7.69446992680361
-            },
-            {
-              "year": 2020,
-              "value": 7.78262585986041
-            }
-          ],
-          "score": 1.77,
+          "value": null,
+          "year": null,
+          "history": [],
+          "score": null,
           "label": "Unemployment, total (% of labour force)",
           "source": "World Bank",
           "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=EMU"
@@ -288,12 +264,13 @@
       },
       "component_weights_available": {
         "inflation": 25.0,
-        "gdp_growth": 20.0,
-        "unemployment": 15.0
+        "gdp_growth": 20.0
       },
-      "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": []
+      "available_weight_pct": 45.0,
+      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": [
+        "unemployment: The read operation timed out"
+      ]
     },
     {
       "code": "GBP",
@@ -432,11 +409,11 @@
     },
     {
       "code": "JPY",
-      "score": -2.19,
-      "confidence": "Low",
-      "data_status": "Partial \u00b7 2/3 macro series \u00b7 mixed monthly/quarterly/annual data",
+      "score": -0.91,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Japan",
-      "data_year": 2026,
+      "data_year": 2025,
       "policy_rate": 1.25,
       "policy_rate_display": "1.25%",
       "policy_rate_basis": "BoJ short-term policy rate",
@@ -448,8 +425,8 @@
       "gdp_growth": 0.726654038,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
-      "unemployment": null,
-      "unemployment_year": null,
+      "unemployment": 2.451,
+      "unemployment_year": 2025,
       "metrics": {
         "inflation": {
           "value": 2.1,
@@ -522,10 +499,35 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": null,
-          "year": null,
-          "history": [],
-          "score": null,
+          "value": 2.451,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 2.451
+            },
+            {
+              "year": 2024,
+              "value": 2.5
+            },
+            {
+              "year": 2023,
+              "value": 2.6
+            },
+            {
+              "year": 2022,
+              "value": 2.614
+            },
+            {
+              "year": 2021,
+              "value": 2.808
+            },
+            {
+              "year": 2020,
+              "value": 2.809
+            }
+          ],
+          "score": 2.91,
           "label": "Unemployment, total (% of labour force)",
           "source": "World Bank",
           "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=JPN"
@@ -533,21 +535,20 @@
       },
       "component_weights_available": {
         "inflation": 25.0,
-        "gdp_growth": 20.0
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 45.0,
-      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": [
-        "unemployment: The read operation timed out"
-      ]
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "CHF",
-      "score": -1.38,
-      "confidence": "Medium",
-      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
+      "score": -0.84,
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 2/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Switzerland",
-      "data_year": 2025,
+      "data_year": 2026,
       "policy_rate": 0.0,
       "policy_rate_display": "0.00%",
       "policy_rate_basis": "SNB policy rate",
@@ -559,8 +560,8 @@
       "gdp_growth": 2.632421156,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
-      "unemployment": 4.873,
-      "unemployment_year": 2025,
+      "unemployment": null,
+      "unemployment_year": null,
       "metrics": {
         "inflation": {
           "value": 1.2,
@@ -633,35 +634,10 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": 4.873,
-          "year": 2025,
-          "history": [
-            {
-              "year": 2025,
-              "value": 4.873
-            },
-            {
-              "year": 2024,
-              "value": 4.343
-            },
-            {
-              "year": 2023,
-              "value": 4.043
-            },
-            {
-              "year": 2022,
-              "value": 4.122
-            },
-            {
-              "year": 2021,
-              "value": 5.013
-            },
-            {
-              "year": 2020,
-              "value": 4.817
-            }
-          ],
-          "score": -2.99,
+          "value": null,
+          "year": null,
+          "history": [],
+          "score": null,
           "label": "Unemployment, total (% of labour force)",
           "source": "World Bank",
           "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CHE"
@@ -669,12 +645,14 @@
       },
       "component_weights_available": {
         "inflation": 25.0,
-        "gdp_growth": 20.0,
-        "unemployment": 15.0
+        "gdp_growth": 20.0
       },
-      "available_weight_pct": 60.0,
-      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": []
+      "available_weight_pct": 45.0,
+      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": [
+        "gdp_growth: The read operation timed out",
+        "unemployment: The read operation timed out"
+      ]
     },
     {
       "code": "CAD",
@@ -948,11 +926,11 @@
     },
     {
       "code": "NZD",
-      "score": -0.47,
-      "confidence": "Low",
-      "data_status": "Partial \u00b7 2/3 macro series \u00b7 mixed monthly/quarterly/annual data",
+      "score": -1.39,
+      "confidence": "Medium",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "New Zealand",
-      "data_year": 2026,
+      "data_year": 2025,
       "policy_rate": 2.75,
       "policy_rate_display": "2.75%",
       "policy_rate_basis": "RBNZ official cash rate",
@@ -964,8 +942,8 @@
       "gdp_growth": 2.550736229,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q2",
-      "unemployment": null,
-      "unemployment_year": null,
+      "unemployment": 5.076,
+      "unemployment_year": 2025,
       "metrics": {
         "inflation": {
           "value": 3.714936,
@@ -1038,10 +1016,35 @@
           "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": null,
-          "year": null,
-          "history": [],
-          "score": null,
+          "value": 5.076,
+          "year": 2025,
+          "history": [
+            {
+              "year": 2025,
+              "value": 5.076
+            },
+            {
+              "year": 2024,
+              "value": 4.724
+            },
+            {
+              "year": 2023,
+              "value": 3.734
+            },
+            {
+              "year": 2022,
+              "value": 3.299
+            },
+            {
+              "year": 2021,
+              "value": 3.776
+            },
+            {
+              "year": 2020,
+              "value": 4.595
+            }
+          ],
+          "score": -4.16,
           "label": "Unemployment, total (% of labour force)",
           "source": "World Bank",
           "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=NZL"
@@ -1049,14 +1052,12 @@
       },
       "component_weights_available": {
         "inflation": 25.0,
-        "gdp_growth": 20.0
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 45.0,
-      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": [
-        "gdp_growth: The read operation timed out",
-        "unemployment: The read operation timed out"
-      ]
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     }
   ],
   "events": [
@@ -3204,7 +3205,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -3212,7 +3213,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -3220,7 +3221,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 39,
       "new_releases_added": 0
     },
@@ -3228,7 +3229,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 49,
       "new_releases_added": 0
     },
@@ -3236,7 +3237,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3244,7 +3245,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3252,7 +3253,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3260,7 +3261,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -3268,23 +3269,23 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "data_year": 2026,
       "indicators_available": 3
     },
     {
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
-      "data_year": 2025,
-      "indicators_available": 3
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "data_year": 2026,
+      "indicators_available": 2
     },
     {
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3292,23 +3293,23 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
-      "data_year": 2026,
-      "indicators_available": 2
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
     },
     {
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
-      "data_year": 2025,
-      "indicators_available": 3
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "data_year": 2026,
+      "indicators_available": 2
     },
     {
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3316,7 +3317,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
       "data_year": 2025,
       "indicators_available": 3
     },
@@ -3324,9 +3325,9 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-12T05:31:29.708837+00:00",
-      "data_year": 2026,
-      "indicators_available": 2
+      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "data_year": 2025,
+      "indicators_available": 3
     }
   ],
   "limitations": [
