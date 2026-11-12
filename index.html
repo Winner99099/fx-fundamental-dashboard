@@ -40,7 +40,7 @@
     <section class="view active" id="view-overview">
       <div class="metric-grid">
         <article class="metric-card"><div class="metric-label">CURRENCIES TRACKED</div><div class="metric-value">08</div><div class="metric-note">USD · EUR · GBP · JPY · CHF · CAD · AUD · NZD</div></article>
-        <article class="metric-card"><div class="metric-label">OFFICIAL NEWS ITEMS</div><div class="metric-value" id="metric-news">—</div><div class="metric-note">Latest available central-bank releases</div></article>
+        <article class="metric-card"><div class="metric-label">OFFICIAL NEWS ITEMS</div><div class="metric-value" id="metric-news">—</div><div class="metric-note">Central-bank news + scheduled macro releases</div></article>
         <article class="metric-card"><div class="metric-label">FEEDS RESPONDING</div><div class="metric-value" id="metric-feeds">—</div><div class="metric-note">Official central-bank sources</div></article>
         <article class="metric-card"><div class="metric-label">NEXT DATA BUILD</div><div class="metric-value">5M</div><div class="metric-note">GitHub Actions · best-effort schedule</div></article>
       </div>
@@ -68,13 +68,13 @@
     </section>
 
     <section class="view" id="view-news">
-      <div class="section-heading"><div><div class="eyebrow">OFFICIAL SOURCES</div><h2>News intelligence</h2><p>Central-bank publications are context, not automatically bullish or bearish trade signals.</p></div><div class="heading-actions"><a class="text-button" href="https://www.forexfactory.com/calendar" target="_blank" rel="noopener noreferrer">Forex Factory calendar ↗</a><select id="news-filter" class="select"><option value="ALL">All currencies</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option><option>CHF</option><option>CAD</option><option>AUD</option><option>NZD</option></select></div></div>
+      <div class="section-heading"><div><div class="eyebrow">CENTRAL BANK + ECONOMIC CALENDAR</div><h2>News intelligence</h2><p>Central-bank commentary and Forex Factory scheduled releases are shown separately, with actual, forecast and previous figures where available.</p></div><div class="heading-actions"><a class="text-button" href="https://www.forexfactory.com/calendar" target="_blank" rel="noopener noreferrer">Forex Factory calendar ↗</a><select id="news-filter" class="select"><option value="ALL">All currencies</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option><option>CHF</option><option>CAD</option><option>AUD</option><option>NZD</option></select></div></div>
       <div class="panel"><div id="news-list" class="news-list"><div class="empty">Loading news…</div></div></div>
     </section>
 
     <section class="view" id="view-calendar">
       <div class="section-heading"><div><div class="eyebrow">EVENT RISK</div><h2>Economic event watch</h2><p>Use Forex Factory for scheduled releases, impact ratings, forecasts and actual results.</p></div><a class="text-button" href="https://www.forexfactory.com/calendar" target="_blank" rel="noopener noreferrer">Open Forex Factory ↗</a></div>
-      <div class="notice notice-warn"><b>External calendar link</b><p>The dashboard does not yet import Forex Factory calendar data. Open the calendar for event details; times follow the time zone selected on Forex Factory.</p><p><a href="https://www.forexfactory.com/calendar?day=nov12.2026&event=151570" target="_blank" rel="noopener noreferrer">GBP GDP m/m — 12 Nov 2026 ↗</a></p></div>
+      <div class="panel"><div class="panel-head"><b>Imported economic calendar</b><span class="tag tag-neutral">FOREX FACTORY · SGT</span></div><div id="calendar-list" class="news-list"><div class="empty">Loading scheduled releases…</div></div></div>
       <div class="panel"><div class="panel-head"><b>Official central-bank source directory</b></div><div id="source-directory" class="source-grid"></div></div>
     </section>
 
@@ -93,5 +93,5 @@
     <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
-<script src="app.js?v=20261112-ffcalendar1" defer></script>
+<script src="app.js?v=20261112-ffcalendar2" defer></script>
 </body></html>
