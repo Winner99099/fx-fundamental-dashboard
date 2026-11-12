@@ -110,6 +110,23 @@ def relevant_news(title, summary=""):
     text = (title or "") + " " + (summary or "")
     return bool(NEWS_RELEVANCE.search(text))
 
+NEWS_HIGH = re.compile(r"\b(rate decision|policy rate|interest rate|monetary policy decision|inflation|consumer price|cpi|pce|gdp|gross domestic product|employment|unemployment|payroll|wage growth|minutes of the monetary policy)\b", re.I)
+NEWS_MEDIUM = re.compile(r"\b(outlook|forecast|economic assessment|financial stability|financial conditions|credit conditions|business survey|pmi|governor|speech|testimony|bank lending|exchange rate)\b", re.I)
+NEWS_HAWKISH = re.compile(r"\b(hawkish|tightening|raise[sd]? (?:the )?(?:policy )?rate|rate hike|increase[sd]? (?:the )?(?:policy )?rate|higher for longer|restrictive policy)\b", re.I)
+NEWS_DOVISH = re.compile(r"\b(dovish|eased|easing|cut[s]? (?:the )?(?:policy )?rate|rate cut|lowered (?:the )?(?:policy )?rate|accommodative policy|monetary easing)\b", re.I)
+
+def classify_news(title, summary=""):
+    text = (title or "") + " " + (summary or "")
+    impact = "High" if NEWS_HIGH.search(text) else "Medium" if NEWS_MEDIUM.search(text) else "Low"
+    hawkish, dovish = bool(NEWS_HAWKISH.search(text)), bool(NEWS_DOVISH.search(text))
+    if hawkish and not dovish:
+        bias, direction = "Hawkish wording", "Potentially supportive"
+    elif dovish and not hawkish:
+        bias, direction = "Dovish wording", "Potentially negative"
+    else:
+        bias, direction = "No clear policy bias", "Context only"
+    return impact, bias, direction
+
 def event_key(currency, link, title, published_at):
     identity = link.strip() or (title.strip() + "|" + published_at)
     return hashlib.sha256((currency + "|" + identity).encode("utf-8")).hexdigest()[:24]
@@ -495,7 +512,7 @@ for name, url, currency in FEEDS:
                 events_by_id[eid] = {
                     "event_id": eid, "currency": currency, "title": clean_text(title, 220),
                     "summary": clean_text(description, 500), "url": link or url,
-                    "time": published_iso, "published_at": published_iso, "source": name, "impact": "High",
+                    "time": published_iso, "published_at": published_iso, "source": name,
                 }
                 added_count += 1
     except Exception as error:
@@ -585,13 +602,18 @@ def apply_v4_scores(items):
 currencies = apply_v4_scores(currencies)
 
 events = list(events_by_id.values())
+for event in events:
+    impact, bias, direction = classify_news(event.get("title", ""), event.get("summary", ""))
+    event["impact"] = impact
+    event["bias"] = bias
+    event["direction"] = direction
 events.sort(key=lambda event: event.get("published_at", ""), reverse=True)
 
 output = {
     "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v4-relative-macro-provisional",
+    "model": "v4-relative-macro-provisional-news-v2",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
@@ -610,7 +632,7 @@ output = {
         "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
         "V4 scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths, economic surprises and market-price confirmation are not yet integrated.",
         "Economic-surprise data, expected policy paths, 2-year yield differentials and market-price confirmation are not yet included in the numerical score.",
-        "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
+        "News impact is keyword-based editorial triage; policy bias is labelled only when explicit hawkish/dovish wording appears. It is not an AI assessment or a trade signal.",
         "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
     ],
