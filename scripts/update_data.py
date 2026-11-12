@@ -371,6 +371,24 @@ def build_currency(code, country, country_name):
                 "url": "https://tradingeconomics.com/united-states/indicators",
             })
 
+    # Euro Area headline values aligned with the Trading Economics overview.
+    # GDP Growth Rate here is the quarterly rate (0.40%), not GDP Annual Growth Rate (1.30%).
+    if code == "EUR":
+        POLICY_RATES["EUR"].update({
+            "value": 2.65, "display": "2.65%",
+            "basis": "Trading Economics Interest Rate",
+            "url": "https://tradingeconomics.com/euro-area/indicators",
+        })
+        te_eur = {
+            "gdp_growth": (0.40, "GDP Growth Rate, quarterly (%)"),
+            "unemployment": (6.50, "Unemployment Rate (%)"),
+        }
+        for key, (value, label) in te_eur.items():
+            metrics[key].update({
+                "value": value, "label": label, "source": "Trading Economics",
+                "url": "https://tradingeconomics.com/euro-area/indicators",
+            })
+
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
     score = None
     if available:
