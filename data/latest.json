@@ -1,16 +1,16 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T06:23:57.181Z",
+  "generated_at": "2026-11-12T06:33:55.660722+00:00",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v3.6-trading-economics-headline-overview",
+  "model": "v3.5-monthly-cpi-quarterly-gdp",
   "history_window_days": 90,
   "scoring": {
     "scale": "-5 to +5",
     "method": "Latest available reading versus up to five preceding observations at the same frequency; standardised by historical dispersion and smoothed with tanh.",
     "weights": {
-      "inflation": 25,
-      "gdp_growth": 20,
-      "unemployment": 15
+      "inflation": 25.0,
+      "gdp_growth": 20.0,
+      "unemployment": 15.0
     },
     "direction": {
       "inflation": "Lower than own recent history scores positively; this is a momentum proxy, not an inflation-target assessment.",
@@ -28,11 +28,11 @@
     {
       "code": "USD",
       "score": -1.78,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United States",
-      "data_year": 2026,
-      "policy_rate": 4,
+      "data_year": null,
+      "policy_rate": 4.0,
       "policy_rate_display": "4.00%",
       "policy_rate_basis": "Trading Economics Interest Rate",
       "policy_rate_as_of": "2026-10-29",
@@ -153,27 +153,27 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "EUR",
-      "score": -1.65,
+      "score": -0.79,
       "confidence": "Low",
-      "data_status": "Partial · 2/3 macro series · mixed monthly/quarterly/annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Euro area",
-      "data_year": 2026,
+      "data_year": null,
       "policy_rate": 2.65,
       "policy_rate_display": "2.65%",
       "policy_rate_basis": "Trading Economics Interest Rate",
       "policy_rate_as_of": "2026-09-16",
       "policy_rate_source": "https://tradingeconomics.com/euro-area/indicators",
-      "inflation": 4,
+      "inflation": 4.0,
       "inflation_year": null,
       "inflation_period": "Latest",
       "gdp_growth": 0.4,
@@ -183,13 +183,13 @@
       "unemployment_year": null,
       "metrics": {
         "inflation": {
-          "value": 4,
+          "value": 4.0,
           "period": "Latest",
           "year": null,
           "history": [
             {
               "period": "2026-10",
-              "value": 4
+              "value": 4.0
             },
             {
               "period": "2026-09",
@@ -201,7 +201,7 @@
             },
             {
               "period": "2026-07",
-              "value": 3
+              "value": 3.0
             },
             {
               "period": "2026-06",
@@ -255,8 +255,33 @@
         "unemployment": {
           "value": 6.5,
           "year": null,
-          "history": [],
-          "score": null,
+          "history": [
+            {
+              "year": 2025,
+              "value": 6.28355946264135
+            },
+            {
+              "year": 2024,
+              "value": 6.34778064605911
+            },
+            {
+              "year": 2023,
+              "value": 6.52267389015226
+            },
+            {
+              "year": 2022,
+              "value": 6.72976967374639
+            },
+            {
+              "year": 2021,
+              "value": 7.69446992680361
+            },
+            {
+              "year": 2020,
+              "value": 7.78262585986041
+            }
+          ],
+          "score": 1.77,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
           "url": "https://tradingeconomics.com/euro-area/indicators",
@@ -264,23 +289,22 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 45,
-      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": [
-        "unemployment: The read operation timed out"
-      ]
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "GBP",
       "score": -2.08,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "United Kingdom",
-      "data_year": 2025,
-      "policy_rate": 4,
+      "data_year": null,
+      "policy_rate": 4.0,
       "policy_rate_display": "4.00%",
       "policy_rate_basis": "Trading Economics Interest Rate",
       "policy_rate_as_of": "2026-11-05",
@@ -401,21 +425,21 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "JPY",
       "score": -0.91,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Japan",
-      "data_year": 2025,
+      "data_year": null,
       "policy_rate": 1.25,
       "policy_rate_display": "1.25%",
       "policy_rate_basis": "Trading Economics Interest Rate",
@@ -537,22 +561,22 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "CHF",
-      "score": -0.84,
+      "score": -1.38,
       "confidence": "Low",
-      "data_status": "Partial · 2/3 macro series · mixed monthly/quarterly/annual data",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Switzerland",
-      "data_year": 2026,
-      "policy_rate": 0,
+      "data_year": null,
+      "policy_rate": 0.0,
       "policy_rate_display": "0.00%",
       "policy_rate_basis": "Trading Economics Interest Rate",
       "policy_rate_as_of": "2026-09-24",
@@ -563,7 +587,7 @@
       "gdp_growth": 1.5,
       "gdp_growth_year": null,
       "gdp_growth_period": "Latest",
-      "unemployment": 3,
+      "unemployment": 3.0,
       "unemployment_year": null,
       "metrics": {
         "inflation": {
@@ -637,10 +661,35 @@
           "url": "https://tradingeconomics.com/switzerland/indicators"
         },
         "unemployment": {
-          "value": 3,
+          "value": 3.0,
           "year": null,
-          "history": [],
-          "score": null,
+          "history": [
+            {
+              "year": 2025,
+              "value": 4.873
+            },
+            {
+              "year": 2024,
+              "value": 4.343
+            },
+            {
+              "year": 2023,
+              "value": 4.043
+            },
+            {
+              "year": 2022,
+              "value": 4.122
+            },
+            {
+              "year": 2021,
+              "value": 5.013
+            },
+            {
+              "year": 2020,
+              "value": 4.817
+            }
+          ],
+          "score": -2.99,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
           "url": "https://tradingeconomics.com/switzerland/indicators",
@@ -648,23 +697,21 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 45,
-      "summary": "Partial macro score based on 2 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
-      "errors": [
-        "gdp_growth: The read operation timed out",
-        "unemployment: The read operation timed out"
-      ]
+      "available_weight_pct": 60.0,
+      "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
+      "errors": []
     },
     {
       "code": "CAD",
       "score": -0.81,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Canada",
-      "data_year": 2025,
+      "data_year": null,
       "policy_rate": 2.5,
       "policy_rate_display": "2.50%",
       "policy_rate_basis": "Trading Economics Interest Rate",
@@ -786,21 +833,21 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "AUD",
       "score": -0.44,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "Australia",
-      "data_year": 2025,
+      "data_year": null,
       "policy_rate": 4.85,
       "policy_rate_display": "4.85%",
       "policy_rate_basis": "Trading Economics Interest Rate",
@@ -922,21 +969,21 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     },
     {
       "code": "NZD",
       "score": -1.39,
-      "confidence": "Medium",
-      "data_status": "Partial · 3/3 macro series · mixed monthly/quarterly/annual data",
+      "confidence": "Low",
+      "data_status": "Partial \u00b7 3/3 macro series \u00b7 mixed monthly/quarterly/annual data",
       "country_proxy": "New Zealand",
-      "data_year": 2025,
+      "data_year": null,
       "policy_rate": 2.75,
       "policy_rate_display": "2.75%",
       "policy_rate_basis": "Trading Economics Interest Rate",
@@ -1058,11 +1105,11 @@
         }
       },
       "component_weights_available": {
-        "inflation": 25,
-        "gdp_growth": 20,
-        "unemployment": 15
+        "inflation": 25.0,
+        "gdp_growth": 20.0,
+        "unemployment": 15.0
       },
-      "available_weight_pct": 60,
+      "available_weight_pct": 60.0,
       "summary": "Partial macro score based on 3 of 3 macro indicators; policy-rate outlook and market expectations are not yet included.",
       "errors": []
     }
@@ -1116,7 +1163,7 @@
       "event_id": "07d418752b02a2f14e04996c",
       "currency": "NZD",
       "title": "RBNZ Reverse Stress Test demonstrates resilience of insurers and improves risk management",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) today published findings from its Life and Health Insurance Industry Reverse Stress Test. The exercise found that a combination of severe shocks is required before insurers breach their solvency requirements, highlighting the resilience in the sector.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) today published findings from its Life and Health Insurance Industry Reverse Stress Test. The exercise found that a combination of severe shocks is required before insurers breach their solvency requirements, highlighting the resilience in the sector.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-reverse-stress-test-demonstrates-resilience-of-insurers-and-improves-risk-management",
       "time": "2026-11-11T11:00:00+00:00",
       "published_at": "2026-11-11T11:00:00+00:00",
@@ -1433,7 +1480,7 @@
     {
       "currency": "GBP",
       "title": "Bank rate increased to 4% - November 2026 Monetary Policy Summary and Minutes",
-      "summary": "The Bank of England’s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
+      "summary": "The Bank of England\u2019s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
       "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
       "time": "2026-11-05T12:00:00+00:00",
       "impact": "High",
@@ -1443,7 +1490,7 @@
     {
       "currency": "NZD",
       "title": "Reserve Bank files DCS disclosure charge against Westpac New Zealand Limited",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/reserve-bank-files-dcs-disclosure-charge-against-westpac-new-zealand-limited",
       "time": "2026-11-05T11:00:00+00:00",
       "impact": "High",
@@ -1657,7 +1704,7 @@
     {
       "currency": "NZD",
       "title": "RBNZ registers Revolut as a bank in New Zealand",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-registers-revolut-as-a-bank-in-new-zealand",
       "time": "2026-11-02T11:00:00+00:00",
       "impact": "High",
@@ -1666,7 +1713,7 @@
     },
     {
       "currency": "EUR",
-      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
+      "title": "Boris Vuj\u010di\u0107: Integrated, open and resilient: Europe\u2019s strengths in a fragmenting world",
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
       "time": "2026-11-02T09:30:00+00:00",
@@ -1938,7 +1985,7 @@
     {
       "event_id": "5b63f49375b7ac83c919faac",
       "currency": "EUR",
-      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe’s financial infrastructure",
+      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe\u2019s financial infrastructure",
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
       "time": "2026-10-29T15:50:00+00:00",
@@ -1959,7 +2006,7 @@
     {
       "event_id": "5801d6cc614cca05bd3b602e",
       "currency": "EUR",
-      "title": "Christine Lagarde, Boris Vujčić: Monetary policy statement (with Q&A)",
+      "title": "Christine Lagarde, Boris Vuj\u010di\u0107: Monetary policy statement (with Q&A)",
       "summary": "",
       "url": "https://www.ecb.europa.eu//press/press_conference/monetary-policy-statement/2026/html/ecb.is261029~5c5ffe99e5.en.html",
       "time": "2026-10-29T14:00:00+00:00",
@@ -1981,7 +2028,7 @@
     {
       "currency": "NZD",
       "title": "RBNZ appoints Director of Prudential Supervision",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has appointed Stan Christian as Director of Prudential Supervision following an extensive recruitment process.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has appointed Stan Christian as Director of Prudential Supervision following an extensive recruitment process.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/rbnz-appoints-director-of-prudential-supervision",
       "time": "2026-10-29T11:00:00+00:00",
       "impact": "High",
@@ -2032,7 +2079,7 @@
     {
       "currency": "NZD",
       "title": "OCR held at 2.75%",
-      "summary": "Monetary Policy Review media release and the MPC’s Record of Meeting, which summarises the committee's discussions.",
+      "summary": "Monetary Policy Review media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/ocr-held-at-2-75-percent",
       "time": "2026-10-27T11:00:00+00:00",
       "impact": "High",
@@ -2139,7 +2186,7 @@
     },
     {
       "currency": "GBP",
-      "title": "Minutes of the Securities Lending Committee meeting – September 2026",
+      "title": "Minutes of the Securities Lending Committee meeting \u2013 September 2026",
       "summary": "The Securities Lending Committee is a forum for market participants and authorities to discuss the UK securities lending market.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/september/securities-lending-committee-meeting-september-2026",
       "time": "2026-10-22T15:35:53+00:00",
@@ -2260,7 +2307,7 @@
     {
       "currency": "NZD",
       "title": "New framework supports access to basic transaction services",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has brought together public and private sector organisations to sign a Memorandum of Understanding (MoU) aimed at supporting access to basic transaction services in New Zealand.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) has brought together public and private sector organisations to sign a Memorandum of Understanding (MoU) aimed at supporting access to basic transaction services in New Zealand.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/new-framework-supports-access-to-basic-transaction-services",
       "time": "2026-10-18T11:00:00+00:00",
       "impact": "High",
@@ -2280,7 +2327,7 @@
     {
       "event_id": "d4bf31b8ff4179b3fae88b3d",
       "currency": "GBP",
-      "title": "Banknote imagery advisory group minutes – 15 July 2026",
+      "title": "Banknote imagery advisory group minutes \u2013 15 July 2026",
       "summary": "Meeting held 15 July 2026",
       "url": "https://www.bankofengland.co.uk/minutes/2026/july/banknote-advisory-minutes-15-july",
       "time": "2026-10-16T11:00:00+00:00",
@@ -2325,7 +2372,7 @@
       "event_id": "9ab82aa45844b5c3f534658d",
       "currency": "GBP",
       "title": "Minutes of the SONIA Stakeholder Advisory Group - 25 September 2026",
-      "summary": "The SONIA Stakeholder Advisory Group supports the Bank’s administration of SONIA by providing advice and technical input to the Bank and the SONIA Oversight Committee",
+      "summary": "The SONIA Stakeholder Advisory Group supports the Bank\u2019s administration of SONIA by providing advice and technical input to the Bank and the SONIA Oversight Committee",
       "url": "https://www.bankofengland.co.uk/minutes/2026/september/sonia-stakeholder-advisory-group-25-september-2026",
       "time": "2026-10-15T08:27:59+00:00",
       "published_at": "2026-10-15T08:27:59+00:00",
@@ -2357,7 +2404,7 @@
     {
       "currency": "NZD",
       "title": "APRA and RBNZ complete joint bank stress test to promote trans-Tasman resilience",
-      "summary": "The Australian Prudential Regulation Authority (APRA) and the Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) have completed the 2026 Trans-Tasman Stress Test, their first joint stress testing exercise since 2017.",
+      "summary": "The Australian Prudential Regulation Authority (APRA) and the Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) have completed the 2026 Trans-Tasman Stress Test, their first joint stress testing exercise since 2017.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/apra-and-rbnz-complete-joint-bank-stress-test-to-promote-trans-tasman-resilience",
       "time": "2026-10-14T11:00:00+00:00",
       "impact": "High",
@@ -2367,7 +2414,7 @@
     {
       "currency": "NZD",
       "title": "RBNZ and FMA outline supervisory expectations on cyber and AI risks",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) and the Financial Markets Authority – Te Mana Tātai Hokohoko (FMA) have today outlined their supervisory expectations on cyber risks associated with frontier Artificial Intelligence (AI).",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) and the Financial Markets Authority \u2013 Te Mana T\u0101tai Hokohoko (FMA) have today outlined their supervisory expectations on cyber risks associated with frontier Artificial Intelligence (AI).",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/rbnz-and-fma-outline-supervisory-expectations-on-cyber-and-ai-risks",
       "time": "2026-10-14T11:00:00+00:00",
       "impact": "High",
@@ -2475,7 +2522,7 @@
     {
       "event_id": "d1542093a5e9c39755136116",
       "currency": "GBP",
-      "title": "Minutes of the Money Market Committee meeting – September 2026",
+      "title": "Minutes of the Money Market Committee meeting \u2013 September 2026",
       "summary": "The Money Markets Committee is a forum for market participants and authorities to discuss the UK unsecured deposits and funding market and securities lending and repo markets.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/september/money-markets-committee-minutes-september-2026",
       "time": "2026-10-13T15:04:27+00:00",
@@ -2616,8 +2663,8 @@
     },
     {
       "currency": "USD",
-      "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money launde",
-      "summary": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money laundering",
+      "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm\u2019s failure to sufficiently detect and report certain suspicious activity related to money launde",
+      "summary": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm\u2019s failure to sufficiently detect and report certain suspicious activity related to money laundering",
       "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
       "time": "2026-10-08T20:30:00+00:00",
       "impact": "High",
@@ -2649,7 +2696,7 @@
     {
       "event_id": "cd283b7d41427eda64bd0521",
       "currency": "GBP",
-      "title": "Minutes of the London FXJSC Legal Sub Committee Meeting – 16 June 2026",
+      "title": "Minutes of the London FXJSC Legal Sub Committee Meeting \u2013 16 June 2026",
       "summary": "The Bank of England provides the Secretariat to the London Foreign Exchange Joint Standing Committee (FXJSC) Legal Sub-Committee. The FXJSC is made up of market participants, infrastructure providers and the UK financial regulators.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/june/fxjsc-legal-sub-committee-meeting-16-june-26",
       "time": "2026-10-07T13:36:25+00:00",
@@ -2660,7 +2707,7 @@
     {
       "currency": "NZD",
       "title": "Recruitment for two new Assistant Governors and Chief of Staff underway",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has commenced recruitment for the two new roles of Assistant Governor Monetary Policy and Assistant Governor Payments and Cash.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) has commenced recruitment for the two new roles of Assistant Governor Monetary Policy and Assistant Governor Payments and Cash.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/recruitment-for-two-new-assistant-governors-and-chief-of-staff-underway",
       "time": "2026-10-07T11:00:00+00:00",
       "impact": "High",
@@ -2670,7 +2717,7 @@
     {
       "event_id": "aa507ba7872b77f3cbf25c21",
       "currency": "GBP",
-      "title": "Minutes of the London FXJSC Operations Sub-Committee Meeting – 16 June 2026",
+      "title": "Minutes of the London FXJSC Operations Sub-Committee Meeting \u2013 16 June 2026",
       "summary": "The Bank of England chairs the London Foreign Exchange Joint Standing Committee (FXJSC) Operations and Legal Sub-Committees. The FXJSC is made up of market participants, infrastructure providers and the UK financial regulators.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/june/fxjsc-operations-sub-committee-meeting-16-june-2026",
       "time": "2026-10-07T09:49:25+00:00",
@@ -2681,7 +2728,7 @@
     {
       "event_id": "d44e7a323e5da450aef39856",
       "currency": "GBP",
-      "title": "Minutes of the London FXJSC Main Committee Meeting – 24 June 2026",
+      "title": "Minutes of the London FXJSC Main Committee Meeting \u2013 24 June 2026",
       "summary": "The Bank of England chairs the London Foreign Exchange Joint Standing Committee (FXJSC), which is a forum for discussion of the wholesale foreign exchange market. The FXJSC is made up of market participants, infrastructure providers and the UK financial regulators.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/june/fxjsc-main-committee-meeting-24-june-2026",
       "time": "2026-10-07T09:08:40+00:00",
@@ -2703,7 +2750,7 @@
     {
       "event_id": "b194d3de515fa6ecb1a6d879",
       "currency": "GBP",
-      "title": "Minutes of the UK Money Markets Code Sub-Committee – September 2026",
+      "title": "Minutes of the UK Money Markets Code Sub-Committee \u2013 September 2026",
       "summary": "The Money Markets Committee is a forum for market participants and authorities to discuss the UK unsecured deposits and funding market and securities lending and repo markets.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/september/uk-money-markets-committee-minutes-september-2026",
       "time": "2026-10-06T13:07:03+00:00",
@@ -2813,7 +2860,7 @@
     {
       "event_id": "2864c024a2d0bfdeace602fd",
       "currency": "GBP",
-      "title": "Financial Policy Committee Record – September 2026",
+      "title": "Financial Policy Committee Record \u2013 September 2026",
       "summary": "Our Financial Policy Committee (FPC) meets to identify risks to financial stability and agree policy actions aimed at safeguarding the resilience of the UK financial system.",
       "url": "https://www.bankofengland.co.uk/financial-policy-committee-record/2026/september-2026",
       "time": "2026-09-30T09:30:00+00:00",
@@ -2846,8 +2893,8 @@
     {
       "event_id": "043ba8581410592df53d97f5",
       "currency": "GBP",
-      "title": "Minutes of the Market Participants Group meeting – 24 September 2026",
-      "summary": "The Market Participants Group (MPG) is a senior-level forum for financial market participants to share their views on relevant themes and narratives in financial markets with members of the Bank of England’s Monetary Policy Committee.",
+      "title": "Minutes of the Market Participants Group meeting \u2013 24 September 2026",
+      "summary": "The Market Participants Group (MPG) is a senior-level forum for financial market participants to share their views on relevant themes and narratives in financial markets with members of the Bank of England\u2019s Monetary Policy Committee.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/september/market-participants-group-meeting-25-september-2026",
       "time": "2026-09-25T06:30:00+00:00",
       "published_at": "2026-09-25T06:30:00+00:00",
@@ -2891,7 +2938,7 @@
       "event_id": "f41cf21275f50fcda4059b76",
       "currency": "NZD",
       "title": "Reserve Bank requests TSB to commission independent report",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua is requesting an independent report from TSB under Section 95 of the Banking (Prudential Supervision) Act 1989.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua is requesting an independent report from TSB under Section 95 of the Banking (Prudential Supervision) Act 1989.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/reserve-bank-requests-tsb-to-commission-independent-report",
       "time": "2026-09-24T12:00:00+00:00",
       "published_at": "2026-09-24T12:00:00+00:00",
@@ -2912,7 +2959,7 @@
     {
       "event_id": "76f1f2fb295ef9e11462f9f3",
       "currency": "GBP",
-      "title": "Foreign Currency Reserves 2026 – Market Notice 22 September 2026",
+      "title": "Foreign Currency Reserves 2026 \u2013 Market Notice 22 September 2026",
       "summary": "Not for distribution, directly or indirectly, in or into the United States, Canada, Australia, Japan or any other jurisdiction where it is unlawful to distribute this announcement",
       "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/september/foreign-currency-reserves-2026-market-notice-22-september-2026",
       "time": "2026-09-22T15:30:00+00:00",
@@ -2956,7 +3003,7 @@
     {
       "event_id": "c1af7f9c797f87a9f5e3d7cf",
       "currency": "GBP",
-      "title": "Foreign Currency Reserves 2026 – Market Notice 21 September 2026",
+      "title": "Foreign Currency Reserves 2026 \u2013 Market Notice 21 September 2026",
       "summary": "Not for distribution, directly or indirectly, in or into the United States, Canada, Australia, Japan or any other jurisdiction where it is unlawful to distribute this announcement",
       "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/september/foreign-currency-reserves-2026-market-notice-21-september-2026",
       "time": "2026-09-21T11:30:00+00:00",
@@ -2979,7 +3026,7 @@
       "event_id": "765086b53ac30efc7355cde1",
       "currency": "GBP",
       "title": "Minutes of the Transaction and Post-trade Reporting Harmonisation Taskforce - July 2026",
-      "summary": "The Transaction and Post-trade Reporting Harmonisation Taskforce, through its three working groups, will help inform the design of the Bank and FCA’s long-term approach to harmonising UK MiFIR, UK EMIR and UK SFTR reporting requirements",
+      "summary": "The Transaction and Post-trade Reporting Harmonisation Taskforce, through its three working groups, will help inform the design of the Bank and FCA\u2019s long-term approach to harmonising UK MiFIR, UK EMIR and UK SFTR reporting requirements",
       "url": "https://www.bankofengland.co.uk/minutes/2026/july/minutes-of-the-transaction-and-post-trade-reporting-harmonisation-taskforce-july-2026",
       "time": "2026-09-18T11:00:00+00:00",
       "published_at": "2026-09-18T11:00:00+00:00",
@@ -3011,8 +3058,8 @@
     {
       "event_id": "b0d5b157448b11c4f5ae1996",
       "currency": "NZD",
-      "title": "Māori access to capital (MA2K) snapshot 2026",
-      "summary": "Te Pūtea Matua – Reserve Bank of New Zealand has today published the 2026 Māori Access to Capital (MA2K) Snapshot, providing an updated industry-level view of Māori access to capital across participating banks, alongside the latest available aggregate system-level information.",
+      "title": "M\u0101ori access to capital (MA2K) snapshot 2026",
+      "summary": "Te P\u016btea Matua \u2013 Reserve Bank of New Zealand has today published the 2026 M\u0101ori Access to Capital (MA2K) Snapshot, providing an updated industry-level view of M\u0101ori access to capital across participating banks, alongside the latest available aggregate system-level information.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/maori-access-to-capital-ma2k-snapshot-2026",
       "time": "2026-09-17T12:00:00+00:00",
       "published_at": "2026-09-17T12:00:00+00:00",
@@ -3044,8 +3091,8 @@
     {
       "event_id": "6daf087cb4c8a0aa87db2758",
       "currency": "GBP",
-      "title": "Asset Purchase Facility: Gilt Sales – Market Notice 17 September 2026",
-      "summary": "This Market Notice outlines the Bank Executive’s approach to implementing the Monetary Policy Committee’s (MPC) decision to unwind the gilts held for monetary policy purposes in the Asset Purchase Facility (APF). As part of this, Bank APF auctions will be paused while the Bank reviews a model of selling gilts to the Government.",
+      "title": "Asset Purchase Facility: Gilt Sales \u2013 Market Notice 17 September 2026",
+      "summary": "This Market Notice outlines the Bank Executive\u2019s approach to implementing the Monetary Policy Committee\u2019s (MPC) decision to unwind the gilts held for monetary policy purposes in the Asset Purchase Facility (APF). As part of this, Bank APF auctions will be paused while the Bank reviews a model of selling gilts to the Government.",
       "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/asset-purchase-facility-gilt-sales-market-notice-17-september-2026",
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
@@ -3056,7 +3103,7 @@
       "event_id": "93b3d42bd7f723de3c8bc23f",
       "currency": "GBP",
       "title": "Bank rate maintained at 3.75% - September 2026 Monetary Policy Summary and Minutes",
-      "summary": "The Bank of England’s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
+      "summary": "The Bank of England\u2019s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
       "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/september-2026",
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
@@ -3067,7 +3114,7 @@
       "event_id": "8b9bb7ee038ada6f8c799780",
       "currency": "GBP",
       "title": "Chancellor announces Bank of England appointments",
-      "summary": "His Majesty the King and the Chancellor have appointed three new non-executive directors to the Bank of England’s Court of Directors",
+      "summary": "His Majesty the King and the Chancellor have appointed three new non-executive directors to the Bank of England\u2019s Court of Directors",
       "url": "https://www.bankofengland.co.uk/news/2026/september/chancellor-announces-boe-appointments",
       "time": "2026-09-16T14:03:08+00:00",
       "published_at": "2026-09-16T14:03:08+00:00",
@@ -3078,7 +3125,7 @@
       "event_id": "a96885d7c5dbe245a6561aa4",
       "currency": "NZD",
       "title": "Exploring the future of banking in New Zealand",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has today published a Future of Banking study exploring how banking in New Zealand could evolve over the next decade.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua (RBNZ) has today published a Future of Banking study exploring how banking in New Zealand could evolve over the next decade.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/exploring-the-future-of-banking-in-new-zealand",
       "time": "2026-09-16T12:00:00+00:00",
       "published_at": "2026-09-16T12:00:00+00:00",
@@ -3089,7 +3136,7 @@
       "event_id": "60c6e389cd6aa82ee2c1c877",
       "currency": "NZD",
       "title": "Reserve Bank announces leadership changes as Assistant Governor Karen Silk prepares to depart",
-      "summary": "Reserve Bank of New Zealand – Te Pūtea Matua Assistant Governor Money Karen Silk will leave the Bank in December, after more than four years with the organisation.",
+      "summary": "Reserve Bank of New Zealand \u2013 Te P\u016btea Matua Assistant Governor Money Karen Silk will leave the Bank in December, after more than four years with the organisation.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/reserve-bank-announces-leadership-changes-as-assistant-governor-karen-silk-prepares-to-depart",
       "time": "2026-09-15T12:00:00+00:00",
       "published_at": "2026-09-15T12:00:00+00:00",
@@ -3110,7 +3157,7 @@
     {
       "event_id": "27def0b018701cba53a3e929",
       "currency": "GBP",
-      "title": "Minutes of the Securities Lending Committee meeting – March 2026",
+      "title": "Minutes of the Securities Lending Committee meeting \u2013 March 2026",
       "summary": "The Securities Lending Committee is a forum for market participants and authorities to discuss the UK securities lending market.",
       "url": "https://www.bankofengland.co.uk/minutes/2026/march/minutes-of-the-securities-lending-committee-meeting-march-2026",
       "time": "2026-09-15T08:09:58+00:00",
@@ -3122,7 +3169,7 @@
       "event_id": "7a140860c9969127772973b1",
       "currency": "NZD",
       "title": "RBNZ to regulate and supervise the High Value Clearing System",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua will now regulate and supervise the High Value Clearing System, under the Financial Market Infrastructures Act 2021. This follows the Minister of Finance’s decision to designate the system on the Reserve Bank’s recommendation.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua will now regulate and supervise the High Value Clearing System, under the Financial Market Infrastructures Act 2021. This follows the Minister of Finance\u2019s decision to designate the system on the Reserve Bank\u2019s recommendation.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/rbnz-to-regulate-and-supervise-the-high-value-clearing-system",
       "time": "2026-09-14T12:00:00+00:00",
       "published_at": "2026-09-14T12:00:00+00:00",
@@ -3133,7 +3180,7 @@
       "event_id": "2c1cfe964d8e9b99378c1575",
       "currency": "NZD",
       "title": "Reserve Bank releases near-final DTA standards and licensing questions for regulated deposit takers",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has published near-final versions of four Deposit Takers Act 2023 (DTA) standards, consultation submissions, and the questions that existing banks and non-bank deposit takers will need to answer if they are applying for a DTA licence.",
+      "summary": "The Reserve Bank of New Zealand \u2013 Te P\u016btea Matua has published near-final versions of four Deposit Takers Act 2023 (DTA) standards, consultation submissions, and the questions that existing banks and non-bank deposit takers will need to answer if they are applying for a DTA licence.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/rbnz-releases-near-final-dta-standards-and-licensing-questions",
       "time": "2026-09-13T12:00:00+00:00",
       "published_at": "2026-09-13T12:00:00+00:00",
@@ -3177,7 +3224,7 @@
       "event_id": "f733a11308ac37f8b8662bf0",
       "currency": "NZD",
       "title": "OCR increased by 25 basis points to 2.75%",
-      "summary": "Monetary Policy Statement media release and the MPC’s Record of Meeting, which summarises the committee's discussions.",
+      "summary": "Monetary Policy Statement media release and the MPC\u2019s Record of Meeting, which summarises the committee's discussions.",
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/ocr-increased-by-25-basis-points-to-2-75",
       "time": "2026-09-01T12:00:00+00:00",
       "published_at": "2026-09-01T12:00:00+00:00",
@@ -3212,7 +3259,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -3220,7 +3267,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -3228,7 +3275,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 39,
       "new_releases_added": 0
     },
@@ -3236,7 +3283,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 49,
       "new_releases_added": 0
     },
@@ -3244,7 +3291,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3252,7 +3299,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3260,7 +3307,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -3268,72 +3315,72 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
     {
-      "name": "OECD / World Bank · United States",
+      "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2026,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · Euro area",
+      "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2026,
-      "indicators_available": 2
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
+      "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · United Kingdom",
+      "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · Japan",
+      "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · Switzerland",
+      "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2026,
-      "indicators_available": 2
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
+      "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · Canada",
+      "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · Australia",
+      "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     },
     {
-      "name": "OECD / World Bank · New Zealand",
+      "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-12T06:16:10.604615+00:00",
-      "data_year": 2025,
+      "checked_at": "2026-11-12T06:33:55.660722+00:00",
+      "data_year": null,
       "indicators_available": 3
     }
   ],
