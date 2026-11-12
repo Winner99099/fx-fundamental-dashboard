@@ -12,7 +12,7 @@
 <body>
 <div class="app-shell">
   <aside class="sidebar">
-    <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V3</small></span></a>
+    <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V4</small></span></a>
     <div class="side-label">WORKSPACE</div>
     <nav id="navigation">
       <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
@@ -34,7 +34,7 @@
 
     <section class="status-strip">
       <div><span class="status-dot" id="status-dot"></span><b id="data-status">Checking data snapshot</b><span class="muted" id="updated-at">—</span></div>
-      <div class="status-right"><span>MODEL <b>TRANSPARENT / PROVISIONAL</b></span><span>CLIENT POLL <b>5 MIN</b></span></div>
+      <div class="status-right"><span>MODEL <b>V4 RELATIVE / PROVISIONAL</b></span><span>CLIENT POLL <b>5 MIN</b></span></div>
     </section>
 
     <section class="view active" id="view-overview">
@@ -47,7 +47,7 @@
 
       <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
       <div class="panel">
-        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Partial scores use monthly CPI, quarterly GDP growth and annual unemployment where higher-frequency coverage is unavailable; policy-rate expectations are not yet included.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
+        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Relative scores compare all eight currencies: policy-rate level (30%), inflation versus target (15%), quarterly GDP growth (20%) and unemployment (15%). Economic surprises (20%) are not yet connected; available weights are renormalised.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
         <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Fundamental score</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th><th>Confidence / data status</th></tr></thead><tbody id="currency-rows"><tr><td colspan="7" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
       </div>
       <div class="two-col">
@@ -57,7 +57,7 @@
     </section>
 
     <section class="view" id="view-currencies">
-      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores compare the latest available monthly CPI, quarterly GDP and annual unemployment readings with each economy's own recent history. Check each observation period and source.</p></div></div>
+      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores are cross-sectional comparisons across all eight currencies. Policy-rate level is a carry proxy, not an expected policy path; economic-surprise data is not yet connected. Check each observation period and source.</p></div></div>
       <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Score</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
       <div class="notice"><b>Scoring methodology</b><p>V3 does not rank currencies from policy-rate levels alone or invent missing macro data. V3.5 compares the latest available monthly CPI, quarterly GDP-growth and annual unemployment readings with up to five preceding observations at the same frequency. Inflation and unemployment below their own recent history, and GDP growth above its own recent history, contribute positively. Unemployment currently remains an annual World Bank series. Available component weights (25% inflation, 20% GDP, 15% labour) are renormalised. Policy-rate outlook (30%), central-bank communication (10%), consensus surprises and market confirmation are not yet scored. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
     </section>
