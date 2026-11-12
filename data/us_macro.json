@@ -1,14 +1,111 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T20:22:18.630762+00:00",
-  "source_status": "PARTIAL",
-  "available_indicators": 6,
+  "generated_at": "2026-11-12T20:45:35.256249+00:00",
+  "source_status": "OK",
+  "available_indicators": 8,
   "indicators": {
     "core_cpi": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 2.8697,
+      "date": "2026-10-01",
+      "change": 0.0805,
+      "history": [
+        {
+          "date": "2024-10-01",
+          "value": 3.2987
+        },
+        {
+          "date": "2024-11-01",
+          "value": 3.2859
+        },
+        {
+          "date": "2024-12-01",
+          "value": 3.2133
+        },
+        {
+          "date": "2025-01-01",
+          "value": 3.283
+        },
+        {
+          "date": "2025-02-01",
+          "value": 3.1376
+        },
+        {
+          "date": "2025-03-01",
+          "value": 2.8088
+        },
+        {
+          "date": "2025-04-01",
+          "value": 2.776
+        },
+        {
+          "date": "2025-05-01",
+          "value": 2.7658
+        },
+        {
+          "date": "2025-06-01",
+          "value": 2.9109
+        },
+        {
+          "date": "2025-07-01",
+          "value": 3.0545
+        },
+        {
+          "date": "2025-08-01",
+          "value": 3.1118
+        },
+        {
+          "date": "2025-09-01",
+          "value": 3.02
+        },
+        {
+          "date": "2025-11-01",
+          "value": 2.8943
+        },
+        {
+          "date": "2025-12-01",
+          "value": 2.838
+        },
+        {
+          "date": "2026-01-01",
+          "value": 2.9493
+        },
+        {
+          "date": "2026-02-01",
+          "value": 2.7335
+        },
+        {
+          "date": "2026-03-01",
+          "value": 2.6731
+        },
+        {
+          "date": "2026-04-01",
+          "value": 2.9884
+        },
+        {
+          "date": "2026-05-01",
+          "value": 2.9571
+        },
+        {
+          "date": "2026-06-01",
+          "value": 2.8058
+        },
+        {
+          "date": "2026-07-01",
+          "value": 2.7867
+        },
+        {
+          "date": "2026-08-01",
+          "value": 2.7635
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2.7892
+        },
+        {
+          "date": "2026-10-01",
+          "value": 2.8697
+        }
+      ]
     },
     "core_pce": {
       "value": 3.1,
@@ -26,10 +123,107 @@
       ]
     },
     "nfp": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 165.0,
+      "date": "2026-10-01",
+      "change": 105.0,
+      "history": [
+        {
+          "date": "2024-11-01",
+          "value": 134.0
+        },
+        {
+          "date": "2024-12-01",
+          "value": 237.0
+        },
+        {
+          "date": "2025-01-01",
+          "value": -48.0
+        },
+        {
+          "date": "2025-02-01",
+          "value": 42.0
+        },
+        {
+          "date": "2025-03-01",
+          "value": 67.0
+        },
+        {
+          "date": "2025-04-01",
+          "value": 108.0
+        },
+        {
+          "date": "2025-05-01",
+          "value": 13.0
+        },
+        {
+          "date": "2025-06-01",
+          "value": -20.0
+        },
+        {
+          "date": "2025-07-01",
+          "value": 64.0
+        },
+        {
+          "date": "2025-08-01",
+          "value": -70.0
+        },
+        {
+          "date": "2025-09-01",
+          "value": 76.0
+        },
+        {
+          "date": "2025-10-01",
+          "value": -140.0
+        },
+        {
+          "date": "2025-11-01",
+          "value": 41.0
+        },
+        {
+          "date": "2025-12-01",
+          "value": -17.0
+        },
+        {
+          "date": "2026-01-01",
+          "value": 160.0
+        },
+        {
+          "date": "2026-02-01",
+          "value": -156.0
+        },
+        {
+          "date": "2026-03-01",
+          "value": 214.0
+        },
+        {
+          "date": "2026-04-01",
+          "value": 148.0
+        },
+        {
+          "date": "2026-05-01",
+          "value": 63.0
+        },
+        {
+          "date": "2026-06-01",
+          "value": 31.0
+        },
+        {
+          "date": "2026-07-01",
+          "value": -10.0
+        },
+        {
+          "date": "2026-08-01",
+          "value": 186.0
+        },
+        {
+          "date": "2026-09-01",
+          "value": 60.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 165.0
+        }
+      ]
     },
     "treasury_2y": {
       "value": 4.73,
@@ -547,9 +741,7 @@
       ]
     }
   },
-  "errors": {
-    "bls": "HTTP Error 503: Service Unavailable"
-  },
+  "errors": {},
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
