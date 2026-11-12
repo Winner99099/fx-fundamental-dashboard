@@ -1,8 +1,8 @@
 {
-  "schema_version": 2,
-  "generated_at": "2026-11-12T02:15:21.225126+00:00",
-  "source_status": "PARTIAL",
-  "available_indicators": 5,
+  "schema_version": 3,
+  "generated_at": "2026-11-12T02:33:18.697323+00:00",
+  "source_status": "OK",
+  "available_indicators": 7,
   "indicators": {
     "core_cpi": {
       "value": 2.8697,
@@ -108,10 +108,19 @@
       ]
     },
     "core_pce": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 3.1,
+      "date": "2026-09-30",
+      "change": 0.1,
+      "history": [
+        {
+          "date": "2026-08-31",
+          "value": 3.0
+        },
+        {
+          "date": "2026-09-30",
+          "value": 3.1
+        }
+      ]
     },
     "nfp": {
       "value": 165.0,
@@ -423,10 +432,107 @@
       ]
     },
     "dxy": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 102.5951,
+      "date": "2026-11-11",
+      "change": 0.8189,
+      "history": [
+        {
+          "date": "2026-10-09",
+          "value": 102.1859
+        },
+        {
+          "date": "2026-10-12",
+          "value": 102.3856
+        },
+        {
+          "date": "2026-10-13",
+          "value": 102.2681
+        },
+        {
+          "date": "2026-10-14",
+          "value": 102.2249
+        },
+        {
+          "date": "2026-10-15",
+          "value": 102.1129
+        },
+        {
+          "date": "2026-10-16",
+          "value": 101.7135
+        },
+        {
+          "date": "2026-10-19",
+          "value": 101.8263
+        },
+        {
+          "date": "2026-10-20",
+          "value": 101.8433
+        },
+        {
+          "date": "2026-10-21",
+          "value": 101.6534
+        },
+        {
+          "date": "2026-10-22",
+          "value": 101.7555
+        },
+        {
+          "date": "2026-10-23",
+          "value": 101.8005
+        },
+        {
+          "date": "2026-10-26",
+          "value": 101.9367
+        },
+        {
+          "date": "2026-10-27",
+          "value": 102.187
+        },
+        {
+          "date": "2026-10-28",
+          "value": 102.348
+        },
+        {
+          "date": "2026-10-29",
+          "value": 102.2818
+        },
+        {
+          "date": "2026-10-30",
+          "value": 101.8474
+        },
+        {
+          "date": "2026-11-02",
+          "value": 101.6153
+        },
+        {
+          "date": "2026-11-03",
+          "value": 101.8687
+        },
+        {
+          "date": "2026-11-04",
+          "value": 101.2548
+        },
+        {
+          "date": "2026-11-05",
+          "value": 101.5845
+        },
+        {
+          "date": "2026-11-06",
+          "value": 102.0591
+        },
+        {
+          "date": "2026-11-09",
+          "value": 101.8513
+        },
+        {
+          "date": "2026-11-10",
+          "value": 101.7762
+        },
+        {
+          "date": "2026-11-11",
+          "value": 102.5951
+        }
+      ]
     },
     "yield_spread": {
       "value": 0.25,
@@ -532,14 +638,12 @@
       ]
     }
   },
-  "errors": {
-    "core_pce": "Not yet connected to a reliable no-key source; left blank rather than substituting CPI."
-  },
+  "errors": {},
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
+    "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
     "nfp": "BLS series CES0000000001 (total nonfarm payrolls, thousands)",
     "treasury": "US Treasury daily par yield curve XML feed",
-    "dxy": "Stooq DX.F continuous DXY futures proxy; may be delayed",
-    "core_pce": "Not loaded: public BEA/FRED source unavailable from GitHub runner"
+    "dxy": "Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote"
   }
 }
