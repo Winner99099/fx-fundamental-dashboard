@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-12T08:50:53.999Z",
+  "generated_at": "2026-11-12T08:58:00.775Z",
   "timezone": "UTC (displayed in SGT)",
   "model": "v4-relative-macro-provisional",
   "history_window_days": 90,
@@ -1184,28 +1184,6 @@
   ],
   "events": [
     {
-      "event_id": "52d386ae0ea0836532cfa89b",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261110.xlsx",
-      "time": "2026-11-12T08:00:00+00:00",
-      "published_at": "2026-11-12T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "ae9b3b8801fd903568df3951",
-      "currency": "JPY",
-      "title": "Basic Figures on Fails (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/set/bffail/sjgb2610.pdf",
-      "time": "2026-11-12T07:30:00+00:00",
-      "published_at": "2026-11-12T07:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
       "event_id": "fdd342f06ed03fcb09b03dbb",
       "currency": "JPY",
       "title": "Speech by Board Member ASADA in Nagasaki (Economic Activity, Prices, and Monetary Policy in Japan)",
@@ -1213,17 +1191,6 @@
       "url": "http://www.boj.or.jp/en/about/press/koen_2026/ko261112a.htm",
       "time": "2026-11-12T01:30:00+00:00",
       "published_at": "2026-11-12T01:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "2f1f5fd5339747a21e230a4f",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (November 10)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261110.htm",
-      "time": "2026-11-12T01:00:00+00:00",
-      "published_at": "2026-11-12T01:00:00+00:00",
       "source": "Bank of Japan",
       "impact": "High"
     },
@@ -1239,50 +1206,6 @@
       "impact": "High"
     },
     {
-      "event_id": "eb38e8e55ed0182dd868c03d",
-      "currency": "JPY",
-      "title": "Release of Latest \"Amounts Outstanding of Deposits by Depositor\" Data",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/outline/notice_2026/not261112a.htm",
-      "time": "2026-11-11T23:50:00+00:00",
-      "published_at": "2026-11-11T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "07d418752b02a2f14e04996c",
-      "currency": "NZD",
-      "title": "RBNZ Reverse Stress Test demonstrates resilience of insurers and improves risk management",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) today published findings from its Life and Health Insurance Industry Reverse Stress Test. The exercise found that a combination of severe shocks is required before insurers breach their solvency requirements, highlighting the resilience in the sector.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-reverse-stress-test-demonstrates-resilience-of-insurers-and-improves-risk-management",
-      "time": "2026-11-11T11:00:00+00:00",
-      "published_at": "2026-11-11T11:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "4ca03e7d2197f950a65ff22d",
-      "currency": "JPY",
-      "title": "Money Stock (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/money/ms/ms2610.pdf",
-      "time": "2026-11-10T23:50:00+00:00",
-      "published_at": "2026-11-10T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "fad86ee3ea7c76c204bf98b9",
-      "currency": "JPY",
-      "title": "Money Stock (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/money/ms/ms2610.pdf",
-      "time": "2026-11-10T23:50:00+00:00",
-      "published_at": "2026-11-10T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
       "event_id": "13c2e37d8cf09b5ea4aa9e20",
       "currency": "EUR",
       "title": "Philip R. Lane: The science and practice of monetary policy communication: the ECB experience",
@@ -1294,38 +1217,6 @@
       "impact": "High"
     },
     {
-      "event_id": "d756a30ea53614032d145d0a",
-      "currency": "EUR",
-      "title": "Piero Cipollone: Cash and the digital euro: two sides of the same coin",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261110~9422461bad.en.html",
-      "time": "2026-11-10T14:00:00+00:00",
-      "published_at": "2026-11-10T14:00:00+00:00",
-      "source": "European Central Bank",
-      "impact": "High"
-    },
-    {
-      "event_id": "33a470554eec0a7efdca0ef8",
-      "currency": "GBP",
-      "title": "Exchange of letters between the Governor and the Chancellor on the Asset Purchase Facility - November 2026",
-      "summary": "Exchange of letters between the Governor and the Chancellor",
-      "url": "https://www.bankofengland.co.uk/letter/2026/asset-purchase-facility-november-2026",
-      "time": "2026-11-10T12:00:00+00:00",
-      "published_at": "2026-11-10T12:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Principal Figures of Financial Institutions (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2610.pdf",
-      "time": "2026-11-09T23:50:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-09T23:50:00+00:00",
-      "event_id": "ec6570158d519efaba89ccee"
-    },
-    {
       "currency": "JPY",
       "title": "Summary of Opinions at the Monetary Policy Meeting on October 29 and 30, 2026",
       "summary": "",
@@ -1333,18 +1224,8 @@
       "time": "2026-11-09T23:50:00+00:00",
       "impact": "High",
       "published_at": "2026-11-09T23:50:00+00:00",
-      "event_id": "56cf29b69482b2dfc69f5e3d"
-    },
-    {
-      "event_id": "d72d521fe1fa84835a7c8513",
-      "currency": "JPY",
-      "title": "Principal Figures of Financial Institutions (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2610.pdf",
-      "time": "2026-11-09T23:50:00+00:00",
-      "published_at": "2026-11-09T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
+      "event_id": "56cf29b69482b2dfc69f5e3d",
+      "source": "Bank of Japan"
     },
     {
       "event_id": "6257884544fda85b6fc65d96",
@@ -1358,131 +1239,6 @@
       "impact": "High"
     },
     {
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
-      "summary": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261109a.htm",
-      "time": "2026-11-09T21:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-09T21:00:00+00:00",
-      "event_id": "5ba24daa5107c72789dcacc2"
-    },
-    {
-      "currency": "JPY",
-      "title": "Amounts Outstanding in the Call Money Market (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/market/short/call/call.xlsx",
-      "time": "2026-11-09T06:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-09T06:00:00+00:00",
-      "event_id": "d7d4d8706b0b5a02ef29a3df"
-    },
-    {
-      "event_id": "d3c76550105c3e75a7eb754c",
-      "currency": "JPY",
-      "title": "Amounts Outstanding in the Call Money Market (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/market/short/call/call.xlsx",
-      "time": "2026-11-09T06:00:00+00:00",
-      "published_at": "2026-11-09T06:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Consumption Activity Index",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/research_data/cai/index.htm",
-      "time": "2026-11-09T05:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-09T05:00:00+00:00",
-      "event_id": "c21f60b1035980b4d5563959"
-    },
-    {
-      "event_id": "c9507952b24ffeb208c93890",
-      "currency": "JPY",
-      "title": "Consumption Activity Index",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/research/research_data/cai/index.htm",
-      "time": "2026-11-09T05:00:00+00:00",
-      "published_at": "2026-11-09T05:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "JPY",
-      "title": "Market Operations by the Bank of Japan (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
-      "time": "2026-11-08T23:50:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "event_id": "f62d24775074d526c1ff4bd0"
-    },
-    {
-      "currency": "JPY",
-      "title": "Monetary Base and the Bank of Japan's Transactions (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mbt/mbt2610.pdf",
-      "time": "2026-11-08T23:50:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "event_id": "5de029819a780eb606357d89"
-    },
-    {
-      "currency": "JPY",
-      "title": "Bank of Japan's Transactions with the Government (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
-      "time": "2026-11-08T23:50:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "event_id": "a4f1c56202d562e0f060e93f"
-    },
-    {
-      "event_id": "5c4806b93cd166d555d52fac",
-      "currency": "JPY",
-      "title": "Market Operations by the Bank of Japan (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
-      "time": "2026-11-08T23:50:00+00:00",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "00d2271a996eac86e7f54b1a",
-      "currency": "JPY",
-      "title": "Monetary Base and the Bank of Japan's Transactions (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/mbt/mbt2610.pdf",
-      "time": "2026-11-08T23:50:00+00:00",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "a6fbc452bcea8da9e18cec9a",
-      "currency": "JPY",
-      "title": "Bank of Japan's Transactions with the Government (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
-      "time": "2026-11-08T23:50:00+00:00",
-      "published_at": "2026-11-08T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "EUR",
-      "title": "Christine Lagarde: Interview with Yomiuri Shimbun",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/inter/date/2026/html/ecb.in261107~e7b86fc4ce.en.html",
-      "time": "2026-11-07T14:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-07T14:00:00+00:00",
-      "event_id": "ed0afb117efe18aa38166f88"
-    },
-    {
       "currency": "JPY",
       "title": "Speech by Governor UEDA at the 2026 Michel Camdessus Central Banking Lecture, International Monetary Fund",
       "summary": "",
@@ -1490,7 +1246,8 @@
       "time": "2026-11-06T16:00:00+00:00",
       "impact": "High",
       "published_at": "2026-11-06T16:00:00+00:00",
-      "event_id": "29f7f08535a892d5b94a9b40"
+      "event_id": "29f7f08535a892d5b94a9b40",
+      "source": "Bank of Japan"
     },
     {
       "event_id": "634c4bbc53b68963fe0b8585",
@@ -1504,70 +1261,6 @@
       "impact": "High"
     },
     {
-      "currency": "EUR",
-      "title": "ECB publishes consolidated banking data for end-June 2026",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261106~356f2fc73a.en.html",
-      "time": "2026-11-06T09:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-06T09:00:00+00:00",
-      "event_id": "8d59d5708258b33e1c87aa81"
-    },
-    {
-      "event_id": "95f074b738e81558df80785f",
-      "currency": "JPY",
-      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
-      "time": "2026-11-06T07:00:00+00:00",
-      "published_at": "2026-11-06T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "1c1f8662c812787c076b47f5",
-      "currency": "JPY",
-      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
-      "time": "2026-11-06T07:00:00+00:00",
-      "published_at": "2026-11-06T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "3727d4a7e5fcaf37ed0ef042",
-      "currency": "JPY",
-      "title": "IMES Discussion Paper Series (2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/imes/dps/dps26.htm",
-      "time": "2026-11-06T02:00:00+00:00",
-      "published_at": "2026-11-06T02:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "c2dcd997cba6ec45383cd500",
-      "currency": "JPY",
-      "title": "IMES Discussion Paper Series (2026)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/research/imes/dps/dps26.htm",
-      "time": "2026-11-06T02:00:00+00:00",
-      "published_at": "2026-11-06T02:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "USD",
-      "title": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
-      "summary": "Federal Reserve Board announces termination of enforcement action with Allegiant United Holdings, LLC, Nano Financial Holdings, Inc., and Nano Banc",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261105a.htm",
-      "time": "2026-11-05T16:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-05T16:00:00+00:00",
-      "event_id": "e3fbe89251d02ca947384315"
-    },
-    {
       "currency": "GBP",
       "title": "Bank rate increased to 4% - November 2026 Monetary Policy Summary and Minutes",
       "summary": "The Bank of England’s Monetary Policy Committee is responsible for making decisions about Bank Rate.",
@@ -1575,17 +1268,8 @@
       "time": "2026-11-05T12:00:00+00:00",
       "impact": "High",
       "published_at": "2026-11-05T12:00:00+00:00",
-      "event_id": "d8679f85bbc4e9e108b229f7"
-    },
-    {
-      "currency": "NZD",
-      "title": "Reserve Bank files DCS disclosure charge against Westpac New Zealand Limited",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has filed a charge against Westpac New Zealand Limited in the District Court.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/reserve-bank-files-dcs-disclosure-charge-against-westpac-new-zealand-limited",
-      "time": "2026-11-05T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-05T11:00:00+00:00",
-      "event_id": "93b2d2560d3415a0db713b3a"
+      "event_id": "d8679f85bbc4e9e108b229f7",
+      "source": "Bank of England"
     },
     {
       "currency": "EUR",
@@ -1595,50 +1279,8 @@
       "time": "2026-11-05T08:00:00+00:00",
       "impact": "High",
       "published_at": "2026-11-05T08:00:00+00:00",
-      "event_id": "2f85e2fe0575edf30c3640b9"
-    },
-    {
-      "currency": "EUR",
-      "title": "Piero Cipollone: Shaping the future of money",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261105~6495a0df6f.en.html",
-      "time": "2026-11-05T07:30:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-05T07:30:00+00:00",
-      "event_id": "b2cecf26571d1d6ab573ff7d"
-    },
-    {
-      "event_id": "7ade06e43860fc3fc4358164",
-      "currency": "JPY",
-      "title": "Holding the Twenty-fifth Round of the \"Bond Market Group\" Meetings",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
-      "time": "2026-11-05T07:00:00+00:00",
-      "published_at": "2026-11-05T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "f15072250424830b16e215a9",
-      "currency": "JPY",
-      "title": "Holding the Twenty-fifth Round of the \"Bond Market Group\" Meetings",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
-      "time": "2026-11-05T07:00:00+00:00",
-      "published_at": "2026-11-05T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "13f9eca2a5a08b59709642b4",
-      "currency": "JPY",
-      "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
-      "time": "2026-11-04T23:50:00+00:00",
-      "published_at": "2026-11-04T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
+      "event_id": "2f85e2fe0575edf30c3640b9",
+      "source": "European Central Bank"
     },
     {
       "event_id": "f9cc4c7d5e1344d140440cd3",
@@ -1646,17 +1288,6 @@
       "title": "Minutes of the Monetary Policy Meeting on September 17 and 18, 2026",
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/mpmsche_minu/minu_2026/g260918.pdf",
-      "time": "2026-11-04T23:50:00+00:00",
-      "published_at": "2026-11-04T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "420a6e18659bf8b235d37d1c",
-      "currency": "JPY",
-      "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
       "time": "2026-11-04T23:50:00+00:00",
       "published_at": "2026-11-04T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -1674,82 +1305,6 @@
       "impact": "High"
     },
     {
-      "currency": "GBP",
-      "title": "Summary of the RTGS CHAPS Industry Forum - 13 October 2026",
-      "summary": "The second meeting of the RTGS CHAPS Industry Forum",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/october/rtgs-chaps-industry-forum-13-october-2026",
-      "time": "2026-11-04T14:51:45+00:00",
-      "impact": "High",
-      "published_at": "2026-11-04T14:51:45+00:00",
-      "event_id": "a12a8561ffa1e306cff5c359"
-    },
-    {
-      "event_id": "6b22ddb11cb5e2661f866317",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261030.xlsx",
-      "time": "2026-11-04T08:00:00+00:00",
-      "published_at": "2026-11-04T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "9d14e64d2d955810fe236af5",
-      "currency": "JPY",
-      "title": "Collateral Accepted by the Bank of Japan (End of Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
-      "time": "2026-11-04T08:00:00+00:00",
-      "published_at": "2026-11-04T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "9d351158f9a777a271cf9b9a",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261030.xlsx",
-      "time": "2026-11-04T08:00:00+00:00",
-      "published_at": "2026-11-04T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "395ea72ed73ea86623652957",
-      "currency": "JPY",
-      "title": "Collateral Accepted by the Bank of Japan (End of Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
-      "time": "2026-11-04T08:00:00+00:00",
-      "published_at": "2026-11-04T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "6ff120ed741b8de30d37fc41",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 31)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
-      "time": "2026-11-04T01:00:00+00:00",
-      "published_at": "2026-11-04T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "ab21816d418acce42a8960f0",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 31)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
-      "time": "2026-11-04T01:00:00+00:00",
-      "published_at": "2026-11-04T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
       "currency": "EUR",
       "title": "ECB wage tracker suggests slightly higher wage growth in first three quarters of 2027 compared with the full year of 2026",
       "summary": "",
@@ -1757,113 +1312,8 @@
       "time": "2026-11-04T00:00:00+00:00",
       "impact": "High",
       "published_at": "2026-11-04T00:00:00+00:00",
-      "event_id": "8e9ef04f9ae819372f4f5788"
-    },
-    {
-      "event_id": "e635948d31a61a7cefd8111f",
-      "currency": "JPY",
-      "title": "Monetary Base (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
-      "time": "2026-11-03T23:50:00+00:00",
-      "published_at": "2026-11-03T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "289b7fb332ac79f52be5f49d",
-      "currency": "JPY",
-      "title": "Monetary Base (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
-      "time": "2026-11-03T23:50:00+00:00",
-      "published_at": "2026-11-03T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "GBP",
-      "title": "Regulators explore credit union reforms to support growth, innovation and better outcomes for members",
-      "summary": "Credit unions could benefit from several ideas put forward today by the Prudential Regulation Authority and Financial Conduct Authority aimed at helping the sector grow, innovate and meet the changing needs of their members.",
-      "url": "https://www.bankofengland.co.uk/news/2026/november/regulators-explore-credit-union-reforms-to-support-growth-innovation-and-better-outcomes-for-members",
-      "time": "2026-11-03T10:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-03T10:00:00+00:00",
-      "event_id": "2457056bd194be7da0a22d63"
-    },
-    {
-      "currency": "NZD",
-      "title": "RBNZ registers Revolut as a bank in New Zealand",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has today announced that it has registered Revolut Bank New Zealand Limited (Revolut NZ) to provide banking services in New Zealand.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-registers-revolut-as-a-bank-in-new-zealand",
-      "time": "2026-11-02T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-02T11:00:00+00:00",
-      "event_id": "caefaefdfcaadd02541abdd1"
-    },
-    {
-      "currency": "EUR",
-      "title": "Boris Vujčić: Integrated, open and resilient: Europe’s strengths in a fragmenting world",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp.261102~70003226e9.en.html",
-      "time": "2026-11-02T09:30:00+00:00",
-      "impact": "High",
-      "published_at": "2026-11-02T09:30:00+00:00",
-      "event_id": "d5394f7d0be70ee993477459"
-    },
-    {
-      "event_id": "124298edb563f7e342758d77",
-      "currency": "JPY",
-      "title": "Outlook for Economic Activity and Prices (October 2026, full text)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
-      "time": "2026-11-02T05:00:00+00:00",
-      "published_at": "2026-11-02T05:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "8f8f1d4cc9ef949672a32522",
-      "currency": "JPY",
-      "title": "Outlook for Economic Activity and Prices (October 2026, full text)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
-      "time": "2026-11-02T05:00:00+00:00",
-      "published_at": "2026-11-02T05:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "185e03e82f0cce49da2dd851",
-      "currency": "JPY",
-      "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
-      "time": "2026-11-02T04:00:00+00:00",
-      "published_at": "2026-11-02T04:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "1411436a52d2a58213ff17d6",
-      "currency": "JPY",
-      "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
-      "time": "2026-11-02T04:00:00+00:00",
-      "published_at": "2026-11-02T04:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "EUR",
-      "title": "Philip R. Lane: AI adoption in Europe",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261030~08d9d540f0.en.html",
-      "time": "2026-10-30T16:10:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-30T16:10:00+00:00",
-      "event_id": "8e34971104a8afa66c4eb84d"
+      "event_id": "8e9ef04f9ae819372f4f5788",
+      "source": "European Central Bank"
     },
     {
       "currency": "EUR",
@@ -1873,95 +1323,8 @@
       "time": "2026-10-30T14:00:00+00:00",
       "impact": "High",
       "published_at": "2026-10-30T14:00:00+00:00",
-      "event_id": "ecc1258d819c57c8713ae2df"
-    },
-    {
-      "event_id": "81f5408c102b8c76bca54b21",
-      "currency": "EUR",
-      "title": "Results of the ECB Survey of Professional Forecasters for the fourth quarter of 2026",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261030~e92c3c838c.en.html",
-      "time": "2026-10-30T09:00:00+00:00",
-      "published_at": "2026-10-30T09:00:00+00:00",
-      "source": "European Central Bank",
-      "impact": "High"
-    },
-    {
-      "event_id": "84fe835395bc3306799f09ee",
-      "currency": "JPY",
-      "title": "Quarterly Schedule of Outright Purchases of Japanese Government Bonds (Competitive Auction Method) (October-December 2026) (Schedule Updates)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030c.pdf",
-      "time": "2026-10-30T08:00:00+00:00",
-      "published_at": "2026-10-30T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "71e1c1d656b404fe4b402c79",
-      "currency": "JPY",
-      "title": "Timetable and Schedule of U.S. Dollar Funds-Supplying Operations (November 2026-March 2027)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030b.pdf",
-      "time": "2026-10-30T08:00:00+00:00",
-      "published_at": "2026-10-30T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "b3c86e41a6758d61f706c699",
-      "currency": "JPY",
-      "title": "Quarterly Schedule of Outright Purchases of Japanese Government Bonds (Competitive Auction Method) (October-December 2026) (Schedule Updates)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030c.pdf",
-      "time": "2026-10-30T08:00:00+00:00",
-      "published_at": "2026-10-30T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "dd04cf2cedb2fea68a67647b",
-      "currency": "JPY",
-      "title": "Timetable and Schedule of U.S. Dollar Funds-Supplying Operations (November 2026-March 2027)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030b.pdf",
-      "time": "2026-10-30T08:00:00+00:00",
-      "published_at": "2026-10-30T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "257918d0afac296379c8cecd",
-      "currency": "JPY",
-      "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
-      "time": "2026-10-30T05:00:00+00:00",
-      "published_at": "2026-10-30T05:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "251feaba5a87af20f66b0eb2",
-      "currency": "JPY",
-      "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
-      "time": "2026-10-30T05:00:00+00:00",
-      "published_at": "2026-10-30T05:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "06e24306a7e197c0196358af",
-      "currency": "JPY",
-      "title": "Outlook for Economic Activity and Prices (October 2026, The Bank's View)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
-      "time": "2026-10-30T04:00:00+00:00",
-      "published_at": "2026-10-30T04:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
+      "event_id": "ecc1258d819c57c8713ae2df",
+      "source": "European Central Bank"
     },
     {
       "event_id": "df3bde59eb76123734f5cb2f",
@@ -1969,17 +1332,6 @@
       "title": "Statement on Monetary Policy",
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf",
-      "time": "2026-10-30T04:00:00+00:00",
-      "published_at": "2026-10-30T04:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "2fed5526145a2a96e907b401",
-      "currency": "JPY",
-      "title": "Outlook for Economic Activity and Prices (October 2026, The Bank's View)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
       "time": "2026-10-30T04:00:00+00:00",
       "published_at": "2026-10-30T04:00:00+00:00",
       "source": "Bank of Japan",
@@ -1997,33 +1349,11 @@
       "impact": "High"
     },
     {
-      "event_id": "93eb6d9d1b91a80b4cc4ceff",
-      "currency": "JPY",
-      "title": "(Reference) Decisions regarding a Change in the Pace of Sales of ETFs (October 2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030c.pdf",
-      "time": "2026-10-30T03:02:00+00:00",
-      "published_at": "2026-10-30T03:02:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
       "event_id": "01b5dbc5107b51ad04b6ad22",
       "currency": "JPY",
       "title": "(Reference) Outlook Report and Indicators Related to Underlying Inflation",
       "summary": "",
       "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030b.pdf",
-      "time": "2026-10-30T03:02:00+00:00",
-      "published_at": "2026-10-30T03:02:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "ad60f6bd3ea69796c93767d9",
-      "currency": "JPY",
-      "title": "(Reference) Decisions regarding a Change in the Pace of Sales of ETFs (October 2026)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030c.pdf",
       "time": "2026-10-30T03:02:00+00:00",
       "published_at": "2026-10-30T03:02:00+00:00",
       "source": "Bank of Japan",
@@ -2039,59 +1369,6 @@
       "published_at": "2026-10-30T03:02:00+00:00",
       "source": "Bank of Japan",
       "impact": "High"
-    },
-    {
-      "event_id": "7b14f7f77d30ef3ead7998fa",
-      "currency": "JPY",
-      "title": "Payment and Settlement Statistics (Sept.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/set/kess/release/2026/kess2609.pdf",
-      "time": "2026-10-30T02:00:00+00:00",
-      "published_at": "2026-10-30T02:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "ca241cecf980785441d3a9d2",
-      "currency": "JPY",
-      "title": "Payment and Settlement Statistics (Sept.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/set/kess/release/2026/kess2609.pdf",
-      "time": "2026-10-30T02:00:00+00:00",
-      "published_at": "2026-10-30T02:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
-      "summary": "Federal Reserve Board announces approval of application by The Bank of Nova Scotia",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261029a.htm",
-      "time": "2026-10-29T20:30:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-29T20:30:00+00:00",
-      "event_id": "2fab3d156fd8de8aca5924bc"
-    },
-    {
-      "event_id": "5b63f49375b7ac83c919faac",
-      "currency": "EUR",
-      "title": "Piero Cipollone: Next-day securities settlement, tokenisation and the transformation of Europe’s financial infrastructure",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/key/date/2026/html/ecb.sp261029~e9b57c3495.en.html",
-      "time": "2026-10-29T15:50:00+00:00",
-      "published_at": "2026-10-29T15:50:00+00:00",
-      "source": "European Central Bank",
-      "impact": "High"
-    },
-    {
-      "currency": "GBP",
-      "title": "Minutes of the Meeting of the Court of Directors held on 17 September 2026",
-      "summary": "The Bank's Court of Directors acts as a unitary board, setting the organisation's strategy and budget and taking key decisions on resourcing and appointments. Required to meet a minimum seven times per year, it has five executive members from the Bank and up to nine non-executive members.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/court-minutes-17-september-2026",
-      "time": "2026-10-29T14:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-29T14:00:00+00:00",
-      "event_id": "d259c42fc78d67abec6af4b3"
     },
     {
       "event_id": "5801d6cc614cca05bd3b602e",
@@ -2116,47 +1393,6 @@
       "impact": "High"
     },
     {
-      "currency": "NZD",
-      "title": "RBNZ appoints Director of Prudential Supervision",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has appointed Stan Christian as Director of Prudential Supervision following an extensive recruitment process.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/rbnz-appoints-director-of-prudential-supervision",
-      "time": "2026-10-29T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-29T11:00:00+00:00",
-      "event_id": "8a60876809f118d023a32bd4"
-    },
-    {
-      "currency": "GBP",
-      "title": "Bank of England sets out approach to tokenised collateral in central clearing",
-      "summary": "The Bank of England has today launched a consultation supporting central counterparties (CCPs) acceptance of tokenised forms of eligible collateral.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/bank-of-england-sets-out-approach-to-tokenised-collateral-in-central-clearing",
-      "time": "2026-10-29T10:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-29T10:00:00+00:00",
-      "event_id": "0cabc6f4ba02141facece7f7"
-    },
-    {
-      "event_id": "d7780757cb881a82976c429a",
-      "currency": "EUR",
-      "title": "ECB President Lagarde to step down on 7 February 2027",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261029~abbb6dc64b.en.html",
-      "time": "2026-10-29T10:00:00+00:00",
-      "published_at": "2026-10-29T10:00:00+00:00",
-      "source": "European Central Bank",
-      "impact": "High"
-    },
-    {
-      "currency": "USD",
-      "title": "Federal Reserve issues FOMC statement",
-      "summary": "Federal Reserve issues FOMC statement",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
-      "time": "2026-10-28T18:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-28T18:00:00+00:00",
-      "event_id": "fd4989052e99e22b1f5efb0e"
-    },
-    {
       "currency": "GBP",
       "title": "Remit for the Monetary Policy Committee - October 2026",
       "summary": "Letter from the Chancellor to the Governor",
@@ -2164,7 +1400,8 @@
       "time": "2026-10-28T14:16:49+00:00",
       "impact": "High",
       "published_at": "2026-10-28T14:16:49+00:00",
-      "event_id": "aed1131aaa59bace98691775"
+      "event_id": "aed1131aaa59bace98691775",
+      "source": "Bank of England"
     },
     {
       "currency": "NZD",
@@ -2174,7 +1411,8 @@
       "time": "2026-10-27T11:00:00+00:00",
       "impact": "High",
       "published_at": "2026-10-27T11:00:00+00:00",
-      "event_id": "2b3ef7072ff474887ee2ca4c"
+      "event_id": "2b3ef7072ff474887ee2ca4c",
+      "source": "Reserve Bank of New Zealand"
     },
     {
       "event_id": "d7740e76d5e942f8d7a91fb5",
@@ -2232,466 +1470,11 @@
       "impact": "High"
     },
     {
-      "event_id": "34d50112b870a66ab4406c6f",
-      "currency": "EUR",
-      "title": "Survey on the Access to Finance of Enterprises: lending conditions tightened",
-      "summary": "",
-      "url": "https://www.ecb.europa.eu//press/pr/date/2026/html/ecb.pr261026~bde7b6d11a.en.html",
-      "time": "2026-10-26T09:00:00+00:00",
-      "published_at": "2026-10-26T09:00:00+00:00",
-      "source": "European Central Bank",
-      "impact": "High"
-    },
-    {
-      "event_id": "008d59a137b2e6de7ab9d809",
-      "currency": "JPY",
-      "title": "Financial System Report (October 2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/brp/fsr/fsr261023.htm",
-      "time": "2026-10-23T06:00:00+00:00",
-      "published_at": "2026-10-23T06:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "fa2364f5458e84cb8504a8e0",
-      "currency": "JPY",
-      "title": "Financial System Report (October 2026)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/research/brp/fsr/fsr261023.htm",
-      "time": "2026-10-23T06:00:00+00:00",
-      "published_at": "2026-10-23T06:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "GBP",
-      "title": "Regulators unveil plans to simplify Senior Manager and Certification Regime",
-      "summary": "The number of financial services roles required to face enhanced checks from regulators will fall significantly under proposals that will support growth.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/regulators-unveil-plans-to-simplify-senior-manager-and-certification-regime",
-      "time": "2026-10-22T20:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-22T20:00:00+00:00",
-      "event_id": "c6da3a2b543b6232788eb6ee"
-    },
-    {
-      "currency": "GBP",
-      "title": "Minutes of the Securities Lending Committee meeting – September 2026",
-      "summary": "The Securities Lending Committee is a forum for market participants and authorities to discuss the UK securities lending market.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/securities-lending-committee-meeting-september-2026",
-      "time": "2026-10-22T15:35:53+00:00",
-      "impact": "High",
-      "published_at": "2026-10-22T15:35:53+00:00",
-      "event_id": "96e4c5055e7793be88280875"
-    },
-    {
-      "event_id": "148743a785631f1683d47773",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261020.xlsx",
-      "time": "2026-10-22T08:00:00+00:00",
-      "published_at": "2026-10-22T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "69d6f3ea2da0117d875eb27c",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261020.xlsx",
-      "time": "2026-10-22T08:00:00+00:00",
-      "published_at": "2026-10-22T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "7da7c22f451f0933652911e6",
-      "currency": "JPY",
-      "title": "Developments in Real Exports and Real Imports",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/research_data/reri/index.htm",
-      "time": "2026-10-22T07:00:00+00:00",
-      "published_at": "2026-10-22T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "477e2a8146ae5d81f4ef59ae",
-      "currency": "JPY",
-      "title": "Developments in Real Exports and Real Imports",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/research/research_data/reri/index.htm",
-      "time": "2026-10-22T07:00:00+00:00",
-      "published_at": "2026-10-22T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "f20550178c226bc3b22fae87",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 20)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261020.htm",
-      "time": "2026-10-22T01:00:00+00:00",
-      "published_at": "2026-10-22T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "af7cfbbb05aad76cd47a5f4f",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 20)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261020.htm",
-      "time": "2026-10-22T01:00:00+00:00",
-      "published_at": "2026-10-22T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "fa382136167473db4ec6872a",
-      "currency": "JPY",
-      "title": "Senior Loan Officer Opinion Survey (Oct.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/dl/loan/loos/release/loos2610.pdf",
-      "time": "2026-10-21T23:50:00+00:00",
-      "published_at": "2026-10-21T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "45bac72b4ca76b559b73de13",
-      "currency": "JPY",
-      "title": "Statistics on Securities Financing Transactions in Japan",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/bis/repo/index.htm",
-      "time": "2026-10-21T23:50:00+00:00",
-      "published_at": "2026-10-21T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "068cde6d523faa16e22e2701",
-      "currency": "JPY",
-      "title": "Senior Loan Officer Opinion Survey (Oct.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/dl/loan/loos/release/loos2610.pdf",
-      "time": "2026-10-21T23:50:00+00:00",
-      "published_at": "2026-10-21T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "6b82a0652616c550537ce83f",
-      "currency": "JPY",
-      "title": "Statistics on Securities Financing Transactions in Japan",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/bis/repo/index.htm",
-      "time": "2026-10-21T23:50:00+00:00",
-      "published_at": "2026-10-21T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "NZD",
-      "title": "New framework supports access to basic transaction services",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has brought together public and private sector organisations to sign a Memorandum of Understanding (MoU) aimed at supporting access to basic transaction services in New Zealand.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/new-framework-supports-access-to-basic-transaction-services",
-      "time": "2026-10-18T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-18T11:00:00+00:00",
-      "event_id": "70bec8c9d7e900b9041bbaf2"
-    },
-    {
-      "currency": "USD",
-      "title": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
-      "summary": "Federal Reserve Board announces termination of enforcement actions with Gardner Bancshares, Inc. and Small Business Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261016a.htm",
-      "time": "2026-10-16T15:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-16T15:00:00+00:00",
-      "event_id": "a610157fa996153be90aa0cd"
-    },
-    {
-      "event_id": "d4bf31b8ff4179b3fae88b3d",
-      "currency": "GBP",
-      "title": "Banknote imagery advisory group minutes – 15 July 2026",
-      "summary": "Meeting held 15 July 2026",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/july/banknote-advisory-minutes-15-july",
-      "time": "2026-10-16T11:00:00+00:00",
-      "published_at": "2026-10-16T11:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "e78f3bab326e5eb4927ea4aa",
-      "currency": "JPY",
-      "title": "BOJ Current Account Balances by Sector (Sept.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/cabs/cabs.xlsx",
-      "time": "2026-10-16T08:00:00+00:00",
-      "published_at": "2026-10-16T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "7463a4bb6e0b96ea5db95e9f",
-      "currency": "JPY",
-      "title": "BOJ Current Account Balances by Sector (Sept.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/cabs/cabs.xlsx",
-      "time": "2026-10-16T08:00:00+00:00",
-      "published_at": "2026-10-16T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "37ee1ff2da7b5a04e3c728a6",
-      "currency": "GBP",
-      "title": "David Roberts CV and questionnaire for the Treasury Select Committee",
-      "summary": "Published for the Treasury Select Committee",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/david-roberts-tsc-reappointment",
-      "time": "2026-10-15T09:52:41+00:00",
-      "published_at": "2026-10-15T09:52:41+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "9ab82aa45844b5c3f534658d",
-      "currency": "GBP",
-      "title": "Minutes of the SONIA Stakeholder Advisory Group - 25 September 2026",
-      "summary": "The SONIA Stakeholder Advisory Group supports the Bank’s administration of SONIA by providing advice and technical input to the Bank and the SONIA Oversight Committee",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/sonia-stakeholder-advisory-group-25-september-2026",
-      "time": "2026-10-15T08:27:59+00:00",
-      "published_at": "2026-10-15T08:27:59+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "7e923ed5d6f4647bfe5a873e",
-      "currency": "JPY",
-      "title": "Summary of the \"Meeting on Market Operations\" (October 2026)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/paym/market/mkt261015a.pdf",
-      "time": "2026-10-15T01:00:00+00:00",
-      "published_at": "2026-10-15T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "cda3fcb193ca3a3d18abba2b",
-      "currency": "JPY",
-      "title": "Summary of the \"Meeting on Market Operations\" (October 2026)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/paym/market/mkt261015a.pdf",
-      "time": "2026-10-15T01:00:00+00:00",
-      "published_at": "2026-10-15T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "NZD",
-      "title": "APRA and RBNZ complete joint bank stress test to promote trans-Tasman resilience",
-      "summary": "The Australian Prudential Regulation Authority (APRA) and the Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) have completed the 2026 Trans-Tasman Stress Test, their first joint stress testing exercise since 2017.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/apra-and-rbnz-complete-joint-bank-stress-test-to-promote-trans-tasman-resilience",
-      "time": "2026-10-14T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-14T11:00:00+00:00",
-      "event_id": "c6a13137161225c9d6b7cf3a"
-    },
-    {
-      "currency": "NZD",
-      "title": "RBNZ and FMA outline supervisory expectations on cyber and AI risks",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) and the Financial Markets Authority – Te Mana Tātai Hokohoko (FMA) have today outlined their supervisory expectations on cyber risks associated with frontier Artificial Intelligence (AI).",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/rbnz-and-fma-outline-supervisory-expectations-on-cyber-and-ai-risks",
-      "time": "2026-10-14T11:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-14T11:00:00+00:00",
-      "event_id": "449e12d16dbb6d6c87b058fd"
-    },
-    {
-      "event_id": "4226a54b4cbb7f54751b81f4",
-      "currency": "JPY",
-      "title": "The Fifteenth Tripartite Governors' Meeting among PBOC, BOJ, and BOK",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/intl_finance/cooperate/coop261014a.pdf",
-      "time": "2026-10-14T11:00:00+00:00",
-      "published_at": "2026-10-14T11:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "10a39254bc454f468a92206b",
-      "currency": "JPY",
-      "title": "The Fifteenth Tripartite Governors' Meeting among PBOC, BOJ, and BOK",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/intl_finance/cooperate/coop261014a.pdf",
-      "time": "2026-10-14T11:00:00+00:00",
-      "published_at": "2026-10-14T11:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "887c7ec684c9c1ae4f2fb81a",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261009.xlsx",
-      "time": "2026-10-14T08:00:00+00:00",
-      "published_at": "2026-10-14T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "965d07c141290c601a1185a1",
-      "currency": "JPY",
-      "title": "Japanese Government Bonds Held by the Bank of Japan",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261009.xlsx",
-      "time": "2026-10-14T08:00:00+00:00",
-      "published_at": "2026-10-14T08:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "070e45ae100ff061fcc3e1f1",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 10)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261010.htm",
-      "time": "2026-10-14T01:00:00+00:00",
-      "published_at": "2026-10-14T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "928fadc1e30fb16f67e8eba3",
-      "currency": "JPY",
-      "title": "Bank of Japan Accounts (October 10)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261010.htm",
-      "time": "2026-10-14T01:00:00+00:00",
-      "published_at": "2026-10-14T01:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "48bba0dcad17f88218f9ae27",
-      "currency": "JPY",
-      "title": "Money Stock (Sept.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/money/ms/ms2609.pdf",
-      "time": "2026-10-13T23:50:00+00:00",
-      "published_at": "2026-10-13T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "e6376242199ba791fc50fbe6",
-      "currency": "JPY",
-      "title": "Money Stock (Sept.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/money/ms/ms2609.pdf",
-      "time": "2026-10-13T23:50:00+00:00",
-      "published_at": "2026-10-13T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "USD",
-      "title": "Minutes of the Board's discount rate meetings on August 17, September 9, and September 16, 2026",
-      "summary": "Minutes of the Board&#39;s discount rate meetings on August 17, September 9, and September 16, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261013a.htm",
-      "time": "2026-10-13T18:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-13T18:00:00+00:00",
-      "event_id": "a30fa694b1e41a377d2df86d"
-    },
-    {
-      "event_id": "d1542093a5e9c39755136116",
-      "currency": "GBP",
-      "title": "Minutes of the Money Market Committee meeting – September 2026",
-      "summary": "The Money Markets Committee is a forum for market participants and authorities to discuss the UK unsecured deposits and funding market and securities lending and repo markets.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/money-markets-committee-minutes-september-2026",
-      "time": "2026-10-13T15:04:27+00:00",
-      "published_at": "2026-10-13T15:04:27+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "57c2300351cf3eefc3913cff",
-      "currency": "JPY",
-      "title": "Basic Figures on Fails (Sept.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/set/bffail/sjgb2609.pdf",
-      "time": "2026-10-13T07:30:00+00:00",
-      "published_at": "2026-10-13T07:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "17ebee906a98aa6f9bee2eb5",
-      "currency": "JPY",
-      "title": "Basic Figures on Fails (Sept.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/set/bffail/sjgb2609.pdf",
-      "time": "2026-10-13T07:30:00+00:00",
-      "published_at": "2026-10-13T07:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "9530e7c19a41af6c65ab4f0e",
-      "currency": "JPY",
-      "title": "Results of the 107th Opinion Survey on the General Public's Views and Behavior",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/research/o_survey/ishiki2610.htm",
-      "time": "2026-10-13T04:30:00+00:00",
-      "published_at": "2026-10-13T04:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "d0999064df3bbf1cdeb265f9",
-      "currency": "JPY",
-      "title": "Results of the 107th Opinion Survey on the General Public's Views and Behavior",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/research/o_survey/ishiki2610.htm",
-      "time": "2026-10-13T04:30:00+00:00",
-      "published_at": "2026-10-13T04:30:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "f387beadd4f53da6309c2e67",
-      "currency": "JPY",
-      "title": "Principal Figures of Financial Institutions (Sept.)",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2609.pdf",
-      "time": "2026-10-12T23:50:00+00:00",
-      "published_at": "2026-10-12T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
       "event_id": "424fd790bbe112dbe81e5588",
       "currency": "JPY",
       "title": "Corporate Goods Price Index (Sept.)",
       "summary": "",
       "url": "http://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2609.pdf",
-      "time": "2026-10-12T23:50:00+00:00",
-      "published_at": "2026-10-12T23:50:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "98747ad9b385dbde351a0877",
-      "currency": "JPY",
-      "title": "Principal Figures of Financial Institutions (Sept.)",
-      "summary": "",
-      "url": "https://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2609.pdf",
       "time": "2026-10-12T23:50:00+00:00",
       "published_at": "2026-10-12T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -2709,27 +1492,6 @@
       "impact": "High"
     },
     {
-      "currency": "USD",
-      "title": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
-      "summary": "Federal Reserve Board releases results of the 2025 Survey of Consumer Finances, which provides the public and policymakers with detailed insights into the economic condition of American families",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261009a.htm",
-      "time": "2026-10-09T14:00:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-09T14:00:00+00:00",
-      "event_id": "75a356884860e11129d739de"
-    },
-    {
-      "event_id": "9ba2771c0d6ed6c912f93082",
-      "currency": "GBP",
-      "title": "CMORG holds sector-wide cloud outage simulation exercise",
-      "summary": "The Cross-Market Operational Resilience Group (CMORG) yesterday (8 October 2026) completed its biennial simulation exercise, known as SIMEX26, focused this year on a global cloud services disruption.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/cmorg-holds-sector-wide-cloud-outage-simulation-exercise",
-      "time": "2026-10-09T09:00:00+00:00",
-      "published_at": "2026-10-09T09:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
       "event_id": "d69d1b8dcb7a8bbc1a322b2c",
       "currency": "JPY",
       "title": "Twenty-fifth Meeting of the \"Council for Cooperation on Financial Stability\"",
@@ -2738,49 +1500,6 @@
       "time": "2026-10-09T09:00:00+00:00",
       "published_at": "2026-10-09T09:00:00+00:00",
       "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "event_id": "eec1108a51d4ec7cffee59d8",
-      "currency": "JPY",
-      "title": "Amendment to \"Prices of Eligible Collateral\"",
-      "summary": "",
-      "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261009a.pdf",
-      "time": "2026-10-09T07:00:00+00:00",
-      "published_at": "2026-10-09T07:00:00+00:00",
-      "source": "Bank of Japan",
-      "impact": "High"
-    },
-    {
-      "currency": "USD",
-      "title": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money launde",
-      "summary": "Federal Reserve Board announces enforcement action against American Express Company to address, among other things, the firm’s failure to sufficiently detect and report certain suspicious activity related to money laundering",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261008a.htm",
-      "time": "2026-10-08T20:30:00+00:00",
-      "impact": "High",
-      "published_at": "2026-10-08T20:30:00+00:00",
-      "event_id": "86ad3b68c6a6a509c9d72b5c"
-    },
-    {
-      "event_id": "559112cacf8c5692ec37a5ae",
-      "currency": "GBP",
-      "title": "Bank of England announces the four animals that will feature on our next series of banknotes",
-      "summary": "The Atlantic puffin, barn owl, buff-tailed bumblebee and European hedgehog will represent UK wildlife and feature as the central images on our next series of banknotes.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/boe-announces-the-four-animals-that-will-feature-on-next-series-of-banknotes",
-      "time": "2026-10-07T23:01:00+00:00",
-      "published_at": "2026-10-07T23:01:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "d9fd157b43fa7b7465c8b8ea",
-      "currency": "USD",
-      "title": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
-      "summary": "Minutes of the Federal Open Market Committee, September 15-16, 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261007a.htm",
-      "time": "2026-10-07T18:00:00+00:00",
-      "published_at": "2026-10-07T18:00:00+00:00",
-      "source": "Federal Reserve",
       "impact": "High"
     },
     {
@@ -2802,7 +1521,8 @@
       "time": "2026-10-07T11:00:00+00:00",
       "impact": "High",
       "published_at": "2026-10-07T11:00:00+00:00",
-      "event_id": "9b45fbd8548e610925fa49e3"
+      "event_id": "9b45fbd8548e610925fa49e3",
+      "source": "Reserve Bank of New Zealand"
     },
     {
       "event_id": "aa507ba7872b77f3cbf25c21",
@@ -2827,39 +1547,6 @@
       "impact": "High"
     },
     {
-      "event_id": "d3c7cf776a9a54cde2a4be13",
-      "currency": "GBP",
-      "title": "Regulatory thresholds set to shift to automatic increases",
-      "summary": "Proportionality is set to be improved for firms as over 100 regulatory thresholds could be automatically increased periodically.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/regulatory-thresholds-set-to-shift-to-automatic-increases",
-      "time": "2026-10-07T09:00:00+00:00",
-      "published_at": "2026-10-07T09:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "b194d3de515fa6ecb1a6d879",
-      "currency": "GBP",
-      "title": "Minutes of the UK Money Markets Code Sub-Committee – September 2026",
-      "summary": "The Money Markets Committee is a forum for market participants and authorities to discuss the UK unsecured deposits and funding market and securities lending and repo markets.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/september/uk-money-markets-committee-minutes-september-2026",
-      "time": "2026-10-06T13:07:03+00:00",
-      "published_at": "2026-10-06T13:07:03+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "a6cf48f8f7fd9a73a06a3267",
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
-      "summary": "Federal Reserve Board announces approval of application by Isabella Bank Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261005a.htm",
-      "time": "2026-10-05T20:30:00+00:00",
-      "published_at": "2026-10-05T20:30:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
       "event_id": "2f9b17158c3c896c2fa7546b",
       "currency": "NZD",
       "title": "Updates to the October Monetary Policy Review and November Financial Stability Report",
@@ -2867,83 +1554,6 @@
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/updates-to-the-october-mpr-and-november-fsr",
       "time": "2026-10-05T11:00:00+00:00",
       "published_at": "2026-10-05T11:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "c756792ef8e9a7662013a4da",
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of application by Fleur Capital Corporation",
-      "summary": "Federal Reserve Board announces approval of application by Fleur Capital Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20261002a.htm",
-      "time": "2026-10-02T20:45:00+00:00",
-      "published_at": "2026-10-02T20:45:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "2d5e88291d892e514c47351b",
-      "currency": "USD",
-      "title": "Federal Reserve Board announces it will extend, until November 4, the comment period on its proposal to modernize Regulation O",
-      "summary": "Federal Reserve Board announces it will extend, until November 4, the comment period on its proposal to modernize Regulation O",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261002a.htm",
-      "time": "2026-10-02T20:00:00+00:00",
-      "published_at": "2026-10-02T20:00:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "3cbc23b36c8e9af284a820bd",
-      "currency": "USD",
-      "title": "Federal Reserve Board issues enforcement action with Ontario Bancorporation, Inc.",
-      "summary": "Federal Reserve Board issues enforcement action with Ontario Bancorporation, Inc.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20261002a.htm",
-      "time": "2026-10-02T15:00:00+00:00",
-      "published_at": "2026-10-02T15:00:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "c398676b161da42de99157f7",
-      "currency": "GBP",
-      "title": "Appointment of members of the Enforcement Decision Making Committee (EDMC)",
-      "summary": "Following an external recruitment process, the Bank of England has appointed Carlos Conceicao and Alexander Justham as members of its Enforcement Decision Making Committee, with effect from September 2026.",
-      "url": "https://www.bankofengland.co.uk/news/2026/october/appointment-of-members-of-the-edmc",
-      "time": "2026-10-02T08:00:00+00:00",
-      "published_at": "2026-10-02T08:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "4cd31d6b9fa535986648c26d",
-      "currency": "GBP",
-      "title": "Minutes of the Meeting of the Court of Directors held on 16 July 2026",
-      "summary": "The Bank's Court of Directors acts as a unitary board, setting the organisation's strategy and budget and taking key decisions on resourcing and appointments. Required to meet a minimum seven times per year, it has five executive members from the Bank and up to nine non-executive members.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/july/court-minutes-16-july-2026",
-      "time": "2026-10-01T13:00:00+00:00",
-      "published_at": "2026-10-01T13:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "68ea741643149d4d59001d90",
-      "currency": "USD",
-      "title": "Federal Reserve Board finalizes changes to enhance the transparency and public accountability of its stress test and reduce volatility in its stress test-related capital requirements",
-      "summary": "Federal Reserve Board finalizes changes to enhance the transparency and public accountability of its stress test and reduce volatility in its stress test-related capital requirements",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260930a.htm",
-      "time": "2026-09-30T13:00:00+00:00",
-      "published_at": "2026-09-30T13:00:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "984fb643383386251f7c1f1d",
-      "currency": "NZD",
-      "title": "Consultation finds strong support for access to cash services",
-      "summary": "Today, we published findings from our Keeping Cash Local consultation about access to cash services, with new research on community views about cash services and cash use.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/10/consultation-finds-strong-support-for-access-to-cash",
-      "time": "2026-09-30T11:00:00+00:00",
-      "published_at": "2026-09-30T11:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
       "impact": "High"
     },
@@ -2959,28 +1569,6 @@
       "impact": "High"
     },
     {
-      "event_id": "924f844e7901608ec0592e30",
-      "currency": "USD",
-      "title": "Agencies publish resolution plan feedback letters for 15 banking organizations",
-      "summary": "Agencies publish resolution plan feedback letters for 15 banking organizations",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260929a.htm",
-      "time": "2026-09-29T20:00:00+00:00",
-      "published_at": "2026-09-29T20:00:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "9682e301509ce040d7bf651d",
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of application by Peoples Bancorp Inc.",
-      "summary": "Federal Reserve Board announces approval of application by Peoples Bancorp Inc.",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260925a.htm",
-      "time": "2026-09-25T20:30:00+00:00",
-      "published_at": "2026-09-25T20:30:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
       "event_id": "043ba8581410592df53d97f5",
       "currency": "GBP",
       "title": "Minutes of the Market Participants Group meeting – 24 September 2026",
@@ -2989,28 +1577,6 @@
       "time": "2026-09-25T06:30:00+00:00",
       "published_at": "2026-09-25T06:30:00+00:00",
       "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "f7b289f31036043c219baec0",
-      "currency": "USD",
-      "title": "Federal Reserve Board requests public comment on two proposals related to establishing a regulatory framework for Board-supervised payment stablecoin issuers under the GENIUS Act",
-      "summary": "Federal Reserve Board requests public comment on two proposals related to establishing a regulatory framework for Board-supervised payment stablecoin issuers under the GENIUS Act",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20260924a.htm",
-      "time": "2026-09-24T18:30:00+00:00",
-      "published_at": "2026-09-24T18:30:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "d7af0767353d42dde5074e0d",
-      "currency": "USD",
-      "title": "Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank",
-      "summary": "Federal Reserve Board issues enforcement action with former employee of Sandy Spring Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260924a.htm",
-      "time": "2026-09-24T15:00:00+00:00",
-      "published_at": "2026-09-24T15:00:00+00:00",
-      "source": "Federal Reserve",
       "impact": "High"
     },
     {
@@ -3025,28 +1591,6 @@
       "impact": "High"
     },
     {
-      "event_id": "f41cf21275f50fcda4059b76",
-      "currency": "NZD",
-      "title": "Reserve Bank requests TSB to commission independent report",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua is requesting an independent report from TSB under Section 95 of the Banking (Prudential Supervision) Act 1989.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/reserve-bank-requests-tsb-to-commission-independent-report",
-      "time": "2026-09-24T12:00:00+00:00",
-      "published_at": "2026-09-24T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "a071442b6718f07a4c1abfb1",
-      "currency": "USD",
-      "title": "Federal Reserve Board announces approval of application by BancFirst Corporation",
-      "summary": "Federal Reserve Board announces approval of application by BancFirst Corporation",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/orders20260922a.htm",
-      "time": "2026-09-22T20:30:00+00:00",
-      "published_at": "2026-09-22T20:30:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
       "event_id": "76f1f2fb295ef9e11462f9f3",
       "currency": "GBP",
       "title": "Foreign Currency Reserves 2026 – Market Notice 22 September 2026",
@@ -3054,17 +1598,6 @@
       "url": "https://www.bankofengland.co.uk/markets/market-notices/2026/september/foreign-currency-reserves-2026-market-notice-22-september-2026",
       "time": "2026-09-22T15:30:00+00:00",
       "published_at": "2026-09-22T15:30:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "b24c2f50b2d385a950bad10b",
-      "currency": "GBP",
-      "title": "Bank of England announces new office space in Leeds",
-      "summary": "The Bank of England has secured a new long-term premises in Leeds, marking a major milestone in its commitment to build its presence in the region.",
-      "url": "https://www.bankofengland.co.uk/news/2026/september/bank-of-england-announces-new-office-space-in-leeds",
-      "time": "2026-09-21T12:00:00+00:00",
-      "published_at": "2026-09-21T12:00:00+00:00",
       "source": "Bank of England",
       "impact": "High"
     },
@@ -3102,28 +1635,6 @@
       "impact": "High"
     },
     {
-      "event_id": "c11d8cd01ea1f39c02fb2722",
-      "currency": "USD",
-      "title": "Federal Reserve Board issues enforcement actions with former employee of Northstar Bank, former employee of American Express Travel Related Services Company, Inc., and former employee of Regions Bank",
-      "summary": "Federal Reserve Board issues enforcement actions with former employee of Northstar Bank, former employee of American Express Travel Related Services Company, Inc., and former employee of Regions Bank",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260918a.htm",
-      "time": "2026-09-18T15:00:00+00:00",
-      "published_at": "2026-09-18T15:00:00+00:00",
-      "source": "Federal Reserve",
-      "impact": "High"
-    },
-    {
-      "event_id": "765086b53ac30efc7355cde1",
-      "currency": "GBP",
-      "title": "Minutes of the Transaction and Post-trade Reporting Harmonisation Taskforce - July 2026",
-      "summary": "The Transaction and Post-trade Reporting Harmonisation Taskforce, through its three working groups, will help inform the design of the Bank and FCA’s long-term approach to harmonising UK MiFIR, UK EMIR and UK SFTR reporting requirements",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/july/minutes-of-the-transaction-and-post-trade-reporting-harmonisation-taskforce-july-2026",
-      "time": "2026-09-18T11:00:00+00:00",
-      "published_at": "2026-09-18T11:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
       "event_id": "02e7cc33495d9d83d129e990",
       "currency": "GBP",
       "title": "Transcript of the Governor's pooled broadcast interview given on 17 September 2026",
@@ -3146,33 +1657,11 @@
       "impact": "High"
     },
     {
-      "event_id": "b0d5b157448b11c4f5ae1996",
-      "currency": "NZD",
-      "title": "Māori access to capital (MA2K) snapshot 2026",
-      "summary": "Te Pūtea Matua – Reserve Bank of New Zealand has today published the 2026 Māori Access to Capital (MA2K) Snapshot, providing an updated industry-level view of Māori access to capital across participating banks, alongside the latest available aggregate system-level information.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/maori-access-to-capital-ma2k-snapshot-2026",
-      "time": "2026-09-17T12:00:00+00:00",
-      "published_at": "2026-09-17T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
       "event_id": "09c1e9807a3c787a477bddef",
       "currency": "GBP",
       "title": "Exchange of letters between the Governor and the Chancellor regarding CPI Inflation - September 2026",
       "summary": "Exchange of letters between the Governor and the Chancellor",
       "url": "https://www.bankofengland.co.uk/letter/2026/cpi-inflation-september-2026",
-      "time": "2026-09-17T11:00:00+00:00",
-      "published_at": "2026-09-17T11:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "24dca2c2d14f69da1684908f",
-      "currency": "GBP",
-      "title": "Exchange of letters between the Governor and the Chancellor regarding QT and the APF - September 2026",
-      "summary": "Exchange of letters between the Governor and the Chancellor",
-      "url": "https://www.bankofengland.co.uk/letter/2026/exchange-of-letters-between-the-governor-and-the-chancellor-regarding-qt-and-the-apf",
       "time": "2026-09-17T11:00:00+00:00",
       "published_at": "2026-09-17T11:00:00+00:00",
       "source": "Bank of England",
@@ -3201,94 +1690,6 @@
       "impact": "High"
     },
     {
-      "event_id": "8b9bb7ee038ada6f8c799780",
-      "currency": "GBP",
-      "title": "Chancellor announces Bank of England appointments",
-      "summary": "His Majesty the King and the Chancellor have appointed three new non-executive directors to the Bank of England’s Court of Directors",
-      "url": "https://www.bankofengland.co.uk/news/2026/september/chancellor-announces-boe-appointments",
-      "time": "2026-09-16T14:03:08+00:00",
-      "published_at": "2026-09-16T14:03:08+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "a96885d7c5dbe245a6561aa4",
-      "currency": "NZD",
-      "title": "Exploring the future of banking in New Zealand",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua (RBNZ) has today published a Future of Banking study exploring how banking in New Zealand could evolve over the next decade.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/exploring-the-future-of-banking-in-new-zealand",
-      "time": "2026-09-16T12:00:00+00:00",
-      "published_at": "2026-09-16T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "60c6e389cd6aa82ee2c1c877",
-      "currency": "NZD",
-      "title": "Reserve Bank announces leadership changes as Assistant Governor Karen Silk prepares to depart",
-      "summary": "Reserve Bank of New Zealand – Te Pūtea Matua Assistant Governor Money Karen Silk will leave the Bank in December, after more than four years with the organisation.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/reserve-bank-announces-leadership-changes-as-assistant-governor-karen-silk-prepares-to-depart",
-      "time": "2026-09-15T12:00:00+00:00",
-      "published_at": "2026-09-15T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "b15c679966bae3209b047215",
-      "currency": "GBP",
-      "title": "Statistical Notice 2026/08 - Changes to the criteria for monthly form BT reporting",
-      "summary": "Statistical Notices update the definitions and guidance contained in the Banking Statistics Yellow Folder",
-      "url": "https://www.bankofengland.co.uk/statistics/notice/2026/statistical-notice-2026-08",
-      "time": "2026-09-15T09:21:31+00:00",
-      "published_at": "2026-09-15T09:21:31+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "27def0b018701cba53a3e929",
-      "currency": "GBP",
-      "title": "Minutes of the Securities Lending Committee meeting – March 2026",
-      "summary": "The Securities Lending Committee is a forum for market participants and authorities to discuss the UK securities lending market.",
-      "url": "https://www.bankofengland.co.uk/minutes/2026/march/minutes-of-the-securities-lending-committee-meeting-march-2026",
-      "time": "2026-09-15T08:09:58+00:00",
-      "published_at": "2026-09-15T08:09:58+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "7a140860c9969127772973b1",
-      "currency": "NZD",
-      "title": "RBNZ to regulate and supervise the High Value Clearing System",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua will now regulate and supervise the High Value Clearing System, under the Financial Market Infrastructures Act 2021. This follows the Minister of Finance’s decision to designate the system on the Reserve Bank’s recommendation.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/rbnz-to-regulate-and-supervise-the-high-value-clearing-system",
-      "time": "2026-09-14T12:00:00+00:00",
-      "published_at": "2026-09-14T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "2c1cfe964d8e9b99378c1575",
-      "currency": "NZD",
-      "title": "Reserve Bank releases near-final DTA standards and licensing questions for regulated deposit takers",
-      "summary": "The Reserve Bank of New Zealand – Te Pūtea Matua has published near-final versions of four Deposit Takers Act 2023 (DTA) standards, consultation submissions, and the questions that existing banks and non-bank deposit takers will need to answer if they are applying for a DTA licence.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/rbnz-releases-near-final-dta-standards-and-licensing-questions",
-      "time": "2026-09-13T12:00:00+00:00",
-      "published_at": "2026-09-13T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "dbd4278a0ee07644df2ccab3",
-      "currency": "GBP",
-      "title": "Announcement of the publication of the Governor's interview transcript",
-      "summary": "Statement from the Bank of England",
-      "url": "https://www.bankofengland.co.uk/news/2026/september/statement-announcing-governors-interview",
-      "time": "2026-09-10T09:00:00+00:00",
-      "published_at": "2026-09-10T09:00:00+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
       "event_id": "d6896b128ec489ba3352818d",
       "currency": "NZD",
       "title": "Securing the future: the role of the repo market",
@@ -3300,17 +1701,6 @@
       "impact": "High"
     },
     {
-      "event_id": "1ae2391a5d8a408aba07055d",
-      "currency": "NZD",
-      "title": "RBNZ approves entry of first non-bank member to Exchange Settlement Account System (ESAS)",
-      "summary": "This follows the completion of the ESAS Access Review which was conducted to assess whether the 30-year access criteria were still fit for purpose in a rapidly changing finance eco-system.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/rbnz-approves-entry-of-first-non-bank-member-to-exchange-settlement-account-system",
-      "time": "2026-09-07T12:00:00+00:00",
-      "published_at": "2026-09-07T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
       "event_id": "f733a11308ac37f8b8662bf0",
       "currency": "NZD",
       "title": "OCR increased by 25 basis points to 2.75%",
@@ -3318,28 +1708,6 @@
       "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/09/ocr-increased-by-25-basis-points-to-2-75",
       "time": "2026-09-01T12:00:00+00:00",
       "published_at": "2026-09-01T12:00:00+00:00",
-      "source": "Reserve Bank of New Zealand",
-      "impact": "High"
-    },
-    {
-      "event_id": "00b63bb702209b9cd45d4bf3",
-      "currency": "GBP",
-      "title": "Delay to the November 2026 RTGS standards release",
-      "summary": "Bank of England statement",
-      "url": "https://www.bankofengland.co.uk/news/2026/august/delay-to-the-november-2026-rtgs-standards-release",
-      "time": "2026-08-27T13:16:29+00:00",
-      "published_at": "2026-08-27T13:16:29+00:00",
-      "source": "Bank of England",
-      "impact": "High"
-    },
-    {
-      "event_id": "3ff9b1082ba3bd40dc57ae75",
-      "currency": "NZD",
-      "title": "RBNZ explores issues facing New Zealand's payments system",
-      "summary": "We are seeking feedback on the issues we have identified with our payments system, and the proposed areas of work needed to address these.",
-      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/08/rbnz-explores-issues-facing-nzs-payments-system",
-      "time": "2026-08-17T12:00:00+00:00",
-      "published_at": "2026-08-17T12:00:00+00:00",
       "source": "Reserve Bank of New Zealand",
       "impact": "High"
     }
@@ -3482,5 +1850,10 @@
     "Central-bank news items are context only and are not mechanically converted into bullish or bearish scores.",
     "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
     "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval."
-  ]
+  ],
+  "news_filter": {
+    "method": "FX-relevant central-bank keyword filter; duplicate URL copies removed",
+    "removed": 152,
+    "checked_at": "2026-11-12T08:58:00.772Z"
+  }
 }
