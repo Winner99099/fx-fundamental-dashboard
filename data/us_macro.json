@@ -1,13 +1,111 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-12T02:01:01.481178+00:00",
+  "schema_version": 2,
+  "generated_at": "2026-11-12T02:14:35.936220+00:00",
   "source_status": "PARTIAL",
+  "available_indicators": 5,
   "indicators": {
     "core_cpi": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 2.8697,
+      "date": "2026-10-01",
+      "change": 0.0805,
+      "history": [
+        {
+          "date": "2024-10-01",
+          "value": 3.2987
+        },
+        {
+          "date": "2024-11-01",
+          "value": 3.2859
+        },
+        {
+          "date": "2024-12-01",
+          "value": 3.2133
+        },
+        {
+          "date": "2025-01-01",
+          "value": 3.283
+        },
+        {
+          "date": "2025-02-01",
+          "value": 3.1376
+        },
+        {
+          "date": "2025-03-01",
+          "value": 2.8088
+        },
+        {
+          "date": "2025-04-01",
+          "value": 2.776
+        },
+        {
+          "date": "2025-05-01",
+          "value": 2.7658
+        },
+        {
+          "date": "2025-06-01",
+          "value": 2.9109
+        },
+        {
+          "date": "2025-07-01",
+          "value": 3.0545
+        },
+        {
+          "date": "2025-08-01",
+          "value": 3.1118
+        },
+        {
+          "date": "2025-09-01",
+          "value": 3.02
+        },
+        {
+          "date": "2025-11-01",
+          "value": 2.8943
+        },
+        {
+          "date": "2025-12-01",
+          "value": 2.838
+        },
+        {
+          "date": "2026-01-01",
+          "value": 2.9493
+        },
+        {
+          "date": "2026-02-01",
+          "value": 2.7335
+        },
+        {
+          "date": "2026-03-01",
+          "value": 2.6731
+        },
+        {
+          "date": "2026-04-01",
+          "value": 2.9884
+        },
+        {
+          "date": "2026-05-01",
+          "value": 2.9571
+        },
+        {
+          "date": "2026-06-01",
+          "value": 2.8058
+        },
+        {
+          "date": "2026-07-01",
+          "value": 2.7867
+        },
+        {
+          "date": "2026-08-01",
+          "value": 2.7635
+        },
+        {
+          "date": "2026-09-01",
+          "value": 2.7892
+        },
+        {
+          "date": "2026-10-01",
+          "value": 2.8697
+        }
+      ]
     },
     "core_pce": {
       "value": null,
@@ -16,44 +114,432 @@
       "history": []
     },
     "nfp": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 165.0,
+      "date": "2026-10-01",
+      "change": 105.0,
+      "history": [
+        {
+          "date": "2024-11-01",
+          "value": 134.0
+        },
+        {
+          "date": "2024-12-01",
+          "value": 237.0
+        },
+        {
+          "date": "2025-01-01",
+          "value": -48.0
+        },
+        {
+          "date": "2025-02-01",
+          "value": 42.0
+        },
+        {
+          "date": "2025-03-01",
+          "value": 67.0
+        },
+        {
+          "date": "2025-04-01",
+          "value": 108.0
+        },
+        {
+          "date": "2025-05-01",
+          "value": 13.0
+        },
+        {
+          "date": "2025-06-01",
+          "value": -20.0
+        },
+        {
+          "date": "2025-07-01",
+          "value": 64.0
+        },
+        {
+          "date": "2025-08-01",
+          "value": -70.0
+        },
+        {
+          "date": "2025-09-01",
+          "value": 76.0
+        },
+        {
+          "date": "2025-10-01",
+          "value": -140.0
+        },
+        {
+          "date": "2025-11-01",
+          "value": 41.0
+        },
+        {
+          "date": "2025-12-01",
+          "value": -17.0
+        },
+        {
+          "date": "2026-01-01",
+          "value": 160.0
+        },
+        {
+          "date": "2026-02-01",
+          "value": -156.0
+        },
+        {
+          "date": "2026-03-01",
+          "value": 214.0
+        },
+        {
+          "date": "2026-04-01",
+          "value": 148.0
+        },
+        {
+          "date": "2026-05-01",
+          "value": 63.0
+        },
+        {
+          "date": "2026-06-01",
+          "value": 31.0
+        },
+        {
+          "date": "2026-07-01",
+          "value": -10.0
+        },
+        {
+          "date": "2026-08-01",
+          "value": 186.0
+        },
+        {
+          "date": "2026-09-01",
+          "value": 60.0
+        },
+        {
+          "date": "2026-10-01",
+          "value": 165.0
+        }
+      ]
     },
     "treasury_2y": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 4.73,
+      "date": "2026-11-10",
+      "change": 0.17,
+      "history": [
+        {
+          "date": "2026-10-07",
+          "value": 4.77
+        },
+        {
+          "date": "2026-10-08",
+          "value": 4.75
+        },
+        {
+          "date": "2026-10-09",
+          "value": 4.8
+        },
+        {
+          "date": "2026-10-13",
+          "value": 4.79
+        },
+        {
+          "date": "2026-10-14",
+          "value": 4.82
+        },
+        {
+          "date": "2026-10-15",
+          "value": 4.77
+        },
+        {
+          "date": "2026-10-16",
+          "value": 4.74
+        },
+        {
+          "date": "2026-10-19",
+          "value": 4.77
+        },
+        {
+          "date": "2026-10-20",
+          "value": 4.79
+        },
+        {
+          "date": "2026-10-21",
+          "value": 4.81
+        },
+        {
+          "date": "2026-10-22",
+          "value": 4.65
+        },
+        {
+          "date": "2026-10-23",
+          "value": 4.69
+        },
+        {
+          "date": "2026-10-26",
+          "value": 4.68
+        },
+        {
+          "date": "2026-10-27",
+          "value": 4.7
+        },
+        {
+          "date": "2026-10-28",
+          "value": 4.67
+        },
+        {
+          "date": "2026-10-29",
+          "value": 4.61
+        },
+        {
+          "date": "2026-10-30",
+          "value": 4.56
+        },
+        {
+          "date": "2026-11-02",
+          "value": 4.59
+        },
+        {
+          "date": "2026-11-03",
+          "value": 4.61
+        },
+        {
+          "date": "2026-11-04",
+          "value": 4.58
+        },
+        {
+          "date": "2026-11-05",
+          "value": 4.46
+        },
+        {
+          "date": "2026-11-06",
+          "value": 4.51
+        },
+        {
+          "date": "2026-11-09",
+          "value": 4.56
+        },
+        {
+          "date": "2026-11-10",
+          "value": 4.73
+        }
+      ]
     },
     "treasury_10y": {
-      "value": null,
-      "date": null,
-      "change": null,
-      "history": []
+      "value": 4.98,
+      "date": "2026-11-10",
+      "change": 0.1,
+      "history": [
+        {
+          "date": "2026-10-07",
+          "value": 5.28
+        },
+        {
+          "date": "2026-10-08",
+          "value": 5.22
+        },
+        {
+          "date": "2026-10-09",
+          "value": 5.24
+        },
+        {
+          "date": "2026-10-13",
+          "value": 5.21
+        },
+        {
+          "date": "2026-10-14",
+          "value": 5.19
+        },
+        {
+          "date": "2026-10-15",
+          "value": 5.1
+        },
+        {
+          "date": "2026-10-16",
+          "value": 5.09
+        },
+        {
+          "date": "2026-10-19",
+          "value": 5.15
+        },
+        {
+          "date": "2026-10-20",
+          "value": 5.12
+        },
+        {
+          "date": "2026-10-21",
+          "value": 5.13
+        },
+        {
+          "date": "2026-10-22",
+          "value": 4.96
+        },
+        {
+          "date": "2026-10-23",
+          "value": 5.0
+        },
+        {
+          "date": "2026-10-26",
+          "value": 5.0
+        },
+        {
+          "date": "2026-10-27",
+          "value": 4.99
+        },
+        {
+          "date": "2026-10-28",
+          "value": 5.05
+        },
+        {
+          "date": "2026-10-29",
+          "value": 4.98
+        },
+        {
+          "date": "2026-10-30",
+          "value": 4.94
+        },
+        {
+          "date": "2026-11-02",
+          "value": 4.91
+        },
+        {
+          "date": "2026-11-03",
+          "value": 4.95
+        },
+        {
+          "date": "2026-11-04",
+          "value": 4.9
+        },
+        {
+          "date": "2026-11-05",
+          "value": 4.84
+        },
+        {
+          "date": "2026-11-06",
+          "value": 4.86
+        },
+        {
+          "date": "2026-11-09",
+          "value": 4.88
+        },
+        {
+          "date": "2026-11-10",
+          "value": 4.98
+        }
+      ]
     },
     "dxy": {
       "value": null,
       "date": null,
       "change": null,
-      "history": [],
-      "error": "HTTP Error 429: Too Many Requests",
-      "provider": "Yahoo Finance chart API"
+      "history": []
     },
-    "yield_spread": null
+    "yield_spread": {
+      "value": 0.25,
+      "date": "2026-11-10",
+      "change": -0.07,
+      "history": [
+        {
+          "date": "2026-10-07",
+          "value": 0.51
+        },
+        {
+          "date": "2026-10-08",
+          "value": 0.47
+        },
+        {
+          "date": "2026-10-09",
+          "value": 0.44
+        },
+        {
+          "date": "2026-10-13",
+          "value": 0.42
+        },
+        {
+          "date": "2026-10-14",
+          "value": 0.37
+        },
+        {
+          "date": "2026-10-15",
+          "value": 0.33
+        },
+        {
+          "date": "2026-10-16",
+          "value": 0.35
+        },
+        {
+          "date": "2026-10-19",
+          "value": 0.38
+        },
+        {
+          "date": "2026-10-20",
+          "value": 0.33
+        },
+        {
+          "date": "2026-10-21",
+          "value": 0.32
+        },
+        {
+          "date": "2026-10-22",
+          "value": 0.31
+        },
+        {
+          "date": "2026-10-23",
+          "value": 0.31
+        },
+        {
+          "date": "2026-10-26",
+          "value": 0.32
+        },
+        {
+          "date": "2026-10-27",
+          "value": 0.29
+        },
+        {
+          "date": "2026-10-28",
+          "value": 0.38
+        },
+        {
+          "date": "2026-10-29",
+          "value": 0.37
+        },
+        {
+          "date": "2026-10-30",
+          "value": 0.38
+        },
+        {
+          "date": "2026-11-02",
+          "value": 0.32
+        },
+        {
+          "date": "2026-11-03",
+          "value": 0.34
+        },
+        {
+          "date": "2026-11-04",
+          "value": 0.32
+        },
+        {
+          "date": "2026-11-05",
+          "value": 0.38
+        },
+        {
+          "date": "2026-11-06",
+          "value": 0.35
+        },
+        {
+          "date": "2026-11-09",
+          "value": 0.32
+        },
+        {
+          "date": "2026-11-10",
+          "value": 0.25
+        }
+      ]
+    }
   },
   "errors": {
-    "core_cpi": "The read operation timed out",
-    "core_pce": "The read operation timed out",
-    "nfp": "The read operation timed out",
-    "treasury_2y": "The read operation timed out",
-    "treasury_10y": "The read operation timed out",
-    "dxy": "HTTP Error 429: Too Many Requests",
-    "yield_spread": "The read operation timed out"
+    "core_pce": "Not yet connected to a reliable no-key source; left blank rather than substituting CPI."
   },
   "sources": {
-    "fred": "https://fred.stlouisfed.org/",
-    "dxy": "Yahoo Finance DX-Y.NYB chart endpoint; delayed/indicative ICE US Dollar Index quote"
+    "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
+    "nfp": "BLS series CES0000000001 (total nonfarm payrolls, thousands)",
+    "treasury": "US Treasury daily par yield curve XML feed",
+    "dxy": "Stooq DX.F continuous DXY futures proxy; may be delayed",
+    "core_pce": "Not loaded: public BEA/FRED source unavailable from GitHub runner"
   }
 }
