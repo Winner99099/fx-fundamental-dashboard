@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/update_data.py'
       - 'scripts/update_us_macro.py'
+      # The macro collector also imports the Forex Factory weekly economic calendar.
       - '.github/workflows/refresh.yml'
   schedule:
     # Five-minute target; GitHub scheduled runs are best-effort and may be delayed.
