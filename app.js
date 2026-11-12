@@ -28,11 +28,23 @@ function currencyRows(targetId) {
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
   $(targetId).innerHTML = rows || `<tr><td colspan="7" class="empty">No currency data in snapshot.</td></tr>`;
 }
+function newsSummary(e) {
+  const supplied=String(e.summary||"").trim();
+  if(supplied && supplied.toLowerCase()!=="no summary supplied.") return supplied;
+  const title=String(e.title||"This release").toLowerCase();
+  const topic=/rate decision|policy rate|interest rate|monetary policy/.test(title)?"monetary policy and interest rates":
+    /inflation|consumer price|cpi|price index/.test(title)?"inflation and price developments":
+    /gdp|gross domestic product|growth/.test(title)?"economic growth":
+    /employment|unemployment|labour|labor|wage|payroll/.test(title)?"employment and wages":
+    /financial stability|financial conditions|credit/.test(title)?"financial conditions and stability":
+    /outlook|forecast|projection/.test(title)?"the economic outlook":"economic and central-bank developments";
+  return (e.source||"The central bank")+" published an update concerning "+topic+". The feed did not include a detailed explanation; open the original release for figures, context and policy implications.";
+}
 function renderNews(targetId, filter="ALL", limit=100) {
   const items = (snapshot?.events || []).filter(e => filter==="ALL" || e.currency===filter).slice(0,limit);
   $(targetId).innerHTML = items.length ? items.map(e => {
     const href = /^https?:\/\//i.test(e.url || "") ? e.url : "#";
-    return `<article class="news-item"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time,"Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span><span class="impact-pill impact-${String(e.impact||"Low").toLowerCase()}">${safeText(e.impact,"Low")} impact</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a><div class="news-bias">${safeText(e.bias,"No clear policy bias")} · ${safeText(e.direction,"Context only")}</div><p>${safeText(e.summary,"No summary supplied.")}</p></article>`;
+    return `<article class="news-item"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time,"Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span><span class="impact-pill impact-${String(e.impact||"Low").toLowerCase()}">${safeText(e.impact,"Low")} impact</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a><div class="news-bias">${safeText(e.bias,"No clear policy bias")} · ${safeText(e.direction,"Context only")}</div><p>${safeText(newsSummary(e))}</p></article>`;
   }).join("") : `<div class="empty">No matching official releases in the current snapshot.</div>`;
 }
 function renderPairs() {
