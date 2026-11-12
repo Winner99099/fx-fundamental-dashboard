@@ -1,169 +1,145 @@
 #!/usr/bin/env python3
-"""Collect public FRED macro series and an indicative Yahoo Finance DXY quote."""
-import csv, io, json, datetime, urllib.request, urllib.parse
+"""US macro snapshot using BLS and US Treasury public feeds; no API keys required.
+FRED is deliberately not used here because GitHub-hosted runners timed out against it.
+"""
+import csv, datetime as dt, io, json, urllib.request, urllib.parse, xml.etree.ElementTree as ET
 from pathlib import Path
 
-UTC = datetime.timezone.utc
-NOW = datetime.datetime.now(UTC)
-OUT = Path("data/us_macro.json")
-UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36"
-FRED_CACHE = {}
-SERIES = {
-    "CPILFESL": "core_cpi",
-    "PCEPILFE": "core_pce",
-    "PAYEMS": "nfp",
-    "DGS2": "treasury_2y",
-    "DGS10": "treasury_10y",
-}
+UTC=dt.timezone.utc
+NOW=dt.datetime.now(UTC)
+OUT=Path("data/us_macro.json")
+UA="Mozilla/5.0 (compatible; MacroPulseFXDashboard/2.0)"
 
-def get(url, headers=None):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=60) as response:
-        return response.read()
+def request(url, data=None, headers=None, timeout=25):
+    h={"User-Agent":UA, **(headers or {})}
+    req=urllib.request.Request(url, data=data, headers=h)
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read()
 
-def fred_series(series):
-    if series in FRED_CACHE:
-        return FRED_CACHE[series]
-    url = "https://fred.stlouisfed.org/graph/fredgraph.csv?id=" + urllib.parse.quote(series) + "&cosd=2018-01-01"
-    raw = get(url).decode("utf-8-sig")
-    rows = []
-    for row in csv.DictReader(io.StringIO(raw)):
-        date = row.get("observation_date") or row.get("DATE")
-        value = row.get(series)
-        if date and value and value not in (".", ""):
-            try:
-                rows.append({"date": date, "value": float(value)})
-            except ValueError:
-                continue
-    if not rows:
-        raise RuntimeError("FRED CSV contained no usable observations for " + series)
-    FRED_CACHE[series] = rows
-    return rows
+def empty():
+    return {"value":None,"date":None,"change":None,"history":[]}
 
-def pct_change(current, base):
-    return None if base in (None, 0) else (current / base - 1) * 100
-
-def make_metric(series, kind):
-    rows = fred_series(series)
-    if not rows:
-        raise RuntimeError("FRED returned no observations for " + series)
-    latest = rows[-1]
-    previous = rows[-2] if len(rows) > 1 else None
-
-    if kind == "yoy":
-        base = rows[-13] if len(rows) >= 13 else None
-        value = pct_change(latest["value"], base["value"]) if base else None
-        previous_yoy = pct_change(previous["value"], rows[-14]["value"]) if previous and len(rows) >= 14 else None
-        delta = value - previous_yoy if value is not None and previous_yoy is not None else None
-    elif kind == "nfp":
-        value = latest["value"] - previous["value"] if previous else None
-        previous_change = rows[-2]["value"] - rows[-3]["value"] if len(rows) >= 3 else None
-        delta = value - previous_change if value is not None and previous_change is not None else None
-    else:
-        value = latest["value"]
-        delta = latest["value"] - previous["value"] if previous else None
-
-    history = []
-    for index, row in enumerate(rows):
-        if kind == "yoy":
-            base_index = index - 12
-            point = pct_change(row["value"], rows[base_index]["value"]) if base_index >= 0 else None
-        elif kind == "nfp":
-            point = row["value"] - rows[index - 1]["value"] if index > 0 else None
-        else:
-            point = row["value"]
-        if point is not None:
-            history.append({"date": row["date"], "value": round(point, 4)})
-
+def metric(rows, kind="level"):
+    rows=sorted(rows,key=lambda x:x["date"])
+    if not rows: return empty()
+    history=[]
+    for i,r in enumerate(rows):
+        value=None
+        if kind=="yoy":
+            if i>=12 and rows[i-12]["value"]:
+                value=(r["value"]/rows[i-12]["value"]-1)*100
+        elif kind=="nfp":
+            if i>=1: value=r["value"]-rows[i-1]["value"]
+        else: value=r["value"]
+        if value is not None:
+            history.append({"date":r["date"],"value":round(value,4)})
+    latest=history[-1] if history else None
+    prior=history[-2] if len(history)>1 else None
     return {
-        "value": round(value, 4) if value is not None else None,
-        "date": latest["date"],
-        "change": round(delta, 4) if delta is not None else None,
-        "history": history[-24:],
+      "value":latest["value"] if latest else None,
+      "date":latest["date"] if latest else rows[-1]["date"],
+      "change":round(latest["value"]-prior["value"],4) if latest and prior else None,
+      "history":history[-24:]
     }
 
-def dxy_data():
-    url = "https://query1.finance.yahoo.com/v8/finance/chart/DX-Y.NYB?range=1y&interval=1d"
-    try:
-        payload = json.loads(get(url).decode("utf-8"))
-        result = payload["chart"]["result"][0]
-        quote = result["indicators"]["quote"][0]
-        points = []
-        for timestamp, close in zip(result.get("timestamp", []), quote.get("close", [])):
-            if close is not None:
-                points.append({
-                    "date": datetime.datetime.fromtimestamp(timestamp, UTC).date().isoformat(),
-                    "value": float(close),
-                })
-        if not points:
-            raise RuntimeError("Yahoo Finance returned no DXY observations")
-        latest = points[-1]
-        previous = points[-2] if len(points) > 1 else None
-        return {
-            "value": round(latest["value"], 4),
-            "date": latest["date"],
-            "change": round(latest["value"] - previous["value"], 4) if previous else None,
-            "history": [{"date": p["date"], "value": round(p["value"], 4)} for p in points[-24:]],
-            "provider": "Yahoo Finance chart API",
-            "delayed": True,
-        }
-    except Exception as error:
-        return {
-            "value": None, "date": None, "change": None, "history": [],
-            "error": str(error)[:180], "provider": "Yahoo Finance chart API",
-        }
+def bls_series():
+    start=max(2018,NOW.year-8)
+    payload=json.dumps({"seriesid":["CUSR0000SA0L1E","CES0000000001"],"startyear":str(start),"endyear":str(NOW.year)}).encode()
+    raw=request("https://api.bls.gov/publicAPI/v1/timeseries/data/",payload,{"Content-Type":"application/json"})
+    doc=json.loads(raw)
+    if doc.get("status")!="REQUEST_SUCCEEDED":
+        raise RuntimeError("BLS API: "+str(doc.get("message") or doc.get("status")))
+    out={}
+    for s in doc.get("Results",{}).get("series",[]):
+        rows=[]
+        for p in s.get("data",[]):
+            period=p.get("period","")
+            if not period.startswith("M") or period=="M13": continue
+            try:
+                date=f'{p["year"]}-{int(period[1:]):02d}-01'
+                rows.append({"date":date,"value":float(p["value"])})
+            except (ValueError,KeyError): pass
+        out[s.get("seriesID")]=sorted(rows,key=lambda x:x["date"])
+    return out
+
+def treasury_series():
+    rows=[]
+    years=range(NOW.year-1,NOW.year+1)
+    for year in years:
+        url=("https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml"
+             f"?data=daily_treasury_yield_curve&field_tdr_date_value={year}")
+        root=ET.fromstring(request(url,timeout=30))
+        for props in root.iter():
+            if not props.tag.endswith("properties"): continue
+            fields={}
+            for child in list(props):
+                name=child.tag.split("}")[-1]
+                fields[name]=child.text
+            date=fields.get("NEW_DATE") or fields.get("NEW_DATE1")
+            y2=fields.get("BC_2YEAR")
+            y10=fields.get("BC_10YEAR")
+            if not date: continue
+            date=date[:10]
+            try:
+                row={"date":date,"y2":float(y2),"y10":float(y10)}
+                rows.append(row)
+            except (TypeError,ValueError): continue
+    unique={r["date"]:r for r in rows}
+    return [unique[k] for k in sorted(unique)]
+
+def stooq_dxy():
+    # Stooq's daily continuous DXY futures series; if unavailable, leave DXY explicitly N/A.
+    url="https://stooq.com/q/d/l/?s=dx.f&i=d"
+    raw=request(url,timeout=20).decode("utf-8-sig")
+    rows=[]
+    for row in csv.DictReader(io.StringIO(raw)):
+        try:
+            rows.append({"date":row["Date"],"value":float(row["Close"])})
+        except (ValueError,KeyError): continue
+    return sorted(rows,key=lambda x:x["date"])
 
 def main():
-    indicators = {}
-    errors = {}
-    for series, key in SERIES.items():
-        kind = "yoy" if series in ("CPILFESL", "PCEPILFE") else "nfp" if series == "PAYEMS" else "level"
-        try:
-            indicators[key] = make_metric(series, kind)
-        except Exception as error:
-            errors[key] = str(error)[:180]
-            indicators[key] = {"value": None, "date": None, "change": None, "history": []}
-
-    indicators["dxy"] = dxy_data()
-    if indicators["dxy"]["value"] is None:
-        errors["dxy"] = indicators["dxy"].get("error", "DXY unavailable")
-
-    # Calculate the spread from the latest date common to both Treasury series.
-    try:
-        two_year_rows = fred_series("DGS2")
-        ten_year_rows = fred_series("DGS10")
-        two_year = {row["date"]: row["value"] for row in two_year_rows}
-        ten_year = {row["date"]: row["value"] for row in ten_year_rows}
-        common_dates = sorted(set(two_year).intersection(ten_year))
-        if common_dates:
-            date = common_dates[-1]
-            indicators["yield_spread"] = {
-                "value": round(ten_year[date] - two_year[date], 4),
-                "date": date,
-            }
-        else:
-            indicators["yield_spread"] = None
-            errors["yield_spread"] = "No common Treasury observation date"
-    except Exception as error:
-        indicators["yield_spread"] = None
-        errors["yield_spread"] = str(error)[:180]
-
-    required = ("core_cpi", "core_pce", "nfp", "treasury_2y", "treasury_10y", "dxy", "yield_spread")
-    status = "OK" if all(indicators.get(key) and indicators[key].get("value") is not None for key in required) else "PARTIAL"
-    data = {
-        "schema_version": 1,
-        "generated_at": NOW.isoformat(),
-        "source_status": status,
-        "indicators": indicators,
-        "errors": errors,
-        "sources": {
-            "fred": "https://fred.stlouisfed.org/",
-            "dxy": "Yahoo Finance DX-Y.NYB chart endpoint; delayed/indicative ICE US Dollar Index quote",
-        },
+    indicators={k:empty() for k in ["core_cpi","core_pce","nfp","treasury_2y","treasury_10y","dxy","yield_spread"]}
+    errors={}
+    sources={
+      "core_cpi":"BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
+      "nfp":"BLS series CES0000000001 (total nonfarm payrolls, thousands)",
+      "treasury":"US Treasury daily par yield curve XML feed",
+      "dxy":"Stooq DX.F continuous DXY futures proxy; may be delayed",
+      "core_pce":"Not loaded: public BEA/FRED source unavailable from GitHub runner"
     }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(data, indent=2), encoding="utf-8")
-    print("Wrote", OUT, "status", status, "errors", json.dumps(errors))
+    try:
+        b=bls_series()
+        if b.get("CUSR0000SA0L1E"):
+            indicators["core_cpi"]=metric(b["CUSR0000SA0L1E"],"yoy")
+        else: errors["core_cpi"]="BLS returned no CPI observations"
+        if b.get("CES0000000001"):
+            indicators["nfp"]=metric(b["CES0000000001"],"nfp")
+        else: errors["nfp"]="BLS returned no payroll observations"
+    except Exception as e:
+        errors["bls"]=str(e)[:200]
+    try:
+        rates=treasury_series()
+        indicators["treasury_2y"]=metric([{"date":r["date"],"value":r["y2"]} for r in rates])
+        indicators["treasury_10y"]=metric([{"date":r["date"],"value":r["y10"]} for r in rates])
+        indicators["yield_spread"]=metric([{"date":r["date"],"value":r["y10"]-r["y2"]} for r in rates])
+    except Exception as e:
+        errors["treasury"]=str(e)[:200]
+    try:
+        indicators["dxy"]=metric(stooq_dxy())
+    except Exception as e:
+        errors["dxy"]=str(e)[:200]
+    errors["core_pce"]="Not yet connected to a reliable no-key source; left blank rather than substituting CPI."
+    required=["core_cpi","nfp","treasury_2y","treasury_10y","yield_spread"]
+    good=sum(indicators[k]["value"] is not None for k in required)
+    status="OK" if good==len(required) and indicators["dxy"]["value"] is not None else ("PARTIAL" if good else "ERROR")
+    data={"schema_version":2,"generated_at":NOW.isoformat(),"source_status":status,
+          "available_indicators":sum(v["value"] is not None for v in indicators.values()),
+          "indicators":indicators,"errors":errors,"sources":sources}
+    OUT.parent.mkdir(parents=True,exist_ok=True)
+    OUT.write_text(json.dumps(data,indent=2),encoding="utf-8")
+    print("US macro snapshot:",status,"available",data["available_indicators"],"/",len(indicators))
+    print("Source errors:",json.dumps(errors))
+    if good<3: raise SystemExit("Insufficient core US macro data; refusing to publish an empty snapshot.")
 
-if __name__ == "__main__":
-    main()
+if __name__=="__main__": main()
