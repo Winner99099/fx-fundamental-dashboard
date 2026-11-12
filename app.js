@@ -29,6 +29,12 @@ function currencyRows(targetId) {
   $(targetId).innerHTML = rows || `<tr><td colspan="7" class="empty">No currency data in snapshot.</td></tr>`;
 }
 function newsSummary(e) {
+  if (e.source === "Forex Factory") {
+    const actual=e.actual || "Pending";
+    const forecast=e.forecast || "Not supplied";
+    const previous=e.previous || "Not supplied";
+    return `Economic calendar · ${e.impact||"Unrated"} impact. Actual: ${actual} · Forecast: ${forecast} · Previous: ${previous}. Compare the actual result with the forecast; the previous figure is context, not the consensus.`;
+  }
   const supplied=String(e.summary||"").trim();
   if(supplied && supplied.toLowerCase()!=="no summary supplied.") return supplied;
   const title=String(e.title||"This release").toLowerCase();
@@ -41,10 +47,10 @@ function newsSummary(e) {
   return (e.source||"The central bank")+" published an update concerning "+topic+". The feed did not include a detailed explanation; open the original release for figures, context and policy implications.";
 }
 function renderNews(targetId, filter="ALL", limit=100) {
-  const items = (snapshot?.events || []).filter(e => filter==="ALL" || e.currency===filter).slice(0,limit);
+  const items = (snapshot?.events || []).filter(e => (filter==="ALL" || e.currency===filter) && (targetId!=="calendar-list" || e.source==="Forex Factory")).slice(0,limit);
   $(targetId).innerHTML = items.length ? items.map(e => {
     const href = /^https?:\/\//i.test(e.url || "") ? e.url : "#";
-    return `<article class="news-item"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time,"Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span><span class="impact-pill impact-${String(e.impact||"Low").toLowerCase()}">${safeText(e.impact,"Low")} impact</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a><div class="news-bias">${safeText(e.bias,"No clear policy bias")} · ${safeText(e.direction,"Context only")}</div><p>${safeText(newsSummary(e))}</p></article>`;
+    return `<article class="news-item"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time ? fmtDate(e.time) : "Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span><span class="impact-pill impact-${String(e.impact||"Low").toLowerCase()}">${safeText(e.impact,"Low")} impact</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a><div class="news-bias">${safeText(e.bias,"No clear policy bias")} · ${safeText(e.direction,"Context only")}</div><p>${safeText(newsSummary(e))}</p></article>`;
   }).join("") : `<div class="empty">No matching official releases in the current snapshot.</div>`;
 }
 function renderPairs() {
@@ -72,7 +78,7 @@ async function loadSnapshot() {
     if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
     snapshot=data;
     currencyRows("currency-rows"); currencyRows("currency-rows-full");
-    renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value);
+    renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderSources();
     $("metric-news").textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
