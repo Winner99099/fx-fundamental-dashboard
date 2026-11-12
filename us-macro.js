@@ -26,7 +26,7 @@ async function load() {
     renderMetric("pce",d.indicators.core_pce,{suffix:"%",changeSuffix:" pp vs prior"});
     renderMetric("nfp",d.indicators.nfp,{decimals:0,suffix:"K",changeSuffix:"K jobs vs prior month"});
     renderMetric("ust2",d.indicators.treasury_2y,{suffix:"%",changeSuffix:" pp vs prior day"});
-    renderMetric("ust10",d.indicators.treasury_10y,{suffix:"%",changeSuffix:" pp vs prior day"});
+    renderMetric("ust10",d.indicators.treasury_10y_real,{suffix:"%",changeSuffix:" pp vs prior day"});
     renderMetric("dxy",d.indicators.dxy,{decimals:2,suffix:"",changeSuffix:" pts vs prior close"});
     const spread=d.indicators.yield_spread;
     $("spread").textContent=spread?.value==null?"N/A":(Number(spread.value)>0?"+":"")+Number(spread.value).toFixed(2)+" pp";
