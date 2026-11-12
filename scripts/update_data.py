@@ -517,7 +517,7 @@ if DATA_PATH.exists():
 events_by_id = {}
 for event in previous_events:
     published = parse_date(event.get("published_at") or event.get("time"))
-    if published and cutoff <= published <= now + datetime.timedelta(days=1):
+    if published and cutoff <= published <= now + datetime.timedelta(days=(8 if event.get("source") == "Forex Factory" else 1)):
         event["published_at"] = published.isoformat()
         event["time"] = published.isoformat()
         event.setdefault("event_id", event_key(event.get("currency", ""), event.get("url", ""), event.get("title", ""), published.isoformat()))
