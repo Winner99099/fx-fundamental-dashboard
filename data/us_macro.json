@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "generated_at": "2026-11-12T02:47:56.042610+00:00",
-  "source_status": "PARTIAL",
+  "source_status": "OK",
   "available_indicators": 5,
   "indicators": {
     "core_cpi": {
@@ -114,7 +114,7 @@
       "history": [
         {
           "date": "2026-08-31",
-          "value": 3.0
+          "value": 3
         },
         {
           "date": "2026-09-30",
@@ -123,105 +123,105 @@
       ]
     },
     "nfp": {
-      "value": 165.0,
+      "value": 165,
       "date": "2026-10-01",
-      "change": 105.0,
+      "change": 105,
       "history": [
         {
           "date": "2024-11-01",
-          "value": 134.0
+          "value": 134
         },
         {
           "date": "2024-12-01",
-          "value": 237.0
+          "value": 237
         },
         {
           "date": "2025-01-01",
-          "value": -48.0
+          "value": -48
         },
         {
           "date": "2025-02-01",
-          "value": 42.0
+          "value": 42
         },
         {
           "date": "2025-03-01",
-          "value": 67.0
+          "value": 67
         },
         {
           "date": "2025-04-01",
-          "value": 108.0
+          "value": 108
         },
         {
           "date": "2025-05-01",
-          "value": 13.0
+          "value": 13
         },
         {
           "date": "2025-06-01",
-          "value": -20.0
+          "value": -20
         },
         {
           "date": "2025-07-01",
-          "value": 64.0
+          "value": 64
         },
         {
           "date": "2025-08-01",
-          "value": -70.0
+          "value": -70
         },
         {
           "date": "2025-09-01",
-          "value": 76.0
+          "value": 76
         },
         {
           "date": "2025-10-01",
-          "value": -140.0
+          "value": -140
         },
         {
           "date": "2025-11-01",
-          "value": 41.0
+          "value": 41
         },
         {
           "date": "2025-12-01",
-          "value": -17.0
+          "value": -17
         },
         {
           "date": "2026-01-01",
-          "value": 160.0
+          "value": 160
         },
         {
           "date": "2026-02-01",
-          "value": -156.0
+          "value": -156
         },
         {
           "date": "2026-03-01",
-          "value": 214.0
+          "value": 214
         },
         {
           "date": "2026-04-01",
-          "value": 148.0
+          "value": 148
         },
         {
           "date": "2026-05-01",
-          "value": 63.0
+          "value": 63
         },
         {
           "date": "2026-06-01",
-          "value": 31.0
+          "value": 31
         },
         {
           "date": "2026-07-01",
-          "value": -10.0
+          "value": -10
         },
         {
           "date": "2026-08-01",
-          "value": 186.0
+          "value": 186
         },
         {
           "date": "2026-09-01",
-          "value": 60.0
+          "value": 60
         },
         {
           "date": "2026-10-01",
-          "value": 165.0
+          "value": 165
         }
       ]
     },
@@ -240,100 +240,8 @@
     "treasury_10y_real": {
       "value": 2.78,
       "date": "2026-11-10",
-      "change": 0.12,
+      "change": null,
       "history": [
-        {
-          "date": "2026-10-07",
-          "value": 2.92
-        },
-        {
-          "date": "2026-10-08",
-          "value": 2.87
-        },
-        {
-          "date": "2026-10-09",
-          "value": 2.91
-        },
-        {
-          "date": "2026-10-13",
-          "value": 2.88
-        },
-        {
-          "date": "2026-10-14",
-          "value": 2.84
-        },
-        {
-          "date": "2026-10-15",
-          "value": 2.78
-        },
-        {
-          "date": "2026-10-16",
-          "value": 2.74
-        },
-        {
-          "date": "2026-10-19",
-          "value": 2.8
-        },
-        {
-          "date": "2026-10-20",
-          "value": 2.77
-        },
-        {
-          "date": "2026-10-21",
-          "value": 2.76
-        },
-        {
-          "date": "2026-10-22",
-          "value": 2.64
-        },
-        {
-          "date": "2026-10-23",
-          "value": 2.66
-        },
-        {
-          "date": "2026-10-26",
-          "value": 2.66
-        },
-        {
-          "date": "2026-10-27",
-          "value": 2.64
-        },
-        {
-          "date": "2026-10-28",
-          "value": 2.67
-        },
-        {
-          "date": "2026-10-29",
-          "value": 2.63
-        },
-        {
-          "date": "2026-10-30",
-          "value": 2.6
-        },
-        {
-          "date": "2026-11-02",
-          "value": 2.62
-        },
-        {
-          "date": "2026-11-03",
-          "value": 2.65
-        },
-        {
-          "date": "2026-11-04",
-          "value": 2.64
-        },
-        {
-          "date": "2026-11-05",
-          "value": 2.6
-        },
-        {
-          "date": "2026-11-06",
-          "value": 2.63
-        },
-        {
-          "date": "2026-11-09",
-          "value": 2.66
-        },
         {
           "date": "2026-11-10",
           "value": 2.78
@@ -456,6 +364,7 @@
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
     "nfp": "BLS series CES0000000001 (total nonfarm payrolls, thousands)",
     "treasury": "US Treasury daily par nominal and real yield curve XML feeds; 10-year real yield is the TIPS par real yield",
-    "dxy": "Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote"
+    "dxy": "Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote",
+    "treasury_10y_real": "US Treasury Daily Par Real Yield Curve Rates (10-year TIPS real constant-maturity yield)"
   }
 }
