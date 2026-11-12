@@ -16,12 +16,15 @@ import hashlib
 import math
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from html import unescape
 import statistics
 
 UTC = datetime.timezone.utc
 now = datetime.datetime.now(UTC)
 WINDOW_DAYS = 90
+FF_CALENDAR_URL = "https://nfs.faireconomy.media/ff_calendar_thisweek.xml"
+FF_CALENDAR_TZ = ZoneInfo("America/New_York")  # Forex Factory XML export time basis
 cutoff = now - datetime.timedelta(days=WINDOW_DAYS)
 DATA_PATH = Path("data/latest.json")
 CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"]
@@ -477,6 +480,32 @@ def build_currency(code, country, country_name):
     }
 
 
+def parse_ff_datetime(date_value, time_value):
+    """Forex Factory weekly XML dates/times are supplied in its calendar export timezone."""
+    date_value = clean_text(date_value, 40)
+    time_value = clean_text(time_value, 40).replace(" ", "").lower()
+    parsed_date = None
+    for fmt in ("%m-%d-%Y", "%Y-%m-%d", "%b %d %Y"):
+        try:
+            parsed_date = datetime.datetime.strptime(date_value, fmt).date()
+            break
+        except ValueError:
+            pass
+    if parsed_date is None:
+        return None, None
+    if not time_value or time_value in ("tentative", " allday", "allday", "dayx", "tbd"):
+        local_dt = datetime.datetime.combine(parsed_date, datetime.time(0, 0), FF_CALENDAR_TZ)
+        return local_dt.astimezone(UTC), "Time not specified"
+    for fmt in ("%I:%M%p", "%I%p"):
+        try:
+            clock = datetime.datetime.strptime(time_value, fmt).time()
+            local_dt = datetime.datetime.combine(parsed_date, clock, FF_CALENDAR_TZ)
+            return local_dt.astimezone(UTC), time_value
+        except ValueError:
+            pass
+    return None, None
+
+
 # Preserve prior 90-day releases when RSS feeds rotate or fail.
 previous_events = []
 if DATA_PATH.exists():
@@ -538,6 +567,61 @@ for name, url, currency in FEEDS:
         "name": name, "url": url, "status": status, "checked_at": now.isoformat(),
         "dated_releases_in_feed_90d": feed_count, "new_releases_added": added_count,
     })
+
+# Import scheduled macroeconomic releases from Forex Factory's weekly XML export.
+ff_status, ff_count, ff_added = "unavailable", 0, 0
+try:
+    ff_root = ET.fromstring(fetch(FF_CALENDAR_URL))
+    ff_status = "ok"
+    for item in ff_root.findall(".//event"):
+        def ff_get(tag):
+            element = item.find(tag)
+            return "".join(element.itertext()).strip() if element is not None else ""
+        currency = clean_text(ff_get("country"), 8).upper()
+        if currency not in CURRENCIES:
+            continue
+        title = clean_text(ff_get("title"), 220)
+        scheduled, source_time = parse_ff_datetime(ff_get("date"), ff_get("time"))
+        if not title or scheduled is None:
+            continue
+        if not (cutoff <= scheduled <= now + datetime.timedelta(days=8)):
+            continue
+        impact = clean_text(ff_get("impact"), 20).title()
+        if impact not in ("High", "Medium", "Low"):
+            continue
+        url = clean_text(ff_get("url"), 500) or "https://www.forexfactory.com/calendar"
+        actual = clean_text(ff_get("actual"), 60)
+        forecast = clean_text(ff_get("forecast"), 60)
+        previous = clean_text(ff_get("previous"), 60)
+        scheduled_iso = scheduled.isoformat()
+        eid = event_key(currency, url, title, scheduled_iso)
+        summary_parts = [f"{impact}-impact scheduled economic release."]
+        summary_parts.append("Actual: " + (actual if actual else "pending"))
+        summary_parts.append("Forecast: " + (forecast if forecast else "not supplied"))
+        summary_parts.append("Previous: " + (previous if previous else "not supplied"))
+        event = {
+            "event_id": eid, "currency": currency, "title": title,
+            "summary": " ".join(summary_parts), "url": url,
+            "time": scheduled_iso, "published_at": scheduled_iso,
+            "source": "Forex Factory", "impact": impact,
+            "actual": actual or None, "forecast": forecast or None,
+            "previous": previous or None, "calendar_time_label": source_time,
+            "event_type": "economic_calendar",
+        }
+        events_by_id[eid] = event
+        ff_count += 1
+        ff_added += 1
+except Exception as error:
+    ff_status = "error: " + str(error)[:160]
+news_sources.append({
+    "name": "Forex Factory Economic Calendar",
+    "url": FF_CALENDAR_URL,
+    "status": ff_status,
+    "checked_at": now.isoformat(),
+    "events_in_rolling_window": ff_count,
+    "new_or_updated_events": ff_added,
+    "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT",
+})
 
 macro_sources = []
 currencies = []
@@ -621,11 +705,21 @@ currencies = apply_v4_scores(currencies)
 events = list(events_by_id.values())
 for event in events:
     event["summary"] = make_news_summary(event.get("title", ""), event.get("summary", ""), event.get("source", "the central bank"), event.get("currency", ""))
-    impact, bias, direction = classify_news(event.get("title", ""), event.get("summary", ""))
-    event["impact"] = impact
-    event["bias"] = bias
-    event["direction"] = direction
-events.sort(key=lambda event: event.get("published_at", ""), reverse=True)
+    if event.get("source") == "Forex Factory":
+        event["bias"] = "Scheduled data release"
+        event["direction"] = "Compare actual vs forecast"
+        event["impact"] = event.get("impact") or "Low"
+    else:
+        impact, bias, direction = classify_news(event.get("title", ""), event.get("summary", ""))
+        event["impact"] = impact
+        event["bias"] = bias
+        event["direction"] = direction
+def event_sort_key(event):
+    stamp = parse_date(event.get("published_at") or event.get("time")) or datetime.datetime.min.replace(tzinfo=UTC)
+    if event.get("source") == "Forex Factory":
+        return (0 if stamp >= now else 2, stamp.timestamp() if stamp >= now else -stamp.timestamp())
+    return (1, -stamp.timestamp())
+events.sort(key=event_sort_key)
 
 output = {
     "schema_version": 3,
@@ -651,11 +745,11 @@ output = {
         "V4 scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths, economic surprises and market-price confirmation are not yet integrated.",
         "Economic-surprise data, expected policy paths, 2-year yield differentials and market-price confirmation are not yet included in the numerical score.",
         "News impact is keyword-based editorial triage; policy bias is labelled only when explicit hawkish/dovish wording appears. It is not an AI assessment or a trade signal.",
-        "Events are dated official central-bank RSS/Atom releases retained for a rolling 90-day window; RSS archive depth varies.",
+        "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
     ],
 }
 DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
 DATA_PATH.write_text(json.dumps(output, indent=2), encoding="utf-8")
-print("Wrote V3.5 higher-frequency macro snapshot for", len(currencies), "currencies and", len(events), "news events.")
+print("Wrote FX macro snapshot for", len(currencies), "currencies and", len(events), "news events; Forex Factory status:", ff_status, "events:", ff_count)
 print("Macro series available:", sum(1 for c in currencies for k in INDICATORS if c["metrics"][k]["value"] is not None), "of", len(currencies) * len(INDICATORS))
