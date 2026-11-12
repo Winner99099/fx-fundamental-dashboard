@@ -115,6 +115,23 @@ NEWS_MEDIUM = re.compile(r"\b(outlook|forecast|economic assessment|financial sta
 NEWS_HAWKISH = re.compile(r"\b(hawkish|tightening|raise[sd]? (?:the )?(?:policy )?rate|rate hike|increase[sd]? (?:the )?(?:policy )?rate|higher for longer|restrictive policy)\b", re.I)
 NEWS_DOVISH = re.compile(r"\b(dovish|eased|easing|cut[s]? (?:the )?(?:policy )?rate|rate cut|lowered (?:the )?(?:policy )?rate|accommodative policy|monetary easing)\b", re.I)
 
+def make_news_summary(title, description="", source="the central bank", currency=""):
+    """Use the feed description; otherwise provide a cautious title-based digest."""
+    title = clean_text(title, 220)
+    description = clean_text(description, 500)
+    if description and description.casefold().strip(". ") != title.casefold().strip(". "):
+        return description[:360]
+    text = title.lower()
+    if re.search(r"rate decision|policy rate|interest rate|monetary policy", text): topic = "monetary policy and interest rates"
+    elif re.search(r"inflation|consumer price|cpi|price index", text): topic = "inflation and price developments"
+    elif re.search(r"gdp|gross domestic product|growth", text): topic = "economic growth"
+    elif re.search(r"employment|unemployment|labour|labor|wage|payroll", text): topic = "employment and wages"
+    elif re.search(r"financial stability|financial conditions|credit", text): topic = "financial conditions and stability"
+    elif re.search(r"outlook|forecast|projection", text): topic = "the economic outlook"
+    else: topic = "economic and central-bank developments"
+    who = source or "The central bank"
+    return f"{who} published an update concerning {topic}. The feed did not include a detailed explanation; open the original release for figures, context and policy implications."
+
 def classify_news(title, summary=""):
     text = (title or "") + " " + (summary or "")
     impact = "High" if NEWS_HIGH.search(text) else "Medium" if NEWS_MEDIUM.search(text) else "Low"
@@ -511,7 +528,7 @@ for name, url, currency in FEEDS:
             if eid not in events_by_id:
                 events_by_id[eid] = {
                     "event_id": eid, "currency": currency, "title": clean_text(title, 220),
-                    "summary": clean_text(description, 500), "url": link or url,
+                    "summary": make_news_summary(title, description, name, currency), "url": link or url,
                     "time": published_iso, "published_at": published_iso, "source": name,
                 }
                 added_count += 1
@@ -603,6 +620,7 @@ currencies = apply_v4_scores(currencies)
 
 events = list(events_by_id.values())
 for event in events:
+    event["summary"] = make_news_summary(event.get("title", ""), event.get("summary", ""), event.get("source", "the central bank"), event.get("currency", ""))
     impact, bias, direction = classify_news(event.get("title", ""), event.get("summary", ""))
     event["impact"] = impact
     event["bias"] = bias
