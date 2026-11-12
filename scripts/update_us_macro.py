@@ -76,10 +76,17 @@ def treasury_series():
             fields={child.tag.split("}")[-1]:child.text for child in list(props)}
             date=fields.get("NEW_DATE") or fields.get("NEW_DATE1")
             if not date: continue
-            try: rows.append({"date":date[:10],"y2":float(fields["BC_2YEAR"]),"y10":float(fields["BC_10YEAR"])})
-            except (TypeError,ValueError,KeyError): continue
+            try:
+                y2=float(fields.get("BC_2YEAR") or "")
+                y10=float(fields.get("BC_10YEAR") or "")
+                rows.append({"date":date[:10],"y2":y2,"y10":y10})
+            except (TypeError,ValueError,KeyError):
+                continue
     unique={r["date"]:r for r in rows}
-    return [unique[k] for k in sorted(unique)]
+    result=[unique[k] for k in sorted(unique)]
+    if not result:
+        raise RuntimeError("Treasury nominal-yield feed returned no valid BC_2YEAR / BC_10YEAR observations")
+    return result
 
 def treasury_real_10y_series():
     """Official US Treasury daily 10-year par real yield (TIPS) curve."""
