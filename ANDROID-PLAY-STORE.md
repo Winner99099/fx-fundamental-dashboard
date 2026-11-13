@@ -59,10 +59,45 @@ Google distinguishes Personal accounts (for personal use, hobbyists and individu
 4. If Google classifies the service as a financial service, or the owner intends to operate MacroPulseFX as a business, establish a genuine eligible business entity first and use an Organization account. Do not treat a sole proprietorship or a private limited company as interchangeable for Google verification; confirm that the exact entity is accepted and can obtain the required D-U-N-S record.
 5. Complete the Financial features declaration accurately. Do not simply select "no financial features" if Google considers the app's analytical or advice functionality a financial feature.
 
-Singapore ACRA currently lists S$15 for a company name application and S$300 to register a local company (S$315 government filing fees in total), plus ongoing corporate compliance obligations. These fees exclude corporate secretary, registered office, accounting/tax services and any corporate-service-provider charges. Incorporation is a business decision, not a Google Play technical prerequisite for every app.
+Singapore ACRA's published fees are S$15 to reserve a name plus S$100 for one year of sole-proprietorship registration, or S$15 plus S$300 for a company. These are government filing fees only and exclude other operating/compliance costs. See the latest ACRA fee schedule before registering.
 
 ## Project hosting correction
 This is a GitHub Pages project site hosted under `/fx-fundamental-dashboard/`, not the domain root. Manifest scope/start URL, icon URL and service-worker registration/cache paths must therefore be relative to the project subpath. The PWA paths were corrected on this branch to avoid registering `/sw.js` at the wrong origin root.
 
 ## App scope / disclosure
 The dashboard displays general relative macro comparisons. Pair score differences are descriptive comparisons, not personalised trade recommendations. The app does not connect to a broker, execute trades, hold assets or manage a user's portfolio. Reassess this wording if future features add recommendations, paid signals, account aggregation, execution or portfolio management.
+
+
+## Advertising and sponsorship model (13 November 2026)
+The publisher's chosen model is a free application supported by advertising and direct sponsorship. Monetisation is planned but is **not active in the current build**.
+
+### Recommended first release monetisation
+1. Start with clearly labelled, limited display placements on the existing website. The Android Trusted Web Activity (TWA) presents the same hosted web content. Google documents Chrome Custom Tabs and Trusted Web Activities as supported viewing frames for AdSense / Ad Manager web advertising in apps.
+2. Apply to Google AdSense / Ad Manager only after the website meets the relevant publisher eligibility and content requirements. Do not insert placeholder publisher IDs or load ad scripts before approval.
+3. Add direct sponsor placements as separate, clearly labelled "Sponsored" cards or banners. Keep sponsorship separate from macro data, news ranking, currency scores, editorial analysis and pair calculations.
+4. Prefer contextual/non-personalised ads initially. Do not use inferred personal financial status, debt, portfolio or trading behaviour to target ads. Review the ad provider's sensitive-category restrictions.
+5. Do not add a native AdMob SDK to the TWA by default. Reassess native AdMob only if a future native Android feature genuinely requires in-app ad units.
+
+### Release declarations and privacy
+- In Play Console, declare **Contains ads = Yes** once ad delivery or sponsored advertising is present. Google's ads declaration covers third-party ad SDKs, display, native and banner ads.
+- Update the privacy policy before enabling ads. Disclose the ad provider, cookies/local identifiers, IP/device data, data sharing, personalisation choices, retention and contact route based on the actual configuration.
+- Complete Data safety answers against the actual ad SDK / web ad code. SDK data handling is the publisher's responsibility.
+- Implement and test required consent messaging and privacy-choice controls for applicable regions before serving personalised ads. Provide a way to revisit privacy choices where required.
+- Add `ads.txt` only when the chosen ad platform instructs the publisher to do so, using the exact publisher ID supplied by that platform.
+- No ad network, analytics SDK, consent SDK or sponsor tracking pixel is included in this development branch yet.
+
+### Ad placement principles
+- One restrained banner placement in overview and one optional in-feed sponsor card; avoid interstitials, pop-ups, deceptive controls or ads adjacent to trading/journal buttons.
+- Keep ads visually distinct from data and news. Label direct sponsor content "Sponsored" and identify the sponsor.
+- Do not imply sponsor content is independent research. No sponsor may influence macro scores, data sourcing, news summaries or pair calculations.
+- Monitor layout shift, page performance and mobile readability.
+
+### Commercial publisher structure
+Because the owner has chosen an advertising/sponsorship business model, the intended route is a genuine Singapore business registration followed by a Google Play Organization account, subject to Google's confirmation that the chosen entity type and its D-U-N-S record are accepted. A sole proprietorship may be a lower-cost ACRA registration option than a Pte. Ltd., but it is not automatically equivalent to a company and Google/Dun & Bradstreet acceptance must be checked before registration. Do not use an invented entity or personal account to disguise a business publisher.
+
+### Outstanding monetisation inputs
+- Confirm Singapore entity type and registered business name.
+- Obtain/verify the D-U-N-S record for the exact entity before creating Play Console.
+- Apply for the selected advertising platform using the verified publisher details.
+- Supply actual publisher/ad-unit identifiers only after approval.
+- Supply a dedicated privacy/support email address.
