@@ -79,7 +79,7 @@ The publisher's chosen model is a free application supported by advertising and 
 5. Do not add a native AdMob SDK to the TWA by default. Reassess native AdMob only if a future native Android feature genuinely requires in-app ad units.
 
 ### Release declarations and privacy
-- In Play Console, declare **Contains ads = Yes** once ad delivery or sponsored advertising is present. Google's ads declaration covers third-party ad SDKs, display, native and banner ads.
+- In Play Console, declare **Contains ads = Yes** when the app includes ad-network SDKs, display, native or banner ads (including house ads). Google notes that the "Contains ads" label does not itself cover every other form of commercial content, such as paid product placement; disclose direct sponsorships clearly and follow the applicable content and local disclosure rules.
 - Update the privacy policy before enabling ads. Disclose the ad provider, cookies/local identifiers, IP/device data, data sharing, personalisation choices, retention and contact route based on the actual configuration.
 - Complete Data safety answers against the actual ad SDK / web ad code. SDK data handling is the publisher's responsibility.
 - Implement and test required consent messaging and privacy-choice controls for applicable regions before serving personalised ads. Provide a way to revisit privacy choices where required.
