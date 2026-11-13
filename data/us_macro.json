@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T14:44:10.595451+00:00",
-  "source_status": "OK",
-  "available_indicators": 8,
+  "generated_at": "2026-11-13T15:30:01.972099+00:00",
+  "source_status": "PARTIAL",
+  "available_indicators": 7,
   "indicators": {
     "core_cpi": {
       "value": 2.8697,
@@ -108,19 +108,10 @@
       ]
     },
     "core_pce": {
-      "value": 3.1,
-      "date": "2026-09-30",
-      "change": 0.1,
-      "history": [
-        {
-          "date": "2026-08-31",
-          "value": 3.0
-        },
-        {
-          "date": "2026-09-30",
-          "value": 3.1
-        }
-      ]
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
     },
     "nfp": {
       "value": 165.0,
@@ -535,14 +526,10 @@
       ]
     },
     "dxy": {
-      "value": 102.9744,
-      "date": "2026-11-12",
-      "change": 0.3793,
+      "value": 103.2417,
+      "date": "2026-11-13",
+      "change": 0.2673,
       "history": [
-        {
-          "date": "2026-10-12",
-          "value": 102.3856
-        },
         {
           "date": "2026-10-13",
           "value": 102.2681
@@ -634,6 +621,10 @@
         {
           "date": "2026-11-12",
           "value": 102.9744
+        },
+        {
+          "date": "2026-11-13",
+          "value": 103.2417
         }
       ]
     },
@@ -741,7 +732,9 @@
       ]
     }
   },
-  "errors": {},
+  "errors": {
+    "core_pce": "The read operation timed out"
+  },
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
