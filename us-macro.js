@@ -16,12 +16,25 @@ function renderMetric(key, data, opts={}) {
   setChange(key+"-change",data?.change,opts.changeSuffix??" vs prior");
   renderChart(key,data?.history);
 }
+function renderFedPolicy(policy) {
+  if(!policy){ $("fed-range").textContent="N/A"; $("fed-meeting").textContent="N/A"; return; }
+  $("fed-range").textContent=policy.target_range||"N/A";
+  $("fed-asof").textContent="Last verified policy decision: "+(policy.as_of||"not available");
+  $("fed-meeting").textContent=policy.next_meeting_label||"Not published";
+  $("fed-decision").textContent="Expected decision: "+(policy.next_decision_date||"not available");
+  if(policy.next_meeting_start){
+    const target=new Date(policy.next_meeting_start+"T14:00:00Z");
+    const days=Math.ceil((target.getTime()-Date.now())/86400000);
+    $("fed-countdown").textContent=days>0?days+" days until the next scheduled FOMC meeting. Decision date is the final meeting day.":days===0?"The scheduled FOMC meeting begins today.":"Meeting date has passed; awaiting the next official schedule update.";
+  }
+}
 async function load() {
   $("refresh").disabled=true;$("state").textContent="Fetching latest snapshot…";
   try {
     const r=await fetch("./data/us_macro.json?ts="+Date.now(),{cache:"no-store"});
     if(!r.ok)throw new Error("HTTP "+r.status);
     const d=await r.json();
+    renderFedPolicy(d.fed_policy);
     renderMetric("cpi",d.indicators.core_cpi,{suffix:"%",changeSuffix:" pp vs prior"});
     renderMetric("pce",d.indicators.core_pce,{suffix:"%",changeSuffix:" pp vs prior"});
     renderMetric("nfp",d.indicators.nfp,{decimals:0,suffix:"K",changeSuffix:"K jobs vs prior month"});
