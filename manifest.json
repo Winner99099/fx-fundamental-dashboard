@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "MacroPulseFX – FX Fundamental Intelligence",
+  "short_name": "MacroPulseFX",
+  "description": "Eight-currency macroeconomic and FX research dashboard.",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a1020",
+  "theme_color": "#0a1020",
+  "categories": ["finance", "business", "news"],
+  "icons": [
+    { "src": "/icons/macropulse.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
