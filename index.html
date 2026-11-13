@@ -3,6 +3,11 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0a1020">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icons/macropulse.svg" type="image/svg+xml">
 <title>MacroPulse V4 | FX Intelligence</title>
 <meta name="description" content="Eight-currency macroeconomic and FX research dashboard.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,8 +68,8 @@
     </section>
 
     <section class="view" id="view-pairs">
-      <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>FX pair analysis</h2><p>Potential long/short candidates require valid, comparable currency scores.</p></div></div>
-      <div class="panel"><div class="panel-head"><b>28 directional combinations</b><span class="tag tag-neutral">WAITING FOR VALID SCORES</span></div><div id="pair-table" class="empty">Pair signals are intentionally disabled until the fundamental model has verified inputs. This prevents neutral placeholders being mistaken for trading opportunities.</div></div>
+      <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>FX pair analysis</h2><p>Relative currency-score comparisons only; these are not trade recommendations or personalised financial advice.</p></div></div>
+      <div class="panel"><div class="panel-head"><b>28 directional combinations</b><span class="tag tag-neutral">WAITING FOR VALID SCORES</span></div><div id="pair-table" class="empty">Pair comparisons are descriptive research only. They are not buy/sell signals, personalised recommendations or a substitute for independent judgement.</div></div>
     </section>
 
     <section class="view" id="view-news">
@@ -90,8 +95,9 @@
       <div class="panel"><div class="panel-head"><b>Saved entries</b><button class="text-button" id="journal-export">Export CSV ↓</button></div><div id="journal-list" class="journal-list"></div></div>
     </section>
 
-    <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
+    <footer><span>MACROPULSE V4 · GENERAL MARKET RESEARCH · NOT PERSONAL FINANCIAL ADVICE · <a href="./privacy-policy.html" style="color:var(--cyan);text-decoration:none">Privacy policy</a></span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
 <script src="app.js?v=20261112-fffigures1" defer></script>
+<script>if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(err => console.warn("PWA offline support unavailable", err))); }</script>
 </body></html>
