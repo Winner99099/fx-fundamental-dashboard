@@ -34,3 +34,14 @@ The existing GitHub Pages dashboard remains the data and web application. The An
 
 ## Current status
 PWA foundation committed to the `android-playstore-pwa` development branch. It has not yet been merged into `main`, deployed to the public site, built into an AAB, or submitted to Google Play.
+
+
+## Account-type recommendation (13 November 2026)
+MacroPulseFX includes FX fundamental comparisons and may later rank directional currency pairs. Google Play's account requirements say developers providing financial products or services must register as an Organization. Google's Financial features declaration also includes "Financial advice" and requires every published app, including test-track apps, to complete the declaration.
+
+**Recommended route:** plan for an Organization developer account if the submitted feature set is classified by Google as financial advice / a financial service. This requires a genuine registered legal entity, consistent organization details, a linked Google Payments profile, organization website and a D-U-N-S number. Google says D-U-N-S registration through Dun & Bradstreet is free and may take up to 30 days.
+
+Do not create a Personal account simply to bypass the Organization requirement, and do not create an Organization profile using a company that the publisher is not authorized to represent. The app's final functionality and Google Play's classification must be confirmed before registration. If the publisher has no registered entity, pause Play Console registration until the account route is clarified with Google or the product scope is adjusted and re-reviewed.
+
+## Privacy policy draft
+A first privacy-policy page has been added at `privacy-policy.html` and linked from the dashboard footer. It describes the current local-only journal, public data requests, hosting/font providers, and the absence of analytics/ad SDKs in the current build. This is a draft: verify every statement against the final Android package and update the contact, Data safety form and policy if analytics, ads, crash reporting, accounts, cloud sync or other SDKs are added.
