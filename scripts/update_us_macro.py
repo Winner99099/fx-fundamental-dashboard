@@ -182,8 +182,23 @@ def main():
     required=["core_cpi","nfp","treasury_2y","treasury_10y","treasury_10y_real","yield_spread","core_pce","dxy"]
     good=sum(indicators[k]["value"] is not None for k in required)
     status="OK" if good==len(required) else ("PARTIAL" if good else "ERROR")
-    data={"schema_version":3,"generated_at":NOW.isoformat(),"source_status":status,
-          "available_indicators":good,"indicators":indicators,"errors":errors,"sources":sources}
+    # Fed target range and next scheduled decision. Market-implied probabilities
+    # are shown through the CME FedWatch embed; no probability is hard-coded.
+    fed_policy={
+      "target_lower":3.75,
+      "target_upper":4.00,
+      "target_range":"3.75–4.00%",
+      "as_of":"2026-10-29",
+      "next_meeting_start":"2026-12-08",
+      "next_decision_date":"2026-12-09",
+      "next_meeting_label":"8–9 December 2026",
+      "source_url":"https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+      "probability_source":"CME FedWatch · 30-Day Fed Funds futures",
+      "probability_url":"https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+    }
+    data={"schema_version":4,"generated_at":NOW.isoformat(),"source_status":status,
+          "available_indicators":good,"indicators":indicators,"fed_policy":fed_policy,
+          "errors":errors,"sources":sources}
     OUT.parent.mkdir(parents=True,exist_ok=True)
     OUT.write_text(json.dumps(data,indent=2),encoding="utf-8")
     print("US macro snapshot:",status,"available",good,"/",len(indicators))
