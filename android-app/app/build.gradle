@@ -1,11 +1,6 @@
 plugins {
     id 'com.android.application'
 }
-
- dependencies {
-    implementation 'androidx.core:core:1.16.0'
-}
-
 android {
     namespace 'com.winner99099.macropulsefx'
     compileSdk 36
@@ -32,4 +27,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+}
+
+dependencies {
+    implementation 'androidx.core:core:1.16.0'
 }
