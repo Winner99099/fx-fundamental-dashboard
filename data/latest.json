@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T20:52:12.723563+00:00",
+  "generated_at": "2026-11-13T21:35:34.009871+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v4-relative-macro-provisional-news-v2",
   "history_window_days": 90,
@@ -236,7 +236,7 @@
           "history": [
             {
               "period": "2026-Q3",
-              "value": 1.300603531
+              "value": 1.297297561
             },
             {
               "period": "2026-Q2",
@@ -1184,24 +1184,6 @@
   ],
   "events": [
     {
-      "event_id": "518ae9ca9c5fe79f8ac3e899",
-      "currency": "EUR",
-      "title": "German Buba President Nagel Speaks",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
-      "url": "https://www.forexfactory.com/calendar/851-ge-buba-president-nagel-speaks",
-      "time": "2026-11-13T21:00:00+00:00",
-      "published_at": "2026-11-13T21:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": null,
-      "previous": null,
-      "calendar_time_label": "4:00pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
-    {
       "event_id": "b828b36b2948d692850a2d50",
       "currency": "USD",
       "title": "FOMC Member Daly Speaks",
@@ -1254,6 +1236,19 @@
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
       "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "e78e8bff513d0cfa06073390",
+      "currency": "USD",
+      "title": "Agencies extend comment period for proposed third-party risk management guidance",
+      "summary": "Federal Reserve published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/bcreg20261113a.htm",
+      "time": "2026-11-13T21:15:00+00:00",
+      "published_at": "2026-11-13T21:15:00+00:00",
+      "source": "Federal Reserve",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
     },
     {
       "event_id": "b50bf5fdcf60843147a24ef9",
@@ -1334,11 +1329,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "b9d2779d708067424ffb6484",
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261110.xlsx",
+      "time": "2026-11-12T08:00:00+00:00",
+      "published_at": "2026-11-12T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "ae9b3b8801fd903568df3951",
       "currency": "JPY",
       "title": "Basic Figures on Fails (Oct.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/set/bffail/sjgb2610.pdf",
+      "time": "2026-11-12T07:30:00+00:00",
+      "published_at": "2026-11-12T07:30:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "b92e855412e31a1eaad53670",
+      "currency": "JPY",
+      "title": "Basic Figures on Fails (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/set/bffail/sjgb2610.pdf",
       "time": "2026-11-12T07:30:00+00:00",
       "published_at": "2026-11-12T07:30:00+00:00",
       "source": "Bank of Japan",
@@ -1360,11 +1381,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "35d7225bb2d534fca1ff3579",
+      "currency": "JPY",
+      "title": "Speech by Board Member ASADA in Nagasaki (Economic Activity, Prices, and Monetary Policy in Japan)",
+      "summary": "Bank of Japan published an update concerning monetary policy and interest rates. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/about/press/koen_2026/ko261112a.htm",
+      "time": "2026-11-12T01:30:00+00:00",
+      "published_at": "2026-11-12T01:30:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "2f1f5fd5339747a21e230a4f",
       "currency": "JPY",
       "title": "Bank of Japan Accounts (November 10)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261110.htm",
+      "time": "2026-11-12T01:00:00+00:00",
+      "published_at": "2026-11-12T01:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "92f6ce00a2e663ea6ba71d06",
+      "currency": "JPY",
+      "title": "Bank of Japan Accounts (November 10)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261110.htm",
       "time": "2026-11-12T01:00:00+00:00",
       "published_at": "2026-11-12T01:00:00+00:00",
       "source": "Bank of Japan",
@@ -1399,6 +1446,32 @@
       "direction": "Context only"
     },
     {
+      "event_id": "5f9ebd631ed8e357d9fec088",
+      "currency": "JPY",
+      "title": "Corporate Goods Price Index (Oct.)",
+      "summary": "Bank of Japan published an update concerning inflation and price developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/pi/cgpi_release/cgpi2610.pdf",
+      "time": "2026-11-11T23:50:00+00:00",
+      "published_at": "2026-11-11T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "205678b02bcda4246e87ff59",
+      "currency": "JPY",
+      "title": "Release of Latest \"Amounts Outstanding of Deposits by Depositor\" Data",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/outline/notice_2026/not261112a.htm",
+      "time": "2026-11-11T23:50:00+00:00",
+      "published_at": "2026-11-11T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "07d418752b02a2f14e04996c",
       "currency": "NZD",
       "title": "RBNZ Reverse Stress Test demonstrates resilience of insurers and improves risk management",
@@ -1417,6 +1490,19 @@
       "title": "Money Stock (Oct.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/money/ms/ms2610.pdf",
+      "time": "2026-11-10T23:50:00+00:00",
+      "published_at": "2026-11-10T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "fad86ee3ea7c76c204bf98b9",
+      "currency": "JPY",
+      "title": "Money Stock (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/money/ms/ms2610.pdf",
       "time": "2026-11-10T23:50:00+00:00",
       "published_at": "2026-11-10T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -1503,6 +1589,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "d72d521fe1fa84835a7c8513",
+      "currency": "JPY",
+      "title": "Principal Figures of Financial Institutions (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2610.pdf",
+      "time": "2026-11-09T23:50:00+00:00",
+      "published_at": "2026-11-09T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "5ba24daa5107c72789dcacc2",
       "currency": "USD",
       "title": "Federal Reserve Board announces approval of two applications by Mutual Federal Bancorp, MHC, and MFB Bancorp, Inc.",
@@ -1529,11 +1628,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "d3c76550105c3e75a7eb754c",
+      "currency": "JPY",
+      "title": "Amounts Outstanding in the Call Money Market (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/market/short/call/call.xlsx",
+      "time": "2026-11-09T06:00:00+00:00",
+      "published_at": "2026-11-09T06:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "c21f60b1035980b4d5563959",
       "currency": "JPY",
       "title": "Consumption Activity Index",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/research/research_data/cai/index.htm",
+      "time": "2026-11-09T05:00:00+00:00",
+      "published_at": "2026-11-09T05:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "c9507952b24ffeb208c93890",
+      "currency": "JPY",
+      "title": "Consumption Activity Index",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/research/research_data/cai/index.htm",
       "time": "2026-11-09T05:00:00+00:00",
       "published_at": "2026-11-09T05:00:00+00:00",
       "source": "Bank of Japan",
@@ -1573,6 +1698,45 @@
       "title": "Bank of Japan's Transactions with the Government (Oct.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
+      "time": "2026-11-08T23:50:00+00:00",
+      "published_at": "2026-11-08T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "5c4806b93cd166d555d52fac",
+      "currency": "JPY",
+      "title": "Market Operations by the Bank of Japan (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/fm/ope/m_release/2026/ope2610.xlsx",
+      "time": "2026-11-08T23:50:00+00:00",
+      "published_at": "2026-11-08T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "00d2271a996eac86e7f54b1a",
+      "currency": "JPY",
+      "title": "Monetary Base and the Bank of Japan's Transactions (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mbt/mbt2610.pdf",
+      "time": "2026-11-08T23:50:00+00:00",
+      "published_at": "2026-11-08T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "a6fbc452bcea8da9e18cec9a",
+      "currency": "JPY",
+      "title": "Bank of Japan's Transactions with the Government (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/tseifu/release/2026/seifu2610.pdf",
       "time": "2026-11-08T23:50:00+00:00",
       "published_at": "2026-11-08T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -1646,11 +1810,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "1c1f8662c812787c076b47f5",
+      "currency": "JPY",
+      "title": "(IMES Newsletter) 2026 BoC - Philadelphia Fed - BOJ Joint Workshop",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/about/release_2026/rel261106b.htm",
+      "time": "2026-11-06T07:00:00+00:00",
+      "published_at": "2026-11-06T07:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "3727d4a7e5fcaf37ed0ef042",
       "currency": "JPY",
       "title": "IMES Discussion Paper Series (2026)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/research/imes/dps/dps26.htm",
+      "time": "2026-11-06T02:00:00+00:00",
+      "published_at": "2026-11-06T02:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "c2dcd997cba6ec45383cd500",
+      "currency": "JPY",
+      "title": "IMES Discussion Paper Series (2026)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/research/imes/dps/dps26.htm",
       "time": "2026-11-06T02:00:00+00:00",
       "published_at": "2026-11-06T02:00:00+00:00",
       "source": "Bank of Japan",
@@ -1737,6 +1927,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "f15072250424830b16e215a9",
+      "currency": "JPY",
+      "title": "Holding the Twenty-fifth Round of the \"Bond Market Group\" Meetings",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/paym/bond/mbond_list/mbond261105.pdf",
+      "time": "2026-11-05T07:00:00+00:00",
+      "published_at": "2026-11-05T07:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "f9cc4c7d5e1344d140440cd3",
       "currency": "JPY",
       "title": "Minutes of the Monetary Policy Meeting on September 17 and 18, 2026",
@@ -1768,6 +1971,19 @@
       "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
       "summary": "Bank of Japan published an update concerning the economic outlook. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
+      "time": "2026-11-04T23:50:00+00:00",
+      "published_at": "2026-11-04T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "420a6e18659bf8b235d37d1c",
+      "currency": "JPY",
+      "title": "Sources of Changes in Current Account Balances (Projections for Nov.)",
+      "summary": "Bank of Japan published an update concerning the economic outlook. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/fm/juqp/juqp2611.xlsx",
       "time": "2026-11-04T23:50:00+00:00",
       "published_at": "2026-11-04T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -1815,11 +2031,50 @@
       "direction": "Context only"
     },
     {
+      "event_id": "9d351158f9a777a271cf9b9a",
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261030.xlsx",
+      "time": "2026-11-04T08:00:00+00:00",
+      "published_at": "2026-11-04T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "395ea72ed73ea86623652957",
+      "currency": "JPY",
+      "title": "Collateral Accepted by the Bank of Japan (End of Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/col/col2610.xlsx",
+      "time": "2026-11-04T08:00:00+00:00",
+      "published_at": "2026-11-04T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "6ff120ed741b8de30d37fc41",
       "currency": "JPY",
       "title": "Bank of Japan Accounts (October 31)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
+      "time": "2026-11-04T01:00:00+00:00",
+      "published_at": "2026-11-04T01:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "ab21816d418acce42a8960f0",
+      "currency": "JPY",
+      "title": "Bank of Japan Accounts (October 31)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261031.htm",
       "time": "2026-11-04T01:00:00+00:00",
       "published_at": "2026-11-04T01:00:00+00:00",
       "source": "Bank of Japan",
@@ -1846,6 +2101,19 @@
       "title": "Monetary Base (Oct.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
+      "time": "2026-11-03T23:50:00+00:00",
+      "published_at": "2026-11-03T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "289b7fb332ac79f52be5f49d",
+      "currency": "JPY",
+      "title": "Monetary Base (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mb/mb.htm",
       "time": "2026-11-03T23:50:00+00:00",
       "published_at": "2026-11-03T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -1906,11 +2174,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "8f8f1d4cc9ef949672a32522",
+      "currency": "JPY",
+      "title": "Outlook for Economic Activity and Prices (October 2026, full text)",
+      "summary": "Bank of Japan published an update concerning the economic outlook. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610b.pdf",
+      "time": "2026-11-02T05:00:00+00:00",
+      "published_at": "2026-11-02T05:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "185e03e82f0cce49da2dd851",
       "currency": "JPY",
       "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
+      "time": "2026-11-02T04:00:00+00:00",
+      "published_at": "2026-11-02T04:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "1411436a52d2a58213ff17d6",
+      "currency": "JPY",
+      "title": "Sources of Changes in Current Account Balances and Market Operations (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/fm/juqf/juqf10.xlsx",
       "time": "2026-11-02T04:00:00+00:00",
       "published_at": "2026-11-02T04:00:00+00:00",
       "source": "Bank of Japan",
@@ -1984,11 +2278,50 @@
       "direction": "Context only"
     },
     {
+      "event_id": "b3c86e41a6758d61f706c699",
+      "currency": "JPY",
+      "title": "Quarterly Schedule of Outright Purchases of Japanese Government Bonds (Competitive Auction Method) (October-December 2026) (Schedule Updates)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030c.pdf",
+      "time": "2026-10-30T08:00:00+00:00",
+      "published_at": "2026-10-30T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "dd04cf2cedb2fea68a67647b",
+      "currency": "JPY",
+      "title": "Timetable and Schedule of U.S. Dollar Funds-Supplying Operations (November 2026-March 2027)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030b.pdf",
+      "time": "2026-10-30T08:00:00+00:00",
+      "published_at": "2026-10-30T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "257918d0afac296379c8cecd",
       "currency": "JPY",
       "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
+      "time": "2026-10-30T05:00:00+00:00",
+      "published_at": "2026-10-30T05:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "251feaba5a87af20f66b0eb2",
+      "currency": "JPY",
+      "title": "Amendment to \"Basic Principles for Disposal of ETFs and J-REITs\"",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/mpr261030a.pdf",
       "time": "2026-10-30T05:00:00+00:00",
       "published_at": "2026-10-30T05:00:00+00:00",
       "source": "Bank of Japan",
@@ -2036,6 +2369,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "2fed5526145a2a96e907b401",
+      "currency": "JPY",
+      "title": "Outlook for Economic Activity and Prices (October 2026, The Bank's View)",
+      "summary": "Bank of Japan published an update concerning the economic outlook. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/outlook/gor2610a.pdf",
+      "time": "2026-10-30T04:00:00+00:00",
+      "published_at": "2026-10-30T04:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "01b5dbc5107b51ad04b6ad22",
       "currency": "JPY",
       "title": "(Reference) Outlook Report and Indicators Related to Underlying Inflation",
@@ -2075,11 +2421,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "ad60f6bd3ea69796c93767d9",
+      "currency": "JPY",
+      "title": "(Reference) Decisions regarding a Change in the Pace of Sales of ETFs (October 2026)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030c.pdf",
+      "time": "2026-10-30T03:02:00+00:00",
+      "published_at": "2026-10-30T03:02:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "7b14f7f77d30ef3ead7998fa",
       "currency": "JPY",
       "title": "Payment and Settlement Statistics (Sept.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/set/kess/release/2026/kess2609.pdf",
+      "time": "2026-10-30T02:00:00+00:00",
+      "published_at": "2026-10-30T02:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "ca241cecf980785441d3a9d2",
+      "currency": "JPY",
+      "title": "Payment and Settlement Statistics (Sept.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/set/kess/release/2026/kess2609.pdf",
       "time": "2026-10-30T02:00:00+00:00",
       "published_at": "2026-10-30T02:00:00+00:00",
       "source": "Bank of Japan",
@@ -2309,6 +2681,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "fa2364f5458e84cb8504a8e0",
+      "currency": "JPY",
+      "title": "Financial System Report (October 2026)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/research/brp/fsr/fsr261023.htm",
+      "time": "2026-10-23T06:00:00+00:00",
+      "published_at": "2026-10-23T06:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "c6da3a2b543b6232788eb6ee",
       "currency": "GBP",
       "title": "Regulators unveil plans to simplify Senior Manager and Certification Regime",
@@ -2348,6 +2733,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "69d6f3ea2da0117d875eb27c",
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261020.xlsx",
+      "time": "2026-10-22T08:00:00+00:00",
+      "published_at": "2026-10-22T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "7da7c22f451f0933652911e6",
       "currency": "JPY",
       "title": "Developments in Real Exports and Real Imports",
@@ -2361,11 +2759,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "477e2a8146ae5d81f4ef59ae",
+      "currency": "JPY",
+      "title": "Developments in Real Exports and Real Imports",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/research/research_data/reri/index.htm",
+      "time": "2026-10-22T07:00:00+00:00",
+      "published_at": "2026-10-22T07:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "f20550178c226bc3b22fae87",
       "currency": "JPY",
       "title": "Bank of Japan Accounts (October 20)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261020.htm",
+      "time": "2026-10-22T01:00:00+00:00",
+      "published_at": "2026-10-22T01:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "af7cfbbb05aad76cd47a5f4f",
+      "currency": "JPY",
+      "title": "Bank of Japan Accounts (October 20)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261020.htm",
       "time": "2026-10-22T01:00:00+00:00",
       "published_at": "2026-10-22T01:00:00+00:00",
       "source": "Bank of Japan",
@@ -2392,6 +2816,32 @@
       "title": "Statistics on Securities Financing Transactions in Japan",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/bis/repo/index.htm",
+      "time": "2026-10-21T23:50:00+00:00",
+      "published_at": "2026-10-21T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "068cde6d523faa16e22e2701",
+      "currency": "JPY",
+      "title": "Senior Loan Officer Opinion Survey (Oct.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/dl/loan/loos/release/loos2610.pdf",
+      "time": "2026-10-21T23:50:00+00:00",
+      "published_at": "2026-10-21T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "6b82a0652616c550537ce83f",
+      "currency": "JPY",
+      "title": "Statistics on Securities Financing Transactions in Japan",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/bis/repo/index.htm",
       "time": "2026-10-21T23:50:00+00:00",
       "published_at": "2026-10-21T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -2452,6 +2902,19 @@
       "direction": "Context only"
     },
     {
+      "event_id": "7463a4bb6e0b96ea5db95e9f",
+      "currency": "JPY",
+      "title": "BOJ Current Account Balances by Sector (Sept.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/cabs/cabs.xlsx",
+      "time": "2026-10-16T08:00:00+00:00",
+      "published_at": "2026-10-16T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "37ee1ff2da7b5a04e3c728a6",
       "currency": "GBP",
       "title": "David Roberts CV and questionnaire for the Treasury Select Committee",
@@ -2483,6 +2946,19 @@
       "title": "Summary of the \"Meeting on Market Operations\" (October 2026)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/paym/market/mkt261015a.pdf",
+      "time": "2026-10-15T01:00:00+00:00",
+      "published_at": "2026-10-15T01:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "cda3fcb193ca3a3d18abba2b",
+      "currency": "JPY",
+      "title": "Summary of the \"Meeting on Market Operations\" (October 2026)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/paym/market/mkt261015a.pdf",
       "time": "2026-10-15T01:00:00+00:00",
       "published_at": "2026-10-15T01:00:00+00:00",
       "source": "Bank of Japan",
@@ -2530,11 +3006,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "10a39254bc454f468a92206b",
+      "currency": "JPY",
+      "title": "The Fifteenth Tripartite Governors' Meeting among PBOC, BOJ, and BOK",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/intl_finance/cooperate/coop261014a.pdf",
+      "time": "2026-10-14T11:00:00+00:00",
+      "published_at": "2026-10-14T11:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "887c7ec684c9c1ae4f2fb81a",
       "currency": "JPY",
       "title": "Japanese Government Bonds Held by the Bank of Japan",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261009.xlsx",
+      "time": "2026-10-14T08:00:00+00:00",
+      "published_at": "2026-10-14T08:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "965d07c141290c601a1185a1",
+      "currency": "JPY",
+      "title": "Japanese Government Bonds Held by the Bank of Japan",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/mei/release/2026/mei261009.xlsx",
       "time": "2026-10-14T08:00:00+00:00",
       "published_at": "2026-10-14T08:00:00+00:00",
       "source": "Bank of Japan",
@@ -2556,11 +3058,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "928fadc1e30fb16f67e8eba3",
+      "currency": "JPY",
+      "title": "Bank of Japan Accounts (October 10)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/boj/other/acmai/release/2026/ac261010.htm",
+      "time": "2026-10-14T01:00:00+00:00",
+      "published_at": "2026-10-14T01:00:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "48bba0dcad17f88218f9ae27",
       "currency": "JPY",
       "title": "Money Stock (Sept.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/money/ms/ms2609.pdf",
+      "time": "2026-10-13T23:50:00+00:00",
+      "published_at": "2026-10-13T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "e6376242199ba791fc50fbe6",
+      "currency": "JPY",
+      "title": "Money Stock (Sept.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/money/ms/ms2609.pdf",
       "time": "2026-10-13T23:50:00+00:00",
       "published_at": "2026-10-13T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -2608,11 +3136,37 @@
       "direction": "Context only"
     },
     {
+      "event_id": "17ebee906a98aa6f9bee2eb5",
+      "currency": "JPY",
+      "title": "Basic Figures on Fails (Sept.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/set/bffail/sjgb2609.pdf",
+      "time": "2026-10-13T07:30:00+00:00",
+      "published_at": "2026-10-13T07:30:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
       "event_id": "9530e7c19a41af6c65ab4f0e",
       "currency": "JPY",
       "title": "Results of the 107th Opinion Survey on the General Public's Views and Behavior",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/research/o_survey/ishiki2610.htm",
+      "time": "2026-10-13T04:30:00+00:00",
+      "published_at": "2026-10-13T04:30:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "d0999064df3bbf1cdeb265f9",
+      "currency": "JPY",
+      "title": "Results of the 107th Opinion Survey on the General Public's Views and Behavior",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/research/o_survey/ishiki2610.htm",
       "time": "2026-10-13T04:30:00+00:00",
       "published_at": "2026-10-13T04:30:00+00:00",
       "source": "Bank of Japan",
@@ -2652,6 +3206,19 @@
       "title": "Principal Figures of Financial Institutions (Sept.)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2609.pdf",
+      "time": "2026-10-12T23:50:00+00:00",
+      "published_at": "2026-10-12T23:50:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only"
+    },
+    {
+      "event_id": "98747ad9b385dbde351a0877",
+      "currency": "JPY",
+      "title": "Principal Figures of Financial Institutions (Sept.)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/statistics/dl/depo/kashi/kasi2609.pdf",
       "time": "2026-10-12T23:50:00+00:00",
       "published_at": "2026-10-12T23:50:00+00:00",
       "source": "Bank of Japan",
@@ -3399,6 +3966,24 @@
       "impact": "Low",
       "bias": "No clear policy bias",
       "direction": "Context only"
+    },
+    {
+      "event_id": "518ae9ca9c5fe79f8ac3e899",
+      "currency": "EUR",
+      "title": "German Buba President Nagel Speaks",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
+      "url": "https://www.forexfactory.com/calendar/851-ge-buba-president-nagel-speaks",
+      "time": "2026-11-13T21:00:00+00:00",
+      "published_at": "2026-11-13T21:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "calendar_time_label": "4:00pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
     },
     {
       "event_id": "14a8064349e0b43f74cf4ca0",
@@ -4846,15 +5431,15 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 20,
-      "new_releases_added": 0
+      "new_releases_added": 1
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -4862,7 +5447,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -4870,15 +5455,15 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 51,
-      "new_releases_added": 0
+      "new_releases_added": 44
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4886,7 +5471,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4894,7 +5479,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4902,7 +5487,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -4910,7 +5495,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "events_in_rolling_window": 94,
       "new_or_updated_events": 94,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -4919,7 +5504,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4927,7 +5512,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4935,7 +5520,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4943,7 +5528,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4951,7 +5536,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4959,7 +5544,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4967,7 +5552,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4975,7 +5560,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-13T20:52:12.723563+00:00",
+      "checked_at": "2026-11-13T21:35:34.009871+00:00",
       "data_year": null,
       "indicators_available": 3
     }
