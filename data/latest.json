@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-13T18:12:33.434642+00:00",
+  "generated_at": "2026-11-13T19:09:48.785268+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v4-relative-macro-provisional-news-v2",
   "history_window_days": 90,
@@ -379,6 +379,10 @@
           "year": null,
           "history": [
             {
+              "period": "2026-Q3",
+              "value": 1.942205489
+            },
+            {
               "period": "2026-Q2",
               "value": 1.372599483
             },
@@ -397,10 +401,6 @@
             {
               "period": "2025-Q2",
               "value": 1.142021345
-            },
-            {
-              "period": "2025-Q1",
-              "value": 1.762323934
             }
           ],
           "score": 0.39,
@@ -1183,78 +1183,6 @@
     }
   ],
   "events": [
-    {
-      "event_id": "ce431cc38ab3e57787380aa0",
-      "currency": "CAD",
-      "title": "Manufacturing Sales m/m",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.1% Previous: 1.5%",
-      "url": "https://www.forexfactory.com/calendar/363-ca-manufacturing-sales-mm",
-      "time": "2026-11-13T18:30:00+00:00",
-      "published_at": "2026-11-13T18:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "0.1%",
-      "previous": "1.5%",
-      "calendar_time_label": "1:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
-    {
-      "event_id": "283265c16a7511cbe0d84a74",
-      "currency": "CAD",
-      "title": "Wholesale Sales m/m",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.5% Previous: -1.6%",
-      "url": "https://www.forexfactory.com/calendar/362-ca-wholesale-sales-mm",
-      "time": "2026-11-13T18:30:00+00:00",
-      "published_at": "2026-11-13T18:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "0.5%",
-      "previous": "-1.6%",
-      "calendar_time_label": "1:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
-    {
-      "event_id": "9f1cc325e835e89e17f4c028",
-      "currency": "USD",
-      "title": "Core PPI m/m",
-      "summary": "High-impact scheduled economic release. Actual: pending Forecast: 0.3% Previous: 0.7%",
-      "url": "https://www.forexfactory.com/calendar/87-us-core-ppi-mm",
-      "time": "2026-11-13T18:30:00+00:00",
-      "published_at": "2026-11-13T18:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "High",
-      "actual": null,
-      "forecast": "0.3%",
-      "previous": "0.7%",
-      "calendar_time_label": "1:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
-    {
-      "event_id": "078ac91ed62ba535ab5a8817",
-      "currency": "USD",
-      "title": "PPI m/m",
-      "summary": "High-impact scheduled economic release. Actual: pending Forecast: 0.4% Previous: 1.3%",
-      "url": "https://www.forexfactory.com/calendar/86-us-ppi-mm",
-      "time": "2026-11-13T18:30:00+00:00",
-      "published_at": "2026-11-13T18:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "High",
-      "actual": null,
-      "forecast": "0.4%",
-      "previous": "1.3%",
-      "calendar_time_label": "1:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
-    },
     {
       "event_id": "e4cc9a07488dadc0dbe8c83c",
       "currency": "USD",
@@ -3581,6 +3509,78 @@
       "direction": "Context only"
     },
     {
+      "event_id": "ce431cc38ab3e57787380aa0",
+      "currency": "CAD",
+      "title": "Manufacturing Sales m/m",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.1% Previous: 1.5%",
+      "url": "https://www.forexfactory.com/calendar/363-ca-manufacturing-sales-mm",
+      "time": "2026-11-13T18:30:00+00:00",
+      "published_at": "2026-11-13T18:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "0.1%",
+      "previous": "1.5%",
+      "calendar_time_label": "1:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "283265c16a7511cbe0d84a74",
+      "currency": "CAD",
+      "title": "Wholesale Sales m/m",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.5% Previous: -1.6%",
+      "url": "https://www.forexfactory.com/calendar/362-ca-wholesale-sales-mm",
+      "time": "2026-11-13T18:30:00+00:00",
+      "published_at": "2026-11-13T18:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "0.5%",
+      "previous": "-1.6%",
+      "calendar_time_label": "1:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "9f1cc325e835e89e17f4c028",
+      "currency": "USD",
+      "title": "Core PPI m/m",
+      "summary": "High-impact scheduled economic release. Actual: pending Forecast: 0.3% Previous: 0.7%",
+      "url": "https://www.forexfactory.com/calendar/87-us-core-ppi-mm",
+      "time": "2026-11-13T18:30:00+00:00",
+      "published_at": "2026-11-13T18:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "High",
+      "actual": null,
+      "forecast": "0.3%",
+      "previous": "0.7%",
+      "calendar_time_label": "1:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
+    },
+    {
+      "event_id": "078ac91ed62ba535ab5a8817",
+      "currency": "USD",
+      "title": "PPI m/m",
+      "summary": "High-impact scheduled economic release. Actual: pending Forecast: 0.4% Previous: 1.3%",
+      "url": "https://www.forexfactory.com/calendar/86-us-ppi-mm",
+      "time": "2026-11-13T18:30:00+00:00",
+      "published_at": "2026-11-13T18:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "High",
+      "actual": null,
+      "forecast": "0.4%",
+      "previous": "1.3%",
+      "calendar_time_label": "1:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast"
+    },
+    {
       "event_id": "cfea103a19ce487ae023b064",
       "currency": "EUR",
       "title": "Flash Employment Change q/q",
@@ -4846,7 +4846,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -4854,7 +4854,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -4862,7 +4862,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -4870,7 +4870,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 51,
       "new_releases_added": 0
     },
@@ -4878,7 +4878,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4886,7 +4886,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4894,7 +4894,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -4902,7 +4902,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -4910,7 +4910,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "events_in_rolling_window": 94,
       "new_or_updated_events": 94,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -4919,7 +4919,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4927,7 +4927,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4935,7 +4935,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4943,7 +4943,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4951,7 +4951,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4959,7 +4959,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4967,7 +4967,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -4975,7 +4975,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-13T18:12:33.434642+00:00",
+      "checked_at": "2026-11-13T19:09:48.785268+00:00",
       "data_year": null,
       "indicators_available": 3
     }
