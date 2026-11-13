@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-13T22:23:04.797630+00:00",
+  "generated_at": "2026-11-13T23:12:33.768696+00:00",
   "source_status": "OK",
   "available_indicators": 8,
   "indicators": {
@@ -114,7 +114,7 @@
       "history": [
         {
           "date": "2026-08-31",
-          "value": 3
+          "value": 3.0
         },
         {
           "date": "2026-09-30",
@@ -123,105 +123,105 @@
       ]
     },
     "nfp": {
-      "value": 165,
+      "value": 165.0,
       "date": "2026-10-01",
-      "change": 105,
+      "change": 105.0,
       "history": [
         {
           "date": "2024-11-01",
-          "value": 134
+          "value": 134.0
         },
         {
           "date": "2024-12-01",
-          "value": 237
+          "value": 237.0
         },
         {
           "date": "2025-01-01",
-          "value": -48
+          "value": -48.0
         },
         {
           "date": "2025-02-01",
-          "value": 42
+          "value": 42.0
         },
         {
           "date": "2025-03-01",
-          "value": 67
+          "value": 67.0
         },
         {
           "date": "2025-04-01",
-          "value": 108
+          "value": 108.0
         },
         {
           "date": "2025-05-01",
-          "value": 13
+          "value": 13.0
         },
         {
           "date": "2025-06-01",
-          "value": -20
+          "value": -20.0
         },
         {
           "date": "2025-07-01",
-          "value": 64
+          "value": 64.0
         },
         {
           "date": "2025-08-01",
-          "value": -70
+          "value": -70.0
         },
         {
           "date": "2025-09-01",
-          "value": 76
+          "value": 76.0
         },
         {
           "date": "2025-10-01",
-          "value": -140
+          "value": -140.0
         },
         {
           "date": "2025-11-01",
-          "value": 41
+          "value": 41.0
         },
         {
           "date": "2025-12-01",
-          "value": -17
+          "value": -17.0
         },
         {
           "date": "2026-01-01",
-          "value": 160
+          "value": 160.0
         },
         {
           "date": "2026-02-01",
-          "value": -156
+          "value": -156.0
         },
         {
           "date": "2026-03-01",
-          "value": 214
+          "value": 214.0
         },
         {
           "date": "2026-04-01",
-          "value": 148
+          "value": 148.0
         },
         {
           "date": "2026-05-01",
-          "value": 63
+          "value": 63.0
         },
         {
           "date": "2026-06-01",
-          "value": 31
+          "value": 31.0
         },
         {
           "date": "2026-07-01",
-          "value": -10
+          "value": -10.0
         },
         {
           "date": "2026-08-01",
-          "value": 186
+          "value": 186.0
         },
         {
           "date": "2026-09-01",
-          "value": 60
+          "value": 60.0
         },
         {
           "date": "2026-10-01",
-          "value": 165
+          "value": 165.0
         }
       ]
     },
@@ -371,11 +371,11 @@
         },
         {
           "date": "2026-10-23",
-          "value": 5
+          "value": 5.0
         },
         {
           "date": "2026-10-26",
-          "value": 5
+          "value": 5.0
         },
         {
           "date": "2026-10-27",
@@ -741,6 +741,18 @@
       ]
     }
   },
+  "fed_policy": {
+    "target_lower": 3.75,
+    "target_upper": 4.0,
+    "target_range": "3.75\u20134.00%",
+    "as_of": "2026-10-29",
+    "next_meeting_start": "2026-12-08",
+    "next_decision_date": "2026-12-09",
+    "next_meeting_label": "8\u20139 December 2026",
+    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "probability_source": "CME FedWatch \u00b7 30-Day Fed Funds futures",
+    "probability_url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
+  },
   "errors": {},
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
@@ -748,17 +760,5 @@
     "nfp": "BLS series CES0000000001 (total nonfarm payrolls, thousands)",
     "treasury": "US Treasury daily par nominal and real yield curve XML feeds; 10-year real yield is the TIPS par real yield",
     "dxy": "Calculated six-currency DXY basket using same-day ECB euro reference rates; daily fix proxy, not live ICE futures quote"
-  },
-  "fed_policy": {
-    "target_lower": 3.75,
-    "target_upper": 4,
-    "target_range": "3.75–4.00%",
-    "as_of": "2026-10-29",
-    "next_meeting_start": "2026-12-08",
-    "next_decision_date": "2026-12-09",
-    "next_meeting_label": "8–9 December 2026",
-    "source_url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
-    "probability_source": "CME FedWatch · 30-Day Fed Funds futures",
-    "probability_url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
   }
 }
