@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-14T09:24:00.999535+00:00",
+  "generated_at": "2026-11-14T10:12:13.914148+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v4-relative-macro-provisional-news-v2",
   "history_window_days": 90,
@@ -267,32 +267,7 @@
         "unemployment": {
           "value": 6.5,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 6.28355946264135
-            },
-            {
-              "year": 2024,
-              "value": 6.34778064605911
-            },
-            {
-              "year": 2023,
-              "value": 6.52267389015226
-            },
-            {
-              "year": 2022,
-              "value": 6.72976967374639
-            },
-            {
-              "year": 2021,
-              "value": 7.69446992680361
-            },
-            {
-              "year": 2020,
-              "value": 7.78262585986041
-            }
-          ],
+          "history": [],
           "score": -1.57,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -308,7 +283,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": -0.05,
         "inflation_vs_target": -1.57,
@@ -411,32 +388,7 @@
         "unemployment": {
           "value": 4.7,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 4.746
-            },
-            {
-              "year": 2024,
-              "value": 4.361
-            },
-            {
-              "year": 2023,
-              "value": 4.025
-            },
-            {
-              "year": 2022,
-              "value": 3.768
-            },
-            {
-              "year": 2021,
-              "value": 4.864
-            },
-            {
-              "year": 2020,
-              "value": 4.472
-            }
-          ],
+          "history": [],
           "score": 0.0,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -452,7 +404,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": 1.18,
         "inflation_vs_target": 0.39,
@@ -555,32 +509,7 @@
         "unemployment": {
           "value": 2.4,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 2.451
-            },
-            {
-              "year": 2024,
-              "value": 2.5
-            },
-            {
-              "year": 2023,
-              "value": 2.6
-            },
-            {
-              "year": 2022,
-              "value": 2.614
-            },
-            {
-              "year": 2021,
-              "value": 2.808
-            },
-            {
-              "year": 2020,
-              "value": 2.809
-            }
-          ],
+          "history": [],
           "score": 2.01,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -596,7 +525,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": -1.32,
         "inflation_vs_target": 5.0,
@@ -699,32 +630,7 @@
         "unemployment": {
           "value": 3.0,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 4.873
-            },
-            {
-              "year": 2024,
-              "value": 4.343
-            },
-            {
-              "year": 2023,
-              "value": 4.043
-            },
-            {
-              "year": 2022,
-              "value": 4.122
-            },
-            {
-              "year": 2021,
-              "value": 5.013
-            },
-            {
-              "year": 2020,
-              "value": 4.817
-            }
-          ],
+          "history": [],
           "score": 1.49,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -740,7 +646,11 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "inflation: The read operation timed out",
+        "gdp_growth: The read operation timed out",
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": -2.45,
         "inflation_vs_target": 4.33,
@@ -884,7 +794,10 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "inflation: The read operation timed out",
+        "gdp_growth: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": -0.18,
         "inflation_vs_target": 1.97,
@@ -1131,32 +1044,7 @@
         "unemployment": {
           "value": 5.7,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 5.076
-            },
-            {
-              "year": 2024,
-              "value": 4.724
-            },
-            {
-              "year": 2023,
-              "value": 3.734
-            },
-            {
-              "year": 2022,
-              "value": 3.299
-            },
-            {
-              "year": 2021,
-              "value": 3.776
-            },
-            {
-              "year": 2020,
-              "value": 4.595
-            }
-          ],
+          "history": [],
           "score": -0.87,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -1172,7 +1060,11 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "inflation: The read operation timed out",
+        "gdp_growth: The read operation timed out",
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": 0.05,
         "inflation_vs_target": -0.39,
@@ -5449,7 +5341,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -5457,7 +5349,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -5465,7 +5357,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -5473,7 +5365,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 47,
       "new_releases_added": 0
     },
@@ -5481,7 +5373,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -5489,7 +5381,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -5497,7 +5389,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -5505,7 +5397,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -5513,7 +5405,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "events_in_rolling_window": 95,
       "new_or_updated_events": 95,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -5522,7 +5414,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5530,7 +5422,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5538,7 +5430,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5546,7 +5438,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5554,7 +5446,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5562,7 +5454,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5570,7 +5462,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -5578,7 +5470,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-14T09:24:00.999535+00:00",
+      "checked_at": "2026-11-14T10:12:13.914148+00:00",
       "data_year": null,
       "indicators_available": 3
     }
