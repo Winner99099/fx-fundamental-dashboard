@@ -12,3 +12,11 @@
 .ff-actual{border-color:#267b68;background:#102d2b}.ff-actual b{color:#62edb2}
 .ff-forecast{border-color:#286b91;background:#10283a}.ff-forecast b{color:#66d5ff}
 .ff-previous{border-color:#66512b;background:#2a2419}.ff-previous b{color:#ffd27b}
+
+/* FX pair selection shortlist */
+.pair-toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 16px;border-bottom:1px solid var(--line);background:#101b2e}
+.pair-toolbar>div:first-child{display:grid;gap:4px}.pair-toolbar b{font-size:11px;color:#e7edf7}.pair-toolbar small{font-size:9px;color:var(--muted)}
+.pair-toolbar-actions{display:flex;align-items:center;gap:15px}.pair-filter{display:flex;align-items:center;gap:7px;color:#aebbd0;font-size:10px;cursor:pointer}
+.pair-pick,.pair-filter input{width:15px;height:15px;accent-color:#65d9e8;cursor:pointer}
+.pair-select-table{min-width:850px}.pair-select-table td:first-child{width:62px;text-align:center}.pair-select-table tr[hidden]{display:none}
+@media(max-width:720px){.pair-toolbar{align-items:flex-start;flex-direction:column}.pair-toolbar-actions{width:100%;justify-content:space-between}}
