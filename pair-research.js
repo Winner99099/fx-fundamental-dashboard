@@ -1,0 +1,68 @@
+const $=id=>document.getElementById(id);
+const names={USD:"United States",EUR:"Euro area",GBP:"United Kingdom",JPY:"Japan",CHF:"Switzerland",CAD:"Canada",AUD:"Australia",NZD:"New Zealand"};
+const drivers={
+USD:"Global reserve-currency demand, US Treasury yields, Federal Reserve expectations and safe-haven flows.",
+EUR:"ECB policy expectations, euro-area growth, energy-import costs and political/fiscal developments.",
+GBP:"Bank of England rate expectations, UK wage and services inflation, labour-market conditions and domestic growth.",
+JPY:"Bank of Japan normalisation, Japanese government-bond yields, intervention risk and safe-haven demand.",
+CHF:"Swiss National Bank policy, low domestic inflation, safe-haven demand and global risk appetite.",
+CAD:"Crude-oil and natural-gas export prices, US demand and trade, Bank of Canada policy and domestic employment.",
+AUD:"Iron ore and metals, Chinese demand, RBA policy, commodity prices and global risk appetite.",
+NZD:"Dairy prices, Chinese demand, RBNZ policy, domestic growth and global risk appetite."
+};
+const geo={
+USD:"Usually benefits from broad risk aversion and demand for liquidity; the direction can be offset by falling US yields.",
+EUR:"As a major energy importer, the euro can be pressured by sustained oil and gas price spikes.",
+GBP:"Energy-price shocks can raise imported inflation and squeeze household demand; sterling also responds strongly to BoE rate expectations.",
+JPY:"Can attract safe-haven flows during acute risk events, although higher imported energy costs are a structural headwind.",
+CHF:"Often attracts safe-haven flows during geopolitical stress; SNB policy and intervention risk can moderate the move.",
+CAD:"Higher oil prices can support export income and CAD, but a severe global growth shock or broad USD demand can offset that benefit.",
+AUD:"Often sensitive to China, industrial commodities and global risk appetite; severe risk-off episodes can weigh on AUD.",
+NZD:"Often behaves as a pro-cyclical currency and can weaken when global growth expectations and risk appetite deteriorate."
+};
+function esc(v){return String(v??"—").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function fmt(v){return v==null||v===""?"Not available":Number.isFinite(Number(v))?Number(v).toFixed(2)+"%":String(v);}
+function metric(c,k,periodKey){const v=c?.[k];return fmt(v)+(c?.[periodKey]?" · "+esc(c[periodKey]):"");}
+function direction(base,quote){const a=base.score,b=quote.score;if(a==null||b==null)return "No score-based directional signal";const d=Number(a)-Number(b);return d>0.35?"Base currency has the stronger provisional score":d< -0.35?"Quote currency has the stronger provisional score":"Scores are close; no clear relative edge";}
+function pairPage(){
+ const params=new URLSearchParams(location.search);let pair=(params.get("pair")||"GBP-CAD").toUpperCase().replace("/","-");
+ const [b,q]=pair.split("-");if(!names[b]||!names[q]||b===q){$("report-content").innerHTML='<div class="panel empty">Invalid currency pair. Return to the dashboard and select a pair.</div>';return;}
+ $("pair-title").textContent=b+"/"+q+" · Fundamental Analysis";
+ $("clock").textContent=new Date().toLocaleString("en-SG",{timeZone:"Asia/Singapore",dateStyle:"medium",timeStyle:"short"})+" SGT";
+ fetch("data/latest.json?ts="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error("Snapshot HTTP "+r.status);return r.json()}).then(data=>{
+  const base=(data.currencies||[]).find(x=>x.code===b)||{},quote=(data.currencies||[]).find(x=>x.code===q)||{};
+  const ev=(data.events||[]).filter(e=>e.currency===b||e.currency===q).slice(0,10);
+  $("report-status").textContent="Macro snapshot loaded · pair-specific research framework";
+  $("report-updated").textContent="Snapshot: "+(data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore"}):"date unavailable")+" SGT";
+  const bias=direction(base,quote);
+  const events=ev.length?ev.map(e=>'<article class="news-item"><div class="news-meta"><span class="ccy-pill">'+esc(e.currency)+'</span><span>'+esc(e.source||"Source")+'</span><span>'+esc(e.time||"Date not supplied")+'</span></div><a href="'+(/^https?:\/\//i.test(e.url||"")?esc(e.url):"#")+'" target="_blank" rel="noopener noreferrer">'+esc(e.title||"Economic release")+'</a><p>'+esc(e.summary||"Review the actual result against the market consensus and the previous reading. Open the source for the full release.")+'</p></article>').join(""):'<div class="empty">No matching events in the latest snapshot. Check the Event Watch and official calendars for upcoming releases.</div>';
+  $("report-content").innerHTML=`
+  <div class="metric-grid">
+   <article class="metric-card"><div class="metric-label">PAIR BIAS FROM SCORECARD</div><div class="metric-value" style="font-size:18px">${esc(bias)}</div><div class="metric-note">Provisional only; not a trade signal</div></article>
+   <article class="metric-card"><div class="metric-label">${b} POLICY RATE</div><div class="metric-value">${fmt(base.policy_rate)}</div><div class="metric-note">${esc(base.policy_rate_as_of||"As-of date unavailable")}</div></article>
+   <article class="metric-card"><div class="metric-label">${q} POLICY RATE</div><div class="metric-value">${fmt(quote.policy_rate)}</div><div class="metric-note">${esc(quote.policy_rate_as_of||"As-of date unavailable")}</div></article>
+   <article class="metric-card"><div class="metric-label">DATA CONFIDENCE</div><div class="metric-value" style="font-size:18px">${esc(base.confidence||"Unknown")} / ${esc(quote.confidence||"Unknown")}</div><div class="metric-note">Check source coverage and observation periods</div></article>
+  </div>
+  <div class="notice"><b>Executive view · ${b}/${q}</b><p>This report compares ${names[b]} (${b}) against ${names[q]} (${q}). Use the scorecard as one input only. The short-term exchange-rate direction depends on the relative path of central-bank policy, incoming data surprises, market positioning and risk sentiment. Current automated snapshot values are shown below; the geopolitical commentary is a structural sensitivity guide, not confirmation of a live breaking-news event.</p></div>
+  <div class="panel"><div class="panel-head"><b>1 · Economic fundamentals</b><span class="tag tag-neutral">LATEST SNAPSHOT</span></div><div class="table-wrap"><table><thead><tr><th>Indicator</th><th>${b} · ${names[b]}</th><th>${q} · ${names[q]}</th><th>What to watch</th></tr></thead><tbody>
+  <tr><td>Policy rate</td><td>${fmt(base.policy_rate)}</td><td>${fmt(quote.policy_rate)}</td><td>Expected rate path and 2-year yield differential</td></tr>
+  <tr><td>Inflation</td><td>${metric(base,"inflation","inflation_period")}</td><td>${metric(quote,"inflation","inflation_period")}</td><td>Core inflation, wages and distance from target</td></tr>
+  <tr><td>GDP growth</td><td>${metric(base,"gdp_growth","gdp_growth_period")}</td><td>${metric(quote,"gdp_growth","gdp_growth_period")}</td><td>Quarterly momentum and forward-looking surveys</td></tr>
+  <tr><td>Unemployment</td><td>${metric(base,"unemployment","unemployment_year")}</td><td>${metric(quote,"unemployment","unemployment_year")}</td><td>Jobs, wages and participation trends</td></tr>
+  <tr><td>Fundamental score</td><td>${base.score==null?"N/A":Number(base.score).toFixed(2)}</td><td>${quote.score==null?"N/A":Number(quote.score).toFixed(2)}</td><td>Relative score is provisional; surprises not fully integrated</td></tr>
+  </tbody></table></div></div>
+  <div class="two-col">
+   <div class="panel"><div class="panel-head"><b>2 · Currency-specific drivers</b></div><div class="news-list"><article class="news-item"><b>${b} · ${names[b]}</b><p>${drivers[b]}</p><p>${geo[b]}</p></article><article class="news-item"><b>${q} · ${names[q]}</b><p>${drivers[q]}</p><p>${geo[q]}</p></article></div></div>
+   <div class="panel"><div class="panel-head"><b>3 · Geopolitical and commodity risk</b></div><div class="news-list"><article class="news-item"><b>Energy / Middle East</b><p>Track Brent crude, natural gas, shipping insurance and any disruption to major export routes. The net effect depends on whether the pair's base or quote currency is more exposed to energy imports or exports.</p></article><article class="news-item"><b>Global risk sentiment</b><p>Escalation can trigger safe-haven flows, while de-escalation can reverse them. Compare the safe-haven characteristics of both currencies rather than assuming one universal reaction.</p></article><article class="news-item"><b>Trade and China exposure</b><p>For commodity-linked currencies, monitor Chinese demand, industrial metals and trade data alongside energy prices.</p></article></div></div>
+  </div>
+  <div class="panel"><div class="panel-head"><b>4 · Short-term news and catalysts</b><span class="tag tag-neutral">FROM DASHBOARD FEED</span></div><div class="news-list">${events}</div><div class="notice" style="margin:12px 17px"><b>Calendar checklist</b><p>Prioritise the next CPI, employment, GDP, retail-sales and central-bank events for both currencies. A release matters most when it differs from consensus and changes the expected policy path. Use the Event Watch for scheduled releases; this page does not claim to detect every breaking headline.</p></div></div>
+  <div class="two-col">
+   <div class="panel"><div class="panel-head"><b>5 · Bullish scenario · ${b}/${q}</b></div><div class="news-list"><p>Base currency data and policy expectations outperform the quote currency; relative yields support the base; commodity and geopolitical developments favour the base; price confirms with higher highs and higher lows on H4 / daily.</p><p class="news-bias">Confirmation: positive data surprises, widening expected yield differential, supportive positioning and technical breakout/retest.</p></div></div>
+   <div class="panel"><div class="panel-head"><b>6 · Bearish scenario · ${b}/${q}</b></div><div class="news-list"><p>Quote currency data and policy expectations outperform; the base currency faces growth or inflation stress; geopolitical or commodity shocks favour the quote; price confirms with lower highs and lower lows on H4 / daily.</p><p class="news-bias">Confirmation: negative base-currency surprises, narrowing expected yield differential, supportive quote-currency flows and technical breakdown/retest.</p></div></div>
+  </div>
+  <div class="notice notice-warn"><b>Research discipline</b><p>Do not treat this template as a live analyst forecast. Snapshot indicators may have different observation dates and sources; missing data is not zero. Verify current news, consensus, central-bank pricing, oil/commodity prices and chart levels before placing a trade. This report provides a repeatable comparison framework and is not investment advice.</p></div>
+  <div class="source-grid"><div class="source-row"><div><b>${b} official central bank</b><small>Monetary policy and statements</small></div><a href="${({USD:"https://www.federalreserve.gov/monetarypolicy.htm",EUR:"https://www.ecb.europa.eu/press/govcdec/mopo/html/index.en.html",GBP:"https://www.bankofengland.co.uk/monetary-policy",JPY:"https://www.boj.or.jp/en/mopo/index.htm",CHF:"https://www.snb.ch/en/the-snb/mandates-goals/monetary-policy",CAD:"https://www.bankofcanada.ca/core-functions/monetary-policy/",AUD:"https://www.rba.gov.au/monetary-policy/",NZD:"https://www.rbnz.govt.nz/monetary-policy"}[b])}" target="_blank" rel="noopener">Open source ↗</a></div>
+  <div class="source-row"><div><b>${q} official central bank</b><small>Monetary policy and statements</small></div><a href="${({USD:"https://www.federalreserve.gov/monetarypolicy.htm",EUR:"https://www.ecb.europa.eu/press/govcdec/mopo/html/index.en.html",GBP:"https://www.bankofengland.co.uk/monetary-policy",JPY:"https://www.boj.or.jp/en/mopo/index.htm",CHF:"https://www.snb.ch/en/the-snb/mandates-goals/monetary-policy",CAD:"https://www.bankofcanada.ca/core-functions/monetary-policy/",AUD:"https://www.rba.gov.au/monetary-policy/",NZD:"https://www.rbnz.govt.nz/monetary-policy"}[q])}" target="_blank" rel="noopener">Open source ↗</a></div></div>`;
+ }).catch(err=>{$("report-status").textContent="Snapshot unavailable";$("report-content").innerHTML='<div class="panel empty">Unable to load data/latest.json: '+esc(err.message)+'. Please return to the dashboard and check data availability.</div>';});
+}
+pairPage();
