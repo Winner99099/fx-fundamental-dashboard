@@ -55,17 +55,18 @@ function renderNews(targetId, filter="ALL", limit=100) {
     return `<article class="news-item ${e.source === "Forex Factory" ? "ff-calendar-item" : ""}"><div class="news-meta"><span class="ccy-pill">${safeText(e.currency)}</span><span>${safeText(e.time ? fmtDate(e.time) : "Time not supplied")}</span><span>${safeText(e.source,"Official source")}</span><span class="impact-pill impact-${String(e.impact||"Low").toLowerCase()}">${safeText(e.impact,"Low")} impact</span></div><a href="${href}" target="_blank" rel="noopener noreferrer">${safeText(e.title,"Untitled release")}</a>${calendarFigures}<div class="news-bias">${safeText(e.bias,"No clear policy bias")} · ${safeText(e.direction,"Context only")}</div><p>${safeText(summary)}</p></article>`;
   }).join("") : `<div class="empty">No matching official releases in the current snapshot.</div>`;
 }
+function pairResearchLink(pair) { return `<a class="text-button" href="./pair-research.html?pair=${encodeURIComponent(pair.replace("/","-"))}">View Fundamental Analysis ↗</a>`; }
 function renderPairs() {
-  const valid = (snapshot?.currencies || []).filter(c => Number.isFinite(Number(c.score)) && c.score !== null);
-  if (valid.length < 2) {
-    const msg = `<div class="empty">Not enough verified currency scores to rank pairs. No artificial pair signals are generated.</div>`;
+  const all=(snapshot?.currencies||[]).filter(c=>CURRENCIES.includes(c.code));
+  if (all.length < 2) {
+    const msg = `<div class="empty">Currency list is incomplete. Pair research pages remain available once the currency snapshot loads.</div>`;
     $("overview-pairs").innerHTML = msg; $("pair-table").innerHTML = msg; return;
   }
   const pairs=[];
-  valid.forEach(base=>valid.forEach(quote=>{if(base.code!==quote.code)pairs.push({pair:base.code+"/"+quote.code,spread:Number(base.score)-Number(quote.score)});}));
-  pairs.sort((a,b)=>b.spread-a.spread);
-  $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><b>${p.pair}</b><span class="score-na">${p.spread>0?"+":""}${p.spread.toFixed(1)}</span></div>`).join("");
-  $("pair-table").innerHTML=`<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Relative score spread</th><th>Directional read</th></tr></thead><tbody>${pairs.map(p=>`<tr><td>${p.pair}</td><td>${p.spread>0?"+":""}${p.spread.toFixed(1)}</td><td>${p.spread>0?"Base stronger":p.spread<0?"Quote stronger":"Neutral"}</td></tr>`).join("")}</tbody></table></div>`;
+  all.forEach(base=>all.forEach(quote=>{if(base.code!==quote.code)pairs.push({pair:base.code+"/"+quote.code,spread:Number.isFinite(Number(base.score))&&base.score!==null&&Number.isFinite(Number(quote.score))&&quote.score!==null?Number(base.score)-Number(quote.score):null});}));
+  pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:b.spread-a.spread);
+  $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><div><b>${p.pair}</b><small>${p.spread===null?"Score unavailable":(p.spread>0?"+":"")+p.spread.toFixed(1)}</small></div>${pairResearchLink(p.pair)}</div>`).join("");
+  $("pair-table").innerHTML=`<div class="table-wrap"><table><thead><tr><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr><td>${p.pair}</td><td>${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 56 directional combinations for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
 }
 function renderSources() {
   const sources=snapshot?.sources||[];
