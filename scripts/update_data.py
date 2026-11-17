@@ -925,7 +925,7 @@ for currency in currencies:
     # Build an indicator-level release tracker from dated, published calendar actuals.
     patterns = {
         "policy_rate": (r"interest rate decision|rate decision|monetary policy decision|official cash rate|bank rate", "Policy rate"),
-        "inflation": (r"cpi|consumer price|inflation|pce|price index", "Inflation"),
+        "inflation": (r"cpi|consumer price|inflation|pce|ppi|producer price|price index", "Inflation"),
         "gdp_growth": (r"gross domestic product|\bgdp\b", "GDP growth"),
         "unemployment": (r"unemployment rate|employment change|nonfarm payroll|non-farm payroll|payrolls", "Employment / unemployment"),
     }
@@ -955,8 +955,9 @@ for currency in currencies:
             tracker.append({
                 "key": key, "label": label, "release_time": stamp.isoformat(),
                 "actual": actual_text, "previous": previous_text, "change": change,
-                "status": "new_release", "title": event.get("title"),
+                "status": "new_release" if stamp >= now - datetime.timedelta(hours=48) else "latest_release", "title": event.get("title"),
                 "url": event.get("url"), "source": "Forex Factory",
+                "change_unit": "pp" if key in ("policy_rate", "inflation", "gdp_growth") or "unemployment" in (event.get("title") or "").lower() else "source units",
                 "comparison_note": "Actual minus previous; units follow the published series."
             })
         elif key == "policy_rate":
