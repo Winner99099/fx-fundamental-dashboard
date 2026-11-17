@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T06:29:34.495222+00:00",
+  "generated_at": "2026-11-17T07:51:41.150039+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v5-event-driven-surprise-overlay",
   "history_window_days": 90,
@@ -498,13 +498,13 @@
       "short_term_score": 0.77,
       "short_term_score_status": "60% structural + 40% verified event momentum",
       "last_release_reference": {
-        "title": "Prelim GDP q/q",
-        "time": "2026-11-12T12:00:00+00:00",
+        "title": "Average Earnings Index 3m/y",
+        "time": "2026-11-17T07:00:00+00:00",
         "impact": "Medium",
         "actual": null,
-        "forecast": "0.7%",
-        "previous": "0.5%",
-        "url": "https://www.forexfactory.com/calendar/33-uk-prelim-gdp-qq",
+        "forecast": "3.5%",
+        "previous": "3.7%",
+        "url": "https://www.forexfactory.com/calendar/180-uk-average-earnings-index-3my",
         "actual_captured": false
       }
     },
@@ -643,9 +643,7 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [
-        "inflation: The read operation timed out"
-      ],
+      "errors": [],
       "score_components": {
         "policy_rate_level": -1.32,
         "inflation_vs_target": 5.0,
@@ -857,10 +855,6 @@
           "year": null,
           "history": [
             {
-              "period": "2026-10",
-              "value": 3.085299
-            },
-            {
               "period": "2026-09",
               "value": 3.092783
             },
@@ -879,6 +873,10 @@
             {
               "period": "2026-05",
               "value": 3.225806
+            },
+            {
+              "period": "2026-04",
+              "value": 2.815177
             }
           ],
           "score": 1.97,
@@ -1312,69 +1310,6 @@
     }
   ],
   "events": [
-    {
-      "event_id": "fa27f1a1a56d42adf4eb5a35",
-      "currency": "GBP",
-      "title": "Average Earnings Index 3m/y",
-      "summary": "Medium-impact scheduled economic release. Actual: pending Forecast: 3.5% Previous: 3.7%",
-      "url": "https://www.forexfactory.com/calendar/180-uk-average-earnings-index-3my",
-      "time": "2026-11-17T07:00:00+00:00",
-      "published_at": "2026-11-17T07:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Medium",
-      "actual": null,
-      "forecast": "3.5%",
-      "previous": "3.7%",
-      "calendar_time_label": "7:00am",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "growth / activity surprise"
-    },
-    {
-      "event_id": "135570f517407e9b569a81df",
-      "currency": "GBP",
-      "title": "Claimant Count Change",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 25.4K Previous: 30.3K",
-      "url": "https://www.forexfactory.com/calendar/68-uk-claimant-count-change",
-      "time": "2026-11-17T07:00:00+00:00",
-      "published_at": "2026-11-17T07:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "25.4K",
-      "previous": "30.3K",
-      "calendar_time_label": "7:00am",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
-      "event_id": "830a68c75c814d87b5a5e091",
-      "currency": "GBP",
-      "title": "Unemployment Rate",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 4.7% Previous: 4.7%",
-      "url": "https://www.forexfactory.com/calendar/58-uk-unemployment-rate",
-      "time": "2026-11-17T07:00:00+00:00",
-      "published_at": "2026-11-17T07:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "4.7%",
-      "previous": "4.7%",
-      "calendar_time_label": "7:00am",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "labour-market surprise"
-    },
     {
       "event_id": "db2ce06322588e2042db9a91",
       "currency": "EUR",
@@ -6475,6 +6410,69 @@
       "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
+      "event_id": "fa27f1a1a56d42adf4eb5a35",
+      "currency": "GBP",
+      "title": "Average Earnings Index 3m/y",
+      "summary": "Medium-impact scheduled economic release. Actual: pending Forecast: 3.5% Previous: 3.7%",
+      "url": "https://www.forexfactory.com/calendar/180-uk-average-earnings-index-3my",
+      "time": "2026-11-17T07:00:00+00:00",
+      "published_at": "2026-11-17T07:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Medium",
+      "actual": null,
+      "forecast": "3.5%",
+      "previous": "3.7%",
+      "calendar_time_label": "7:00am",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
+    },
+    {
+      "event_id": "135570f517407e9b569a81df",
+      "currency": "GBP",
+      "title": "Claimant Count Change",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 25.4K Previous: 30.3K",
+      "url": "https://www.forexfactory.com/calendar/68-uk-claimant-count-change",
+      "time": "2026-11-17T07:00:00+00:00",
+      "published_at": "2026-11-17T07:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "25.4K",
+      "previous": "30.3K",
+      "calendar_time_label": "7:00am",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "830a68c75c814d87b5a5e091",
+      "currency": "GBP",
+      "title": "Unemployment Rate",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 4.7% Previous: 4.7%",
+      "url": "https://www.forexfactory.com/calendar/58-uk-unemployment-rate",
+      "time": "2026-11-17T07:00:00+00:00",
+      "published_at": "2026-11-17T07:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "4.7%",
+      "previous": "4.7%",
+      "calendar_time_label": "7:00am",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "labour-market surprise"
+    },
+    {
       "event_id": "78c001f2b62face5c4152026",
       "currency": "JPY",
       "title": "Tertiary Industry Activity m/m",
@@ -8310,7 +8308,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -8318,7 +8316,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8326,7 +8324,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -8334,7 +8332,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -8342,7 +8340,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8350,7 +8348,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8358,7 +8356,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8366,7 +8364,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -8374,7 +8372,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -8383,7 +8381,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8391,7 +8389,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8399,7 +8397,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8407,7 +8405,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8415,7 +8413,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8423,7 +8421,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8431,7 +8429,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8439,7 +8437,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-17T06:29:34.495222+00:00",
+      "checked_at": "2026-11-17T07:51:41.150039+00:00",
       "data_year": null,
       "indicators_available": 3
     }
