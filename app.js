@@ -21,9 +21,13 @@ function metric2(value) {
   const n = Number(value);
   return Number.isFinite(n) ? n.toFixed(2) + "%" : "N/A";
 }
+function eventReleaseSummary(r) {
+  const when=r.time?new Date(r.time).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"time unavailable";
+  return `Latest ${escapeHtml(r.title)} · ${when} SGT · Previous: ${escapeHtml(r.previous||"N/A")} · Forecast: ${escapeHtml(r.forecast||"N/A")} · Actual: ${escapeHtml(r.actual||"Not captured")}`;
+}
 function currencyRows(targetId) {
   const rows = (snapshot?.currencies || []).map(c => `<tr>
-    <td>${safeText(c.code)}</td><td class="score-na">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(2)}</td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?`Latest: ${escapeHtml(c.last_release_reference.title)} · ${new Date(c.last_release_reference.time).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false})} SGT`:"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
+    <td>${safeText(c.code)}</td><td class="score-na">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(2)}</td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td><td>${metric2(c.inflation)} <small>${c.inflation_period||c.inflation_year||""}</small></td><td>${metric2(c.gdp_growth)} <small>${c.gdp_growth_period||c.gdp_growth_year||""}</small></td><td>${metric2(c.unemployment)} <small>${c.unemployment_year||""}</small></td>
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
   $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">No currency data in snapshot.</td></tr>`;
