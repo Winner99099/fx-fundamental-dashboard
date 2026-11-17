@@ -7,7 +7,7 @@
 <meta name="description" content="Eight-currency macroeconomic and FX research dashboard.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261117-readability2">
+<link rel="stylesheet" href="styles.css?v=20261117-eventengine1">
 </head>
 <body>
 <div class="app-shell">
@@ -48,8 +48,8 @@
 
       <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
       <div class="panel">
-        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Relative scores compare all eight currencies: policy-rate level (30%), inflation versus target (15%), quarterly GDP growth (20%) and unemployment (15%). Economic surprises (20%) are not yet connected; available weights are renormalised.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
-        <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Fundamental score</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th><th>Confidence / data status</th></tr></thead><tbody id="currency-rows"><tr><td colspan="7" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
+        <div class="panel-head"><div><b>Eight-currency scorecard</b><p>Structural macro indicators cover 80% of intended model weight (available components are renormalised). A separate event score uses verified actual-versus-forecast releases, impact weighting and a 36-hour half-life. Short-term score combines 60% structural and 40% event momentum when event data exists.</p></div><span class="tag tag-neutral">NO FABRICATED SIGNALS</span></div>
+        <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Structural score</th><th>Event momentum</th><th>Short-term score</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th><th>Confidence / data status</th></tr></thead><tbody id="currency-rows"><tr><td colspan="9" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
       </div>
       <div class="two-col">
         <div class="panel"><div class="panel-head"><div><b>Pair divergence watch</b><p>Base currency relative to quote currency</p></div><button class="text-button" data-go="pairs">View pairs ↗</button></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
@@ -58,9 +58,9 @@
     </section>
 
     <section class="view" id="view-currencies">
-      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Scores are cross-sectional comparisons across all eight currencies. Policy-rate level is a carry proxy, not an expected policy path; economic-surprise data is not yet connected. Check each observation period and source.</p></div></div>
-      <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Score</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
-      <div class="notice"><b>Scoring methodology</b><p>V4 compares all eight currencies cross-sectionally using robust standardised scores: policy-rate level as a carry proxy (30%), inflation distance from central-bank target (15%), quarterly GDP growth (20%) and unemployment (15%). Economic surprises versus market consensus (20%) are not yet connected, so available weights are renormalised to 100%. The policy-rate component is not an expected policy path. Two-year yield differentials and spot-FX momentum are not yet included. Scores are relative macro context, not standalone trade signals. Inflation momentum is not the same as distance from a central-bank target. Scores are partial research context, not trade signals.</p></div>
+      <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Structural scores are slow-moving cross-sectional comparisons. Event momentum reflects only released numeric actual-versus-consensus surprises; short-term scores decay with a 36-hour half-life. Market-implied policy paths and price confirmation are not yet integrated.</p></div></div>
+      <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Structural</th><th>Event momentum</th><th>Short-term</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
+      <div class="notice"><b>Scoring methodology</b><p>The structural score remains a slower-moving relative macro comparison. Event momentum scores released actual-versus-consensus surprises only, with indicator-aware direction (for example, hotter inflation is treated as a short-term hawkish policy surprise), High/Medium/Low impact weighting and a 36-hour half-life. The short-term score is 60% structural + 40% event momentum, shown only when verified event data exists. This is not yet a market-implied rate-path or FX-price-confirmed model.</p></div>
     </section>
 
     <section class="view" id="view-pairs">
@@ -120,6 +120,6 @@
     <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
-<script src="app.js?v=20261117-readability2" defer></script>
+<script src="app.js?v=20261117-eventengine1" defer></script>
 <script src="swap.js?v=20261117-swap1" defer></script>
 </body></html>
