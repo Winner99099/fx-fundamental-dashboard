@@ -8,7 +8,7 @@ function safeText(value, fallback="—") {
 function fmtDate(value) {
   if (!value || value.includes("Awaiting")) return "No successful build yet";
   const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? value : d.toLocaleString("en-SG",{timeZone:"Asia/Singapore",dateStyle:"medium",timeStyle:"short"})+" SGT";
+  return Number.isNaN(d.getTime()) ? value : d.toISOString().replace("T"," ").replace(/\.\d{3}Z$/," +00:00");
 }
 function setStatus(ok, message) {
   $("data-status").textContent = message;
