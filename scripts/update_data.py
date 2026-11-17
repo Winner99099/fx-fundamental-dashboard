@@ -721,11 +721,111 @@ def event_sort_key(event):
     return (1, -stamp.timestamp())
 events.sort(key=event_sort_key)
 
+
+# V5 event-driven overlay. Only released events with numeric actual AND consensus
+# forecast are scored. Missing forecasts/actuals and qualitative headlines are not guessed.
+def parse_release_number(value):
+    if value is None:
+        return None
+    raw = str(value).strip().replace(",", "")
+    if not raw or raw.lower() in {"pending", "n/a", "na", "-", "—"}:
+        return None
+    match = re.search(r"[-+]?\d*\.?\d+", raw)
+    if not match:
+        return None
+    number = float(match.group(0))
+    suffix = raw[match.end():].strip().lower()
+    if suffix.startswith("k"):
+        number *= 1_000
+    elif suffix.startswith("m"):
+        number *= 1_000_000
+    elif suffix.startswith("b"):
+        number *= 1_000_000_000
+    return number
+
+def release_surprise_profile(title):
+    t = (title or "").lower()
+    if re.search(r"policy rate|interest rate decision|cash rate|bank rate|rate decision|official cash rate", t):
+        return 1.0, 0.25, "hawkish rate surprise"
+    if re.search(r"cpi|consumer price|inflation|pce|price index|producer price|ppi", t):
+        return 1.0, 0.10, "inflation / policy-path surprise"
+    if re.search(r"unemployment|jobless claims|initial claims|continuing claims", t):
+        return -1.0, 0.10, "labour-market surprise"
+    if re.search(r"non.?farm|payroll|employment change|employment data|wage|earnings|retail sales|gdp|gross domestic|pmi|industrial production|business confidence|consumer confidence|trade balance", t):
+        scale = 50000 if re.search(r"non.?farm|payroll|employment change", t) else (1.0 if "pmi" in t or "confidence" in t else 0.20)
+        return 1.0, scale, "growth / activity surprise"
+    return None, None, "not scored: no reliable directional rule"
+
+def build_event_surprise(event):
+    actual = parse_release_number(event.get("actual"))
+    forecast = parse_release_number(event.get("forecast"))
+    direction, scale, label = release_surprise_profile(event.get("title", ""))
+    event["surprise_score"] = None
+    event["surprise_raw"] = None
+    event["surprise_interpretation"] = label
+    if actual is None or forecast is None or direction is None:
+        return
+    delta = actual - forecast
+    raw_score = max(-5.0, min(5.0, (delta / scale) * direction))
+    impact = {"High": 1.5, "Medium": 1.0, "Low": 0.5}.get(event.get("impact"), 0.5)
+    event["surprise_raw"] = round(delta, 6)
+    event["surprise_score"] = round(raw_score, 2)
+    event["surprise_interpretation"] = (
+        ("hawkish / currency-supportive" if raw_score > 0 else
+         "dovish / currency-negative" if raw_score < 0 else "in line with consensus")
+        + f" · {label} · actual {actual:g} vs forecast {forecast:g}"
+    )
+    event["_surprise_weight"] = impact
+
+for event in events:
+    build_event_surprise(event)
+
+event_momentum = {code: [] for code in CURRENCIES}
+for event in events:
+    score = event.get("surprise_score")
+    if score is None:
+        continue
+    stamp = parse_date(event.get("published_at") or event.get("time"))
+    if stamp is None:
+        continue
+    age_hours = max(0.0, (now - stamp).total_seconds() / 3600.0)
+    if age_hours > 168:
+        continue
+    decay = 0.5 ** (age_hours / 36.0)
+    weight = event.get("_surprise_weight", 0.5) * decay
+    event_momentum[event["currency"]].append((score, weight, stamp))
+
+for currency in currencies:
+    code = currency["code"]
+    observations = event_momentum[code]
+    total_weight = sum(item[1] for item in observations)
+    event_score = (
+        round(sum(score * weight for score, weight, _ in observations) / total_weight, 2)
+        if total_weight > 0 else None
+    )
+    currency["event_score"] = event_score
+    currency["event_surprise_count"] = len(observations)
+    currency["event_score_half_life_hours"] = 36
+    currency["last_event_surprise_at"] = (
+        max((stamp for _, _, stamp in observations)).isoformat() if observations else None
+    )
+    currency["short_term_score"] = (
+        round(0.60 * float(currency["score"]) + 0.40 * event_score, 2)
+        if currency.get("score") is not None and event_score is not None else None
+    )
+    currency["short_term_score_status"] = (
+        "Structural + verified event overlay" if currency["short_term_score"] is not None
+        else "Waiting for released actual-versus-forecast data"
+    )
+
+for event in events:
+    event.pop("_surprise_weight", None)
+
 output = {
     "schema_version": 3,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v4-relative-macro-provisional-news-v2",
+    "model": "v5-event-driven-surprise-overlay",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
@@ -733,8 +833,8 @@ output = {
         "weights": V4_WEIGHTS,
         "inflation_method": "Closeness to each central bank inflation target; target assumptions are listed in INFLATION_TARGETS in scripts/update_data.py.",
         "directions": {"policy_rate_level": "Higher policy rate is treated as a carry-support proxy, not a forecast of future policy.", "inflation_vs_target": "Closer to target is preferred.", "gdp_growth": "Higher quarterly growth is preferred.", "employment": "Lower unemployment is preferred."},
-        "excluded_until_integrated": ["economic surprises versus market consensus (20%)", "expected policy path and 2-year yield differentials", "spot FX momentum confirmation"],
-        "important": "Only 80% of intended model weight is currently covered; available components are renormalised. Scores are relative macro context, not standalone trading signals.",
+        "excluded_until_integrated": ["market-implied policy path and 2-year yield differentials", "spot FX momentum / post-release price confirmation"],
+        "important": "Structural score remains a slow-moving cross-sectional macro measure. Event score uses numeric released actual-versus-consensus surprises, indicator-aware direction, impact weighting and a 36-hour half-life. Short-term score is 60% structural + 40% event score when verified event data exists; otherwise it remains unavailable.",
     },
     "currencies": currencies,
     "events": events,
@@ -742,9 +842,9 @@ output = {
     "limitations": [
         "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
         "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
-        "V4 scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths, economic surprises and market-price confirmation are not yet integrated.",
-        "Economic-surprise data, expected policy paths, 2-year yield differentials and market-price confirmation are not yet included in the numerical score.",
-        "News impact is keyword-based editorial triage; policy bias is labelled only when explicit hawkish/dovish wording appears. It is not an AI assessment or a trade signal.",
+        "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths and market-price confirmation are not yet integrated.",
+        "Event momentum is based only on numeric actual-versus-forecast releases available in the Forex Factory feed. Qualitative central-bank statements, market-implied policy paths, 2-year yield differentials and post-release FX confirmation are not yet included in the numerical overlay.",
+        "News impact is keyword-based editorial triage. Event surprise direction is rule-based by release category; inflation surprises are treated as short-term hawkish/dovish policy repricing, not as a universal long-term currency-strength rule.",
         "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
     ],
