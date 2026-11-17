@@ -809,13 +809,17 @@ for currency in currencies:
     currency["last_event_surprise_at"] = (
         max((stamp for _, _, stamp in observations)).isoformat() if observations else None
     )
+    # Always provide a visible short-term baseline. It only becomes an event-adjusted
+    # score when at least one verified actual-vs-consensus surprise is available.
     currency["short_term_score"] = (
         round(0.60 * float(currency["score"]) + 0.40 * event_score, 2)
-        if currency.get("score") is not None and event_score is not None else None
+        if currency.get("score") is not None and event_score is not None
+        else (round(float(currency["score"]), 2) if currency.get("score") is not None else None)
     )
     currency["short_term_score_status"] = (
-        "Structural + verified event overlay" if currency["short_term_score"] is not None
-        else "Waiting for released actual-versus-forecast data"
+        "60% structural + 40% verified event momentum"
+        if event_score is not None
+        else "Structural baseline only · no verified event surprise captured"
     )
 
 for event in events:
