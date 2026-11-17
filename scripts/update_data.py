@@ -24,7 +24,7 @@ UTC = datetime.timezone.utc
 now = datetime.datetime.now(UTC)
 WINDOW_DAYS = 90
 FF_CALENDAR_URL = "https://nfs.faireconomy.media/ff_calendar_thisweek.xml"
-FF_CALENDAR_TZ = ZoneInfo("America/New_York")  # Forex Factory XML export time basis
+FF_CALENDAR_TZ = UTC  # Forex Factory weekly XML clock is UTC; display conversions are handled by the browser
 cutoff = now - datetime.timedelta(days=WINDOW_DAYS)
 DATA_PATH = Path("data/latest.json")
 CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"]
@@ -824,6 +824,49 @@ for currency in currencies:
 
 for event in events:
     event.pop("_surprise_weight", None)
+
+# Keep a visible timestamp anchor even when the feed has not supplied a numeric
+# actual-versus-forecast pair. Select the latest completed macro data release,
+# not speeches, minutes, auctions or future calendar entries.
+def is_macro_data_release(event):
+    title = (event.get("title") or "").lower()
+    excluded = ("speaks", "speech", "minutes", "auction", "holiday", "bank holiday",
+                "financial stability report", "meeting statement")
+    if any(word in title for word in excluded):
+        return False
+    return bool(re.search(
+        r"cpi|ppi|pce|inflation|gdp|payroll|employment|unemployment|jobless|claims|"
+        r"retail sales|industrial production|pmi|trade balance|wages|earnings|"
+        r"consumer confidence|business confidence|housing starts|building permits|"
+        r"durable goods|manufacturing sales|services index|price index",
+        title
+    ))
+
+for currency in currencies:
+    code = currency["code"]
+    candidates = []
+    for event in events:
+        if event.get("currency") != code or event.get("source") != "Forex Factory":
+            continue
+        stamp = parse_date(event.get("time"))
+        if stamp is None or stamp > now or not is_macro_data_release(event):
+            continue
+        candidates.append((stamp, event))
+    candidates.sort(key=lambda item: item[0], reverse=True)
+    reference = None
+    if candidates:
+        stamp, event = candidates[0]
+        reference = {
+            "title": event.get("title"),
+            "time": stamp.isoformat(),
+            "impact": event.get("impact"),
+            "actual": event.get("actual"),
+            "forecast": event.get("forecast"),
+            "previous": event.get("previous"),
+            "url": event.get("url"),
+            "actual_captured": bool(event.get("actual")),
+        }
+    currency["last_release_reference"] = reference
 
 output = {
     "schema_version": 3,
