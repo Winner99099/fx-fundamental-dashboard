@@ -728,6 +728,29 @@ for event in events:
         event["summary"] = "High-impact scheduled economic release. Actual: 0.3% Forecast: 0.3% Previous: 0.8%"
         event["verification_source"] = "https://www.bls.gov/news.release/ppi.nr0.htm"
 
+# Official-source corrections for the 12-Nov-2026 UK GDP and 16-Nov-2026
+# euro-area industrial production releases. Forex Factory XML may omit actuals
+# and can retain unrevised previous values.
+for event in events:
+    title = (event.get("title") or "").strip().lower()
+    stamp = event.get("time") or ""
+    if event.get("currency") == "EUR" and title == "industrial production m/m" and stamp.startswith("2026-11-16"):
+        event["time"] = "2026-11-16T10:00:00+00:00"
+        event["published_at"] = event["time"]
+        event["actual"] = "0.2%"
+        event["forecast"] = "0.3%"
+        event["previous"] = "-0.5%"
+        event["summary"] = "Low-impact scheduled economic release. Actual: 0.2% Forecast: 0.3% Previous: -0.5%"
+        event["verification_source"] = "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/4-16112026-ap"
+    if event.get("currency") == "GBP" and title == "gdp m/m" and stamp.startswith("2026-11-12"):
+        event["time"] = "2026-11-12T07:00:00+00:00"
+        event["published_at"] = event["time"]
+        event["actual"] = "0.2%"
+        event["forecast"] = "0.0%"
+        event["previous"] = "0.0%"
+        event["summary"] = "High-impact scheduled economic release. Actual: 0.2% Forecast: 0.0% Previous: 0.0% (August revised)"
+        event["verification_source"] = "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpmonthlyestimateuk/september2026"
+
 for event in events:
     event["summary"] = make_news_summary(event.get("title", ""), event.get("summary", ""), event.get("source", "the central bank"), event.get("currency", ""))
     if event.get("source") == "Forex Factory":
