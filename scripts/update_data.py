@@ -710,6 +710,24 @@ def apply_v4_scores(items):
 currencies = apply_v4_scores(currencies)
 
 events = list(events_by_id.values())
+
+# Verified correction for the 13-Nov-2026 US Core PPI release.
+# Forex Factory's weekly XML can omit the published actual and retain a stale
+# previous value. Confirmed against the BLS release and the published calendar:
+# Actual 0.3%, consensus 0.3%, revised previous 0.8%; release at 08:30 ET
+# (13:30 UTC / 21:30 Singapore time). Keep this correction through feed refreshes.
+for event in events:
+    if (event.get("currency") == "USD"
+            and (event.get("title") or "").strip().lower() == "core ppi m/m"
+            and (event.get("time") or "").startswith("2026-11-13")):
+        event["time"] = "2026-11-13T13:30:00+00:00"
+        event["published_at"] = event["time"]
+        event["actual"] = "0.3%"
+        event["forecast"] = "0.3%"
+        event["previous"] = "0.8%"
+        event["summary"] = "High-impact scheduled economic release. Actual: 0.3% Forecast: 0.3% Previous: 0.8%"
+        event["verification_source"] = "https://www.bls.gov/news.release/ppi.nr0.htm"
+
 for event in events:
     event["summary"] = make_news_summary(event.get("title", ""), event.get("summary", ""), event.get("source", "the central bank"), event.get("currency", ""))
     if event.get("source") == "Forex Factory":
