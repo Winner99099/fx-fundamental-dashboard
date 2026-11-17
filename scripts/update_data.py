@@ -853,6 +853,12 @@ for currency in currencies:
             continue
         candidates.append((stamp, event))
     candidates.sort(key=lambda item: item[0], reverse=True)
+    # Prefer a medium/high-impact macro release over a low-impact survey or
+    # secondary indicator; fall back to the latest completed release if needed.
+    major_candidates = [item for item in candidates
+                        if (item[1].get("impact") or "").title() in ("High", "Medium")]
+    if major_candidates:
+        candidates = major_candidates
     reference = None
     if candidates:
         stamp, event = candidates[0]
