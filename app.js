@@ -119,7 +119,7 @@ async function loadSnapshot() {
     $("currency-rows").innerHTML=`<tr><td colspan="7" class="empty">Data unavailable. ${error.message}</td></tr>`;
   } finally { $("refresh-btn").disabled=false; $("refresh-btn").textContent="↻ Refresh"; }
 }
-const titles={overview:"Market overview",currencies:"Currency strength",pairs:"FX pair analysis",news:"News intelligence",calendar:"Event watch",positioning:"CFTC positioning",journal:"Trading journal"};
+const titles={overview:"Market overview",currencies:"Currency strength",pairs:"FX pair analysis",swap:"Swap Intelligence",news:"News intelligence",calendar:"Event watch",positioning:"CFTC positioning",journal:"Trading journal"};
 function navigate(view) {
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${view}`));
   document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
