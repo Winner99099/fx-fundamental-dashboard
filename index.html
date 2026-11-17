@@ -60,6 +60,9 @@
     <section class="view" id="view-currencies">
       <div class="section-heading"><div><div class="eyebrow">MACRO FUNDAMENTALS</div><h2>Currency strength monitor</h2><p>Structural scores are slow-moving cross-sectional comparisons. Event momentum reflects only released numeric actual-versus-consensus surprises. Until a verified surprise is captured, the short-term column shows the structural baseline and labels it accordingly; after a release, it blends 60% structural + 40% event momentum with a 36-hour half-life. Market-implied policy paths and price confirmation are not yet integrated.</p></div></div>
       <div class="panel"><div class="panel-head"><b>Data coverage matrix</b><span class="tag tag-neutral">8 ECONOMIES</span></div><div class="table-wrap"><table><thead><tr><th>Currency</th><th>Structural</th><th>Event momentum</th><th>Short-term</th><th>Policy rate</th><th>CPI</th><th>GDP</th><th>Unemployment</th><th>Source coverage</th></tr></thead><tbody id="currency-rows-full"></tbody></table></div></div>
+       <div class="section-heading"><div><div class="eyebrow">PUBLICATION MONITOR</div><h2>Core economic data release tracker</h2><p>Latest completed releases, publication timestamps in Singapore time, previous readings and calculated changes. NEW means a dated actual figure has been captured.</p></div><select id="release-currency-filter" class="select"><option value="ALL">All currencies</option><option>USD</option><option>EUR</option><option>GBP</option><option>JPY</option><option>CHF</option><option>CAD</option><option>AUD</option><option>NZD</option></select></div>
+       <div class="panel"><div class="panel-head"><div><b>Latest verified releases</b><p>Policy rate · Inflation · GDP growth · Unemployment</p></div><span class="tag tag-neutral">ACTUAL VS PREVIOUS</span></div><div class="table-wrap"><table class="release-table"><thead><tr><th>CCY</th><th>Indicator</th><th>Release date / time (SGT)</th><th>Latest actual</th><th>Previous</th><th>Change</th><th>Release status</th><th>Source</th></tr></thead><tbody id="release-tracker-rows"><tr><td colspan="8" class="empty">Loading release history…</td></tr></tbody></table></div></div>
+       <div class="notice"><b>How to read changes</b><p>Changes are shown as actual minus previous, with percentage-point notation for percentage-based releases. GDP units and employment units follow the published series. Missing dates or actual figures are shown as unverified rather than guessed. A revision is not treated as a new release.</p></div>
       <div class="notice"><b>Scoring methodology</b><p>The structural score remains a slower-moving relative macro comparison. Event momentum scores released actual-versus-consensus surprises only, with indicator-aware direction (for example, hotter inflation is treated as a short-term hawkish policy surprise), High/Medium/Low impact weighting and a 36-hour half-life. The short-term score is 60% structural + 40% event momentum, shown only when verified event data exists. This is not yet a market-implied rate-path or FX-price-confirmed model.</p></div>
     </section>
 
@@ -120,6 +123,6 @@
     <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
-<script src="app.js?v=20261117-releasefigures1" defer></script>
+<script src="app.js?v=20261118-release-tracker1" defer></script>
 <script src="swap.js?v=20261117-swap1" defer></script>
 </body></html>
