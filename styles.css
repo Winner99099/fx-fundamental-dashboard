@@ -32,3 +32,13 @@
 .swap-negative{color:#ffb0a9!important;font-family:'DM Mono',monospace}
 #swap-updated{font-size:13px;line-height:1.4}
 @media(max-width:720px){.swap-import{align-items:flex-start;flex-direction:column}.swap-file-label{width:100%;justify-content:space-between}}
+
+
+/* Readability refinement: explanatory copy and catalyst labels */
+.news-item p{font-size:12px;line-height:1.75;color:#b4c3d7;margin-top:8px}
+.news-bias{font-size:10.5px;line-height:1.6;color:#b0c5da}
+.news-meta{font-size:10px;gap:11px;flex-wrap:wrap}
+.news-meta .ccy-pill{font:700 12px Manrope,sans-serif;letter-spacing:.6px;color:#071a2a;background:#65d9e8;border:1px solid #8ceaf2;border-radius:4px;padding:4px 8px;min-width:38px;text-align:center}
+.news-item>a{font-size:12px;line-height:1.6}
+#report-content .notice p{font-size:12px;line-height:1.8}
+#report-content .news-list>article>p{font-size:12px;line-height:1.8}
