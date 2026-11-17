@@ -56,8 +56,15 @@ function renderNews(targetId, filter="ALL", limit=100) {
   }).join("") : `<div class="empty">No matching official releases in the current snapshot.</div>`;
 }
 function pairResearchLink(pair) { return `<a class="text-button" href="./pair-research.html?pair=${encodeURIComponent(pair.replace("/","-"))}">View Fundamental Analysis ↗</a>`; }
-function readSelectedPairs(){try{const v=JSON.parse(localStorage.getItem("macropulse-selected-pairs")||"[]");return Array.isArray(v)?v:[]}catch{return[]}}
-function saveSelectedPairs(items){localStorage.setItem("macropulse-selected-pairs",JSON.stringify([...new Set(items)]));}
+const PAIR_ORDER=["EUR","GBP","AUD","NZD","USD","CAD","CHF","JPY"];
+const PAIR_RANK=Object.fromEntries(PAIR_ORDER.map((code,index)=>[code,index]));
+function canonicalPair(raw){
+  const parts=String(raw||"").toUpperCase().split(/[/-]/);
+  if(parts.length!==2||!(parts[0] in PAIR_RANK)||!(parts[1] in PAIR_RANK)||parts[0]===parts[1])return null;
+  return PAIR_RANK[parts[0]]<PAIR_RANK[parts[1]]?parts[0]+"/"+parts[1]:parts[1]+"/"+parts[0];
+}
+function readSelectedPairs(){try{const v=JSON.parse(localStorage.getItem("macropulse-selected-pairs")||"[]");return Array.isArray(v)?[...new Set(v.map(canonicalPair).filter(Boolean))]:[]}catch{return[]}}
+function saveSelectedPairs(items){localStorage.setItem("macropulse-selected-pairs",JSON.stringify([...new Set(items.map(canonicalPair).filter(Boolean))]));}
 function renderPairs() {
   const all=(snapshot?.currencies||[]).filter(c=>CURRENCIES.includes(c.code));
   if (all.length < 2) {
@@ -65,11 +72,18 @@ function renderPairs() {
     $("overview-pairs").innerHTML = msg; $("pair-table").innerHTML = msg; return;
   }
   const selected=readSelectedPairs();
+  const byCode=Object.fromEntries(all.map(c=>[c.code,c]));
+  const orderedCodes=PAIR_ORDER.filter(code=>byCode[code]);
   const pairs=[];
-  all.forEach(base=>all.forEach(quote=>{if(base.code!==quote.code)pairs.push({pair:base.code+"/"+quote.code,spread:Number.isFinite(Number(base.score))&&base.score!==null&&Number.isFinite(Number(quote.score))&&quote.score!==null?Number(base.score)-Number(quote.score):null});}));
+  for(let i=0;i<orderedCodes.length;i++){
+    for(let j=i+1;j<orderedCodes.length;j++){
+      const base=byCode[orderedCodes[i]],quote=byCode[orderedCodes[j]];
+      pairs.push({pair:base.code+"/"+quote.code,spread:Number.isFinite(Number(base.score))&&base.score!==null&&Number.isFinite(Number(quote.score))&&quote.score!==null?Number(base.score)-Number(quote.score):null});
+    }
+  }
   pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:b.spread-a.spread);
   $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><div><b>${p.pair}</b><small>${p.spread===null?"Score unavailable":(p.spread>0?"+":"")+p.spread.toFixed(1)}</small></div>${pairResearchLink(p.pair)}</div>`).join("");
-  $("pair-table").innerHTML=`<div class="pair-toolbar"><div><b id="pair-selected-count">${selected.length} pairs selected</b><small>Your selections are saved in this browser only.</small></div><div class="pair-toolbar-actions"><label class="pair-filter"><input type="checkbox" id="pair-selected-filter"> Show selected only</label><button type="button" class="text-button" id="pair-clear-selection">Clear selection</button></div></div><div class="table-wrap"><table class="pair-select-table"><thead><tr><th>Select</th><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr data-pair-row="${p.pair}"><td><input class="pair-pick" type="checkbox" value="${p.pair}" aria-label="Select ${p.pair}" ${selected.includes(p.pair)?"checked":""}></td><td>${p.pair}</td><td>${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>My selected pairs</b><p id="pair-selection-summary">${selected.length?selected.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser."}</p></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 56 directional combinations for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
+  $("pair-table").innerHTML=`<div class="pair-toolbar"><div><b id="pair-selected-count">${selected.length} pairs selected</b><small>Your selections are saved in this browser only.</small></div><div class="pair-toolbar-actions"><label class="pair-filter"><input type="checkbox" id="pair-selected-filter"> Show selected only</label><button type="button" class="text-button" id="pair-clear-selection">Clear selection</button></div></div><div class="table-wrap"><table class="pair-select-table"><thead><tr><th>Select</th><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr data-pair-row="${p.pair}"><td><input class="pair-pick" type="checkbox" value="${p.pair}" aria-label="Select ${p.pair}" ${selected.includes(p.pair)?"checked":""}></td><td>${p.pair}</td><td>${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>My selected pairs</b><p id="pair-selection-summary">${selected.length?selected.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser."}</p></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 28 standardised currency pairs for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
   const updateSelection=()=>{const picks=[...document.querySelectorAll(".pair-pick:checked")].map(x=>x.value);saveSelectedPairs(picks);$("pair-selected-count").textContent=picks.length+" pairs selected";$("pair-selection-summary").textContent=picks.length?picks.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser.";};
   document.querySelectorAll(".pair-pick").forEach(box=>box.addEventListener("change",()=>{updateSelection();applyPairFilter();}));
   const filter=$("pair-selected-filter");filter.addEventListener("change",applyPairFilter);
