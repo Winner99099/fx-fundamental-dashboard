@@ -21,6 +21,7 @@ AUD:"Often sensitive to China, industrial commodities and global risk appetite; 
 NZD:"Often behaves as a pro-cyclical currency and can weaken when global growth expectations and risk appetite deteriorate."
 };
 function esc(v){return String(v??"—").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function fmtResearchDate(value){if(!value)return "Date not supplied";const d=new Date(value);return Number.isNaN(d.getTime())?String(value).replace("T"," ").replace(/([+-]\d{2}:\d{2}|Z)$/," $1"):d.toISOString().replace("T"," ").replace(/\.\d{3}Z$/," +00:00");}
 function fmt(v){return v==null||v===""?"Not available":Number.isFinite(Number(v))?Number(v).toFixed(2)+"%":String(v);}
 function metric(c,k,periodKey){const v=c?.[k];return fmt(v)+(c?.[periodKey]?" · "+esc(c[periodKey]):"");}
 function direction(base,quote){const a=base.score,b=quote.score;if(a==null||b==null)return "No score-based directional signal";const d=Number(a)-Number(b);return d>0.35?"Base currency has the stronger provisional score":d< -0.35?"Quote currency has the stronger provisional score":"Scores are close; no clear relative edge";}
@@ -35,7 +36,7 @@ function pairPage(){
   $("report-status").textContent="Macro snapshot loaded · pair-specific research framework";
   $("report-updated").textContent="Snapshot: "+(data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore"}):"date unavailable")+" SGT";
   const bias=direction(base,quote);
-  const events=ev.length?ev.map(e=>'<article class="news-item"><div class="news-meta"><span class="ccy-pill">'+esc(e.currency)+'</span><span>'+esc(e.source||"Source")+'</span><span>'+esc(e.time||"Date not supplied")+'</span></div><a href="'+(/^https?:\/\//i.test(e.url||"")?esc(e.url):"#")+'" target="_blank" rel="noopener noreferrer">'+esc(e.title||"Economic release")+'</a><p>'+esc(e.summary||"Review the actual result against the market consensus and the previous reading. Open the source for the full release.")+'</p></article>').join(""):'<div class="empty">No matching events in the latest snapshot. Check the Event Watch and official calendars for upcoming releases.</div>';
+  const events=ev.length?ev.map(e=>'<article class="news-item"><div class="news-meta"><span class="ccy-pill">'+esc(e.currency)+'</span><span>'+esc(e.source||"Source")+'</span><span>'+esc(fmtResearchDate(e.time))+'</span></div><a href="'+(/^https?:\/\//i.test(e.url||"")?esc(e.url):"#")+'" target="_blank" rel="noopener noreferrer">'+esc(e.title||"Economic release")+'</a><p>'+esc(e.summary||"Review the actual result against the market consensus and the previous reading. Open the source for the full release.")+'</p></article>').join(""):'<div class="empty">No matching events in the latest snapshot. Check the Event Watch and official calendars for upcoming releases.</div>';
   $("report-content").innerHTML=`
   <div class="metric-grid">
    <article class="metric-card"><div class="metric-label">PAIR BIAS FROM SCORECARD</div><div class="metric-value" style="font-size:18px">${esc(bias)}</div><div class="metric-note">Provisional only; not a trade signal</div></article>
