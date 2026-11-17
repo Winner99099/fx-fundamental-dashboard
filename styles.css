@@ -49,3 +49,11 @@
 .score-negative{color:#ff9d9d!important;font-family:'DM Mono',monospace}
 #currency-rows small,#currency-rows-full small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
 .impact-pill{white-space:nowrap}
+
+/* Core economic release tracker */
+.release-table{min-width:1050px}
+.release-table td:nth-child(3){white-space:nowrap;font:10px 'DM Mono',monospace;color:#aebed2}
+.release-table td:nth-child(4),.release-table td:nth-child(5),.release-table td:nth-child(6){font:11px 'DM Mono',monospace}
+.release-table td a{color:var(--cyan);text-decoration:none;font-weight:700}
+.release-new{display:inline-block;border:1px solid #267b68;background:#102d2b;color:#62edb2;border-radius:4px;padding:4px 7px;font:9px 'DM Mono',monospace;white-space:nowrap}
+#release-currency-filter{min-width:125px}
