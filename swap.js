@@ -6,6 +6,7 @@ function parseSwapCsv(src){
 }
 function readSwapStore(){try{return JSON.parse(localStorage.getItem(SWAP_KEY)||"[]");}catch(e){return[];}}
 function escSwap(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function swapModeLabel(platform,value){const n=Number(value);const m4={0:"Points",1:"Base currency",2:"Interest",3:"Margin currency"};const m5={0:"Disabled",1:"Points",2:"Symbol currency",3:"Margin currency",4:"Deposit currency",5:"Interest (current)",6:"Interest (open)",7:"Reopen (current)",8:"Reopen (bid)"};const label=(platform==="MT4"?m4:m5)[n];return label===undefined?String(value):String(value)+" · "+label;}
 function renderSwapTable(){
  const all=readSwapStore(),latest={};
  all.forEach(r=>{const k=(r.broker||"")+"|"+(r.platform||"")+"|"+(r.symbol||"");if(!latest[k]||String(r.captured_local)>String(latest[k].captured_local))latest[k]=r;});
