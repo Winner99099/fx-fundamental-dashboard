@@ -22,7 +22,7 @@ bool ExportSnapshot(){
  for(int i=0;i<total;i++){
   string sym=SymbolName(i,false);if(sym=="")continue;if(ForexSymbolsOnly&&!IsForexSymbol(sym))continue;
   double sl=MarketInfo(sym,MODE_SWAPLONG),ss=MarketInfo(sym,MODE_SWAPSHORT),lots=MarketInfo(sym,MODE_LOTSIZE),tv=MarketInfo(sym,MODE_TICKVALUE),ts=MarketInfo(sym,MODE_TICKSIZE);int sm=(int)MarketInfo(sym,MODE_SWAPTYPE);
-  FileWrite(h,captured,AccountCompany(),"MT4",AccountCurrency(),sym,DoubleToString(sl,8),DoubleToString(ss,8),IntegerToString(sm),DoubleToString(lots,2),DoubleToString(tv,8),DoubleToString(ts,8),"","","unknown",IntegerToString((int)MarketInfo(sym,MODE_PROFITCALCMODE)));written++;
+  FileWrite(h,captured,"IG Markets","MT4",AccountCurrency(),sym,DoubleToString(sl,8),DoubleToString(ss,8),IntegerToString(sm),DoubleToString(lots,2),DoubleToString(tv,8),DoubleToString(ts,8),"","","unknown",IntegerToString((int)MarketInfo(sym,MODE_PROFITCALCMODE)));written++;
  }
  FileFlush(h);FileClose(h);Print("MacroPulseFX MT4 exported ",written," Forex symbols to Common Files/",OutputFile);return(written>0);
 }
