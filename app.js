@@ -93,7 +93,29 @@ function renderPairs() {
   const filter=$("pair-selected-filter");filter.addEventListener("change",applyPairFilter);
   $("pair-clear-selection").addEventListener("click",()=>{document.querySelectorAll(".pair-pick").forEach(x=>x.checked=false);saveSelectedPairs([]);updateSelection();applyPairFilter();});
   function applyPairFilter(){const only=filter.checked;document.querySelectorAll("[data-pair-row]").forEach(row=>{row.hidden=only&&!row.querySelector(".pair-pick").checked;});}
-}function renderSources() {
+}function releaseDateSgt(value) {
+  if (!value) return "Date not verified";
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? safeText(value) : d.toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT";
+}
+function releaseTrackerRows(filter="ALL") {
+  const rows=[];
+  for (const c of (snapshot?.currencies||[])) {
+    if (filter!=="ALL" && c.code!==filter) continue;
+    for (const r of (c.release_tracker||[])) {
+      const change=r.change;
+      const changeText=change===null||change===undefined?"—":(change>0?"+":"")+Number(change).toFixed(2)+(r.key==="policy_rate"?" pp":" pp");
+      const changeClass=change===null||change===undefined?"score-na":change>0?"score-positive":change<0?"score-negative":"score-na";
+      const status=r.status==="new_release"?'<span class="release-new">NEW RELEASE</span>':r.status==="no_verified_release"?'<span class="score-na">Awaiting verified release</span>':'<span class="score-na">Last known reading</span>';
+      const link=r.url?'<a href="'+escapeHtml(r.url)+'" target="_blank" rel="noopener noreferrer">Open ↗</a>':"—";
+      rows.push('<tr><td>'+safeText(c.code)+'</td><td>'+safeText(r.label)+'</td><td>'+releaseDateSgt(r.release_time||r.release_date)+'</td><td>'+safeText(r.actual)+'</td><td>'+safeText(r.previous)+'</td><td class="'+changeClass+'">'+changeText+'</td><td>'+status+'</td><td>'+link+'</td></tr>');
+    }
+  }
+  $("release-tracker-rows").innerHTML=rows.length?rows.join(""):'<tr><td colspan="8" class="empty">No verified release records available for this selection.</td></tr>';
+}
+function renderReleaseTracker(){ releaseTrackerRows($("release-currency-filter").value); }
+
+function renderSources() {
   const sources=snapshot?.sources||[];
   $("source-directory").innerHTML=sources.length?sources.map(s=>`<div class="source-row"><div><b>${safeText(s.name)}</b><small>${safeText(s.status)} · checked ${fmtDate(s.checked_at)}</small></div><a href="${s.url}" target="_blank" rel="noopener">Open ↗</a></div>`).join(""):`<div class="empty">No source metadata.</div>`;
 }
@@ -107,7 +129,7 @@ async function loadSnapshot() {
     snapshot=data;
     currencyRows("currency-rows"); currencyRows("currency-rows-full");
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
-    renderPairs(); renderSources();
+    renderPairs(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
     const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").startsWith("OECD")));
@@ -133,6 +155,7 @@ document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",(
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>navigate(b.dataset.go)));
 $("refresh-btn").addEventListener("click",loadSnapshot);
 $("news-filter").addEventListener("change",()=>renderNews("news-list",$("news-filter").value));
+$("release-currency-filter").addEventListener("change",renderReleaseTracker);
 function clock(){ $("clock").textContent=new Date().toLocaleTimeString("en-SG",{timeZone:"Asia/Singapore",hour12:false})+" SGT"; }
 clock(); setInterval(clock,1000); loadSnapshot(); setInterval(loadSnapshot,5*60*1000);
 
