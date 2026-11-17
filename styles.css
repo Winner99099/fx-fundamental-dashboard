@@ -20,3 +20,15 @@
 .pair-pick,.pair-filter input{width:15px;height:15px;accent-color:#65d9e8;cursor:pointer}
 .pair-select-table{min-width:850px}.pair-select-table td:first-child{width:62px;text-align:center}.pair-select-table tr[hidden]{display:none}
 @media(max-width:720px){.pair-toolbar{align-items:flex-start;flex-direction:column}.pair-toolbar-actions{width:100%;justify-content:space-between}}
+
+
+/* Broker swap intelligence */
+.swap-import{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px}
+.swap-file-label{display:inline-flex;align-items:center;gap:10px;background:#14283c;border:1px solid #31506c;border-radius:6px;padding:10px 13px;color:#bfe8f0;font-size:11px;cursor:pointer}
+.swap-file-label input{max-width:220px;padding:4px;font-size:10px}
+.swap-import-status{padding:0 18px 14px;color:#91a4bd;font-size:10px}
+.swap-table{min-width:1050px}
+.swap-positive{color:#62edb2!important;font-family:'DM Mono',monospace}
+.swap-negative{color:#ffb0a9!important;font-family:'DM Mono',monospace}
+#swap-updated{font-size:13px;line-height:1.4}
+@media(max-width:720px){.swap-import{align-items:flex-start;flex-direction:column}.swap-file-label{width:100%;justify-content:space-between}}
