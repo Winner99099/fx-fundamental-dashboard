@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T02:19:01.147791+00:00",
+  "generated_at": "2026-11-17T02:33:55.477691+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v5-event-driven-surprise-overlay",
   "history_window_days": 90,
@@ -540,28 +540,28 @@
           "year": null,
           "history": [
             {
-              "period": "2026-Q3",
-              "value": 1.156133449
-            },
-            {
               "period": "2026-Q2",
-              "value": 0.799827046
+              "value": 0.726654038
             },
             {
               "period": "2026-Q1",
-              "value": 0.557213508
+              "value": 0.488839715
             },
             {
               "period": "2025-Q4",
-              "value": 0.608531977
+              "value": 0.513177189
             },
             {
               "period": "2025-Q3",
-              "value": 0.625192406
+              "value": 0.650208425
             },
             {
               "period": "2025-Q2",
-              "value": 1.887704145
+              "value": 1.871578645
+            },
+            {
+              "period": "2025-Q1",
+              "value": 1.628183516
             }
           ],
           "score": -0.39,
@@ -690,10 +690,6 @@
           "year": null,
           "history": [
             {
-              "period": "2026-Q3",
-              "value": 3.043181017
-            },
-            {
               "period": "2026-Q2",
               "value": 2.632421156
             },
@@ -712,6 +708,10 @@
             {
               "period": "2025-Q2",
               "value": 1.816882705
+            },
+            {
+              "period": "2025-Q1",
+              "value": 2.748080972
             }
           ],
           "score": 5.0,
@@ -8225,7 +8225,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -8233,7 +8233,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8241,7 +8241,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -8249,7 +8249,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -8257,7 +8257,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8265,7 +8265,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8273,7 +8273,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8281,7 +8281,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -8289,7 +8289,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -8298,7 +8298,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8306,7 +8306,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8314,7 +8314,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8322,7 +8322,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8330,7 +8330,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8338,7 +8338,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8346,7 +8346,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8354,7 +8354,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-17T02:19:01.147791+00:00",
+      "checked_at": "2026-11-17T02:33:55.477691+00:00",
       "data_year": null,
       "indicators_available": 3
     }
