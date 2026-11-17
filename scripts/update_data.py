@@ -922,11 +922,65 @@ for currency in currencies:
         }
     currency["last_release_reference"] = reference
 
+    # Build an indicator-level release tracker from dated, published calendar actuals.
+    patterns = {
+        "policy_rate": (r"interest rate decision|rate decision|monetary policy decision|official cash rate|bank rate", "Policy rate"),
+        "inflation": (r"cpi|consumer price|inflation|pce|price index", "Inflation"),
+        "gdp_growth": (r"gross domestic product|\bgdp\b", "GDP growth"),
+        "unemployment": (r"unemployment rate|employment change|nonfarm payroll|non-farm payroll|payrolls", "Employment / unemployment"),
+    }
+    tracker = []
+    for key, (pattern, label) in patterns.items():
+        matched = []
+        for event in events:
+            if event.get("currency") != code or event.get("source") != "Forex Factory":
+                continue
+            stamp = parse_date(event.get("time"))
+            if stamp and stamp <= now and re.search(pattern, (event.get("title") or "").lower()) and event.get("actual"):
+                matched.append((stamp, event))
+        matched.sort(key=lambda item: item[0], reverse=True)
+        if matched:
+            stamp, event = matched[0]
+            actual_text, previous_text = event.get("actual"), event.get("previous")
+            def numeric_release(value):
+                if value is None:
+                    return None
+                cleaned = str(value).replace(",", "").replace("%", "").replace("K", "").replace("M", "").strip()
+                try:
+                    return float(cleaned)
+                except ValueError:
+                    return None
+            actual_num, previous_num = numeric_release(actual_text), numeric_release(previous_text)
+            change = round(actual_num - previous_num, 4) if actual_num is not None and previous_num is not None else None
+            tracker.append({
+                "key": key, "label": label, "release_time": stamp.isoformat(),
+                "actual": actual_text, "previous": previous_text, "change": change,
+                "status": "new_release", "title": event.get("title"),
+                "url": event.get("url"), "source": "Forex Factory",
+                "comparison_note": "Actual minus previous; units follow the published series."
+            })
+        elif key == "policy_rate":
+            tracker.append({
+                "key": key, "label": label, "release_date": currency.get("policy_rate_as_of"),
+                "actual": currency.get("policy_rate_display"), "previous": None,
+                "change": None, "status": "last_known_reading",
+                "url": currency.get("policy_rate_source"), "source": currency.get("policy_rate_basis"),
+                "comparison_note": "Configured decision/effective date; previous release not yet verified."
+            })
+        else:
+            tracker.append({
+                "key": key, "label": label, "release_date": None,
+                "actual": None, "previous": None, "change": None,
+                "status": "no_verified_release", "url": None, "source": "Forex Factory calendar",
+                "comparison_note": "No dated actual release captured in the retained calendar window."
+            })
+    currency["release_tracker"] = tracker
+
 output = {
-    "schema_version": 3,
+    "schema_version": 4,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v5-event-driven-surprise-overlay",
+    "model": "v6-dated-core-release-tracker",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
