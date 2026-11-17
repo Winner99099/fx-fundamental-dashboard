@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T13:45:27.397761+00:00",
+  "generated_at": "2026-11-17T14:41:23.369207+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v5-event-driven-surprise-overlay",
   "history_window_days": 90,
@@ -855,10 +855,6 @@
           "year": null,
           "history": [
             {
-              "period": "2026-10",
-              "value": 3.085299
-            },
-            {
               "period": "2026-09",
               "value": 3.092783
             },
@@ -877,6 +873,10 @@
             {
               "period": "2026-05",
               "value": 3.225806
+            },
+            {
+              "period": "2026-04",
+              "value": 2.815177
             }
           ],
           "score": 1.97,
@@ -1310,48 +1310,6 @@
     }
   ],
   "events": [
-    {
-      "event_id": "5bcc5bc9ef53905f4baca586",
-      "currency": "USD",
-      "title": "Capacity Utilization Rate",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 76.8% Previous: 76.9%",
-      "url": "https://www.forexfactory.com/calendar/192-us-capacity-utilization-rate",
-      "time": "2026-11-17T14:15:00+00:00",
-      "published_at": "2026-11-17T14:15:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "76.8%",
-      "previous": "76.9%",
-      "calendar_time_label": "2:15pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
-      "event_id": "96ff521c06fd741bb72b7074",
-      "currency": "USD",
-      "title": "Industrial Production m/m",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.0% Previous: 0.7%",
-      "url": "https://www.forexfactory.com/calendar/191-us-industrial-production-mm",
-      "time": "2026-11-17T14:15:00+00:00",
-      "published_at": "2026-11-17T14:15:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "0.0%",
-      "previous": "0.7%",
-      "calendar_time_label": "2:15pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "growth / activity surprise"
-    },
     {
       "event_id": "dfe1f1b546d561c7ce5b499c",
       "currency": "USD",
@@ -6200,6 +6158,48 @@
       "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
+      "event_id": "5bcc5bc9ef53905f4baca586",
+      "currency": "USD",
+      "title": "Capacity Utilization Rate",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 76.8% Previous: 76.9%",
+      "url": "https://www.forexfactory.com/calendar/192-us-capacity-utilization-rate",
+      "time": "2026-11-17T14:15:00+00:00",
+      "published_at": "2026-11-17T14:15:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "76.8%",
+      "previous": "76.9%",
+      "calendar_time_label": "2:15pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "96ff521c06fd741bb72b7074",
+      "currency": "USD",
+      "title": "Industrial Production m/m",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.0% Previous: 0.7%",
+      "url": "https://www.forexfactory.com/calendar/191-us-industrial-production-mm",
+      "time": "2026-11-17T14:15:00+00:00",
+      "published_at": "2026-11-17T14:15:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "0.0%",
+      "previous": "0.7%",
+      "calendar_time_label": "2:15pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
+    },
+    {
       "event_id": "81b7bbed116dc3c7f898b054",
       "currency": "CAD",
       "title": "Foreign Securities Purchases",
@@ -8308,7 +8308,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -8316,7 +8316,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8324,7 +8324,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -8332,7 +8332,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -8340,7 +8340,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8348,7 +8348,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8356,7 +8356,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8364,7 +8364,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -8372,7 +8372,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -8381,7 +8381,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8389,7 +8389,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8397,7 +8397,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8405,7 +8405,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8413,7 +8413,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8421,7 +8421,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8429,7 +8429,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8437,7 +8437,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-17T13:45:27.397761+00:00",
+      "checked_at": "2026-11-17T14:41:23.369207+00:00",
       "data_year": null,
       "indicators_available": 3
     }
