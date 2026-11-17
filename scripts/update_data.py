@@ -608,6 +608,13 @@ try:
             "previous": previous or None, "calendar_time_label": source_time,
             "event_type": "economic_calendar",
         }
+        # Preserve published values already captured in an earlier snapshot.
+        # Some calendar refreshes temporarily return blank actual/forecast/previous
+        # fields after a release; never let an empty refresh erase known figures.
+        prior = events_by_id.get(eid, {})
+        for field in ("actual", "forecast", "previous"):
+            if not event.get(field) and prior.get(field):
+                event[field] = prior[field]
         events_by_id[eid] = event
         ff_count += 1
         ff_added += 1
@@ -887,7 +894,7 @@ output = {
         "inflation_method": "Closeness to each central bank inflation target; target assumptions are listed in INFLATION_TARGETS in scripts/update_data.py.",
         "directions": {"policy_rate_level": "Higher policy rate is treated as a carry-support proxy, not a forecast of future policy.", "inflation_vs_target": "Closer to target is preferred.", "gdp_growth": "Higher quarterly growth is preferred.", "employment": "Lower unemployment is preferred."},
         "excluded_until_integrated": ["market-implied policy path and 2-year yield differentials", "spot FX momentum / post-release price confirmation"],
-        "important": "Structural score remains a slow-moving cross-sectional macro measure. Event score uses numeric released actual-versus-consensus surprises, indicator-aware direction, impact weighting and a 36-hour half-life. Short-term score is 60% structural + 40% event score when verified event data exists; otherwise it remains unavailable.",
+        "important": "Structural score remains a slow-moving cross-sectional macro measure. Event score uses numeric released actual-versus-consensus surprises, indicator-aware direction, impact weighting and a 36-hour half-life. Event Momentum also displays the latest completed medium/high-impact release with previous, forecast and actual values; blank refreshes never erase figures already captured. Short-term score is 60% structural + 40% event score when verified event data exists; otherwise it shows a structural baseline.",
     },
     "currencies": currencies,
     "events": events,
