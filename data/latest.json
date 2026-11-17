@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-11-17T01:34:55.294241+00:00",
+  "generated_at": "2026-11-17T02:19:01.147791+00:00",
   "timezone": "UTC (displayed in SGT)",
-  "model": "v4-relative-macro-provisional-news-v2",
+  "model": "v5-event-driven-surprise-overlay",
   "history_window_days": 90,
   "scoring": {
     "scale": "-5 to +5",
@@ -22,11 +22,10 @@
       "employment": "Lower unemployment is preferred."
     },
     "excluded_until_integrated": [
-      "economic surprises versus market consensus (20%)",
-      "expected policy path and 2-year yield differentials",
-      "spot FX momentum confirmation"
+      "market-implied policy path and 2-year yield differentials",
+      "spot FX momentum / post-release price confirmation"
     ],
-    "important": "Only 80% of intended model weight is currently covered; available components are renormalised. Scores are relative macro context, not standalone trading signals."
+    "important": "Structural score remains a slow-moving cross-sectional macro measure. Event score uses numeric released actual-versus-consensus surprises, indicator-aware direction, impact weighting and a 36-hour half-life. Short-term score is 60% structural + 40% event score when verified event data exists; otherwise it remains unavailable."
   },
   "currencies": [
     {
@@ -171,7 +170,13 @@
         "gdp_growth": 5.0,
         "employment": 0.52,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "EUR",
@@ -315,7 +320,13 @@
         "gdp_growth": -0.39,
         "employment": -1.57,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "GBP",
@@ -459,7 +470,13 @@
         "gdp_growth": 0.39,
         "employment": 0.0,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "JPY",
@@ -523,28 +540,28 @@
           "year": null,
           "history": [
             {
+              "period": "2026-Q3",
+              "value": 1.156133449
+            },
+            {
               "period": "2026-Q2",
-              "value": 0.726654038
+              "value": 0.799827046
             },
             {
               "period": "2026-Q1",
-              "value": 0.488839715
+              "value": 0.557213508
             },
             {
               "period": "2025-Q4",
-              "value": 0.513177189
+              "value": 0.608531977
             },
             {
               "period": "2025-Q3",
-              "value": 0.650208425
+              "value": 0.625192406
             },
             {
               "period": "2025-Q2",
-              "value": 1.871578645
-            },
-            {
-              "period": "2025-Q1",
-              "value": 1.628183516
+              "value": 1.887704145
             }
           ],
           "score": -0.39,
@@ -603,7 +620,13 @@
         "gdp_growth": -0.39,
         "employment": 2.01,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "CHF",
@@ -667,6 +690,10 @@
           "year": null,
           "history": [
             {
+              "period": "2026-Q3",
+              "value": 3.043181017
+            },
+            {
               "period": "2026-Q2",
               "value": 2.632421156
             },
@@ -685,10 +712,6 @@
             {
               "period": "2025-Q2",
               "value": 1.816882705
-            },
-            {
-              "period": "2025-Q1",
-              "value": 2.748080972
             }
           ],
           "score": 5.0,
@@ -747,7 +770,13 @@
         "gdp_growth": 5.0,
         "employment": 1.49,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "CAD",
@@ -891,7 +920,13 @@
         "gdp_growth": 2.75,
         "employment": -1.75,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "AUD",
@@ -1035,7 +1070,13 @@
         "gdp_growth": -0.39,
         "employment": 0.0,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     },
     {
       "code": "NZD",
@@ -1179,7 +1220,13 @@
         "gdp_growth": -1.97,
         "employment": -0.87,
         "economic_surprises": null
-      }
+      },
+      "event_score": null,
+      "event_surprise_count": 0,
+      "event_score_half_life_hours": 36,
+      "last_event_surprise_at": null,
+      "short_term_score": null,
+      "short_term_score_status": "Waiting for released actual-versus-forecast data"
     }
   ],
   "events": [
@@ -1199,7 +1246,10 @@
       "calendar_time_label": "9:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2bc354fe88d43dc4824a825c",
@@ -1217,7 +1267,10 @@
       "calendar_time_label": "10:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9b80d26da9ec7cf8f4968a71",
@@ -1235,7 +1288,10 @@
       "calendar_time_label": "12:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "28c72ca51fbb2d618766dc13",
@@ -1253,7 +1309,10 @@
       "calendar_time_label": "2:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "78c001f2b62face5c4152026",
@@ -1271,7 +1330,10 @@
       "calendar_time_label": "4:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fa27f1a1a56d42adf4eb5a35",
@@ -1289,7 +1351,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "135570f517407e9b569a81df",
@@ -1307,7 +1372,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "830a68c75c814d87b5a5e091",
@@ -1325,7 +1393,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "labour-market surprise"
     },
     {
       "event_id": "db2ce06322588e2042db9a91",
@@ -1343,7 +1414,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5bc610f9807d883afec9b4b5",
@@ -1361,7 +1435,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "afc196478d68ba37350e0f31",
@@ -1379,7 +1456,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0147020e5b92b669eadc76f3",
@@ -1397,7 +1477,10 @@
       "calendar_time_label": "12:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d65fe81c9ea5fb298aced674",
@@ -1415,7 +1498,10 @@
       "calendar_time_label": "1:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "f656799073e182f5e6070b10",
@@ -1433,7 +1519,10 @@
       "calendar_time_label": "1:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "81b7bbed116dc3c7f898b054",
@@ -1451,7 +1540,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "cddbce726bb4f817e7352774",
@@ -1469,7 +1561,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "e5ee7e443ee62636c0dc1375",
@@ -1487,7 +1582,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "f41a42a195839508bcd009d2",
@@ -1505,7 +1603,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5bcc5bc9ef53905f4baca586",
@@ -1523,7 +1624,10 @@
       "calendar_time_label": "2:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "96ff521c06fd741bb72b7074",
@@ -1541,7 +1645,10 @@
       "calendar_time_label": "2:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "dfe1f1b546d561c7ce5b499c",
@@ -1559,7 +1666,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7ccc54cc3daa61bd3669a484",
@@ -1577,7 +1687,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "386e81adb7d56c373b37c842",
@@ -1595,7 +1708,10 @@
       "calendar_time_label": "3:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "453e49c5a32dd72429279a59",
@@ -1613,7 +1729,10 @@
       "calendar_time_label": "9:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2f82787c4518f247e4806b6a",
@@ -1631,7 +1750,10 @@
       "calendar_time_label": "9:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "c9455727b01f0bae48243a57",
@@ -1649,7 +1771,10 @@
       "calendar_time_label": "9:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "6bc9cf914fd5239b8b4371de",
@@ -1667,7 +1792,10 @@
       "calendar_time_label": "11:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e1cdf4d30e3325f99e466e97",
@@ -1685,7 +1813,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "b5c2660c4ae7b7add7b981de",
@@ -1703,7 +1834,10 @@
       "calendar_time_label": "12:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "6dece6a3bea0e4fe9c1ae08c",
@@ -1721,7 +1855,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "a45ea93abbc988b2425dc87d",
@@ -1739,7 +1876,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "d8dfcfdcdf8756ecef39c824",
@@ -1757,7 +1897,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "2c71f7d3c8e95c64cbba9aa1",
@@ -1775,7 +1918,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "7e6112a0f3e4545c8b0d0b48",
@@ -1793,7 +1939,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a0a93f4a28804d680a5a4070",
@@ -1811,7 +1960,10 @@
       "calendar_time_label": "9:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "406a1ce1293d20f1546b39fb",
@@ -1829,7 +1981,10 @@
       "calendar_time_label": "9:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d71f2f789fcc6a62b9f1a541",
@@ -1847,7 +2002,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "e1c8b8dc631015cdec546ef7",
@@ -1865,7 +2023,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "f756b1d48e995509edf05fcf",
@@ -1883,7 +2044,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6c70f765cb18678f6bd82705",
@@ -1901,7 +2065,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6bc142d175c7d825fc038f18",
@@ -1919,7 +2086,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5b20dedd12f29cd8eeb4b196",
@@ -1937,7 +2107,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0899acc303e66cb3ee8465ee",
@@ -1955,7 +2128,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f22564a1ca0b9ff4b3a566e2",
@@ -1973,7 +2149,10 @@
       "calendar_time_label": "3:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b828b36b2948d692850a2d50",
@@ -1991,7 +2170,10 @@
       "calendar_time_label": "5:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9136225dea255f9c9415cf4e",
@@ -2009,7 +2191,10 @@
       "calendar_time_label": "5:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "71fa4f48aa2de9c97a901cd9",
@@ -2027,7 +2212,10 @@
       "calendar_time_label": "6:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4821a4f25b000e813cc89293",
@@ -2045,7 +2233,10 @@
       "calendar_time_label": "7:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "eb2a49869e939657ddaa6d29",
@@ -2063,7 +2254,10 @@
       "calendar_time_label": "7:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a4020c7ac45518c0b21aa1cd",
@@ -2081,7 +2275,10 @@
       "calendar_time_label": "9:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "83b135dbc7d318d7515c3751",
@@ -2099,7 +2296,10 @@
       "calendar_time_label": "9:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "47aac4f56b4718ac2c863611",
@@ -2117,7 +2317,10 @@
       "calendar_time_label": "9:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "b43404f1101268cbf41b2700",
@@ -2135,7 +2338,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0293160f72100982a33139f5",
@@ -2153,7 +2359,10 @@
       "calendar_time_label": "12:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "cf3680b6ce90bd0740fc3147",
@@ -2171,7 +2380,10 @@
       "calendar_time_label": "12:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "labour-market surprise"
     },
     {
       "event_id": "7ad7cd27fd535bf1a0ef53ed",
@@ -2189,7 +2401,10 @@
       "calendar_time_label": "9:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "eda15eb05e926d42ad5d1603",
@@ -2207,7 +2422,10 @@
       "calendar_time_label": "11:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "572a0e10fb47de0598b0bf62",
@@ -2225,7 +2443,10 @@
       "calendar_time_label": "11:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "95767a2fae60faed3d51b58f",
@@ -2243,7 +2464,10 @@
       "calendar_time_label": "12:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b4ab5b1b9eda10d96cc74130",
@@ -2261,7 +2485,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "labour-market surprise"
     },
     {
       "event_id": "53cb98e478ec3dd63e04c929",
@@ -2279,7 +2506,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "e0177971311f2774bbef25c0",
@@ -2297,7 +2527,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "54238e80e2ff3cc7246213b4",
@@ -2315,7 +2548,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9d1df20408686eb764463069",
@@ -2333,7 +2569,10 @@
       "calendar_time_label": "1:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "686aec7018852cf60c93da17",
@@ -2351,7 +2590,10 @@
       "calendar_time_label": "2:25pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "520735b068dee99fe9255994",
@@ -2369,7 +2611,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0ab648e9e18301d2167c5513",
@@ -2387,7 +2632,10 @@
       "calendar_time_label": "3:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5bdee379d5b83b3da0d020b2",
@@ -2405,7 +2653,10 @@
       "calendar_time_label": "3:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "bb8b771c2683effae20b2fa5",
@@ -2423,7 +2674,10 @@
       "calendar_time_label": "5:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ab3997a68fec56ba6db99d11",
@@ -2441,7 +2695,10 @@
       "calendar_time_label": "7:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1d5372696227c90ff52b8904",
@@ -2459,7 +2716,10 @@
       "calendar_time_label": "9:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b375eacd6f394d2fcb69ac7c",
@@ -2477,7 +2737,10 @@
       "calendar_time_label": "11:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9100af24370768aa173a255c",
@@ -2495,7 +2758,10 @@
       "calendar_time_label": "11:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "e65da56e9bb2e0d74813f96d",
@@ -2513,7 +2779,10 @@
       "calendar_time_label": "12:01am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "ff20e655a6a4d9c925498a47",
@@ -2531,7 +2800,10 @@
       "calendar_time_label": "2:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5598c26886556b79d1aaba95",
@@ -2549,7 +2821,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "c2a582e5138a0d8e6e13300f",
@@ -2567,7 +2842,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "ddde414d9d17fa053733d2ab",
@@ -2585,7 +2863,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "48f2f12d7acac2ef73b8a6e6",
@@ -2603,7 +2884,10 @@
       "calendar_time_label": "8:15am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "518ae9ca9c5fe79f8ac3e899",
@@ -2621,7 +2905,10 @@
       "calendar_time_label": "1:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "616b9f10e9f032d62a3be6c2",
@@ -2639,7 +2926,10 @@
       "calendar_time_label": "1:25pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "08e1ca085ad7e40c43b4594f",
@@ -2657,7 +2947,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "f4a3c08bf24bbdf2a61f2592",
@@ -2675,7 +2968,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "a12fd485263e6891b4eae3eb",
@@ -2693,7 +2989,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "56f7844b11e50994cba4ce1d",
@@ -2711,7 +3010,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "eee5bf7013ac68b4dcee62d2",
@@ -2729,7 +3031,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "a976c0a960df2454fa9568fb",
@@ -2747,7 +3052,10 @@
       "calendar_time_label": "5:15pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "748196c988dd58534f62014a",
@@ -2760,7 +3068,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b9a1df575ae56b0fb02724aa",
@@ -2773,7 +3084,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1534642534b03faa08b7f6ea",
@@ -2786,7 +3100,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4705b49a80f3a2b27705e771",
@@ -2799,7 +3116,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5c568a1b0fdc5e4bab224e39",
@@ -2812,7 +3132,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a83f47ba756dbac09fa13a9f",
@@ -2825,7 +3148,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e78e8bff513d0cfa06073390",
@@ -2838,7 +3164,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b50bf5fdcf60843147a24ef9",
@@ -2851,7 +3180,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0e49bede120dfd127939c938",
@@ -2864,7 +3196,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7b424363007dac915d693b22",
@@ -2877,7 +3212,10 @@
       "source": "Federal Reserve",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "faeb7d62e1d88a553a94d27a",
@@ -2890,7 +3228,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9f08aa22bd9bdfbe78c8f8d0",
@@ -2903,7 +3244,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "52d386ae0ea0836532cfa89b",
@@ -2916,7 +3260,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b9d2779d708067424ffb6484",
@@ -2929,7 +3276,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ae9b3b8801fd903568df3951",
@@ -2942,7 +3292,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b92e855412e31a1eaad53670",
@@ -2955,7 +3308,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fdd342f06ed03fcb09b03dbb",
@@ -2968,7 +3324,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "35d7225bb2d534fca1ff3579",
@@ -2981,7 +3340,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2f1f5fd5339747a21e230a4f",
@@ -2994,7 +3356,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "92f6ce00a2e663ea6ba71d06",
@@ -3007,7 +3372,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "04e11f037972e1e4b48f24f2",
@@ -3020,7 +3388,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "eb38e8e55ed0182dd868c03d",
@@ -3033,7 +3404,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5f9ebd631ed8e357d9fec088",
@@ -3046,7 +3420,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "205678b02bcda4246e87ff59",
@@ -3059,7 +3436,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "07d418752b02a2f14e04996c",
@@ -3072,7 +3452,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4ca03e7d2197f950a65ff22d",
@@ -3085,7 +3468,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fad86ee3ea7c76c204bf98b9",
@@ -3098,7 +3484,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "13c2e37d8cf09b5ea4aa9e20",
@@ -3111,7 +3500,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d756a30ea53614032d145d0a",
@@ -3124,7 +3516,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "33a470554eec0a7efdca0ef8",
@@ -3137,7 +3532,10 @@
       "source": "Bank of England",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "JPY",
@@ -3150,7 +3548,10 @@
       "event_id": "56cf29b69482b2dfc69f5e3d",
       "source": "Bank of Japan",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6257884544fda85b6fc65d96",
@@ -3163,7 +3564,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ec6570158d519efaba89ccee",
@@ -3176,7 +3580,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d72d521fe1fa84835a7c8513",
@@ -3189,7 +3596,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5ba24daa5107c72789dcacc2",
@@ -3202,7 +3612,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d7d4d8706b0b5a02ef29a3df",
@@ -3215,7 +3628,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d3c76550105c3e75a7eb754c",
@@ -3228,7 +3644,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c21f60b1035980b4d5563959",
@@ -3241,7 +3660,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c9507952b24ffeb208c93890",
@@ -3254,7 +3676,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f62d24775074d526c1ff4bd0",
@@ -3267,7 +3692,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5de029819a780eb606357d89",
@@ -3280,7 +3708,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a4f1c56202d562e0f060e93f",
@@ -3293,7 +3724,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5c4806b93cd166d555d52fac",
@@ -3306,7 +3740,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "00d2271a996eac86e7f54b1a",
@@ -3319,7 +3756,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a6fbc452bcea8da9e18cec9a",
@@ -3332,7 +3772,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ed0afb117efe18aa38166f88",
@@ -3345,7 +3788,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "JPY",
@@ -3358,7 +3804,10 @@
       "event_id": "29f7f08535a892d5b94a9b40",
       "source": "Bank of Japan",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "634c4bbc53b68963fe0b8585",
@@ -3371,7 +3820,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8d59d5708258b33e1c87aa81",
@@ -3384,7 +3836,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "95f074b738e81558df80785f",
@@ -3397,7 +3852,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1c1f8662c812787c076b47f5",
@@ -3410,7 +3868,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "3727d4a7e5fcaf37ed0ef042",
@@ -3423,7 +3884,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c2dcd997cba6ec45383cd500",
@@ -3436,7 +3900,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e3fbe89251d02ca947384315",
@@ -3449,7 +3916,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "GBP",
@@ -3462,7 +3932,10 @@
       "event_id": "d8679f85bbc4e9e108b229f7",
       "source": "Bank of England",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "hawkish rate surprise"
     },
     {
       "event_id": "93b2d2560d3415a0db713b3a",
@@ -3475,7 +3948,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "EUR",
@@ -3488,7 +3964,10 @@
       "event_id": "2f85e2fe0575edf30c3640b9",
       "source": "European Central Bank",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b2cecf26571d1d6ab573ff7d",
@@ -3501,7 +3980,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7ade06e43860fc3fc4358164",
@@ -3514,7 +3996,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f15072250424830b16e215a9",
@@ -3527,7 +4012,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f9cc4c7d5e1344d140440cd3",
@@ -3540,7 +4028,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "33dd271f2b031003a1a2b5ac",
@@ -3553,7 +4044,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "13f9eca2a5a08b59709642b4",
@@ -3566,7 +4060,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "420a6e18659bf8b235d37d1c",
@@ -3579,7 +4076,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a12a8561ffa1e306cff5c359",
@@ -3592,7 +4092,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6b22ddb11cb5e2661f866317",
@@ -3605,7 +4108,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9d14e64d2d955810fe236af5",
@@ -3618,7 +4124,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9d351158f9a777a271cf9b9a",
@@ -3631,7 +4140,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "395ea72ed73ea86623652957",
@@ -3644,7 +4156,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6ff120ed741b8de30d37fc41",
@@ -3657,7 +4172,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ab21816d418acce42a8960f0",
@@ -3670,7 +4188,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "EUR",
@@ -3683,7 +4204,10 @@
       "event_id": "8e9ef04f9ae819372f4f5788",
       "source": "European Central Bank",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "e635948d31a61a7cefd8111f",
@@ -3696,7 +4220,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "289b7fb332ac79f52be5f49d",
@@ -3709,7 +4236,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2457056bd194be7da0a22d63",
@@ -3722,7 +4252,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "caefaefdfcaadd02541abdd1",
@@ -3735,7 +4268,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d5394f7d0be70ee993477459",
@@ -3748,7 +4284,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "124298edb563f7e342758d77",
@@ -3761,7 +4300,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8f8f1d4cc9ef949672a32522",
@@ -3774,7 +4316,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "185e03e82f0cce49da2dd851",
@@ -3787,7 +4332,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1411436a52d2a58213ff17d6",
@@ -3800,7 +4348,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8e34971104a8afa66c4eb84d",
@@ -3813,7 +4364,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "EUR",
@@ -3826,7 +4380,10 @@
       "event_id": "ecc1258d819c57c8713ae2df",
       "source": "European Central Bank",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "81f5408c102b8c76bca54b21",
@@ -3839,7 +4396,10 @@
       "source": "European Central Bank",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "84fe835395bc3306799f09ee",
@@ -3852,7 +4412,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "71e1c1d656b404fe4b402c79",
@@ -3865,7 +4428,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b3c86e41a6758d61f706c699",
@@ -3878,7 +4444,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "dd04cf2cedb2fea68a67647b",
@@ -3891,7 +4460,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "257918d0afac296379c8cecd",
@@ -3904,7 +4476,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "251feaba5a87af20f66b0eb2",
@@ -3917,7 +4492,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "df3bde59eb76123734f5cb2f",
@@ -3930,7 +4508,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d4baf043aca6bb6646af57a4",
@@ -3943,7 +4524,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "06e24306a7e197c0196358af",
@@ -3956,7 +4540,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2fed5526145a2a96e907b401",
@@ -3969,7 +4556,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "01b5dbc5107b51ad04b6ad22",
@@ -3982,7 +4572,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "cac7cfde95c5ae2fb4d45b82",
@@ -3995,7 +4588,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "93eb6d9d1b91a80b4cc4ceff",
@@ -4008,7 +4604,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ad60f6bd3ea69796c93767d9",
@@ -4021,7 +4620,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7b14f7f77d30ef3ead7998fa",
@@ -4034,7 +4636,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ca241cecf980785441d3a9d2",
@@ -4047,7 +4652,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2fab3d156fd8de8aca5924bc",
@@ -4060,7 +4668,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5b63f49375b7ac83c919faac",
@@ -4073,7 +4684,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5801d6cc614cca05bd3b602e",
@@ -4086,7 +4700,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d259c42fc78d67abec6af4b3",
@@ -4099,7 +4716,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "56b6004b4a7727ac5ffb03a1",
@@ -4112,7 +4732,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8a60876809f118d023a32bd4",
@@ -4125,7 +4748,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d7780757cb881a82976c429a",
@@ -4138,7 +4764,10 @@
       "source": "European Central Bank",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0cabc6f4ba02141facece7f7",
@@ -4151,7 +4780,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fd4989052e99e22b1f5efb0e",
@@ -4164,7 +4796,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "GBP",
@@ -4177,7 +4812,10 @@
       "event_id": "aed1131aaa59bace98691775",
       "source": "Bank of England",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "NZD",
@@ -4190,7 +4828,10 @@
       "event_id": "2b3ef7072ff474887ee2ca4c",
       "source": "Reserve Bank of New Zealand",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d7740e76d5e942f8d7a91fb5",
@@ -4203,7 +4844,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "486037e8f05127957e02d13d",
@@ -4216,7 +4860,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "83dc3f3db8255177572cd291",
@@ -4229,7 +4876,10 @@
       "source": "European Central Bank",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "bf8ff934697cb28b48496127",
@@ -4242,7 +4892,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "01911a1b45e665c7abaf2e90",
@@ -4255,7 +4908,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "008d59a137b2e6de7ab9d809",
@@ -4268,7 +4924,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fa2364f5458e84cb8504a8e0",
@@ -4281,7 +4940,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c6da3a2b543b6232788eb6ee",
@@ -4294,7 +4956,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "96e4c5055e7793be88280875",
@@ -4307,7 +4972,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "148743a785631f1683d47773",
@@ -4320,7 +4988,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "69d6f3ea2da0117d875eb27c",
@@ -4333,7 +5004,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7da7c22f451f0933652911e6",
@@ -4346,7 +5020,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "477e2a8146ae5d81f4ef59ae",
@@ -4359,7 +5036,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f20550178c226bc3b22fae87",
@@ -4372,7 +5052,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "af7cfbbb05aad76cd47a5f4f",
@@ -4385,7 +5068,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fa382136167473db4ec6872a",
@@ -4398,7 +5084,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "45bac72b4ca76b559b73de13",
@@ -4411,7 +5100,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "068cde6d523faa16e22e2701",
@@ -4424,7 +5116,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "6b82a0652616c550537ce83f",
@@ -4437,7 +5132,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "70bec8c9d7e900b9041bbaf2",
@@ -4450,7 +5148,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a610157fa996153be90aa0cd",
@@ -4463,7 +5164,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d4bf31b8ff4179b3fae88b3d",
@@ -4476,7 +5180,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e78f3bab326e5eb4927ea4aa",
@@ -4489,7 +5196,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7463a4bb6e0b96ea5db95e9f",
@@ -4502,7 +5212,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "37ee1ff2da7b5a04e3c728a6",
@@ -4515,7 +5228,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9ab82aa45844b5c3f534658d",
@@ -4528,7 +5244,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7e923ed5d6f4647bfe5a873e",
@@ -4541,7 +5260,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "cda3fcb193ca3a3d18abba2b",
@@ -4554,7 +5276,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4226a54b4cbb7f54751b81f4",
@@ -4567,7 +5292,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c6a13137161225c9d6b7cf3a",
@@ -4580,7 +5308,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "449e12d16dbb6d6c87b058fd",
@@ -4593,7 +5324,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "10a39254bc454f468a92206b",
@@ -4606,7 +5340,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "887c7ec684c9c1ae4f2fb81a",
@@ -4619,7 +5356,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "965d07c141290c601a1185a1",
@@ -4632,7 +5372,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "070e45ae100ff061fcc3e1f1",
@@ -4645,7 +5388,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "928fadc1e30fb16f67e8eba3",
@@ -4658,7 +5404,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "48bba0dcad17f88218f9ae27",
@@ -4671,7 +5420,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e6376242199ba791fc50fbe6",
@@ -4684,7 +5436,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a30fa694b1e41a377d2df86d",
@@ -4697,7 +5452,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d1542093a5e9c39755136116",
@@ -4710,7 +5468,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "57c2300351cf3eefc3913cff",
@@ -4723,7 +5484,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "17ebee906a98aa6f9bee2eb5",
@@ -4736,7 +5500,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9530e7c19a41af6c65ab4f0e",
@@ -4749,7 +5516,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d0999064df3bbf1cdeb265f9",
@@ -4762,7 +5532,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "424fd790bbe112dbe81e5588",
@@ -4775,7 +5548,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "2d52d74228edf55db3e0ea2f",
@@ -4788,7 +5564,10 @@
       "source": "Bank of Japan",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "f387beadd4f53da6309c2e67",
@@ -4801,7 +5580,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "98747ad9b385dbde351a0877",
@@ -4814,7 +5596,10 @@
       "source": "Bank of Japan",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "75a356884860e11129d739de",
@@ -4827,7 +5612,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d69d1b8dcb7a8bbc1a322b2c",
@@ -4840,7 +5628,10 @@
       "source": "Bank of Japan",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9ba2771c0d6ed6c912f93082",
@@ -4853,7 +5644,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "86ad3b68c6a6a509c9d72b5c",
@@ -4866,7 +5660,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "559112cacf8c5692ec37a5ae",
@@ -4879,7 +5676,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d9fd157b43fa7b7465c8b8ea",
@@ -4892,7 +5692,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "cd283b7d41427eda64bd0521",
@@ -4905,7 +5708,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "currency": "NZD",
@@ -4918,7 +5724,10 @@
       "event_id": "9b45fbd8548e610925fa49e3",
       "source": "Reserve Bank of New Zealand",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "aa507ba7872b77f3cbf25c21",
@@ -4931,7 +5740,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d44e7a323e5da450aef39856",
@@ -4944,7 +5756,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d3c7cf776a9a54cde2a4be13",
@@ -4957,7 +5772,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b194d3de515fa6ecb1a6d879",
@@ -4970,7 +5788,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a6cf48f8f7fd9a73a06a3267",
@@ -4983,7 +5804,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2f9b17158c3c896c2fa7546b",
@@ -4996,7 +5820,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c756792ef8e9a7662013a4da",
@@ -5009,7 +5836,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2d5e88291d892e514c47351b",
@@ -5022,7 +5852,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "3cbc23b36c8e9af284a820bd",
@@ -5035,7 +5868,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c398676b161da42de99157f7",
@@ -5048,7 +5884,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4cd31d6b9fa535986648c26d",
@@ -5061,7 +5900,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "68ea741643149d4d59001d90",
@@ -5074,7 +5916,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "984fb643383386251f7c1f1d",
@@ -5087,7 +5932,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2864c024a2d0bfdeace602fd",
@@ -5100,7 +5948,10 @@
       "source": "Bank of England",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "924f844e7901608ec0592e30",
@@ -5113,7 +5964,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9682e301509ce040d7bf651d",
@@ -5126,7 +5980,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "043ba8581410592df53d97f5",
@@ -5139,7 +5996,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f7b289f31036043c219baec0",
@@ -5152,7 +6012,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d7af0767353d42dde5074e0d",
@@ -5165,7 +6028,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "bb95011f5f5bb9a6e6daad79",
@@ -5178,7 +6044,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f41cf21275f50fcda4059b76",
@@ -5191,7 +6060,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a071442b6718f07a4c1abfb1",
@@ -5204,7 +6076,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "76f1f2fb295ef9e11462f9f3",
@@ -5217,7 +6092,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4a8527ada69495938bb79172",
@@ -5230,7 +6108,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "05c3eabd07234e3c0510140c",
@@ -5243,7 +6124,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b24c2f50b2d385a950bad10b",
@@ -5256,7 +6140,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c1af7f9c797f87a9f5e3d7cf",
@@ -5269,7 +6156,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c11d8cd01ea1f39c02fb2722",
@@ -5282,7 +6172,10 @@
       "source": "Federal Reserve",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "765086b53ac30efc7355cde1",
@@ -5295,7 +6188,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "02e7cc33495d9d83d129e990",
@@ -5308,7 +6204,10 @@
       "source": "Bank of England",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "93488b1c00e55de451d4b0bb",
@@ -5321,7 +6220,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b0d5b157448b11c4f5ae1996",
@@ -5334,7 +6236,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "09c1e9807a3c787a477bddef",
@@ -5347,7 +6252,10 @@
       "source": "Bank of England",
       "impact": "High",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "6daf087cb4c8a0aa87db2758",
@@ -5360,7 +6268,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "93b3d42bd7f723de3c8bc23f",
@@ -5373,7 +6284,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "hawkish rate surprise"
     },
     {
       "event_id": "24dca2c2d14f69da1684908f",
@@ -5386,7 +6300,10 @@
       "source": "Bank of England",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8b9bb7ee038ada6f8c799780",
@@ -5399,7 +6316,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a96885d7c5dbe245a6561aa4",
@@ -5412,7 +6332,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "60c6e389cd6aa82ee2c1c877",
@@ -5425,7 +6348,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "b15c679966bae3209b047215",
@@ -5438,7 +6364,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "27def0b018701cba53a3e929",
@@ -5451,7 +6380,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "7a140860c9969127772973b1",
@@ -5464,7 +6396,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2c1cfe964d8e9b99378c1575",
@@ -5477,7 +6412,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "dbd4278a0ee07644df2ccab3",
@@ -5490,7 +6428,10 @@
       "source": "Bank of England",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d6896b128ec489ba3352818d",
@@ -5503,7 +6444,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Medium",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1ae2391a5d8a408aba07055d",
@@ -5516,7 +6460,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f733a11308ac37f8b8662bf0",
@@ -5529,7 +6476,10 @@
       "source": "Reserve Bank of New Zealand",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "00b63bb702209b9cd45d4bf3",
@@ -5542,7 +6492,10 @@
       "source": "Bank of England",
       "impact": "Low",
       "bias": "No clear policy bias",
-      "direction": "Context only"
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9f21988ef35950ba70ebd104",
@@ -5560,7 +6513,10 @@
       "calendar_time_label": "8:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "43ffbe4c065d2f227e22b10f",
@@ -5578,7 +6534,10 @@
       "calendar_time_label": "5:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "4ac2c9409cd9c22328eb99fd",
@@ -5596,7 +6555,10 @@
       "calendar_time_label": "2:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "3520701fdc238221263e6a08",
@@ -5614,7 +6576,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "38e8c4d8898dcb9bd2d65e89",
@@ -5632,7 +6597,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "5c4f3ca7c61222297171848b",
@@ -5650,7 +6618,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "95c3ca6ccefd37cec0ea2d63",
@@ -5668,7 +6639,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "6940278d6e5102423c0e892e",
@@ -5686,7 +6660,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "98802dffc904d537064d55c4",
@@ -5704,7 +6681,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ebe69c4e6c15cb71a8179bf4",
@@ -5722,7 +6702,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "cbe4380f731a1fd3da110e89",
@@ -5740,7 +6723,10 @@
       "calendar_time_label": "4:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "cd9b4935c5c57ee25609ea49",
@@ -5758,7 +6744,10 @@
       "calendar_time_label": "12:01am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9cb58e1013c7fbe6cebe6c5a",
@@ -5776,7 +6765,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "0b1ad79799752f9bd00bb1db",
@@ -5794,7 +6786,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "3752a32c0af7bfa4520bc548",
@@ -5812,7 +6807,10 @@
       "calendar_time_label": "9:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "11f9ef4b3b666ee511392a45",
@@ -5830,7 +6828,10 @@
       "calendar_time_label": "11:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9d137a3d6c7e9c7d098a0736",
@@ -5848,7 +6849,10 @@
       "calendar_time_label": "9:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "14a8064349e0b43f74cf4ca0",
@@ -5866,7 +6870,10 @@
       "calendar_time_label": "3:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e643822a02b29ccf0fa6901b",
@@ -5884,7 +6891,10 @@
       "calendar_time_label": "2:40pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "48f5347597e2b0f477d29fbc",
@@ -5902,7 +6912,10 @@
       "calendar_time_label": "2:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e4cc9a07488dadc0dbe8c83c",
@@ -5920,7 +6933,10 @@
       "calendar_time_label": "2:10pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ce431cc38ab3e57787380aa0",
@@ -5938,7 +6954,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "283265c16a7511cbe0d84a74",
@@ -5956,7 +6975,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9f1cc325e835e89e17f4c028",
@@ -5974,7 +6996,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "078ac91ed62ba535ab5a8817",
@@ -5992,7 +7017,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "cfea103a19ce487ae023b064",
@@ -6010,7 +7038,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "1a6beb0c0bc5480a37a7ff3d",
@@ -6028,7 +7059,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "d978e8234b590e982d45c63c",
@@ -6046,7 +7080,10 @@
       "calendar_time_label": "10:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "57de0e596b533c8b58805667",
@@ -6064,7 +7101,10 @@
       "calendar_time_label": "9:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "91ed615e21d01e47fa2afe83",
@@ -6082,7 +7122,10 @@
       "calendar_time_label": "7:45am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "7d3c2fc5a644fe9e49f9e29c",
@@ -6100,7 +7143,10 @@
       "calendar_time_label": "7:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "b5b2d192c29e3f86eabd3b5d",
@@ -6118,7 +7164,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "dfc5bf8e4c61447e92b55018",
@@ -6136,7 +7185,10 @@
       "calendar_time_label": "9:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "cbe55eeba2b27974dab1a02c",
@@ -6154,7 +7206,10 @@
       "calendar_time_label": "7:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e5439a6d8712ce295e9e11a2",
@@ -6172,7 +7227,10 @@
       "calendar_time_label": "6:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ce4a5580f83f7bd9612f2c96",
@@ -6190,7 +7248,10 @@
       "calendar_time_label": "6:01pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "fa7b52a44cd1255e897ba769",
@@ -6208,7 +7269,10 @@
       "calendar_time_label": "3:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "124e2d694c3892629b4113ed",
@@ -6226,7 +7290,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8dcd133e42393554ddd854c5",
@@ -6244,7 +7311,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d2cd7c2aec09edf3a9b64a38",
@@ -6262,7 +7332,10 @@
       "calendar_time_label": "9:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "35d19a00526cd7913c1c8008",
@@ -6280,7 +7353,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "27afefee28c977aa9c2b7303",
@@ -6298,7 +7374,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "44f00c1812dd7f038f7803f0",
@@ -6316,7 +7395,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d906640d770c89fc55513c86",
@@ -6334,7 +7416,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "fd5341c7c9f351e021c9d7d3",
@@ -6352,7 +7437,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "826d67c8b9f8a2595fa42565",
@@ -6370,7 +7458,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "43abe38a977abb54b5934545",
@@ -6388,7 +7479,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d76d70ba919349b5d433595a",
@@ -6406,7 +7500,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "9fbd739860ef9d32d2fa142e",
@@ -6424,7 +7521,10 @@
       "calendar_time_label": "12:01am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "3a677617083711aa5f698175",
@@ -6442,7 +7542,10 @@
       "calendar_time_label": "12:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "80b046846ac19fa3d2cc2147",
@@ -6460,7 +7563,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "b212d7a9379d0abe95f0a7c4",
@@ -6478,7 +7584,10 @@
       "calendar_time_label": "9:45pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2c9fdffd7f2574b99c53d641",
@@ -6496,7 +7605,10 @@
       "calendar_time_label": "10:35am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ba6787270e7a5826f03404e1",
@@ -6514,7 +7626,10 @@
       "calendar_time_label": "9:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "4fd88692ffc651f58642a674",
@@ -6532,7 +7647,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "ad239bc236d29b54c72e13c3",
@@ -6550,7 +7668,10 @@
       "calendar_time_label": "6:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "65ca552fe10ac9fc5f3400d8",
@@ -6568,7 +7689,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a3d1f750e8753cb6fa10ec2d",
@@ -6586,7 +7710,10 @@
       "calendar_time_label": "6:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e1af245f8d9eccf0a8cdd46c",
@@ -6604,7 +7731,10 @@
       "calendar_time_label": "6:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "84f6f7d7e22911e64136523c",
@@ -6622,7 +7752,10 @@
       "calendar_time_label": "6:01pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1447fc1ebbb5f99661326a8a",
@@ -6640,7 +7773,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "ea0ae35f95e025f3500c37f6",
@@ -6658,7 +7794,10 @@
       "calendar_time_label": "1:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "19f3d0fbe25cdfade282fab1",
@@ -6676,7 +7815,10 @@
       "calendar_time_label": "12:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a3bd9cfbb3b026b7d28e70d6",
@@ -6694,7 +7836,10 @@
       "calendar_time_label": "11:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "a5235dd77eacac39a337d34b",
@@ -6712,7 +7857,10 @@
       "calendar_time_label": "10:02am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "8cf06cf2887c653714bf24f0",
@@ -6730,7 +7878,10 @@
       "calendar_time_label": "8:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "33513f3aee32684a6358f801",
@@ -6748,7 +7899,10 @@
       "calendar_time_label": "5:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "0379bcffbb9e12f436a2899e",
@@ -6766,7 +7920,10 @@
       "calendar_time_label": "3:35am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "d4d088e0a7481698469a4725",
@@ -6784,7 +7941,10 @@
       "calendar_time_label": "12:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "c942cfde9373d1aaac6aca1d",
@@ -6802,7 +7962,10 @@
       "calendar_time_label": "12:01am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "d602de53e4753d3194e36b92",
@@ -6820,7 +7983,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "2ce370ae17d000ed64779223",
@@ -6838,7 +8004,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "bba30124f8a8430288e7fbfd",
@@ -6856,7 +8025,10 @@
       "calendar_time_label": "11:50pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "e9021c5a0e943cf47e645ed0",
@@ -6874,7 +8046,10 @@
       "calendar_time_label": "11:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "c3fcead066b5393598fffd4d",
@@ -6892,7 +8067,10 @@
       "calendar_time_label": "11:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "271649e88dcc55e2dc69102d",
@@ -6910,7 +8088,10 @@
       "calendar_time_label": "3:00pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "f83eaa78c463eb1db941a420",
@@ -6928,7 +8109,10 @@
       "calendar_time_label": "10:15am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "30dee5caa5b905c2fa1e5508",
@@ -6946,7 +8130,10 @@
       "calendar_time_label": "10:15am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "1ddf3971d62490409e8f2d28",
@@ -6964,7 +8151,10 @@
       "calendar_time_label": "9:30am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "ada65a13a06b7628173d003b",
@@ -6982,7 +8172,10 @@
       "calendar_time_label": "7:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "growth / activity surprise"
     },
     {
       "event_id": "6e952319dac4e8819d2d4f23",
@@ -7000,7 +8193,10 @@
       "calendar_time_label": "5:00am",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
       "event_id": "5eda48d2e410629b7380167b",
@@ -7018,7 +8214,10 @@
       "calendar_time_label": "10:30pm",
       "event_type": "economic_calendar",
       "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast"
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
     }
   ],
   "sources": [
@@ -7026,7 +8225,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -7034,7 +8233,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -7042,7 +8241,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -7050,7 +8249,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -7058,7 +8257,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -7066,7 +8265,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -7074,7 +8273,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -7082,7 +8281,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -7090,7 +8289,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -7099,7 +8298,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7107,7 +8306,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7115,7 +8314,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7123,7 +8322,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7131,7 +8330,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7139,7 +8338,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7147,7 +8346,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -7155,7 +8354,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-17T01:34:55.294241+00:00",
+      "checked_at": "2026-11-17T02:19:01.147791+00:00",
       "data_year": null,
       "indicators_available": 3
     }
@@ -7163,9 +8362,9 @@
   "limitations": [
     "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
     "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
-    "V4 scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths, economic surprises and market-price confirmation are not yet integrated.",
-    "Economic-surprise data, expected policy paths, 2-year yield differentials and market-price confirmation are not yet included in the numerical score.",
-    "News impact is keyword-based editorial triage; policy bias is labelled only when explicit hawkish/dovish wording appears. It is not an AI assessment or a trade signal.",
+    "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths and market-price confirmation are not yet integrated.",
+    "Event momentum is based only on numeric actual-versus-forecast releases available in the Forex Factory feed. Qualitative central-bank statements, market-implied policy paths, 2-year yield differentials and post-release FX confirmation are not yet included in the numerical overlay.",
+    "News impact is keyword-based editorial triage. Event surprise direction is rule-based by release category; inflation surprises are treated as short-term hawkish/dovish policy repricing, not as a universal long-term currency-strength rule.",
     "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
     "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval."
   ]
