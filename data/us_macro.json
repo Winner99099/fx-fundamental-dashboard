@@ -1,8 +1,8 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-17T12:38:51.912156+00:00",
-  "source_status": "OK",
-  "available_indicators": 8,
+  "generated_at": "2026-11-17T13:45:35.771266+00:00",
+  "source_status": "PARTIAL",
+  "available_indicators": 7,
   "indicators": {
     "core_cpi": {
       "value": 2.8697,
@@ -535,107 +535,10 @@
       ]
     },
     "dxy": {
-      "value": 103.4698,
-      "date": "2026-11-16",
-      "change": 0.2281,
-      "history": [
-        {
-          "date": "2026-10-14",
-          "value": 102.2249
-        },
-        {
-          "date": "2026-10-15",
-          "value": 102.1129
-        },
-        {
-          "date": "2026-10-16",
-          "value": 101.7135
-        },
-        {
-          "date": "2026-10-19",
-          "value": 101.8263
-        },
-        {
-          "date": "2026-10-20",
-          "value": 101.8433
-        },
-        {
-          "date": "2026-10-21",
-          "value": 101.6534
-        },
-        {
-          "date": "2026-10-22",
-          "value": 101.7555
-        },
-        {
-          "date": "2026-10-23",
-          "value": 101.8005
-        },
-        {
-          "date": "2026-10-26",
-          "value": 101.9367
-        },
-        {
-          "date": "2026-10-27",
-          "value": 102.187
-        },
-        {
-          "date": "2026-10-28",
-          "value": 102.348
-        },
-        {
-          "date": "2026-10-29",
-          "value": 102.2818
-        },
-        {
-          "date": "2026-10-30",
-          "value": 101.8474
-        },
-        {
-          "date": "2026-11-02",
-          "value": 101.6153
-        },
-        {
-          "date": "2026-11-03",
-          "value": 101.8687
-        },
-        {
-          "date": "2026-11-04",
-          "value": 101.2548
-        },
-        {
-          "date": "2026-11-05",
-          "value": 101.5845
-        },
-        {
-          "date": "2026-11-06",
-          "value": 102.0591
-        },
-        {
-          "date": "2026-11-09",
-          "value": 101.8513
-        },
-        {
-          "date": "2026-11-10",
-          "value": 101.7762
-        },
-        {
-          "date": "2026-11-11",
-          "value": 102.5951
-        },
-        {
-          "date": "2026-11-12",
-          "value": 102.9744
-        },
-        {
-          "date": "2026-11-13",
-          "value": 103.2417
-        },
-        {
-          "date": "2026-11-16",
-          "value": 103.4698
-        }
-      ]
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
     },
     "yield_spread": {
       "value": 0.29,
@@ -753,7 +656,9 @@
     "probability_source": "CME FedWatch \u00b7 30-Day Fed Funds futures",
     "probability_url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
   },
-  "errors": {},
+  "errors": {
+    "dxy": "HTTP Error 503: Service Temporarily Unavailable"
+  },
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
