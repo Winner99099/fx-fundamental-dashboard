@@ -1,4 +1,4 @@
-# MacroPulse V3 — Eight-Currency FX Intelligence
+# MacroPulseFX V5 — Event-Driven Eight-Currency FX Intelligence
 
 A static GitHub Pages research dashboard with a transparent official-source news pipeline.
 
