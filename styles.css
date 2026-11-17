@@ -42,3 +42,10 @@
 .news-item>a{font-size:12px;line-height:1.6}
 #report-content .notice p{font-size:12px;line-height:1.8}
 #report-content .news-list>article>p{font-size:12px;line-height:1.8}
+
+
+/* Event-driven fundamentals */
+.score-positive{color:#62edb2!important;font-family:'DM Mono',monospace}
+.score-negative{color:#ff9d9d!important;font-family:'DM Mono',monospace}
+#currency-rows small,#currency-rows-full small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.impact-pill{white-space:nowrap}
