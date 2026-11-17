@@ -25,7 +25,7 @@ bool ExportSnapshot(){
   if(!SymbolInfoDouble(sym,SYMBOL_SWAP_LONG,sl)||!SymbolInfoDouble(sym,SYMBOL_SWAP_SHORT,ss))continue;
   SymbolInfoDouble(sym,SYMBOL_TRADE_CONTRACT_SIZE,cs);SymbolInfoDouble(sym,SYMBOL_TRADE_TICK_VALUE,tv);SymbolInfoDouble(sym,SYMBOL_TRADE_TICK_SIZE,ts);
   SymbolInfoInteger(sym,SYMBOL_SWAP_MODE,sm);SymbolInfoInteger(sym,SYMBOL_SWAP_ROLLOVER3DAYS,rd);SymbolInfoInteger(sym,SYMBOL_TRADE_CALC_MODE,cm);
-  FileWrite(h,captured,AccountInfoString(ACCOUNT_COMPANY),"MT5",AccountInfoString(ACCOUNT_CURRENCY),sym,DoubleToString(sl,8),DoubleToString(ss,8),IntegerToString((int)sm),DoubleToString(cs,2),DoubleToString(tv,8),DoubleToString(ts,8),SymbolInfoString(sym,SYMBOL_CURRENCY_PROFIT),SymbolInfoString(sym,SYMBOL_CURRENCY_MARGIN),IntegerToString((int)rd),IntegerToString((int)cm));written++;
+  FileWrite(h,captured,"Pepperstone","MT5",AccountInfoString(ACCOUNT_CURRENCY),sym,DoubleToString(sl,8),DoubleToString(ss,8),IntegerToString((int)sm),DoubleToString(cs,2),DoubleToString(tv,8),DoubleToString(ts,8),SymbolInfoString(sym,SYMBOL_CURRENCY_PROFIT),SymbolInfoString(sym,SYMBOL_CURRENCY_MARGIN),IntegerToString((int)rd),IntegerToString((int)cm));written++;
  }
  FileFlush(h);FileClose(h);Print("MacroPulseFX MT5 exported ",written," Forex symbols to Common Files/",OutputFile);return(written>0);
 }
