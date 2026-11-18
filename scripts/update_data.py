@@ -27,6 +27,13 @@ FF_CALENDAR_URL = "https://nfs.faireconomy.media/ff_calendar_thisweek.xml"
 FF_CALENDAR_TZ = UTC  # Forex Factory weekly XML clock is UTC; display conversions are handled by the browser
 cutoff = now - datetime.timedelta(days=WINDOW_DAYS)
 DATA_PATH = Path("data/latest.json")
+
+# Read the previous committed snapshot before rebuilding so score annotations
+# persist across automated refreshes and only change when core inputs change.
+try:
+    PREVIOUS_SNAPSHOT = json.loads(DATA_PATH.read_text(encoding="utf-8")) if DATA_PATH.exists() else {}
+except Exception:
+    PREVIOUS_SNAPSHOT = {}
 CURRENCIES = ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"]
 
 FEEDS = [
@@ -768,6 +775,96 @@ def event_sort_key(event):
         return (0 if stamp >= now else 2, stamp.timestamp() if stamp >= now else -stamp.timestamp())
     return (1, -stamp.timestamp())
 events.sort(key=event_sort_key)
+
+# Annotate structural scores when core inputs change versus the last snapshot.
+# Use the official/calendar release date where available; otherwise disclose the
+# source observation period rather than inventing a publication date.
+previous_by_code = {c.get("code"): c for c in PREVIOUS_SNAPSHOT.get("currencies", [])}
+input_keys = ("policy_rate", "inflation", "gdp_growth", "unemployment")
+period_labels = {"policy_rate": "Policy rate", "inflation": "Inflation",
+                 "gdp_growth": "GDP", "unemployment": "Employment"}
+event_patterns = {
+    "policy_rate": r"rate decision|monetary policy|official cash rate",
+    "inflation": r"cpi|consumer price|inflation|pce|ppi",
+    "gdp_growth": r"gdp|gross domestic product",
+    "unemployment": r"employment|unemployment|payroll|jobless",
+}
+def latest_metric_period(currency, key):
+    if key == "policy_rate":
+        return currency.get("policy_rate_as_of")
+    metric = currency.get("metrics", {}).get(key, {})
+    history = metric.get("history") or []
+    if history:
+        return history[0].get("period") or history[0].get("year")
+    return metric.get("period") or metric.get("year") or currency.get(key + "_year")
+
+def changed_input_date(code, key, current):
+    if key == "policy_rate":
+        return current.get("policy_rate_as_of"), "release date"
+    period = latest_metric_period(current, key)
+    pattern = event_patterns[key]
+    candidates = []
+    for event in events:
+        if event.get("currency") != code or event.get("source") != "Forex Factory":
+            continue
+        title = (event.get("title") or "").lower()
+        stamp = parse_date(event.get("time"))
+        if stamp and stamp <= now and re.search(pattern, title):
+            candidates.append(stamp)
+    if candidates:
+        return max(candidates).date().isoformat(), "release date"
+    return (str(period) if period is not None else None), "data period"
+
+for current in currencies:
+    code = current["code"]
+    previous = previous_by_code.get(code)
+    changed = []
+    latest_dates = []
+    if previous:
+        for key in input_keys:
+            old_value = previous.get(key)
+            new_value = current.get(key)
+            old_period = latest_metric_period(previous, key)
+            new_period = latest_metric_period(current, key)
+            if old_value != new_value or old_period != new_period:
+                date_value, date_kind = changed_input_date(code, key, current)
+                changed.append(period_labels[key])
+                if date_value:
+                    latest_dates.append((date_value, date_kind, period_labels[key]))
+        old_score, new_score = previous.get("score"), current.get("score")
+        score_changed = old_score != new_score
+        if changed:
+            # A new core input can change the relative score even if rounded score
+            # happens to remain the same; disclose the input refresh regardless.
+            current["structural_update_status"] = "core_data_updated"
+            current["structural_update_note"] = "Updated: " + ", ".join(changed)
+            if latest_dates:
+                current["structural_update_date"], current["structural_update_date_basis"], _ = sorted(latest_dates, key=lambda x: x[0])[-1]
+            else:
+                current["structural_update_date"] = None
+                current["structural_update_date_basis"] = "date unavailable"
+        elif score_changed:
+            current["structural_update_status"] = "relative_score_changed"
+            current["structural_update_note"] = "Relative score changed after peer-currency data updates"
+            current["structural_update_date"] = now.date().isoformat()
+            current["structural_update_date_basis"] = "snapshot date"
+        else:
+            current["structural_update_status"] = previous.get("structural_update_status", "no_core_data_change")
+            current["structural_update_note"] = previous.get("structural_update_note", "No new core-data update")
+            current["structural_update_date"] = previous.get("structural_update_date")
+            current["structural_update_date_basis"] = previous.get("structural_update_date_basis")
+        current["previous_structural_score"] = old_score
+        current["structural_score_delta"] = (
+            round(float(new_score) - float(old_score), 2)
+            if new_score is not None and old_score is not None else None
+        )
+    else:
+        current["structural_update_status"] = "baseline"
+        current["structural_update_note"] = "Baseline recorded; awaiting next core-data change"
+        current["structural_update_date"] = None
+        current["structural_update_date_basis"] = "not yet available"
+        current["previous_structural_score"] = None
+        current["structural_score_delta"] = None
 
 
 # V5 event-driven overlay. Only released events with numeric actual AND consensus
