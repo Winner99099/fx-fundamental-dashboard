@@ -95,7 +95,7 @@ function recentScoreChangeAlert(currencies) {
     const age=now-stamp;
     if(age>=0 && age<=7*24*60*60*1000) {
       const date=new Date(stamp).toLocaleDateString("en-SG",{timeZone:"UTC",day:"2-digit",month:"short"});
-      alerts.push(c.code+" "+date);
+      alerts.push(c.code+" "+Number(c.previous_structural_score).toFixed(2)+" → "+Number(c.score).toFixed(2)+" · "+date);
     }
   }
   return alerts.length?'<small class="pair-score-alert">⚠ SCORE CHANGED · '+alerts.map(safeText).join(" / ")+'</small>':"";
