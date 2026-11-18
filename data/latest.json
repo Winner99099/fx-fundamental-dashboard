@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-18T14:46:01.691749+00:00",
+  "generated_at": "2026-11-18T15:41:30.762755+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v6-dated-core-release-tracker",
   "history_window_days": 90,
@@ -340,32 +340,7 @@
         "unemployment": {
           "value": 6.5,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 6.28355946264135
-            },
-            {
-              "year": 2024,
-              "value": 6.34778064605911
-            },
-            {
-              "year": 2023,
-              "value": 6.52267389015226
-            },
-            {
-              "year": 2022,
-              "value": 6.72976967374639
-            },
-            {
-              "year": 2021,
-              "value": 7.69446992680361
-            },
-            {
-              "year": 2020,
-              "value": 7.78262585986041
-            }
-          ],
+          "history": [],
           "score": -1.57,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -381,7 +356,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": -0.05,
         "inflation_vs_target": -1.57,
@@ -389,10 +366,10 @@
         "employment": -1.57,
         "economic_surprises": null
       },
-      "structural_update_status": "no_core_data_change",
-      "structural_update_note": "No new core-data update",
-      "structural_update_date": null,
-      "structural_update_date_basis": null,
+      "structural_update_status": "core_data_updated",
+      "structural_update_note": "Updated: Employment",
+      "structural_update_date": "Latest",
+      "structural_update_date_basis": "data period",
       "previous_structural_score": -0.71,
       "structural_score_delta": 0.0,
       "event_score": -0.5,
@@ -556,32 +533,7 @@
         "unemployment": {
           "value": 4.7,
           "year": null,
-          "history": [
-            {
-              "year": 2025,
-              "value": 4.746
-            },
-            {
-              "year": 2024,
-              "value": 4.361
-            },
-            {
-              "year": 2023,
-              "value": 4.025
-            },
-            {
-              "year": 2022,
-              "value": 3.768
-            },
-            {
-              "year": 2021,
-              "value": 4.864
-            },
-            {
-              "year": 2020,
-              "value": 4.472
-            }
-          ],
+          "history": [],
           "score": 0.0,
           "label": "Unemployment Rate (%)",
           "source": "Trading Economics",
@@ -597,7 +549,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "unemployment: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": 1.18,
         "inflation_vs_target": 0.39,
@@ -605,10 +559,10 @@
         "employment": 0.0,
         "economic_surprises": null
       },
-      "structural_update_status": "no_core_data_change",
-      "structural_update_note": "No new core-data update",
-      "structural_update_date": null,
-      "structural_update_date_basis": null,
+      "structural_update_status": "core_data_updated",
+      "structural_update_note": "Updated: Employment",
+      "structural_update_date": "Latest",
+      "structural_update_date_basis": "data period",
       "previous_structural_score": 0.61,
       "structural_score_delta": 0.0,
       "event_score": 1.0,
@@ -1679,7 +1633,9 @@
       },
       "available_weight_pct": 80.0,
       "summary": "Relative macro score across the eight tracked currencies. Policy-rate level is a carry proxy, not an expected policy path; economic surprises are excluded until consensus data is available.",
-      "errors": [],
+      "errors": [
+        "gdp_growth: The read operation timed out"
+      ],
       "score_components": {
         "policy_rate_level": 0.05,
         "inflation_vs_target": -0.39,
@@ -1762,69 +1718,6 @@
     }
   ],
   "events": [
-    {
-      "event_id": "5b20dedd12f29cd8eeb4b196",
-      "currency": "GBP",
-      "title": "BOE Gov Bailey Speaks",
-      "summary": "High-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
-      "url": "https://www.forexfactory.com/calendar/838-uk-boe-gov-bailey-speaks",
-      "time": "2026-11-18T15:00:00+00:00",
-      "published_at": "2026-11-18T15:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "High",
-      "actual": null,
-      "forecast": null,
-      "previous": null,
-      "calendar_time_label": "3:00pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
-      "event_id": "0899acc303e66cb3ee8465ee",
-      "currency": "USD",
-      "title": "Pending Home Sales m/m",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: -2.0% Previous: -7.3%",
-      "url": "https://www.forexfactory.com/calendar/233-us-pending-home-sales-mm",
-      "time": "2026-11-18T15:00:00+00:00",
-      "published_at": "2026-11-18T15:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "-2.0%",
-      "previous": "-7.3%",
-      "calendar_time_label": "3:00pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
-      "event_id": "f22564a1ca0b9ff4b3a566e2",
-      "currency": "USD",
-      "title": "Crude Oil Inventories",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.4M Previous: 4.7M",
-      "url": "https://www.forexfactory.com/calendar/10-us-crude-oil-inventories",
-      "time": "2026-11-18T15:30:00+00:00",
-      "published_at": "2026-11-18T15:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": "0.4M",
-      "previous": "4.7M",
-      "calendar_time_label": "3:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
     {
       "event_id": "b828b36b2948d692850a2d50",
       "currency": "USD",
@@ -6265,6 +6158,69 @@
       "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
+      "event_id": "f22564a1ca0b9ff4b3a566e2",
+      "currency": "USD",
+      "title": "Crude Oil Inventories",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: 0.4M Previous: 4.7M",
+      "url": "https://www.forexfactory.com/calendar/10-us-crude-oil-inventories",
+      "time": "2026-11-18T15:30:00+00:00",
+      "published_at": "2026-11-18T15:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "0.4M",
+      "previous": "4.7M",
+      "calendar_time_label": "3:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "5b20dedd12f29cd8eeb4b196",
+      "currency": "GBP",
+      "title": "BOE Gov Bailey Speaks",
+      "summary": "High-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
+      "url": "https://www.forexfactory.com/calendar/838-uk-boe-gov-bailey-speaks",
+      "time": "2026-11-18T15:00:00+00:00",
+      "published_at": "2026-11-18T15:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "High",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "calendar_time_label": "3:00pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "0899acc303e66cb3ee8465ee",
+      "currency": "USD",
+      "title": "Pending Home Sales m/m",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: -2.0% Previous: -7.3%",
+      "url": "https://www.forexfactory.com/calendar/233-us-pending-home-sales-mm",
+      "time": "2026-11-18T15:00:00+00:00",
+      "published_at": "2026-11-18T15:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": "-2.0%",
+      "previous": "-7.3%",
+      "calendar_time_label": "3:00pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
       "event_id": "f756b1d48e995509edf05fcf",
       "currency": "CAD",
       "title": "NHPI m/m",
@@ -8856,7 +8812,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -8864,7 +8820,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8872,7 +8828,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -8880,7 +8836,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -8888,7 +8844,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8896,7 +8852,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8904,7 +8860,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8912,7 +8868,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "dated_releases_in_feed_90d": 24,
       "new_releases_added": 0
     },
@@ -8920,7 +8876,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -8929,7 +8885,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8937,7 +8893,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8945,7 +8901,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8953,7 +8909,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8961,7 +8917,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8969,7 +8925,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8977,7 +8933,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8985,7 +8941,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-18T14:46:01.691749+00:00",
+      "checked_at": "2026-11-18T15:41:30.762755+00:00",
       "data_year": null,
       "indicators_available": 3
     }
