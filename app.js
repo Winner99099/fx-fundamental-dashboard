@@ -38,9 +38,18 @@ function structuralUpdateSummary(c) {
   if(status==="baseline") return "Baseline recorded · awaiting next core-data change";
   return (rawDate?"No new core-data update · last change "+dateText:"No new core-data update recorded");
 }
+function scoreHistory(c) {
+  const current=c.score===null||c.score===undefined?null:Number(c.score);
+  const previous=c.previous_structural_score===null||c.previous_structural_score===undefined?current:Number(c.previous_structural_score);
+  if(current===null||!Number.isFinite(current)) return "N/A";
+  const delta=previous===null||!Number.isFinite(previous)?null:current-previous;
+  const deltaText=delta===null?"—":(delta>0?"+":"")+delta.toFixed(2);
+  const deltaClass=delta===null||delta===0?"score-na":delta>0?"score-positive":"score-negative";
+  return '<span class="score-current">'+current.toFixed(2)+'</span><small class="score-history">Previous '+(previous===null?"—":previous.toFixed(2))+' <span class="'+deltaClass+'">Δ '+deltaText+'</span></small>';
+}
 function currencyRows(targetId) {
   const rows = (snapshot?.currencies || []).map(c => `<tr>
-    <td>${safeText(c.code)}</td><td class="structural-score-cell">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(2)}<small class="structural-update ${c.structural_update_status==="core_data_updated"?"is-updated":""}">${escapeHtml(structuralUpdateSummary(c))}</small></td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
+    <td>${safeText(c.code)}</td><td class="structural-score-cell">${scoreHistory(c)}<small class="structural-update ${c.structural_update_status==="core_data_updated"?"is-updated":""}">${escapeHtml(structuralUpdateSummary(c))}</small></td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td><td>${metric2(c.inflation)} <small>${c.inflation_period||c.inflation_year||""}</small></td><td>${metric2(c.gdp_growth)} <small>${c.gdp_growth_period||c.gdp_growth_year||""}</small></td><td>${metric2(c.unemployment)} <small>${c.unemployment_year||""}</small></td>
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
   $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">No currency data in snapshot.</td></tr>`;
@@ -166,7 +175,7 @@ async function loadSnapshot() {
     const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").startsWith("OECD")));
     const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
     $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
-    $("updated-at").textContent=`Built ${fmtDate(data.generated_at)}`;
+    const builtSgt=data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"Time unavailable"; $("updated-at").textContent=`Data snapshot updated ${builtSgt} SGT`;
     $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
     const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
     setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} news feeds responding · ${macroOk}/${macro.length} macro sources available`);
