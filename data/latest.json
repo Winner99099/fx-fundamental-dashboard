@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-18T18:30:05.897754+00:00",
+  "generated_at": "2026-11-18T19:32:42.085065+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v6-dated-core-release-tracker",
   "history_window_days": 90,
@@ -1763,48 +1763,6 @@
   ],
   "events": [
     {
-      "event_id": "4821a4f25b000e813cc89293",
-      "currency": "USD",
-      "title": "FOMC Meeting Minutes",
-      "summary": "High-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
-      "url": "https://www.forexfactory.com/calendar/304-us-fomc-meeting-minutes",
-      "time": "2026-11-18T19:00:00+00:00",
-      "published_at": "2026-11-18T19:00:00+00:00",
-      "source": "Forex Factory",
-      "impact": "High",
-      "actual": null,
-      "forecast": null,
-      "previous": null,
-      "calendar_time_label": "7:00pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
-      "event_id": "eb2a49869e939657ddaa6d29",
-      "currency": "USD",
-      "title": "FOMC Member Williams Speaks",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
-      "url": "https://www.forexfactory.com/calendar/518-us-fomc-member-williams-speaks",
-      "time": "2026-11-18T19:30:00+00:00",
-      "published_at": "2026-11-18T19:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": null,
-      "previous": null,
-      "calendar_time_label": "7:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
-    {
       "event_id": "a4020c7ac45518c0b21aa1cd",
       "currency": "USD",
       "title": "TIC Long-Term Purchases",
@@ -2601,6 +2559,38 @@
       "surprise_score": null,
       "surprise_raw": null,
       "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "081f60a37ade5175f1b77e3c",
+      "currency": "USD",
+      "title": "Minutes of the Federal Open Market Committee, October 27-28, 2026",
+      "summary": "Federal Reserve published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm",
+      "time": "2026-11-18T19:00:00+00:00",
+      "published_at": "2026-11-18T19:00:00+00:00",
+      "source": "Federal Reserve",
+      "impact": "Low",
+      "bias": "No clear policy bias",
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "c752b778f0bb978670ee39e4",
+      "currency": "NZD",
+      "title": "RBNZ Governor outlines inflation outlook amid uneven recovery",
+      "summary": "Inflation remains above the 2% target mid-point, while New Zealand\u2019s economic recovery continues to be uneven, RBNZ Governor Dr Anna Breman said today at an Auckland Institute of Directors event.",
+      "url": "https://www.rbnz.govt.nz/news-and-events/news/2026/11/rbnz-governor-outlines-inflation-outlook-amid-uneven-recovery",
+      "time": "2026-11-18T11:00:00+00:00",
+      "published_at": "2026-11-18T11:00:00+00:00",
+      "source": "Reserve Bank of New Zealand",
+      "impact": "High",
+      "bias": "No clear policy bias",
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "inflation / policy-path surprise"
     },
     {
       "event_id": "bdcf080f0abd7198100b0a7d",
@@ -6139,6 +6129,48 @@
       "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
+      "event_id": "eb2a49869e939657ddaa6d29",
+      "currency": "USD",
+      "title": "FOMC Member Williams Speaks",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
+      "url": "https://www.forexfactory.com/calendar/518-us-fomc-member-williams-speaks",
+      "time": "2026-11-18T19:30:00+00:00",
+      "published_at": "2026-11-18T19:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "calendar_time_label": "7:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "4821a4f25b000e813cc89293",
+      "currency": "USD",
+      "title": "FOMC Meeting Minutes",
+      "summary": "High-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
+      "url": "https://www.forexfactory.com/calendar/304-us-fomc-meeting-minutes",
+      "time": "2026-11-18T19:00:00+00:00",
+      "published_at": "2026-11-18T19:00:00+00:00",
+      "source": "Forex Factory",
+      "impact": "High",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "calendar_time_label": "7:00pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
       "event_id": "71fa4f48aa2de9c97a901cd9",
       "currency": "NZD",
       "title": "RBNZ Gov Breman Speaks",
@@ -8856,15 +8888,15 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 20,
-      "new_releases_added": 0
+      "new_releases_added": 1
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8872,7 +8904,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 40,
       "new_releases_added": 0
     },
@@ -8880,7 +8912,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 45,
       "new_releases_added": 0
     },
@@ -8888,7 +8920,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8896,7 +8928,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8904,7 +8936,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8912,15 +8944,15 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
-      "dated_releases_in_feed_90d": 24,
-      "new_releases_added": 0
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
+      "dated_releases_in_feed_90d": 25,
+      "new_releases_added": 1
     },
     {
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -8929,7 +8961,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8937,7 +8969,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8945,7 +8977,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8953,7 +8985,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8961,7 +8993,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8969,7 +9001,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8977,7 +9009,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -8985,7 +9017,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-18T18:30:05.897754+00:00",
+      "checked_at": "2026-11-18T19:32:42.085065+00:00",
       "data_year": null,
       "indicators_available": 3
     }
