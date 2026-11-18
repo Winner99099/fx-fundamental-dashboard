@@ -25,9 +25,22 @@ function eventReleaseSummary(r) {
   const when=r.time?new Date(r.time).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"time unavailable";
   return `Latest ${escapeHtml(r.title)} · ${when} SGT · Previous: ${escapeHtml(r.previous||"N/A")} · Forecast: ${escapeHtml(r.forecast||"N/A")} · Actual: ${escapeHtml(r.actual||"Not captured")}`;
 }
+function structuralUpdateSummary(c) {
+  const status=c.structural_update_status||"baseline";
+  const rawDate=c.structural_update_date;
+  let dateText=rawDate||"date unavailable";
+  if(rawDate && /^\\d{4}-\\d{2}-\\d{2}$/.test(rawDate)) {
+    const d=new Date(rawDate+"T00:00:00Z");
+    dateText=d.toLocaleDateString("en-SG",{timeZone:"UTC",day:"2-digit",month:"short",year:"numeric"});
+  }
+  if(status==="core_data_updated") return "Core data updated · "+dateText+" · "+safeText(c.structural_update_note,"Core indicator changed");
+  if(status==="relative_score_changed") return "Relative score recalculated · "+dateText;
+  if(status==="baseline") return "Baseline recorded · awaiting next core-data change";
+  return (rawDate?"No new core-data update · last change "+dateText:"No new core-data update recorded");
+}
 function currencyRows(targetId) {
   const rows = (snapshot?.currencies || []).map(c => `<tr>
-    <td>${safeText(c.code)}</td><td class="score-na">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(2)}</td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
+    <td>${safeText(c.code)}</td><td class="structural-score-cell">${c.score === null || c.score === undefined ? "N/A" : Number(c.score).toFixed(2)}<small class="structural-update ${c.structural_update_status==="core_data_updated"?"is-updated":""}">${escapeHtml(structuralUpdateSummary(c))}</small></td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td><td>${metric2(c.inflation)} <small>${c.inflation_period||c.inflation_year||""}</small></td><td>${metric2(c.gdp_growth)} <small>${c.gdp_growth_period||c.gdp_growth_year||""}</small></td><td>${metric2(c.unemployment)} <small>${c.unemployment_year||""}</small></td>
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
   $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">No currency data in snapshot.</td></tr>`;
