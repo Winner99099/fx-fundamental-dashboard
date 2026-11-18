@@ -3,24 +3,29 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0a1020">
-<title>MacroPulse V5 | FX Intelligence</title>
+<title>MacroPulse V6 | FX Intelligence</title>
 <meta name="description" content="Eight-currency macroeconomic and FX research dashboard.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20261118-pair-score-red7d1">
+<link rel="stylesheet" href="styles.css?v=20261118-v6-workflow1">
 </head>
 <body>
 <div class="app-shell">
   <aside class="sidebar">
-    <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V5</small></span></a>
-    <div class="side-label">WORKSPACE</div>
+    <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V6</small></span></a>
+    <div class="side-label">WORKFLOW</div>
     <nav id="navigation">
-      <button class="nav-item active" data-view="overview"><span>◫</span> Overview</button>
+      <button class="nav-item active" data-view="workflow"><span>◈</span> Trading workflow</button>
+      <button class="nav-item" data-view="overview"><span>◫</span> Overview</button>
       <button class="nav-item" data-view="currencies"><span>◎</span> Currency strength</button>
-      <button class="nav-item" data-view="pairs"><span>⇄</span> FX pair analysis</button>
+      <button class="nav-item" data-view="bias"><span>⇄</span> Pair bias</button>
+      <button class="nav-item" data-view="calendar"><span>▦</span> Event risk</button>
+      <button class="nav-item" data-view="technical"><span>⌖</span> Technical entry</button>
+      <button class="nav-item" data-view="risk"><span>⚖</span> Risk management</button>
+    </nav>
+    <div class="side-label">DATA MODULES</div><nav>
       <button class="nav-item" data-view="swap"><span>⇅</span> Swap Intelligence</button>
       <button class="nav-item" data-view="news"><span>▤</span> News intelligence</button>
-      <button class="nav-item" data-view="calendar"><span>▦</span> Event watch</button>
       <button class="nav-item" data-view="positioning"><span>◉</span> CFTC positioning</button>
       <button class="nav-item" data-view="journal"><span>▧</span> Trading journal</button>
     </nav>
@@ -35,10 +40,16 @@
 
     <section class="status-strip">
       <div><span class="status-dot" id="status-dot"></span><b id="data-status">Checking data snapshot</b><span class="muted" id="updated-at">—</span></div>
-      <div class="status-right"><span>MODEL <b>V5 EVENT-DRIVEN / PROVISIONAL</b></span><span>CLIENT POLL <b>5 MIN</b></span></div>
+      <div class="status-right"><span>MODEL <b>V6 FUNDAMENTAL-FIRST</b></span><span>CLIENT POLL <b>5 MIN</b></span></div>
     </section>
 
-    <section class="view active" id="view-overview">
+    <section class="view active" id="view-workflow">
+<div class="section-heading"><div><div class="eyebrow">THE PROCESS</div><h2>Fundamental bias → technical timing</h2><p>Fundamentals decide which way; technicals decide when; risk management decides how much. Work through each gate before opening a position.</p></div></div>
+<div class="rule-banner"><div class="rule-banner-main">Fundamentals determine direction · Technicals determine timing · Risk management determines execution</div><div class="rule-banner-sub">Technical analysis is an entry-confirmation filter only. It can veto or delay a trade, never flip the fundamental bias.</div></div>
+<div id="workflow-steps" class="workflow-steps"></div>
+<div class="panel"><div class="panel-head"><div><b>Pre-trade checklist</b><p>All eight checks must be satisfied before opening a position.</p></div><span class="tag tag-neutral" id="checklist-count">0 / 8</span></div><div id="pretrade-checklist" class="checklist"></div></div>
+</section>
+<section class="view" id="view-overview">
       <div class="metric-grid">
         <article class="metric-card"><div class="metric-label">CURRENCIES TRACKED</div><div class="metric-value">08</div><div class="metric-note">USD · EUR · GBP · JPY · CHF · CAD · AUD · NZD</div></article>
         <article class="metric-card"><div class="metric-label">OFFICIAL NEWS ITEMS</div><div class="metric-value" id="metric-news">—</div><div class="metric-note">Central-bank news + scheduled macro releases</div></article>
@@ -66,13 +77,31 @@
       <div class="notice"><b>Scoring methodology</b><p>The structural score remains a slower-moving relative macro comparison. Event momentum scores released actual-versus-consensus surprises only, with indicator-aware direction (for example, hotter inflation is treated as a short-term hawkish policy surprise), High/Medium/Low impact weighting and a 36-hour half-life. The short-term score is 60% structural + 40% event momentum, shown only when verified event data exists. This is not yet a market-implied rate-path or FX-price-confirmed model.</p></div>
     </section>
 
-    <section class="view" id="view-pairs">
-      <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>FX pair analysis</h2><p>Compare the 28 currency pairs in both directions. Open Pair Intelligence for a detailed macro, central-bank, geopolitical and short-term news assessment of each pair.</p></div></div>
+    <section class="view" id="view-bias">
+<div class="section-heading"><div><div class="eyebrow">STEP 3 · THE CONCLUSION</div><h2>Fundamental bias cards</h2><p>Each card explains direction, macro drivers, validity, invalidation and the technical setup to wait for. Signals use verified currency scores; missing inputs are never guessed.</p></div><div class="heading-actions"><select id="bias-pair-filter" class="select"><option value="ALL">All pairs</option></select><select id="bias-sort" class="select"><option value="strength">Sort: strongest spread</option><option value="weakest">Sort: weakest spread</option><option value="risk">Sort: event risk first</option></select></div></div>
+<div class="notice notice-info"><b>How bias is derived</b><p>Bias = base short-term score minus quote short-term score. Above +0.35 is bullish, below −0.35 is bearish, between them is neutral. This is a relative macro read, not a price forecast.</p></div>
+<div id="bias-cards" class="bias-grid"><div class="empty">Loading bias cards…</div></div>
+</section>
+<section class="view" id="view-pairs">
+      <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>Pair universe & shortlist</h2><p>Compare the 28 currency pairs in both directions. Open Pair Intelligence for a detailed macro, central-bank, geopolitical and short-term news assessment of each pair.</p></div></div>
       <div class="panel"><div class="panel-head"><b>56 directional combinations · 8 currencies</b><span class="tag tag-neutral">PAIR INTELLIGENCE AVAILABLE</span></div><div id="pair-table" class="empty">Pair signals are intentionally disabled until the fundamental model has verified inputs. This prevents neutral placeholders being mistaken for trading opportunities.</div></div>
     </section>
 
 
-    <section class="view" id="view-swap">
+    <section class="view" id="view-technical">
+<div class="section-heading"><div><div class="eyebrow">STEP 5 · ENTRY CONFIRMATION ONLY</div><h2>Technical entry gate</h2><p>The fundamental bias is locked. Technical inputs can confirm, delay or veto an entry; they cannot change its direction.</p></div></div>
+<div class="panel"><div class="panel-head"><div><b>Locked fundamental bias</b><p>Read-only input from Pair bias.</p></div><span class="tag tag-neutral" id="tech-lock-tag">NO PAIR</span></div><div id="tech-bias-lock"><div class="empty">Select a pair from a bias card.</div></div><label class="tech-pair-picker">Pair <select id="tech-pair" class="select"><option value="">Select a pair…</option></select></label></div>
+<div class="panel"><div class="panel-head"><div><b>Higher-timeframe structure</b><p>D1 sets the trend; H4 sets the entry. Disagreement means wait.</p></div><span class="tag tag-neutral">D1 / H4</span></div><div class="tech-form">
+<label>D1 trend<select id="tech-d1" class="select"><option value="">—</option><option value="up">Uptrend (HH/HL)</option><option value="down">Downtrend (LH/LL)</option><option value="range">Range / no trend</option></select></label>
+<label>H4 structure<select id="tech-h4" class="select"><option value="">—</option><option value="up">Uptrend (HH/HL)</option><option value="down">Downtrend (LH/LL)</option><option value="range">Range / no trend</option></select></label>
+<label>Setup type<select id="tech-setup" class="select"><option value="">—</option><option value="pullback">Pullback to support/resistance</option><option value="breakout">Breakout + retest</option><option value="reversal">Reversal at key level</option><option value="none">No setup yet</option></select></label>
+<label>Key level<input id="tech-level" type="number" step="any"></label><label>ATR (H4)<input id="tech-atr" type="number" step="any"></label><label>Entry<input id="tech-entry" type="number" step="any"></label><label>Stop loss<input id="tech-stop" type="number" step="any"></label><label>Target<input id="tech-target" type="number" step="any"></label></div><div class="tech-actions"><button class="btn btn-primary" id="tech-evaluate">Evaluate entry</button><button class="text-button" id="tech-reset">Reset</button></div></div><div id="tech-output" class="tech-output"><div class="empty">Complete the structure and levels, then evaluate.</div></div>
+<div class="notice"><b>No live price feed</b><p>Trend, levels and ATR are manual inputs from your chart. The dashboard does not invent market prices.</p></div></section>
+<section class="view" id="view-risk"><div class="section-heading"><div><div class="eyebrow">STEP 6 · EXECUTION</div><h2>Risk management</h2><p>Position size is determined by account risk and stop distance, never by conviction.</p></div></div>
+<div class="panel"><div class="panel-head"><div><b>Position size calculator</b><p>Manual inputs; no data is sent anywhere.</p></div></div><div class="tech-form">
+<label>Account balance<input id="risk-account" type="number" step="any"></label><label>Risk per trade (%)<input id="risk-pct" type="number" step="any" value="1"></label><label>Entry<input id="risk-entry" type="number" step="any"></label><label>Stop loss<input id="risk-stop" type="number" step="any"></label><label>Pip size<input id="risk-pip" type="number" step="any" value="0.0001"></label><label>Value per pip per lot<input id="risk-pipvalue" type="number" step="any" value="10"></label></div><div class="tech-actions"><button class="btn btn-primary" id="risk-calc">Calculate size</button></div></div><div id="risk-output" class="tech-output"></div>
+<div class="panel"><div class="panel-head"><b>Standing risk rules</b></div><div class="checklist static"><div class="check-row">✓ &nbsp; 0.5%–1% risk per trade</div><div class="check-row">✓ &nbsp; Stop at thesis invalidation</div><div class="check-row">✓ &nbsp; Minimum 1:2 risk/reward</div><div class="check-row">✓ &nbsp; Avoid new trades near high-impact events</div><div class="check-row">✓ &nbsp; Count correlated pairs as one risk unit</div></div></div></section>
+<section class="view" id="view-swap">
       <div class="section-heading"><div><div class="eyebrow">BROKER FUNDING DATA</div><h2>Swap Intelligence</h2><p>Daily read-only swap snapshots from your Pepperstone MT5 and IG Markets MT4 terminals. Values below are raw broker units, not converted SGD cash charges.</p></div></div>
       <div class="metric-grid">
         <article class="metric-card"><div class="metric-label">ACCOUNT CURRENCY</div><div class="metric-value">SGD</div><div class="metric-note">Captured from each terminal</div></article>
@@ -120,9 +149,9 @@
       <div class="panel"><div class="panel-head"><b>Saved entries</b><button class="text-button" id="journal-export">Export CSV ↓</button></div><div id="journal-list" class="journal-list"></div></div>
     </section>
 
-    <footer><span>MACROPULSE V4 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
+    <footer><span>MACROPULSE V6 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
-<script src="app.js?v=20261118-pair-score-red7d1" defer></script>
+<script src="app.js?v=20261118-v6-workflow1" defer></script>
 <script src="swap.js?v=20261117-swap1" defer></script>
 </body></html>
