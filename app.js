@@ -82,6 +82,24 @@ function canonicalPair(raw){
 }
 function readSelectedPairs(){try{const v=JSON.parse(localStorage.getItem("macropulse-selected-pairs")||"[]");return Array.isArray(v)?[...new Set(v.map(canonicalPair).filter(Boolean))]:[]}catch{return[]}}
 function saveSelectedPairs(items){localStorage.setItem("macropulse-selected-pairs",JSON.stringify([...new Set(items.map(canonicalPair).filter(Boolean))]));}
+function recentScoreChangeAlert(currencies) {
+  const alerts=[];
+  const now=Date.now();
+  for(const c of currencies) {
+    if(c.score===null||c.score===undefined||c.previous_structural_score===null||c.previous_structural_score===undefined) continue;
+    if(Number(c.score)===Number(c.previous_structural_score)) continue;
+    const rawDate=c.structural_update_date;
+    if(!rawDate) continue;
+    const stamp=new Date(/^\d{4}-\d{2}-\d{2}$/.test(rawDate)?rawDate+"T00:00:00Z":rawDate).getTime();
+    if(!Number.isFinite(stamp)) continue;
+    const age=now-stamp;
+    if(age>=0 && age<=7*24*60*60*1000) {
+      const date=new Date(stamp).toLocaleDateString("en-SG",{timeZone:"UTC",day:"2-digit",month:"short"});
+      alerts.push(c.code+" "+date);
+    }
+  }
+  return alerts.length?'<small class="pair-score-alert">⚠ SCORE CHANGED · '+alerts.map(safeText).join(" / ")+'</small>':"";
+}
 function renderPairs() {
   const all=(snapshot?.currencies||[]).filter(c=>CURRENCIES.includes(c.code));
   if (all.length < 2) {
@@ -100,7 +118,7 @@ function renderPairs() {
   }
   pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:b.spread-a.spread);
   $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><div><b>${p.pair}</b><small>${p.spread===null?"Score unavailable":(p.spread>0?"+":"")+p.spread.toFixed(1)}</small></div>${pairResearchLink(p.pair)}</div>`).join("");
-  $("pair-table").innerHTML=`<div class="pair-toolbar"><div><b id="pair-selected-count">${selected.length} pairs selected</b><small>Your selections are saved in this browser only.</small></div><div class="pair-toolbar-actions"><label class="pair-filter"><input type="checkbox" id="pair-selected-filter"> Show selected only</label><button type="button" class="text-button" id="pair-clear-selection">Clear selection</button></div></div><div class="table-wrap"><table class="pair-select-table"><thead><tr><th>Select</th><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr data-pair-row="${p.pair}"><td><input class="pair-pick" type="checkbox" value="${p.pair}" aria-label="Select ${p.pair}" ${selected.includes(p.pair)?"checked":""}></td><td>${p.pair}</td><td>${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>My selected pairs</b><p id="pair-selection-summary">${selected.length?selected.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser."}</p></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 28 standardised currency pairs for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
+  $("pair-table").innerHTML=`<div class="pair-toolbar"><div><b id="pair-selected-count">${selected.length} pairs selected</b><small>Your selections are saved in this browser only.</small></div><div class="pair-toolbar-actions"><label class="pair-filter"><input type="checkbox" id="pair-selected-filter"> Show selected only</label><button type="button" class="text-button" id="pair-clear-selection">Clear selection</button></div></div><div class="table-wrap"><table class="pair-select-table"><thead><tr><th>Select</th><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr data-pair-row="${p.pair}"><td><input class="pair-pick" type="checkbox" value="${p.pair}" aria-label="Select ${p.pair}" ${selected.includes(p.pair)?"checked":""}></td><td>${p.pair}</td><td>${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}${recentScoreChangeAlert([byCode[p.pair.split("/")[0]],byCode[p.pair.split("/")[1]]])}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>My selected pairs</b><p id="pair-selection-summary">${selected.length?selected.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser."}</p></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 28 standardised currency pairs for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
   const updateSelection=()=>{const picks=[...document.querySelectorAll(".pair-pick:checked")].map(x=>x.value);saveSelectedPairs(picks);$("pair-selected-count").textContent=picks.length+" pairs selected";$("pair-selection-summary").textContent=picks.length?picks.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser.";};
   document.querySelectorAll(".pair-pick").forEach(box=>box.addEventListener("change",()=>{updateSelection();applyPairFilter();}));
   const filter=$("pair-selected-filter");filter.addEventListener("change",applyPairFilter);
