@@ -67,3 +67,10 @@
 
 /* Red seven-day structural score movement alert in FX pair spread table */
 .pair-score-alert{display:block;margin-top:5px;color:#ff7777!important;font:700 9px/1.5 'DM Mono',monospace;letter-spacing:.15px;white-space:normal}
+
+/* Always-visible structural score history */
+.score-history{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:4px;font:9px/1.5 'DM Mono',monospace;color:#9aabc2;font-weight:400}
+.score-current{font-weight:700}
+.score-history .score-positive{color:#62edb2}
+.score-history .score-negative{color:#ff7777}
+.score-history .score-na{color:#a7b4c7}
