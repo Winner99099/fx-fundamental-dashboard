@@ -57,3 +57,9 @@
 .release-table td a{color:var(--cyan);text-decoration:none;font-weight:700}
 .release-new{display:inline-block;border:1px solid #267b68;background:#102d2b;color:#62edb2;border-radius:4px;padding:4px 7px;font:9px 'DM Mono',monospace;white-space:nowrap}
 #release-currency-filter{min-width:125px}
+
+
+/* Structural score change annotation */
+.structural-score-cell{font-family:'DM Mono',monospace;font-weight:600;white-space:nowrap}
+.structural-update{display:block;max-width:310px;white-space:normal;font:9px/1.55 'Manrope',sans-serif;color:#9aabc2;margin-top:5px;font-weight:400}
+.structural-update.is-updated{color:#62edb2}
