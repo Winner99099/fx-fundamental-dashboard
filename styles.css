@@ -74,3 +74,8 @@
 .score-history .score-positive{color:#62edb2}
 .score-history .score-negative{color:#ff7777}
 .score-history .score-na{color:#a7b4c7}
+
+/* FX pair table: persistent base/quote score history */
+.pair-score-history{display:flex;gap:4px;flex-wrap:wrap;margin-top:5px;font:9px/1.55 'DM Mono',monospace;color:#9aabc2;white-space:normal}
+.pair-score-history b{font-weight:600}
+.pair-score-separator{color:#65758c}
