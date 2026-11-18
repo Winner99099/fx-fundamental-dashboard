@@ -816,7 +816,7 @@ def changed_input_date(code, key, current):
             continue
         title = (event.get("title") or "").lower()
         stamp = parse_date(event.get("time"))
-        if stamp and stamp <= now and re.search(pattern, title):
+        if stamp and stamp <= now and event.get("actual") and re.search(pattern, title):
             candidates.append(stamp)
     if candidates:
         return max(candidates).date().isoformat(), "release date"
