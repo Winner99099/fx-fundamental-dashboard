@@ -29,7 +29,7 @@ function structuralUpdateSummary(c) {
   const status=c.structural_update_status||"baseline";
   const rawDate=c.structural_update_date;
   let dateText=rawDate||"date unavailable";
-  if(rawDate && /^\\d{4}-\\d{2}-\\d{2}$/.test(rawDate)) {
+  if(rawDate && /^\d{4}-\d{2}-\d{2}$/.test(rawDate)) {
     const d=new Date(rawDate+"T00:00:00Z");
     dateText=d.toLocaleDateString("en-SG",{timeZone:"UTC",day:"2-digit",month:"short",year:"numeric"});
   }
