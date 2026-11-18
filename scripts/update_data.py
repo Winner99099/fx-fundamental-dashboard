@@ -798,6 +798,13 @@ def latest_metric_period(currency, key):
         return history[0].get("period") or history[0].get("year")
     return metric.get("period") or metric.get("year") or currency.get(key + "_year")
 
+def latest_metric_value(currency, key):
+    if key == "policy_rate":
+        return currency.get("policy_rate")
+    metric = currency.get("metrics", {}).get(key, {})
+    history = metric.get("history") or []
+    return history[0].get("value") if history else metric.get("value")
+
 def changed_input_date(code, key, current):
     if key == "policy_rate":
         return current.get("policy_rate_as_of"), "release date"
@@ -826,7 +833,9 @@ for current in currencies:
             new_value = current.get(key)
             old_period = latest_metric_period(previous, key)
             new_period = latest_metric_period(current, key)
-            if old_value != new_value or old_period != new_period:
+            old_latest_value = latest_metric_value(previous, key)
+            new_latest_value = latest_metric_value(current, key)
+            if old_value != new_value or old_period != new_period or old_latest_value != new_latest_value:
                 date_value, date_kind = changed_input_date(code, key, current)
                 changed.append(period_labels[key])
                 if date_value:
