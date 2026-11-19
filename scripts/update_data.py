@@ -323,15 +323,23 @@ def fetch_oecd_high_frequency():
         + "Q.....B1GQ......GY."
         + "?startPeriod=2024-Q1&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
     )
-    result = {"inflation": {}, "gdp_growth": {}, "errors": []}
-    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("COICOP 2018 CPI", japan_cpi_url), ("Euro area CPI", euro_cpi_url), ("quarterly GDP", gdp_url)):
+    unemployment_url = (
+        base + "OECD.SDD.TPS,DSD_LFS@DF_IALFS_UNE_M,1.0/"
+        + "+".join(OECD_AREAS[c] for c in CURRENCIES)
+        + "..._Z.Y._T.Y_GE15..M"
+        + "?startPeriod=2024-01&dimensionAtObservation=AllDimensions&format=csvfilewithlabels"
+    )
+    result = {"inflation": {}, "gdp_growth": {}, "unemployment": {}, "errors": []}
+    for label, url in (("monthly CPI", cpi_monthly_url), ("quarterly CPI", cpi_quarterly_url), ("COICOP 2018 CPI", japan_cpi_url), ("Euro area CPI", euro_cpi_url), ("quarterly GDP", gdp_url), ("monthly unemployment", unemployment_url)):
         try:
             rows = fetch_oecd_csv(url)
             parsed = latest_oecd_rows(rows)
             if label.endswith("CPI"):
                 result["inflation"].update(parsed)
-            else:
+            elif label == "quarterly GDP":
                 result["gdp_growth"].update(parsed)
+            else:
+                result["unemployment"].update(parsed)
             print("OECD", label, "rows:", len(rows), "areas:", len(parsed), "codes:", sorted(parsed))
         except Exception as error:
             result["errors"].append(label + ": " + str(error)[:180])
@@ -356,6 +364,20 @@ def fetch_oecd_high_frequency():
         print("Eurostat Swiss HICP unavailable:", str(error)[:180])
     OECD_HIGH_FREQUENCY_CACHE = result
     return result
+
+def fetch_abs_unemployment():
+    """Fetch the latest Australian seasonally-adjusted unemployment rate from ABS."""
+    url = "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release"
+    page = fetch(url).decode("utf-8", errors="replace")
+    text = clean_text(page, 2000000)
+    match = re.search(r"unemployment rate increased\s+(?:by\s+[0-9.]+\s*pts?\s+)?to\s+([0-9.]+)\s*%", text, re.I)
+    if not match:
+        match = re.search(r"unemployment rate.{0,100}?([0-9.]+)\s*per cent", text, re.I)
+    if not match:
+        raise RuntimeError("ABS latest release did not expose a parsable unemployment rate")
+    period_match = re.search(r"Labour Force, Australia,\s*([A-Za-z]+\s+20[0-9]{2})", text, re.I)
+    period = period_match.group(1) if period_match else "Latest ABS release"
+    return {"period": period, "value": float(match.group(1)), "source": "Australian Bureau of Statistics", "url": url}
 
 def build_currency(code, country, country_name):
     metrics = {}
@@ -390,7 +412,7 @@ def build_currency(code, country, country_name):
     # as a clearly dated fallback when OECD does not yet publish an observation.
     high_frequency = fetch_oecd_high_frequency()
     area = OECD_AREAS[code]
-    for key in ("inflation", "gdp_growth"):
+    for key in ("inflation", "gdp_growth", "unemployment"):
         lookup_area = "EA20" if key == "inflation" and code == "EUR" else area
         observations = high_frequency[key].get(lookup_area, [])
         if key == "gdp_growth" and code == "EUR" and not observations:
@@ -403,44 +425,39 @@ def build_currency(code, country, country_name):
                 "year": int(latest["period"][:4]),
                 "history": observations,
                 "score": component_score(observations, "lower_is_better" if key == "inflation" else "higher_is_better"),
-                "label": "CPI inflation, year-on-year (%)" if key == "inflation" else "Real GDP growth, year-on-year (%)",
+                "label": {"inflation": "CPI inflation, year-on-year (%)", "gdp_growth": "Real GDP growth, year-on-year (%)", "unemployment": "Unemployment rate, seasonally adjusted (%)"}[key],
                 "source": "BLS" if key == "inflation" and code == "USD" else "Eurostat" if key == "inflation" and code in ("EUR", "CHF") else "OECD",
                 "url": "https://www.bls.gov/cpi/" if key == "inflation" and code == "USD" else "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en" if key == "inflation" and code in ("EUR", "CHF") else "https://data-explorer.oecd.org/",
             }
 
-    # Headline macro snapshot aligned to Trading Economics overview for all dashboard currencies.
-    # GDP uses the quarterly "GDP Growth Rate" series, not the annual growth rate.
-    # Values are refreshed against the public indicator pages; histories/scores remain separately sourced.
-    TE_OVERVIEW = {
-        "USD": {"rate": 4.00, "inflation": 3.70, "gdp_growth": 3.40, "unemployment": 4.10},
-        "EUR": {"rate": 2.65, "inflation": 4.00, "gdp_growth": 0.40, "unemployment": 6.50},
-        "GBP": {"rate": 4.00, "inflation": 3.50, "gdp_growth": 0.50, "unemployment": 4.70},
-        "JPY": {"rate": 1.25, "inflation": 2.10, "gdp_growth": 0.40, "unemployment": 2.40},
-        "CHF": {"rate": 0.00, "inflation": 1.50, "gdp_growth": 1.50, "unemployment": 3.00},
-        "CAD": {"rate": 2.50, "inflation": 3.10, "gdp_growth": 0.80, "unemployment": 6.70},
-        "AUD": {"rate": 4.85, "inflation": 4.30, "gdp_growth": 0.40, "unemployment": 4.70},
-        "NZD": {"rate": 2.75, "inflation": 3.70, "gdp_growth": 0.20, "unemployment": 5.70},
+    # Policy rates are decision-date snapshots; macro indicators come from
+    # dated BLS / Eurostat / OECD series above, with World Bank annual fallbacks.
+    TE_POLICY_RATES = {
+        "USD": 4.00, "EUR": 2.65, "GBP": 4.00, "JPY": 1.25,
+        "CHF": 0.00, "CAD": 2.50, "AUD": 4.85, "NZD": 2.75,
     }
-    te_values = TE_OVERVIEW[code]
+    rate_value = TE_POLICY_RATES[code]
     POLICY_RATES[code].update({
-        "value": te_values["rate"], "display": f'{te_values["rate"]:.2f}%',
-        "basis": "Trading Economics Interest Rate",
-        "url": f"https://tradingeconomics.com/{'euro-area' if code == 'EUR' else {'USD':'united-states','GBP':'united-kingdom','JPY':'japan','CHF':'switzerland','CAD':'canada','AUD':'australia','NZD':'new-zealand'}[code]}/indicators",
+        "value": rate_value, "display": f'{rate_value:.2f}%',
     })
-    te_url = POLICY_RATES[code]["url"]
-    for key in ("inflation", "gdp_growth", "unemployment"):
-        metrics[key].update({
-            "value": te_values[key],
-            "year": None,
-            "period": "Latest",
-            "label": {
-                "inflation": "Inflation Rate, year-on-year (%)",
-                "gdp_growth": "GDP Growth Rate, quarterly (%)",
-                "unemployment": "Unemployment Rate (%)",
-            }[key],
-            "source": "Trading Economics",
-            "url": te_url,
-        })
+
+    # Prefer Australia's latest national ABS labour-force release to the
+    # harmonised OECD series, which can be published with a lag.
+    if code == "AUD":
+        try:
+            abs_latest = fetch_abs_unemployment()
+            prior_history = metrics["unemployment"].get("history", [])
+            combined = [abs_latest] + [x for x in prior_history if x.get("period") != abs_latest["period"]]
+            combined = sorted(combined, key=lambda x: x["period"], reverse=True)[:6]
+            metrics["unemployment"] = {
+                "value": abs_latest["value"], "period": abs_latest["period"],
+                "year": int(abs_latest["period"][-4:]) if re.search(r"20[0-9]{2}$", abs_latest["period"]) else None,
+                "history": combined, "score": component_score(combined, "lower_is_better"),
+                "label": "Unemployment rate, seasonally adjusted (%)",
+                "source": abs_latest["source"], "url": abs_latest["url"],
+            }
+        except Exception as error:
+            errors.append("ABS unemployment: " + str(error)[:160])
 
     available = [(key, metrics[key]["score"], WEIGHTS[key]) for key in WEIGHTS if metrics[key]["score"] is not None]
     score = None
@@ -476,6 +493,9 @@ def build_currency(code, country, country_name):
         "gdp_growth_period": metrics["gdp_growth"].get("period", str(metrics["gdp_growth"]["year"]) if metrics["gdp_growth"]["year"] else None),
         "unemployment": metrics["unemployment"]["value"],
         "unemployment_year": metrics["unemployment"]["year"],
+        "unemployment_period": metrics["unemployment"].get("period", str(metrics["unemployment"]["year"]) if metrics["unemployment"]["year"] else None),
+        "unemployment_source": metrics["unemployment"].get("source"),
+        "unemployment_source_url": metrics["unemployment"].get("url"),
         "metrics": metrics,
         "component_weights_available": {key: WEIGHTS[key] for key, _, _ in available},
         "available_weight_pct": sum(w for _, _, w in available),
@@ -644,13 +664,29 @@ for code in CURRENCIES:
     item = build_currency(code, country, country_name)
     currencies.append(item)
     macro_sources.append({
-        "name": f"OECD / World Bank · {country_name}",
-        "url": f"https://data.worldbank.org/country/{country.lower()}",
+        "name": f"Official / OECD macro data · {country_name}",
+        "url": "https://data-explorer.oecd.org/",
         "status": "ok" if len([k for k in INDICATORS if item["metrics"][k]["value"] is not None]) else "partial",
         "checked_at": now.isoformat(),
         "data_year": item["data_year"],
         "indicators_available": sum(1 for k in INDICATORS if item["metrics"][k]["value"] is not None),
+        "unemployment_period": item.get("unemployment_period"),
+        "unemployment_source": item.get("unemployment_source"),
     })
+news_sources.append({
+    "name": "OECD Monthly Unemployment Rates",
+    "url": "https://data-explorer.oecd.org/s/2ai",
+    "status": "ok" if any(c["metrics"]["unemployment"].get("source") == "OECD" for c in currencies) else "partial",
+    "checked_at": now.isoformat(),
+    "currencies_covered": [c["code"] for c in currencies if c["metrics"]["unemployment"].get("source") == "OECD"],
+})
+news_sources.append({
+    "name": "Australian Bureau of Statistics · Labour Force",
+    "url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
+    "status": "ok" if next(c for c in currencies if c["code"] == "AUD")["metrics"]["unemployment"].get("source") == "Australian Bureau of Statistics" else "fallback",
+    "checked_at": now.isoformat(),
+    "reference_period": next(c for c in currencies if c["code"] == "AUD").get("unemployment_period"),
+})
 
 
 # V4 cross-sectional relative macro score. Economic surprises remain unavailable until
@@ -1102,12 +1138,14 @@ output = {
     "events": events,
     "sources": news_sources + macro_sources,
     "limitations": [
-        "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
+        "Inflation, GDP and unemployment prefer dated BLS / Eurostat / OECD observations; World Bank annual values remain dated fallbacks when high-frequency coverage is unavailable. Australian unemployment uses the latest ABS release when parsable.",
         "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
         "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths and market-price confirmation are not yet integrated.",
         "Event momentum is based only on numeric actual-versus-forecast releases available in the Forex Factory feed. Qualitative central-bank statements, market-implied policy paths, 2-year yield differentials and post-release FX confirmation are not yet included in the numerical overlay.",
         "News impact is keyword-based editorial triage. Event surprise direction is rule-based by release category; inflation surprises are treated as short-term hawkish/dovish policy repricing, not as a universal long-term currency-strength rule.",
         "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
+        "Policy-rate figures remain configured snapshots with explicit decision dates and must be reviewed after central-bank meetings.",
+        "OECD harmonised monthly unemployment can lag national releases; Australia therefore uses the latest ABS headline release when available. Compare reference periods across countries before ranking.",
         "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval.",
     ],
 }
