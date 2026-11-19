@@ -47,12 +47,24 @@ function scoreHistory(c) {
   const deltaClass=delta===null||delta===0?"score-na":delta>0?"score-positive":"score-negative";
   return '<span class="score-current">'+current.toFixed(2)+'</span><small class="score-history">Previous '+(previous===null?"—":previous.toFixed(2))+' <span class="'+deltaClass+'">Δ '+deltaText+'</span></small>';
 }
+function selectedStrengthCurrencies(){return [...document.querySelectorAll('.strength-currency-check:checked')].map(x=>x.value);}
+function updateStrengthSelectionCount(){const count=$('strength-selection-count'),selected=selectedStrengthCurrencies().length;if(count)count.textContent=selected+' / 8 SELECTED';}
+function setupStrengthCurrencyFilter(){
+ const checks=[...document.querySelectorAll('.strength-currency-check')];if(!checks.length||checks[0].dataset.ready)return;
+ checks.forEach(box=>{box.dataset.ready='1';box.addEventListener('change',()=>{updateStrengthSelectionCount();currencyRows('currency-rows-full');});});
+ $('strength-select-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=true);updateStrengthSelectionCount();currencyRows('currency-rows-full');});
+ $('strength-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);updateStrengthSelectionCount();currencyRows('currency-rows-full');});
+ updateStrengthSelectionCount();
+}
 function currencyRows(targetId) {
-  const rows = (snapshot?.currencies || []).map(c => `<tr>
+  const selected=selectedStrengthCurrencies();
+  const source=(snapshot?.currencies||[]);
+  const visible=targetId==='currency-rows-full'?source.filter(c=>selected.includes(c.code)):source;
+  const rows = visible.map(c => `<tr>
     <td>${safeText(c.code)}</td><td class="structural-score-cell">${scoreHistory(c)}<small class="structural-update ${c.structural_update_status==="core_data_updated"?"is-updated":""}">${escapeHtml(structuralUpdateSummary(c))}</small></td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td><td>${metric2(c.inflation)} <small>${c.inflation_period||c.inflation_year||""}</small></td><td>${metric2(c.gdp_growth)} <small>${c.gdp_growth_period||c.gdp_growth_year||""}</small></td><td>${metric2(c.unemployment)} <small>${c.unemployment_year||""}</small></td>
     <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
-  $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">No currency data in snapshot.</td></tr>`;
+  $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">${targetId==='currency-rows-full'?'No currencies selected. Tick one or more currencies above.':'No currency data in snapshot.'}</td></tr>`;
 }
 function newsSummary(e) {
   if (e.source === "Forex Factory") {
@@ -216,6 +228,7 @@ async function loadSnapshot() {
     const data=await response.json();
     if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
     snapshot=data;
+    setupStrengthCurrencyFilter();
     currencyRows("currency-rows"); currencyRows("currency-rows-full");
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderWorkflow(); renderSources(); renderReleaseTracker();
