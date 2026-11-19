@@ -470,7 +470,7 @@ def build_currency(code, country, country_name):
         "code": code,
         "score": score,
         "confidence": confidence,
-        "data_status": f"Partial · {len(available)}/3 macro series · mixed monthly/quarterly/annual data",
+        "data_status": f"Partial · {len(available)}/3 scored series · unemployment: {metrics['unemployment'].get('source', 'unknown')} ({metrics['unemployment'].get('period', metrics['unemployment'].get('year', 'period unavailable'))})",
         "country_proxy": country_name,
         "data_year": latest_year,
         "policy_rate": POLICY_RATES[code]["value"],
@@ -659,7 +659,7 @@ for code in CURRENCIES:
     macro_sources.append({
         "name": f"Official / OECD macro data · {country_name}",
         "url": "https://data-explorer.oecd.org/",
-        "status": "ok" if len([k for k in INDICATORS if item["metrics"][k]["value"] is not None]) else "partial",
+        "status": "ok" if item.get("unemployment_source") in ("OECD", "Australian Bureau of Statistics") and len([k for k in INDICATORS if item["metrics"][k]["value"] is not None]) == 3 else "partial",
         "checked_at": now.isoformat(),
         "data_year": item["data_year"],
         "indicators_available": sum(1 for k in INDICATORS if item["metrics"][k]["value"] is not None),
@@ -669,9 +669,9 @@ for code in CURRENCIES:
 news_sources.append({
     "name": "OECD Monthly Unemployment Rates",
     "url": "https://data-explorer.oecd.org/s/2ai",
-    "status": "ok" if any(c["metrics"]["unemployment"].get("source") == "OECD" for c in currencies) else "partial",
+    "status": "ok" if all(c["metrics"]["unemployment"].get("source") in ("OECD", "Australian Bureau of Statistics") for c in currencies) else "partial",
     "checked_at": now.isoformat(),
-    "currencies_covered": [c["code"] for c in currencies if c["metrics"]["unemployment"].get("source") == "OECD"],
+    "currencies_covered": [c["code"] for c in currencies if c["metrics"]["unemployment"].get("source") in ("OECD", "Australian Bureau of Statistics")],
 })
 news_sources.append({
     "name": "Australian Bureau of Statistics · Labour Force",
