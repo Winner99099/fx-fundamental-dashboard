@@ -120,3 +120,12 @@
 
 .sidebar nav a.nav-item{display:block;text-decoration:none}
 .sidebar nav a.nav-item:hover{color:#e7f5fb;background:#14243a}
+
+/* Currency strength multi-select filter */
+.strength-filter{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:11px 13px;margin:0 0 12px;background:#0d192b;border:1px solid var(--line);border-radius:7px}
+.strength-filter-options{display:flex;align-items:center;gap:5px 8px;flex-wrap:wrap}
+.strength-filter-options label{display:inline-flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid #34465f;border-radius:5px;color:#c5d2e2;font:10px 'DM Mono',monospace;cursor:pointer}
+.strength-filter-options label:hover{background:#1a2c44}
+.strength-filter-options input{accent-color:var(--cyan);width:14px;height:14px;margin:0}
+.strength-filter-actions{display:flex;gap:12px;align-items:center}
+@media(max-width:720px){.strength-filter{align-items:flex-start}.strength-filter-options{gap:5px}.strength-filter-options label{padding:6px}}
