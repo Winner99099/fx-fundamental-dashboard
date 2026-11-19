@@ -432,14 +432,7 @@ def build_currency(code, country, country_name):
 
     # Policy rates are decision-date snapshots; macro indicators come from
     # dated BLS / Eurostat / OECD series above, with World Bank annual fallbacks.
-    TE_POLICY_RATES = {
-        "USD": 4.00, "EUR": 2.65, "GBP": 4.00, "JPY": 1.25,
-        "CHF": 0.00, "CAD": 2.50, "AUD": 4.85, "NZD": 2.75,
-    }
-    rate_value = TE_POLICY_RATES[code]
-    POLICY_RATES[code].update({
-        "value": rate_value, "display": f'{rate_value:.2f}%',
-    })
+    # Policy rates remain dated decision snapshots in POLICY_RATES above.
 
     # Prefer Australia's latest national ABS labour-force release to the
     # harmonised OECD series, which can be published with a lag.
