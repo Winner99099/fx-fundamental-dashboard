@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-19T16:47:25.209857+00:00",
+  "generated_at": "2026-11-19T17:41:54.950230+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v6-dated-core-release-tracker",
   "history_window_days": 90,
@@ -489,6 +489,10 @@
           "year": null,
           "history": [
             {
+              "period": "2026-10",
+              "value": 3.6
+            },
+            {
               "period": "2026-09",
               "value": 3.5
             },
@@ -506,10 +510,6 @@
             },
             {
               "period": "2026-05",
-              "value": 2.8
-            },
-            {
-              "period": "2026-04",
               "value": 2.8
             }
           ],
@@ -607,7 +607,7 @@
       },
       "structural_update_status": "core_data_updated",
       "structural_update_note": "Updated: Inflation",
-      "structural_update_date": "2026-09",
+      "structural_update_date": "2026-10",
       "structural_update_date_basis": "data period",
       "previous_structural_score": 0.61,
       "structural_score_delta": 0.0,
@@ -1762,27 +1762,6 @@
     }
   ],
   "events": [
-    {
-      "event_id": "bb8b771c2683effae20b2fa5",
-      "currency": "USD",
-      "title": "FOMC Member Goolsbee Speaks",
-      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
-      "url": "https://www.forexfactory.com/calendar/889-us-fomc-member-goolsbee-speaks",
-      "time": "2026-11-19T17:30:00+00:00",
-      "published_at": "2026-11-19T17:30:00+00:00",
-      "source": "Forex Factory",
-      "impact": "Low",
-      "actual": null,
-      "forecast": null,
-      "previous": null,
-      "calendar_time_label": "5:30pm",
-      "event_type": "economic_calendar",
-      "bias": "Scheduled data release",
-      "direction": "Compare actual vs forecast",
-      "surprise_score": null,
-      "surprise_raw": null,
-      "surprise_interpretation": "not scored: no reliable directional rule"
-    },
     {
       "event_id": "ab3997a68fec56ba6db99d11",
       "currency": "USD",
@@ -5794,6 +5773,27 @@
       "surprise_interpretation": "not scored: no reliable directional rule"
     },
     {
+      "event_id": "bb8b771c2683effae20b2fa5",
+      "currency": "USD",
+      "title": "FOMC Member Goolsbee Speaks",
+      "summary": "Low-impact scheduled economic release. Actual: pending Forecast: not supplied Previous: not supplied",
+      "url": "https://www.forexfactory.com/calendar/889-us-fomc-member-goolsbee-speaks",
+      "time": "2026-11-19T17:30:00+00:00",
+      "published_at": "2026-11-19T17:30:00+00:00",
+      "source": "Forex Factory",
+      "impact": "Low",
+      "actual": null,
+      "forecast": null,
+      "previous": null,
+      "calendar_time_label": "5:30pm",
+      "event_type": "economic_calendar",
+      "bias": "Scheduled data release",
+      "direction": "Compare actual vs forecast",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
       "event_id": "0ab648e9e18301d2167c5513",
       "currency": "USD",
       "title": "Mortgage Delinquencies",
@@ -8952,15 +8952,15 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 20,
-      "new_releases_added": 1
+      "new_releases_added": 0
     },
     {
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8968,7 +8968,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 42,
       "new_releases_added": 0
     },
@@ -8976,7 +8976,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 46,
       "new_releases_added": 0
     },
@@ -8984,7 +8984,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8992,7 +8992,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9000,7 +9000,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9008,7 +9008,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "dated_releases_in_feed_90d": 25,
       "new_releases_added": 0
     },
@@ -9016,7 +9016,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -9025,7 +9025,7 @@
       "name": "OECD / World Bank \u00b7 United States",
       "url": "https://data.worldbank.org/country/usa",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9033,7 +9033,7 @@
       "name": "OECD / World Bank \u00b7 Euro area",
       "url": "https://data.worldbank.org/country/emu",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9041,7 +9041,7 @@
       "name": "OECD / World Bank \u00b7 United Kingdom",
       "url": "https://data.worldbank.org/country/gbr",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9049,7 +9049,7 @@
       "name": "OECD / World Bank \u00b7 Japan",
       "url": "https://data.worldbank.org/country/jpn",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9057,7 +9057,7 @@
       "name": "OECD / World Bank \u00b7 Switzerland",
       "url": "https://data.worldbank.org/country/che",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9065,7 +9065,7 @@
       "name": "OECD / World Bank \u00b7 Canada",
       "url": "https://data.worldbank.org/country/can",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9073,7 +9073,7 @@
       "name": "OECD / World Bank \u00b7 Australia",
       "url": "https://data.worldbank.org/country/aus",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     },
@@ -9081,7 +9081,7 @@
       "name": "OECD / World Bank \u00b7 New Zealand",
       "url": "https://data.worldbank.org/country/nzl",
       "status": "ok",
-      "checked_at": "2026-11-19T16:47:25.209857+00:00",
+      "checked_at": "2026-11-19T17:41:54.950230+00:00",
       "data_year": null,
       "indicators_available": 3
     }
