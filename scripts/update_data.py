@@ -731,7 +731,13 @@ def apply_v4_scores(items):
         }
         c["available_weight_pct"] = available_weight
         c["confidence"] = "Low" if available_weight < 100 else "Medium"
+        unemployment_source = c.get("unemployment_source", "unknown")
+        unemployment_period = c.get("unemployment_period") or c.get("unemployment_year") or "period unavailable"
+        unemployment_freshness = ("annual fallback · stale for short-term analysis"
+                                  if unemployment_source == "World Bank"
+                                  else "latest high-frequency source captured")
         c["data_status"] = (f"Provisional · {int(available_weight)}% model weight covered · "
+                            f"unemployment {unemployment_freshness} ({unemployment_period}) · "
                             "economic-surprise data not connected")
         c["summary"] = ("Relative macro score across the eight tracked currencies. "
                         "Policy-rate level is a carry proxy, not an expected policy path; "
@@ -1121,7 +1127,7 @@ for currency in currencies:
             "release_period": unemployment_metric.get("period") or unemployment_metric.get("year"),
             "actual": f"{current_value:.1f}%",
             "previous": f"{float(previous_value):.1f}%" if previous_value is not None else None,
-            "change": round(current_value - float(previous_value), 2) if previous_value is not None else None,
+            "change": round(round(current_value, 1) - round(float(previous_value), 1), 1) if previous_value is not None else None,
             "status": "official_data", "url": unemployment_metric.get("url"),
             "source": unemployment_metric.get("source"),
             "comparison_note": "Latest available source observation; period is separate from snapshot refresh time."
