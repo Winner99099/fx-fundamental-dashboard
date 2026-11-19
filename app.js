@@ -211,7 +211,7 @@ function releaseTrackerRows(filter="ALL") {
       const change=r.change;
       const changeText=change===null||change===undefined?"—":(change>0?"+":"")+Number(change).toFixed(2)+(r.key==="policy_rate"?" pp":" pp");
       const changeClass=change===null||change===undefined?"score-na":change>0?"score-positive":change<0?"score-negative":"score-na";
-      const status=r.status==="new_release"?'<span class="release-new">NEW RELEASE</span>':r.status==="no_verified_release"?'<span class="score-na">Awaiting verified release</span>':'<span class="score-na">Last known reading</span>';
+      const status=r.status==="new_release"?'<span class="release-new">NEW RELEASE</span>':r.status==="official_data"?'<span class="release-new">SOURCE VERIFIED</span>':r.status==="no_verified_release"?'<span class="score-na">Awaiting verified release</span>':'<span class="score-na">Last known reading</span>';
       const link=r.url?'<a href="'+escapeHtml(r.url)+'" target="_blank" rel="noopener noreferrer">Open ↗</a>':"—";
       rows.push('<tr><td>'+safeText(c.code)+'</td><td>'+safeText(r.label)+'</td><td>'+releaseDateSgt(r.release_time||r.release_date)+'</td><td>'+safeText(r.actual)+'</td><td>'+safeText(r.previous)+'</td><td class="'+changeClass+'">'+changeText+'</td><td>'+status+'</td><td>'+link+'</td></tr>');
     }
@@ -238,7 +238,7 @@ async function loadSnapshot() {
     renderPairs(); renderBiasCards(); renderWorkflow(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
-    const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").startsWith("OECD")));
+    const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").includes("OECD")));
     const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
     $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
     const builtSgt=data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"Time unavailable"; $("updated-at").textContent=`Data snapshot updated ${builtSgt} SGT`;
