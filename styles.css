@@ -117,3 +117,6 @@
 .currency-filter-options input{accent-color:var(--cyan);width:14px;height:14px}
 .currency-filter-menu>small{display:block;margin-top:9px;color:#91a2b9;font-size:9px;line-height:1.5}
 @media(max-width:720px){.currency-filter-menu{left:0;right:auto}.heading-actions{align-items:flex-start}}
+
+.sidebar nav a.nav-item{display:block;text-decoration:none}
+.sidebar nav a.nav-item:hover{color:#e7f5fb;background:#14243a}
