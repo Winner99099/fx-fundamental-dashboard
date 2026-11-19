@@ -170,6 +170,83 @@ function renderBiasCards(){
 }
 function renderTechLock(){const pair=$('tech-pair')?.value;if(!pair){$('tech-bias-lock').innerHTML='<div class="empty">Select a pair to load its fundamental bias.</div>';return;}const [b,q]=pair.split('/'),m=ccyMap(),s=Number(m[b]?.short_term_score)-Number(m[q]?.short_term_score),bias=s>.35?'BULLISH':s<-.35?'BEARISH':'NEUTRAL';$('tech-lock-tag').textContent=pair+' · '+bias;$('tech-bias-lock').innerHTML='<div class="tech-lock-line"><b>'+pair+' · '+bias+'</b><span>Locked spread '+(Number.isFinite(s)?s.toFixed(2):'N/A')+'</span></div>';}
 function renderWorkflow(){const steps=[['1','Trading Workflow','Start here · follow each decision gate','workflow'],['2','Overview','Review macro snapshot and feed health','overview'],['3','Pair Bias','Identify the strongest relative currency spread','bias'],['4','Central Bank Intelligence','Review policy direction and bank communication','centralbank'],['5','Currency Strength','Compare structural scores and event momentum','currencies'],['6','Event Risk','Check upcoming high-impact releases','calendar'],['7','Technical Entry','Confirm D1 direction and H4 entry structure','technical'],['8','Risk Management','Calculate position size and protect capital','risk']];$('workflow-steps').innerHTML=steps.map(s=>s[3]==='centralbank'?'<a class="workflow-step" href="./central-bank.html"><span class="step-number">'+s[0]+'</span><span><b>'+s[1]+'</b><small>'+s[2]+'</small></span><span class="step-arrow">↗</span></a>':'<button class="workflow-step" data-go="'+s[3]+'"><span class="step-number">'+s[0]+'</span><span><b>'+s[1]+'</b><small>'+s[2]+'</small></span><span class="step-arrow">↗</span></button>').join('');const checks=['Both currencies have verified scores','Relative pair spread supports a directional bias','Central-bank policy assessment reviewed','Recent currency score changes reviewed','No conflicting high-impact release imminent','D1 trend agrees with fundamental bias','H4 entry setup confirmed','Stop loss, target and position risk defined'];let saved=[];try{saved=JSON.parse(localStorage.getItem('macropulse-pretrade')||'[]')}catch{};$('pretrade-checklist').innerHTML=checks.map((c,i)=>'<label class="check-row"><input type="checkbox" data-check="'+i+'" '+(saved.includes(i)?'checked':'')+'><span>'+c+'</span></label>').join('');const count=()=>{$('checklist-count').textContent=document.querySelectorAll('[data-check]:checked').length+' / 8'};document.querySelectorAll('[data-check]').forEach(x=>x.addEventListener('change',()=>{localStorage.setItem('macropulse-pretrade',JSON.stringify([...document.querySelectorAll('[data-check]:checked')].map(v=>+v.dataset.check)));count()}));count();document.querySelectorAll('[data-go]').forEach(b=>{if(!b.dataset.bound){b.dataset.bound='1';b.addEventListener('click',()=>navigate(b.dataset.go));}});}
+function renderPairs() {
+  const all=(snapshot?.currencies||[]).filter(c=>CURRENCIES.includes(c.code));
+  if (all.length < 2) {
+    const msg = `<div class="empty">Currency list is incomplete. Pair research pages remain available once the currency snapshot loads.</div>`;
+    $("overview-pairs").innerHTML = msg; $("pair-table").innerHTML = msg; return;
+  }
+  const selected=readSelectedPairs();
+  const byCode=Object.fromEntries(all.map(c=>[c.code,c]));
+  const orderedCodes=PAIR_ORDER.filter(code=>byCode[code]);
+  const pairs=[];
+  for(let i=0;i<orderedCodes.length;i++){
+    for(let j=i+1;j<orderedCodes.length;j++){
+      const base=byCode[orderedCodes[i]],quote=byCode[orderedCodes[j]];
+      pairs.push({pair:base.code+"/"+quote.code,spread:Number.isFinite(Number(base.score))&&base.score!==null&&Number.isFinite(Number(quote.score))&&quote.score!==null?Number(base.score)-Number(quote.score):null});
+    }
+  }
+  pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:b.spread-a.spread);
+  $("overview-pairs").innerHTML=pairs.slice(0,5).map(p=>`<div class="source-row"><div><b>${p.pair}</b><small>${p.spread===null?"Score unavailable":(p.spread>0?"+":"")+p.spread.toFixed(1)}</small></div>${pairResearchLink(p.pair)}</div>`).join("");
+  $("pair-table").innerHTML=`<div class="pair-toolbar"><div><b id="pair-selected-count">${selected.length} pairs selected</b><small>Your selections are saved in this browser only.</small></div><div class="pair-toolbar-actions"><label class="pair-filter"><input type="checkbox" id="pair-selected-filter"> Show selected only</label><button type="button" class="text-button" id="pair-clear-selection">Clear selection</button></div></div><div class="table-wrap"><table class="pair-select-table"><thead><tr><th>Select</th><th>Pair</th><th>Relative score spread</th><th>Directional read</th><th>Fundamental research</th></tr></thead><tbody>${pairs.map(p=>`<tr data-pair-row="${p.pair}"><td><input class="pair-pick" type="checkbox" value="${p.pair}" aria-label="Select ${p.pair}" ${selected.includes(p.pair)?"checked":""}></td><td>${p.pair}</td><td><strong class="${hasRecentScoreUpdate(byCode[p.pair.split("/")[0]])||hasRecentScoreUpdate(byCode[p.pair.split("/")[1]])?"pair-score-recent":""}">${p.spread===null?"N/A":(p.spread>0?"+":"")+p.spread.toFixed(2)}</strong><small class="pair-score-history">${pairScoreHistory(byCode[p.pair.split("/")[0]])}<span class="pair-score-separator"> · </span>${pairScoreHistory(byCode[p.pair.split("/")[1]])}</small>${recentScoreChangeAlert([byCode[p.pair.split("/")[0]],byCode[p.pair.split("/")[1]]])}</td><td>${p.spread===null?"No verified score":p.spread>0.35?"Base stronger":p.spread< -0.35?"Quote stronger":"Close / neutral"}</td><td>${pairResearchLink(p.pair)}</td></tr>`).join("")}</tbody></table></div><div class="notice"><b>My selected pairs</b><p id="pair-selection-summary">${selected.length?selected.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser."}</p></div><div class="notice"><b>Pair Intelligence</b><p>Open any of the 28 standardised currency pairs for a currency-by-currency macro comparison, geopolitical and commodity sensitivities, latest dashboard news, and bullish/bearish scenario checklist. Research pages are separate from the provisional score ranking.</p></div>`;
+  const updateSelection=()=>{const picks=[...document.querySelectorAll(".pair-pick:checked")].map(x=>x.value);saveSelectedPairs(picks);$("pair-selected-count").textContent=picks.length+" pairs selected";$("pair-selection-summary").textContent=picks.length?picks.join(" · "):"Tick the box beside any pair you want to monitor. Your shortlist will remain saved on this device and browser.";};
+  document.querySelectorAll(".pair-pick").forEach(box=>box.addEventListener("change",()=>{updateSelection();applyPairFilter();}));
+  const filter=$("pair-selected-filter");filter.addEventListener("change",applyPairFilter);
+  $("pair-clear-selection").addEventListener("click",()=>{document.querySelectorAll(".pair-pick").forEach(x=>x.checked=false);saveSelectedPairs([]);updateSelection();applyPairFilter();});
+  function applyPairFilter(){const only=filter.checked;document.querySelectorAll("[data-pair-row]").forEach(row=>{row.hidden=only&&!row.querySelector(".pair-pick").checked;});}
+}function releaseDateSgt(value) {
+  if (!value) return "Date not verified";
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? safeText(value) : d.toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT";
+}
+function releaseTrackerRows(filter="ALL") {
+  const rows=[];
+  for (const c of (snapshot?.currencies||[])) {
+    if (filter!=="ALL" && c.code!==filter) continue;
+    for (const r of (c.release_tracker||[])) {
+      const change=r.change;
+      const changeText=change===null||change===undefined?"—":(change>0?"+":"")+Number(change).toFixed(2)+(r.key==="policy_rate"?" pp":" pp");
+      const changeClass=change===null||change===undefined?"score-na":change>0?"score-positive":change<0?"score-negative":"score-na";
+      const status=r.status==="new_release"?'<span class="release-new">NEW RELEASE</span>':r.status==="no_verified_release"?'<span class="score-na">Awaiting verified release</span>':'<span class="score-na">Last known reading</span>';
+      const link=r.url?'<a href="'+escapeHtml(r.url)+'" target="_blank" rel="noopener noreferrer">Open ↗</a>':"—";
+      rows.push('<tr><td>'+safeText(c.code)+'</td><td>'+safeText(r.label)+'</td><td>'+releaseDateSgt(r.release_time||r.release_date)+'</td><td>'+safeText(r.actual)+'</td><td>'+safeText(r.previous)+'</td><td class="'+changeClass+'">'+changeText+'</td><td>'+status+'</td><td>'+link+'</td></tr>');
+    }
+  }
+  $("release-tracker-rows").innerHTML=rows.length?rows.join(""):'<tr><td colspan="8" class="empty">No verified release records available for this selection.</td></tr>';
+}
+function renderReleaseTracker(){ releaseTrackerRows($("release-currency-filter").value); }
+
+function renderSources() {
+  const sources=snapshot?.sources||[];
+  $("source-directory").innerHTML=sources.length?sources.map(s=>`<div class="source-row"><div><b>${safeText(s.name)}</b><small>${safeText(s.status)} · checked ${fmtDate(s.checked_at)}</small></div><a href="${s.url}" target="_blank" rel="noopener">Open ↗</a></div>`).join(""):`<div class="empty">No source metadata.</div>`;
+}
+async function loadSnapshot() {
+  $("refresh-btn").disabled=true; $("refresh-btn").textContent="↻ Loading";
+  try {
+    const response=await fetch(`data/latest.json?ts=${Date.now()}`,{cache:"no-store"});
+    if(!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data=await response.json();
+    if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
+    snapshot=data;
+    setupStrengthCurrencyFilter();
+    currencyRows("currency-rows"); currencyRows("currency-rows-full");
+    renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
+    renderPairs(); renderBiasCards(); renderWorkflow(); renderSources(); renderReleaseTracker();
+    $("metric-news").textContent=data.events.length;
+    const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
+    const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").startsWith("OECD")));
+    const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
+    $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
+    const builtSgt=data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"Time unavailable"; $("updated-at").textContent=`Data snapshot updated ${builtSgt} SGT`;
+    $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
+    const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
+    setStatus(!isStale && ok>0, isStale ? "Snapshot is stale or awaiting build" : `${ok} news feeds responding · ${macroOk}/${macro.length} macro sources available`);
+  } catch(error) {
+    setStatus(false,`Unable to load data snapshot: ${error.message}`);
+    $("updated-at").textContent="Check GitHub Pages deployment and data/latest.json";
+    $("currency-rows").innerHTML=`<tr><td colspan="9" class="empty">Data unavailable. ${error.message}</td></tr>`;
+  } finally { $("refresh-btn").disabled=false; $("refresh-btn").textContent="↻ Refresh"; }
+}
 const titles={workflow:"Trading Workflow",overview:"Overview",currencies:"Currency Strength",bias:"Pair Bias",pairs:"Pair Universe",technical:"Technical Entry",risk:"Risk Management",swap:"Swap Intelligence",news:"News Intelligence",calendar:"Event Risk",positioning:"CFTC Positioning",journal:"Trading Journal"};
 function navigate(view) {
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${view}`));
