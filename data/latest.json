@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-19T23:07:36.850611+00:00",
+  "generated_at": "2026-11-19T23:13:28.857724+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v6-dated-core-release-tracker",
   "history_window_days": 90,
@@ -30,29 +30,32 @@
   "currencies": [
     {
       "code": "USD",
-      "score": 1.72,
+      "score": 0.68,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "United States",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 4.0,
       "policy_rate_display": "4.00%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "Fed target range",
       "policy_rate_as_of": "2026-10-29",
-      "policy_rate_source": "https://tradingeconomics.com/united-states/indicators",
-      "inflation": 3.7,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 3.4,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
+      "policy_rate_source": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
+      "inflation": 3.737684729064039,
+      "inflation_year": 2026,
+      "inflation_period": "2026-09",
+      "gdp_growth": 2.065739238,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 4.1,
-      "unemployment_year": null,
+      "unemployment_year": 2026,
+      "unemployment_period": "2026-10",
+      "unemployment_source": "OECD",
+      "unemployment_source_url": "https://data-explorer.oecd.org/",
       "metrics": {
         "inflation": {
-          "value": 3.7,
-          "period": "Latest",
-          "year": null,
+          "value": 3.737684729064039,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
               "period": "2026-09",
@@ -79,15 +82,15 @@
               "value": 3.8108449321217597
             }
           ],
-          "score": -0.39,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-states/indicators"
+          "score": -0.82,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "BLS",
+          "url": "https://www.bls.gov/cpi/"
         },
         "gdp_growth": {
-          "value": 3.4,
-          "period": "Latest",
-          "year": null,
+          "value": 2.065739238,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -114,45 +117,45 @@
               "value": 2.420614103
             }
           ],
-          "score": 5.0,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-states/indicators"
+          "score": 0.12,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.1,
-          "year": null,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 4.198
+              "period": "2026-10",
+              "value": 4.1
             },
             {
-              "year": 2024,
-              "value": 4.022
+              "period": "2026-09",
+              "value": 4.2
             },
             {
-              "year": 2023,
-              "value": 3.638
+              "period": "2026-08",
+              "value": 4.1
             },
             {
-              "year": 2022,
-              "value": 3.65
+              "period": "2026-07",
+              "value": 4.1
             },
             {
-              "year": 2021,
-              "value": 5.349
+              "period": "2026-06",
+              "value": 4.2
             },
             {
-              "year": 2020,
-              "value": 8.055
+              "period": "2026-05",
+              "value": 4.3
             }
           ],
-          "score": 0.52,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-states/indicators",
-          "period": "Latest"
+          "score": 1.9,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         }
       },
       "component_weights_available": {
@@ -166,22 +169,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.18,
-        "inflation_vs_target": -0.39,
-        "gdp_growth": 5.0,
-        "employment": 0.52,
+        "inflation_vs_target": -0.82,
+        "gdp_growth": 0.12,
+        "employment": 1.9,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Employment",
-      "structural_update_date": "2025",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "2026-Q3",
       "structural_update_date_basis": "data period",
       "previous_structural_score": 1.72,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -1.04,
       "event_score": 0.0,
       "event_surprise_count": 1,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": "2026-11-13T13:30:00+00:00",
-      "short_term_score": 1.03,
+      "short_term_score": 0.41,
       "short_term_score_status": "60% structural + 40% verified event momentum",
       "last_release_reference": {
         "title": "Unemployment Claims",
@@ -202,8 +205,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/united-states/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
+          "source": "Fed target range",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -248,29 +251,32 @@
     },
     {
       "code": "EUR",
-      "score": -0.71,
+      "score": -1.41,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "Euro area",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 2.65,
       "policy_rate_display": "2.65%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "ECB deposit facility",
       "policy_rate_as_of": "2026-09-16",
-      "policy_rate_source": "https://tradingeconomics.com/euro-area/indicators",
+      "policy_rate_source": "https://www.ecb.europa.eu/press/pr/date/2026/html/index.en.html",
       "inflation": 4.0,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.4,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
+      "inflation_year": 2026,
+      "inflation_period": "2026-10",
+      "gdp_growth": 1.297297561,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 6.5,
-      "unemployment_year": null,
+      "unemployment_year": 2026,
+      "unemployment_period": "2026-09",
+      "unemployment_source": "OECD",
+      "unemployment_source_url": "https://data-explorer.oecd.org/",
       "metrics": {
         "inflation": {
           "value": 4.0,
-          "period": "Latest",
-          "year": null,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
             {
               "period": "2026-10",
@@ -297,15 +303,15 @@
               "value": 3.2
             }
           ],
-          "score": -1.57,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/euro-area/indicators"
+          "score": -1.77,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "Eurostat",
+          "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
         },
         "gdp_growth": {
-          "value": 0.4,
-          "period": "Latest",
-          "year": null,
+          "value": 1.297297561,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -332,45 +338,45 @@
               "value": 1.377214457
             }
           ],
-          "score": -0.39,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/euro-area/indicators"
+          "score": -1.33,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 6.5,
-          "year": null,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 6.28355946264135
+              "period": "2026-09",
+              "value": 6.5
             },
             {
-              "year": 2024,
-              "value": 6.34778064605911
+              "period": "2026-08",
+              "value": 6.5
             },
             {
-              "year": 2023,
-              "value": 6.52267389015226
+              "period": "2026-07",
+              "value": 6.5
             },
             {
-              "year": 2022,
-              "value": 6.72976967374639
+              "period": "2026-06",
+              "value": 6.4
             },
             {
-              "year": 2021,
-              "value": 7.69446992680361
+              "period": "2026-05",
+              "value": 6.4
             },
             {
-              "year": 2020,
-              "value": 7.78262585986041
+              "period": "2026-04",
+              "value": 6.4
             }
           ],
-          "score": -1.57,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/euro-area/indicators",
-          "period": "Latest"
+          "score": -3.9,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         }
       },
       "component_weights_available": {
@@ -384,22 +390,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -0.05,
-        "inflation_vs_target": -1.57,
-        "gdp_growth": -0.39,
-        "employment": -1.57,
+        "inflation_vs_target": -1.77,
+        "gdp_growth": -1.33,
+        "employment": -3.9,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Employment",
-      "structural_update_date": "2025",
+      "structural_update_note": "Updated: GDP, Employment",
+      "structural_update_date": "2026-Q3",
       "structural_update_date_basis": "data period",
       "previous_structural_score": -0.71,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.7,
       "event_score": -0.5,
       "event_surprise_count": 1,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": "2026-11-16T10:00:00+00:00",
-      "short_term_score": -0.63,
+      "short_term_score": -1.05,
       "short_term_score_status": "60% structural + 40% verified event momentum",
       "last_release_reference": {
         "title": "Final Core CPI y/y",
@@ -420,8 +426,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/euro-area/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.ecb.europa.eu/press/pr/date/2026/html/index.en.html",
+          "source": "ECB deposit facility",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -464,30 +470,37 @@
     },
     {
       "code": "GBP",
-      "score": 0.61,
+      "score": 0.44,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "United Kingdom",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 4.0,
       "policy_rate_display": "4.00%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "BoE Bank Rate",
       "policy_rate_as_of": "2026-11-05",
-      "policy_rate_source": "https://tradingeconomics.com/united-kingdom/indicators",
-      "inflation": 3.5,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.5,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
+      "policy_rate_source": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+      "inflation": 3.6,
+      "inflation_year": 2026,
+      "inflation_period": "2026-10",
+      "gdp_growth": 1.942205489,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 4.7,
-      "unemployment_year": null,
+      "unemployment_year": 2026,
+      "unemployment_period": "2026-07",
+      "unemployment_source": "OECD",
+      "unemployment_source_url": "https://data-explorer.oecd.org/",
       "metrics": {
         "inflation": {
-          "value": 3.5,
-          "period": "Latest",
-          "year": null,
+          "value": 3.6,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
+            {
+              "period": "2026-10",
+              "value": 3.6
+            },
             {
               "period": "2026-09",
               "value": 3.5
@@ -507,21 +520,17 @@
             {
               "period": "2026-05",
               "value": 2.8
-            },
-            {
-              "period": "2026-04",
-              "value": 2.8
             }
           ],
-          "score": 0.39,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-kingdom/indicators"
+          "score": -0.32,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.5,
-          "period": "Latest",
-          "year": null,
+          "value": 1.942205489,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -548,45 +557,45 @@
               "value": 1.142021345
             }
           ],
-          "score": 0.39,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-kingdom/indicators"
+          "score": -0.12,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 4.7,
-          "year": null,
+          "period": "2026-07",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 4.746
+              "period": "2026-07",
+              "value": 4.7
             },
             {
-              "year": 2024,
-              "value": 4.361
+              "period": "2026-06",
+              "value": 4.9
             },
             {
-              "year": 2023,
-              "value": 4.025
+              "period": "2026-05",
+              "value": 4.9
             },
             {
-              "year": 2022,
-              "value": 3.768
+              "period": "2026-04",
+              "value": 4.9
             },
             {
-              "year": 2021,
-              "value": 4.864
+              "period": "2026-03",
+              "value": 4.9
             },
             {
-              "year": 2020,
-              "value": 4.472
+              "period": "2026-02",
+              "value": 5.0
             }
           ],
-          "score": 0.0,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/united-kingdom/indicators",
-          "period": "Latest"
+          "score": 0.45,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         }
       },
       "component_weights_available": {
@@ -600,22 +609,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.18,
-        "inflation_vs_target": 0.39,
-        "gdp_growth": 0.39,
-        "employment": 0.0,
+        "inflation_vs_target": -0.32,
+        "gdp_growth": -0.12,
+        "employment": 0.45,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Inflation",
-      "structural_update_date": "2026-09",
-      "structural_update_date_basis": "data period",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "2026-11-12",
+      "structural_update_date_basis": "release date",
       "previous_structural_score": 0.61,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.17,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.61,
+      "short_term_score": 0.44,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "CPI y/y",
@@ -636,8 +645,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/united-kingdom/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.bankofengland.co.uk/monetary-policy-summary-and-minutes/2026/november-2026",
+          "source": "BoE Bank Rate",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -682,29 +691,32 @@
     },
     {
       "code": "JPY",
-      "score": 0.72,
+      "score": 0.98,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "Japan",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 1.25,
       "policy_rate_display": "1.25%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "BoJ short-term policy rate",
       "policy_rate_as_of": "2026-10-30",
-      "policy_rate_source": "https://tradingeconomics.com/japan/indicators",
+      "policy_rate_source": "https://www.boj.or.jp/en/",
       "inflation": 2.1,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.4,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
+      "inflation_year": 2026,
+      "inflation_period": "2026-09",
+      "gdp_growth": 1.156133449,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 2.4,
-      "unemployment_year": null,
+      "unemployment_year": 2026,
+      "unemployment_period": "2026-09",
+      "unemployment_source": "OECD",
+      "unemployment_source_url": "https://data-explorer.oecd.org/",
       "metrics": {
         "inflation": {
           "value": 2.1,
-          "period": "Latest",
-          "year": null,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
               "period": "2026-09",
@@ -732,14 +744,14 @@
             }
           ],
           "score": 5.0,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/japan/indicators"
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.4,
-          "period": "Latest",
-          "year": null,
+          "value": 1.156133449,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -766,45 +778,45 @@
               "value": 1.887704145
             }
           ],
-          "score": -0.39,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/japan/indicators"
+          "score": -1.6,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 2.4,
-          "year": null,
+          "period": "2026-09",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 2.451
+              "period": "2026-09",
+              "value": 2.4
             },
             {
-              "year": 2024,
+              "period": "2026-08",
               "value": 2.5
             },
             {
-              "year": 2023,
-              "value": 2.6
+              "period": "2026-07",
+              "value": 2.4
             },
             {
-              "year": 2022,
-              "value": 2.614
+              "period": "2026-06",
+              "value": 2.5
             },
             {
-              "year": 2021,
-              "value": 2.808
+              "period": "2026-05",
+              "value": 2.5
             },
             {
-              "year": 2020,
-              "value": 2.809
+              "period": "2026-04",
+              "value": 2.5
             }
           ],
-          "score": 2.01,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/japan/indicators",
-          "period": "Latest"
+          "score": 5.0,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         }
       },
       "component_weights_available": {
@@ -819,21 +831,21 @@
       "score_components": {
         "policy_rate_level": -1.32,
         "inflation_vs_target": 5.0,
-        "gdp_growth": -0.39,
-        "employment": 2.01,
+        "gdp_growth": -1.6,
+        "employment": 5.0,
         "economic_surprises": null
       },
-      "structural_update_status": "no_core_data_change",
-      "structural_update_note": "No new core-data update",
-      "structural_update_date": null,
-      "structural_update_date_basis": null,
+      "structural_update_status": "core_data_updated",
+      "structural_update_note": "Updated: GDP, Employment",
+      "structural_update_date": "2026-Q3",
+      "structural_update_date_basis": "data period",
       "previous_structural_score": 0.72,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": 0.26,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.72,
+      "short_term_score": 0.98,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "Trade Balance",
@@ -854,8 +866,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/japan/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.boj.or.jp/en/",
+          "source": "BoJ short-term policy rate",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -898,29 +910,32 @@
     },
     {
       "code": "CHF",
-      "score": 1.42,
+      "score": 0.33,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "Switzerland",
-      "data_year": null,
+      "data_year": 2025,
       "policy_rate": 0.0,
       "policy_rate_display": "0.00%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "SNB policy rate",
       "policy_rate_as_of": "2026-09-24",
-      "policy_rate_source": "https://tradingeconomics.com/switzerland/indicators",
-      "inflation": 1.5,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 1.5,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
-      "unemployment": 3.0,
-      "unemployment_year": null,
+      "policy_rate_source": "https://www.snb.ch/en/",
+      "inflation": 1.6,
+      "inflation_year": 2026,
+      "inflation_period": "2026-10",
+      "gdp_growth": 3.043181017,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
+      "unemployment": 4.873,
+      "unemployment_year": 2025,
+      "unemployment_period": "2025",
+      "unemployment_source": "World Bank",
+      "unemployment_source_url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CHE",
       "metrics": {
         "inflation": {
-          "value": 1.5,
-          "period": "Latest",
-          "year": null,
+          "value": 1.6,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
             {
               "period": "2026-10",
@@ -947,15 +962,15 @@
               "value": 0.9
             }
           ],
-          "score": 4.33,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/switzerland/indicators"
+          "score": 4.02,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "Eurostat",
+          "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
         },
         "gdp_growth": {
-          "value": 1.5,
-          "period": "Latest",
-          "year": null,
+          "value": 3.043181017,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -982,14 +997,14 @@
               "value": 1.816882705
             }
           ],
-          "score": 5.0,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/switzerland/indicators"
+          "score": 1.96,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": 3.0,
-          "year": null,
+          "value": 4.873,
+          "year": 2025,
           "history": [
             {
               "year": 2025,
@@ -1016,11 +1031,10 @@
               "value": 4.817
             }
           ],
-          "score": 1.49,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/switzerland/indicators",
-          "period": "Latest"
+          "score": 0.03,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=CHE"
         }
       },
       "component_weights_available": {
@@ -1034,22 +1048,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -2.45,
-        "inflation_vs_target": 4.33,
-        "gdp_growth": 5.0,
-        "employment": 1.49,
+        "inflation_vs_target": 4.02,
+        "gdp_growth": 1.96,
+        "employment": 0.03,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Inflation",
-      "structural_update_date": "2026-10",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "2026-Q3",
       "structural_update_date_basis": "data period",
       "previous_structural_score": 1.42,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -1.09,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 1.42,
+      "short_term_score": 0.33,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "PPI m/m",
@@ -1070,8 +1084,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/switzerland/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.snb.ch/en/",
+          "source": "SNB policy rate",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -1114,29 +1128,32 @@
     },
     {
       "code": "CAD",
-      "score": 0.66,
+      "score": -1.1,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "Canada",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 2.5,
       "policy_rate_display": "2.50%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "BoC overnight rate target",
       "policy_rate_as_of": "2026-10-28",
-      "policy_rate_source": "https://tradingeconomics.com/canada/indicators",
-      "inflation": 3.1,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.8,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
+      "policy_rate_source": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/",
+      "inflation": 3.085299,
+      "inflation_year": 2026,
+      "inflation_period": "2026-10",
+      "gdp_growth": 0.954838473,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q3",
       "unemployment": 6.7,
-      "unemployment_year": null,
+      "unemployment_year": 2026,
+      "unemployment_period": "2026-10",
+      "unemployment_source": "OECD",
+      "unemployment_source_url": "https://data-explorer.oecd.org/",
       "metrics": {
         "inflation": {
-          "value": 3.1,
-          "period": "Latest",
-          "year": null,
+          "value": 3.085299,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
             {
               "period": "2026-10",
@@ -1163,15 +1180,15 @@
               "value": 3.225806
             }
           ],
-          "score": 1.97,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/canada/indicators"
+          "score": 1.54,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.8,
-          "period": "Latest",
-          "year": null,
+          "value": 0.954838473,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -1198,45 +1215,45 @@
               "value": 2.005056984
             }
           ],
-          "score": 2.75,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/canada/indicators"
+          "score": -1.98,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
           "value": 6.7,
-          "year": null,
+          "period": "2026-10",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 6.907
+              "period": "2026-10",
+              "value": 6.7
             },
             {
-              "year": 2024,
-              "value": 6.351
+              "period": "2026-09",
+              "value": 6.5
             },
             {
-              "year": 2023,
-              "value": 5.415
+              "period": "2026-08",
+              "value": 6.4
             },
             {
-              "year": 2022,
-              "value": 5.279
+              "period": "2026-07",
+              "value": 6.4
             },
             {
-              "year": 2021,
-              "value": 7.527
+              "period": "2026-06",
+              "value": 6.5
             },
             {
-              "year": 2020,
-              "value": 9.657
+              "period": "2026-05",
+              "value": 6.6
             }
           ],
-          "score": -1.75,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/canada/indicators",
-          "period": "Latest"
+          "score": -4.39,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         }
       },
       "component_weights_available": {
@@ -1250,22 +1267,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -0.18,
-        "inflation_vs_target": 1.97,
-        "gdp_growth": 2.75,
-        "employment": -1.75,
+        "inflation_vs_target": 1.54,
+        "gdp_growth": -1.98,
+        "employment": -4.39,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Inflation",
-      "structural_update_date": "2026-10",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "2026-Q3",
       "structural_update_date_basis": "data period",
       "previous_structural_score": 0.66,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -1.76,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.66,
+      "short_term_score": -1.1,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "CPI m/m",
@@ -1286,8 +1303,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/canada/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/",
+          "source": "BoC overnight rate target",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -1330,29 +1347,32 @@
     },
     {
       "code": "AUD",
-      "score": 0.49,
+      "score": 0.85,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "Australia",
-      "data_year": null,
+      "data_year": 2026,
       "policy_rate": 4.85,
       "policy_rate_display": "4.85%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "RBA cash rate target",
       "policy_rate_as_of": "2026-11-04",
-      "policy_rate_source": "https://tradingeconomics.com/australia/indicators",
-      "inflation": 4.3,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.4,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
-      "unemployment": 4.7,
-      "unemployment_year": null,
+      "policy_rate_source": "https://www.rba.gov.au/",
+      "inflation": 3.920717,
+      "inflation_year": 2026,
+      "inflation_period": "2026-Q3",
+      "gdp_growth": 2.137635765,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
+      "unemployment": 4.9,
+      "unemployment_year": 2026,
+      "unemployment_period": "October 2026",
+      "unemployment_source": "Australian Bureau of Statistics",
+      "unemployment_source_url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
       "metrics": {
         "inflation": {
-          "value": 4.3,
-          "period": "Latest",
-          "year": null,
+          "value": 3.920717,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -1379,15 +1399,15 @@
               "value": 2.120447
             }
           ],
-          "score": -0.79,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/australia/indicators"
+          "score": 0.32,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.4,
-          "period": "Latest",
-          "year": null,
+          "value": 2.137635765,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
@@ -1414,45 +1434,47 @@
               "value": 1.28031431
             }
           ],
-          "score": -0.39,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/australia/indicators"
+          "score": 0.25,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": 4.7,
-          "year": null,
+          "value": 4.9,
+          "period": "October 2026",
+          "year": 2026,
           "history": [
             {
-              "year": 2025,
-              "value": 4.09
+              "period": "October 2026",
+              "value": 4.9,
+              "source": "Australian Bureau of Statistics",
+              "url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release"
             },
             {
-              "year": 2024,
-              "value": 3.942
+              "period": "2026-09",
+              "value": 4.718349
             },
             {
-              "year": 2023,
-              "value": 3.668
+              "period": "2026-08",
+              "value": 4.651608
             },
             {
-              "year": 2022,
-              "value": 3.728
+              "period": "2026-07",
+              "value": 4.489178
             },
             {
-              "year": 2021,
-              "value": 5.022
+              "period": "2026-06",
+              "value": 4.44937
             },
             {
-              "year": 2020,
-              "value": 6.394
+              "period": "2026-05",
+              "value": 4.393544
             }
           ],
-          "score": 0.0,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/australia/indicators",
-          "period": "Latest"
+          "score": -0.03,
+          "label": "Unemployment rate, seasonally adjusted (%)",
+          "source": "Australian Bureau of Statistics",
+          "url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release"
         }
       },
       "component_weights_available": {
@@ -1466,22 +1488,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.95,
-        "inflation_vs_target": -0.79,
-        "gdp_growth": -0.39,
-        "employment": 0.0,
+        "inflation_vs_target": 0.32,
+        "gdp_growth": 0.25,
+        "employment": -0.03,
         "economic_surprises": null
       },
       "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Employment",
-      "structural_update_date": "2025",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "October 2026",
       "structural_update_date_basis": "data period",
       "previous_structural_score": 0.49,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": 0.36,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.49,
+      "short_term_score": 0.85,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "Employment Change",
@@ -1502,8 +1524,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/australia/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.rba.gov.au/",
+          "source": "RBA cash rate target",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -1546,29 +1568,32 @@
     },
     {
       "code": "NZD",
-      "score": -0.71,
+      "score": 0.05,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 economic-surprise data not connected",
       "country_proxy": "New Zealand",
-      "data_year": null,
+      "data_year": 2025,
       "policy_rate": 2.75,
       "policy_rate_display": "2.75%",
-      "policy_rate_basis": "Trading Economics Interest Rate",
+      "policy_rate_basis": "RBNZ official cash rate",
       "policy_rate_as_of": "2026-10-28",
-      "policy_rate_source": "https://tradingeconomics.com/new-zealand/indicators",
-      "inflation": 3.7,
-      "inflation_year": null,
-      "inflation_period": "Latest",
-      "gdp_growth": 0.2,
-      "gdp_growth_year": null,
-      "gdp_growth_period": "Latest",
-      "unemployment": 5.7,
-      "unemployment_year": null,
+      "policy_rate_source": "https://www.rbnz.govt.nz/",
+      "inflation": 3.714936,
+      "inflation_year": 2026,
+      "inflation_period": "2026-Q3",
+      "gdp_growth": 2.550736229,
+      "gdp_growth_year": 2026,
+      "gdp_growth_period": "2026-Q2",
+      "unemployment": 5.076,
+      "unemployment_year": 2025,
+      "unemployment_period": "2025",
+      "unemployment_source": "World Bank",
+      "unemployment_source_url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=NZL",
       "metrics": {
         "inflation": {
-          "value": 3.7,
-          "period": "Latest",
-          "year": null,
+          "value": 3.714936,
+          "period": "2026-Q3",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q3",
@@ -1595,15 +1620,15 @@
               "value": 2.672956
             }
           ],
-          "score": -0.39,
-          "label": "Inflation Rate, year-on-year (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/new-zealand/indicators"
+          "score": -0.74,
+          "label": "CPI inflation, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "gdp_growth": {
-          "value": 0.2,
-          "period": "Latest",
-          "year": null,
+          "value": 2.550736229,
+          "period": "2026-Q2",
+          "year": 2026,
           "history": [
             {
               "period": "2026-Q2",
@@ -1630,14 +1655,14 @@
               "value": -0.715886191
             }
           ],
-          "score": -1.97,
-          "label": "GDP Growth Rate, quarterly (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/new-zealand/indicators"
+          "score": 1.03,
+          "label": "Real GDP growth, year-on-year (%)",
+          "source": "OECD",
+          "url": "https://data-explorer.oecd.org/"
         },
         "unemployment": {
-          "value": 5.7,
-          "year": null,
+          "value": 5.076,
+          "year": 2025,
           "history": [
             {
               "year": 2025,
@@ -1664,11 +1689,10 @@
               "value": 4.595
             }
           ],
-          "score": -0.87,
-          "label": "Unemployment Rate (%)",
-          "source": "Trading Economics",
-          "url": "https://tradingeconomics.com/new-zealand/indicators",
-          "period": "Latest"
+          "score": -0.46,
+          "label": "Unemployment, total (% of labour force)",
+          "source": "World Bank",
+          "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=NZL"
         }
       },
       "component_weights_available": {
@@ -1682,22 +1706,22 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 0.05,
-        "inflation_vs_target": -0.39,
-        "gdp_growth": -1.97,
-        "employment": -0.87,
+        "inflation_vs_target": -0.74,
+        "gdp_growth": 1.03,
+        "employment": -0.46,
         "economic_surprises": null
       },
-      "structural_update_status": "no_core_data_change",
-      "structural_update_note": "No new core-data update",
-      "structural_update_date": null,
-      "structural_update_date_basis": null,
+      "structural_update_status": "core_data_updated",
+      "structural_update_note": "Updated: Inflation, GDP, Employment",
+      "structural_update_date": "2026-Q3",
+      "structural_update_date_basis": "data period",
       "previous_structural_score": -0.71,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": 0.76,
       "event_score": null,
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": -0.71,
+      "short_term_score": 0.05,
       "short_term_score_status": "Structural baseline only \u00b7 no verified event surprise captured",
       "last_release_reference": {
         "title": "Inflation Expectations q/q",
@@ -1718,8 +1742,8 @@
           "previous": null,
           "change": null,
           "status": "last_known_reading",
-          "url": "https://tradingeconomics.com/new-zealand/indicators",
-          "source": "Trading Economics Interest Rate",
+          "url": "https://www.rbnz.govt.nz/",
+          "source": "RBNZ official cash rate",
           "comparison_note": "Configured decision/effective date; previous release not yet verified."
         },
         {
@@ -2152,6 +2176,22 @@
       "title": "Statement by Governor UEDA concerning the Bank's Semiannual Report on Currency and Monetary Control (Committee on Financial Affairs, Senate)",
       "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
       "url": "http://www.boj.or.jp/en/mopo/diet/d_state/dst261119a.htm",
+      "time": "2026-11-19T01:13:00+00:00",
+      "published_at": "2026-11-19T01:13:00+00:00",
+      "source": "Bank of Japan",
+      "impact": "Medium",
+      "bias": "No clear policy bias",
+      "direction": "Context only",
+      "surprise_score": null,
+      "surprise_raw": null,
+      "surprise_interpretation": "not scored: no reliable directional rule"
+    },
+    {
+      "event_id": "9cebccd36f15c50765a54808",
+      "currency": "JPY",
+      "title": "Statement by Governor UEDA concerning the Bank's Semiannual Report on Currency and Monetary Control (Committee on Financial Affairs, Senate)",
+      "summary": "Bank of Japan published an update concerning economic and central-bank developments. The feed did not include a detailed explanation; open the original release for figures, context and policy implications.",
+      "url": "https://www.boj.or.jp/en/mopo/diet/d_state/dst261119a.htm",
       "time": "2026-11-19T01:13:00+00:00",
       "published_at": "2026-11-19T01:13:00+00:00",
       "source": "Bank of Japan",
@@ -8952,7 +8992,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -8960,7 +9000,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -8968,7 +9008,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 42,
       "new_releases_added": 0
     },
@@ -8976,15 +9016,15 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 46,
-      "new_releases_added": 0
+      "new_releases_added": 1
     },
     {
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -8992,7 +9032,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9000,7 +9040,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9008,7 +9048,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "dated_releases_in_feed_90d": 25,
       "new_releases_added": 0
     },
@@ -9016,83 +9056,121 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
       "events_in_rolling_window": 116,
       "new_or_updated_events": 116,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
     },
     {
-      "name": "OECD / World Bank \u00b7 United States",
-      "url": "https://data.worldbank.org/country/usa",
+      "name": "OECD Monthly Unemployment Rates",
+      "url": "https://data-explorer.oecd.org/s/2ai",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "currencies_covered": [
+        "USD",
+        "EUR",
+        "GBP",
+        "JPY",
+        "CAD"
+      ]
     },
     {
-      "name": "OECD / World Bank \u00b7 Euro area",
-      "url": "https://data.worldbank.org/country/emu",
+      "name": "Australian Bureau of Statistics \u00b7 Labour Force",
+      "url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "reference_period": "October 2026"
     },
     {
-      "name": "OECD / World Bank \u00b7 United Kingdom",
-      "url": "https://data.worldbank.org/country/gbr",
+      "name": "Official / OECD macro data \u00b7 United States",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "2026-10",
+      "unemployment_source": "OECD"
     },
     {
-      "name": "OECD / World Bank \u00b7 Japan",
-      "url": "https://data.worldbank.org/country/jpn",
+      "name": "Official / OECD macro data \u00b7 Euro area",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "2026-09",
+      "unemployment_source": "OECD"
     },
     {
-      "name": "OECD / World Bank \u00b7 Switzerland",
-      "url": "https://data.worldbank.org/country/che",
+      "name": "Official / OECD macro data \u00b7 United Kingdom",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "2026-07",
+      "unemployment_source": "OECD"
     },
     {
-      "name": "OECD / World Bank \u00b7 Canada",
-      "url": "https://data.worldbank.org/country/can",
+      "name": "Official / OECD macro data \u00b7 Japan",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "2026-09",
+      "unemployment_source": "OECD"
     },
     {
-      "name": "OECD / World Bank \u00b7 Australia",
-      "url": "https://data.worldbank.org/country/aus",
+      "name": "Official / OECD macro data \u00b7 Switzerland",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2025,
+      "indicators_available": 3,
+      "unemployment_period": "2025",
+      "unemployment_source": "World Bank"
     },
     {
-      "name": "OECD / World Bank \u00b7 New Zealand",
-      "url": "https://data.worldbank.org/country/nzl",
+      "name": "Official / OECD macro data \u00b7 Canada",
+      "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-19T23:07:36.850611+00:00",
-      "data_year": null,
-      "indicators_available": 3
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "2026-10",
+      "unemployment_source": "OECD"
+    },
+    {
+      "name": "Official / OECD macro data \u00b7 Australia",
+      "url": "https://data-explorer.oecd.org/",
+      "status": "ok",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2026,
+      "indicators_available": 3,
+      "unemployment_period": "October 2026",
+      "unemployment_source": "Australian Bureau of Statistics"
+    },
+    {
+      "name": "Official / OECD macro data \u00b7 New Zealand",
+      "url": "https://data-explorer.oecd.org/",
+      "status": "ok",
+      "checked_at": "2026-11-19T23:13:28.857724+00:00",
+      "data_year": 2025,
+      "indicators_available": 3,
+      "unemployment_period": "2025",
+      "unemployment_source": "World Bank"
     }
   ],
   "limitations": [
-    "Inflation and GDP prefer OECD monthly/quarterly observations; World Bank annual values remain as dated fallbacks when OECD coverage is unavailable.",
+    "Inflation, GDP and unemployment prefer dated BLS / Eurostat / OECD observations; World Bank annual values remain dated fallbacks when high-frequency coverage is unavailable. Australian unemployment uses the latest ABS release when parsable.",
     "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
     "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths and market-price confirmation are not yet integrated.",
     "Event momentum is based only on numeric actual-versus-forecast releases available in the Forex Factory feed. Qualitative central-bank statements, market-implied policy paths, 2-year yield differentials and post-release FX confirmation are not yet included in the numerical overlay.",
     "News impact is keyword-based editorial triage. Event surprise direction is rule-based by release category; inflation surprises are treated as short-term hawkish/dovish policy repricing, not as a universal long-term currency-strength rule.",
     "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
+    "Policy-rate figures remain configured snapshots with explicit decision dates and must be reviewed after central-bank meetings.",
+    "OECD harmonised monthly unemployment can lag national releases; Australia therefore uses the latest ABS headline release when available. Compare reference periods across countries before ranking.",
     "GitHub scheduled workflows are best-effort; a five-minute schedule is a target, not a guaranteed interval."
   ]
 }
