@@ -1110,6 +1110,22 @@ for currency in currencies:
                 "status": "no_verified_release", "url": None, "source": "Forex Factory calendar",
                 "comparison_note": "No dated actual release captured in the retained calendar window."
             })
+    unemployment_metric = currency.get("metrics", {}).get("unemployment", {})
+    if unemployment_metric.get("value") is not None:
+        history = unemployment_metric.get("history", [])
+        previous_value = history[1].get("value") if len(history) > 1 else None
+        current_value = float(unemployment_metric["value"])
+        tracker = [row for row in tracker if row.get("key") != "unemployment"]
+        tracker.append({
+            "key": "unemployment", "label": "Employment / unemployment",
+            "release_period": unemployment_metric.get("period") or unemployment_metric.get("year"),
+            "actual": f"{current_value:.1f}%",
+            "previous": f"{float(previous_value):.1f}%" if previous_value is not None else None,
+            "change": round(current_value - float(previous_value), 2) if previous_value is not None else None,
+            "status": "official_data", "url": unemployment_metric.get("url"),
+            "source": unemployment_metric.get("source"),
+            "comparison_note": "Latest available source observation; period is separate from snapshot refresh time."
+        })
     currency["release_tracker"] = tracker
 
 output = {
