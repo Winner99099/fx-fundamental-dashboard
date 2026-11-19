@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "event_id": "FOMC-2026-10-27-28-MINUTES",
+  "title": "FOMC Meeting Minutes",
+  "meeting_dates": "27–28 October 2026",
+  "published_at": "2026-11-18T19:00:00Z",
+  "reviewed_at": "2026-11-19T03:00:00Z",
+  "timezone": "Publication time shown in UTC; dashboard clock uses SGT",
+  "currency": "USD",
+  "importance": "HIGH",
+  "policy_tone": "Hawkish forward guidance",
+  "decision": "Held target range at 3.75%–4.00%",
+  "vote": "10–2",
+  "dissent": "Lisa D. Cook and Beth M. Hammack preferred a 25 bp increase at the October meeting.",
+  "executive_summary": "The Committee held rates unchanged to gather more information, but the minutes show broad support for additional tightening under the baseline outlook. Inflation remained elevated, activity was expanding at a solid pace and labour conditions were broadly stable. This is hawkish forward guidance, not an October rate hike.",
+  "key_findings": [
+    {
+      "label": "Policy decision",
+      "value": "Hold at 3.75%–4.00%",
+      "detail": "10 members supported holding; two preferred a 25 bp increase."
+    },
+    {
+      "label": "Forward guidance",
+      "value": "Further increases likely appropriate",
+      "detail": "Almost all participants judged further increases would likely be appropriate under their baseline outlook."
+    },
+    {
+      "label": "December risk",
+      "value": "Larger than 25 bp not ruled out",
+      "detail": "A couple of participants said a move greater than 25 bp could be considered if incoming inflation data were unfavourable."
+    },
+    {
+      "label": "Inflation",
+      "value": "Still elevated",
+      "detail": "Staff estimated September total PCE at 3.6% and core PCE at 3.1%; both above the 2% goal."
+    },
+    {
+      "label": "Growth and labour",
+      "value": "Resilient",
+      "detail": "Economic activity was expanding at a solid pace; unemployment edged up to 4.2%, while payroll gains averaged about 50,000 over three months."
+    },
+    {
+      "label": "Market pricing",
+      "value": "Tightening already priced",
+      "detail": "Futures implied a high probability of a 25 bp hike by year-end and two more by summer 2027; the path was little changed over the intermeeting period."
+    }
+  ],
+  "interpretation": {
+    "stance": "Hawkish hold",
+    "strength": "High confidence in hawkish direction; medium confidence in the size and timing of the next move.",
+    "why": "The key surprise is not an immediate policy change. It is the breadth of support for additional tightening and the explicit willingness by a couple of participants to consider a larger move if inflation disappoints.",
+    "market_caveat": "Because markets already assigned a high probability to further tightening, the minutes alone may not generate a sustained USD rally. Follow-through depends on new inflation, labour-market data, front-end yields and whether other central banks turn relatively less hawkish."
+  },
+  "fx_implications": [
+    {
+      "pair": "EUR/USD",
+      "bias": "USD-positive conditional",
+      "reason": "Potential pressure if US front-end yields outperform euro-area yields; reassess against ECB guidance and euro-area growth/fiscal risks."
+    },
+    {
+      "pair": "GBP/USD",
+      "bias": "USD-positive conditional",
+      "reason": "Potential pressure if Fed tightening expectations rise relative to BoE expectations; UK inflation and wage data remain decisive."
+    },
+    {
+      "pair": "USD/JPY",
+      "bias": "USD-positive conditional",
+      "reason": "Higher US yields can support the pair, but BoJ tightening and intervention risk can materially offset the differential."
+    },
+    {
+      "pair": "AUD/USD",
+      "bias": "USD-positive conditional",
+      "reason": "Relative Fed/RBA repricing matters; AUD is also sensitive to China, commodities and global risk appetite."
+    },
+    {
+      "pair": "NZD/USD",
+      "bias": "USD-positive conditional",
+      "reason": "Relative Fed/RBNZ rate expectations matter; domestic growth and risk sentiment can dominate."
+    },
+    {
+      "pair": "USD/CAD",
+      "bias": "Two-way / conditional",
+      "reason": "Fed-BoC rate differentials matter, but oil prices and Canadian data can overwhelm the USD impulse."
+    },
+    {
+      "pair": "USD/CHF",
+      "bias": "Two-way / conditional",
+      "reason": "Rate differentials may favour USD, while safe-haven demand and SNB expectations can alter the response."
+    }
+  ],
+  "horizons": [
+    {
+      "period": "0–24 hours",
+      "focus": "Initial repricing",
+      "watch": "US 2-year Treasury yield, Fed funds futures and the first FX reaction. Avoid assuming the first move will persist."
+    },
+    {
+      "period": "1–7 days",
+      "focus": "Data confirmation",
+      "watch": "US CPI/PCE, employment releases, Fed speakers and whether market pricing shifts beyond what was already discounted."
+    },
+    {
+      "period": "1–4 weeks",
+      "focus": "Relative policy path",
+      "watch": "December FOMC decision, updated Fed guidance and policy expectations from the ECB, BoE, BoJ, SNB, BoC, RBA and RBNZ."
+    }
+  ],
+  "trader_plan": [
+    "Treat the minutes as a hawkish hold, not as a fresh rate hike.",
+    "Prioritise relative-value comparisons: Fed expectations versus each counterpart central bank.",
+    "Confirm the thesis with US 2-year yields and post-data market pricing before favouring USD trades.",
+    "For USD/JPY, explicitly account for BoJ repricing and Japanese intervention risk.",
+    "Wait for the existing D1/H4 structure, key levels and risk/reward rules; the minutes do not provide an entry price."
+  ],
+  "invalidation": [
+    "US inflation and wage data soften enough to reduce expected Fed tightening.",
+    "US front-end yields fall and Fed futures materially remove expected hikes.",
+    "Counterpart central banks reprice more hawkishly than the Fed.",
+    "Risk-off or safe-haven flows dominate the rate-differential channel."
+  ],
+  "methodology": {
+    "policy_momentum": "Qualitative editorial classification; not a calibrated numerical score.",
+    "currency_score": "Not added to the existing structural or economic event score. No double counting.",
+    "pair_bias": "Conditional macro implications only; not live signals or guaranteed forecasts.",
+    "refresh": "This event record is curated and dated. It does not automatically rewrite itself when new data arrive."
+  },
+  "sources": [
+    {
+      "name": "Federal Reserve press release – minutes released 18 November 2026",
+      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm"
+    },
+    {
+      "name": "Official FOMC minutes – 27–28 October 2026",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm"
+    },
+    {
+      "name": "FOMC meeting calendar and future meetings",
+      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+    }
+  ]
+}
