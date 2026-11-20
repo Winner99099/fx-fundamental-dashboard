@@ -245,7 +245,7 @@ function releaseTrackerRows(filter="ALL") {
   }
   $("release-tracker-rows").innerHTML=rows.length?rows.join(""):'<tr><td colspan="8" class="empty">No verified release records available for this selection.</td></tr>';
 }
-function renderReleaseTracker(){ releaseTrackerRows($("release-currency-filter").value); }
+function renderReleaseTracker(){ const filter=$("release-currency-filter"); if(filter) releaseTrackerRows(filter.value); }
 
 function renderSources() {
   const sources=snapshot?.sources||[];
@@ -292,7 +292,7 @@ $("tech-reset")?.addEventListener("click",()=>{["tech-d1","tech-h4","tech-setup"
 $("risk-calc")?.addEventListener("click",()=>{const bal=+$("risk-account").value,pct=+$("risk-pct").value,e=+$("risk-entry").value,s=+$("risk-stop").value,pip=+$("risk-pip").value,pv=+$("risk-pipvalue").value;if(!(bal>0&&pct>0&&pct<=5&&e>0&&s>0&&e!==s&&pip>0&&pv>0)){$("risk-output").innerHTML="<div class=\"notice notice-warn\"><b>Check inputs</b><p>Enter valid balance, risk, entry, stop, pip size and pip value.</p></div>";return;}const cash=bal*pct/100,pips=Math.abs(e-s)/pip,lots=cash/(pips*pv);$("risk-output").innerHTML="<div class=\"panel\"><div class=\"panel-head\"><b>Position size estimate</b></div><div class=\"risk-result-grid\"><div><small>MAX CASH RISK</small><b>"+cash.toFixed(2)+"</b></div><div><small>STOP DISTANCE</small><b>"+pips.toFixed(1)+" pips</b></div><div><small>EST. LOT SIZE</small><b>"+lots.toFixed(3)+" lots</b></div></div></div>";});
 $("refresh-btn").addEventListener("click",loadSnapshot);
 $("news-filter").addEventListener("change",()=>renderNews("news-list",$("news-filter").value));
-$("release-currency-filter").addEventListener("change",renderReleaseTracker);
+$("release-currency-filter")?.addEventListener("change",renderReleaseTracker);
 function clock(){ $("clock").textContent=new Date().toLocaleTimeString("en-SG",{timeZone:"Asia/Singapore",hour12:false})+" SGT"; }
 clock(); setInterval(clock,1000); loadSnapshot(); setInterval(loadSnapshot,5*60*1000);
 
