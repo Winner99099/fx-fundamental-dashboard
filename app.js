@@ -79,15 +79,15 @@ function renderCurrencyStrengthRows() {
   const rows=visible.map(c=>{
     const structural=c.score==null?null:Number(c.score);
     const momentum=c.fundamental_trend_score==null?null:Number(c.fundamental_trend_score);
-    const momentumClass=momentum==null?"score-na":momentum>0?"score-positive":momentum<0?"score-negative":"score-na";
+    const momentumLabel=momentum==null?"N/A":momentum>=0.75?"Strong":momentum<=-0.75?"Weak":"Neutral";
+    const momentumClass=momentumLabel==="Strong"?"score-positive":momentumLabel==="Weak"?"score-negative":"score-na";
     const persistence=c.fundamental_trend_persistence||"Unconfirmed";
     const persistenceClass=/Persistent|Building/.test(persistence)?"score-positive":/Mixed/.test(persistence)?"score-negative":"score-na";
-    const trendDetail=c.fundamental_trend_detail||c.fundamental_trend_status||"Insufficient verified dated macro history";
     return `<tr>
       <td>${safeText(c.code)}</td>
       <td class="structural-score-cell"><span class="${structural==null?"score-na":structural>0?"score-positive":structural<0?"score-negative":"score-na"}">${structural==null||!Number.isFinite(structural)?"N/A":structural.toFixed(2)}</span><small>${structural==null?"Structural score unavailable":structural>0?"Structural strength":structural<0?"Structural weakness":"Neutral"} · ${escapeHtml(structuralUpdateSummary(c))}</small></td>
-      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"Insufficient trend data":(momentum>0?"Improving macro trend":momentum<0?"Deteriorating macro trend":"Mixed / flat macro trend")}</small><small>${escapeHtml(trendDetail)}</small></td>
-      <td><span class="${persistenceClass}">${escapeHtml(persistence)}</span><small>${escapeHtml(c.momentum_persistence_detail||"Insufficient verified catalyst history")}</small></td>
+      <td><span class="${momentumClass}">${momentumLabel}</span></td>
+      <td><span class="${persistenceClass}">${escapeHtml(persistence)}</span><small>${escapeHtml(c.fundamental_trend_detail||"Insufficient recent macro history")}</small></td>
     </tr>`;
   }).join("");
   const target=$("currency-rows-full");
