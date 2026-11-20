@@ -46,9 +46,9 @@ def openai(key,data):
  texts=[p.get("text","") for x in d.get("output",[]) for p in x.get("content",[]) if p.get("type")=="output_text"]
  return valid(parse("\n".join(texts) or d.get("output_text","")))
 def gemini(key,data):
- url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key="+urllib.parse.quote(key)
+ url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
  body={"systemInstruction":{"parts":[{"text":PROMPT}]},"contents":[{"role":"user","parts":[{"text":json.dumps(data,ensure_ascii=False)}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":12000,"responseMimeType":"application/json"}}
- req=urllib.request.Request(url,data=json.dumps(body).encode(),headers={"Content-Type":"application/json"},method="POST")
+ req=urllib.request.Request(url,data=json.dumps(body).encode(),headers={"Content-Type":"application/json","x-goog-api-key":key},method="POST")
  with urllib.request.urlopen(req,timeout=180) as r:d=json.loads(r.read().decode())
  parts=d.get("candidates",[{}])[0].get("content",{}).get("parts",[])
  return valid(parse("\n".join(x.get("text","") for x in parts)))
