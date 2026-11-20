@@ -46,7 +46,7 @@ def openai(key,data):
  texts=[p.get("text","") for x in d.get("output",[]) for p in x.get("content",[]) if p.get("type")=="output_text"]
  return valid(parse("\n".join(texts) or d.get("output_text","")))
 def gemini(key,data):
- url="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+ url="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
  body={"systemInstruction":{"parts":[{"text":PROMPT}]},"contents":[{"role":"user","parts":[{"text":json.dumps(data,ensure_ascii=False)}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":12000,"responseMimeType":"application/json"}}
  req=urllib.request.Request(url,data=json.dumps(body).encode(),headers={"Content-Type":"application/json","x-goog-api-key":key},method="POST")
  with urllib.request.urlopen(req,timeout=180) as r:d=json.loads(r.read().decode())
@@ -73,7 +73,7 @@ def main():
   print("AI review skipped: unchanged inputs and review younger than four hours.");return
  oldp=old.get("providers",{})
  a,ast=provider("gpt-6-luna",os.getenv("OPENAI_API_KEY"),openai,data,(oldp.get("chatgpt") or {}).get("review"))
- b,bst=provider("gemini-2.5-flash",os.getenv("GEMINI_API_KEY"),gemini,data,(oldp.get("gemini") or {}).get("review"))
+ b,bst=provider("gemini-3.8-flash",os.getenv("GEMINI_API_KEY"),gemini,data,(oldp.get("gemini") or {}).get("review"))
  ca=a.get("currency_reviews",{}) if a else {}; cb=b.get("currency_reviews",{}) if b else {}; pa=a.get("pair_reviews",{}) if a else {}; pb=b.get("pair_reviews",{}) if b else {}
  cc={k:consensus(ca.get(k,{}).get("bias"),cb.get(k,{}).get("bias")) for k in CC}; pc={k:consensus(pa.get(k,{}).get("bias"),pb.get(k,{}).get("bias")) for k in PAIRS}
  primary=a or b or {}; n=int(bool(a))+int(bool(b))
