@@ -1,24 +1,171 @@
 {
   "schema_version": 1,
+  "generated_at": "2026-11-20T10:51:56.998583+00:00",
+  "input_snapshot_generated_at": "2026-11-20T03:55:02.354715+00:00",
+  "input_fingerprint": "88b1d862ac1e46dcfbe35faad173d45c01a46a82b2455c86c71b93fe23a37184",
   "status": "awaiting_api_keys",
-  "generated_at": null,
-  "input_snapshot_generated_at": null,
   "providers": {
     "chatgpt": {
       "status": "not_configured",
       "model": "gpt-4.1-mini",
-      "message": "Add OPENAI_API_KEY in repository Actions secrets.",
+      "message": "Add this API key as a GitHub Actions secret.",
       "review": null
     },
     "gemini": {
       "status": "not_configured",
       "model": "gemini-2.5-flash",
-      "message": "Add GEMINI_API_KEY in repository Actions secrets.",
+      "message": "Add this API key as a GitHub Actions secret.",
       "review": null
     }
   },
-  "currency_consensus": {},
-  "pair_consensus": {},
+  "currency_consensus": {
+    "USD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "NZD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    }
+  },
+  "pair_consensus": {
+    "EUR/GBP": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/AUD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/NZD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/USD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "EUR/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/AUD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/NZD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/USD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "GBP/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD/NZD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD/USD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD/CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "AUD/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "NZD/USD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "NZD/CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "NZD/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "NZD/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "USD/CAD": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "USD/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "USD/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "CAD/CHF": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "CAD/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    },
+    "CHF/JPY": {
+      "status": "NO_REVIEW",
+      "bias": "INSUFFICIENT"
+    }
+  },
   "currency_reviews": {},
   "pair_reviews": {},
   "methodology": "Independent qualitative overlays on the same frozen data snapshot. Consensus is categorical agreement, not probability or a validated trading signal."
