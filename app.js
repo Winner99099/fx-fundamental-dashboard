@@ -1,6 +1,7 @@
 const CURRENCIES = ["USD","EUR","GBP","JPY","CHF","CAD","AUD","NZD"];
 const $ = (id) => document.getElementById(id);
 let snapshot = null;
+let aiReview = null;
 
 function safeText(value, fallback="—") {
   return value === null || value === undefined || value === "" ? fallback : String(value);
@@ -184,6 +185,19 @@ function setupBiasCurrencyFilter(){
  updateBiasCurrencyCount();
 }
 function currencyMomentumLabel(c){const n=c?.fundamental_trend_score==null?null:Number(c.fundamental_trend_score);return n==null||!Number.isFinite(n)?"N/A":n>=0.75?"Strong":n<=-0.75?"Weak":"Neutral";}
+
+function renderAIReview(){
+ const root=$("ai-review-panel");if(!root)return;
+ const providers=aiReview&&aiReview.providers?aiReview.providers:{},chat=providers.chatgpt||{},gem=providers.gemini||{};
+ const label=s=>s==="ok"?"Ready":s==="not_configured"?"API key needed":s==="error"?"Error":"Pending";
+ const provider=(name,p)=>'<div class="bias-signal"><small>'+name.toUpperCase()+'</small><b>'+label(p.status)+'</b><span>'+escapeHtml(p.model||"Model pending")+' · '+escapeHtml(p.message||"No review yet")+'</span></div>';
+ if(!aiReview){root.innerHTML='<div class="panel"><div class="panel-head"><b>ChatGPT + Gemini AI Review</b><span class="tag tag-neutral">AWAITING FIRST RUN</span></div><p>Configure both API keys as GitHub Actions secrets, then run the AI review workflow.</p><div class="bias-signal-grid">'+provider("ChatGPT",chat)+provider("Gemini",gem)+'</div></div>';return;}
+ const currencyRows=CURRENCIES.map(code=>{const c=aiReview.currency_reviews&&aiReview.currency_reviews[code]||{},co=aiReview.currency_consensus&&aiReview.currency_consensus[code]||{};return '<article class="bias-signal"><small>'+code+' · '+escapeHtml(co.status||"NO REVIEW")+'</small><b>'+escapeHtml(c.bias||co.bias||"INSUFFICIENT")+' · '+escapeHtml(c.confidence||"—")+'</b><span>'+escapeHtml(c.summary||"No currency review available.")+'</span></article>';}).join("");
+ const pairRows=PAIR_ORDER.flatMap((base,i)=>PAIR_ORDER.slice(i+1).map(quote=>{const pair=base+'/'+quote,c=aiReview.pair_reviews&&aiReview.pair_reviews[pair]||{},co=aiReview.pair_consensus&&aiReview.pair_consensus[pair]||{};return '<article class="bias-card bias-neutral"><div class="bias-card-head"><div><h3>'+pair+'</h3><small>AI OVERALL VIEW · '+escapeHtml(co.status||"NO REVIEW")+'</small></div><div class="bias-status"><b>'+escapeHtml(co.bias||c.bias||"N/A")+'</b><small>'+escapeHtml(c.confidence||"—")+'</small></div></div><div class="bias-card-body"><p>'+escapeHtml(c.summary||"No pair-specific review available.")+'</p><div class="bias-label">FUNDAMENTAL VIEW</div><p>'+escapeHtml(c.fundamental_view||"Not available")+'</p><div class="bias-label">SHORT-TERM MOMENTUM / D1</div><p>'+escapeHtml(c.momentum_view||"Not available")+' '+escapeHtml(c.d1_view||"")+'</p><div class="bias-label">H4 WATCHLIST</div><p>'+escapeHtml(c.h4_watch||"No H4 data supplied; wait for chart confirmation.")+'</p><div class="bias-label">RISKS</div><p>'+escapeHtml((c.risks||[]).join(" · ")||"Not specified")+'</p></div></article>';})).join("");
+ const generated=aiReview.generated_at?new Date(aiReview.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT":"time unavailable";
+ root.innerHTML='<div class="panel"><div class="panel-head"><div><b>Independent AI Review</b><p>Same frozen market-data snapshot · refreshed '+generated+'</p></div><span class="tag tag-neutral">'+escapeHtml(aiReview.status||"PENDING").toUpperCase()+'</span></div><div class="bias-signal-grid">'+provider("ChatGPT",chat)+provider("Gemini",gem)+'</div><p class="bias-scoreline">Consensus compares the two models’ categorical opinions. It is not a probability, price target or trading signal.</p><div class="bias-label">EIGHT-CURRENCY AI INTELLIGENCE</div><div class="bias-signal-grid">'+currencyRows+'</div><div class="bias-label">28-PAIR AI INTELLIGENCE</div><div class="bias-grid">'+pairRows+'</div></div>';
+}
+
 function renderBiasCards(){
  setupBiasCurrencyFilter();
  const m=ccyMap(),pairs=[];for(let i=0;i<PAIR_ORDER.length;i++)for(let j=i+1;j<PAIR_ORDER.length;j++){const b=m[PAIR_ORDER[i]],q=m[PAIR_ORDER[j]],ok=b?.short_term_score!=null&&q?.short_term_score!=null,s=ok?Number(b.short_term_score)-Number(q.short_term_score):null;pairs.push({pair:b.code+'/'+q.code,b,q,s,market:snapshot?.pair_technical?.[b.code+'/'+q.code]||null,bias:s==null?'UNVERIFIED':s>.35?'BULLISH':s<-.35?'BEARISH':'NEUTRAL'});}
@@ -258,10 +272,11 @@ async function loadSnapshot() {
     const data=await response.json();
     if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
     snapshot=data;
+    try { const aiResponse=await fetch('data/ai_review.json?ts='+Date.now(),{cache:'no-store'}); aiReview=aiResponse.ok?await aiResponse.json():null; } catch(_aiError) { aiReview=null; }
     setupStrengthCurrencyFilter();
     renderOverviewCoreRows(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
-    renderPairs(); renderBiasCards(); renderWorkflow(); renderSources(); renderReleaseTracker();
+    renderPairs(); renderBiasCards(); renderAIReview(); renderWorkflow(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
     const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").includes("OECD")));
