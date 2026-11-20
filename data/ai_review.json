@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "awaiting_api_keys",
+  "generated_at": null,
+  "input_snapshot_generated_at": null,
+  "providers": {
+    "chatgpt": {
+      "status": "not_configured",
+      "model": "gpt-4.1-mini",
+      "message": "Add OPENAI_API_KEY in repository Actions secrets.",
+      "review": null
+    },
+    "gemini": {
+      "status": "not_configured",
+      "model": "gemini-2.5-flash",
+      "message": "Add GEMINI_API_KEY in repository Actions secrets.",
+      "review": null
+    }
+  },
+  "currency_consensus": {},
+  "pair_consensus": {},
+  "currency_reviews": {},
+  "pair_reviews": {},
+  "methodology": "Independent qualitative overlays on the same frozen data snapshot. Consensus is categorical agreement, not probability or a validated trading signal."
+}
