@@ -1010,6 +1010,35 @@ for currency in currencies:
         if event_score is not None
         else "Structural baseline only · no verified event surprise captured"
     )
+    aligned = [item for item in observations if event_score is not None and item[0] * event_score > 0]
+    aligned_count = len(aligned)
+    span_hours = (
+        (max(item[2] for item in aligned) - min(item[2] for item in aligned)).total_seconds() / 3600.0
+        if aligned_count >= 2 else 0.0
+    )
+    latest_age_hours = (
+        max(0.0, (now - max(item[2] for item in observations)).total_seconds() / 3600.0)
+        if observations else None
+    )
+    if not observations:
+        persistence = "Unconfirmed"
+        persistence_detail = "No verified event surprise in the seven-day window"
+    elif latest_age_hours is not None and latest_age_hours >= 72:
+        persistence = "Fading"
+        persistence_detail = f"Latest scored catalyst was {latest_age_hours:.0f}h ago; event impact decays with a 36h half-life"
+    elif aligned_count >= 3 and span_hours >= 48:
+        persistence = "Higher · repeated over time"
+        persistence_detail = f"{aligned_count} aligned surprises across {span_hours:.0f}h"
+    elif aligned_count >= 2:
+        persistence = "Building · repeated catalysts"
+        persistence_detail = f"{aligned_count} aligned surprises; observed span {span_hours:.0f}h"
+    else:
+        persistence = "Low · single / mixed catalyst"
+        persistence_detail = f"{aligned_count} aligned surprise(s); latest catalyst {latest_age_hours:.0f}h ago"
+    currency["momentum_persistence"] = persistence
+    currency["momentum_persistence_detail"] = persistence_detail
+    currency["momentum_aligned_count"] = aligned_count
+    currency["momentum_latest_age_hours"] = round(latest_age_hours, 1) if latest_age_hours is not None else None
 
 for event in events:
     event.pop("_surprise_weight", None)
