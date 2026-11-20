@@ -167,3 +167,14 @@
 #currency-rows-full tr:hover td {
   background: rgba(101,217,232,.035);
 }
+
+
+/* Pair Bias: distinguish macro momentum from manual chart confirmation. */
+.bias-signal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:0 0 12px}
+.bias-signal{display:grid;gap:5px;min-width:0;padding:10px;border:1px solid var(--line);border-radius:6px;background:#0d192b}
+.bias-signal small{font:9px 'DM Mono',monospace;letter-spacing:.45px;color:#91a2b9}
+.bias-signal b{font:700 12px Manrope,sans-serif}
+.bias-signal span{font:10px/1.5 Manrope,sans-serif;color:#aebed2}
+.bias-signal .momentum-strong{color:#62edb2}.bias-signal .momentum-weak{color:#ff9da5}.bias-signal .momentum-neutral{color:#c7d2e2}.bias-signal .momentum-na,.bias-signal .momentum-pending{color:#f0c779}
+.technical-signal-grid{margin-top:0}
+@media(max-width:430px){.bias-signal-grid{grid-template-columns:1fr}}
