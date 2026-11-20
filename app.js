@@ -51,30 +51,47 @@ function selectedStrengthCurrencies(){return [...document.querySelectorAll('.str
 function updateStrengthSelectionCount(){const count=$('strength-selection-count'),selected=selectedStrengthCurrencies().length;if(count)count.textContent=selected+' / 8 SELECTED';}
 function setupStrengthCurrencyFilter(){
  const checks=[...document.querySelectorAll('.strength-currency-check')];if(!checks.length||checks[0].dataset.ready)return;
- checks.forEach(box=>{box.dataset.ready='1';box.addEventListener('change',()=>{updateStrengthSelectionCount();currencyRows('currency-rows-full');});});
- $('strength-select-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=true);updateStrengthSelectionCount();currencyRows('currency-rows-full');});
- $('strength-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);updateStrengthSelectionCount();currencyRows('currency-rows-full');});
+ checks.forEach(box=>{box.dataset.ready='1';box.addEventListener('change',()=>{updateStrengthSelectionCount();renderCurrencyStrengthRows();});});
+ $('strength-select-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=true);updateStrengthSelectionCount();renderCurrencyStrengthRows();});
+ $('strength-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);updateStrengthSelectionCount();renderCurrencyStrengthRows();});
  updateStrengthSelectionCount();
 }
-function currencyRows(targetId) {
+// One shared snapshot feeds every view. Overview displays the core macro readings;
+// Currency Strength displays derived interpretation only.
+function renderOverviewCoreRows() {
+  const rows=(snapshot?.currencies||[]).map(c=>`<tr>
+    <td>${safeText(c.code)}</td>
+    <td class="structural-score-cell">${scoreHistory(c)}</td>
+    <td class="${c.event_score==null?"score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)}<small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td>
+    <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small></td>
+    <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td>
+    <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
+    <td>${metric2(c.gdp_growth)}<small>${safeText(c.gdp_growth_period||c.gdp_growth_year,"")}</small></td>
+    <td>${metric2(c.unemployment)}<small>${safeText(c.unemployment_period||c.unemployment_year,"")}</small></td>
+    <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td>
+  </tr>`).join("");
+  const target=$("currency-rows");
+  if(target) target.innerHTML=rows||'<tr><td colspan="9" class="empty">No core currency data in snapshot.</td></tr>';
+}
+function renderCurrencyStrengthRows() {
   const selected=selectedStrengthCurrencies();
-  const source=(snapshot?.currencies||[]);
-  const visible=targetId==='currency-rows-full'?source.filter(c=>selected.includes(c.code)):source;
+  const visible=(snapshot?.currencies||[]).filter(c=>selected.includes(c.code));
   const rows=visible.map(c=>{
-    const structural=Number(c.score);
+    const structural=c.score==null?null:Number(c.score);
     const momentum=c.event_score==null?null:Number(c.event_score);
     const momentumClass=momentum==null?"score-na":momentum>0?"score-positive":momentum<0?"score-negative":"score-na";
     const persistence=c.momentum_persistence||"Unconfirmed";
-    const persistenceClass=/Higher|Building|Moderate/.test(persistence)?"score-positive":/Fading|Low/.test(persistence)?"score-na":"score-na";
+    const persistenceClass=/Higher|Building|Moderate/.test(persistence)?"score-positive":"score-na";
     const catalyst=c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No verified event surprise captured";
     return `<tr>
       <td>${safeText(c.code)}</td>
-      <td class="structural-score-cell"><span class="${structural>0?"score-positive":structural<0?"score-negative":"score-na"}">${Number.isFinite(structural)?structural.toFixed(2):"N/A"}</span><small>${structural>0?"Structural strength":structural<0?"Structural weakness":"Neutral / unavailable"} · ${escapeHtml(structuralUpdateSummary(c))}</small></td>
-      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"No verified actual-versus-forecast surprise":(momentum>0?"Positive release momentum":momentum<0?"Negative release momentum":"No directional surprise")+" · "+Number(c.event_surprise_count||0)+" scored release(s)"} </small><small>${escapeHtml(catalyst)}</small></td>
+      <td class="structural-score-cell"><span class="${structural==null?"score-na":structural>0?"score-positive":structural<0?"score-negative":"score-na"}">${structural==null||!Number.isFinite(structural)?"N/A":structural.toFixed(2)}</span><small>${structural==null?"Structural score unavailable":structural>0?"Structural strength":structural<0?"Structural weakness":"Neutral"} · ${escapeHtml(structuralUpdateSummary(c))}</small></td>
+      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"No verified actual-versus-forecast surprise":(momentum>0?"Positive release momentum":momentum<0?"Negative release momentum":"No directional surprise")+" · "+Number(c.event_surprise_count||0)+" scored release(s)"}</small><small>${escapeHtml(catalyst)}</small></td>
       <td><span class="${persistenceClass}">${escapeHtml(persistence)}</span><small>${escapeHtml(c.momentum_persistence_detail||"Insufficient verified catalyst history")}</small></td>
     </tr>`;
   }).join("");
-  $(targetId).innerHTML=rows||`<tr><td colspan="4" class="empty">${targetId==='currency-rows-full'?'No currencies selected. Tick one or more currencies above.':'No currency data in snapshot.'}</td></tr>`;
+  const target=$("currency-rows-full");
+  if(target) target.innerHTML=rows||'<tr><td colspan="4" class="empty">No currencies selected. Tick one or more currencies above.</td></tr>';
 }
 function newsSummary(e) {
   if (e.source === "Forex Factory") {
@@ -243,7 +260,7 @@ async function loadSnapshot() {
     if(!data || !Array.isArray(data.currencies) || !Array.isArray(data.events)) throw new Error("Snapshot schema is invalid");
     snapshot=data;
     setupStrengthCurrencyFilter();
-    currencyRows("currency-rows"); currencyRows("currency-rows-full");
+    renderOverviewCoreRows(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderWorkflow(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
@@ -258,7 +275,7 @@ async function loadSnapshot() {
   } catch(error) {
     setStatus(false,`Unable to load data snapshot: ${error.message}`);
     $("updated-at").textContent="Check GitHub Pages deployment and data/latest.json";
-    $("currency-rows").innerHTML=`<tr><td colspan="9" class="empty">Data unavailable. ${error.message}</td></tr>`;
+    $("currency-rows").innerHTML=`<tr><td colspan="9" class="empty">Core data unavailable. ${error.message}</td></tr>`; $("currency-rows-full").innerHTML=`<tr><td colspan="4" class="empty">Currency analysis unavailable until the shared snapshot loads.</td></tr>`;
   } finally { $("refresh-btn").disabled=false; $("refresh-btn").textContent="↻ Refresh"; }
 }
 const titles={workflow:"Trading Workflow",overview:"Overview",currencies:"Currency Strength",bias:"Pair Bias",centralbank:"Central Bank Intelligence",pairs:"Pair Universe",technical:"Technical Entry",risk:"Risk Management",swap:"Swap Intelligence",news:"News Intelligence",calendar:"Event Risk",positioning:"CFTC Positioning",journal:"Trading Journal"};
