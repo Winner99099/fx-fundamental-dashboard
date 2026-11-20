@@ -1253,11 +1253,64 @@ for currency in currencies:
         })
     currency["release_tracker"] = tracker
 
+
+# Daily FX technical snapshot: Yahoo Finance chart endpoint (unofficial, best-effort).
+# Missing/failed symbols remain null; technical readings never alter macro scores.
+def fetch_pair_technical(pair):
+    symbol = pair.replace("/", "") + "=X"
+    url = "https://query1.finance.yahoo.com/v8/finance/chart/" + urllib.parse.quote(symbol) + "?range=1y&interval=1d"
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 MacroPulseFXDashboard/1.0", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=18) as response:
+            payload = json.loads(response.read().decode("utf-8"))
+        result = payload.get("chart", {}).get("result")
+        if not result:
+            return pair, {"status": "unavailable", "source": "Yahoo Finance chart", "symbol": symbol}
+        item = result[0]
+        quote = item.get("indicators", {}).get("quote", [{}])[0]
+        raw_close, raw_high, raw_low = quote.get("close") or [], quote.get("high") or [], quote.get("low") or []
+        closes = [float(x) for x in raw_close if x is not None]
+        highs = [float(x) for x in raw_high if x is not None]
+        lows = [float(x) for x in raw_low if x is not None]
+        stamps = item.get("timestamp") or []
+        if len(closes) < 55:
+            return pair, {"status": "insufficient_history", "source": "Yahoo Finance chart", "symbol": symbol}
+        def sma(values, n): return sum(values[-n:]) / n if len(values) >= n else None
+        def pct(n): return round((closes[-1] / closes[-1-n] - 1) * 100, 3) if len(closes) > n and closes[-1-n] else None
+        changes = [closes[i] - closes[i-1] for i in range(1, len(closes))]
+        gains, losses = [max(x, 0) for x in changes[-14:]], [max(-x, 0) for x in changes[-14:]]
+        avg_gain, avg_loss = sum(gains) / 14, sum(losses) / 14
+        rsi = 100 if avg_loss == 0 else 100 - 100 / (1 + avg_gain / avg_loss)
+        def ema(values, period):
+            alpha, out = 2 / (period + 1), values[0]
+            for value in values[1:]: out = alpha * value + (1-alpha) * out
+            return out
+        macd_series = [ema(closes[:end], 12) - ema(closes[:end], 26) for end in range(26, len(closes)+1)]
+        signal = ema(macd_series, 9) if len(macd_series) >= 9 else None
+        macd = macd_series[-1] if macd_series else None
+        date = datetime.datetime.fromtimestamp(stamps[-1], UTC).isoformat() if stamps else None
+        return pair, {"status":"ok","source":"Yahoo Finance chart","symbol":symbol,"updated_at":date,
+            "price":round(closes[-1],5),"change_1d_pct":pct(1),"change_5d_pct":pct(5),"change_20d_pct":pct(20),
+            "sma20":round(sma(closes,20),5),"sma50":round(sma(closes,50),5),"rsi14":round(rsi,1),
+            "macd":round(macd,6) if macd is not None else None,"macd_signal":round(signal,6) if signal is not None else None,
+            "support_20d":round(min(lows[-20:]),5) if len(lows)>=20 else None,
+            "resistance_20d":round(max(highs[-20:]),5) if len(highs)>=20 else None}
+    except Exception as exc:
+        return pair, {"status":"unavailable","source":"Yahoo Finance chart","symbol":symbol,"error":str(exc)[:160]}
+
+from concurrent.futures import ThreadPoolExecutor
+PAIR_CODES = ["EUR","GBP","AUD","NZD","USD","CAD","CHF","JPY"]
+PAIR_LIST = [PAIR_CODES[i]+"/"+PAIR_CODES[j] for i in range(len(PAIR_CODES)) for j in range(i+1,len(PAIR_CODES))]
+PAIR_TECHNICAL = {}
+with ThreadPoolExecutor(max_workers=5) as pool:
+    for pair, technical in pool.map(fetch_pair_technical, PAIR_LIST):
+        PAIR_TECHNICAL[pair] = technical
+
 output = {
     "schema_version": 4,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v6-dated-core-release-tracker",
+    "model": "v7-pair-technical-snapshot",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
@@ -1270,11 +1323,12 @@ output = {
     },
     "currencies": currencies,
     "events": events,
+    "pair_technical": PAIR_TECHNICAL,
     "sources": news_sources + macro_sources,
     "limitations": [
         "Inflation, GDP and unemployment prefer dated BLS / Eurostat / OECD observations; World Bank annual values remain dated fallbacks when high-frequency coverage is unavailable. Australian unemployment uses the latest ABS release when parsable.",
         "EUR inflation uses the Eurostat harmonised index for the euro area; EUR GDP uses the OECD euro-area aggregate. Annual World Bank values remain as fallbacks when a high-frequency series is unavailable.",
-        "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; expected policy paths and market-price confirmation are not yet integrated.",
+        "Structural scores are cross-sectional relative measures. Interest-rate levels are only a carry proxy; pair technical data is displayed separately and does not alter fundamental scores.",
         "Event momentum is based only on numeric actual-versus-forecast releases available in the Forex Factory feed. Qualitative central-bank statements, market-implied policy paths, 2-year yield differentials and post-release FX confirmation are not yet included in the numerical overlay.",
         "News impact is keyword-based editorial triage. Event surprise direction is rule-based by release category; inflation surprises are treated as short-term hawkish/dovish policy repricing, not as a universal long-term currency-strength rule.",
         "Central-bank events are collected from RSS/Atom feeds; scheduled macroeconomic events and actual/forecast/previous values are imported from the Forex Factory weekly XML export. Calendar timestamps are converted from the export timezone to SGT.",
