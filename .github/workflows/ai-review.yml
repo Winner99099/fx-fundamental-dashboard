@@ -1,5 +1,9 @@
 name: AI currency and pair review
 on:
+  push:
+    paths:
+      - 'scripts/ai_review.py'
+      - '.github/workflows/ai-review.yml'
   workflow_dispatch:
   schedule:
     - cron: "17 */4 * * *"
