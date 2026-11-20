@@ -40,7 +40,7 @@ def valid(o):
  if len(c)<6 or len(p)<20:raise ValueError("Incomplete reviews: "+str(len(c))+" currencies / "+str(len(p))+" pairs")
  return {"currency_reviews":c,"pair_reviews":p}
 def openai(key,data):
- body={"model":"gpt-4.1-mini","instructions":PROMPT,"input":json.dumps(data,ensure_ascii=False),"max_output_tokens":12000}
+ body={"model":"gpt-6-luna","reasoning":{"effort":"low"},"instructions":PROMPT,"input":json.dumps(data,ensure_ascii=False),"max_output_tokens":12000}
  req=urllib.request.Request("https://api.openai.com/v1/responses",data=json.dumps(body).encode(),headers={"Authorization":"Bearer "+key,"Content-Type":"application/json"},method="POST")
  with urllib.request.urlopen(req,timeout=180) as r:d=json.loads(r.read().decode())
  texts=[p.get("text","") for x in d.get("output",[]) for p in x.get("content",[]) if p.get("type")=="output_text"]
@@ -72,7 +72,7 @@ def main():
  if old.get("input_fingerprint")==fp and age<14400 and old.get("pair_reviews"):
   print("AI review skipped: unchanged inputs and review younger than four hours.");return
  oldp=old.get("providers",{})
- a,ast=provider("gpt-4.1-mini",os.getenv("OPENAI_API_KEY"),openai,data,(oldp.get("chatgpt") or {}).get("review"))
+ a,ast=provider("gpt-6-luna",os.getenv("OPENAI_API_KEY"),openai,data,(oldp.get("chatgpt") or {}).get("review"))
  b,bst=provider("gemini-2.5-flash",os.getenv("GEMINI_API_KEY"),gemini,data,(oldp.get("gemini") or {}).get("review"))
  ca=a.get("currency_reviews",{}) if a else {}; cb=b.get("currency_reviews",{}) if b else {}; pa=a.get("pair_reviews",{}) if a else {}; pb=b.get("pair_reviews",{}) if b else {}
  cc={k:consensus(ca.get(k,{}).get("bias"),cb.get(k,{}).get("bias")) for k in CC}; pc={k:consensus(pa.get(k,{}).get("bias"),pb.get(k,{}).get("bias")) for k in PAIRS}
