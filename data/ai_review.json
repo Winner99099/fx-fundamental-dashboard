@@ -7,7 +7,7 @@
   "providers": {
     "chatgpt": {
       "status": "not_configured",
-      "model": "gpt-4.1-mini",
+      "model": "gpt-6-luna",
       "message": "Add this API key as a GitHub Actions secret.",
       "review": null
     },
