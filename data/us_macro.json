@@ -1,8 +1,8 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-20T22:18:04.526022+00:00",
-  "source_status": "OK",
-  "available_indicators": 8,
+  "generated_at": "2026-11-20T23:16:22.156037+00:00",
+  "source_status": "PARTIAL",
+  "available_indicators": 7,
   "indicators": {
     "core_cpi": {
       "value": 2.8697,
@@ -108,19 +108,10 @@
       ]
     },
     "core_pce": {
-      "value": 3.1,
-      "date": "2026-09-30",
-      "change": 0.1,
-      "history": [
-        {
-          "date": "2026-08-31",
-          "value": 3.0
-        },
-        {
-          "date": "2026-09-30",
-          "value": 3.1
-        }
-      ]
+      "value": null,
+      "date": null,
+      "change": null,
+      "history": []
     },
     "nfp": {
       "value": 165.0,
@@ -753,7 +744,9 @@
     "probability_source": "CME FedWatch \u00b7 30-Day Fed Funds futures",
     "probability_url": "https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html"
   },
-  "errors": {},
+  "errors": {
+    "core_pce": "The read operation timed out"
+  },
   "sources": {
     "core_cpi": "BLS series CUSR0000SA0L1E (seasonally adjusted CPI less food and energy)",
     "core_pce": "BEA Core PCE via FXMacroData public USD endpoint; no API key, latest 90 days, 15-minute release delay",
