@@ -984,8 +984,57 @@ for event in events:
     weight = event.get("_surprise_weight", 0.5) * decay
     event_momentum[event["currency"]].append((score, weight, stamp))
 
+def build_fundamental_momentum(currency):
+    """Estimate short-term macro direction from each currency's latest dated series."""
+    signals, persistence_signals, labels = [], [], []
+    for key in ("gdp_growth", "unemployment", "inflation"):
+        metric = (currency.get("metrics") or {}).get(key) or {}
+        history = metric.get("history") or []
+        valid = sorted([x for x in history if x.get("value") is not None and x.get("period")],
+                       key=lambda x: str(x["period"]), reverse=True)
+        if len(valid) < 2:
+            continue
+        def directional_change(newer, older):
+            if key == "gdp_growth":
+                return newer - older
+            if key == "unemployment":
+                return older - newer
+            target = INFLATION_TARGETS.get(currency.get("code"), 2.0)
+            return abs(older - target) - abs(newer - target)
+        delta = directional_change(float(valid[0]["value"]), float(valid[1]["value"]))
+        if abs(delta) >= 1e-9:
+            direction = 1 if delta > 0 else -1
+            signals.append(direction)
+            labels.append(key.replace("_", " ") + (" improving" if direction > 0 else " deteriorating"))
+        for idx in range(min(3, len(valid) - 1)):
+            change = directional_change(float(valid[idx]["value"]), float(valid[idx + 1]["value"]))
+            if abs(change) >= 1e-9:
+                persistence_signals.append(1 if change > 0 else -1)
+    if len(signals) < 2:
+        return None, "Insufficient dated trend series (need at least two)", "Unconfirmed", "Not enough comparable recent macro history"
+    score = round((sum(signals) / len(signals)) * 2.5, 2)
+    dominant = 1 if score > 0 else -1 if score < 0 else 0
+    aligned = sum(1 for x in persistence_signals if x == dominant)
+    total = len(persistence_signals)
+    ratio = aligned / total if total else 0
+    if total >= 4 and ratio >= 0.75:
+        persistence = "Persistent · broadening"
+    elif total >= 2 and ratio >= 0.60:
+        persistence = "Building · repeated trend"
+    elif total and ratio < 0.5:
+        persistence = "Mixed · losing alignment"
+    else:
+        persistence = "Early · needs confirmation"
+    detail = "; ".join(labels) + f" · {aligned}/{total} recent changes aligned"
+    return score, "Trend from latest dated GDP, unemployment and inflation-vs-target series", persistence, detail
+
 for currency in currencies:
     code = currency["code"]
+    trend_score, trend_status, trend_persistence, trend_detail = build_fundamental_momentum(currency)
+    currency["fundamental_trend_score"] = trend_score
+    currency["fundamental_trend_status"] = trend_status
+    currency["fundamental_trend_persistence"] = trend_persistence
+    currency["fundamental_trend_detail"] = trend_detail
     observations = event_momentum[code]
     total_weight = sum(item[1] for item in observations)
     event_score = (
@@ -998,17 +1047,17 @@ for currency in currencies:
     currency["last_event_surprise_at"] = (
         max((stamp for _, _, stamp in observations)).isoformat() if observations else None
     )
-    # Always provide a visible short-term baseline. It only becomes an event-adjusted
-    # score when at least one verified actual-vs-consensus surprise is available.
+    # Short-term score blends structural baseline with an independent recent-trend overlay.
+    trend_score = currency.get("fundamental_trend_score")
     currency["short_term_score"] = (
-        round(0.60 * float(currency["score"]) + 0.40 * event_score, 2)
-        if currency.get("score") is not None and event_score is not None
+        round(0.65 * float(currency["score"]) + 0.35 * trend_score, 2)
+        if currency.get("score") is not None and trend_score is not None
         else (round(float(currency["score"]), 2) if currency.get("score") is not None else None)
     )
     currency["short_term_score_status"] = (
-        "60% structural + 40% verified event momentum"
-        if event_score is not None
-        else "Structural baseline only · no verified event surprise captured"
+        "65% structural + 35% recent macro trend"
+        if trend_score is not None
+        else "Structural baseline only · insufficient dated trend history"
     )
     aligned = [item for item in observations if event_score is not None and item[0] * event_score > 0]
     aligned_count = len(aligned)
