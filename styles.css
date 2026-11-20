@@ -195,3 +195,9 @@
 .bias-signal span{font-size:12px;line-height:1.55}
 .bias-card-foot{padding:13px 18px}
 @media(max-width:720px){.bias-grid{grid-template-columns:1fr}}
+
+/* Pair Bias currency tickboxes match Currency Strength controls */
+.bias-currency-filter{margin:0 0 14px}
+.bias-currency-filter .strength-filter-actions{margin-left:auto;justify-content:flex-end}
+.bias-currency-filter .strength-filter-options{flex:1}
+@media(max-width:720px){.bias-currency-filter .strength-filter-actions{width:100%;justify-content:flex-end;margin-left:0}.bias-currency-filter .strength-filter-options{width:100%}}
