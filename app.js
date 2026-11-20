@@ -78,15 +78,15 @@ function renderCurrencyStrengthRows() {
   const visible=(snapshot?.currencies||[]).filter(c=>selected.includes(c.code));
   const rows=visible.map(c=>{
     const structural=c.score==null?null:Number(c.score);
-    const momentum=c.event_score==null?null:Number(c.event_score);
+    const momentum=c.fundamental_trend_score==null?null:Number(c.fundamental_trend_score);
     const momentumClass=momentum==null?"score-na":momentum>0?"score-positive":momentum<0?"score-negative":"score-na";
-    const persistence=c.momentum_persistence||"Unconfirmed";
-    const persistenceClass=/Higher|Building|Moderate/.test(persistence)?"score-positive":"score-na";
-    const catalyst=c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No verified event surprise captured";
+    const persistence=c.fundamental_trend_persistence||"Unconfirmed";
+    const persistenceClass=/Persistent|Building/.test(persistence)?"score-positive":/Mixed/.test(persistence)?"score-negative":"score-na";
+    const trendDetail=c.fundamental_trend_detail||c.fundamental_trend_status||"Insufficient verified dated macro history";
     return `<tr>
       <td>${safeText(c.code)}</td>
       <td class="structural-score-cell"><span class="${structural==null?"score-na":structural>0?"score-positive":structural<0?"score-negative":"score-na"}">${structural==null||!Number.isFinite(structural)?"N/A":structural.toFixed(2)}</span><small>${structural==null?"Structural score unavailable":structural>0?"Structural strength":structural<0?"Structural weakness":"Neutral"} · ${escapeHtml(structuralUpdateSummary(c))}</small></td>
-      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"No verified actual-versus-forecast surprise":(momentum>0?"Positive release momentum":momentum<0?"Negative release momentum":"No directional surprise")+" · "+Number(c.event_surprise_count||0)+" scored release(s)"}</small><small>${escapeHtml(catalyst)}</small></td>
+      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"Insufficient trend data":(momentum>0?"Improving macro trend":momentum<0?"Deteriorating macro trend":"Mixed / flat macro trend")}</small><small>${escapeHtml(trendDetail)}</small></td>
       <td><span class="${persistenceClass}">${escapeHtml(persistence)}</span><small>${escapeHtml(c.momentum_persistence_detail||"Insufficient verified catalyst history")}</small></td>
     </tr>`;
   }).join("");
