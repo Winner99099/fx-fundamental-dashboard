@@ -29,3 +29,12 @@ GitHub Pages remains configured to publish from `main` / root. The workflow writ
 - Event influence decays with a 36-hour half-life and is ignored after seven days.
 - Short-term score: 60% structural + 40% event score, shown only when at least one verified event surprise exists for that currency.
 - This is not yet a live market-pricing model: no two-year yield repricing or post-release FX confirmation is included. Qualitative central-bank statements are displayed but not numerically scored.
+
+## Independent AI market review (ChatGPT + Gemini)
+- A separate GitHub Actions workflow runs every four hours and can also be started manually.
+- It reads one frozen `data/latest.json` snapshot and asks ChatGPT (OpenAI API, `gpt-4.1-mini`) and Gemini (`gemini-2.5-flash`) to independently review all eight currencies and all 28 pair combinations.
+- The Pair Bias page displays both model opinions, a categorical agreement/disagreement label, the selected currency-level summary, fundamental-versus-momentum divergence, D1 interpretation and H4 items to watch.
+- AI opinions are qualitative overlays only. They do not modify macro scores or technical data and are not validated trading signals. The AI models are not given H4 candles, so H4 commentary is a watchlist, not an entry signal.
+- Configure repository Actions secrets named `OPENAI_API_KEY` and `GEMINI_API_KEY`. Never put either key in `app.js`, HTML, public JSON, or a chat message. API usage is billed separately by each provider; a ChatGPT subscription does not include OpenAI API credits.
+- To configure: GitHub repository → Settings → Secrets and variables → Actions → New repository secret. Add the two keys under the exact names above. Then open Actions → AI currency and pair review → Run workflow.
+- If one key is missing or a provider errors, the dashboard retains the last successful review for that provider and marks the provider status. Reviews are cached for four hours when the input fingerprint is unchanged.
