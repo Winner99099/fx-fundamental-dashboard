@@ -377,7 +377,21 @@ def fetch_abs_unemployment():
         raise RuntimeError("ABS latest release did not expose a parsable unemployment rate")
     period_match = re.search(r"Labour Force, Australia,\s*([A-Za-z]+\s+20[0-9]{2})", text, re.I)
     period = period_match.group(1) if period_match else "Latest ABS release"
-    return {"period": period, "value": float(match.group(1)), "source": "Australian Bureau of Statistics", "url": url}
+    employment_match = re.search(r"employment\s+(increased|decreased)\s+by\s+([0-9,]+)\s+people", text, re.I)
+    employment_change = None
+    if employment_match:
+        employment_change = float(employment_match.group(2).replace(",", "")) / 1000.0
+        if employment_match.group(1).lower() == "decreased":
+            employment_change *= -1
+    release_match = re.search(r"Released\s+(\d{1,2}/\d{1,2}/20\d{2})", text, re.I)
+    release_date = None
+    if release_match:
+        release_date = datetime.datetime.strptime(release_match.group(1), "%d/%m/%Y").date().isoformat()
+    return {
+        "period": period, "value": float(match.group(1)),
+        "employment_change": employment_change, "release_date": release_date,
+        "source": "Australian Bureau of Statistics", "url": url
+    }
 
 def build_currency(code, country, country_name):
     metrics = {}
@@ -435,10 +449,16 @@ def build_currency(code, country, country_name):
     # Policy rates remain dated decision snapshots in POLICY_RATES above.
 
     # Prefer Australia's latest national ABS labour-force release to the
-    # harmonised OECD series, which can be published with a lag.
+    # harmonised OECD series, and retain the official monthly employment change.
+    abs_employment_change = None
+    abs_release_date = None
+    abs_employment_period = None
     if code == "AUD":
         try:
             abs_latest = fetch_abs_unemployment()
+            abs_employment_change = abs_latest.get("employment_change")
+            abs_release_date = abs_latest.get("release_date")
+            abs_employment_period = abs_latest.get("period")
             prior_history = metrics["unemployment"].get("history", [])
             combined = [abs_latest] + [x for x in prior_history if x.get("period") != abs_latest["period"]]
             combined = sorted(combined, key=lambda x: x["period"], reverse=True)[:6]
@@ -489,6 +509,9 @@ def build_currency(code, country, country_name):
         "unemployment_period": metrics["unemployment"].get("period", str(metrics["unemployment"]["year"]) if metrics["unemployment"]["year"] else None),
         "unemployment_source": metrics["unemployment"].get("source"),
         "unemployment_source_url": metrics["unemployment"].get("url"),
+        "abs_employment_change_k": abs_employment_change if code == "AUD" else None,
+        "abs_employment_release_date": abs_release_date if code == "AUD" else None,
+        "abs_employment_period": abs_employment_period if code == "AUD" else None,
         "metrics": metrics,
         "component_weights_available": {key: WEIGHTS[key] for key, _, _ in available},
         "available_weight_pct": sum(w for _, _, w in available),
@@ -666,6 +689,24 @@ for code in CURRENCIES:
         "unemployment_period": item.get("unemployment_period"),
         "unemployment_source": item.get("unemployment_source"),
     })
+# Enrich the Australian Employment Change calendar event from the official ABS
+# release when its publication date matches the scheduled calendar event.
+aud_snapshot = next((item for item in currencies if item.get("code") == "AUD"), {})
+abs_change = aud_snapshot.get("abs_employment_change_k")
+abs_release_date = aud_snapshot.get("abs_employment_release_date")
+if abs_change is not None and abs_release_date:
+    for event in events:
+        event_date = (parse_date(event.get("time")) or now).date().isoformat()
+        if (event.get("currency") == "AUD"
+                and re.search(r"employment change", event.get("title", ""), re.I)
+                and event_date == abs_release_date
+                and not event.get("actual")):
+            event["actual"] = f"{abs_change:+.1f}K"
+            event["actual_source"] = "Australian Bureau of Statistics"
+            event["summary"] = (event.get("summary", "") +
+                                f" Official ABS actual: {abs_change:+.1f}K.")
+            break
+
 news_sources.append({
     "name": "OECD Monthly Unemployment Rates",
     "url": "https://data-explorer.oecd.org/s/2ai",
