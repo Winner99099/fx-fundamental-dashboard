@@ -60,11 +60,21 @@ function currencyRows(targetId) {
   const selected=selectedStrengthCurrencies();
   const source=(snapshot?.currencies||[]);
   const visible=targetId==='currency-rows-full'?source.filter(c=>selected.includes(c.code)):source;
-  const rows = visible.map(c => `<tr>
-    <td>${safeText(c.code)}</td><td class="structural-score-cell">${scoreHistory(c)}<small class="structural-update ${c.structural_update_status==="core_data_updated"?"is-updated":""}">${escapeHtml(structuralUpdateSummary(c))}</small></td><td class="${c.event_score==null? "score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)} <small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td><td class="score-na">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)} <small>${c.event_score==null?"Structural baseline": "Event-adjusted"}</small></td>
-    <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td><td>${metric2(c.inflation)} <small>${c.inflation_period||c.inflation_year||""}</small></td><td>${metric2(c.gdp_growth)} <small>${c.gdp_growth_period||c.gdp_growth_year||""}</small></td><td>${metric2(c.unemployment)} <small>${c.unemployment_year||""}</small></td>
-    <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td></tr>`).join("");
-  $(targetId).innerHTML = rows || `<tr><td colspan="9" class="empty">${targetId==='currency-rows-full'?'No currencies selected. Tick one or more currencies above.':'No currency data in snapshot.'}</td></tr>`;
+  const rows=visible.map(c=>{
+    const structural=Number(c.score);
+    const momentum=c.event_score==null?null:Number(c.event_score);
+    const momentumClass=momentum==null?"score-na":momentum>0?"score-positive":momentum<0?"score-negative":"score-na";
+    const persistence=c.momentum_persistence||"Unconfirmed";
+    const persistenceClass=/Higher|Building|Moderate/.test(persistence)?"score-positive":/Fading|Low/.test(persistence)?"score-na":"score-na";
+    const catalyst=c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No verified event surprise captured";
+    return `<tr>
+      <td>${safeText(c.code)}</td>
+      <td class="structural-score-cell"><span class="${structural>0?"score-positive":structural<0?"score-negative":"score-na"}">${Number.isFinite(structural)?structural.toFixed(2):"N/A"}</span><small>${structural>0?"Structural strength":structural<0?"Structural weakness":"Neutral / unavailable"} · ${escapeHtml(structuralUpdateSummary(c))}</small></td>
+      <td><span class="${momentumClass}">${momentum==null?"Unconfirmed":(momentum>0?"+":"")+momentum.toFixed(2)}</span><small>${momentum==null?"No verified actual-versus-forecast surprise":(momentum>0?"Positive release momentum":momentum<0?"Negative release momentum":"No directional surprise")+" · "+Number(c.event_surprise_count||0)+" scored release(s)"} </small><small>${escapeHtml(catalyst)}</small></td>
+      <td><span class="${persistenceClass}">${escapeHtml(persistence)}</span><small>${escapeHtml(c.momentum_persistence_detail||"Insufficient verified catalyst history")}</small></td>
+    </tr>`;
+  }).join("");
+  $(targetId).innerHTML=rows||`<tr><td colspan="4" class="empty">${targetId==='currency-rows-full'?'No currencies selected. Tick one or more currencies above.':'No currency data in snapshot.'}</td></tr>`;
 }
 function newsSummary(e) {
   if (e.source === "Forex Factory") {
