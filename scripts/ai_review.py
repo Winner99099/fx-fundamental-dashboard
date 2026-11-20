@@ -4,7 +4,8 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SNAP=ROOT/"data/latest.json"; OUT=ROOT/"data/ai_review.json"
 CC=["USD","EUR","GBP","JPY","CHF","CAD","AUD","NZD"]
-PAIRS=[CC[i]+"/"+CC[j] for i in range(8) for j in range(i+1,8)]
+PAIR_ORDER=["EUR","GBP","AUD","NZD","USD","CAD","CHF","JPY"]
+PAIRS=[PAIR_ORDER[i]+"/"+PAIR_ORDER[j] for i in range(8) for j in range(i+1,8)]
 NOW=dt.datetime.now(dt.timezone.utc)
 PROMPT="""Analyze all 8 currencies and 28 FX pairs using only supplied data. Never invent facts. Separate fundamental bias from short-term momentum and explain divergence. Infer D1 only from daily indicators; no H4 data is supplied, so say what to watch for, not that a setup exists. Missing or stale inputs lower confidence. Not a trade instruction. Return ONLY JSON with currency_reviews and pair_reviews. Currency items: bias (BULLISH/BEARISH/NEUTRAL/INSUFFICIENT), confidence, summary, drivers array, risks array. Pair items: same fields plus fundamental_view, momentum_view, d1_view, h4_watch, key_catalysts array. Include all 8 currency codes and all 28 pair keys."""
 def read(p,d):
