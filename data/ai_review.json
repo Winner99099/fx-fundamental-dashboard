@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T14:43:26.562568+00:00",
-  "input_snapshot_generated_at": "2026-11-20T03:55:02.354715+00:00",
-  "input_fingerprint": "103b162db3bee815a90b98cf9959e0fb5436c4af86715fff0fd089f50754ffa4",
+  "generated_at": "2026-11-21T16:54:13.414058+00:00",
+  "input_snapshot_generated_at": "2026-11-21T16:48:28.488629+00:00",
+  "input_fingerprint": "581b3bcba9c3f9c4c58392064dbbda7f9910bbec83cd3430608ca121dbb7bfd4",
   "status": "partial",
   "providers": {
     "chatgpt": {
@@ -14,118 +14,105 @@
           "USD": {
             "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "Macro indicators are mixed, and the snapshot contains no direct USD spot-price data to establish currency momentum. Latest listed high-impact CPI releases are pending, not results.",
+            "summary": "Mixed macro picture: the aggregate score is positive, while the supplied fundamental trend is deteriorating. No direct currency spot data is supplied to establish USD momentum.",
             "drivers": [
-              "The supplied macro trend score is negative (-0.83): GDP growth deteriorated and inflation deteriorated, while unemployment improved.",
-              "Latest listed readings are GDP growth 2.07% year-on-year (2026-Q3), inflation 3.74% (2026-09), and unemployment 4.1% (2026-10).",
-              "Forex Factory's 2026-11-10 Core CPI m/m (forecast 0.2%, previous 0.3%) and CPI m/m (forecast 0.3%, previous 0.6%) have null actuals and remain pending in the snapshot."
+              "The dashboard reports a positive aggregate score (0.64) but a negative fundamental-trend score (-0.83), citing deteriorating GDP growth and inflation alongside improving unemployment.",
+              "Latest listed data: September 2026 inflation 3.74%, Q3 GDP growth 2.07%, and October unemployment 4.1%. These are macro indicators, not direct spot-price evidence."
             ],
             "risks": [
-              "Provisional, low-confidence macro coverage; economic-surprise data is not connected.",
-              "Without direct USD price data, no spot-momentum conclusion is supported."
+              "Dashboard data is provisional and confidence is low.",
+              "The November 10 Core CPI and CPI m/m entries have no actual values; their forecasts are pending, not results."
             ]
           },
           "EUR": {
             "bias": "BEARISH",
             "confidence": "Low",
-            "summary": "The supplied currency macro score and short-term score are negative, but there is no direct EUR spot-price data; this is a macro assessment, not a confirmed market-momentum signal.",
+            "summary": "The aggregate dashboard score is negative, while the supplied fundamental-trend score is neutral and recent changes are described as mixed. No direct currency spot data is supplied to establish EUR momentum.",
             "drivers": [
-              "Macro score -1.47 and short-term score -0.96; trend score is neutral (0.00) with mixed alignment.",
-              "Latest supplied readings: inflation 4.0% (2026-10), GDP growth 1.30% year-on-year (2026-Q3), and unemployment 6.5% (2026-09).",
-              "Forex Factory's German Final CPI m/m and Italian Industrial Production m/m, both listed for 2026-11-11, have null actuals and are pending."
+              "Aggregate score -1.37; fundamental-trend score 0.00, with GDP growth improving but inflation deteriorating and no aligned recent changes.",
+              "Latest listed data: October 2026 inflation 4.0%, Q3 GDP growth 1.30%, and September unemployment 6.5%. These describe macro conditions, not spot momentum."
             ],
             "risks": [
-              "Provisional, low-confidence macro data and no connected economic-surprise series.",
-              "No direct EUR price data is supplied, so spot momentum cannot be assessed."
+              "Dashboard data is provisional and confidence is low.",
+              "Recent listed EUR events show no confirmed actual-versus-forecast surprise; entries with missing actuals must not be treated as results."
             ]
           },
           "GBP": {
             "bias": "BULLISH",
             "confidence": "Low",
-            "summary": "The supplied GBP macro and short-term scores are modestly positive, with an early improving trend; direct GBP spot momentum is unavailable.",
+            "summary": "Aggregate and short-term dashboard scores are positive, and the supplied fundamental trend is building. This is a macro/dashboard assessment only; no direct GBP spot series is supplied here.",
             "drivers": [
-              "Macro score 0.47, short-term score 0.60, and trend score 0.83; trend alignment is early and needs confirmation.",
-              "Forex Factory's 2026-11-12 GDP m/m release reports actual 0.2% versus forecast 0.0%, previous 0.0% (August revised): a positive surprise.",
-              "Latest supplied readings: GDP growth 1.94% year-on-year (2026-Q3), inflation 3.5% (2026-09), and unemployment 4.7% (2026-07)."
+              "Aggregate score 0.47, short-term score 0.60, and fundamental-trend score 0.83; the dashboard cites improving GDP growth and unemployment, with inflation deteriorating.",
+              "The November 12, 2026 Forex Factory release “GDP m/m” reports actual 0.2% versus forecast 0.0% (previous 0.0%, August revised), a positive confirmed release surprise."
             ],
             "risks": [
-              "The GDP release is a catalyst, not proof of GBP spot momentum; no direct GBP price data is supplied.",
-              "Other listed 2026-11-12 releases, including trade balance and industrial production, have null actuals and remain pending.",
-              "Macro coverage is provisional and low confidence; unemployment data is older than several other currency readings."
+              "Dashboard data is provisional and confidence is low.",
+              "Other November 12 GBP calendar entries have null actuals and remain pending in the supplied snapshot."
             ]
           },
           "JPY": {
             "bias": "BULLISH",
             "confidence": "Low",
-            "summary": "JPY has a positive supplied macro and short-term assessment with a building trend, but the snapshot does not provide direct JPY price data to confirm spot momentum.",
+            "summary": "The aggregate, short-term, and fundamental-trend dashboard scores are positive, with the trend described as building. This does not establish JPY spot momentum; direct currency-level price data is not supplied.",
             "drivers": [
-              "Macro score 1.02, short-term score 1.54, and trend score 2.50; the trend is described as building with repeated alignment.",
-              "Latest supplied readings: GDP growth 1.16% year-on-year (2026-Q3), inflation 2.1% (2026-09), and unemployment 2.4% (2026-09).",
-              "Forex Factory's 2026-11-12 PPI y/y (forecast 6.5%, previous 6.8%) has a null actual and is pending."
+              "Aggregate score 1.03, short-term score 1.54, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and unemployment.",
+              "Latest listed data: September 2026 inflation 2.1%, Q3 GDP growth 1.16%, and September unemployment 2.4%."
             ],
             "risks": [
-              "No direct JPY spot-price data is supplied; currency momentum cannot be confirmed.",
-              "Listed JPY events including PPI y/y are pending, not reported actual results.",
-              "Macro data is provisional and low confidence."
+              "Dashboard data is provisional and confidence is low.",
+              "The November 12 PPI y/y entry has no actual value; its 6.5% forecast is not a release result."
             ]
           },
           "CHF": {
             "bias": "BULLISH",
             "confidence": "Low",
-            "summary": "CHF's supplied macro score is mildly positive and its trend score is strong, but direct CHF spot momentum is unavailable; the stale annual unemployment input limits confidence.",
+            "summary": "Aggregate and short-term dashboard scores are positive, and the fundamental trend is described as persistent and broadening. No direct CHF spot series is supplied to confirm currency-level momentum.",
             "drivers": [
-              "Macro score 0.37, short-term score 1.12, and trend score 2.50; the trend is described as persistent and broadening.",
-              "Latest supplied readings: GDP growth 3.04% year-on-year (2026-Q3) and inflation 1.6% (2026-10).",
-              "The unemployment input is 4.873% for 2025, an annual fallback explicitly flagged as stale for short-term analysis."
+              "Aggregate score 0.41, short-term score 1.14, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and inflation.",
+              "Latest listed data include October 2026 inflation 1.6% and Q3 GDP growth 3.04%."
             ],
             "risks": [
-              "No direct CHF price data is supplied, so spot momentum cannot be assessed.",
-              "Stale unemployment data and provisional, low-confidence macro coverage weaken the currency assessment.",
-              "No confirmed CHF-specific actual-versus-forecast release is provided in the recent-events list."
+              "Dashboard data is provisional and confidence is low.",
+              "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis."
             ]
           },
           "CAD": {
             "bias": "BEARISH",
             "confidence": "Low",
-            "summary": "CAD's supplied macro and short-term scores are negative with a persistent deteriorating trend, but there is no direct CAD spot-price confirmation.",
+            "summary": "Aggregate and short-term dashboard scores are negative, and the fundamental trend is described as persistent deterioration. No direct CAD spot series is supplied to establish currency-level price momentum.",
             "drivers": [
-              "Macro score -1.10, short-term score -1.01, and trend score -0.83; the trend is described as persistent and broadening.",
-              "Latest supplied readings: GDP growth 0.95% year-on-year (2026-Q3), inflation 3.09% (2026-10), and unemployment 6.7% (2026-10).",
-              "Forex Factory's BOC Summary of Deliberations, listed for 2026-11-10, has no actual result supplied."
+              "Aggregate score -1.00, short-term score -0.94, and fundamental-trend score -0.83; the dashboard cites deteriorating GDP growth and unemployment.",
+              "Latest listed data: October 2026 inflation 3.09%, Q3 GDP growth 0.95%, and October unemployment 6.7%."
             ],
             "risks": [
-              "No direct CAD price data is supplied, so spot momentum cannot be confirmed.",
-              "The listed BOC event has no actual result; do not infer a policy signal from it.",
-              "Macro inputs are provisional and low confidence."
+              "Dashboard data is provisional and confidence is low.",
+              "The November 10 BOC Summary of Deliberations entry has no supplied actual or detail; do not infer its contents."
             ]
           },
           "AUD": {
             "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "AUD's overall macro score is positive but its short-term score is only modestly positive and its trend score is negative; no direct AUD spot data resolves this mixed picture.",
+            "summary": "Aggregate and short-term scores are positive, but the supplied fundamental-trend score is negative, reflecting deterioration in GDP growth and unemployment. The latest listed labour release is a negative catalyst; currency-level spot momentum cannot be established from currency scores.",
             "drivers": [
-              "Macro score 0.80, short-term score 0.23, and trend score -0.83; the supplied trend describes deterioration in GDP growth and unemployment alongside improving inflation.",
-              "Latest supplied readings: inflation 3.92% (2026-Q3), GDP growth 2.14% year-on-year (2026-Q2), and unemployment 4.9% (October 2026)."
+              "Aggregate score 0.83 and short-term score 0.25 contrast with fundamental-trend score -0.83.",
+              "Australian Bureau of Statistics labour data in the dashboard is dated November 19, 2026: October unemployment 4.9% and employment change -43.5. This is a confirmed supplied release, but no forecast co"
             ],
             "risks": [
-              "No direct AUD price data is supplied, so spot momentum cannot be assessed.",
-              "The listed 2026-11-12 MI Inflation Expectations event has a null actual and is pending.",
-              "Macro coverage is provisional and low confidence."
+              "Dashboard data is provisional and confidence is low.",
+              "Other AUD calendar entries in the snapshot have null actuals and cannot be treated as results."
             ]
           },
           "NZD": {
             "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "NZD's overall macro score is near neutral while its short-term and trend scores are positive; no direct NZD spot data supports a directional momentum conclusion.",
+            "summary": "The fundamental-trend score is positive and persistent, but the aggregate score is only 0.08. These macro indicators do not establish NZD spot momentum, and unemployment data is stale.",
             "drivers": [
-              "Macro score 0.04, short-term score 0.90, and trend score 2.50; the supplied trend is described as persistent and broadening.",
-              "Latest supplied readings: GDP growth 2.55% year-on-year (2026-Q2) and inflation 3.71% (2026-Q3).",
-              "Unemployment is supplied as 5.076% for 2025 and flagged as stale for short-term analysis."
+              "Short-term score 0.93 and fundamental-trend score 2.50, with the dashboard citing improving GDP growth and inflation.",
+              "Latest listed data include Q3 2026 inflation 3.71% and Q2 GDP growth 2.55%."
             ],
             "risks": [
-              "No direct NZD price data is supplied, so spot momentum cannot be confirmed.",
-              "Stale annual unemployment input and provisional macro coverage reduce confidence.",
-              "Forex Factory's 2026-11-12 Visitor Arrivals m/m has no actual or forecast supplied and remains pending."
+              "Dashboard data is provisional and confidence is low.",
+              "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis; the November 12 Visitor Arrivals entry has no actual."
             ]
           }
         },
@@ -133,514 +120,506 @@
           "EUR/GBP": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "Pair short-term price momentum cannot be determined: the pair's daily technical data is unavailable.",
+            "summary": "Direct pair momentum cannot be assessed because the supplied daily technical snapshot is stale.",
             "drivers": [
-              "The snapshot marks EUR/GBP daily technicals unavailable; no close, timestamp, returns, moving averages, RSI, or MACD values are supplied."
+              "The November 12, 2026 Forex Factory “GDP m/m” release reports GBP actual 0.2% versus 0.0% forecast; this is a secondary catalyst, not a substitute for current pair-price confirmation."
             ],
             "risks": [
-              "Currency-level macro differences cannot substitute for direct pair-price confirmation."
+              "The supplied technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "EUR's supplied macro score is negative and GBP's mildly positive, but this relative macro view does not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-            "d1_view": "Unavailable; no daily close or timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD-versus-signal data supplied.",
-            "h4_watch": "No H4 data supplied. Watch for confirmed price and indicator evidence before reassessing direction.",
+            "fundamental_view": "EUR dashboard aggregate score is negative and GBP is modestly positive; these macro assessments do not determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale pair data prevents a short-term momentum assessment.",
+            "d1_view": "Last supplied close 0.83799, updated 2026-11-20 00:00 UTC: 1d +0.413%, 5d +0.356%, 20d +0.106%; above SMA20 0.83523 but below SMA50 0.84464; RSI14 65.2; MACD -0.00244 above signal -0.003239. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; monitor only for fresh daily price confirmation.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast, a positive GBP surprise; pair-price confirmation is unavailable."
+              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%."
             ]
           },
           "EUR/AUD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "Pair short-term price momentum cannot be determined: the pair's daily technical data is unavailable.",
+            "bias": "BULLISH",
+            "confidence": "Medium",
+            "summary": "Strong positive short-term pair momentum, although the sharply overbought RSI and price at the reported 20-day resistance raise reversal risk.",
             "drivers": [
-              "The snapshot marks EUR/AUD daily technicals unavailable; no direct pair indicators are supplied."
+              "Price is up over 1, 5, and 20 days, well above both moving averages, with MACD above signal."
             ],
             "risks": [
-              "Currency macro scores cannot establish EUR/AUD momentum without direct pair-price confirmation."
+              "RSI14 86.0 is extremely overbought; price is at the reported 20-day resistance."
             ],
-            "fundamental_view": "EUR's supplied macro score is negative while AUD's is positive; this relative macro contrast must not override missing pair price data.",
-            "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-            "d1_view": "Unavailable; no daily close or timestamp, returns, moving averages, RSI14, or MACD data supplied.",
-            "h4_watch": "No H4 data supplied. Watch for direct price confirmation and alignment of daily indicators.",
+            "fundamental_view": "EUR aggregate dashboard score -1.37 versus AUD 0.83, but macro scores do not override the pair's observed price direction.",
+            "momentum_view": "Bullish short-term momentum, with strong 5d/20d gains and positive MACD configuration; overextension tempers confidence.",
+            "d1_view": "Close 1.6569, updated 2026-11-21 12:44 UTC: 1d +0.559%, 5d +1.886%, 20d +3.839%; above SMA20 1.61539 and SMA50 1.61353; RSI14 86.0; MACD 0.010052 above signal 0.005469.",
+            "h4_watch": "No H4 data supplied; watch for whether price sustains above the reported resistance or retreats from it.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast is not a direct EUR/AUD catalyst; AUD MI Inflation Expectations remains pending with null actual."
+              "No confirmed recent AUD or EUR actual-versus-forecast surprise is supplied."
             ]
           },
           "EUR/NZD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "Pair short-term price momentum cannot be determined because EUR/NZD daily technical data is unavailable.",
+            "bias": "BULLISH",
+            "confidence": "Medium",
+            "summary": "Positive short-term pair momentum across the reported horizons, with price above SMA20 and MACD above signal; price remains just below SMA50.",
             "drivers": [
-              "No EUR/NZD close, timestamp, returns, moving averages, RSI, or MACD readings are provided."
+              "Positive 1d, 5d, and 20d returns and RSI14 above 50 support the upward momentum reading."
             ],
             "risks": [
-              "Relative currency macro scores do not establish pair direction in the absence of direct price confirmation."
+              "Price is below SMA50 1.99548, a mixed trend signal."
             ],
-            "fundamental_view": "EUR's supplied macro score is negative and NZD's is near neutral, with a positive NZD trend score; this is context only, not pair momentum.",
-            "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-            "d1_view": "Unavailable; all pair daily price and indicator fields are absent.",
-            "h4_watch": "No H4 data supplied. Watch for pair-level close, trend, and momentum confirmation.",
+            "fundamental_view": "EUR aggregate score is negative versus NZD near neutral, but macro scores do not set the pair bias.",
+            "momentum_view": "Bullish: all supplied returns are positive and MACD is above signal; the SMA50 position is a counter-signal.",
+            "d1_view": "Close 2.0049, updated 2026-11-21 12:44 UTC: 1d +0.199%, 5d +0.539%, 20d +1.908%; above SMA20 1.99231 and slightly above SMA50 1.99548; RSI14 61.1; MACD 0.003371 above signal 0.002155.",
+            "h4_watch": "No H4 data supplied; watch for continued support above SMA20 and confirmation relative to SMA50.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m is pending with no actual supplied."
+              "No confirmed recent EUR or NZD actual-versus-forecast surprise is supplied."
             ]
           },
           "EUR/USD": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "EUR/USD short-term price momentum is unassessable because the supplied daily technical record is unavailable.",
+            "summary": "The supplied daily technical data is stale, so current short-term pair momentum is not assigned.",
             "drivers": [
-              "No direct EUR/USD daily price or indicator values are supplied."
+              "The snapshot has no confirmed recent EUR or USD actual-versus-forecast release surprise that could replace direct price confirmation."
             ],
             "risks": [
-              "The differing EUR and USD macro assessments cannot replace pair technical confirmation."
+              "Technical timestamp is more than 36 hours old; the listed USD CPI entries have null actuals and remain pending."
             ],
-            "fundamental_view": "EUR macro score is negative and USD trend score is negative, while USD's overall score is positive; this mixed relative context does not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: direct EUR/USD price confirmation is unavailable.",
-            "d1_view": "Unavailable; no latest close or timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD-versus-signal.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation; listed USD CPI events are pending in the snapshot.",
+            "fundamental_view": "EUR's dashboard aggregate score is negative versus positive USD aggregate score, but neither determines pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale price data cannot support a current directional bias.",
+            "d1_view": "Last supplied close 1.09697, updated 2026-11-20 00:00 UTC: 1d -0.021%, 5d -0.728%, 20d -2.243%; below SMA20 1.1126 and SMA50 1.12441; RSI14 31.0; MACD -0.007417 below signal -0.005882. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: US Core CPI m/m (forecast 0.2%) and CPI m/m (forecast 0.3%) have null actuals; neither is a reported result."
+              "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
             ]
           },
           "EUR/CAD": {
-            "bias": "INSUFFICIENT",
+            "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "EUR/CAD short-term momentum cannot be assessed from the supplied snapshot because pair daily technicals are unavailable.",
+            "summary": "Mixed technical signals: short-term returns are nearly flat and price is near SMA20, while its position below SMA50 conflicts with positive RSI and MACD crossover.",
             "drivers": [
-              "The pair has no supplied daily close, timestamp, return, or indicator values."
+              "Price is slightly above SMA20 and MACD is above signal, but the 1d and 5d returns are marginally negative."
             ],
             "risks": [
-              "Macro-score differences between EUR and CAD cannot be used as a proxy for EUR/CAD price action."
+              "Below SMA50 1.58699; returns and trend indicators do not align cleanly."
             ],
-            "fundamental_view": "EUR and CAD both have negative supplied macro scores; this relative macro comparison is not a momentum signal.",
-            "momentum_view": "INSUFFICIENT: no direct EUR/CAD price evidence is available.",
-            "d1_view": "Unavailable; daily price and indicator data are missing.",
-            "h4_watch": "No H4 data supplied. Watch for actual pair-level trend and momentum confirmation.",
+            "fundamental_view": "EUR and CAD dashboard aggregate scores are both negative; macro scores do not override conflicting pair price signals.",
+            "momentum_view": "NEUTRAL because near-flat returns, SMA20/SMA50 positioning, RSI, and MACD give a mixed picture.",
+            "d1_view": "Close 1.5727, updated 2026-11-21 12:44 UTC: 1d -0.021%, 5d -0.014%, 20d +0.063%; above SMA20 1.5711 but below SMA50 1.58699; RSI14 61.6; MACD -0.003086 above signal -0.004074.",
+            "h4_watch": "No H4 data supplied; watch for a clearer sustained move relative to SMA20 and SMA50.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations is listed without an actual result."
+              "No confirmed recent EUR or CAD actual-versus-forecast surprise is supplied."
             ]
           },
           "EUR/CHF": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "EUR/CHF short-term price momentum cannot be determined because daily pair technicals are unavailable.",
+            "summary": "The daily technical snapshot is stale; no current pair momentum bias is assigned.",
             "drivers": [
-              "No EUR/CHF close, timestamp, returns, SMA values, RSI, or MACD data are present."
+              "The supplied CHF and EUR macro dashboard values are not a substitute for fresh pair-price confirmation."
             ],
             "risks": [
-              "Relative currency macro assessments do not establish pair direction without price data."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "EUR's supplied macro score is negative and CHF's is mildly positive, but this is not a pair-momentum conclusion.",
-            "momentum_view": "INSUFFICIENT: direct EUR/CHF price confirmation is unavailable.",
-            "d1_view": "Unavailable; no daily price indicators supplied.",
-            "h4_watch": "No H4 data supplied. Watch for daily and intraday price confirmation.",
+            "fundamental_view": "EUR aggregate score is negative versus CHF positive; this relative macro picture cannot establish pair direction.",
+            "momentum_view": "INSUFFICIENT: stale pair data.",
+            "d1_view": "Last supplied close 0.92592, updated 2026-11-20 00:00 UTC: 1d +0.055%, 5d +0.241%, 20d +0.649%; above SMA20 0.92149 but below SMA50 0.93048; RSI14 61.2; MACD -0.001052 above signal -0.002432. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "No confirmed actual-versus-forecast CHF-specific release is supplied in the recent-events list."
+              "No confirmed recent EUR or CHF actual-versus-forecast surprise is supplied."
             ]
           },
           "EUR/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "EUR/JPY short-term momentum is undetermined because the pair's daily technical data is unavailable.",
+            "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
             "drivers": [
-              "No direct EUR/JPY price history or indicator values are supplied."
+              "No supplied confirmed recent release surprise provides direct price confirmation."
             ],
             "risks": [
-              "EUR and JPY macro scores cannot determine the pair's short-term price direction."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "EUR's supplied macro score is negative and JPY's positive; this relative macro context cannot override missing pair price action.",
-            "momentum_view": "INSUFFICIENT: no direct pair-price confirmation.",
-            "d1_view": "Unavailable; no close or timestamp, returns, moving averages, RSI14, or MACD data.",
-            "h4_watch": "No H4 data supplied. Watch for direct EUR/JPY price confirmation; listed JPY releases are pending.",
+            "fundamental_view": "EUR and JPY dashboard scores differ, but macro scores must not determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale pair data.",
+            "d1_view": "Last supplied close 175.168, updated 2026-11-20 00:00 UTC: 1d +0.172%, 5d -0.844%, 20d -0.244%; below SMA20 176.35285 and SMA50 177.47008; RSI14 44.7; MACD -0.616964 below signal -0.504494. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: JPY PPI y/y forecast 6.5%, previous 6.8%, actual null and pending."
+              "No confirmed recent EUR or JPY actual-versus-forecast surprise is supplied."
             ]
           },
           "GBP/AUD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "GBP/AUD short-term price momentum cannot be established because the pair's daily technical data is unavailable.",
+            "bias": "BULLISH",
+            "confidence": "Medium",
+            "summary": "Strong upward pair momentum across the reported horizons, with price above both moving averages and MACD above signal; extreme RSI and resistance warrant caution.",
             "drivers": [
-              "No direct GBP/AUD close, returns, timestamp, or technical indicators are supplied."
+              "1d, 5d, and 20d returns are positive; price is above SMA20 and SMA50."
             ],
             "risks": [
-              "Currency-level macro scores are not a substitute for pair price action."
+              "RSI14 87.1 is extremely overbought; price is at the reported 20-day resistance."
             ],
-            "fundamental_view": "GBP has a modestly positive supplied macro score and AUD a positive score, while their trend scores are mixed; this does not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: direct GBP/AUD price confirmation is unavailable.",
-            "d1_view": "Unavailable; no pair daily technical indicators supplied.",
-            "h4_watch": "No H4 data supplied. Watch for price confirmation after relevant releases.",
+            "fundamental_view": "GBP and AUD aggregate dashboard scores are both positive, but these macro scores do not determine this pair's bias.",
+            "momentum_view": "Bullish momentum supported by price trend and MACD; overbought readings increase pullback risk.",
+            "d1_view": "Close 1.97705, updated 2026-11-21 13:13 UTC: 1d +0.567%, 5d +1.417%, 20d +3.896%; above SMA20 1.93394 and SMA50 1.91124; RSI14 87.1; MACD 0.016644 above signal 0.013347.",
+            "h4_watch": "No H4 data supplied; watch whether price sustains above the reported resistance or reverses.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast is a positive GBP surprise; AUD MI Inflation Expectations remains pending."
+              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
             ]
           },
           "GBP/NZD": {
-            "bias": "INSUFFICIENT",
+            "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "GBP/NZD short-term price momentum is unassessable because daily pair technical data is unavailable.",
+            "summary": "Mixed but mildly constructive price signals: positive 1d and 20d returns, but almost flat 5d performance and MACD below signal.",
             "drivers": [
-              "No pair close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+              "Price is above both moving averages and RSI14 is slightly above 50."
             ],
             "risks": [
-              "Relative GBP and NZD macro assessments cannot be used to infer pair momentum."
+              "MACD is below signal and 5d return is only +0.041%, limiting momentum confirmation."
             ],
-            "fundamental_view": "GBP's overall macro score is modestly positive; NZD's is near neutral with a positive trend score. These are contextual fundamentals only.",
-            "momentum_view": "INSUFFICIENT: no direct GBP/NZD price evidence.",
-            "d1_view": "Unavailable; daily pair price and indicators are missing.",
-            "h4_watch": "No H4 data supplied. Watch for pair-level trend confirmation.",
+            "fundamental_view": "GBP and NZD dashboard scores are both modestly positive, but macro scores cannot resolve mixed pair momentum.",
+            "momentum_view": "NEUTRAL given mixed returns and MACD despite price above moving averages.",
+            "d1_view": "Close 2.39162, updated 2026-11-21 13:13 UTC: 1d +0.176%, 5d +0.041%, 20d +1.941%; above SMA20 2.38527 and SMA50 2.36361; RSI14 52.8; MACD 0.009725 below signal 0.011004.",
+            "h4_watch": "No H4 data supplied; watch for MACD confirmation and sustained price action above moving averages.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; NZD Visitor Arrivals m/m is pending with no actual supplied."
+              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
             ]
           },
           "GBP/USD": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "GBP/USD short-term momentum cannot be assessed because pair daily technical data is unavailable.",
+            "summary": "The latest supplied quote is fresh, but the snapshot does not provide an aligned daily close timestamp for its return and indicator series; use caution and do not treat the mixed timing as confirmed current momentum.",
             "drivers": [
-              "No GBP/USD daily close, timestamp, returns, or technical indicators are supplied."
+              "The supplied indicator set shows negative 1d, 5d, and 20d returns and price below both moving averages, but it is not timestamp-aligned with the latest price."
             ],
             "risks": [
-              "GBP and USD macro views do not determine GBP/USD direction without direct price confirmation."
+              "Latest price timestamp is intraday while the indicator series timestamp is not separately specified; the November 10 USD CPI entries have no actuals."
             ],
-            "fundamental_view": "GBP's supplied macro score is modestly positive; USD's overall score is positive but trend score is negative. This relative picture is mixed and is not a pair-momentum signal.",
-            "momentum_view": "INSUFFICIENT: no direct GBP/USD price action is available.",
-            "d1_view": "Unavailable; no close/timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD data.",
-            "h4_watch": "No H4 data supplied. Watch for pair price response to confirmed release results.",
+            "fundamental_view": "GBP aggregate dashboard score is positive versus USD positive but with deteriorating trend; these macro factors do not override pair-price evidence.",
+            "momentum_view": "INSUFFICIENT pending a clearly timestamp-aligned pair technical record; the listed indicators lean bearish but are not treated as fully confirmed.",
+            "d1_view": "Latest price 1.30818, updated 2026-11-21 15:05 UTC. Supplied indicators: 1d -0.035%, 5d -1.019%, 20d -2.212%; below SMA20 1.3305 and SMA50 1.33026; RSI14 25.4; MACD -0.005907 below signal -0.002682. Indicator timestamp alignment is unspecified.",
+            "h4_watch": "No H4 data supplied; seek timestamp-aligned fresh daily confirmation.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast.",
-              "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null; both remain pending in the snapshot."
+              "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are pending values."
             ]
           },
           "GBP/CAD": {
-            "bias": "INSUFFICIENT",
+            "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "GBP/CAD short-term momentum is undetermined because the pair's daily technical data is unavailable.",
+            "summary": "Price is near both moving averages with small returns and mixed MACD configuration, giving no strong short-term directional confirmation.",
             "drivers": [
-              "No GBP/CAD daily price, timestamp, returns, or indicator readings are supplied."
+              "20d return is slightly positive, but 1d and 5d returns are negative; price sits just below SMA20 and SMA50."
             ],
             "risks": [
-              "The GBP-versus-CAD macro contrast cannot substitute for pair-level price confirmation."
+              "RSI14 51.2 is neutral and MACD is below signal."
             ],
-            "fundamental_view": "GBP's supplied macro score is modestly positive while CAD's is negative; relative fundamentals do not override missing pair technicals.",
-            "momentum_view": "INSUFFICIENT: no direct GBP/CAD price action is available.",
-            "d1_view": "Unavailable; no daily pair close or indicators supplied.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation and subsequent catalyst reaction.",
+            "fundamental_view": "GBP aggregate score is positive and CAD negative, but that relative macro contrast cannot set the short-term pair bias.",
+            "momentum_view": "NEUTRAL: weak returns and near-moving-average price action conflict with the small positive 20d change.",
+            "d1_view": "Close 1.87611, updated 2026-11-21 13:13 UTC: 1d -0.038%, 5d -0.503%, 20d +0.095%; below SMA20 1.8809 and SMA50 1.8796; RSI14 51.2; MACD 0.000859 below signal 0.001856.",
+            "h4_watch": "No H4 data supplied; watch for sustained separation from the moving averages.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast.",
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
             ]
           },
           "GBP/CHF": {
-            "bias": "INSUFFICIENT",
+            "bias": "BEARISH",
             "confidence": "Low",
-            "summary": "GBP/CHF short-term price momentum cannot be determined because daily pair technicals are unavailable.",
+            "summary": "The latest daily return is sharply negative, with negative 5d and 20d returns and price below both moving averages; longer-horizon MACD is nearly at signal, and RSI is neutral.",
             "drivers": [
-              "No GBP/CHF close, timestamp, return, or indicator values are provided."
+              "1d -0.515%, 5d -0.910%, and 20d -0.291%; price below SMA20 and SMA50."
             ],
             "risks": [
-              "Relative currency macro assessments cannot establish pair momentum."
+              "RSI14 is 51.6 and MACD is only marginally below signal, so the broader momentum confirmation is mixed."
             ],
-            "fundamental_view": "GBP's supplied macro score is modestly positive and CHF's is positive; their relative macro difference is not a price signal.",
-            "momentum_view": "INSUFFICIENT: direct GBP/CHF price confirmation is unavailable.",
-            "d1_view": "Unavailable; pair daily price indicators are missing.",
-            "h4_watch": "No H4 data supplied. Watch for confirmed pair-level price action.",
+            "fundamental_view": "GBP and CHF macro dashboard scores are both positive; macro factors do not override the pair's negative price action.",
+            "momentum_view": "Bearish near-term price momentum, tempered by neutral RSI and a very small MACD/signal difference.",
+            "d1_view": "Close 1.0988, updated 2026-11-21 12:44 UTC: 1d -0.515%, 5d -0.910%, 20d -0.291%; below SMA20 1.10296 and SMA50 1.1014; RSI14 51.6; MACD 0.001273 below signal 0.001322.",
+            "h4_watch": "No H4 data supplied; monitor whether price holds above the reported support or resumes decline.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; no CHF-specific confirmed release is supplied."
+              "No confirmed recent CHF release surprise is supplied."
             ]
           },
           "GBP/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "GBP/JPY short-term momentum cannot be established because the snapshot provides no pair daily technical data.",
+            "summary": "The daily technical record is stale; current short-term pair momentum cannot be assigned.",
             "drivers": [
-              "No direct GBP/JPY price, close timestamp, returns, moving averages, RSI, or MACD values are supplied."
+              "The supplied technical indicators lean negative, but their age prevents using them as current confirmation."
             ],
             "risks": [
-              "GBP and JPY currency macro scores cannot replace direct pair-price evidence."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "GBP's supplied macro score is modestly positive and JPY's is positive with a stronger trend score; this is relative macro context only.",
-            "momentum_view": "INSUFFICIENT: no direct GBP/JPY price confirmation.",
-            "d1_view": "Unavailable; daily pair price and indicators are not supplied.",
-            "h4_watch": "No H4 data supplied. Watch for pair-level response to actual releases.",
+            "fundamental_view": "GBP and JPY dashboard macro scores are positive; they cannot determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale technical data.",
+            "d1_view": "Last supplied close 208.993, updated 2026-11-20 00:00 UTC: 1d -0.254%, 5d -1.202%, 20d -0.365%; below SMA20 211.1232 and SMA50 210.10606; RSI14 39.2; MACD -0.125343 below signal 0.211231. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; JPY PPI y/y actual is null and pending."
+              "No confirmed recent GBP or JPY actual-versus-forecast surprise is supplied."
             ]
           },
           "AUD/NZD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "AUD/NZD short-term price momentum cannot be determined because the pair's daily technicals are unavailable.",
+            "bias": "BEARISH",
+            "confidence": "Medium",
+            "summary": "Strong negative pair momentum across all reported horizons, with price below both moving averages and MACD below signal. Very low RSI raises rebound risk.",
             "drivers": [
-              "No AUD/NZD close, timestamp, returns, or daily indicators are supplied."
+              "1d, 5d, and 20d returns are negative; price is at the reported support and below SMA20/SMA50."
             ],
             "risks": [
-              "The mixed relative AUD and NZD macro picture cannot establish pair momentum."
+              "RSI14 12.6 is extremely oversold and price is at reported 20-day support."
             ],
-            "fundamental_view": "AUD's macro score is positive with a negative trend score; NZD's macro score is near neutral with a positive trend score. This does not determine the pair's price direction.",
-            "momentum_view": "INSUFFICIENT: no direct AUD/NZD price action is available.",
-            "d1_view": "Unavailable; no pair daily price or indicator values supplied.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation.",
+            "fundamental_view": "AUD and NZD macro dashboard scores are both positive, but do not override observed bearish pair price action.",
+            "momentum_view": "Bearish; persistent negative returns and moving-average/MACD configuration outweigh oversold rebound risk.",
+            "d1_view": "Close 1.20941, updated 2026-11-21 13:12 UTC: 1d -0.404%, 5d -1.374%, 20d -1.905%; below SMA20 1.23342 and SMA50 1.23669; RSI14 12.6; MACD -0.005547 below signal -0.002808.",
+            "h4_watch": "No H4 data supplied; watch whether support holds or price confirms a continued decline.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: AUD MI Inflation Expectations and NZD Visitor Arrivals m/m have null actuals and remain pending."
+              "No confirmed recent AUD or NZD actual-versus-forecast surprise is supplied."
             ]
           },
           "AUD/USD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "AUD/USD short-term momentum is unassessable because pair daily price and indicators are unavailable.",
+            "bias": "BEARISH",
+            "confidence": "Medium",
+            "summary": "Strongly negative price momentum across the reported horizons, with price well below both moving averages and MACD below signal; oversold RSI and support proximity raise rebound risk.",
             "drivers": [
-              "No AUD/USD latest close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+              "1d -0.559%, 5d -2.360%, and 20d -5.842%; price below SMA20 and SMA50."
             ],
             "risks": [
-              "AUD and USD macro scores cannot substitute for pair-level momentum evidence."
+              "RSI14 16.2 and price at reported 20-day support indicate elevated short-term rebound risk."
             ],
-            "fundamental_view": "AUD has a positive overall macro score but negative trend score; USD has a positive overall score but negative trend score. The relative fundamental view is mixed.",
-            "momentum_view": "INSUFFICIENT: no direct AUD/USD price confirmation.",
-            "d1_view": "Unavailable; no pair daily technical fields supplied.",
-            "h4_watch": "No H4 data supplied. Watch for pair price confirmation after pending data is released.",
+            "fundamental_view": "AUD and USD aggregate scores are positive but their dashboard trend scores are negative; macro assessments do not set pair momentum.",
+            "momentum_view": "Bearish based on all reported returns, moving averages, and MACD; extreme oversold conditions are a counter-risk.",
+            "d1_view": "Close 0.6619, updated 2026-11-21 13:13 UTC: 1d -0.559%, 5d -2.360%, 20d -5.842%; below SMA20 0.6881 and SMA50 0.69612; RSI14 16.2; MACD -0.008929 below signal -0.006163.",
+            "h4_watch": "No H4 data supplied; watch for support failure or a reversal confirmed by fresh price action.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: AUD MI Inflation Expectations actual is null and pending.",
-              "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending."
+              "Australian October labour figures dated 2026-11-19 in the dashboard report unemployment 4.9% and employment change -43.5; no forecast comparison supplied.",
+              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null, so no confirmed release surprise."
             ]
           },
           "AUD/CAD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "AUD/CAD short-term momentum cannot be assessed from this snapshot because its daily pair technical data is unavailable.",
+            "bias": "BEARISH",
+            "confidence": "Medium",
+            "summary": "Broadly negative momentum across all reported horizons, with price below both moving averages and MACD below signal; the oversold reading and support proximity are counter-risks.",
             "drivers": [
-              "No direct AUD/CAD close, timestamp, returns, or indicator readings are supplied."
+              "1d -0.691%, 5d -1.976%, and 20d -3.745%; price is below SMA20 and SMA50."
             ],
             "risks": [
-              "The relative macro assessment does not establish pair price direction without direct price confirmation."
+              "RSI14 21.0 and price at reported 20-day support may precede a short-term bounce."
             ],
-            "fundamental_view": "AUD's supplied macro score is positive and CAD's negative, but this relative macro context cannot be used as a pair-momentum bias.",
-            "momentum_view": "INSUFFICIENT: no direct AUD/CAD price action is available.",
-            "d1_view": "Unavailable; pair daily price and technical indicators are absent.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-level confirmation.",
+            "fundamental_view": "AUD aggregate dashboard score is positive and CAD negative, but these macro scores do not override the bearish pair price action.",
+            "momentum_view": "Bearish, with returns, moving averages, and MACD aligned lower.",
+            "d1_view": "Close 0.94804, updated 2026-11-21 13:12 UTC: 1d -0.691%, 5d -1.976%, 20d -3.745%; below SMA20 0.97257 and SMA50 0.9835; RSI14 21.0; MACD -0.008007 below signal -0.005826.",
+            "h4_watch": "No H4 data supplied; watch whether reported support holds or breaks.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: AUD MI Inflation Expectations is pending with null actual.",
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations is listed without an actual result."
+              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
             ]
           },
           "AUD/CHF": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "AUD/CHF short-term price momentum is unavailable because the pair's daily technical record is unavailable.",
+            "bias": "BEARISH",
+            "confidence": "Medium",
+            "summary": "Strong downward momentum across the reported horizons, with price below both moving averages and MACD below signal; oversold RSI increases rebound risk.",
             "drivers": [
-              "No AUD/CHF close, timestamp, returns, or technical indicators are supplied."
+              "All reported returns are negative and price is at reported 20-day support."
             ],
             "risks": [
-              "Currency macro scores cannot replace direct pair-price confirmation."
+              "RSI14 25.7 and support proximity may prompt a reversal or consolidation."
             ],
-            "fundamental_view": "AUD's overall macro score is positive but trend score is negative; CHF's overall and trend scores are positive. This relative view is context only.",
-            "momentum_view": "INSUFFICIENT: no direct AUD/CHF price evidence.",
-            "d1_view": "Unavailable; daily pair indicators are missing.",
-            "h4_watch": "No H4 data supplied. Watch for direct price confirmation and follow-through.",
+            "fundamental_view": "AUD and CHF aggregate dashboard scores are positive; macro scores do not override the pair's bearish price trend.",
+            "momentum_view": "Bearish across returns, moving averages, and MACD, with oversold conditions as a counter-signal.",
+            "d1_view": "Close 0.5557, updated 2026-11-21 12:44 UTC: 1d -1.102%, 5d -2.300%, 20d -4.043%; below SMA20 0.57038 and SMA50 0.57634; RSI14 25.7; MACD -0.004248 below signal -0.003277.",
+            "h4_watch": "No H4 data supplied; watch for support failure versus a rebound from support.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: AUD MI Inflation Expectations has a null actual and is pending."
+              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
             ]
           },
           "AUD/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "AUD/JPY short-term momentum cannot be assessed because no pair daily technical data is available.",
+            "summary": "The supplied daily technical record is stale, preventing a current short-term pair momentum assessment.",
             "drivers": [
-              "No direct AUD/JPY price or daily indicator values are supplied."
+              "The old indicator set is bearish but cannot establish the present direction under the freshness rule."
             ],
             "risks": [
-              "AUD and JPY macro scores do not determine AUD/JPY price direction."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "AUD's supplied trend score is negative while JPY's trend score is positive and building; this relative macro contrast is not a momentum signal.",
-            "momentum_view": "INSUFFICIENT: direct AUD/JPY price confirmation is unavailable.",
-            "d1_view": "Unavailable; no pair close/timestamp, returns, SMAs, RSI14, or MACD data.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-level price action.",
+            "fundamental_view": "AUD and JPY dashboard macro scores differ, but that relative picture cannot determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale pair technical data.",
+            "d1_view": "Last supplied close 106.295, updated 2026-11-20 00:00 UTC: 1d -0.638%, 5d -2.321%, 20d -3.239%; below SMA20 109.38105 and SMA50 110.03064; RSI14 19.0; MACD -0.93243 below signal -0.602858. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: AUD MI Inflation Expectations is pending; JPY PPI y/y is pending with forecast 6.5%."
+              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
             ]
           },
           "NZD/USD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "NZD/USD short-term momentum cannot be determined because the daily pair technicals are unavailable.",
+            "bias": "BEARISH",
+            "confidence": "Medium",
+            "summary": "Negative momentum across all reported horizons, with price below both moving averages and MACD below signal; RSI near oversold territory is a counter-risk.",
             "drivers": [
-              "No NZD/USD price, timestamp, returns, or technical indicators are supplied."
+              "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
             ],
             "risks": [
-              "The NZD and USD macro views cannot establish pair direction without direct price data."
+              "RSI14 29.6 suggests a stretched decline that could rebound."
             ],
-            "fundamental_view": "NZD has a near-neutral overall macro score and positive trend score; USD has a positive overall score and negative trend score. This mixed relative context is not pair momentum.",
-            "momentum_view": "INSUFFICIENT: no direct NZD/USD price confirmation.",
-            "d1_view": "Unavailable; pair daily close and indicators are missing.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair price confirmation and reactions to actual releases.",
+            "fundamental_view": "NZD dashboard aggregate score is near neutral versus positive USD; this macro comparison does not set pair momentum.",
+            "momentum_view": "Bearish based on returns, moving averages, and MACD, tempered by near-oversold RSI.",
+            "d1_view": "Close 0.54705, updated 2026-11-21 13:13 UTC: 1d -0.200%, 5d -1.046%, 20d -4.057%; below SMA20 0.55782 and SMA50 0.56282; RSI14 29.6; MACD -0.004772 below signal -0.003738.",
+            "h4_watch": "No H4 data supplied; watch for continued weakness or a confirmed rebound from oversold levels.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m actual is null and pending.",
-              "Forex Factory, 2026-11-10: US CPI and Core CPI actuals are null and pending."
+              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
             ]
           },
           "NZD/CAD": {
-            "bias": "INSUFFICIENT",
+            "bias": "BEARISH",
             "confidence": "Low",
-            "summary": "NZD/CAD short-term price momentum is unassessable because the pair's daily technical data is unavailable.",
+            "summary": "Returns are negative and price is below both moving averages, but RSI is near neutral and MACD is almost exactly at signal, limiting conviction.",
             "drivers": [
-              "No direct NZD/CAD close, timestamp, returns, or indicator values are supplied."
+              "All reported returns are negative, with price below SMA20 and SMA50."
             ],
             "risks": [
-              "Relative currency macro assessments cannot be used to infer pair momentum."
+              "MACD and signal are nearly equal; RSI14 47.7 is not strongly directional."
             ],
-            "fundamental_view": "NZD's overall macro score is near neutral with a positive trend score; CAD's score and trend are negative. This relative macro view is not a pair-price signal.",
-            "momentum_view": "INSUFFICIENT: no direct NZD/CAD price action is available.",
-            "d1_view": "Unavailable; no daily pair indicators supplied.",
-            "h4_watch": "No H4 data supplied. Watch for pair-level price and trend confirmation.",
+            "fundamental_view": "NZD aggregate dashboard score is near neutral and CAD negative; these macro scores do not override the price evidence.",
+            "momentum_view": "Bearish, but with low confidence because MACD and RSI provide little confirmation.",
+            "d1_view": "Close 0.78414, updated 2026-11-21 13:12 UTC: 1d -0.238%, 5d -0.552%, 20d -1.829%; below SMA20 0.78838 and SMA50 0.79507; RSI14 47.7; MACD -0.002894 just below signal -0.002903.",
+            "h4_watch": "No H4 data supplied; monitor for stronger directional confirmation around the moving averages.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m is pending with null actual.",
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+              "No confirmed recent NZD or CAD actual-versus-forecast surprise is supplied."
             ]
           },
           "NZD/CHF": {
-            "bias": "INSUFFICIENT",
+            "bias": "NEUTRAL",
             "confidence": "Low",
-            "summary": "NZD/CHF short-term momentum cannot be assessed because pair daily technicals are unavailable.",
+            "summary": "Returns are negative and price sits below both moving averages, but MACD is above signal and RSI is near neutral, creating conflicting momentum signals.",
             "drivers": [
-              "No NZD/CHF close, timestamp, returns, or daily indicators are supplied."
+              "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
             ],
             "risks": [
-              "Currency macro scores cannot replace direct pair-price confirmation."
+              "MACD is above signal and RSI14 48.8 is near neutral, conflicting with the price trend."
             ],
-            "fundamental_view": "NZD's overall macro score is near neutral with a positive trend score; CHF has a mildly positive overall score and strong trend score. This does not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: no direct NZD/CHF price evidence.",
-            "d1_view": "Unavailable; pair price and technical data are missing.",
-            "h4_watch": "No H4 data supplied. Watch for direct daily and intraday price confirmation.",
+            "fundamental_view": "NZD and CHF macro dashboard scores are both positive, but neither determines pair direction.",
+            "momentum_view": "NEUTRAL because weak price action conflicts with a positive MACD crossover.",
+            "d1_view": "Close 0.4593, updated 2026-11-21 12:44 UTC: 1d -0.718%, 5d -0.960%, 20d -2.193%; below SMA20 0.4623 and SMA50 0.46588; RSI14 48.8; MACD -0.001362 above signal -0.001594.",
+            "h4_watch": "No H4 data supplied; watch for price and MACD alignment.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m has no actual supplied and remains pending."
+              "No confirmed recent NZD or CHF actual-versus-forecast surprise is supplied."
             ]
           },
           "NZD/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "NZD/JPY short-term price momentum is undetermined because the pair's daily technical data is unavailable.",
+            "summary": "The supplied daily technical record is stale, so no current pair momentum bias is assigned.",
             "drivers": [
-              "No direct NZD/JPY price history or momentum indicators are supplied."
+              "The stale indicators lean bearish, but cannot confirm current price direction."
             ],
             "risks": [
-              "Relative NZD and JPY macro scores cannot establish the pair's short-term price direction."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "NZD's overall macro score is near neutral with positive trend score; JPY's overall and trend scores are positive. These are fundamentals, not pair momentum.",
-            "momentum_view": "INSUFFICIENT: direct NZD/JPY price confirmation is unavailable.",
-            "d1_view": "Unavailable; no daily close, timestamp, returns, SMA20/SMA50, RSI14, or MACD data.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation.",
+            "fundamental_view": "NZD and JPY macro scores cannot substitute for fresh pair-price data.",
+            "momentum_view": "INSUFFICIENT: stale technical data.",
+            "d1_view": "Last supplied close 87.531, updated 2026-11-20 00:00 UTC: 1d +0.081%, 5d -1.238%, 20d -1.593%; below SMA20 88.58415 and SMA50 88.92536; RSI14 36.9; MACD -0.438995 below signal -0.33726. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m and JPY PPI y/y actuals are null and pending."
+              "No confirmed recent NZD or JPY actual-versus-forecast surprise is supplied."
             ]
           },
           "USD/CAD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "USD/CAD short-term momentum cannot be determined because its daily pair technical data is unavailable.",
+            "bias": "BULLISH",
+            "confidence": "Medium",
+            "summary": "Positive 5d and 20d momentum, price above both moving averages, and MACD above signal support an upward bias despite a slightly negative 1d return and extremely overbought RSI.",
             "drivers": [
-              "No USD/CAD close, timestamp, returns, or technical indicators are supplied."
+              "5d +0.500% and 20d +2.337%; price above SMA20 and SMA50; MACD above signal."
             ],
             "risks": [
-              "The relative USD and CAD macro assessments cannot substitute for direct price confirmation."
+              "RSI14 91.5 is exceptionally overbought; price is near reported 20-day resistance and 1d return is negative."
             ],
-            "fundamental_view": "USD's overall score is positive but its trend score is negative; CAD's overall and trend scores are negative. This relative fundamental contrast does not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: no direct USD/CAD price evidence.",
-            "d1_view": "Unavailable; pair daily price and technical data are missing.",
-            "h4_watch": "No H4 data supplied. Watch for price confirmation around actual releases.",
+            "fundamental_view": "USD dashboard aggregate score is positive and CAD negative, but this does not override or create the pair momentum reading.",
+            "momentum_view": "Bullish from medium-horizon returns, moving averages, and MACD; overbought conditions reduce confidence.",
+            "d1_view": "Close 1.434, updated 2026-11-21 12:44 UTC: 1d -0.024%, 5d +0.500%, 20d +2.337%; above SMA20 1.41397 and SMA50 1.41328; RSI14 91.5; MACD 0.006926 above signal 0.004234.",
+            "h4_watch": "No H4 data supplied; watch for follow-through versus reversal near reported resistance.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending.",
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+              "No confirmed recent USD or CAD actual-versus-forecast surprise is supplied."
             ]
           },
           "USD/CHF": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "USD/CHF short-term momentum is unassessable because the pair's daily technical data is unavailable.",
+            "summary": "The supplied technical record is stale, so no current pair momentum bias is assigned.",
             "drivers": [
-              "No USD/CHF daily close, timestamp, returns, or indicator readings are provided."
+              "The stale price indicators lean bullish but are not current enough to confirm the direction."
             ],
             "risks": [
-              "Relative macro views for USD and CHF cannot determine pair momentum without direct price evidence."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "USD has a positive overall score but negative trend score; CHF has a mildly positive score and strong trend score. This is contextual fundamentals only.",
-            "momentum_view": "INSUFFICIENT: no direct USD/CHF price confirmation.",
-            "d1_view": "Unavailable; no pair daily price or technical indicators supplied.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-level trend and momentum confirmation.",
+            "fundamental_view": "USD and CHF dashboard scores are both positive; macro comparisons do not establish pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale technical data.",
+            "d1_view": "Last supplied close 0.8441, updated 2026-11-20 00:00 UTC: 1d +0.074%, 5d +0.977%, 20d +2.963%; above SMA20 0.8283 and SMA50 0.8276; RSI14 74.1; MACD 0.004591 above signal 0.00218. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending."
+              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; no confirmed surprise."
             ]
           },
           "USD/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "USD/JPY short-term price momentum cannot be assessed because the snapshot contains no daily technical data for the pair.",
+            "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
             "drivers": [
-              "No USD/JPY close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+              "The stale indicators show positive 20d performance and price above moving averages, but are not valid current confirmation."
             ],
             "risks": [
-              "USD and JPY macro assessments cannot substitute for direct pair-price confirmation."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "USD's overall score is positive with a negative trend score; JPY has positive overall and trend scores. Relative fundamentals do not establish USD/JPY momentum.",
-            "momentum_view": "INSUFFICIENT: direct USD/JPY price action is unavailable.",
-            "d1_view": "Unavailable; all direct daily pair price and indicator fields are missing.",
-            "h4_watch": "No H4 data supplied. Watch for pair-price confirmation around actual releases.",
+            "fundamental_view": "USD and JPY dashboard macro scores are both positive; they cannot determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale pair data.",
+            "d1_view": "Last supplied close 159.707, updated 2026-11-20 00:00 UTC: 1d +0.205%, 5d -0.105%, 20d +2.053%; above SMA20 158.5194 and SMA50 157.85516; RSI14 68.2; MACD 0.501967 above signal 0.381212. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m have null actuals and remain pending.",
-              "Forex Factory, 2026-11-12: JPY PPI y/y has null actual and remains pending."
+              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are pending, not results."
             ]
           },
           "CAD/CHF": {
-            "bias": "INSUFFICIENT",
+            "bias": "BEARISH",
             "confidence": "Low",
-            "summary": "CAD/CHF short-term momentum is unavailable because the pair's daily technical indicators are unavailable.",
+            "summary": "Negative returns across the reported horizons and price just below both moving averages lean bearish, but positive MACD and neutral RSI conflict.",
             "drivers": [
-              "No direct CAD/CHF close, timestamp, returns, or technical values are supplied."
+              "1d -0.498%, 5d -0.413%, and 20d -0.388%; price is slightly below SMA20 and SMA50."
             ],
             "risks": [
-              "The relative CAD and CHF macro assessments cannot determine the pair's price direction."
+              "MACD is above signal and RSI14 50.8 is neutral, weakening bearish confirmation."
             ],
-            "fundamental_view": "CAD's supplied macro score is negative and CHF's is mildly positive with a stronger trend score; this relative context cannot override absent pair price data.",
-            "momentum_view": "INSUFFICIENT: no direct CAD/CHF price confirmation.",
-            "d1_view": "Unavailable; daily pair price and indicators are missing.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair price and trend confirmation.",
+            "fundamental_view": "CAD dashboard aggregate score is negative versus positive CHF, but macro scores do not determine the pair bias.",
+            "momentum_view": "Bearish with low confidence: price returns conflict with MACD and neutral RSI.",
+            "d1_view": "Close 0.5856, updated 2026-11-21 12:44 UTC: 1d -0.498%, 5d -0.413%, 20d -0.388%; below SMA20 0.58636 and SMA50 0.58584; RSI14 50.8; MACD 0.00044 above signal 0.000161.",
+            "h4_watch": "No H4 data supplied; watch for alignment between returns, moving averages, and MACD.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+              "No confirmed recent CAD or CHF actual-versus-forecast surprise is supplied."
             ]
           },
           "CAD/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "CAD/JPY short-term momentum cannot be determined because direct pair daily technical data is unavailable.",
+            "summary": "The supplied daily data is stale; the current pair momentum bias is therefore insufficient.",
             "drivers": [
-              "No CAD/JPY price, timestamp, returns, or daily indicators are supplied."
+              "The old indicators are mostly negative, but cannot be used as fresh price confirmation."
             ],
             "risks": [
-              "CAD and JPY macro assessments cannot establish pair momentum without direct price confirmation."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "CAD's supplied score is negative while JPY's is positive with a building trend; this relative macro contrast is not a price-momentum signal.",
-            "momentum_view": "INSUFFICIENT: no direct CAD/JPY price action is available.",
-            "d1_view": "Unavailable; no pair daily close or technical indicator values supplied.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-level price confirmation.",
+            "fundamental_view": "CAD and JPY macro dashboard scores do not substitute for fresh pair-price evidence.",
+            "momentum_view": "INSUFFICIENT: stale technical record.",
+            "d1_view": "Last supplied close 111.35, updated 2026-11-20 00:00 UTC: 1d +0.112%, 5d -0.660%, 20d -0.366%; below SMA20 112.24175 and below SMA50 111.77044; RSI14 26.4; MACD -0.162165 below signal -0.013378. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual supplied.",
-              "Forex Factory, 2026-11-12: JPY PPI y/y actual is null and pending."
+              "No confirmed recent CAD or JPY actual-versus-forecast surprise is supplied."
             ]
           },
           "CHF/JPY": {
             "bias": "INSUFFICIENT",
             "confidence": "Low",
-            "summary": "CHF/JPY short-term price momentum cannot be assessed because the pair's daily technical data is unavailable.",
+            "summary": "The supplied daily technical record is stale, preventing a current short-term momentum assessment.",
             "drivers": [
-              "No CHF/JPY close, timestamp, returns, moving averages, RSI, or MACD values are supplied."
+              "Old returns and moving-average positioning lean negative, but are not valid current confirmation."
             ],
             "risks": [
-              "The relative CHF and JPY macro views cannot determine pair momentum without direct price confirmation."
+              "Technical timestamp is more than 36 hours old."
             ],
-            "fundamental_view": "CHF and JPY both have positive supplied trend scores; their relative macro context does not establish CHF/JPY direction.",
-            "momentum_view": "INSUFFICIENT: no direct CHF/JPY price evidence is available.",
-            "d1_view": "Unavailable; pair daily technical indicators and timestamp are absent.",
-            "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation and indicator alignment.",
+            "fundamental_view": "CHF and JPY macro dashboard scores cannot determine pair momentum.",
+            "momentum_view": "INSUFFICIENT: stale technical data.",
+            "d1_view": "Last supplied close 189.16499, updated 2026-11-20 00:00 UTC: 1d +0.114%, 5d -1.074%, 20d -0.884%; below SMA20 191.35854 and SMA50 190.70904; RSI14 37.4; MACD -0.447795 below signal -0.041072. Stale under the 36-hour rule.",
+            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
             "key_catalysts": [
-              "Forex Factory, 2026-11-12: JPY PPI y/y is pending with no actual supplied."
+              "No confirmed recent CHF or JPY actual-versus-forecast surprise is supplied."
             ]
           }
         }
@@ -694,11 +673,11 @@
     },
     "EUR/AUD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BULLISH"
     },
     "EUR/NZD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BULLISH"
     },
     "EUR/USD": {
       "status": "ONE_MODEL_ONLY",
@@ -706,7 +685,7 @@
     },
     "EUR/CAD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "NEUTRAL"
     },
     "EUR/CHF": {
       "status": "ONE_MODEL_ONLY",
@@ -718,11 +697,11 @@
     },
     "GBP/AUD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BULLISH"
     },
     "GBP/NZD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "NEUTRAL"
     },
     "GBP/USD": {
       "status": "ONE_MODEL_ONLY",
@@ -730,11 +709,11 @@
     },
     "GBP/CAD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "NEUTRAL"
     },
     "GBP/CHF": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "GBP/JPY": {
       "status": "ONE_MODEL_ONLY",
@@ -742,19 +721,19 @@
     },
     "AUD/NZD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "AUD/USD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "AUD/CAD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "AUD/CHF": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "AUD/JPY": {
       "status": "ONE_MODEL_ONLY",
@@ -762,15 +741,15 @@
     },
     "NZD/USD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "NZD/CAD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "NZD/CHF": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "NEUTRAL"
     },
     "NZD/JPY": {
       "status": "ONE_MODEL_ONLY",
@@ -778,7 +757,7 @@
     },
     "USD/CAD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BULLISH"
     },
     "USD/CHF": {
       "status": "ONE_MODEL_ONLY",
@@ -790,7 +769,7 @@
     },
     "CAD/CHF": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
+      "bias": "BEARISH"
     },
     "CAD/JPY": {
       "status": "ONE_MODEL_ONLY",
@@ -805,118 +784,105 @@
     "USD": {
       "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "Macro indicators are mixed, and the snapshot contains no direct USD spot-price data to establish currency momentum. Latest listed high-impact CPI releases are pending, not results.",
+      "summary": "Mixed macro picture: the aggregate score is positive, while the supplied fundamental trend is deteriorating. No direct currency spot data is supplied to establish USD momentum.",
       "drivers": [
-        "The supplied macro trend score is negative (-0.83): GDP growth deteriorated and inflation deteriorated, while unemployment improved.",
-        "Latest listed readings are GDP growth 2.07% year-on-year (2026-Q3), inflation 3.74% (2026-09), and unemployment 4.1% (2026-10).",
-        "Forex Factory's 2026-11-10 Core CPI m/m (forecast 0.2%, previous 0.3%) and CPI m/m (forecast 0.3%, previous 0.6%) have null actuals and remain pending in the snapshot."
+        "The dashboard reports a positive aggregate score (0.64) but a negative fundamental-trend score (-0.83), citing deteriorating GDP growth and inflation alongside improving unemployment.",
+        "Latest listed data: September 2026 inflation 3.74%, Q3 GDP growth 2.07%, and October unemployment 4.1%. These are macro indicators, not direct spot-price evidence."
       ],
       "risks": [
-        "Provisional, low-confidence macro coverage; economic-surprise data is not connected.",
-        "Without direct USD price data, no spot-momentum conclusion is supported."
+        "Dashboard data is provisional and confidence is low.",
+        "The November 10 Core CPI and CPI m/m entries have no actual values; their forecasts are pending, not results."
       ]
     },
     "EUR": {
       "bias": "BEARISH",
       "confidence": "Low",
-      "summary": "The supplied currency macro score and short-term score are negative, but there is no direct EUR spot-price data; this is a macro assessment, not a confirmed market-momentum signal.",
+      "summary": "The aggregate dashboard score is negative, while the supplied fundamental-trend score is neutral and recent changes are described as mixed. No direct currency spot data is supplied to establish EUR momentum.",
       "drivers": [
-        "Macro score -1.47 and short-term score -0.96; trend score is neutral (0.00) with mixed alignment.",
-        "Latest supplied readings: inflation 4.0% (2026-10), GDP growth 1.30% year-on-year (2026-Q3), and unemployment 6.5% (2026-09).",
-        "Forex Factory's German Final CPI m/m and Italian Industrial Production m/m, both listed for 2026-11-11, have null actuals and are pending."
+        "Aggregate score -1.37; fundamental-trend score 0.00, with GDP growth improving but inflation deteriorating and no aligned recent changes.",
+        "Latest listed data: October 2026 inflation 4.0%, Q3 GDP growth 1.30%, and September unemployment 6.5%. These describe macro conditions, not spot momentum."
       ],
       "risks": [
-        "Provisional, low-confidence macro data and no connected economic-surprise series.",
-        "No direct EUR price data is supplied, so spot momentum cannot be assessed."
+        "Dashboard data is provisional and confidence is low.",
+        "Recent listed EUR events show no confirmed actual-versus-forecast surprise; entries with missing actuals must not be treated as results."
       ]
     },
     "GBP": {
       "bias": "BULLISH",
       "confidence": "Low",
-      "summary": "The supplied GBP macro and short-term scores are modestly positive, with an early improving trend; direct GBP spot momentum is unavailable.",
+      "summary": "Aggregate and short-term dashboard scores are positive, and the supplied fundamental trend is building. This is a macro/dashboard assessment only; no direct GBP spot series is supplied here.",
       "drivers": [
-        "Macro score 0.47, short-term score 0.60, and trend score 0.83; trend alignment is early and needs confirmation.",
-        "Forex Factory's 2026-11-12 GDP m/m release reports actual 0.2% versus forecast 0.0%, previous 0.0% (August revised): a positive surprise.",
-        "Latest supplied readings: GDP growth 1.94% year-on-year (2026-Q3), inflation 3.5% (2026-09), and unemployment 4.7% (2026-07)."
+        "Aggregate score 0.47, short-term score 0.60, and fundamental-trend score 0.83; the dashboard cites improving GDP growth and unemployment, with inflation deteriorating.",
+        "The November 12, 2026 Forex Factory release “GDP m/m” reports actual 0.2% versus forecast 0.0% (previous 0.0%, August revised), a positive confirmed release surprise."
       ],
       "risks": [
-        "The GDP release is a catalyst, not proof of GBP spot momentum; no direct GBP price data is supplied.",
-        "Other listed 2026-11-12 releases, including trade balance and industrial production, have null actuals and remain pending.",
-        "Macro coverage is provisional and low confidence; unemployment data is older than several other currency readings."
+        "Dashboard data is provisional and confidence is low.",
+        "Other November 12 GBP calendar entries have null actuals and remain pending in the supplied snapshot."
       ]
     },
     "JPY": {
       "bias": "BULLISH",
       "confidence": "Low",
-      "summary": "JPY has a positive supplied macro and short-term assessment with a building trend, but the snapshot does not provide direct JPY price data to confirm spot momentum.",
+      "summary": "The aggregate, short-term, and fundamental-trend dashboard scores are positive, with the trend described as building. This does not establish JPY spot momentum; direct currency-level price data is not supplied.",
       "drivers": [
-        "Macro score 1.02, short-term score 1.54, and trend score 2.50; the trend is described as building with repeated alignment.",
-        "Latest supplied readings: GDP growth 1.16% year-on-year (2026-Q3), inflation 2.1% (2026-09), and unemployment 2.4% (2026-09).",
-        "Forex Factory's 2026-11-12 PPI y/y (forecast 6.5%, previous 6.8%) has a null actual and is pending."
+        "Aggregate score 1.03, short-term score 1.54, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and unemployment.",
+        "Latest listed data: September 2026 inflation 2.1%, Q3 GDP growth 1.16%, and September unemployment 2.4%."
       ],
       "risks": [
-        "No direct JPY spot-price data is supplied; currency momentum cannot be confirmed.",
-        "Listed JPY events including PPI y/y are pending, not reported actual results.",
-        "Macro data is provisional and low confidence."
+        "Dashboard data is provisional and confidence is low.",
+        "The November 12 PPI y/y entry has no actual value; its 6.5% forecast is not a release result."
       ]
     },
     "CHF": {
       "bias": "BULLISH",
       "confidence": "Low",
-      "summary": "CHF's supplied macro score is mildly positive and its trend score is strong, but direct CHF spot momentum is unavailable; the stale annual unemployment input limits confidence.",
+      "summary": "Aggregate and short-term dashboard scores are positive, and the fundamental trend is described as persistent and broadening. No direct CHF spot series is supplied to confirm currency-level momentum.",
       "drivers": [
-        "Macro score 0.37, short-term score 1.12, and trend score 2.50; the trend is described as persistent and broadening.",
-        "Latest supplied readings: GDP growth 3.04% year-on-year (2026-Q3) and inflation 1.6% (2026-10).",
-        "The unemployment input is 4.873% for 2025, an annual fallback explicitly flagged as stale for short-term analysis."
+        "Aggregate score 0.41, short-term score 1.14, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and inflation.",
+        "Latest listed data include October 2026 inflation 1.6% and Q3 GDP growth 3.04%."
       ],
       "risks": [
-        "No direct CHF price data is supplied, so spot momentum cannot be assessed.",
-        "Stale unemployment data and provisional, low-confidence macro coverage weaken the currency assessment.",
-        "No confirmed CHF-specific actual-versus-forecast release is provided in the recent-events list."
+        "Dashboard data is provisional and confidence is low.",
+        "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis."
       ]
     },
     "CAD": {
       "bias": "BEARISH",
       "confidence": "Low",
-      "summary": "CAD's supplied macro and short-term scores are negative with a persistent deteriorating trend, but there is no direct CAD spot-price confirmation.",
+      "summary": "Aggregate and short-term dashboard scores are negative, and the fundamental trend is described as persistent deterioration. No direct CAD spot series is supplied to establish currency-level price momentum.",
       "drivers": [
-        "Macro score -1.10, short-term score -1.01, and trend score -0.83; the trend is described as persistent and broadening.",
-        "Latest supplied readings: GDP growth 0.95% year-on-year (2026-Q3), inflation 3.09% (2026-10), and unemployment 6.7% (2026-10).",
-        "Forex Factory's BOC Summary of Deliberations, listed for 2026-11-10, has no actual result supplied."
+        "Aggregate score -1.00, short-term score -0.94, and fundamental-trend score -0.83; the dashboard cites deteriorating GDP growth and unemployment.",
+        "Latest listed data: October 2026 inflation 3.09%, Q3 GDP growth 0.95%, and October unemployment 6.7%."
       ],
       "risks": [
-        "No direct CAD price data is supplied, so spot momentum cannot be confirmed.",
-        "The listed BOC event has no actual result; do not infer a policy signal from it.",
-        "Macro inputs are provisional and low confidence."
+        "Dashboard data is provisional and confidence is low.",
+        "The November 10 BOC Summary of Deliberations entry has no supplied actual or detail; do not infer its contents."
       ]
     },
     "AUD": {
       "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "AUD's overall macro score is positive but its short-term score is only modestly positive and its trend score is negative; no direct AUD spot data resolves this mixed picture.",
+      "summary": "Aggregate and short-term scores are positive, but the supplied fundamental-trend score is negative, reflecting deterioration in GDP growth and unemployment. The latest listed labour release is a negative catalyst; currency-level spot momentum cannot be established from currency scores.",
       "drivers": [
-        "Macro score 0.80, short-term score 0.23, and trend score -0.83; the supplied trend describes deterioration in GDP growth and unemployment alongside improving inflation.",
-        "Latest supplied readings: inflation 3.92% (2026-Q3), GDP growth 2.14% year-on-year (2026-Q2), and unemployment 4.9% (October 2026)."
+        "Aggregate score 0.83 and short-term score 0.25 contrast with fundamental-trend score -0.83.",
+        "Australian Bureau of Statistics labour data in the dashboard is dated November 19, 2026: October unemployment 4.9% and employment change -43.5. This is a confirmed supplied release, but no forecast co"
       ],
       "risks": [
-        "No direct AUD price data is supplied, so spot momentum cannot be assessed.",
-        "The listed 2026-11-12 MI Inflation Expectations event has a null actual and is pending.",
-        "Macro coverage is provisional and low confidence."
+        "Dashboard data is provisional and confidence is low.",
+        "Other AUD calendar entries in the snapshot have null actuals and cannot be treated as results."
       ]
     },
     "NZD": {
       "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "NZD's overall macro score is near neutral while its short-term and trend scores are positive; no direct NZD spot data supports a directional momentum conclusion.",
+      "summary": "The fundamental-trend score is positive and persistent, but the aggregate score is only 0.08. These macro indicators do not establish NZD spot momentum, and unemployment data is stale.",
       "drivers": [
-        "Macro score 0.04, short-term score 0.90, and trend score 2.50; the supplied trend is described as persistent and broadening.",
-        "Latest supplied readings: GDP growth 2.55% year-on-year (2026-Q2) and inflation 3.71% (2026-Q3).",
-        "Unemployment is supplied as 5.076% for 2025 and flagged as stale for short-term analysis."
+        "Short-term score 0.93 and fundamental-trend score 2.50, with the dashboard citing improving GDP growth and inflation.",
+        "Latest listed data include Q3 2026 inflation 3.71% and Q2 GDP growth 2.55%."
       ],
       "risks": [
-        "No direct NZD price data is supplied, so spot momentum cannot be confirmed.",
-        "Stale annual unemployment input and provisional macro coverage reduce confidence.",
-        "Forex Factory's 2026-11-12 Visitor Arrivals m/m has no actual or forecast supplied and remains pending."
+        "Dashboard data is provisional and confidence is low.",
+        "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis; the November 12 Visitor Arrivals entry has no actual."
       ]
     }
   },
@@ -924,514 +890,506 @@
     "EUR/GBP": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "Pair short-term price momentum cannot be determined: the pair's daily technical data is unavailable.",
+      "summary": "Direct pair momentum cannot be assessed because the supplied daily technical snapshot is stale.",
       "drivers": [
-        "The snapshot marks EUR/GBP daily technicals unavailable; no close, timestamp, returns, moving averages, RSI, or MACD values are supplied."
+        "The November 12, 2026 Forex Factory “GDP m/m” release reports GBP actual 0.2% versus 0.0% forecast; this is a secondary catalyst, not a substitute for current pair-price confirmation."
       ],
       "risks": [
-        "Currency-level macro differences cannot substitute for direct pair-price confirmation."
+        "The supplied technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "EUR's supplied macro score is negative and GBP's mildly positive, but this relative macro view does not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-      "d1_view": "Unavailable; no daily close or timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD-versus-signal data supplied.",
-      "h4_watch": "No H4 data supplied. Watch for confirmed price and indicator evidence before reassessing direction.",
+      "fundamental_view": "EUR dashboard aggregate score is negative and GBP is modestly positive; these macro assessments do not determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale pair data prevents a short-term momentum assessment.",
+      "d1_view": "Last supplied close 0.83799, updated 2026-11-20 00:00 UTC: 1d +0.413%, 5d +0.356%, 20d +0.106%; above SMA20 0.83523 but below SMA50 0.84464; RSI14 65.2; MACD -0.00244 above signal -0.003239. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; monitor only for fresh daily price confirmation.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast, a positive GBP surprise; pair-price confirmation is unavailable."
+        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%."
       ]
     },
     "EUR/AUD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "Pair short-term price momentum cannot be determined: the pair's daily technical data is unavailable.",
+      "bias": "BULLISH",
+      "confidence": "Medium",
+      "summary": "Strong positive short-term pair momentum, although the sharply overbought RSI and price at the reported 20-day resistance raise reversal risk.",
       "drivers": [
-        "The snapshot marks EUR/AUD daily technicals unavailable; no direct pair indicators are supplied."
+        "Price is up over 1, 5, and 20 days, well above both moving averages, with MACD above signal."
       ],
       "risks": [
-        "Currency macro scores cannot establish EUR/AUD momentum without direct pair-price confirmation."
+        "RSI14 86.0 is extremely overbought; price is at the reported 20-day resistance."
       ],
-      "fundamental_view": "EUR's supplied macro score is negative while AUD's is positive; this relative macro contrast must not override missing pair price data.",
-      "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-      "d1_view": "Unavailable; no daily close or timestamp, returns, moving averages, RSI14, or MACD data supplied.",
-      "h4_watch": "No H4 data supplied. Watch for direct price confirmation and alignment of daily indicators.",
+      "fundamental_view": "EUR aggregate dashboard score -1.37 versus AUD 0.83, but macro scores do not override the pair's observed price direction.",
+      "momentum_view": "Bullish short-term momentum, with strong 5d/20d gains and positive MACD configuration; overextension tempers confidence.",
+      "d1_view": "Close 1.6569, updated 2026-11-21 12:44 UTC: 1d +0.559%, 5d +1.886%, 20d +3.839%; above SMA20 1.61539 and SMA50 1.61353; RSI14 86.0; MACD 0.010052 above signal 0.005469.",
+      "h4_watch": "No H4 data supplied; watch for whether price sustains above the reported resistance or retreats from it.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast is not a direct EUR/AUD catalyst; AUD MI Inflation Expectations remains pending with null actual."
+        "No confirmed recent AUD or EUR actual-versus-forecast surprise is supplied."
       ]
     },
     "EUR/NZD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "Pair short-term price momentum cannot be determined because EUR/NZD daily technical data is unavailable.",
+      "bias": "BULLISH",
+      "confidence": "Medium",
+      "summary": "Positive short-term pair momentum across the reported horizons, with price above SMA20 and MACD above signal; price remains just below SMA50.",
       "drivers": [
-        "No EUR/NZD close, timestamp, returns, moving averages, RSI, or MACD readings are provided."
+        "Positive 1d, 5d, and 20d returns and RSI14 above 50 support the upward momentum reading."
       ],
       "risks": [
-        "Relative currency macro scores do not establish pair direction in the absence of direct price confirmation."
+        "Price is below SMA50 1.99548, a mixed trend signal."
       ],
-      "fundamental_view": "EUR's supplied macro score is negative and NZD's is near neutral, with a positive NZD trend score; this is context only, not pair momentum.",
-      "momentum_view": "INSUFFICIENT: no direct pair price action is available.",
-      "d1_view": "Unavailable; all pair daily price and indicator fields are absent.",
-      "h4_watch": "No H4 data supplied. Watch for pair-level close, trend, and momentum confirmation.",
+      "fundamental_view": "EUR aggregate score is negative versus NZD near neutral, but macro scores do not set the pair bias.",
+      "momentum_view": "Bullish: all supplied returns are positive and MACD is above signal; the SMA50 position is a counter-signal.",
+      "d1_view": "Close 2.0049, updated 2026-11-21 12:44 UTC: 1d +0.199%, 5d +0.539%, 20d +1.908%; above SMA20 1.99231 and slightly above SMA50 1.99548; RSI14 61.1; MACD 0.003371 above signal 0.002155.",
+      "h4_watch": "No H4 data supplied; watch for continued support above SMA20 and confirmation relative to SMA50.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m is pending with no actual supplied."
+        "No confirmed recent EUR or NZD actual-versus-forecast surprise is supplied."
       ]
     },
     "EUR/USD": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "EUR/USD short-term price momentum is unassessable because the supplied daily technical record is unavailable.",
+      "summary": "The supplied daily technical data is stale, so current short-term pair momentum is not assigned.",
       "drivers": [
-        "No direct EUR/USD daily price or indicator values are supplied."
+        "The snapshot has no confirmed recent EUR or USD actual-versus-forecast release surprise that could replace direct price confirmation."
       ],
       "risks": [
-        "The differing EUR and USD macro assessments cannot replace pair technical confirmation."
+        "Technical timestamp is more than 36 hours old; the listed USD CPI entries have null actuals and remain pending."
       ],
-      "fundamental_view": "EUR macro score is negative and USD trend score is negative, while USD's overall score is positive; this mixed relative context does not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: direct EUR/USD price confirmation is unavailable.",
-      "d1_view": "Unavailable; no latest close or timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD-versus-signal.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation; listed USD CPI events are pending in the snapshot.",
+      "fundamental_view": "EUR's dashboard aggregate score is negative versus positive USD aggregate score, but neither determines pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale price data cannot support a current directional bias.",
+      "d1_view": "Last supplied close 1.09697, updated 2026-11-20 00:00 UTC: 1d -0.021%, 5d -0.728%, 20d -2.243%; below SMA20 1.1126 and SMA50 1.12441; RSI14 31.0; MACD -0.007417 below signal -0.005882. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: US Core CPI m/m (forecast 0.2%) and CPI m/m (forecast 0.3%) have null actuals; neither is a reported result."
+        "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
       ]
     },
     "EUR/CAD": {
-      "bias": "INSUFFICIENT",
+      "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "EUR/CAD short-term momentum cannot be assessed from the supplied snapshot because pair daily technicals are unavailable.",
+      "summary": "Mixed technical signals: short-term returns are nearly flat and price is near SMA20, while its position below SMA50 conflicts with positive RSI and MACD crossover.",
       "drivers": [
-        "The pair has no supplied daily close, timestamp, return, or indicator values."
+        "Price is slightly above SMA20 and MACD is above signal, but the 1d and 5d returns are marginally negative."
       ],
       "risks": [
-        "Macro-score differences between EUR and CAD cannot be used as a proxy for EUR/CAD price action."
+        "Below SMA50 1.58699; returns and trend indicators do not align cleanly."
       ],
-      "fundamental_view": "EUR and CAD both have negative supplied macro scores; this relative macro comparison is not a momentum signal.",
-      "momentum_view": "INSUFFICIENT: no direct EUR/CAD price evidence is available.",
-      "d1_view": "Unavailable; daily price and indicator data are missing.",
-      "h4_watch": "No H4 data supplied. Watch for actual pair-level trend and momentum confirmation.",
+      "fundamental_view": "EUR and CAD dashboard aggregate scores are both negative; macro scores do not override conflicting pair price signals.",
+      "momentum_view": "NEUTRAL because near-flat returns, SMA20/SMA50 positioning, RSI, and MACD give a mixed picture.",
+      "d1_view": "Close 1.5727, updated 2026-11-21 12:44 UTC: 1d -0.021%, 5d -0.014%, 20d +0.063%; above SMA20 1.5711 but below SMA50 1.58699; RSI14 61.6; MACD -0.003086 above signal -0.004074.",
+      "h4_watch": "No H4 data supplied; watch for a clearer sustained move relative to SMA20 and SMA50.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations is listed without an actual result."
+        "No confirmed recent EUR or CAD actual-versus-forecast surprise is supplied."
       ]
     },
     "EUR/CHF": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "EUR/CHF short-term price momentum cannot be determined because daily pair technicals are unavailable.",
+      "summary": "The daily technical snapshot is stale; no current pair momentum bias is assigned.",
       "drivers": [
-        "No EUR/CHF close, timestamp, returns, SMA values, RSI, or MACD data are present."
+        "The supplied CHF and EUR macro dashboard values are not a substitute for fresh pair-price confirmation."
       ],
       "risks": [
-        "Relative currency macro assessments do not establish pair direction without price data."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "EUR's supplied macro score is negative and CHF's is mildly positive, but this is not a pair-momentum conclusion.",
-      "momentum_view": "INSUFFICIENT: direct EUR/CHF price confirmation is unavailable.",
-      "d1_view": "Unavailable; no daily price indicators supplied.",
-      "h4_watch": "No H4 data supplied. Watch for daily and intraday price confirmation.",
+      "fundamental_view": "EUR aggregate score is negative versus CHF positive; this relative macro picture cannot establish pair direction.",
+      "momentum_view": "INSUFFICIENT: stale pair data.",
+      "d1_view": "Last supplied close 0.92592, updated 2026-11-20 00:00 UTC: 1d +0.055%, 5d +0.241%, 20d +0.649%; above SMA20 0.92149 but below SMA50 0.93048; RSI14 61.2; MACD -0.001052 above signal -0.002432. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "No confirmed actual-versus-forecast CHF-specific release is supplied in the recent-events list."
+        "No confirmed recent EUR or CHF actual-versus-forecast surprise is supplied."
       ]
     },
     "EUR/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "EUR/JPY short-term momentum is undetermined because the pair's daily technical data is unavailable.",
+      "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
       "drivers": [
-        "No direct EUR/JPY price history or indicator values are supplied."
+        "No supplied confirmed recent release surprise provides direct price confirmation."
       ],
       "risks": [
-        "EUR and JPY macro scores cannot determine the pair's short-term price direction."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "EUR's supplied macro score is negative and JPY's positive; this relative macro context cannot override missing pair price action.",
-      "momentum_view": "INSUFFICIENT: no direct pair-price confirmation.",
-      "d1_view": "Unavailable; no close or timestamp, returns, moving averages, RSI14, or MACD data.",
-      "h4_watch": "No H4 data supplied. Watch for direct EUR/JPY price confirmation; listed JPY releases are pending.",
+      "fundamental_view": "EUR and JPY dashboard scores differ, but macro scores must not determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale pair data.",
+      "d1_view": "Last supplied close 175.168, updated 2026-11-20 00:00 UTC: 1d +0.172%, 5d -0.844%, 20d -0.244%; below SMA20 176.35285 and SMA50 177.47008; RSI14 44.7; MACD -0.616964 below signal -0.504494. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: JPY PPI y/y forecast 6.5%, previous 6.8%, actual null and pending."
+        "No confirmed recent EUR or JPY actual-versus-forecast surprise is supplied."
       ]
     },
     "GBP/AUD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "GBP/AUD short-term price momentum cannot be established because the pair's daily technical data is unavailable.",
+      "bias": "BULLISH",
+      "confidence": "Medium",
+      "summary": "Strong upward pair momentum across the reported horizons, with price above both moving averages and MACD above signal; extreme RSI and resistance warrant caution.",
       "drivers": [
-        "No direct GBP/AUD close, returns, timestamp, or technical indicators are supplied."
+        "1d, 5d, and 20d returns are positive; price is above SMA20 and SMA50."
       ],
       "risks": [
-        "Currency-level macro scores are not a substitute for pair price action."
+        "RSI14 87.1 is extremely overbought; price is at the reported 20-day resistance."
       ],
-      "fundamental_view": "GBP has a modestly positive supplied macro score and AUD a positive score, while their trend scores are mixed; this does not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: direct GBP/AUD price confirmation is unavailable.",
-      "d1_view": "Unavailable; no pair daily technical indicators supplied.",
-      "h4_watch": "No H4 data supplied. Watch for price confirmation after relevant releases.",
+      "fundamental_view": "GBP and AUD aggregate dashboard scores are both positive, but these macro scores do not determine this pair's bias.",
+      "momentum_view": "Bullish momentum supported by price trend and MACD; overbought readings increase pullback risk.",
+      "d1_view": "Close 1.97705, updated 2026-11-21 13:13 UTC: 1d +0.567%, 5d +1.417%, 20d +3.896%; above SMA20 1.93394 and SMA50 1.91124; RSI14 87.1; MACD 0.016644 above signal 0.013347.",
+      "h4_watch": "No H4 data supplied; watch whether price sustains above the reported resistance or reverses.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast is a positive GBP surprise; AUD MI Inflation Expectations remains pending."
+        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
       ]
     },
     "GBP/NZD": {
-      "bias": "INSUFFICIENT",
+      "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "GBP/NZD short-term price momentum is unassessable because daily pair technical data is unavailable.",
+      "summary": "Mixed but mildly constructive price signals: positive 1d and 20d returns, but almost flat 5d performance and MACD below signal.",
       "drivers": [
-        "No pair close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+        "Price is above both moving averages and RSI14 is slightly above 50."
       ],
       "risks": [
-        "Relative GBP and NZD macro assessments cannot be used to infer pair momentum."
+        "MACD is below signal and 5d return is only +0.041%, limiting momentum confirmation."
       ],
-      "fundamental_view": "GBP's overall macro score is modestly positive; NZD's is near neutral with a positive trend score. These are contextual fundamentals only.",
-      "momentum_view": "INSUFFICIENT: no direct GBP/NZD price evidence.",
-      "d1_view": "Unavailable; daily pair price and indicators are missing.",
-      "h4_watch": "No H4 data supplied. Watch for pair-level trend confirmation.",
+      "fundamental_view": "GBP and NZD dashboard scores are both modestly positive, but macro scores cannot resolve mixed pair momentum.",
+      "momentum_view": "NEUTRAL given mixed returns and MACD despite price above moving averages.",
+      "d1_view": "Close 2.39162, updated 2026-11-21 13:13 UTC: 1d +0.176%, 5d +0.041%, 20d +1.941%; above SMA20 2.38527 and SMA50 2.36361; RSI14 52.8; MACD 0.009725 below signal 0.011004.",
+      "h4_watch": "No H4 data supplied; watch for MACD confirmation and sustained price action above moving averages.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; NZD Visitor Arrivals m/m is pending with no actual supplied."
+        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
       ]
     },
     "GBP/USD": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "GBP/USD short-term momentum cannot be assessed because pair daily technical data is unavailable.",
+      "summary": "The latest supplied quote is fresh, but the snapshot does not provide an aligned daily close timestamp for its return and indicator series; use caution and do not treat the mixed timing as confirmed current momentum.",
       "drivers": [
-        "No GBP/USD daily close, timestamp, returns, or technical indicators are supplied."
+        "The supplied indicator set shows negative 1d, 5d, and 20d returns and price below both moving averages, but it is not timestamp-aligned with the latest price."
       ],
       "risks": [
-        "GBP and USD macro views do not determine GBP/USD direction without direct price confirmation."
+        "Latest price timestamp is intraday while the indicator series timestamp is not separately specified; the November 10 USD CPI entries have no actuals."
       ],
-      "fundamental_view": "GBP's supplied macro score is modestly positive; USD's overall score is positive but trend score is negative. This relative picture is mixed and is not a pair-momentum signal.",
-      "momentum_view": "INSUFFICIENT: no direct GBP/USD price action is available.",
-      "d1_view": "Unavailable; no close/timestamp, 1-day/5-day/20-day returns, SMA20/SMA50, RSI14, or MACD data.",
-      "h4_watch": "No H4 data supplied. Watch for pair price response to confirmed release results.",
+      "fundamental_view": "GBP aggregate dashboard score is positive versus USD positive but with deteriorating trend; these macro factors do not override pair-price evidence.",
+      "momentum_view": "INSUFFICIENT pending a clearly timestamp-aligned pair technical record; the listed indicators lean bearish but are not treated as fully confirmed.",
+      "d1_view": "Latest price 1.30818, updated 2026-11-21 15:05 UTC. Supplied indicators: 1d -0.035%, 5d -1.019%, 20d -2.212%; below SMA20 1.3305 and SMA50 1.33026; RSI14 25.4; MACD -0.005907 below signal -0.002682. Indicator timestamp alignment is unspecified.",
+      "h4_watch": "No H4 data supplied; seek timestamp-aligned fresh daily confirmation.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast.",
-        "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null; both remain pending in the snapshot."
+        "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are pending values."
       ]
     },
     "GBP/CAD": {
-      "bias": "INSUFFICIENT",
+      "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "GBP/CAD short-term momentum is undetermined because the pair's daily technical data is unavailable.",
+      "summary": "Price is near both moving averages with small returns and mixed MACD configuration, giving no strong short-term directional confirmation.",
       "drivers": [
-        "No GBP/CAD daily price, timestamp, returns, or indicator readings are supplied."
+        "20d return is slightly positive, but 1d and 5d returns are negative; price sits just below SMA20 and SMA50."
       ],
       "risks": [
-        "The GBP-versus-CAD macro contrast cannot substitute for pair-level price confirmation."
+        "RSI14 51.2 is neutral and MACD is below signal."
       ],
-      "fundamental_view": "GBP's supplied macro score is modestly positive while CAD's is negative; relative fundamentals do not override missing pair technicals.",
-      "momentum_view": "INSUFFICIENT: no direct GBP/CAD price action is available.",
-      "d1_view": "Unavailable; no daily pair close or indicators supplied.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation and subsequent catalyst reaction.",
+      "fundamental_view": "GBP aggregate score is positive and CAD negative, but that relative macro contrast cannot set the short-term pair bias.",
+      "momentum_view": "NEUTRAL: weak returns and near-moving-average price action conflict with the small positive 20d change.",
+      "d1_view": "Close 1.87611, updated 2026-11-21 13:13 UTC: 1d -0.038%, 5d -0.503%, 20d +0.095%; below SMA20 1.8809 and SMA50 1.8796; RSI14 51.2; MACD 0.000859 below signal 0.001856.",
+      "h4_watch": "No H4 data supplied; watch for sustained separation from the moving averages.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast.",
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
       ]
     },
     "GBP/CHF": {
-      "bias": "INSUFFICIENT",
+      "bias": "BEARISH",
       "confidence": "Low",
-      "summary": "GBP/CHF short-term price momentum cannot be determined because daily pair technicals are unavailable.",
+      "summary": "The latest daily return is sharply negative, with negative 5d and 20d returns and price below both moving averages; longer-horizon MACD is nearly at signal, and RSI is neutral.",
       "drivers": [
-        "No GBP/CHF close, timestamp, return, or indicator values are provided."
+        "1d -0.515%, 5d -0.910%, and 20d -0.291%; price below SMA20 and SMA50."
       ],
       "risks": [
-        "Relative currency macro assessments cannot establish pair momentum."
+        "RSI14 is 51.6 and MACD is only marginally below signal, so the broader momentum confirmation is mixed."
       ],
-      "fundamental_view": "GBP's supplied macro score is modestly positive and CHF's is positive; their relative macro difference is not a price signal.",
-      "momentum_view": "INSUFFICIENT: direct GBP/CHF price confirmation is unavailable.",
-      "d1_view": "Unavailable; pair daily price indicators are missing.",
-      "h4_watch": "No H4 data supplied. Watch for confirmed pair-level price action.",
+      "fundamental_view": "GBP and CHF macro dashboard scores are both positive; macro factors do not override the pair's negative price action.",
+      "momentum_view": "Bearish near-term price momentum, tempered by neutral RSI and a very small MACD/signal difference.",
+      "d1_view": "Close 1.0988, updated 2026-11-21 12:44 UTC: 1d -0.515%, 5d -0.910%, 20d -0.291%; below SMA20 1.10296 and SMA50 1.1014; RSI14 51.6; MACD 0.001273 below signal 0.001322.",
+      "h4_watch": "No H4 data supplied; monitor whether price holds above the reported support or resumes decline.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; no CHF-specific confirmed release is supplied."
+        "No confirmed recent CHF release surprise is supplied."
       ]
     },
     "GBP/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "GBP/JPY short-term momentum cannot be established because the snapshot provides no pair daily technical data.",
+      "summary": "The daily technical record is stale; current short-term pair momentum cannot be assigned.",
       "drivers": [
-        "No direct GBP/JPY price, close timestamp, returns, moving averages, RSI, or MACD values are supplied."
+        "The supplied technical indicators lean negative, but their age prevents using them as current confirmation."
       ],
       "risks": [
-        "GBP and JPY currency macro scores cannot replace direct pair-price evidence."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "GBP's supplied macro score is modestly positive and JPY's is positive with a stronger trend score; this is relative macro context only.",
-      "momentum_view": "INSUFFICIENT: no direct GBP/JPY price confirmation.",
-      "d1_view": "Unavailable; daily pair price and indicators are not supplied.",
-      "h4_watch": "No H4 data supplied. Watch for pair-level response to actual releases.",
+      "fundamental_view": "GBP and JPY dashboard macro scores are positive; they cannot determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale technical data.",
+      "d1_view": "Last supplied close 208.993, updated 2026-11-20 00:00 UTC: 1d -0.254%, 5d -1.202%, 20d -0.365%; below SMA20 211.1232 and SMA50 210.10606; RSI14 39.2; MACD -0.125343 below signal 0.211231. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: UK GDP m/m actual 0.2% versus 0.0% forecast; JPY PPI y/y actual is null and pending."
+        "No confirmed recent GBP or JPY actual-versus-forecast surprise is supplied."
       ]
     },
     "AUD/NZD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "AUD/NZD short-term price momentum cannot be determined because the pair's daily technicals are unavailable.",
+      "bias": "BEARISH",
+      "confidence": "Medium",
+      "summary": "Strong negative pair momentum across all reported horizons, with price below both moving averages and MACD below signal. Very low RSI raises rebound risk.",
       "drivers": [
-        "No AUD/NZD close, timestamp, returns, or daily indicators are supplied."
+        "1d, 5d, and 20d returns are negative; price is at the reported support and below SMA20/SMA50."
       ],
       "risks": [
-        "The mixed relative AUD and NZD macro picture cannot establish pair momentum."
+        "RSI14 12.6 is extremely oversold and price is at reported 20-day support."
       ],
-      "fundamental_view": "AUD's macro score is positive with a negative trend score; NZD's macro score is near neutral with a positive trend score. This does not determine the pair's price direction.",
-      "momentum_view": "INSUFFICIENT: no direct AUD/NZD price action is available.",
-      "d1_view": "Unavailable; no pair daily price or indicator values supplied.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation.",
+      "fundamental_view": "AUD and NZD macro dashboard scores are both positive, but do not override observed bearish pair price action.",
+      "momentum_view": "Bearish; persistent negative returns and moving-average/MACD configuration outweigh oversold rebound risk.",
+      "d1_view": "Close 1.20941, updated 2026-11-21 13:12 UTC: 1d -0.404%, 5d -1.374%, 20d -1.905%; below SMA20 1.23342 and SMA50 1.23669; RSI14 12.6; MACD -0.005547 below signal -0.002808.",
+      "h4_watch": "No H4 data supplied; watch whether support holds or price confirms a continued decline.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: AUD MI Inflation Expectations and NZD Visitor Arrivals m/m have null actuals and remain pending."
+        "No confirmed recent AUD or NZD actual-versus-forecast surprise is supplied."
       ]
     },
     "AUD/USD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "AUD/USD short-term momentum is unassessable because pair daily price and indicators are unavailable.",
+      "bias": "BEARISH",
+      "confidence": "Medium",
+      "summary": "Strongly negative price momentum across the reported horizons, with price well below both moving averages and MACD below signal; oversold RSI and support proximity raise rebound risk.",
       "drivers": [
-        "No AUD/USD latest close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+        "1d -0.559%, 5d -2.360%, and 20d -5.842%; price below SMA20 and SMA50."
       ],
       "risks": [
-        "AUD and USD macro scores cannot substitute for pair-level momentum evidence."
+        "RSI14 16.2 and price at reported 20-day support indicate elevated short-term rebound risk."
       ],
-      "fundamental_view": "AUD has a positive overall macro score but negative trend score; USD has a positive overall score but negative trend score. The relative fundamental view is mixed.",
-      "momentum_view": "INSUFFICIENT: no direct AUD/USD price confirmation.",
-      "d1_view": "Unavailable; no pair daily technical fields supplied.",
-      "h4_watch": "No H4 data supplied. Watch for pair price confirmation after pending data is released.",
+      "fundamental_view": "AUD and USD aggregate scores are positive but their dashboard trend scores are negative; macro assessments do not set pair momentum.",
+      "momentum_view": "Bearish based on all reported returns, moving averages, and MACD; extreme oversold conditions are a counter-risk.",
+      "d1_view": "Close 0.6619, updated 2026-11-21 13:13 UTC: 1d -0.559%, 5d -2.360%, 20d -5.842%; below SMA20 0.6881 and SMA50 0.69612; RSI14 16.2; MACD -0.008929 below signal -0.006163.",
+      "h4_watch": "No H4 data supplied; watch for support failure or a reversal confirmed by fresh price action.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: AUD MI Inflation Expectations actual is null and pending.",
-        "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending."
+        "Australian October labour figures dated 2026-11-19 in the dashboard report unemployment 4.9% and employment change -43.5; no forecast comparison supplied.",
+        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null, so no confirmed release surprise."
       ]
     },
     "AUD/CAD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "AUD/CAD short-term momentum cannot be assessed from this snapshot because its daily pair technical data is unavailable.",
+      "bias": "BEARISH",
+      "confidence": "Medium",
+      "summary": "Broadly negative momentum across all reported horizons, with price below both moving averages and MACD below signal; the oversold reading and support proximity are counter-risks.",
       "drivers": [
-        "No direct AUD/CAD close, timestamp, returns, or indicator readings are supplied."
+        "1d -0.691%, 5d -1.976%, and 20d -3.745%; price is below SMA20 and SMA50."
       ],
       "risks": [
-        "The relative macro assessment does not establish pair price direction without direct price confirmation."
+        "RSI14 21.0 and price at reported 20-day support may precede a short-term bounce."
       ],
-      "fundamental_view": "AUD's supplied macro score is positive and CAD's negative, but this relative macro context cannot be used as a pair-momentum bias.",
-      "momentum_view": "INSUFFICIENT: no direct AUD/CAD price action is available.",
-      "d1_view": "Unavailable; pair daily price and technical indicators are absent.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-level confirmation.",
+      "fundamental_view": "AUD aggregate dashboard score is positive and CAD negative, but these macro scores do not override the bearish pair price action.",
+      "momentum_view": "Bearish, with returns, moving averages, and MACD aligned lower.",
+      "d1_view": "Close 0.94804, updated 2026-11-21 13:12 UTC: 1d -0.691%, 5d -1.976%, 20d -3.745%; below SMA20 0.97257 and SMA50 0.9835; RSI14 21.0; MACD -0.008007 below signal -0.005826.",
+      "h4_watch": "No H4 data supplied; watch whether reported support holds or breaks.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: AUD MI Inflation Expectations is pending with null actual.",
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations is listed without an actual result."
+        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
       ]
     },
     "AUD/CHF": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "AUD/CHF short-term price momentum is unavailable because the pair's daily technical record is unavailable.",
+      "bias": "BEARISH",
+      "confidence": "Medium",
+      "summary": "Strong downward momentum across the reported horizons, with price below both moving averages and MACD below signal; oversold RSI increases rebound risk.",
       "drivers": [
-        "No AUD/CHF close, timestamp, returns, or technical indicators are supplied."
+        "All reported returns are negative and price is at reported 20-day support."
       ],
       "risks": [
-        "Currency macro scores cannot replace direct pair-price confirmation."
+        "RSI14 25.7 and support proximity may prompt a reversal or consolidation."
       ],
-      "fundamental_view": "AUD's overall macro score is positive but trend score is negative; CHF's overall and trend scores are positive. This relative view is context only.",
-      "momentum_view": "INSUFFICIENT: no direct AUD/CHF price evidence.",
-      "d1_view": "Unavailable; daily pair indicators are missing.",
-      "h4_watch": "No H4 data supplied. Watch for direct price confirmation and follow-through.",
+      "fundamental_view": "AUD and CHF aggregate dashboard scores are positive; macro scores do not override the pair's bearish price trend.",
+      "momentum_view": "Bearish across returns, moving averages, and MACD, with oversold conditions as a counter-signal.",
+      "d1_view": "Close 0.5557, updated 2026-11-21 12:44 UTC: 1d -1.102%, 5d -2.300%, 20d -4.043%; below SMA20 0.57038 and SMA50 0.57634; RSI14 25.7; MACD -0.004248 below signal -0.003277.",
+      "h4_watch": "No H4 data supplied; watch for support failure versus a rebound from support.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: AUD MI Inflation Expectations has a null actual and is pending."
+        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
       ]
     },
     "AUD/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "AUD/JPY short-term momentum cannot be assessed because no pair daily technical data is available.",
+      "summary": "The supplied daily technical record is stale, preventing a current short-term pair momentum assessment.",
       "drivers": [
-        "No direct AUD/JPY price or daily indicator values are supplied."
+        "The old indicator set is bearish but cannot establish the present direction under the freshness rule."
       ],
       "risks": [
-        "AUD and JPY macro scores do not determine AUD/JPY price direction."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "AUD's supplied trend score is negative while JPY's trend score is positive and building; this relative macro contrast is not a momentum signal.",
-      "momentum_view": "INSUFFICIENT: direct AUD/JPY price confirmation is unavailable.",
-      "d1_view": "Unavailable; no pair close/timestamp, returns, SMAs, RSI14, or MACD data.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-level price action.",
+      "fundamental_view": "AUD and JPY dashboard macro scores differ, but that relative picture cannot determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale pair technical data.",
+      "d1_view": "Last supplied close 106.295, updated 2026-11-20 00:00 UTC: 1d -0.638%, 5d -2.321%, 20d -3.239%; below SMA20 109.38105 and SMA50 110.03064; RSI14 19.0; MACD -0.93243 below signal -0.602858. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: AUD MI Inflation Expectations is pending; JPY PPI y/y is pending with forecast 6.5%."
+        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
       ]
     },
     "NZD/USD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "NZD/USD short-term momentum cannot be determined because the daily pair technicals are unavailable.",
+      "bias": "BEARISH",
+      "confidence": "Medium",
+      "summary": "Negative momentum across all reported horizons, with price below both moving averages and MACD below signal; RSI near oversold territory is a counter-risk.",
       "drivers": [
-        "No NZD/USD price, timestamp, returns, or technical indicators are supplied."
+        "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
       ],
       "risks": [
-        "The NZD and USD macro views cannot establish pair direction without direct price data."
+        "RSI14 29.6 suggests a stretched decline that could rebound."
       ],
-      "fundamental_view": "NZD has a near-neutral overall macro score and positive trend score; USD has a positive overall score and negative trend score. This mixed relative context is not pair momentum.",
-      "momentum_view": "INSUFFICIENT: no direct NZD/USD price confirmation.",
-      "d1_view": "Unavailable; pair daily close and indicators are missing.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair price confirmation and reactions to actual releases.",
+      "fundamental_view": "NZD dashboard aggregate score is near neutral versus positive USD; this macro comparison does not set pair momentum.",
+      "momentum_view": "Bearish based on returns, moving averages, and MACD, tempered by near-oversold RSI.",
+      "d1_view": "Close 0.54705, updated 2026-11-21 13:13 UTC: 1d -0.200%, 5d -1.046%, 20d -4.057%; below SMA20 0.55782 and SMA50 0.56282; RSI14 29.6; MACD -0.004772 below signal -0.003738.",
+      "h4_watch": "No H4 data supplied; watch for continued weakness or a confirmed rebound from oversold levels.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m actual is null and pending.",
-        "Forex Factory, 2026-11-10: US CPI and Core CPI actuals are null and pending."
+        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
       ]
     },
     "NZD/CAD": {
-      "bias": "INSUFFICIENT",
+      "bias": "BEARISH",
       "confidence": "Low",
-      "summary": "NZD/CAD short-term price momentum is unassessable because the pair's daily technical data is unavailable.",
+      "summary": "Returns are negative and price is below both moving averages, but RSI is near neutral and MACD is almost exactly at signal, limiting conviction.",
       "drivers": [
-        "No direct NZD/CAD close, timestamp, returns, or indicator values are supplied."
+        "All reported returns are negative, with price below SMA20 and SMA50."
       ],
       "risks": [
-        "Relative currency macro assessments cannot be used to infer pair momentum."
+        "MACD and signal are nearly equal; RSI14 47.7 is not strongly directional."
       ],
-      "fundamental_view": "NZD's overall macro score is near neutral with a positive trend score; CAD's score and trend are negative. This relative macro view is not a pair-price signal.",
-      "momentum_view": "INSUFFICIENT: no direct NZD/CAD price action is available.",
-      "d1_view": "Unavailable; no daily pair indicators supplied.",
-      "h4_watch": "No H4 data supplied. Watch for pair-level price and trend confirmation.",
+      "fundamental_view": "NZD aggregate dashboard score is near neutral and CAD negative; these macro scores do not override the price evidence.",
+      "momentum_view": "Bearish, but with low confidence because MACD and RSI provide little confirmation.",
+      "d1_view": "Close 0.78414, updated 2026-11-21 13:12 UTC: 1d -0.238%, 5d -0.552%, 20d -1.829%; below SMA20 0.78838 and SMA50 0.79507; RSI14 47.7; MACD -0.002894 just below signal -0.002903.",
+      "h4_watch": "No H4 data supplied; monitor for stronger directional confirmation around the moving averages.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m is pending with null actual.",
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+        "No confirmed recent NZD or CAD actual-versus-forecast surprise is supplied."
       ]
     },
     "NZD/CHF": {
-      "bias": "INSUFFICIENT",
+      "bias": "NEUTRAL",
       "confidence": "Low",
-      "summary": "NZD/CHF short-term momentum cannot be assessed because pair daily technicals are unavailable.",
+      "summary": "Returns are negative and price sits below both moving averages, but MACD is above signal and RSI is near neutral, creating conflicting momentum signals.",
       "drivers": [
-        "No NZD/CHF close, timestamp, returns, or daily indicators are supplied."
+        "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
       ],
       "risks": [
-        "Currency macro scores cannot replace direct pair-price confirmation."
+        "MACD is above signal and RSI14 48.8 is near neutral, conflicting with the price trend."
       ],
-      "fundamental_view": "NZD's overall macro score is near neutral with a positive trend score; CHF has a mildly positive overall score and strong trend score. This does not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: no direct NZD/CHF price evidence.",
-      "d1_view": "Unavailable; pair price and technical data are missing.",
-      "h4_watch": "No H4 data supplied. Watch for direct daily and intraday price confirmation.",
+      "fundamental_view": "NZD and CHF macro dashboard scores are both positive, but neither determines pair direction.",
+      "momentum_view": "NEUTRAL because weak price action conflicts with a positive MACD crossover.",
+      "d1_view": "Close 0.4593, updated 2026-11-21 12:44 UTC: 1d -0.718%, 5d -0.960%, 20d -2.193%; below SMA20 0.4623 and SMA50 0.46588; RSI14 48.8; MACD -0.001362 above signal -0.001594.",
+      "h4_watch": "No H4 data supplied; watch for price and MACD alignment.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m has no actual supplied and remains pending."
+        "No confirmed recent NZD or CHF actual-versus-forecast surprise is supplied."
       ]
     },
     "NZD/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "NZD/JPY short-term price momentum is undetermined because the pair's daily technical data is unavailable.",
+      "summary": "The supplied daily technical record is stale, so no current pair momentum bias is assigned.",
       "drivers": [
-        "No direct NZD/JPY price history or momentum indicators are supplied."
+        "The stale indicators lean bearish, but cannot confirm current price direction."
       ],
       "risks": [
-        "Relative NZD and JPY macro scores cannot establish the pair's short-term price direction."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "NZD's overall macro score is near neutral with positive trend score; JPY's overall and trend scores are positive. These are fundamentals, not pair momentum.",
-      "momentum_view": "INSUFFICIENT: direct NZD/JPY price confirmation is unavailable.",
-      "d1_view": "Unavailable; no daily close, timestamp, returns, SMA20/SMA50, RSI14, or MACD data.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation.",
+      "fundamental_view": "NZD and JPY macro scores cannot substitute for fresh pair-price data.",
+      "momentum_view": "INSUFFICIENT: stale technical data.",
+      "d1_view": "Last supplied close 87.531, updated 2026-11-20 00:00 UTC: 1d +0.081%, 5d -1.238%, 20d -1.593%; below SMA20 88.58415 and SMA50 88.92536; RSI14 36.9; MACD -0.438995 below signal -0.33726. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: NZD Visitor Arrivals m/m and JPY PPI y/y actuals are null and pending."
+        "No confirmed recent NZD or JPY actual-versus-forecast surprise is supplied."
       ]
     },
     "USD/CAD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "USD/CAD short-term momentum cannot be determined because its daily pair technical data is unavailable.",
+      "bias": "BULLISH",
+      "confidence": "Medium",
+      "summary": "Positive 5d and 20d momentum, price above both moving averages, and MACD above signal support an upward bias despite a slightly negative 1d return and extremely overbought RSI.",
       "drivers": [
-        "No USD/CAD close, timestamp, returns, or technical indicators are supplied."
+        "5d +0.500% and 20d +2.337%; price above SMA20 and SMA50; MACD above signal."
       ],
       "risks": [
-        "The relative USD and CAD macro assessments cannot substitute for direct price confirmation."
+        "RSI14 91.5 is exceptionally overbought; price is near reported 20-day resistance and 1d return is negative."
       ],
-      "fundamental_view": "USD's overall score is positive but its trend score is negative; CAD's overall and trend scores are negative. This relative fundamental contrast does not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: no direct USD/CAD price evidence.",
-      "d1_view": "Unavailable; pair daily price and technical data are missing.",
-      "h4_watch": "No H4 data supplied. Watch for price confirmation around actual releases.",
+      "fundamental_view": "USD dashboard aggregate score is positive and CAD negative, but this does not override or create the pair momentum reading.",
+      "momentum_view": "Bullish from medium-horizon returns, moving averages, and MACD; overbought conditions reduce confidence.",
+      "d1_view": "Close 1.434, updated 2026-11-21 12:44 UTC: 1d -0.024%, 5d +0.500%, 20d +2.337%; above SMA20 1.41397 and SMA50 1.41328; RSI14 91.5; MACD 0.006926 above signal 0.004234.",
+      "h4_watch": "No H4 data supplied; watch for follow-through versus reversal near reported resistance.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending.",
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+        "No confirmed recent USD or CAD actual-versus-forecast surprise is supplied."
       ]
     },
     "USD/CHF": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "USD/CHF short-term momentum is unassessable because the pair's daily technical data is unavailable.",
+      "summary": "The supplied technical record is stale, so no current pair momentum bias is assigned.",
       "drivers": [
-        "No USD/CHF daily close, timestamp, returns, or indicator readings are provided."
+        "The stale price indicators lean bullish but are not current enough to confirm the direction."
       ],
       "risks": [
-        "Relative macro views for USD and CHF cannot determine pair momentum without direct price evidence."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "USD has a positive overall score but negative trend score; CHF has a mildly positive score and strong trend score. This is contextual fundamentals only.",
-      "momentum_view": "INSUFFICIENT: no direct USD/CHF price confirmation.",
-      "d1_view": "Unavailable; no pair daily price or technical indicators supplied.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-level trend and momentum confirmation.",
+      "fundamental_view": "USD and CHF dashboard scores are both positive; macro comparisons do not establish pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale technical data.",
+      "d1_view": "Last supplied close 0.8441, updated 2026-11-20 00:00 UTC: 1d +0.074%, 5d +0.977%, 20d +2.963%; above SMA20 0.8283 and SMA50 0.8276; RSI14 74.1; MACD 0.004591 above signal 0.00218. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m actuals are null and pending."
+        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; no confirmed surprise."
       ]
     },
     "USD/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "USD/JPY short-term price momentum cannot be assessed because the snapshot contains no daily technical data for the pair.",
+      "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
       "drivers": [
-        "No USD/JPY close, timestamp, returns, moving averages, RSI, or MACD readings are supplied."
+        "The stale indicators show positive 20d performance and price above moving averages, but are not valid current confirmation."
       ],
       "risks": [
-        "USD and JPY macro assessments cannot substitute for direct pair-price confirmation."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "USD's overall score is positive with a negative trend score; JPY has positive overall and trend scores. Relative fundamentals do not establish USD/JPY momentum.",
-      "momentum_view": "INSUFFICIENT: direct USD/JPY price action is unavailable.",
-      "d1_view": "Unavailable; all direct daily pair price and indicator fields are missing.",
-      "h4_watch": "No H4 data supplied. Watch for pair-price confirmation around actual releases.",
+      "fundamental_view": "USD and JPY dashboard macro scores are both positive; they cannot determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale pair data.",
+      "d1_view": "Last supplied close 159.707, updated 2026-11-20 00:00 UTC: 1d +0.205%, 5d -0.105%, 20d +2.053%; above SMA20 158.5194 and SMA50 157.85516; RSI14 68.2; MACD 0.501967 above signal 0.381212. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: US Core CPI m/m and CPI m/m have null actuals and remain pending.",
-        "Forex Factory, 2026-11-12: JPY PPI y/y has null actual and remains pending."
+        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are pending, not results."
       ]
     },
     "CAD/CHF": {
-      "bias": "INSUFFICIENT",
+      "bias": "BEARISH",
       "confidence": "Low",
-      "summary": "CAD/CHF short-term momentum is unavailable because the pair's daily technical indicators are unavailable.",
+      "summary": "Negative returns across the reported horizons and price just below both moving averages lean bearish, but positive MACD and neutral RSI conflict.",
       "drivers": [
-        "No direct CAD/CHF close, timestamp, returns, or technical values are supplied."
+        "1d -0.498%, 5d -0.413%, and 20d -0.388%; price is slightly below SMA20 and SMA50."
       ],
       "risks": [
-        "The relative CAD and CHF macro assessments cannot determine the pair's price direction."
+        "MACD is above signal and RSI14 50.8 is neutral, weakening bearish confirmation."
       ],
-      "fundamental_view": "CAD's supplied macro score is negative and CHF's is mildly positive with a stronger trend score; this relative context cannot override absent pair price data.",
-      "momentum_view": "INSUFFICIENT: no direct CAD/CHF price confirmation.",
-      "d1_view": "Unavailable; daily pair price and indicators are missing.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair price and trend confirmation.",
+      "fundamental_view": "CAD dashboard aggregate score is negative versus positive CHF, but macro scores do not determine the pair bias.",
+      "momentum_view": "Bearish with low confidence: price returns conflict with MACD and neutral RSI.",
+      "d1_view": "Close 0.5856, updated 2026-11-21 12:44 UTC: 1d -0.498%, 5d -0.413%, 20d -0.388%; below SMA20 0.58636 and SMA50 0.58584; RSI14 50.8; MACD 0.00044 above signal 0.000161.",
+      "h4_watch": "No H4 data supplied; watch for alignment between returns, moving averages, and MACD.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual result supplied."
+        "No confirmed recent CAD or CHF actual-versus-forecast surprise is supplied."
       ]
     },
     "CAD/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "CAD/JPY short-term momentum cannot be determined because direct pair daily technical data is unavailable.",
+      "summary": "The supplied daily data is stale; the current pair momentum bias is therefore insufficient.",
       "drivers": [
-        "No CAD/JPY price, timestamp, returns, or daily indicators are supplied."
+        "The old indicators are mostly negative, but cannot be used as fresh price confirmation."
       ],
       "risks": [
-        "CAD and JPY macro assessments cannot establish pair momentum without direct price confirmation."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "CAD's supplied score is negative while JPY's is positive with a building trend; this relative macro contrast is not a price-momentum signal.",
-      "momentum_view": "INSUFFICIENT: no direct CAD/JPY price action is available.",
-      "d1_view": "Unavailable; no pair daily close or technical indicator values supplied.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-level price confirmation.",
+      "fundamental_view": "CAD and JPY macro dashboard scores do not substitute for fresh pair-price evidence.",
+      "momentum_view": "INSUFFICIENT: stale technical record.",
+      "d1_view": "Last supplied close 111.35, updated 2026-11-20 00:00 UTC: 1d +0.112%, 5d -0.660%, 20d -0.366%; below SMA20 112.24175 and below SMA50 111.77044; RSI14 26.4; MACD -0.162165 below signal -0.013378. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-10: BOC Summary of Deliberations has no actual supplied.",
-        "Forex Factory, 2026-11-12: JPY PPI y/y actual is null and pending."
+        "No confirmed recent CAD or JPY actual-versus-forecast surprise is supplied."
       ]
     },
     "CHF/JPY": {
       "bias": "INSUFFICIENT",
       "confidence": "Low",
-      "summary": "CHF/JPY short-term price momentum cannot be assessed because the pair's daily technical data is unavailable.",
+      "summary": "The supplied daily technical record is stale, preventing a current short-term momentum assessment.",
       "drivers": [
-        "No CHF/JPY close, timestamp, returns, moving averages, RSI, or MACD values are supplied."
+        "Old returns and moving-average positioning lean negative, but are not valid current confirmation."
       ],
       "risks": [
-        "The relative CHF and JPY macro views cannot determine pair momentum without direct price confirmation."
+        "Technical timestamp is more than 36 hours old."
       ],
-      "fundamental_view": "CHF and JPY both have positive supplied trend scores; their relative macro context does not establish CHF/JPY direction.",
-      "momentum_view": "INSUFFICIENT: no direct CHF/JPY price evidence is available.",
-      "d1_view": "Unavailable; pair daily technical indicators and timestamp are absent.",
-      "h4_watch": "No H4 data supplied. Watch for direct pair-price confirmation and indicator alignment.",
+      "fundamental_view": "CHF and JPY macro dashboard scores cannot determine pair momentum.",
+      "momentum_view": "INSUFFICIENT: stale technical data.",
+      "d1_view": "Last supplied close 189.16499, updated 2026-11-20 00:00 UTC: 1d +0.114%, 5d -1.074%, 20d -0.884%; below SMA20 191.35854 and SMA50 190.70904; RSI14 37.4; MACD -0.447795 below signal -0.041072. Stale under the 36-hour rule.",
+      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
       "key_catalysts": [
-        "Forex Factory, 2026-11-12: JPY PPI y/y is pending with no actual supplied."
+        "No confirmed recent CHF or JPY actual-versus-forecast surprise is supplied."
       ]
     }
   },
