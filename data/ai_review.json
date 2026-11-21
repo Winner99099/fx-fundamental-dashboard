@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T13:02:37.695933+00:00",
+  "generated_at": "2026-11-21T13:18:42.716149+00:00",
   "input_snapshot_generated_at": "2026-11-20T03:55:02.354715+00:00",
-  "input_fingerprint": "88b1d862ac1e46dcfbe35faad173d45c01a46a82b2455c86c71b93fe23a37184",
+  "input_fingerprint": "7c87a7a1a5d330303abc219d95556c0606333a9669acb342e1da0bc1c0f9286e",
   "status": "partial",
   "providers": {
     "chatgpt": {
@@ -14,122 +14,122 @@
           "USD": {
             "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "Positive aggregate and short-term scores conflict with a strongly negative, repeatedly aligned fundamental trend.",
+            "summary": "Near-term direction is unclear: the latest supplied labor reading improved, while the inflation and growth trend remains adverse. No actual-versus-forecast USD release is supplied.",
             "drivers": [
-              "GDP growth has eased to 2.07% y/y in 2026-Q3.",
-              "Inflation rose to 3.74% y/y in 2026-09.",
-              "Unemployment improved to 4.1% in 2026-10.",
-              "Short-term score is positive at 0.13; fundamental trend score is -0.83."
+              "OECD unemployment eased to 4.1% in 2026-10 from 4.2% in 2026-09, a modest supportive change.",
+              "BLS CPI inflation rose to 3.74% y/y in 2026-09 from 3.40% in 2026-08; the dashboard characterizes inflation as deteriorating.",
+              "OECD GDP growth eased to 2.07% y/y in 2026-Q3 from 2.19% in Q2. The dashboard trend is persistently adverse, despite labor improvement.",
+              "Forex Factory Core CPI m/m and CPI m/m, dated 2026-11-10, are pending in the snapshot (forecasts 0.2% and 0.3%); they are not results."
             ],
             "risks": [
-              "Provisional data cover 80% of model weight; economic-surprise data are absent.",
-              "High-impact CPI events in the supplied calendar have pending actuals."
+              "All supplied macro/model data are provisional and confidence is marked low; economic-surprise data are not connected.",
+              "The pending 2026-11-10 CPI releases could alter rate expectations once actuals are available."
             ]
           },
           "EUR": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "Aggregate and short-term scores are negative; weak labor-market readings and rising inflation weigh, while GDP growth has recently improved.",
+            "summary": "Recent inflation acceleration and a deteriorating labor-market profile weigh on the euro; improving GDP is a counterweight, not yet a broad reversal.",
             "drivers": [
-              "Aggregate score -1.47 and short-term score -0.96.",
-              "Inflation rose to 4.0% y/y in 2026-10.",
-              "Unemployment was 6.5% in 2026-09.",
-              "GDP growth rose to 1.30% y/y in 2026-Q3."
+              "Eurostat CPI inflation reached 4.0% y/y in 2026-10 from 3.8% in September and 3.2% in August; the supplied trend reports deterioration.",
+              "OECD unemployment was 6.5% in 2026-09, unchanged from August but above 6.4% in May-June.",
+              "OECD GDP growth improved to 1.30% y/y in 2026-Q3 from 1.20% in Q2 and 0.58% in Q1, a supportive but mixed structural signal.",
+              "Forex Factory German CPI, Italian industrial production, investor confidence, and other listed euro events have no actuals in this snapshot; do not treat them as outcomes."
             ],
             "risks": [
-              "Fundamental trend score is neutral with mixed alignment.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "Higher inflation could support expected policy rates even as growth and employment remain weak.",
+              "Events listed for 2026-11-09 to 2026-11-11 are pending in the supplied data; release status may differ from the snapshot."
             ]
           },
           "GBP": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "Aggregate, short-term, and fundamental trend scores are positive, but the fundamental trend is early and inflation is rising.",
+            "summary": "Near-term momentum is supported by the latest above-forecast monthly GDP reading and improving supplied growth and labor trends, though inflation has risen and labor data are stale.",
             "drivers": [
-              "Short-term score 0.60 and fundamental trend score 0.83.",
-              "GDP growth rose to 1.94% y/y in 2026-Q3.",
-              "Unemployment eased to 4.7% in 2026-07.",
-              "Supplied calendar reports UK monthly GDP at 0.2% versus 0.0% forecast."
+              "Forex Factory GDP m/m, 2026-11-12: actual 0.2% versus forecast 0.0% and previous 0.0% (August revised). This is the clearest actual-versus-forecast surprise in the snapshot and supports short-term ste",
+              "OECD GDP growth rose to 1.94% y/y in 2026-Q3 from 1.37% in Q2 and 0.84% in Q1.",
+              "OECD unemployment fell to 4.7% in 2026-07 from 4.9% in prior months, but this labor observation is substantially older than the snapshot date.",
+              "OECD inflation increased to 3.5% y/y in 2026-09 from 3.1% in August, a counterweight and potential policy uncertainty."
             ],
             "risks": [
-              "Inflation increased to 3.5% y/y in 2026-09.",
-              "Unemployment data are dated 2026-07; trend needs confirmation.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "The positive GDP surprise is one monthly release; persistence is unconfirmed.",
+              "Forex Factory trade, production, services, and investment entries dated 2026-11-12 have null actuals and remain pending in the snapshot.",
+              "Provisional data, low confidence, and stale unemployment reduce conviction."
             ]
           },
           "JPY": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "Positive aggregate and short-term scores align with a building, repeatedly aligned fundamental trend.",
+            "summary": "The supplied momentum is improving, with stronger GDP and very low, recently easing unemployment; rising inflation also adds potential policy support. Recent calendar entries are pending rather than confirmed releases.",
             "drivers": [
-              "Fundamental trend score 2.5; short-term score 1.54.",
-              "GDP growth improved to 1.16% y/y in 2026-Q3.",
-              "Unemployment was 2.4% in 2026-09.",
-              "Inflation rose to 2.1% y/y in 2026-09."
+              "OECD GDP growth improved to 1.16% y/y in 2026-Q3 from 0.80% in Q2 and 0.56% in Q1.",
+              "OECD unemployment was 2.4% in 2026-09 versus 2.5% in August; the dashboard marks the broader trend as building.",
+              "OECD CPI inflation rose to 2.1% y/y in 2026-09 from 1.9% in August. This may matter for policy, though the snapshot provides no actual-versus-forecast surprise.",
+              "Forex Factory PPI y/y dated 2026-11-12 (forecast 6.5%) and other JPY calendar entries have null actuals and remain pending."
             ],
             "risks": [
-              "GDP growth remains below its 2025-Q2 level in the supplied history.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "Growth remains modest and below prior 2025 readings; inflation improvement alone does not establish a policy change.",
+              "No actual-versus-forecast results are supplied for the listed recent JPY events."
             ]
           },
           "CHF": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "Positive short-term and fundamental trend readings are supported by improving GDP and inflation indicators, but aggregate score is modest and labor data are stale.",
+            "summary": "The supplied growth and inflation trend is broadly supportive and short-term momentum has strengthened, but the latest inflation uptick and stale annual unemployment materially limit confidence.",
             "drivers": [
-              "Fundamental trend score 2.5 and short-term score 1.12.",
-              "GDP growth rose to 3.04% y/y in 2026-Q3.",
-              "Inflation rose to 1.6% y/y in 2026-10 from lower prior readings."
+              "OECD GDP growth rose to 3.04% y/y in 2026-Q3 from 2.63% in Q2 and 0.72% in Q1.",
+              "Eurostat-sourced CPI in the dashboard increased to 1.6% y/y in 2026-10 from 1.2% in September; despite the recent rise, the dashboard's broader trend describes inflation as improving.",
+              "The dashboard reports persistent, broadening fundamental trend and stronger short-term momentum, but this is model characterization rather than a dated surprise.",
+              "Unemployment is an annual World Bank observation for 2025, not a useful current labor-market catalyst."
             ],
             "risks": [
-              "Aggregate score is only 0.37.",
-              "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "The inflation series and GDP source/coverage are provisional; no official recent CHF calendar actuals are supplied.",
+              "Annual unemployment data are stale for short-term assessment."
             ]
           },
           "CAD": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "Negative aggregate and short-term scores align with a persistent negative fundamental trend, despite some inflation improvement.",
+            "summary": "Persistent deterioration in growth and employment outweighs a modestly lower latest inflation reading; the balance points to weakening Canadian momentum.",
             "drivers": [
-              "Aggregate score -1.10 and short-term score -1.01.",
-              "GDP growth slowed to 0.95% y/y in 2026-Q3.",
-              "Unemployment rose to 6.7% in 2026-10.",
-              "Fundamental trend score -0.83, with broadening persistence."
+              "OECD unemployment rose to 6.7% in 2026-10 from 6.5% in September and 6.4% in August.",
+              "OECD GDP growth fell to 0.95% y/y in 2026-Q3 from 1.13% in Q2; the dashboard describes the growth and labor trend as persistently deteriorating.",
+              "OECD CPI eased slightly to 3.09% y/y in 2026-10 from 3.09% in September (a small decline at displayed precision), providing only a limited offset.",
+              "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending in the snapshot, with no actual supplied."
             ],
             "risks": [
-              "Inflation eased slightly to 3.09% y/y in 2026-10.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "The inflation change is small and the supplied series is provisional.",
+              "Pending central-bank material is not evidence of a policy outcome."
             ]
           },
           "AUD": {
             "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "Positive aggregate score contrasts with slightly positive short-term momentum and a negative fundamental trend; recent growth and labor deterioration temper the level readings.",
+            "summary": "Recent momentum is mixed: the latest supplied labor reading worsened, while inflation eased slightly and the model's short-term score remains positive. The balance does not establish a durable direction.",
             "drivers": [
-              "Aggregate score 0.80 versus fundamental trend score -0.83.",
-              "GDP growth eased to 2.14% y/y in 2026-Q2.",
-              "Unemployment rose to 4.9% in October 2026.",
-              "Policy rate is 4.85% as of 2026-11-04."
+              "ABS unemployment is 4.9% for October 2026, up from 4.72% in September and 4.39% in May, a negative labor-market change.",
+              "OECD inflation eased to 3.92% y/y in 2026-Q3 from 3.96% in Q2, but remains well above 2025 readings.",
+              "OECD GDP growth eased to 2.14% y/y in 2026-Q2 from 2.50% in Q1; the latest GDP observation is older than the October labor reading.",
+              "Forex Factory MI Inflation Expectations and other AUD entries in the snapshot have null actuals and remain pending."
             ],
             "risks": [
-              "Inflation remains elevated at 3.92% y/y in 2026-Q3, though easing from the prior quarter.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "Quarterly inflation and GDP are lower-frequency than the labor release and may not reflect the latest conditions.",
+              "No actual-versus-forecast surprise is supplied for the recent AUD calendar entries."
             ]
           },
           "NZD": {
             "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "Near-zero aggregate score diverges from positive short-term and fundamental trend readings; improving GDP is offset by elevated inflation and stale labor data.",
+            "summary": "Growth and the dashboard's broader trend have improved, but inflation remains elevated and unemployment data are annual and stale. The near-term picture is therefore mixed rather than decisively bullish.",
             "drivers": [
-              "Short-term score 0.90 and fundamental trend score 2.5.",
-              "GDP growth rose to 2.55% y/y in 2026-Q2.",
-              "Inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2."
+              "OECD GDP growth rose to 2.55% y/y in 2026-Q2 from 1.67% in Q1 and negative readings in 2025-Q2 and Q1.",
+              "OECD CPI inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2, but remains above 2025 levels.",
+              "Unemployment is a World Bank annual 2025 observation (5.076%), limiting current labor assessment.",
+              "Forex Factory Visitor Arrivals dated 2026-11-12 is pending with no forecast or actual in the snapshot."
             ],
             "risks": [
-              "Aggregate score is 0.04.",
-              "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
-              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+              "The favorable growth trend is based on data only through 2026-Q2.",
+              "Stale labor data and absent economic-surprise coverage reduce confidence."
             ]
           }
         },
@@ -137,421 +137,533 @@
           "EUR/GBP": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "EUR has weaker aggregate and short-term readings than GBP; GBP's positive trend is early and unconfirmed.",
+            "summary": "Relative fundamentals and the latest supplied catalyst favor GBP over EUR, but the cross remains sensitive to euro inflation and the pending UK activity releases.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Relative fundamental trend modestly favors GBP: EUR is mixed, while GBP is positive but early.",
-            "momentum_view": "Favors GBP based on the supplied short-term scores.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "Low-confidence, provisional inputs; UK unemployment is from 2026-07.",
+              "Pending releases are not results."
+            ],
+            "fundamental_view": "EUR has weakening labor conditions and accelerating inflation with only gradual GDP improvement; GBP has improving GDP and a supportive latest monthly GDP surprise. GBP labor data are stale and inflation has also risen.",
+            "momentum_view": "GBP momentum is relatively stronger after GDP m/m beat forecast; EUR momentum remains pressured by the inflation and labor combination.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for follow-through or failure after the UK GDP surprise and for actuals from listed UK and euro-area events.",
             "key_catalysts": [
-              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast in the supplied calendar.",
-              "Watch for confirmation of GBP's early trend and changes in EUR inflation and activity."
+              "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+              "UK trade, services, production, and investment entries on 2026-11-12 have null actuals and are pending.",
+              "Euro-area inflation is 4.0% y/y for 2026-10 in supplied Eurostat data."
             ]
           },
           "EUR/AUD": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "EUR's negative score profile is weaker than AUD's positive aggregate score, although AUD's trend is deteriorating.",
+            "summary": "EUR's weak labor profile is offset by AUD labor deterioration and softer recent GDP; neither side has a decisive catalyst in the supplied actuals.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Relative scores favor AUD, but AUD's negative trend and EUR's mixed trend limit conviction.",
-            "momentum_view": "Favors AUD: EUR short-term score -0.96 versus AUD 0.23.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "The AUD October unemployment entry has no forecast comparator.",
+              "EUR and AUD growth observations are from different quarters."
+            ],
+            "fundamental_view": "EUR GDP is improving but inflation is accelerating and unemployment remains elevated. AUD inflation eased marginally, while unemployment rose to 4.9% in October and GDP growth slowed.",
+            "momentum_view": "Mixed; no confirmed AUD surprise is supplied, and euro calendar entries are pending.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for confirmed AUD labor/inflation data and subsequent euro-area release actuals.",
             "key_catalysts": [
-              "Monitor EUR inflation and growth against AUD growth and labor-market deterioration.",
-              "Supplied calendar has pending actuals for listed releases."
+              "ABS Australia unemployment, October 2026: 4.9%, above the preceding monthly observations in the supplied history.",
+              "Eurostat euro-area CPI, 2026-10: 4.0% y/y, up from 3.8% in September.",
+              "Forex Factory AUD and EUR events in the snapshot lack actuals."
             ]
           },
           "EUR/NZD": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "EUR's negative aggregate and short-term scores contrast with NZD's near-neutral aggregate and positive momentum and trend.",
+            "summary": "NZD growth has improved while EUR labor conditions are weak, but NZD data are lagged and inflation is elevated on both sides.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Relative fundamental trend favors NZD, though its unemployment input is stale and inflation remains elevated.",
-            "momentum_view": "Favors NZD: short-term scores are -0.96 for EUR and 0.90 for NZD.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZD GDP is only through Q2 and unemployment is annual 2025.",
+              "No supplied event surprise establishes near-term direction."
+            ],
+            "fundamental_view": "NZD has stronger supplied GDP momentum through 2026-Q2 and easing inflation; EUR has stronger latest-quarter growth dating but persistent labor weakness and rising inflation. NZD unemployment is stale.",
+            "momentum_view": "Slight relative support for NZD from the growth trend, not confirmed by a recent release surprise.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for current NZ labor information and actuals on the pending euro calendar.",
             "key_catalysts": [
-              "Track NZD inflation and GDP alongside the stale annual unemployment input.",
-              "Monitor EUR inflation, which rose to 4.0% y/y in 2026-10."
+              "OECD NZ GDP growth improved to 2.55% y/y in 2026-Q2.",
+              "Eurostat EUR CPI rose to 4.0% y/y in 2026-10.",
+              "Forex Factory NZ Visitor Arrivals dated 2026-11-12 is pending with no actual."
             ]
           },
           "EUR/USD": {
-            "bias": "BEARISH",
+            "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "EUR's negative aggregate and momentum scores contrast with USD's positive aggregate and modestly positive momentum, despite USD's negative fundamental trend.",
+            "summary": "Relative evidence modestly favors EUR over USD because USD has a persistently adverse supplied growth/inflation trend, though EUR inflation and labor conditions are also problematic.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Mixed: USD has a more negative trend score, while EUR's trend is mixed; this conflicts with the aggregate relative view.",
-            "momentum_view": "Favors USD: EUR -0.96 versus USD 0.13.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "The pending US CPI could materially change relative rate expectations.",
+              "Both currency datasets are provisional and marked low confidence."
+            ],
+            "fundamental_view": "USD has stronger latest labor data but weakening growth and rising inflation. EUR has improving GDP but higher unemployment and a sharp inflation rise; relative policy implications are uncertain.",
+            "momentum_view": "No confirmed recent USD or EUR event surprise is supplied; relative bias rests on the differing macro trends, not a reported price signal.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for actuals from the pending US CPI and euro-area releases; do not infer outcomes from forecasts.",
             "key_catalysts": [
-              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-              "Track whether USD's negative fundamental trend or positive aggregate and short-term readings dominate."
+              "Forex Factory US Core CPI m/m and CPI m/m, 2026-11-10, are pending: forecasts 0.2% and 0.3%, respectively.",
+              "BLS US CPI y/y rose to 3.74% in 2026-09.",
+              "Eurostat EUR CPI y/y rose to 4.0% in 2026-10."
             ]
           },
           "EUR/CAD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "Both currencies have negative scores, but CAD's short-term and aggregate readings are weaker than EUR's.",
+            "summary": "EUR is relatively favored against CAD, whose latest labor deterioration and weakening growth are more pronounced, despite EUR's own inflation and employment challenges.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Relative trend favors EUR: CAD is persistently negative while EUR's trend is mixed.",
-            "momentum_view": "Favors EUR: -0.96 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "EUR unemployment remains elevated and EUR inflation rose to 4.0% y/y.",
+              "Provisional data and no economic-surprise feed lower confidence."
+            ],
+            "fundamental_view": "EUR growth is improving from a low base; CAD growth is slowing and unemployment rose to 6.7%. EUR inflation is accelerating, while CAD inflation is nearly flat to marginally lower.",
+            "momentum_view": "Relative pressure is greater on CAD, but no confirmed CAD event surprise is supplied.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for the pending BOC deliberations entry and new actuals; the snapshot provides no result.",
             "key_catalysts": [
-              "Monitor CAD growth and unemployment deterioration against EUR inflation and GDP.",
-              "The supplied calendar lists a BOC Summary of Deliberations; no actual details are provided."
+              "OECD CAD unemployment reached 6.7% in 2026-10 from 6.5% in September.",
+              "OECD CAD GDP growth eased to 0.95% y/y in 2026-Q3.",
+              "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending."
             ]
           },
           "EUR/CHF": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "CHF's positive short-term and fundamental trend readings contrast with EUR's negative aggregate and short-term scores.",
+            "summary": "CHF has the stronger supplied growth trend and broadening fundamental profile; EUR's labor weakness and rising inflation weigh on the cross.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF on trend scores, though its unemployment input is stale.",
-            "momentum_view": "Favors CHF: EUR -0.96 versus CHF 1.12.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "CHF unemployment is stale and CHF inflation rose to 1.6% in October.",
+              "No recent CHF calendar actuals or pair technicals are supplied."
+            ],
+            "fundamental_view": "CHF GDP has accelerated sharply in the supplied series, while EUR GDP improves more gradually and unemployment is elevated. CHF inflation has risen recently, and CHF labor data are stale.",
+            "momentum_view": "Relative structural momentum favors CHF, without a recent official CHF event surprise in the snapshot.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch whether CHF growth strength persists and for actual euro-area releases.",
             "key_catalysts": [
-              "Monitor CHF growth and inflation progress; CHF unemployment data are annual for 2025.",
-              "Track EUR inflation, which rose to 4.0% y/y in 2026-10."
+              "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+              "Eurostat EUR CPI reached 4.0% y/y in 2026-10.",
+              "CHF unemployment is annual 2025 World Bank data."
             ]
           },
           "EUR/JPY": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "JPY's strong positive trend and momentum contrast with EUR's negative aggregate and short-term readings.",
+            "summary": "JPY has the more constructive supplied growth and labor momentum, while EUR has elevated unemployment and accelerating inflation; both datasets remain provisional.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors JPY: its trend is building and aligned, while EUR's trend is mixed.",
-            "momentum_view": "Favors JPY: EUR -0.96 versus JPY 1.54.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "JPY growth remains modest and no event surprise is confirmed.",
+              "EUR inflation could support policy expectations."
+            ],
+            "fundamental_view": "JPY GDP is improving and unemployment is very low; EUR GDP is also improving but labor conditions are weaker. Inflation is rising in both currencies.",
+            "momentum_view": "Relative support favors JPY; no actual-versus-forecast surprise is supplied for recent JPY events.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for actuals on pending JPY PPI and euro-area releases.",
             "key_catalysts": [
-              "Monitor JPY GDP, labor data, and inflation.",
-              "Watch EUR inflation and activity for evidence that its negative readings are changing."
+              "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+              "Eurostat EUR CPI rose to 4.0% y/y in 2026-10.",
+              "Forex Factory JPY PPI y/y dated 2026-11-12 is pending, forecast 6.5%."
             ]
           },
           "GBP/AUD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "GBP's modest positive aggregate and trend readings contrast with AUD's negative fundamental trend, although AUD has a positive aggregate score.",
+            "summary": "The UK monthly GDP beat and improving growth trend favor GBP over AUD, whose latest labor reading deteriorated and GDP growth eased.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors GBP on trend scores; both trend signals need monitoring, especially GBP's early trend.",
-            "momentum_view": "Favors GBP: 0.60 versus AUD 0.23.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "GBP inflation rose and UK unemployment observation is from July.",
+              "AUD October labor entry has no supplied forecast."
+            ],
+            "fundamental_view": "GBP has improving supplied GDP and labor trends but rising inflation and stale labor data. AUD has higher policy rate but slowing GDP and rising unemployment; its latest inflation eased slightly.",
+            "momentum_view": "GBP momentum strengthened on the actual 0.2% monthly GDP reading versus 0.0% forecast; AUD calendar events have no actuals supplied.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for follow-through in UK growth data and actual AUD inflation-expectations release.",
             "key_catalysts": [
-              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
-              "Track AUD labor-market deterioration and GBP inflation."
+              "Forex Factory UK GDP m/m, 2026-11-12: 0.2% actual vs 0.0% forecast.",
+              "ABS Australia unemployment, October 2026: 4.9%, up from 4.72% in September.",
+              "UK production, services, and investment entries are pending in the snapshot."
             ]
           },
           "GBP/NZD": {
-            "bias": "BEARISH",
+            "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "GBP has a positive but early fundamental trend; NZD's trend and short-term momentum are stronger despite its near-zero aggregate score.",
+            "summary": "The confirmed UK GDP beat offers a near-term GBP catalyst, while NZD has a stronger improving growth trend but dated labor data and no comparable recent surprise.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors NZD on trend score, with confidence limited by stale NZD unemployment and elevated inflation.",
-            "momentum_view": "Favors NZD: 0.90 versus GBP 0.60.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZ structural growth improvement may offset the one UK monthly surprise.",
+              "GBP labor data are also stale; confidence is low."
+            ],
+            "fundamental_view": "NZD GDP and inflation trends are improving through Q2/Q3, respectively; GBP GDP and labor trends are also improving, with higher inflation. Relative structural evidence is mixed.",
+            "momentum_view": "Short-term momentum favors GBP on the 2026-11-12 GDP actual; this may be a temporary catalyst against NZD's slower growth improvement.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch whether the UK GDP surprise is sustained and for updated NZ labor data.",
             "key_catalysts": [
-              "Watch NZD inflation and GDP; unemployment input is annual for 2025.",
-              "GBP GDP release was above forecast, but its positive trend remains early."
+              "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+              "OECD NZ GDP growth was 2.55% y/y in 2026-Q2.",
+              "NZ unemployment is annual 2025 data; NZ Visitor Arrivals is pending."
             ]
           },
           "GBP/USD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "GBP's short-term score and fundamental trend are stronger than USD's, despite USD's higher aggregate score.",
+            "summary": "Relative momentum favors GBP after its above-forecast monthly GDP release, while USD's supplied growth/inflation trend is persistently adverse; pending US CPI is a major uncertainty.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors GBP relative to USD: GBP trend is positive and early; USD trend is strongly negative.",
-            "momentum_view": "Favors GBP: 0.60 versus USD 0.13.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "Pending US CPI could reverse the relative momentum assessment.",
+              "GBP inflation is rising and its labor observation is from July."
+            ],
+            "fundamental_view": "GBP has improving GDP and labor trends but rising inflation. USD has improving unemployment but deteriorating growth and inflation; relative policy implications remain uncertain.",
+            "momentum_view": "GBP strengthened on the confirmed GDP surprise. No USD CPI outcome is supplied, so USD has no confirmed new catalyst here.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch the pending US CPI actuals and whether UK activity follow-through confirms the GDP beat.",
             "key_catalysts": [
-              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
-              "Supplied calendar lists high-impact US CPI releases with pending actuals."
+              "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+              "Forex Factory US Core CPI and CPI m/m, dated 2026-11-10, are pending in this snapshot.",
+              "BLS US CPI y/y was 3.74% in 2026-09; OECD UK CPI was 3.5% in 2026-09."
             ]
           },
           "GBP/CAD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "GBP's positive aggregate, momentum, and early trend contrast with CAD's negative readings and persistent deterioration.",
+            "summary": "GBP is relatively favored by its improving growth trend and confirmed GDP beat versus CAD's weakening growth and worsening unemployment.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors GBP over CAD on the supplied trend scores.",
-            "momentum_view": "Favors GBP: 0.60 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "UK labor data are stale and inflation is rising.",
+              "No actual BOC communication or Canadian surprise is supplied."
+            ],
+            "fundamental_view": "UK GDP and labor indicators improve, though inflation is rising. Canada has slowing GDP and unemployment at 6.7%; its slight inflation easing is not enough to offset the activity deterioration.",
+            "momentum_view": "GBP received a positive GDP surprise; no actual CAD event result is supplied.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for UK activity follow-up and the pending BOC deliberations entry.",
             "key_catalysts": [
-              "Monitor CAD GDP and unemployment, which are weakening.",
-              "GBP monthly GDP was reported above forecast, but GBP trend needs confirmation."
+              "Forex Factory UK GDP m/m, 2026-11-12: 0.2% actual vs 0.0% forecast.",
+              "OECD CAD unemployment rose to 6.7% in 2026-10.",
+              "Forex Factory BOC Summary of Deliberations on 2026-11-10 is pending."
             ]
           },
           "GBP/CHF": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "CHF's stronger fundamental trend and short-term score outweigh GBP's modest positive readings, while CHF's aggregate score is lower.",
+            "summary": "GBP has a fresh positive GDP catalyst, but CHF's stronger broad growth trend and persistent model profile counterbalance it.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF on trend score; GBP trend is early, while CHF trend is persistent and broadening.",
-            "momentum_view": "Favors CHF: 1.12 versus GBP 0.60.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "No recent CHF event surprise is included.",
+              "UK inflation rose; CHF inflation also rose in October."
+            ],
+            "fundamental_view": "CHF has strong 2026-Q3 GDP growth and a broadening trend; GBP has improving GDP and labor readings but higher inflation. CHF labor data are stale.",
+            "momentum_view": "GBP's near-term momentum improved on the GDP beat; structural relative evidence is mixed and could favor CHF if its growth strength persists.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for confirmation of UK GDP follow-through and subsequent CHF growth/inflation observations.",
             "key_catalysts": [
-              "CHF unemployment data are stale, limiting confidence in relative assessment.",
-              "GBP inflation has risen and its trend needs confirmation."
+              "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+              "OECD CHF GDP growth was 3.04% y/y in 2026-Q3.",
+              "CHF unemployment is annual 2025 data."
             ]
           },
           "GBP/JPY": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "JPY's aggregate, momentum, and building trend scores are materially stronger than GBP's modest positive readings.",
+            "summary": "GBP has the freshest confirmed positive surprise, while JPY has a stronger supplied persistent growth/labor trend; the relative case is balanced.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors JPY: building, aligned trend versus GBP's early trend.",
-            "momentum_view": "Favors JPY: 1.54 versus GBP 0.60.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "Relative policy expectations are not directly provided.",
+              "JPY recent calendar actuals are absent and UK labor data are stale."
+            ],
+            "fundamental_view": "JPY GDP and labor trends are improving with very low unemployment. GBP GDP and labor trends improve too, but its labor observation is older and inflation is rising.",
+            "momentum_view": "GBP's 0.2% monthly GDP versus 0.0% forecast is a positive near-term catalyst; JPY's favorable trend has no confirmed event surprise in this snapshot.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for follow-through after UK GDP and actuals for pending Japanese releases.",
             "key_catalysts": [
-              "Monitor JPY GDP, labor data, and inflation.",
-              "GBP trend requires confirmation despite the above-forecast monthly GDP reading."
+              "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+              "OECD JPY GDP growth improved to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+              "Forex Factory JPY PPI dated 2026-11-12 remains pending."
             ]
           },
           "AUD/NZD": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "NZD's positive trend and stronger short-term score contrast with AUD's negative trend, although AUD's aggregate score is higher.",
+            "summary": "NZD has the stronger supplied growth trajectory, while AUD growth is easing and unemployment is rising; NZD's stale labor data and elevated inflation temper the view.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors NZD on trend score; stale NZD unemployment and elevated inflation are important caveats.",
-            "momentum_view": "Favors NZD: 0.90 versus AUD 0.23.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZD unemployment is annual 2025 data.",
+              "NZD inflation remains elevated and AUD has a higher policy rate in the supplied snapshot."
+            ],
+            "fundamental_view": "NZD GDP accelerated through 2026-Q2 and inflation eased in Q3. AUD GDP slowed in Q2 and unemployment rose to 4.9%; AUD inflation eased only marginally.",
+            "momentum_view": "Relative momentum favors NZD on the supplied macro trend, but neither currency has a confirmed recent event surprise in the snapshot.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for updated NZ employment data and actual AUD inflation-expectations release.",
             "key_catalysts": [
-              "Compare NZD GDP and easing inflation with AUD's slowing GDP and rising unemployment.",
-              "NZD unemployment input is annual for 2025."
+              "OECD NZ GDP growth rose to 2.55% y/y in 2026-Q2.",
+              "ABS AUD unemployment was 4.9% in October 2026.",
+              "Forex Factory NZ Visitor Arrivals and AUD MI Inflation Expectations are pending."
             ]
           },
           "AUD/USD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "AUD has a higher aggregate score than USD, but both have negative fundamental trend scores and only slightly positive short-term readings.",
+            "summary": "AUD's positive aggregate/short-term profile and higher supplied policy rate contrast with USD's persistently deteriorating inflation-growth trend, but AUD labor has recently worsened.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Both trends are negative; AUD's score is equal to USD's, so fundamentals provide little relative separation.",
-            "momentum_view": "Slightly favors USD: AUD 0.23 versus USD 0.13 is actually marginally higher for AUD; relative momentum is weakly AUD-positive.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "AUD GDP observation is only through Q2 and unemployment deterioration is a near-term negative.",
+              "Pending US inflation releases could change the USD side materially."
+            ],
+            "fundamental_view": "AUD has moderating inflation but slowing GDP and rising unemployment. USD has better recent unemployment but weakening growth and rising CPI; relative fundamentals are mixed.",
+            "momentum_view": "No confirmed AUD surprise is supplied; the relative view is mildly AUD-supportive based on broader dashboard direction, not a fresh release result.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and updated Australian labor/inflation information.",
             "key_catalysts": [
-              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-              "Monitor AUD labor deterioration and the divergence between its aggregate score and negative trend."
+              "ABS AUD unemployment, October 2026: 4.9%, rising from 4.72% in September.",
+              "BLS USD CPI y/y rose to 3.74% in 2026-09.",
+              "Forex Factory US CPI/Core CPI on 2026-11-10 and AUD MI Inflation Expectations on 2026-11-12 are pending."
             ]
           },
           "AUD/CAD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "Both currencies have negative trend scores, but AUD has a higher aggregate and short-term score than CAD.",
+            "summary": "Both currencies show activity/labor concerns, but CAD's sharper growth and unemployment deterioration makes AUD relatively favored; the comparison is not strong.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Near-balanced negative trend scores; CAD's persistent deterioration is more pronounced in the supplied profile.",
-            "momentum_view": "Favors AUD: 0.23 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "GDP observations are from different quarters and sources.",
+              "Both datasets are provisional and no event surprise confirms the relative view."
+            ],
+            "fundamental_view": "AUD GDP growth slowed and unemployment rose, but CAD GDP growth is lower and unemployment reached 6.7%. Inflation eased slightly in both series.",
+            "momentum_view": "Relative bias favors AUD due to more severe CAD deterioration; no fresh actual-versus-forecast event surprise is supplied for either currency.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for actual AUD releases and Canadian central-bank communication.",
             "key_catalysts": [
-              "Monitor CAD GDP and unemployment deterioration against AUD's slowing growth and rising unemployment.",
-              "AUD inflation remains elevated but eased slightly in the latest supplied quarter."
+              "OECD CAD unemployment rose to 6.7% in 2026-10; AUD unemployment was 4.9% in October.",
+              "CAD GDP growth was 0.95% y/y in 2026-Q3; AUD GDP growth was 2.14% in 2026-Q2.",
+              "Forex Factory BOC deliberations and AUD calendar items have no actuals supplied."
             ]
           },
           "AUD/CHF": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "CHF's stronger trend and momentum readings conflict with AUD's higher aggregate score and positive short-term reading.",
+            "summary": "CHF's stronger supplied growth trend and broadening profile outweigh AUD's positive score, while AUD labor and GDP momentum have weakened.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF: positive persistent trend versus AUD's negative trend.",
-            "momentum_view": "Favors CHF: 1.12 versus AUD 0.23.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "CHF labor information is stale.",
+              "AUD and CHF inflation trends are not directly comparable in frequency/source."
+            ],
+            "fundamental_view": "CHF GDP growth rose to 3.04% y/y in Q3; AUD GDP eased in Q2 and unemployment rose in October. CHF inflation is rising, while AUD inflation eased slightly.",
+            "momentum_view": "Relative structural momentum favors CHF; no recent CHF event surprise is supplied and AUD has no confirmed calendar actual here.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for further AUD labor deterioration versus persistence of CHF growth strength.",
             "key_catalysts": [
-              "CHF unemployment is an annual 2025 fallback.",
-              "AUD unemployment has risen in the supplied monthly history."
+              "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+              "ABS AUD unemployment reached 4.9% in October 2026.",
+              "CHF unemployment is annual 2025 data."
             ]
           },
           "AUD/JPY": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "JPY's positive, building trend and stronger momentum contrast with AUD's negative fundamental trend.",
+            "summary": "JPY's improving GDP and labor trend contrasts with AUD's slowing GDP and rising unemployment; AUD's higher supplied policy rate is a counterweight.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors JPY: positive trend score versus AUD's negative score.",
-            "momentum_view": "Favors JPY: 1.54 versus AUD 0.23.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "JPY GDP remains modest and AUD policy rate is higher in the supplied data.",
+              "Recent JPY event entries are pending, not results."
+            ],
+            "fundamental_view": "JPY growth and employment momentum are improving and inflation is rising. AUD has slowing GDP and weaker labor conditions, with slightly easing inflation.",
+            "momentum_view": "Relative macro momentum favors JPY, but no confirmed recent JPY calendar result or AUD surprise is supplied.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending JPY PPI actual and further AUD labor readings.",
             "key_catalysts": [
-              "Monitor AUD growth and unemployment deterioration.",
-              "Track JPY inflation, GDP, and labor readings."
+              "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+              "ABS AUD unemployment was 4.9% in October 2026.",
+              "Forex Factory JPY PPI dated 2026-11-12 has no actual in the snapshot."
             ]
           },
           "NZD/USD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "NZD's positive trend and stronger short-term score contrast with USD's negative fundamental trend, despite a near-zero NZD aggregate score.",
+            "summary": "NZD growth momentum has improved and USD's supplied inflation-growth trend is adverse, but NZD data are dated and its inflation remains elevated.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors NZD on trend score; NZD unemployment is stale and inflation remains elevated.",
-            "momentum_view": "Favors NZD: 0.90 versus USD 0.13.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZD growth data are through Q2 and unemployment is stale.",
+              "US CPI actuals are absent and could alter relative rate expectations."
+            ],
+            "fundamental_view": "NZD GDP has recovered strongly through Q2 and inflation eased in Q3, while USD GDP is easing and CPI rose. NZD unemployment is only annual 2025; USD labor improved.",
+            "momentum_view": "Structural relative momentum modestly favors NZD; no confirmed recent NZD or USD event surprise is available.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending US CPI and updated NZ employment information.",
             "key_catalysts": [
-              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-              "Watch NZD GDP and inflation alongside its annual 2025 unemployment input."
+              "OECD NZ GDP growth rose to 2.55% y/y in 2026-Q2.",
+              "BLS USD CPI inflation reached 3.74% y/y in 2026-09.",
+              "Forex Factory US Core CPI and CPI m/m dated 2026-11-10 are pending."
             ]
           },
           "NZD/CAD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "NZD's positive trend and short-term score contrast with CAD's persistent negative trend and weak momentum.",
+            "summary": "NZD's improving growth trend compares favorably with CAD's slowing activity and rising unemployment, though NZD labor data are stale.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors NZD on trend score, with caution for stale NZD labor data and CAD's weaker growth and employment.",
-            "momentum_view": "Favors NZD: 0.90 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZD unemployment is annual 2025 data and GDP is through Q2.",
+              "Different observation periods limit direct comparison."
+            ],
+            "fundamental_view": "NZD GDP rose to 2.55% y/y in Q2 and inflation eased in Q3. CAD GDP slowed to 0.95% in Q3 and unemployment increased to 6.7%; both have countervailing inflation considerations.",
+            "momentum_view": "Relative structural momentum favors NZD; no confirmed event surprise is supplied for either side.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending BOC deliberations and updated NZ labor data.",
             "key_catalysts": [
-              "Monitor CAD GDP and unemployment deterioration.",
-              "NZD unemployment input is annual for 2025; GDP and inflation are more recent."
+              "OECD CAD unemployment rose to 6.7% in 2026-10.",
+              "OECD NZ GDP growth reached 2.55% y/y in 2026-Q2.",
+              "Forex Factory BOC Summary of Deliberations is listed for 2026-11-10 with no actual."
             ]
           },
           "NZD/CHF": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "Both currencies have positive trend and momentum readings, but CHF's trend and short-term scores are stronger; NZD's aggregate score is near zero.",
+            "summary": "CHF has the stronger latest supplied GDP growth and broadening trend; NZD growth is improving but earlier and labor data are stale.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF on trend score, with its annual unemployment input a material data limitation.",
-            "momentum_view": "Favors CHF: 1.12 versus NZD 0.90.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "Both currencies have stale labor readings.",
+              "GDP periods differ and no recent event actuals are supplied."
+            ],
+            "fundamental_view": "CHF GDP was 3.04% y/y in Q3 versus NZD GDP of 2.55% in Q2. NZD inflation eased but remains elevated; CHF inflation increased in October. CHF labor data are stale.",
+            "momentum_view": "Relative structural momentum favors CHF, with no recent event surprise supplied for either currency.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for updated NZ labor data and whether CHF growth remains strong.",
             "key_catalysts": [
-              "Compare CHF GDP and inflation with NZD growth and elevated inflation.",
-              "Both CHF and NZD unemployment inputs are stale for short-term analysis."
+              "OECD CHF GDP growth rose to 3.04% y/y in 2026-Q3.",
+              "OECD NZ GDP growth was 2.55% y/y in 2026-Q2.",
+              "NZ unemployment is annual 2025; CHF unemployment is also annual 2025."
             ]
           },
           "NZD/JPY": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "Both profiles are positive on trend and momentum, but JPY has stronger aggregate, short-term, and trend scores.",
+            "summary": "Both currencies have improving growth profiles; JPY has fresher and stronger labor evidence, while NZD's latest supplied GDP level is higher but from an earlier quarter.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors JPY on trend strength; NZD has stronger supplied GDP growth but elevated inflation and stale labor data.",
-            "momentum_view": "Favors JPY: 1.54 versus NZD 0.90.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "NZ unemployment is annual 2025 data.",
+              "GDP observations differ in period; no confirmed calendar surprise is supplied."
+            ],
+            "fundamental_view": "NZD GDP improved to 2.55% in Q2 with easing Q3 inflation, but labor data are stale. JPY GDP improved through Q3 and unemployment is 2.4%, with inflation rising.",
+            "momentum_view": "Mixed: NZD recovery is notable, while JPY has more current labor support. No event surprise resolves the comparison.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch updated NZ labor data and actuals for pending JPY releases.",
             "key_catalysts": [
-              "Monitor JPY labor and GDP readings against NZD GDP and inflation.",
-              "NZD unemployment input is annual for 2025."
+              "OECD NZ GDP growth reached 2.55% y/y in 2026-Q2.",
+              "OECD JPY GDP growth was 1.16% in 2026-Q3 and unemployment 2.4% in September.",
+              "Forex Factory JPY PPI dated 2026-11-12 is pending."
             ]
           },
           "USD/CAD": {
             "bias": "BULLISH",
             "confidence": "LOW",
-            "summary": "USD's aggregate and short-term scores are stronger than CAD's, while both fundamental trend scores are negative.",
+            "summary": "USD is relatively favored by CAD's more severe growth and labor deterioration, despite adverse USD inflation and growth trends.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Both trends are negative; USD's deterioration is slightly stronger by trend score, offsetting its stronger aggregate reading.",
-            "momentum_view": "Favors USD: 0.13 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "USD inflation and growth trend is persistently adverse.",
+              "Pending events have no actuals; no trade or price information is supplied."
+            ],
+            "fundamental_view": "CAD GDP is lower and unemployment has risen sharply; USD has stronger labor data but weakening GDP and rising inflation. The comparison is mixed on policy implications.",
+            "momentum_view": "CAD pressure is more clearly visible in current supplied activity/labor readings; no recent USD or CAD event result is confirmed in the snapshot.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and BOC communication.",
             "key_catalysts": [
-              "Supplied calendar lists pending high-impact US CPI actuals.",
-              "Monitor CAD GDP and unemployment deterioration and the USD trend-score divergence."
+              "OECD CAD unemployment reached 6.7% in 2026-10; GDP growth was 0.95% in Q3.",
+              "BLS USD CPI inflation was 3.74% y/y in 2026-09.",
+              "Forex Factory US CPI/Core CPI and BOC Summary of Deliberations are pending in the supplied calendar."
             ]
           },
           "USD/CHF": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "CHF's positive trend and stronger short-term score contrast with USD's negative fundamental trend, though USD's aggregate score is higher.",
+            "summary": "CHF's strong supplied growth trend contrasts with USD's adverse persistent growth-inflation profile; USD labor improvement and CHF's recent inflation rise temper conviction.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF on trend score; CHF unemployment is stale.",
-            "momentum_view": "Favors CHF: 1.12 versus USD 0.13.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "CHF unemployment is annual 2025 data and CHF inflation rose in October.",
+              "Pending US CPI could change the relative policy outlook."
+            ],
+            "fundamental_view": "CHF GDP accelerated to 3.04% y/y in Q3, while USD GDP eased and CPI rose. USD unemployment improved; CHF labor data are stale.",
+            "momentum_view": "Relative structural momentum favors CHF, with no recent confirmed CHF event catalyst.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and persistence of CHF growth strength.",
             "key_catalysts": [
-              "Supplied calendar lists pending high-impact US CPI actuals.",
-              "Monitor CHF growth and inflation; its unemployment data are annual for 2025."
+              "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+              "BLS USD CPI inflation rose to 3.74% y/y in 2026-09.",
+              "Forex Factory US CPI and Core CPI dated 2026-11-10 are pending."
             ]
           },
           "USD/JPY": {
-            "bias": "BULLISH",
+            "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "JPY's positive trend and momentum are stronger, but USD's aggregate score is lower than JPY's? The supplied aggregate scores favor JPY; relative view is therefore JPY-positive despite mixed USD readings.",
+            "summary": "JPY has the more constructive supplied growth and employment momentum, while USD growth and inflation trends deteriorate; improved US unemployment is a counterweight.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors JPY: positive building trend versus USD's negative trend.",
-            "momentum_view": "Favors JPY: 1.54 versus USD 0.13.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "JPY growth is modest and no recent event surprise is confirmed.",
+              "Pending US inflation data could shift the relative outlook."
+            ],
+            "fundamental_view": "JPY GDP and labor trends are improving, with low unemployment and rising inflation. USD unemployment is improving, but GDP is easing and CPI rising.",
+            "momentum_view": "Relative macro momentum favors JPY; no actual for the listed JPY PPI or US CPI events is supplied.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for US CPI and JPY PPI actuals; both are pending in the snapshot.",
             "key_catalysts": [
-              "Supplied calendar lists pending high-impact US CPI actuals.",
-              "Monitor JPY GDP, inflation, and labor data."
+              "OECD JPY GDP growth improved to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+              "OECD USD unemployment eased to 4.1% in 2026-10 while BLS CPI rose to 3.74% y/y in September.",
+              "Forex Factory JPY PPI and US CPI entries are pending."
             ]
           },
           "CAD/CHF": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "CAD's negative trend and momentum contrast with CHF's positive trend and momentum, despite CAD's higher policy rate.",
+            "summary": "CHF's strong growth trend is favored against CAD's deteriorating growth and rising unemployment.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Favors CHF: CAD trend is negative and persistent, while CHF trend is positive and broadening.",
-            "momentum_view": "Favors CHF: 1.12 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "CHF labor data are annual 2025 and stale.",
+              "The supplied series use differing sources and periods."
+            ],
+            "fundamental_view": "CHF GDP accelerated to 3.04% y/y in Q3; CAD GDP fell to 0.95% and unemployment rose to 6.7%. CAD inflation eased only marginally; CHF inflation recently rose.",
+            "momentum_view": "Relative macro momentum favors CHF, with no supplied recent event surprise for the cross currencies.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch pending BOC material and further CHF growth/inflation data.",
             "key_catalysts": [
-              "CAD unemployment rose to 6.7% in 2026-10.",
-              "CHF unemployment input is annual for 2025."
+              "OECD CAD unemployment reached 6.7% in 2026-10.",
+              "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+              "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending."
             ]
           },
           "CAD/JPY": {
             "bias": "BEARISH",
             "confidence": "LOW",
-            "summary": "JPY's positive aggregate, momentum, and trend readings contrast with CAD's negative readings.",
+            "summary": "JPY's improving growth and labor profile contrasts with CAD's worsening labor and slower growth, favoring JPY relatively.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Strongly favors JPY on supplied trend scores.",
-            "momentum_view": "Favors JPY: 1.54 versus CAD -1.01.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "JPY GDP remains modest and no event surprise is confirmed.",
+              "Pending events cannot be treated as results."
+            ],
+            "fundamental_view": "JPY GDP improved and unemployment remains low; CAD GDP slowed and unemployment rose to 6.7%. Inflation is rising in JPY and broadly flat to slightly easing in CAD.",
+            "momentum_view": "Relative macro momentum favors JPY; recent JPY calendar entries have no actuals in the supplied snapshot.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch actual JPY PPI and any confirmed BOC communication.",
             "key_catalysts": [
-              "Monitor CAD growth and unemployment deterioration.",
-              "Track JPY GDP and labor improvement and rising inflation."
+              "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+              "OECD CAD unemployment rose to 6.7% in 2026-10 and GDP growth was 0.95% in Q3.",
+              "Forex Factory JPY PPI and BOC Summary of Deliberations are pending."
             ]
           },
           "CHF/JPY": {
-            "bias": "BEARISH",
+            "bias": "NEUTRAL",
             "confidence": "LOW",
-            "summary": "Both currencies have positive trend and momentum scores, but JPY has stronger aggregate and short-term readings; CHF's GDP level is stronger in the supplied data.",
+            "summary": "Both currencies have strong supplied trend profiles: CHF has stronger latest GDP growth, while JPY has fresher labor data and a higher supplied policy rate.",
             "drivers": "",
-            "risks": "",
-            "fundamental_view": "Trend scores are equal; CHF has stronger latest GDP growth, while JPY has more timely labor data.",
-            "momentum_view": "Favors JPY: 1.54 versus CHF 1.12.",
-            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "risks": [
+              "CHF labor data are stale and CHF inflation increased in October.",
+              "No supplied pair technicals or confirmed recent event surprise."
+            ],
+            "fundamental_view": "CHF GDP growth reached 3.04% y/y in Q3 and its broader trend is persistent; JPY GDP is improving with unemployment at 2.4% and inflation rising. CHF labor data are stale.",
+            "momentum_view": "Mixed relative momentum; no recent confirmed event surprise distinguishes the currencies.",
+            "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+            "h4_watch": "No H4 data supplied. Watch for updated CHF labor evidence and actual JPY PPI data.",
             "key_catalysts": [
-              "CHF unemployment input is annual for 2025; JPY unemployment is 2026-09.",
-              "Monitor relative GDP and inflation developments."
+              "OECD CHF GDP growth was 3.04% y/y in 2026-Q3.",
+              "OECD JPY unemployment was 2.4% in 2026-09; CPI was 2.1% y/y.",
+              "CHF unemployment is annual 2025 data; Forex Factory JPY PPI is pending."
             ]
           }
         }
@@ -605,15 +717,15 @@
     },
     "EUR/AUD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     },
     "EUR/NZD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     },
     "EUR/USD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "BULLISH"
     },
     "EUR/CAD": {
       "status": "ONE_MODEL_ONLY",
@@ -633,7 +745,7 @@
     },
     "GBP/NZD": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "BULLISH"
     },
     "GBP/USD": {
       "status": "ONE_MODEL_ONLY",
@@ -645,11 +757,11 @@
     },
     "GBP/CHF": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     },
     "GBP/JPY": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     },
     "AUD/NZD": {
       "status": "ONE_MODEL_ONLY",
@@ -685,7 +797,7 @@
     },
     "NZD/JPY": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     },
     "USD/CAD": {
       "status": "ONE_MODEL_ONLY",
@@ -697,7 +809,7 @@
     },
     "USD/JPY": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
+      "bias": "BEARISH"
     },
     "CAD/CHF": {
       "status": "ONE_MODEL_ONLY",
@@ -709,129 +821,129 @@
     },
     "CHF/JPY": {
       "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
+      "bias": "NEUTRAL"
     }
   },
   "currency_reviews": {
     "USD": {
       "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "Positive aggregate and short-term scores conflict with a strongly negative, repeatedly aligned fundamental trend.",
+      "summary": "Near-term direction is unclear: the latest supplied labor reading improved, while the inflation and growth trend remains adverse. No actual-versus-forecast USD release is supplied.",
       "drivers": [
-        "GDP growth has eased to 2.07% y/y in 2026-Q3.",
-        "Inflation rose to 3.74% y/y in 2026-09.",
-        "Unemployment improved to 4.1% in 2026-10.",
-        "Short-term score is positive at 0.13; fundamental trend score is -0.83."
+        "OECD unemployment eased to 4.1% in 2026-10 from 4.2% in 2026-09, a modest supportive change.",
+        "BLS CPI inflation rose to 3.74% y/y in 2026-09 from 3.40% in 2026-08; the dashboard characterizes inflation as deteriorating.",
+        "OECD GDP growth eased to 2.07% y/y in 2026-Q3 from 2.19% in Q2. The dashboard trend is persistently adverse, despite labor improvement.",
+        "Forex Factory Core CPI m/m and CPI m/m, dated 2026-11-10, are pending in the snapshot (forecasts 0.2% and 0.3%); they are not results."
       ],
       "risks": [
-        "Provisional data cover 80% of model weight; economic-surprise data are absent.",
-        "High-impact CPI events in the supplied calendar have pending actuals."
+        "All supplied macro/model data are provisional and confidence is marked low; economic-surprise data are not connected.",
+        "The pending 2026-11-10 CPI releases could alter rate expectations once actuals are available."
       ]
     },
     "EUR": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "Aggregate and short-term scores are negative; weak labor-market readings and rising inflation weigh, while GDP growth has recently improved.",
+      "summary": "Recent inflation acceleration and a deteriorating labor-market profile weigh on the euro; improving GDP is a counterweight, not yet a broad reversal.",
       "drivers": [
-        "Aggregate score -1.47 and short-term score -0.96.",
-        "Inflation rose to 4.0% y/y in 2026-10.",
-        "Unemployment was 6.5% in 2026-09.",
-        "GDP growth rose to 1.30% y/y in 2026-Q3."
+        "Eurostat CPI inflation reached 4.0% y/y in 2026-10 from 3.8% in September and 3.2% in August; the supplied trend reports deterioration.",
+        "OECD unemployment was 6.5% in 2026-09, unchanged from August but above 6.4% in May-June.",
+        "OECD GDP growth improved to 1.30% y/y in 2026-Q3 from 1.20% in Q2 and 0.58% in Q1, a supportive but mixed structural signal.",
+        "Forex Factory German CPI, Italian industrial production, investor confidence, and other listed euro events have no actuals in this snapshot; do not treat them as outcomes."
       ],
       "risks": [
-        "Fundamental trend score is neutral with mixed alignment.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "Higher inflation could support expected policy rates even as growth and employment remain weak.",
+        "Events listed for 2026-11-09 to 2026-11-11 are pending in the supplied data; release status may differ from the snapshot."
       ]
     },
     "GBP": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "Aggregate, short-term, and fundamental trend scores are positive, but the fundamental trend is early and inflation is rising.",
+      "summary": "Near-term momentum is supported by the latest above-forecast monthly GDP reading and improving supplied growth and labor trends, though inflation has risen and labor data are stale.",
       "drivers": [
-        "Short-term score 0.60 and fundamental trend score 0.83.",
-        "GDP growth rose to 1.94% y/y in 2026-Q3.",
-        "Unemployment eased to 4.7% in 2026-07.",
-        "Supplied calendar reports UK monthly GDP at 0.2% versus 0.0% forecast."
+        "Forex Factory GDP m/m, 2026-11-12: actual 0.2% versus forecast 0.0% and previous 0.0% (August revised). This is the clearest actual-versus-forecast surprise in the snapshot and supports short-term ste",
+        "OECD GDP growth rose to 1.94% y/y in 2026-Q3 from 1.37% in Q2 and 0.84% in Q1.",
+        "OECD unemployment fell to 4.7% in 2026-07 from 4.9% in prior months, but this labor observation is substantially older than the snapshot date.",
+        "OECD inflation increased to 3.5% y/y in 2026-09 from 3.1% in August, a counterweight and potential policy uncertainty."
       ],
       "risks": [
-        "Inflation increased to 3.5% y/y in 2026-09.",
-        "Unemployment data are dated 2026-07; trend needs confirmation.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "The positive GDP surprise is one monthly release; persistence is unconfirmed.",
+        "Forex Factory trade, production, services, and investment entries dated 2026-11-12 have null actuals and remain pending in the snapshot.",
+        "Provisional data, low confidence, and stale unemployment reduce conviction."
       ]
     },
     "JPY": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "Positive aggregate and short-term scores align with a building, repeatedly aligned fundamental trend.",
+      "summary": "The supplied momentum is improving, with stronger GDP and very low, recently easing unemployment; rising inflation also adds potential policy support. Recent calendar entries are pending rather than confirmed releases.",
       "drivers": [
-        "Fundamental trend score 2.5; short-term score 1.54.",
-        "GDP growth improved to 1.16% y/y in 2026-Q3.",
-        "Unemployment was 2.4% in 2026-09.",
-        "Inflation rose to 2.1% y/y in 2026-09."
+        "OECD GDP growth improved to 1.16% y/y in 2026-Q3 from 0.80% in Q2 and 0.56% in Q1.",
+        "OECD unemployment was 2.4% in 2026-09 versus 2.5% in August; the dashboard marks the broader trend as building.",
+        "OECD CPI inflation rose to 2.1% y/y in 2026-09 from 1.9% in August. This may matter for policy, though the snapshot provides no actual-versus-forecast surprise.",
+        "Forex Factory PPI y/y dated 2026-11-12 (forecast 6.5%) and other JPY calendar entries have null actuals and remain pending."
       ],
       "risks": [
-        "GDP growth remains below its 2025-Q2 level in the supplied history.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "Growth remains modest and below prior 2025 readings; inflation improvement alone does not establish a policy change.",
+        "No actual-versus-forecast results are supplied for the listed recent JPY events."
       ]
     },
     "CHF": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "Positive short-term and fundamental trend readings are supported by improving GDP and inflation indicators, but aggregate score is modest and labor data are stale.",
+      "summary": "The supplied growth and inflation trend is broadly supportive and short-term momentum has strengthened, but the latest inflation uptick and stale annual unemployment materially limit confidence.",
       "drivers": [
-        "Fundamental trend score 2.5 and short-term score 1.12.",
-        "GDP growth rose to 3.04% y/y in 2026-Q3.",
-        "Inflation rose to 1.6% y/y in 2026-10 from lower prior readings."
+        "OECD GDP growth rose to 3.04% y/y in 2026-Q3 from 2.63% in Q2 and 0.72% in Q1.",
+        "Eurostat-sourced CPI in the dashboard increased to 1.6% y/y in 2026-10 from 1.2% in September; despite the recent rise, the dashboard's broader trend describes inflation as improving.",
+        "The dashboard reports persistent, broadening fundamental trend and stronger short-term momentum, but this is model characterization rather than a dated surprise.",
+        "Unemployment is an annual World Bank observation for 2025, not a useful current labor-market catalyst."
       ],
       "risks": [
-        "Aggregate score is only 0.37.",
-        "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "The inflation series and GDP source/coverage are provisional; no official recent CHF calendar actuals are supplied.",
+        "Annual unemployment data are stale for short-term assessment."
       ]
     },
     "CAD": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "Negative aggregate and short-term scores align with a persistent negative fundamental trend, despite some inflation improvement.",
+      "summary": "Persistent deterioration in growth and employment outweighs a modestly lower latest inflation reading; the balance points to weakening Canadian momentum.",
       "drivers": [
-        "Aggregate score -1.10 and short-term score -1.01.",
-        "GDP growth slowed to 0.95% y/y in 2026-Q3.",
-        "Unemployment rose to 6.7% in 2026-10.",
-        "Fundamental trend score -0.83, with broadening persistence."
+        "OECD unemployment rose to 6.7% in 2026-10 from 6.5% in September and 6.4% in August.",
+        "OECD GDP growth fell to 0.95% y/y in 2026-Q3 from 1.13% in Q2; the dashboard describes the growth and labor trend as persistently deteriorating.",
+        "OECD CPI eased slightly to 3.09% y/y in 2026-10 from 3.09% in September (a small decline at displayed precision), providing only a limited offset.",
+        "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending in the snapshot, with no actual supplied."
       ],
       "risks": [
-        "Inflation eased slightly to 3.09% y/y in 2026-10.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "The inflation change is small and the supplied series is provisional.",
+        "Pending central-bank material is not evidence of a policy outcome."
       ]
     },
     "AUD": {
       "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "Positive aggregate score contrasts with slightly positive short-term momentum and a negative fundamental trend; recent growth and labor deterioration temper the level readings.",
+      "summary": "Recent momentum is mixed: the latest supplied labor reading worsened, while inflation eased slightly and the model's short-term score remains positive. The balance does not establish a durable direction.",
       "drivers": [
-        "Aggregate score 0.80 versus fundamental trend score -0.83.",
-        "GDP growth eased to 2.14% y/y in 2026-Q2.",
-        "Unemployment rose to 4.9% in October 2026.",
-        "Policy rate is 4.85% as of 2026-11-04."
+        "ABS unemployment is 4.9% for October 2026, up from 4.72% in September and 4.39% in May, a negative labor-market change.",
+        "OECD inflation eased to 3.92% y/y in 2026-Q3 from 3.96% in Q2, but remains well above 2025 readings.",
+        "OECD GDP growth eased to 2.14% y/y in 2026-Q2 from 2.50% in Q1; the latest GDP observation is older than the October labor reading.",
+        "Forex Factory MI Inflation Expectations and other AUD entries in the snapshot have null actuals and remain pending."
       ],
       "risks": [
-        "Inflation remains elevated at 3.92% y/y in 2026-Q3, though easing from the prior quarter.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "Quarterly inflation and GDP are lower-frequency than the labor release and may not reflect the latest conditions.",
+        "No actual-versus-forecast surprise is supplied for the recent AUD calendar entries."
       ]
     },
     "NZD": {
       "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "Near-zero aggregate score diverges from positive short-term and fundamental trend readings; improving GDP is offset by elevated inflation and stale labor data.",
+      "summary": "Growth and the dashboard's broader trend have improved, but inflation remains elevated and unemployment data are annual and stale. The near-term picture is therefore mixed rather than decisively bullish.",
       "drivers": [
-        "Short-term score 0.90 and fundamental trend score 2.5.",
-        "GDP growth rose to 2.55% y/y in 2026-Q2.",
-        "Inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2."
+        "OECD GDP growth rose to 2.55% y/y in 2026-Q2 from 1.67% in Q1 and negative readings in 2025-Q2 and Q1.",
+        "OECD CPI inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2, but remains above 2025 levels.",
+        "Unemployment is a World Bank annual 2025 observation (5.076%), limiting current labor assessment.",
+        "Forex Factory Visitor Arrivals dated 2026-11-12 is pending with no forecast or actual in the snapshot."
       ],
       "risks": [
-        "Aggregate score is 0.04.",
-        "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
-        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+        "The favorable growth trend is based on data only through 2026-Q2.",
+        "Stale labor data and absent economic-surprise coverage reduce confidence."
       ]
     }
   },
@@ -839,421 +951,533 @@
     "EUR/GBP": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "EUR has weaker aggregate and short-term readings than GBP; GBP's positive trend is early and unconfirmed.",
+      "summary": "Relative fundamentals and the latest supplied catalyst favor GBP over EUR, but the cross remains sensitive to euro inflation and the pending UK activity releases.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Relative fundamental trend modestly favors GBP: EUR is mixed, while GBP is positive but early.",
-      "momentum_view": "Favors GBP based on the supplied short-term scores.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "Low-confidence, provisional inputs; UK unemployment is from 2026-07.",
+        "Pending releases are not results."
+      ],
+      "fundamental_view": "EUR has weakening labor conditions and accelerating inflation with only gradual GDP improvement; GBP has improving GDP and a supportive latest monthly GDP surprise. GBP labor data are stale and inflation has also risen.",
+      "momentum_view": "GBP momentum is relatively stronger after GDP m/m beat forecast; EUR momentum remains pressured by the inflation and labor combination.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for follow-through or failure after the UK GDP surprise and for actuals from listed UK and euro-area events.",
       "key_catalysts": [
-        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast in the supplied calendar.",
-        "Watch for confirmation of GBP's early trend and changes in EUR inflation and activity."
+        "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+        "UK trade, services, production, and investment entries on 2026-11-12 have null actuals and are pending.",
+        "Euro-area inflation is 4.0% y/y for 2026-10 in supplied Eurostat data."
       ]
     },
     "EUR/AUD": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "EUR's negative score profile is weaker than AUD's positive aggregate score, although AUD's trend is deteriorating.",
+      "summary": "EUR's weak labor profile is offset by AUD labor deterioration and softer recent GDP; neither side has a decisive catalyst in the supplied actuals.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Relative scores favor AUD, but AUD's negative trend and EUR's mixed trend limit conviction.",
-      "momentum_view": "Favors AUD: EUR short-term score -0.96 versus AUD 0.23.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "The AUD October unemployment entry has no forecast comparator.",
+        "EUR and AUD growth observations are from different quarters."
+      ],
+      "fundamental_view": "EUR GDP is improving but inflation is accelerating and unemployment remains elevated. AUD inflation eased marginally, while unemployment rose to 4.9% in October and GDP growth slowed.",
+      "momentum_view": "Mixed; no confirmed AUD surprise is supplied, and euro calendar entries are pending.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for confirmed AUD labor/inflation data and subsequent euro-area release actuals.",
       "key_catalysts": [
-        "Monitor EUR inflation and growth against AUD growth and labor-market deterioration.",
-        "Supplied calendar has pending actuals for listed releases."
+        "ABS Australia unemployment, October 2026: 4.9%, above the preceding monthly observations in the supplied history.",
+        "Eurostat euro-area CPI, 2026-10: 4.0% y/y, up from 3.8% in September.",
+        "Forex Factory AUD and EUR events in the snapshot lack actuals."
       ]
     },
     "EUR/NZD": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "EUR's negative aggregate and short-term scores contrast with NZD's near-neutral aggregate and positive momentum and trend.",
+      "summary": "NZD growth has improved while EUR labor conditions are weak, but NZD data are lagged and inflation is elevated on both sides.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Relative fundamental trend favors NZD, though its unemployment input is stale and inflation remains elevated.",
-      "momentum_view": "Favors NZD: short-term scores are -0.96 for EUR and 0.90 for NZD.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZD GDP is only through Q2 and unemployment is annual 2025.",
+        "No supplied event surprise establishes near-term direction."
+      ],
+      "fundamental_view": "NZD has stronger supplied GDP momentum through 2026-Q2 and easing inflation; EUR has stronger latest-quarter growth dating but persistent labor weakness and rising inflation. NZD unemployment is stale.",
+      "momentum_view": "Slight relative support for NZD from the growth trend, not confirmed by a recent release surprise.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for current NZ labor information and actuals on the pending euro calendar.",
       "key_catalysts": [
-        "Track NZD inflation and GDP alongside the stale annual unemployment input.",
-        "Monitor EUR inflation, which rose to 4.0% y/y in 2026-10."
+        "OECD NZ GDP growth improved to 2.55% y/y in 2026-Q2.",
+        "Eurostat EUR CPI rose to 4.0% y/y in 2026-10.",
+        "Forex Factory NZ Visitor Arrivals dated 2026-11-12 is pending with no actual."
       ]
     },
     "EUR/USD": {
-      "bias": "BEARISH",
+      "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "EUR's negative aggregate and momentum scores contrast with USD's positive aggregate and modestly positive momentum, despite USD's negative fundamental trend.",
+      "summary": "Relative evidence modestly favors EUR over USD because USD has a persistently adverse supplied growth/inflation trend, though EUR inflation and labor conditions are also problematic.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Mixed: USD has a more negative trend score, while EUR's trend is mixed; this conflicts with the aggregate relative view.",
-      "momentum_view": "Favors USD: EUR -0.96 versus USD 0.13.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "The pending US CPI could materially change relative rate expectations.",
+        "Both currency datasets are provisional and marked low confidence."
+      ],
+      "fundamental_view": "USD has stronger latest labor data but weakening growth and rising inflation. EUR has improving GDP but higher unemployment and a sharp inflation rise; relative policy implications are uncertain.",
+      "momentum_view": "No confirmed recent USD or EUR event surprise is supplied; relative bias rests on the differing macro trends, not a reported price signal.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for actuals from the pending US CPI and euro-area releases; do not infer outcomes from forecasts.",
       "key_catalysts": [
-        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-        "Track whether USD's negative fundamental trend or positive aggregate and short-term readings dominate."
+        "Forex Factory US Core CPI m/m and CPI m/m, 2026-11-10, are pending: forecasts 0.2% and 0.3%, respectively.",
+        "BLS US CPI y/y rose to 3.74% in 2026-09.",
+        "Eurostat EUR CPI y/y rose to 4.0% in 2026-10."
       ]
     },
     "EUR/CAD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "Both currencies have negative scores, but CAD's short-term and aggregate readings are weaker than EUR's.",
+      "summary": "EUR is relatively favored against CAD, whose latest labor deterioration and weakening growth are more pronounced, despite EUR's own inflation and employment challenges.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Relative trend favors EUR: CAD is persistently negative while EUR's trend is mixed.",
-      "momentum_view": "Favors EUR: -0.96 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "EUR unemployment remains elevated and EUR inflation rose to 4.0% y/y.",
+        "Provisional data and no economic-surprise feed lower confidence."
+      ],
+      "fundamental_view": "EUR growth is improving from a low base; CAD growth is slowing and unemployment rose to 6.7%. EUR inflation is accelerating, while CAD inflation is nearly flat to marginally lower.",
+      "momentum_view": "Relative pressure is greater on CAD, but no confirmed CAD event surprise is supplied.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for the pending BOC deliberations entry and new actuals; the snapshot provides no result.",
       "key_catalysts": [
-        "Monitor CAD growth and unemployment deterioration against EUR inflation and GDP.",
-        "The supplied calendar lists a BOC Summary of Deliberations; no actual details are provided."
+        "OECD CAD unemployment reached 6.7% in 2026-10 from 6.5% in September.",
+        "OECD CAD GDP growth eased to 0.95% y/y in 2026-Q3.",
+        "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending."
       ]
     },
     "EUR/CHF": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "CHF's positive short-term and fundamental trend readings contrast with EUR's negative aggregate and short-term scores.",
+      "summary": "CHF has the stronger supplied growth trend and broadening fundamental profile; EUR's labor weakness and rising inflation weigh on the cross.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF on trend scores, though its unemployment input is stale.",
-      "momentum_view": "Favors CHF: EUR -0.96 versus CHF 1.12.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "CHF unemployment is stale and CHF inflation rose to 1.6% in October.",
+        "No recent CHF calendar actuals or pair technicals are supplied."
+      ],
+      "fundamental_view": "CHF GDP has accelerated sharply in the supplied series, while EUR GDP improves more gradually and unemployment is elevated. CHF inflation has risen recently, and CHF labor data are stale.",
+      "momentum_view": "Relative structural momentum favors CHF, without a recent official CHF event surprise in the snapshot.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch whether CHF growth strength persists and for actual euro-area releases.",
       "key_catalysts": [
-        "Monitor CHF growth and inflation progress; CHF unemployment data are annual for 2025.",
-        "Track EUR inflation, which rose to 4.0% y/y in 2026-10."
+        "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+        "Eurostat EUR CPI reached 4.0% y/y in 2026-10.",
+        "CHF unemployment is annual 2025 World Bank data."
       ]
     },
     "EUR/JPY": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "JPY's strong positive trend and momentum contrast with EUR's negative aggregate and short-term readings.",
+      "summary": "JPY has the more constructive supplied growth and labor momentum, while EUR has elevated unemployment and accelerating inflation; both datasets remain provisional.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors JPY: its trend is building and aligned, while EUR's trend is mixed.",
-      "momentum_view": "Favors JPY: EUR -0.96 versus JPY 1.54.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "JPY growth remains modest and no event surprise is confirmed.",
+        "EUR inflation could support policy expectations."
+      ],
+      "fundamental_view": "JPY GDP is improving and unemployment is very low; EUR GDP is also improving but labor conditions are weaker. Inflation is rising in both currencies.",
+      "momentum_view": "Relative support favors JPY; no actual-versus-forecast surprise is supplied for recent JPY events.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for actuals on pending JPY PPI and euro-area releases.",
       "key_catalysts": [
-        "Monitor JPY GDP, labor data, and inflation.",
-        "Watch EUR inflation and activity for evidence that its negative readings are changing."
+        "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+        "Eurostat EUR CPI rose to 4.0% y/y in 2026-10.",
+        "Forex Factory JPY PPI y/y dated 2026-11-12 is pending, forecast 6.5%."
       ]
     },
     "GBP/AUD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "GBP's modest positive aggregate and trend readings contrast with AUD's negative fundamental trend, although AUD has a positive aggregate score.",
+      "summary": "The UK monthly GDP beat and improving growth trend favor GBP over AUD, whose latest labor reading deteriorated and GDP growth eased.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors GBP on trend scores; both trend signals need monitoring, especially GBP's early trend.",
-      "momentum_view": "Favors GBP: 0.60 versus AUD 0.23.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "GBP inflation rose and UK unemployment observation is from July.",
+        "AUD October labor entry has no supplied forecast."
+      ],
+      "fundamental_view": "GBP has improving supplied GDP and labor trends but rising inflation and stale labor data. AUD has higher policy rate but slowing GDP and rising unemployment; its latest inflation eased slightly.",
+      "momentum_view": "GBP momentum strengthened on the actual 0.2% monthly GDP reading versus 0.0% forecast; AUD calendar events have no actuals supplied.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for follow-through in UK growth data and actual AUD inflation-expectations release.",
       "key_catalysts": [
-        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
-        "Track AUD labor-market deterioration and GBP inflation."
+        "Forex Factory UK GDP m/m, 2026-11-12: 0.2% actual vs 0.0% forecast.",
+        "ABS Australia unemployment, October 2026: 4.9%, up from 4.72% in September.",
+        "UK production, services, and investment entries are pending in the snapshot."
       ]
     },
     "GBP/NZD": {
-      "bias": "BEARISH",
+      "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "GBP has a positive but early fundamental trend; NZD's trend and short-term momentum are stronger despite its near-zero aggregate score.",
+      "summary": "The confirmed UK GDP beat offers a near-term GBP catalyst, while NZD has a stronger improving growth trend but dated labor data and no comparable recent surprise.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors NZD on trend score, with confidence limited by stale NZD unemployment and elevated inflation.",
-      "momentum_view": "Favors NZD: 0.90 versus GBP 0.60.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZ structural growth improvement may offset the one UK monthly surprise.",
+        "GBP labor data are also stale; confidence is low."
+      ],
+      "fundamental_view": "NZD GDP and inflation trends are improving through Q2/Q3, respectively; GBP GDP and labor trends are also improving, with higher inflation. Relative structural evidence is mixed.",
+      "momentum_view": "Short-term momentum favors GBP on the 2026-11-12 GDP actual; this may be a temporary catalyst against NZD's slower growth improvement.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch whether the UK GDP surprise is sustained and for updated NZ labor data.",
       "key_catalysts": [
-        "Watch NZD inflation and GDP; unemployment input is annual for 2025.",
-        "GBP GDP release was above forecast, but its positive trend remains early."
+        "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+        "OECD NZ GDP growth was 2.55% y/y in 2026-Q2.",
+        "NZ unemployment is annual 2025 data; NZ Visitor Arrivals is pending."
       ]
     },
     "GBP/USD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "GBP's short-term score and fundamental trend are stronger than USD's, despite USD's higher aggregate score.",
+      "summary": "Relative momentum favors GBP after its above-forecast monthly GDP release, while USD's supplied growth/inflation trend is persistently adverse; pending US CPI is a major uncertainty.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors GBP relative to USD: GBP trend is positive and early; USD trend is strongly negative.",
-      "momentum_view": "Favors GBP: 0.60 versus USD 0.13.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "Pending US CPI could reverse the relative momentum assessment.",
+        "GBP inflation is rising and its labor observation is from July."
+      ],
+      "fundamental_view": "GBP has improving GDP and labor trends but rising inflation. USD has improving unemployment but deteriorating growth and inflation; relative policy implications remain uncertain.",
+      "momentum_view": "GBP strengthened on the confirmed GDP surprise. No USD CPI outcome is supplied, so USD has no confirmed new catalyst here.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch the pending US CPI actuals and whether UK activity follow-through confirms the GDP beat.",
       "key_catalysts": [
-        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
-        "Supplied calendar lists high-impact US CPI releases with pending actuals."
+        "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+        "Forex Factory US Core CPI and CPI m/m, dated 2026-11-10, are pending in this snapshot.",
+        "BLS US CPI y/y was 3.74% in 2026-09; OECD UK CPI was 3.5% in 2026-09."
       ]
     },
     "GBP/CAD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "GBP's positive aggregate, momentum, and early trend contrast with CAD's negative readings and persistent deterioration.",
+      "summary": "GBP is relatively favored by its improving growth trend and confirmed GDP beat versus CAD's weakening growth and worsening unemployment.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors GBP over CAD on the supplied trend scores.",
-      "momentum_view": "Favors GBP: 0.60 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "UK labor data are stale and inflation is rising.",
+        "No actual BOC communication or Canadian surprise is supplied."
+      ],
+      "fundamental_view": "UK GDP and labor indicators improve, though inflation is rising. Canada has slowing GDP and unemployment at 6.7%; its slight inflation easing is not enough to offset the activity deterioration.",
+      "momentum_view": "GBP received a positive GDP surprise; no actual CAD event result is supplied.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for UK activity follow-up and the pending BOC deliberations entry.",
       "key_catalysts": [
-        "Monitor CAD GDP and unemployment, which are weakening.",
-        "GBP monthly GDP was reported above forecast, but GBP trend needs confirmation."
+        "Forex Factory UK GDP m/m, 2026-11-12: 0.2% actual vs 0.0% forecast.",
+        "OECD CAD unemployment rose to 6.7% in 2026-10.",
+        "Forex Factory BOC Summary of Deliberations on 2026-11-10 is pending."
       ]
     },
     "GBP/CHF": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "CHF's stronger fundamental trend and short-term score outweigh GBP's modest positive readings, while CHF's aggregate score is lower.",
+      "summary": "GBP has a fresh positive GDP catalyst, but CHF's stronger broad growth trend and persistent model profile counterbalance it.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF on trend score; GBP trend is early, while CHF trend is persistent and broadening.",
-      "momentum_view": "Favors CHF: 1.12 versus GBP 0.60.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "No recent CHF event surprise is included.",
+        "UK inflation rose; CHF inflation also rose in October."
+      ],
+      "fundamental_view": "CHF has strong 2026-Q3 GDP growth and a broadening trend; GBP has improving GDP and labor readings but higher inflation. CHF labor data are stale.",
+      "momentum_view": "GBP's near-term momentum improved on the GDP beat; structural relative evidence is mixed and could favor CHF if its growth strength persists.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for confirmation of UK GDP follow-through and subsequent CHF growth/inflation observations.",
       "key_catalysts": [
-        "CHF unemployment data are stale, limiting confidence in relative assessment.",
-        "GBP inflation has risen and its trend needs confirmation."
+        "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+        "OECD CHF GDP growth was 3.04% y/y in 2026-Q3.",
+        "CHF unemployment is annual 2025 data."
       ]
     },
     "GBP/JPY": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "JPY's aggregate, momentum, and building trend scores are materially stronger than GBP's modest positive readings.",
+      "summary": "GBP has the freshest confirmed positive surprise, while JPY has a stronger supplied persistent growth/labor trend; the relative case is balanced.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors JPY: building, aligned trend versus GBP's early trend.",
-      "momentum_view": "Favors JPY: 1.54 versus GBP 0.60.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "Relative policy expectations are not directly provided.",
+        "JPY recent calendar actuals are absent and UK labor data are stale."
+      ],
+      "fundamental_view": "JPY GDP and labor trends are improving with very low unemployment. GBP GDP and labor trends improve too, but its labor observation is older and inflation is rising.",
+      "momentum_view": "GBP's 0.2% monthly GDP versus 0.0% forecast is a positive near-term catalyst; JPY's favorable trend has no confirmed event surprise in this snapshot.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for follow-through after UK GDP and actuals for pending Japanese releases.",
       "key_catalysts": [
-        "Monitor JPY GDP, labor data, and inflation.",
-        "GBP trend requires confirmation despite the above-forecast monthly GDP reading."
+        "Forex Factory UK GDP m/m, 2026-11-12: actual 0.2% vs forecast 0.0%.",
+        "OECD JPY GDP growth improved to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+        "Forex Factory JPY PPI dated 2026-11-12 remains pending."
       ]
     },
     "AUD/NZD": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "NZD's positive trend and stronger short-term score contrast with AUD's negative trend, although AUD's aggregate score is higher.",
+      "summary": "NZD has the stronger supplied growth trajectory, while AUD growth is easing and unemployment is rising; NZD's stale labor data and elevated inflation temper the view.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors NZD on trend score; stale NZD unemployment and elevated inflation are important caveats.",
-      "momentum_view": "Favors NZD: 0.90 versus AUD 0.23.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZD unemployment is annual 2025 data.",
+        "NZD inflation remains elevated and AUD has a higher policy rate in the supplied snapshot."
+      ],
+      "fundamental_view": "NZD GDP accelerated through 2026-Q2 and inflation eased in Q3. AUD GDP slowed in Q2 and unemployment rose to 4.9%; AUD inflation eased only marginally.",
+      "momentum_view": "Relative momentum favors NZD on the supplied macro trend, but neither currency has a confirmed recent event surprise in the snapshot.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for updated NZ employment data and actual AUD inflation-expectations release.",
       "key_catalysts": [
-        "Compare NZD GDP and easing inflation with AUD's slowing GDP and rising unemployment.",
-        "NZD unemployment input is annual for 2025."
+        "OECD NZ GDP growth rose to 2.55% y/y in 2026-Q2.",
+        "ABS AUD unemployment was 4.9% in October 2026.",
+        "Forex Factory NZ Visitor Arrivals and AUD MI Inflation Expectations are pending."
       ]
     },
     "AUD/USD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "AUD has a higher aggregate score than USD, but both have negative fundamental trend scores and only slightly positive short-term readings.",
+      "summary": "AUD's positive aggregate/short-term profile and higher supplied policy rate contrast with USD's persistently deteriorating inflation-growth trend, but AUD labor has recently worsened.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Both trends are negative; AUD's score is equal to USD's, so fundamentals provide little relative separation.",
-      "momentum_view": "Slightly favors USD: AUD 0.23 versus USD 0.13 is actually marginally higher for AUD; relative momentum is weakly AUD-positive.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "AUD GDP observation is only through Q2 and unemployment deterioration is a near-term negative.",
+        "Pending US inflation releases could change the USD side materially."
+      ],
+      "fundamental_view": "AUD has moderating inflation but slowing GDP and rising unemployment. USD has better recent unemployment but weakening growth and rising CPI; relative fundamentals are mixed.",
+      "momentum_view": "No confirmed AUD surprise is supplied; the relative view is mildly AUD-supportive based on broader dashboard direction, not a fresh release result.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and updated Australian labor/inflation information.",
       "key_catalysts": [
-        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-        "Monitor AUD labor deterioration and the divergence between its aggregate score and negative trend."
+        "ABS AUD unemployment, October 2026: 4.9%, rising from 4.72% in September.",
+        "BLS USD CPI y/y rose to 3.74% in 2026-09.",
+        "Forex Factory US CPI/Core CPI on 2026-11-10 and AUD MI Inflation Expectations on 2026-11-12 are pending."
       ]
     },
     "AUD/CAD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "Both currencies have negative trend scores, but AUD has a higher aggregate and short-term score than CAD.",
+      "summary": "Both currencies show activity/labor concerns, but CAD's sharper growth and unemployment deterioration makes AUD relatively favored; the comparison is not strong.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Near-balanced negative trend scores; CAD's persistent deterioration is more pronounced in the supplied profile.",
-      "momentum_view": "Favors AUD: 0.23 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "GDP observations are from different quarters and sources.",
+        "Both datasets are provisional and no event surprise confirms the relative view."
+      ],
+      "fundamental_view": "AUD GDP growth slowed and unemployment rose, but CAD GDP growth is lower and unemployment reached 6.7%. Inflation eased slightly in both series.",
+      "momentum_view": "Relative bias favors AUD due to more severe CAD deterioration; no fresh actual-versus-forecast event surprise is supplied for either currency.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for actual AUD releases and Canadian central-bank communication.",
       "key_catalysts": [
-        "Monitor CAD GDP and unemployment deterioration against AUD's slowing growth and rising unemployment.",
-        "AUD inflation remains elevated but eased slightly in the latest supplied quarter."
+        "OECD CAD unemployment rose to 6.7% in 2026-10; AUD unemployment was 4.9% in October.",
+        "CAD GDP growth was 0.95% y/y in 2026-Q3; AUD GDP growth was 2.14% in 2026-Q2.",
+        "Forex Factory BOC deliberations and AUD calendar items have no actuals supplied."
       ]
     },
     "AUD/CHF": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "CHF's stronger trend and momentum readings conflict with AUD's higher aggregate score and positive short-term reading.",
+      "summary": "CHF's stronger supplied growth trend and broadening profile outweigh AUD's positive score, while AUD labor and GDP momentum have weakened.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF: positive persistent trend versus AUD's negative trend.",
-      "momentum_view": "Favors CHF: 1.12 versus AUD 0.23.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "CHF labor information is stale.",
+        "AUD and CHF inflation trends are not directly comparable in frequency/source."
+      ],
+      "fundamental_view": "CHF GDP growth rose to 3.04% y/y in Q3; AUD GDP eased in Q2 and unemployment rose in October. CHF inflation is rising, while AUD inflation eased slightly.",
+      "momentum_view": "Relative structural momentum favors CHF; no recent CHF event surprise is supplied and AUD has no confirmed calendar actual here.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for further AUD labor deterioration versus persistence of CHF growth strength.",
       "key_catalysts": [
-        "CHF unemployment is an annual 2025 fallback.",
-        "AUD unemployment has risen in the supplied monthly history."
+        "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+        "ABS AUD unemployment reached 4.9% in October 2026.",
+        "CHF unemployment is annual 2025 data."
       ]
     },
     "AUD/JPY": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "JPY's positive, building trend and stronger momentum contrast with AUD's negative fundamental trend.",
+      "summary": "JPY's improving GDP and labor trend contrasts with AUD's slowing GDP and rising unemployment; AUD's higher supplied policy rate is a counterweight.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors JPY: positive trend score versus AUD's negative score.",
-      "momentum_view": "Favors JPY: 1.54 versus AUD 0.23.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "JPY GDP remains modest and AUD policy rate is higher in the supplied data.",
+        "Recent JPY event entries are pending, not results."
+      ],
+      "fundamental_view": "JPY growth and employment momentum are improving and inflation is rising. AUD has slowing GDP and weaker labor conditions, with slightly easing inflation.",
+      "momentum_view": "Relative macro momentum favors JPY, but no confirmed recent JPY calendar result or AUD surprise is supplied.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending JPY PPI actual and further AUD labor readings.",
       "key_catalysts": [
-        "Monitor AUD growth and unemployment deterioration.",
-        "Track JPY inflation, GDP, and labor readings."
+        "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+        "ABS AUD unemployment was 4.9% in October 2026.",
+        "Forex Factory JPY PPI dated 2026-11-12 has no actual in the snapshot."
       ]
     },
     "NZD/USD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "NZD's positive trend and stronger short-term score contrast with USD's negative fundamental trend, despite a near-zero NZD aggregate score.",
+      "summary": "NZD growth momentum has improved and USD's supplied inflation-growth trend is adverse, but NZD data are dated and its inflation remains elevated.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors NZD on trend score; NZD unemployment is stale and inflation remains elevated.",
-      "momentum_view": "Favors NZD: 0.90 versus USD 0.13.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZD growth data are through Q2 and unemployment is stale.",
+        "US CPI actuals are absent and could alter relative rate expectations."
+      ],
+      "fundamental_view": "NZD GDP has recovered strongly through Q2 and inflation eased in Q3, while USD GDP is easing and CPI rose. NZD unemployment is only annual 2025; USD labor improved.",
+      "momentum_view": "Structural relative momentum modestly favors NZD; no confirmed recent NZD or USD event surprise is available.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending US CPI and updated NZ employment information.",
       "key_catalysts": [
-        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
-        "Watch NZD GDP and inflation alongside its annual 2025 unemployment input."
+        "OECD NZ GDP growth rose to 2.55% y/y in 2026-Q2.",
+        "BLS USD CPI inflation reached 3.74% y/y in 2026-09.",
+        "Forex Factory US Core CPI and CPI m/m dated 2026-11-10 are pending."
       ]
     },
     "NZD/CAD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "NZD's positive trend and short-term score contrast with CAD's persistent negative trend and weak momentum.",
+      "summary": "NZD's improving growth trend compares favorably with CAD's slowing activity and rising unemployment, though NZD labor data are stale.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors NZD on trend score, with caution for stale NZD labor data and CAD's weaker growth and employment.",
-      "momentum_view": "Favors NZD: 0.90 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZD unemployment is annual 2025 data and GDP is through Q2.",
+        "Different observation periods limit direct comparison."
+      ],
+      "fundamental_view": "NZD GDP rose to 2.55% y/y in Q2 and inflation eased in Q3. CAD GDP slowed to 0.95% in Q3 and unemployment increased to 6.7%; both have countervailing inflation considerations.",
+      "momentum_view": "Relative structural momentum favors NZD; no confirmed event surprise is supplied for either side.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending BOC deliberations and updated NZ labor data.",
       "key_catalysts": [
-        "Monitor CAD GDP and unemployment deterioration.",
-        "NZD unemployment input is annual for 2025; GDP and inflation are more recent."
+        "OECD CAD unemployment rose to 6.7% in 2026-10.",
+        "OECD NZ GDP growth reached 2.55% y/y in 2026-Q2.",
+        "Forex Factory BOC Summary of Deliberations is listed for 2026-11-10 with no actual."
       ]
     },
     "NZD/CHF": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "Both currencies have positive trend and momentum readings, but CHF's trend and short-term scores are stronger; NZD's aggregate score is near zero.",
+      "summary": "CHF has the stronger latest supplied GDP growth and broadening trend; NZD growth is improving but earlier and labor data are stale.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF on trend score, with its annual unemployment input a material data limitation.",
-      "momentum_view": "Favors CHF: 1.12 versus NZD 0.90.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "Both currencies have stale labor readings.",
+        "GDP periods differ and no recent event actuals are supplied."
+      ],
+      "fundamental_view": "CHF GDP was 3.04% y/y in Q3 versus NZD GDP of 2.55% in Q2. NZD inflation eased but remains elevated; CHF inflation increased in October. CHF labor data are stale.",
+      "momentum_view": "Relative structural momentum favors CHF, with no recent event surprise supplied for either currency.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for updated NZ labor data and whether CHF growth remains strong.",
       "key_catalysts": [
-        "Compare CHF GDP and inflation with NZD growth and elevated inflation.",
-        "Both CHF and NZD unemployment inputs are stale for short-term analysis."
+        "OECD CHF GDP growth rose to 3.04% y/y in 2026-Q3.",
+        "OECD NZ GDP growth was 2.55% y/y in 2026-Q2.",
+        "NZ unemployment is annual 2025; CHF unemployment is also annual 2025."
       ]
     },
     "NZD/JPY": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "Both profiles are positive on trend and momentum, but JPY has stronger aggregate, short-term, and trend scores.",
+      "summary": "Both currencies have improving growth profiles; JPY has fresher and stronger labor evidence, while NZD's latest supplied GDP level is higher but from an earlier quarter.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors JPY on trend strength; NZD has stronger supplied GDP growth but elevated inflation and stale labor data.",
-      "momentum_view": "Favors JPY: 1.54 versus NZD 0.90.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "NZ unemployment is annual 2025 data.",
+        "GDP observations differ in period; no confirmed calendar surprise is supplied."
+      ],
+      "fundamental_view": "NZD GDP improved to 2.55% in Q2 with easing Q3 inflation, but labor data are stale. JPY GDP improved through Q3 and unemployment is 2.4%, with inflation rising.",
+      "momentum_view": "Mixed: NZD recovery is notable, while JPY has more current labor support. No event surprise resolves the comparison.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch updated NZ labor data and actuals for pending JPY releases.",
       "key_catalysts": [
-        "Monitor JPY labor and GDP readings against NZD GDP and inflation.",
-        "NZD unemployment input is annual for 2025."
+        "OECD NZ GDP growth reached 2.55% y/y in 2026-Q2.",
+        "OECD JPY GDP growth was 1.16% in 2026-Q3 and unemployment 2.4% in September.",
+        "Forex Factory JPY PPI dated 2026-11-12 is pending."
       ]
     },
     "USD/CAD": {
       "bias": "BULLISH",
       "confidence": "LOW",
-      "summary": "USD's aggregate and short-term scores are stronger than CAD's, while both fundamental trend scores are negative.",
+      "summary": "USD is relatively favored by CAD's more severe growth and labor deterioration, despite adverse USD inflation and growth trends.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Both trends are negative; USD's deterioration is slightly stronger by trend score, offsetting its stronger aggregate reading.",
-      "momentum_view": "Favors USD: 0.13 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "USD inflation and growth trend is persistently adverse.",
+        "Pending events have no actuals; no trade or price information is supplied."
+      ],
+      "fundamental_view": "CAD GDP is lower and unemployment has risen sharply; USD has stronger labor data but weakening GDP and rising inflation. The comparison is mixed on policy implications.",
+      "momentum_view": "CAD pressure is more clearly visible in current supplied activity/labor readings; no recent USD or CAD event result is confirmed in the snapshot.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and BOC communication.",
       "key_catalysts": [
-        "Supplied calendar lists pending high-impact US CPI actuals.",
-        "Monitor CAD GDP and unemployment deterioration and the USD trend-score divergence."
+        "OECD CAD unemployment reached 6.7% in 2026-10; GDP growth was 0.95% in Q3.",
+        "BLS USD CPI inflation was 3.74% y/y in 2026-09.",
+        "Forex Factory US CPI/Core CPI and BOC Summary of Deliberations are pending in the supplied calendar."
       ]
     },
     "USD/CHF": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "CHF's positive trend and stronger short-term score contrast with USD's negative fundamental trend, though USD's aggregate score is higher.",
+      "summary": "CHF's strong supplied growth trend contrasts with USD's adverse persistent growth-inflation profile; USD labor improvement and CHF's recent inflation rise temper conviction.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF on trend score; CHF unemployment is stale.",
-      "momentum_view": "Favors CHF: 1.12 versus USD 0.13.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "CHF unemployment is annual 2025 data and CHF inflation rose in October.",
+        "Pending US CPI could change the relative policy outlook."
+      ],
+      "fundamental_view": "CHF GDP accelerated to 3.04% y/y in Q3, while USD GDP eased and CPI rose. USD unemployment improved; CHF labor data are stale.",
+      "momentum_view": "Relative structural momentum favors CHF, with no recent confirmed CHF event catalyst.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending US CPI actuals and persistence of CHF growth strength.",
       "key_catalysts": [
-        "Supplied calendar lists pending high-impact US CPI actuals.",
-        "Monitor CHF growth and inflation; its unemployment data are annual for 2025."
+        "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+        "BLS USD CPI inflation rose to 3.74% y/y in 2026-09.",
+        "Forex Factory US CPI and Core CPI dated 2026-11-10 are pending."
       ]
     },
     "USD/JPY": {
-      "bias": "BULLISH",
+      "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "JPY's positive trend and momentum are stronger, but USD's aggregate score is lower than JPY's? The supplied aggregate scores favor JPY; relative view is therefore JPY-positive despite mixed USD readings.",
+      "summary": "JPY has the more constructive supplied growth and employment momentum, while USD growth and inflation trends deteriorate; improved US unemployment is a counterweight.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors JPY: positive building trend versus USD's negative trend.",
-      "momentum_view": "Favors JPY: 1.54 versus USD 0.13.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "JPY growth is modest and no recent event surprise is confirmed.",
+        "Pending US inflation data could shift the relative outlook."
+      ],
+      "fundamental_view": "JPY GDP and labor trends are improving, with low unemployment and rising inflation. USD unemployment is improving, but GDP is easing and CPI rising.",
+      "momentum_view": "Relative macro momentum favors JPY; no actual for the listed JPY PPI or US CPI events is supplied.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for US CPI and JPY PPI actuals; both are pending in the snapshot.",
       "key_catalysts": [
-        "Supplied calendar lists pending high-impact US CPI actuals.",
-        "Monitor JPY GDP, inflation, and labor data."
+        "OECD JPY GDP growth improved to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+        "OECD USD unemployment eased to 4.1% in 2026-10 while BLS CPI rose to 3.74% y/y in September.",
+        "Forex Factory JPY PPI and US CPI entries are pending."
       ]
     },
     "CAD/CHF": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "CAD's negative trend and momentum contrast with CHF's positive trend and momentum, despite CAD's higher policy rate.",
+      "summary": "CHF's strong growth trend is favored against CAD's deteriorating growth and rising unemployment.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Favors CHF: CAD trend is negative and persistent, while CHF trend is positive and broadening.",
-      "momentum_view": "Favors CHF: 1.12 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "CHF labor data are annual 2025 and stale.",
+        "The supplied series use differing sources and periods."
+      ],
+      "fundamental_view": "CHF GDP accelerated to 3.04% y/y in Q3; CAD GDP fell to 0.95% and unemployment rose to 6.7%. CAD inflation eased only marginally; CHF inflation recently rose.",
+      "momentum_view": "Relative macro momentum favors CHF, with no supplied recent event surprise for the cross currencies.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch pending BOC material and further CHF growth/inflation data.",
       "key_catalysts": [
-        "CAD unemployment rose to 6.7% in 2026-10.",
-        "CHF unemployment input is annual for 2025."
+        "OECD CAD unemployment reached 6.7% in 2026-10.",
+        "OECD CHF GDP growth reached 3.04% y/y in 2026-Q3.",
+        "Forex Factory BOC Summary of Deliberations dated 2026-11-10 is pending."
       ]
     },
     "CAD/JPY": {
       "bias": "BEARISH",
       "confidence": "LOW",
-      "summary": "JPY's positive aggregate, momentum, and trend readings contrast with CAD's negative readings.",
+      "summary": "JPY's improving growth and labor profile contrasts with CAD's worsening labor and slower growth, favoring JPY relatively.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Strongly favors JPY on supplied trend scores.",
-      "momentum_view": "Favors JPY: 1.54 versus CAD -1.01.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "JPY GDP remains modest and no event surprise is confirmed.",
+        "Pending events cannot be treated as results."
+      ],
+      "fundamental_view": "JPY GDP improved and unemployment remains low; CAD GDP slowed and unemployment rose to 6.7%. Inflation is rising in JPY and broadly flat to slightly easing in CAD.",
+      "momentum_view": "Relative macro momentum favors JPY; recent JPY calendar entries have no actuals in the supplied snapshot.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch actual JPY PPI and any confirmed BOC communication.",
       "key_catalysts": [
-        "Monitor CAD growth and unemployment deterioration.",
-        "Track JPY GDP and labor improvement and rising inflation."
+        "OECD JPY GDP growth rose to 1.16% y/y in 2026-Q3; unemployment was 2.4% in September.",
+        "OECD CAD unemployment rose to 6.7% in 2026-10 and GDP growth was 0.95% in Q3.",
+        "Forex Factory JPY PPI and BOC Summary of Deliberations are pending."
       ]
     },
     "CHF/JPY": {
-      "bias": "BEARISH",
+      "bias": "NEUTRAL",
       "confidence": "LOW",
-      "summary": "Both currencies have positive trend and momentum scores, but JPY has stronger aggregate and short-term readings; CHF's GDP level is stronger in the supplied data.",
+      "summary": "Both currencies have strong supplied trend profiles: CHF has stronger latest GDP growth, while JPY has fresher labor data and a higher supplied policy rate.",
       "drivers": "",
-      "risks": "",
-      "fundamental_view": "Trend scores are equal; CHF has stronger latest GDP growth, while JPY has more timely labor data.",
-      "momentum_view": "Favors JPY: 1.54 versus CHF 1.12.",
-      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
-      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "risks": [
+        "CHF labor data are stale and CHF inflation increased in October.",
+        "No supplied pair technicals or confirmed recent event surprise."
+      ],
+      "fundamental_view": "CHF GDP growth reached 3.04% y/y in Q3 and its broader trend is persistent; JPY GDP is improving with unemployment at 2.4% and inflation rising. CHF labor data are stale.",
+      "momentum_view": "Mixed relative momentum; no recent confirmed event surprise distinguishes the currencies.",
+      "d1_view": "Unavailable: pair D1 indicators are marked unavailable in the snapshot.",
+      "h4_watch": "No H4 data supplied. Watch for updated CHF labor evidence and actual JPY PPI data.",
       "key_catalysts": [
-        "CHF unemployment input is annual for 2025; JPY unemployment is 2026-09.",
-        "Monitor relative GDP and inflation developments."
+        "OECD CHF GDP growth was 3.04% y/y in 2026-Q3.",
+        "OECD JPY unemployment was 2.4% in 2026-09; CPI was 2.1% y/y.",
+        "CHF unemployment is annual 2025 data; Forex Factory JPY PPI is pending."
       ]
     }
   },
