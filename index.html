@@ -19,6 +19,7 @@
       <button class="nav-item active" data-view="workflow"><span>◈</span> Trading Workflow</button>
       <button class="nav-item" data-view="overview"><span>◫</span> Overview</button>
       <button class="nav-item" data-view="bias"><span>⇄</span> Pair Bias</button>
+      <button class="nav-item" data-view="ai-review"><span>✦</span> AI Momentum Review</button>
       <button class="nav-item" data-view="centralbank"><span>◎</span> Central Bank Intelligence</button>
       <button class="nav-item" data-view="currencies"><span>◎</span> Currency Strength</button>
       <button class="nav-item" data-view="calendar"><span>▦</span> Event Risk</button>
@@ -93,8 +94,12 @@
 <label><input type="checkbox" class="bias-currency-check" value="USD" checked><span>USD</span></label><label><input type="checkbox" class="bias-currency-check" value="EUR" checked><span>EUR</span></label><label><input type="checkbox" class="bias-currency-check" value="GBP" checked><span>GBP</span></label><label><input type="checkbox" class="bias-currency-check" value="JPY" checked><span>JPY</span></label><label><input type="checkbox" class="bias-currency-check" value="CHF" checked><span>CHF</span></label><label><input type="checkbox" class="bias-currency-check" value="CAD" checked><span>CAD</span></label><label><input type="checkbox" class="bias-currency-check" value="AUD" checked><span>AUD</span></label><label><input type="checkbox" class="bias-currency-check" value="NZD" checked><span>NZD</span></label>
 </div><div class="strength-filter-actions"><span class="tag tag-neutral" id="bias-selection-count">8 / 8 SELECTED</span><button type="button" class="text-button" id="bias-select-all">Select all</button><button type="button" class="text-button" id="bias-clear-all">Clear</button></div></div>
 <div class="notice notice-info"><b>How bias is derived</b><p>Bias = base short-term score minus quote short-term score. Above +0.35 is bullish, below −0.35 is bearish, between them is neutral. This is a relative macro read, not a price forecast.</p></div>
-<div id="ai-review-panel"><div class="panel"><div class="empty">Loading ChatGPT and Gemini reviews…</div></div></div>
 <div id="bias-cards" class="bias-grid"><div class="empty">Loading bias cards…</div></div>
+</section>
+<section class="view" id="view-ai-review">
+  <div class="section-heading"><div><div class="eyebrow">RECENT NEWS & DATA-RELEASE INTERPRETATION</div><h2>AI Momentum Review</h2><p>Independent interpretation of the latest news and economic releases captured in the dashboard snapshot. Focus on what changed, which currencies and pairs may be affected, and whether momentum is building or fading.</p></div></div>
+  <div class="notice notice-info"><b>Separate research layer — Pair Bias is unchanged</b><p>This page does not recalculate, overwrite or influence the original Pair Bias scores. AI commentary is an overlay on the supplied news and data snapshot, not a live price feed or a trading signal. Check the input timestamp and source release before acting.</p></div>
+  <div id="ai-review-panel"><div class="panel"><div class="empty">Loading ChatGPT and Gemini momentum reviews…</div></div></div>
 </section>
 <section class="view" id="view-pairs">
       <div class="section-heading"><div><div class="eyebrow">RELATIVE VALUE</div><h2>Pair universe & shortlist</h2><p>Compare the 28 currency pairs in both directions. Open Pair Intelligence for a detailed macro, central-bank, geopolitical and short-term news assessment of each pair.</p></div></div>
