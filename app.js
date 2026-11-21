@@ -307,8 +307,22 @@ $("risk-calc")?.addEventListener("click",()=>{const bal=+$("risk-account").value
 $("refresh-btn").addEventListener("click",loadSnapshot);
 $("news-filter").addEventListener("change",()=>renderNews("news-list",$("news-filter").value));
 $("release-currency-filter")?.addEventListener("change",renderReleaseTracker);
+function setupThemeSelector(){
+  const select=$("theme-select");
+  if(!select)return;
+  const allowed=["white","grey","dark"];
+  let saved="dark";
+  try{const value=localStorage.getItem("macropulse-theme");if(allowed.includes(value))saved=value;}catch(_){}
+  document.documentElement.dataset.theme=saved;
+  select.value=saved;
+  select.addEventListener("change",()=>{
+    const value=allowed.includes(select.value)?select.value:"dark";
+    document.documentElement.dataset.theme=value;
+    try{localStorage.setItem("macropulse-theme",value);}catch(_){}
+  });
+}
 function clock(){ $("clock").textContent=new Date().toLocaleTimeString("en-SG",{timeZone:"Asia/Singapore",hour12:false})+" SGT"; }
-clock(); setInterval(clock,1000); loadSnapshot(); setInterval(loadSnapshot,5*60*1000);
+setupThemeSelector(); clock(); setInterval(clock,1000); loadSnapshot(); setInterval(loadSnapshot,5*60*1000);
 
 // Local-only trading journal
 function journalRead(){try{return JSON.parse(localStorage.getItem("macropulse-journal")||"[]")}catch{return[]}}
