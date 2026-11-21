@@ -1,6 +1,6 @@
 {
   "schema_version": 4,
-  "generated_at": "2026-11-21T20:26:23.267122+00:00",
+  "generated_at": "2026-11-21T21:12:25.461308+00:00",
   "timezone": "UTC (displayed in SGT)",
   "model": "v7-pair-technical-snapshot",
   "history_window_days": 90,
@@ -30,19 +30,19 @@
   "currencies": [
     {
       "code": "USD",
-      "score": 0.64,
+      "score": 1.06,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (2026-10) \u00b7 economic-surprise data not connected",
       "country_proxy": "United States",
-      "data_year": 2026,
+      "data_year": 2024,
       "policy_rate": 4.0,
       "policy_rate_display": "3.75\u20134.00%",
       "policy_rate_basis": "Fed target range",
       "policy_rate_as_of": "2026-10-29",
       "policy_rate_source": "https://www.federalreserve.gov/economy-at-a-glance-policy-rate.htm",
-      "inflation": 3.737684729064039,
-      "inflation_year": 2026,
-      "inflation_period": "2026-09",
+      "inflation": 2.6,
+      "inflation_year": 2024,
+      "inflation_period": "2024-12",
       "gdp_growth": 2.065739238,
       "gdp_growth_year": 2026,
       "gdp_growth_period": "2026-Q3",
@@ -56,36 +56,36 @@
       "abs_employment_period": null,
       "metrics": {
         "inflation": {
-          "value": 3.737684729064039,
-          "period": "2026-09",
-          "year": 2026,
+          "value": 2.6,
+          "period": "2024-12",
+          "year": 2024,
           "history": [
             {
-              "period": "2026-09",
-              "value": 3.737684729064039
+              "period": "2024-12",
+              "value": 2.6
             },
             {
-              "period": "2026-08",
-              "value": 3.3965478924364856
+              "period": "2024-11",
+              "value": 2.3
             },
             {
-              "period": "2026-07",
-              "value": 3.364825041479902
+              "period": "2024-10",
+              "value": 1.9
             },
             {
-              "period": "2026-06",
-              "value": 3.5314250637863864
+              "period": "2024-09",
+              "value": 1.6
             },
             {
-              "period": "2026-05",
-              "value": 4.248674039164446
+              "period": "2024-08",
+              "value": 1.3
             },
             {
-              "period": "2026-04",
-              "value": 3.8108449321217597
+              "period": "2024-07",
+              "value": 1.7
             }
           ],
-          "score": -0.82,
+          "score": 1.38,
           "label": "CPI inflation, year-on-year (%)",
           "source": "BLS",
           "url": "https://www.bls.gov/cpi/"
@@ -172,17 +172,17 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.18,
-        "inflation_vs_target": -0.82,
+        "inflation_vs_target": 1.38,
         "gdp_growth": 0.12,
         "employment": 1.73,
         "economic_surprises": null
       },
-      "structural_update_status": "relative_score_changed",
-      "structural_update_note": "Relative score changed after peer-currency data updates",
-      "structural_update_date": "2026-11-20",
-      "structural_update_date_basis": "snapshot date",
+      "structural_update_status": "core_data_updated",
+      "structural_update_note": "Updated: Inflation",
+      "structural_update_date": "2026-11-13",
+      "structural_update_date_basis": "release date",
       "previous_structural_score": 0.64,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": 0.42,
       "fundamental_trend_score": -0.83,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Building \u00b7 repeated trend",
@@ -191,7 +191,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.13,
+      "short_term_score": 0.4,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -262,7 +262,7 @@
     },
     {
       "code": "EUR",
-      "score": -1.37,
+      "score": -1.34,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (2026-09) \u00b7 economic-surprise data not connected",
       "country_proxy": "Euro area",
@@ -317,7 +317,7 @@
               "value": 3.2
             }
           ],
-          "score": -1.77,
+          "score": -1.58,
           "label": "CPI inflation, year-on-year (%)",
           "source": "Eurostat",
           "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
@@ -404,7 +404,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -0.11,
-        "inflation_vs_target": -1.77,
+        "inflation_vs_target": -1.58,
         "gdp_growth": -1.33,
         "employment": -3.55,
         "economic_surprises": null
@@ -414,7 +414,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": -1.37,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": 0.03,
       "fundamental_trend_score": 0.0,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Mixed \u00b7 losing alignment",
@@ -423,12 +423,12 @@
       "event_surprise_count": 1,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": "2026-11-16T10:00:00+00:00",
-      "short_term_score": -0.89,
+      "short_term_score": -0.87,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Fading",
-      "momentum_persistence_detail": "Latest scored catalyst was 130h ago; event impact decays with a 36h half-life",
+      "momentum_persistence_detail": "Latest scored catalyst was 131h ago; event impact decays with a 36h half-life",
       "momentum_aligned_count": 1,
-      "momentum_latest_age_hours": 130.4,
+      "momentum_latest_age_hours": 131.2,
       "last_release_reference": {
         "title": "Consumer Confidence",
         "time": "2026-11-20T15:00:00+00:00",
@@ -492,7 +492,7 @@
     },
     {
       "code": "GBP",
-      "score": 0.47,
+      "score": 0.39,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (2026-08) \u00b7 economic-surprise data not connected",
       "country_proxy": "United Kingdom",
@@ -547,7 +547,7 @@
               "value": 2.8
             }
           ],
-          "score": -0.32,
+          "score": -0.73,
           "label": "CPI inflation, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -634,17 +634,17 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.18,
-        "inflation_vs_target": -0.32,
+        "inflation_vs_target": -0.73,
         "gdp_growth": -0.12,
         "employment": 0.63,
         "economic_surprises": null
       },
-      "structural_update_status": "core_data_updated",
-      "structural_update_note": "Updated: Inflation, Employment",
-      "structural_update_date": "2026-10",
-      "structural_update_date_basis": "data period",
+      "structural_update_status": "relative_score_changed",
+      "structural_update_note": "Relative score changed after peer-currency data updates",
+      "structural_update_date": "2026-11-21",
+      "structural_update_date_basis": "snapshot date",
       "previous_structural_score": 0.47,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.08,
       "fundamental_trend_score": 0.83,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Building \u00b7 repeated trend",
@@ -653,7 +653,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.6,
+      "short_term_score": 0.54,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -724,7 +724,7 @@
     },
     {
       "code": "JPY",
-      "score": 1.03,
+      "score": 0.55,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (2026-09) \u00b7 economic-surprise data not connected",
       "country_proxy": "Japan",
@@ -779,7 +779,7 @@
               "value": 1.4
             }
           ],
-          "score": 5.0,
+          "score": 2.44,
           "label": "CPI inflation, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -866,7 +866,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -1.18,
-        "inflation_vs_target": 5.0,
+        "inflation_vs_target": 2.44,
         "gdp_growth": -1.6,
         "employment": 5.0,
         "economic_surprises": null
@@ -876,7 +876,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": 1.03,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.48,
       "fundamental_trend_score": 2.5,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Building \u00b7 repeated trend",
@@ -885,7 +885,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 1.54,
+      "short_term_score": 1.23,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -954,7 +954,7 @@
     },
     {
       "code": "CHF",
-      "score": 0.41,
+      "score": -0.01,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment annual fallback \u00b7 stale for short-term analysis (2025) \u00b7 economic-surprise data not connected",
       "country_proxy": "Switzerland",
@@ -1009,7 +1009,7 @@
               "value": 0.9
             }
           ],
-          "score": 4.02,
+          "score": 1.81,
           "label": "CPI inflation, year-on-year (%)",
           "source": "Eurostat",
           "url": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_minr/default/table?lang=en"
@@ -1095,7 +1095,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -2.25,
-        "inflation_vs_target": 4.02,
+        "inflation_vs_target": 1.81,
         "gdp_growth": 1.96,
         "employment": 0.03,
         "economic_surprises": null
@@ -1105,7 +1105,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": 0.41,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.42,
       "fundamental_trend_score": 2.5,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Persistent \u00b7 broadening",
@@ -1114,7 +1114,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 1.14,
+      "short_term_score": 0.87,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -1183,7 +1183,7 @@
     },
     {
       "code": "CAD",
-      "score": -1.0,
+      "score": -1.22,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (2026-10) \u00b7 economic-surprise data not connected",
       "country_proxy": "Canada",
@@ -1238,7 +1238,7 @@
               "value": 3.225806
             }
           ],
-          "score": 1.54,
+          "score": 0.36,
           "label": "CPI inflation, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -1325,7 +1325,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": -0.11,
-        "inflation_vs_target": 1.54,
+        "inflation_vs_target": 0.36,
         "gdp_growth": -1.98,
         "employment": -3.99,
         "economic_surprises": null
@@ -1335,7 +1335,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": -1.0,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.22,
       "fundamental_trend_score": -0.83,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Persistent \u00b7 broadening",
@@ -1344,7 +1344,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": -0.94,
+      "short_term_score": -1.08,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -1413,7 +1413,7 @@
     },
     {
       "code": "AUD",
-      "score": 0.83,
+      "score": 0.71,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment latest high-frequency source captured (October 2026) \u00b7 economic-surprise data not connected",
       "country_proxy": "Australia",
@@ -1468,7 +1468,7 @@
               "value": 2.120447
             }
           ],
-          "score": 0.32,
+          "score": -0.36,
           "label": "CPI inflation, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -1559,7 +1559,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 1.91,
-        "inflation_vs_target": 0.32,
+        "inflation_vs_target": -0.36,
         "gdp_growth": 0.25,
         "employment": -0.03,
         "economic_surprises": null
@@ -1569,7 +1569,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": 0.83,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.12,
       "fundamental_trend_score": -0.83,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Building \u00b7 repeated trend",
@@ -1578,12 +1578,12 @@
       "event_surprise_count": 1,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": "2026-11-19T00:30:00+00:00",
-      "short_term_score": 0.25,
+      "short_term_score": 0.17,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Low \u00b7 single / mixed catalyst",
-      "momentum_persistence_detail": "1 aligned surprise(s); latest catalyst 68h ago",
+      "momentum_persistence_detail": "1 aligned surprise(s); latest catalyst 69h ago",
       "momentum_aligned_count": 1,
-      "momentum_latest_age_hours": 67.9,
+      "momentum_latest_age_hours": 68.7,
       "last_release_reference": {
         "title": "Employment Change",
         "time": "2026-11-19T00:30:00+00:00",
@@ -1647,7 +1647,7 @@
     },
     {
       "code": "NZD",
-      "score": 0.08,
+      "score": 0.04,
       "confidence": "Low",
       "data_status": "Provisional \u00b7 80% model weight covered \u00b7 unemployment annual fallback \u00b7 stale for short-term analysis (2025) \u00b7 economic-surprise data not connected",
       "country_proxy": "New Zealand",
@@ -1702,7 +1702,7 @@
               "value": 2.672956
             }
           ],
-          "score": -0.74,
+          "score": -0.98,
           "label": "CPI inflation, year-on-year (%)",
           "source": "OECD",
           "url": "https://data-explorer.oecd.org/"
@@ -1788,7 +1788,7 @@
       "errors": [],
       "score_components": {
         "policy_rate_level": 0.11,
-        "inflation_vs_target": -0.74,
+        "inflation_vs_target": -0.98,
         "gdp_growth": 1.03,
         "employment": -0.42,
         "economic_surprises": null
@@ -1798,7 +1798,7 @@
       "structural_update_date": "2026-11-21",
       "structural_update_date_basis": "snapshot date",
       "previous_structural_score": 0.08,
-      "structural_score_delta": 0.0,
+      "structural_score_delta": -0.04,
       "fundamental_trend_score": 2.5,
       "fundamental_trend_status": "Trend from latest dated GDP, unemployment and inflation-vs-target series",
       "fundamental_trend_persistence": "Persistent \u00b7 broadening",
@@ -1807,7 +1807,7 @@
       "event_surprise_count": 0,
       "event_score_half_life_hours": 36,
       "last_event_surprise_at": null,
-      "short_term_score": 0.93,
+      "short_term_score": 0.9,
       "short_term_score_status": "65% structural + 35% recent macro trend",
       "momentum_persistence": "Unconfirmed",
       "momentum_persistence_detail": "No verified event surprise in the seven-day window",
@@ -9682,7 +9682,7 @@
       "name": "Federal Reserve",
       "url": "https://www.federalreserve.gov/feeds/press_all.xml",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 20,
       "new_releases_added": 0
     },
@@ -9690,7 +9690,7 @@
       "name": "European Central Bank",
       "url": "https://www.ecb.europa.eu/rss/press.html",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 15,
       "new_releases_added": 0
     },
@@ -9698,7 +9698,7 @@
       "name": "Bank of England",
       "url": "https://www.bankofengland.co.uk/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 42,
       "new_releases_added": 0
     },
@@ -9706,7 +9706,7 @@
       "name": "Bank of Japan",
       "url": "https://www.boj.or.jp/en/rss/whatsnew.xml",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 47,
       "new_releases_added": 0
     },
@@ -9714,7 +9714,7 @@
       "name": "Swiss National Bank",
       "url": "https://www.snb.ch/public/en/rss/news",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9722,7 +9722,7 @@
       "name": "Bank of Canada",
       "url": "https://www.bankofcanada.ca/content_type/press-releases/feed/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9730,7 +9730,7 @@
       "name": "Reserve Bank of Australia",
       "url": "https://www.rba.gov.au/rss/rss-cb-media-releases.xml",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 0,
       "new_releases_added": 0
     },
@@ -9738,7 +9738,7 @@
       "name": "Reserve Bank of New Zealand",
       "url": "https://www.rbnz.govt.nz/feeds/news",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "dated_releases_in_feed_90d": 25,
       "new_releases_added": 0
     },
@@ -9746,7 +9746,7 @@
       "name": "Forex Factory Economic Calendar",
       "url": "https://nfs.faireconomy.media/ff_calendar_thisweek.xml",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "events_in_rolling_window": 118,
       "new_or_updated_events": 118,
       "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT"
@@ -9755,7 +9755,7 @@
       "name": "OECD Monthly Unemployment Rates",
       "url": "https://data-explorer.oecd.org/s/2ai",
       "status": "partial",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "currencies_covered": [
         "USD",
         "EUR",
@@ -9769,15 +9769,15 @@
       "name": "Australian Bureau of Statistics \u00b7 Labour Force",
       "url": "https://www.abs.gov.au/statistics/labour/employment-and-unemployment/labour-force-australia/latest-release",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "reference_period": "October 2026"
     },
     {
       "name": "Official / OECD macro data \u00b7 United States",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
-      "data_year": 2026,
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
+      "data_year": 2024,
       "indicators_available": 3,
       "unemployment_period": "2026-10",
       "unemployment_source": "OECD"
@@ -9786,7 +9786,7 @@
       "name": "Official / OECD macro data \u00b7 Euro area",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2026,
       "indicators_available": 3,
       "unemployment_period": "2026-09",
@@ -9796,7 +9796,7 @@
       "name": "Official / OECD macro data \u00b7 United Kingdom",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2026,
       "indicators_available": 3,
       "unemployment_period": "2026-08",
@@ -9806,7 +9806,7 @@
       "name": "Official / OECD macro data \u00b7 Japan",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2026,
       "indicators_available": 3,
       "unemployment_period": "2026-09",
@@ -9816,7 +9816,7 @@
       "name": "Official / OECD macro data \u00b7 Switzerland",
       "url": "https://data-explorer.oecd.org/",
       "status": "partial",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2025,
       "indicators_available": 3,
       "unemployment_period": "2025",
@@ -9826,7 +9826,7 @@
       "name": "Official / OECD macro data \u00b7 Canada",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2026,
       "indicators_available": 3,
       "unemployment_period": "2026-10",
@@ -9836,7 +9836,7 @@
       "name": "Official / OECD macro data \u00b7 Australia",
       "url": "https://data-explorer.oecd.org/",
       "status": "ok",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2026,
       "indicators_available": 3,
       "unemployment_period": "October 2026",
@@ -9846,7 +9846,7 @@
       "name": "Official / OECD macro data \u00b7 New Zealand",
       "url": "https://data-explorer.oecd.org/",
       "status": "partial",
-      "checked_at": "2026-11-21T20:26:23.267122+00:00",
+      "checked_at": "2026-11-21T21:12:25.461308+00:00",
       "data_year": 2025,
       "indicators_available": 3,
       "unemployment_period": "2025",
