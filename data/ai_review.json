@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T16:54:13.414058+00:00",
-  "input_snapshot_generated_at": "2026-11-21T16:48:28.488629+00:00",
-  "input_fingerprint": "581b3bcba9c3f9c4c58392064dbbda7f9910bbec83cd3430608ca121dbb7bfd4",
+  "generated_at": "2026-11-21T20:50:20.316314+00:00",
+  "input_snapshot_generated_at": "2026-11-21T20:26:23.267122+00:00",
+  "input_fingerprint": "962d09e84413140e6f17749093cbf804ec566daf4ae5b4eacc15c4960d768712",
   "status": "partial",
   "providers": {
     "chatgpt": {
-      "status": "ok",
+      "status": "error",
       "model": "gpt-6-luna",
-      "message": "Review completed.",
+      "message": "Expecting ',' delimiter: line 585 column 6 (char 41833)",
       "review": {
         "currency_reviews": {
           "USD": {
@@ -628,7 +628,7 @@
     "gemini": {
       "status": "error",
       "model": "gemini-3.8-flash",
-      "message": "The read operation timed out",
+      "message": "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "review": null
     }
   },
