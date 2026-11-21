@@ -66,7 +66,7 @@ def consensus(a,b):
 def main():
  s=read(SNAP,{})
  if not s.get("currencies"):raise SystemExit("No currency snapshot found.")
- data=payload(s); fp=hashlib.sha256(json.dumps(data,sort_keys=True,ensure_ascii=False).encode()).hexdigest(); old=read(OUT,{})
+ data=payload(s); fp=hashlib.sha256(json.dumps({"data":data,"prompt":PROMPT},sort_keys=True,ensure_ascii=False).encode()).hexdigest(); old=read(OUT,{})
  try:age=(NOW-dt.datetime.fromisoformat(old["generated_at"].replace("Z","+00:00"))).total_seconds()
  except Exception:age=999999
  if old.get("input_fingerprint")==fp and age<14400 and old.get("pair_reviews"):
