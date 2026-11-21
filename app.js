@@ -292,7 +292,7 @@ async function loadSnapshot() {
     $("currency-rows").innerHTML=`<tr><td colspan="9" class="empty">Core data unavailable. ${error.message}</td></tr>`; $("currency-rows-full").innerHTML=`<tr><td colspan="4" class="empty">Currency analysis unavailable until the shared snapshot loads.</td></tr>`;
   } finally { $("refresh-btn").disabled=false; $("refresh-btn").textContent="↻ Refresh"; }
 }
-const titles={workflow:"Trading Workflow",overview:"Overview",currencies:"Currency Strength","bias:"Pair Bias","ai-review":"AI Momentum Review",centralbank:"Central Bank Intelligence",pairs:"Pair Universe",technical:"Technical Entry",risk:"Risk Management",swap:"Swap Intelligence",news:"News Intelligence",calendar:"Event Risk",positioning:"CFTC Positioning",journal:"Trading Journal"};
+const titles={workflow:"Trading Workflow",overview:"Overview",currencies:"Currency Strength",bias:"Pair Bias","ai-review":"AI Momentum Review",centralbank:"Central Bank Intelligence",pairs:"Pair Universe",technical:"Technical Entry",risk:"Risk Management",swap:"Swap Intelligence",news:"News Intelligence",calendar:"Event Risk",positioning:"CFTC Positioning",journal:"Trading Journal"};
 function navigate(view) {
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`view-${view}`));
   document.querySelectorAll(".nav-item").forEach(b=>b.classList.toggle("active",b.dataset.view===view));
