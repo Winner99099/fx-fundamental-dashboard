@@ -1,20 +1,20 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T08:56:19.011570+00:00",
+  "generated_at": "2026-11-21T12:55:53.016382+00:00",
   "input_snapshot_generated_at": "2026-11-20T03:55:02.354715+00:00",
   "input_fingerprint": "88b1d862ac1e46dcfbe35faad173d45c01a46a82b2455c86c71b93fe23a37184",
   "status": "awaiting_api_keys",
   "providers": {
     "chatgpt": {
-      "status": "not_configured",
+      "status": "error",
       "model": "gpt-6-luna",
-      "message": "Add this API key as a GitHub Actions secret.",
+      "message": "HTTP 401: {\n  \"error\": {\n    \"code\": \"invalid_api_key\",\n    \"message\": \"Incorrect API key provided: key_dvf1********JQSu. You can find your API key at https://platform.openai.com/account/api-keys.\",\n    \"param\": null,\n    \"type\": \"invalid_request_error\"\n  }\n}",
       "review": null
     },
     "gemini": {
-      "status": "not_configured",
+      "status": "error",
       "model": "gemini-3.8-flash",
-      "message": "Add this API key as a GitHub Actions secret.",
+      "message": "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
       "review": null
     }
   },
