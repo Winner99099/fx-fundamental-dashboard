@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import datetime as dt, hashlib, json, os, urllib.error, urllib.parse, urllib.request
+import datetime as dt, hashlib, json, os, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SNAP=ROOT/"data/latest.json"; OUT=ROOT/"data/ai_review.json"
@@ -49,7 +49,19 @@ def gemini(key,data):
  url="https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent"
  body={"systemInstruction":{"parts":[{"text":PROMPT}]},"contents":[{"role":"user","parts":[{"text":json.dumps(data,ensure_ascii=False)}]}],"generationConfig":{"temperature":0.2,"maxOutputTokens":12000,"responseMimeType":"application/json"}}
  req=urllib.request.Request(url,data=json.dumps(body).encode(),headers={"Content-Type":"application/json","x-goog-api-key":key},method="POST")
- with urllib.request.urlopen(req,timeout=180) as r:d=json.loads(r.read().decode())
+ # Google may temporarily return 429/5xx during capacity spikes. Retry those only;
+ # authentication and request errors should fail immediately.
+ for attempt in range(3):
+  try:
+   with urllib.request.urlopen(req,timeout=180) as r:
+    d=json.loads(r.read().decode())
+   break
+  except urllib.error.HTTPError as e:
+   if e.code not in (429,500,502,503,504) or attempt==2:raise
+   retry_after=e.headers.get("Retry-After")
+   try:delay=float(retry_after) if retry_after else 8*(2**attempt)
+   except (TypeError,ValueError):delay=8*(2**attempt)
+   time.sleep(min(max(delay,1),30))
  parts=d.get("candidates",[{}])[0].get("content",{}).get("parts",[])
  return valid(parse("\n".join(x.get("text","") for x in parts)))
 def provider(name,key,fn,data,old):
