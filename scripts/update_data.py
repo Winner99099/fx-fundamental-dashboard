@@ -695,7 +695,7 @@ aud_snapshot = next((item for item in currencies if item.get("code") == "AUD"), 
 abs_change = aud_snapshot.get("abs_employment_change_k")
 abs_release_date = aud_snapshot.get("abs_employment_release_date")
 if abs_change is not None and abs_release_date:
-    for event in events:
+    for event in events_by_id.values():
         event_date = (parse_date(event.get("time")) or now).date().isoformat()
         if (event.get("currency") == "AUD"
                 and re.search(r"employment change", event.get("title", ""), re.I)
