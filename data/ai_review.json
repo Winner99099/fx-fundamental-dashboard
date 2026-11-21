@@ -1,15 +1,561 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T12:57:03.703572+00:00",
+  "generated_at": "2026-11-21T13:02:37.695933+00:00",
   "input_snapshot_generated_at": "2026-11-20T03:55:02.354715+00:00",
   "input_fingerprint": "88b1d862ac1e46dcfbe35faad173d45c01a46a82b2455c86c71b93fe23a37184",
-  "status": "awaiting_api_keys",
+  "status": "partial",
   "providers": {
     "chatgpt": {
-      "status": "error",
+      "status": "ok",
       "model": "gpt-6-luna",
-      "message": "HTTP 401: {\n  \"error\": {\n    \"code\": \"invalid_api_key\",\n    \"message\": \"Incorrect API key provided: key_dvf1********JQSu. You can find your API key at https://platform.openai.com/account/api-keys.\",\n    \"param\": null,\n    \"type\": \"invalid_request_error\"\n  }\n}",
-      "review": null
+      "message": "Review completed.",
+      "review": {
+        "currency_reviews": {
+          "USD": {
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "Positive aggregate and short-term scores conflict with a strongly negative, repeatedly aligned fundamental trend.",
+            "drivers": [
+              "GDP growth has eased to 2.07% y/y in 2026-Q3.",
+              "Inflation rose to 3.74% y/y in 2026-09.",
+              "Unemployment improved to 4.1% in 2026-10.",
+              "Short-term score is positive at 0.13; fundamental trend score is -0.83."
+            ],
+            "risks": [
+              "Provisional data cover 80% of model weight; economic-surprise data are absent.",
+              "High-impact CPI events in the supplied calendar have pending actuals."
+            ]
+          },
+          "EUR": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Aggregate and short-term scores are negative; weak labor-market readings and rising inflation weigh, while GDP growth has recently improved.",
+            "drivers": [
+              "Aggregate score -1.47 and short-term score -0.96.",
+              "Inflation rose to 4.0% y/y in 2026-10.",
+              "Unemployment was 6.5% in 2026-09.",
+              "GDP growth rose to 1.30% y/y in 2026-Q3."
+            ],
+            "risks": [
+              "Fundamental trend score is neutral with mixed alignment.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "GBP": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Aggregate, short-term, and fundamental trend scores are positive, but the fundamental trend is early and inflation is rising.",
+            "drivers": [
+              "Short-term score 0.60 and fundamental trend score 0.83.",
+              "GDP growth rose to 1.94% y/y in 2026-Q3.",
+              "Unemployment eased to 4.7% in 2026-07.",
+              "Supplied calendar reports UK monthly GDP at 0.2% versus 0.0% forecast."
+            ],
+            "risks": [
+              "Inflation increased to 3.5% y/y in 2026-09.",
+              "Unemployment data are dated 2026-07; trend needs confirmation.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "JPY": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Positive aggregate and short-term scores align with a building, repeatedly aligned fundamental trend.",
+            "drivers": [
+              "Fundamental trend score 2.5; short-term score 1.54.",
+              "GDP growth improved to 1.16% y/y in 2026-Q3.",
+              "Unemployment was 2.4% in 2026-09.",
+              "Inflation rose to 2.1% y/y in 2026-09."
+            ],
+            "risks": [
+              "GDP growth remains below its 2025-Q2 level in the supplied history.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "CHF": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Positive short-term and fundamental trend readings are supported by improving GDP and inflation indicators, but aggregate score is modest and labor data are stale.",
+            "drivers": [
+              "Fundamental trend score 2.5 and short-term score 1.12.",
+              "GDP growth rose to 3.04% y/y in 2026-Q3.",
+              "Inflation rose to 1.6% y/y in 2026-10 from lower prior readings."
+            ],
+            "risks": [
+              "Aggregate score is only 0.37.",
+              "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "CAD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Negative aggregate and short-term scores align with a persistent negative fundamental trend, despite some inflation improvement.",
+            "drivers": [
+              "Aggregate score -1.10 and short-term score -1.01.",
+              "GDP growth slowed to 0.95% y/y in 2026-Q3.",
+              "Unemployment rose to 6.7% in 2026-10.",
+              "Fundamental trend score -0.83, with broadening persistence."
+            ],
+            "risks": [
+              "Inflation eased slightly to 3.09% y/y in 2026-10.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "AUD": {
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "Positive aggregate score contrasts with slightly positive short-term momentum and a negative fundamental trend; recent growth and labor deterioration temper the level readings.",
+            "drivers": [
+              "Aggregate score 0.80 versus fundamental trend score -0.83.",
+              "GDP growth eased to 2.14% y/y in 2026-Q2.",
+              "Unemployment rose to 4.9% in October 2026.",
+              "Policy rate is 4.85% as of 2026-11-04."
+            ],
+            "risks": [
+              "Inflation remains elevated at 3.92% y/y in 2026-Q3, though easing from the prior quarter.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          },
+          "NZD": {
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "Near-zero aggregate score diverges from positive short-term and fundamental trend readings; improving GDP is offset by elevated inflation and stale labor data.",
+            "drivers": [
+              "Short-term score 0.90 and fundamental trend score 2.5.",
+              "GDP growth rose to 2.55% y/y in 2026-Q2.",
+              "Inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2."
+            ],
+            "risks": [
+              "Aggregate score is 0.04.",
+              "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
+              "Provisional data cover 80% of model weight; economic-surprise data are absent."
+            ]
+          }
+        },
+        "pair_reviews": {
+          "EUR/GBP": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "EUR has weaker aggregate and short-term readings than GBP; GBP's positive trend is early and unconfirmed.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Relative fundamental trend modestly favors GBP: EUR is mixed, while GBP is positive but early.",
+            "momentum_view": "Favors GBP based on the supplied short-term scores.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast in the supplied calendar.",
+              "Watch for confirmation of GBP's early trend and changes in EUR inflation and activity."
+            ]
+          },
+          "EUR/AUD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "EUR's negative score profile is weaker than AUD's positive aggregate score, although AUD's trend is deteriorating.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Relative scores favor AUD, but AUD's negative trend and EUR's mixed trend limit conviction.",
+            "momentum_view": "Favors AUD: EUR short-term score -0.96 versus AUD 0.23.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor EUR inflation and growth against AUD growth and labor-market deterioration.",
+              "Supplied calendar has pending actuals for listed releases."
+            ]
+          },
+          "EUR/NZD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "EUR's negative aggregate and short-term scores contrast with NZD's near-neutral aggregate and positive momentum and trend.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Relative fundamental trend favors NZD, though its unemployment input is stale and inflation remains elevated.",
+            "momentum_view": "Favors NZD: short-term scores are -0.96 for EUR and 0.90 for NZD.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Track NZD inflation and GDP alongside the stale annual unemployment input.",
+              "Monitor EUR inflation, which rose to 4.0% y/y in 2026-10."
+            ]
+          },
+          "EUR/USD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "EUR's negative aggregate and momentum scores contrast with USD's positive aggregate and modestly positive momentum, despite USD's negative fundamental trend.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Mixed: USD has a more negative trend score, while EUR's trend is mixed; this conflicts with the aggregate relative view.",
+            "momentum_view": "Favors USD: EUR -0.96 versus USD 0.13.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+              "Track whether USD's negative fundamental trend or positive aggregate and short-term readings dominate."
+            ]
+          },
+          "EUR/CAD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Both currencies have negative scores, but CAD's short-term and aggregate readings are weaker than EUR's.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Relative trend favors EUR: CAD is persistently negative while EUR's trend is mixed.",
+            "momentum_view": "Favors EUR: -0.96 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CAD growth and unemployment deterioration against EUR inflation and GDP.",
+              "The supplied calendar lists a BOC Summary of Deliberations; no actual details are provided."
+            ]
+          },
+          "EUR/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "CHF's positive short-term and fundamental trend readings contrast with EUR's negative aggregate and short-term scores.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF on trend scores, though its unemployment input is stale.",
+            "momentum_view": "Favors CHF: EUR -0.96 versus CHF 1.12.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CHF growth and inflation progress; CHF unemployment data are annual for 2025.",
+              "Track EUR inflation, which rose to 4.0% y/y in 2026-10."
+            ]
+          },
+          "EUR/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "JPY's strong positive trend and momentum contrast with EUR's negative aggregate and short-term readings.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors JPY: its trend is building and aligned, while EUR's trend is mixed.",
+            "momentum_view": "Favors JPY: EUR -0.96 versus JPY 1.54.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor JPY GDP, labor data, and inflation.",
+              "Watch EUR inflation and activity for evidence that its negative readings are changing."
+            ]
+          },
+          "GBP/AUD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "GBP's modest positive aggregate and trend readings contrast with AUD's negative fundamental trend, although AUD has a positive aggregate score.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors GBP on trend scores; both trend signals need monitoring, especially GBP's early trend.",
+            "momentum_view": "Favors GBP: 0.60 versus AUD 0.23.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
+              "Track AUD labor-market deterioration and GBP inflation."
+            ]
+          },
+          "GBP/NZD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "GBP has a positive but early fundamental trend; NZD's trend and short-term momentum are stronger despite its near-zero aggregate score.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors NZD on trend score, with confidence limited by stale NZD unemployment and elevated inflation.",
+            "momentum_view": "Favors NZD: 0.90 versus GBP 0.60.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Watch NZD inflation and GDP; unemployment input is annual for 2025.",
+              "GBP GDP release was above forecast, but its positive trend remains early."
+            ]
+          },
+          "GBP/USD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "GBP's short-term score and fundamental trend are stronger than USD's, despite USD's higher aggregate score.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors GBP relative to USD: GBP trend is positive and early; USD trend is strongly negative.",
+            "momentum_view": "Favors GBP: 0.60 versus USD 0.13.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
+              "Supplied calendar lists high-impact US CPI releases with pending actuals."
+            ]
+          },
+          "GBP/CAD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "GBP's positive aggregate, momentum, and early trend contrast with CAD's negative readings and persistent deterioration.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors GBP over CAD on the supplied trend scores.",
+            "momentum_view": "Favors GBP: 0.60 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CAD GDP and unemployment, which are weakening.",
+              "GBP monthly GDP was reported above forecast, but GBP trend needs confirmation."
+            ]
+          },
+          "GBP/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "CHF's stronger fundamental trend and short-term score outweigh GBP's modest positive readings, while CHF's aggregate score is lower.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF on trend score; GBP trend is early, while CHF trend is persistent and broadening.",
+            "momentum_view": "Favors CHF: 1.12 versus GBP 0.60.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "CHF unemployment data are stale, limiting confidence in relative assessment.",
+              "GBP inflation has risen and its trend needs confirmation."
+            ]
+          },
+          "GBP/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "JPY's aggregate, momentum, and building trend scores are materially stronger than GBP's modest positive readings.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors JPY: building, aligned trend versus GBP's early trend.",
+            "momentum_view": "Favors JPY: 1.54 versus GBP 0.60.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor JPY GDP, labor data, and inflation.",
+              "GBP trend requires confirmation despite the above-forecast monthly GDP reading."
+            ]
+          },
+          "AUD/NZD": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "NZD's positive trend and stronger short-term score contrast with AUD's negative trend, although AUD's aggregate score is higher.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors NZD on trend score; stale NZD unemployment and elevated inflation are important caveats.",
+            "momentum_view": "Favors NZD: 0.90 versus AUD 0.23.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Compare NZD GDP and easing inflation with AUD's slowing GDP and rising unemployment.",
+              "NZD unemployment input is annual for 2025."
+            ]
+          },
+          "AUD/USD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "AUD has a higher aggregate score than USD, but both have negative fundamental trend scores and only slightly positive short-term readings.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Both trends are negative; AUD's score is equal to USD's, so fundamentals provide little relative separation.",
+            "momentum_view": "Slightly favors USD: AUD 0.23 versus USD 0.13 is actually marginally higher for AUD; relative momentum is weakly AUD-positive.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+              "Monitor AUD labor deterioration and the divergence between its aggregate score and negative trend."
+            ]
+          },
+          "AUD/CAD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Both currencies have negative trend scores, but AUD has a higher aggregate and short-term score than CAD.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Near-balanced negative trend scores; CAD's persistent deterioration is more pronounced in the supplied profile.",
+            "momentum_view": "Favors AUD: 0.23 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CAD GDP and unemployment deterioration against AUD's slowing growth and rising unemployment.",
+              "AUD inflation remains elevated but eased slightly in the latest supplied quarter."
+            ]
+          },
+          "AUD/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "CHF's stronger trend and momentum readings conflict with AUD's higher aggregate score and positive short-term reading.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF: positive persistent trend versus AUD's negative trend.",
+            "momentum_view": "Favors CHF: 1.12 versus AUD 0.23.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "CHF unemployment is an annual 2025 fallback.",
+              "AUD unemployment has risen in the supplied monthly history."
+            ]
+          },
+          "AUD/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "JPY's positive, building trend and stronger momentum contrast with AUD's negative fundamental trend.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors JPY: positive trend score versus AUD's negative score.",
+            "momentum_view": "Favors JPY: 1.54 versus AUD 0.23.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor AUD growth and unemployment deterioration.",
+              "Track JPY inflation, GDP, and labor readings."
+            ]
+          },
+          "NZD/USD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "NZD's positive trend and stronger short-term score contrast with USD's negative fundamental trend, despite a near-zero NZD aggregate score.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors NZD on trend score; NZD unemployment is stale and inflation remains elevated.",
+            "momentum_view": "Favors NZD: 0.90 versus USD 0.13.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+              "Watch NZD GDP and inflation alongside its annual 2025 unemployment input."
+            ]
+          },
+          "NZD/CAD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "NZD's positive trend and short-term score contrast with CAD's persistent negative trend and weak momentum.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors NZD on trend score, with caution for stale NZD labor data and CAD's weaker growth and employment.",
+            "momentum_view": "Favors NZD: 0.90 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CAD GDP and unemployment deterioration.",
+              "NZD unemployment input is annual for 2025; GDP and inflation are more recent."
+            ]
+          },
+          "NZD/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Both currencies have positive trend and momentum readings, but CHF's trend and short-term scores are stronger; NZD's aggregate score is near zero.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF on trend score, with its annual unemployment input a material data limitation.",
+            "momentum_view": "Favors CHF: 1.12 versus NZD 0.90.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Compare CHF GDP and inflation with NZD growth and elevated inflation.",
+              "Both CHF and NZD unemployment inputs are stale for short-term analysis."
+            ]
+          },
+          "NZD/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Both profiles are positive on trend and momentum, but JPY has stronger aggregate, short-term, and trend scores.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors JPY on trend strength; NZD has stronger supplied GDP growth but elevated inflation and stale labor data.",
+            "momentum_view": "Favors JPY: 1.54 versus NZD 0.90.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor JPY labor and GDP readings against NZD GDP and inflation.",
+              "NZD unemployment input is annual for 2025."
+            ]
+          },
+          "USD/CAD": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "USD's aggregate and short-term scores are stronger than CAD's, while both fundamental trend scores are negative.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Both trends are negative; USD's deterioration is slightly stronger by trend score, offsetting its stronger aggregate reading.",
+            "momentum_view": "Favors USD: 0.13 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists pending high-impact US CPI actuals.",
+              "Monitor CAD GDP and unemployment deterioration and the USD trend-score divergence."
+            ]
+          },
+          "USD/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "CHF's positive trend and stronger short-term score contrast with USD's negative fundamental trend, though USD's aggregate score is higher.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF on trend score; CHF unemployment is stale.",
+            "momentum_view": "Favors CHF: 1.12 versus USD 0.13.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists pending high-impact US CPI actuals.",
+              "Monitor CHF growth and inflation; its unemployment data are annual for 2025."
+            ]
+          },
+          "USD/JPY": {
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "JPY's positive trend and momentum are stronger, but USD's aggregate score is lower than JPY's? The supplied aggregate scores favor JPY; relative view is therefore JPY-positive despite mixed USD readings.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors JPY: positive building trend versus USD's negative trend.",
+            "momentum_view": "Favors JPY: 1.54 versus USD 0.13.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Supplied calendar lists pending high-impact US CPI actuals.",
+              "Monitor JPY GDP, inflation, and labor data."
+            ]
+          },
+          "CAD/CHF": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "CAD's negative trend and momentum contrast with CHF's positive trend and momentum, despite CAD's higher policy rate.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Favors CHF: CAD trend is negative and persistent, while CHF trend is positive and broadening.",
+            "momentum_view": "Favors CHF: 1.12 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "CAD unemployment rose to 6.7% in 2026-10.",
+              "CHF unemployment input is annual for 2025."
+            ]
+          },
+          "CAD/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "JPY's positive aggregate, momentum, and trend readings contrast with CAD's negative readings.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Strongly favors JPY on supplied trend scores.",
+            "momentum_view": "Favors JPY: 1.54 versus CAD -1.01.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "Monitor CAD growth and unemployment deterioration.",
+              "Track JPY GDP and labor improvement and rising inflation."
+            ]
+          },
+          "CHF/JPY": {
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Both currencies have positive trend and momentum scores, but JPY has stronger aggregate and short-term readings; CHF's GDP level is stronger in the supplied data.",
+            "drivers": "",
+            "risks": "",
+            "fundamental_view": "Trend scores are equal; CHF has stronger latest GDP growth, while JPY has more timely labor data.",
+            "momentum_view": "Favors JPY: 1.54 versus CHF 1.12.",
+            "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+            "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+            "key_catalysts": [
+              "CHF unemployment input is annual for 2025; JPY unemployment is 2026-09.",
+              "Monitor relative GDP and inflation developments."
+            ]
+          }
+        }
+      }
     },
     "gemini": {
       "status": "error",
@@ -20,153 +566,696 @@
   },
   "currency_consensus": {
     "USD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "NEUTRAL"
     },
     "EUR": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "GBP": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "AUD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "NEUTRAL"
     },
     "NZD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "NEUTRAL"
     }
   },
   "pair_consensus": {
     "EUR/GBP": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "EUR/AUD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "EUR/NZD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "EUR/USD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "EUR/CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "EUR/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "EUR/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "GBP/AUD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "GBP/NZD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "GBP/USD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "GBP/CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "GBP/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "GBP/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "AUD/NZD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "AUD/USD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "AUD/CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "AUD/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "AUD/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "NZD/USD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "NZD/CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "NZD/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "NZD/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "USD/CAD": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "USD/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "USD/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BULLISH"
     },
     "CAD/CHF": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "CAD/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     },
     "CHF/JPY": {
-      "status": "NO_REVIEW",
-      "bias": "INSUFFICIENT"
+      "status": "ONE_MODEL_ONLY",
+      "bias": "BEARISH"
     }
   },
-  "currency_reviews": {},
-  "pair_reviews": {},
+  "currency_reviews": {
+    "USD": {
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "Positive aggregate and short-term scores conflict with a strongly negative, repeatedly aligned fundamental trend.",
+      "drivers": [
+        "GDP growth has eased to 2.07% y/y in 2026-Q3.",
+        "Inflation rose to 3.74% y/y in 2026-09.",
+        "Unemployment improved to 4.1% in 2026-10.",
+        "Short-term score is positive at 0.13; fundamental trend score is -0.83."
+      ],
+      "risks": [
+        "Provisional data cover 80% of model weight; economic-surprise data are absent.",
+        "High-impact CPI events in the supplied calendar have pending actuals."
+      ]
+    },
+    "EUR": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Aggregate and short-term scores are negative; weak labor-market readings and rising inflation weigh, while GDP growth has recently improved.",
+      "drivers": [
+        "Aggregate score -1.47 and short-term score -0.96.",
+        "Inflation rose to 4.0% y/y in 2026-10.",
+        "Unemployment was 6.5% in 2026-09.",
+        "GDP growth rose to 1.30% y/y in 2026-Q3."
+      ],
+      "risks": [
+        "Fundamental trend score is neutral with mixed alignment.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "GBP": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Aggregate, short-term, and fundamental trend scores are positive, but the fundamental trend is early and inflation is rising.",
+      "drivers": [
+        "Short-term score 0.60 and fundamental trend score 0.83.",
+        "GDP growth rose to 1.94% y/y in 2026-Q3.",
+        "Unemployment eased to 4.7% in 2026-07.",
+        "Supplied calendar reports UK monthly GDP at 0.2% versus 0.0% forecast."
+      ],
+      "risks": [
+        "Inflation increased to 3.5% y/y in 2026-09.",
+        "Unemployment data are dated 2026-07; trend needs confirmation.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "JPY": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Positive aggregate and short-term scores align with a building, repeatedly aligned fundamental trend.",
+      "drivers": [
+        "Fundamental trend score 2.5; short-term score 1.54.",
+        "GDP growth improved to 1.16% y/y in 2026-Q3.",
+        "Unemployment was 2.4% in 2026-09.",
+        "Inflation rose to 2.1% y/y in 2026-09."
+      ],
+      "risks": [
+        "GDP growth remains below its 2025-Q2 level in the supplied history.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "CHF": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Positive short-term and fundamental trend readings are supported by improving GDP and inflation indicators, but aggregate score is modest and labor data are stale.",
+      "drivers": [
+        "Fundamental trend score 2.5 and short-term score 1.12.",
+        "GDP growth rose to 3.04% y/y in 2026-Q3.",
+        "Inflation rose to 1.6% y/y in 2026-10 from lower prior readings."
+      ],
+      "risks": [
+        "Aggregate score is only 0.37.",
+        "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "CAD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Negative aggregate and short-term scores align with a persistent negative fundamental trend, despite some inflation improvement.",
+      "drivers": [
+        "Aggregate score -1.10 and short-term score -1.01.",
+        "GDP growth slowed to 0.95% y/y in 2026-Q3.",
+        "Unemployment rose to 6.7% in 2026-10.",
+        "Fundamental trend score -0.83, with broadening persistence."
+      ],
+      "risks": [
+        "Inflation eased slightly to 3.09% y/y in 2026-10.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "AUD": {
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "Positive aggregate score contrasts with slightly positive short-term momentum and a negative fundamental trend; recent growth and labor deterioration temper the level readings.",
+      "drivers": [
+        "Aggregate score 0.80 versus fundamental trend score -0.83.",
+        "GDP growth eased to 2.14% y/y in 2026-Q2.",
+        "Unemployment rose to 4.9% in October 2026.",
+        "Policy rate is 4.85% as of 2026-11-04."
+      ],
+      "risks": [
+        "Inflation remains elevated at 3.92% y/y in 2026-Q3, though easing from the prior quarter.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    },
+    "NZD": {
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "Near-zero aggregate score diverges from positive short-term and fundamental trend readings; improving GDP is offset by elevated inflation and stale labor data.",
+      "drivers": [
+        "Short-term score 0.90 and fundamental trend score 2.5.",
+        "GDP growth rose to 2.55% y/y in 2026-Q2.",
+        "Inflation eased to 3.71% y/y in 2026-Q3 from 4.06% in Q2."
+      ],
+      "risks": [
+        "Aggregate score is 0.04.",
+        "Unemployment is an annual 2025 fallback, stale for short-term analysis.",
+        "Provisional data cover 80% of model weight; economic-surprise data are absent."
+      ]
+    }
+  },
+  "pair_reviews": {
+    "EUR/GBP": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "EUR has weaker aggregate and short-term readings than GBP; GBP's positive trend is early and unconfirmed.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Relative fundamental trend modestly favors GBP: EUR is mixed, while GBP is positive but early.",
+      "momentum_view": "Favors GBP based on the supplied short-term scores.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast in the supplied calendar.",
+        "Watch for confirmation of GBP's early trend and changes in EUR inflation and activity."
+      ]
+    },
+    "EUR/AUD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "EUR's negative score profile is weaker than AUD's positive aggregate score, although AUD's trend is deteriorating.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Relative scores favor AUD, but AUD's negative trend and EUR's mixed trend limit conviction.",
+      "momentum_view": "Favors AUD: EUR short-term score -0.96 versus AUD 0.23.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor EUR inflation and growth against AUD growth and labor-market deterioration.",
+        "Supplied calendar has pending actuals for listed releases."
+      ]
+    },
+    "EUR/NZD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "EUR's negative aggregate and short-term scores contrast with NZD's near-neutral aggregate and positive momentum and trend.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Relative fundamental trend favors NZD, though its unemployment input is stale and inflation remains elevated.",
+      "momentum_view": "Favors NZD: short-term scores are -0.96 for EUR and 0.90 for NZD.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Track NZD inflation and GDP alongside the stale annual unemployment input.",
+        "Monitor EUR inflation, which rose to 4.0% y/y in 2026-10."
+      ]
+    },
+    "EUR/USD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "EUR's negative aggregate and momentum scores contrast with USD's positive aggregate and modestly positive momentum, despite USD's negative fundamental trend.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Mixed: USD has a more negative trend score, while EUR's trend is mixed; this conflicts with the aggregate relative view.",
+      "momentum_view": "Favors USD: EUR -0.96 versus USD 0.13.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+        "Track whether USD's negative fundamental trend or positive aggregate and short-term readings dominate."
+      ]
+    },
+    "EUR/CAD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Both currencies have negative scores, but CAD's short-term and aggregate readings are weaker than EUR's.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Relative trend favors EUR: CAD is persistently negative while EUR's trend is mixed.",
+      "momentum_view": "Favors EUR: -0.96 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CAD growth and unemployment deterioration against EUR inflation and GDP.",
+        "The supplied calendar lists a BOC Summary of Deliberations; no actual details are provided."
+      ]
+    },
+    "EUR/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "CHF's positive short-term and fundamental trend readings contrast with EUR's negative aggregate and short-term scores.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF on trend scores, though its unemployment input is stale.",
+      "momentum_view": "Favors CHF: EUR -0.96 versus CHF 1.12.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CHF growth and inflation progress; CHF unemployment data are annual for 2025.",
+        "Track EUR inflation, which rose to 4.0% y/y in 2026-10."
+      ]
+    },
+    "EUR/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "JPY's strong positive trend and momentum contrast with EUR's negative aggregate and short-term readings.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors JPY: its trend is building and aligned, while EUR's trend is mixed.",
+      "momentum_view": "Favors JPY: EUR -0.96 versus JPY 1.54.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor JPY GDP, labor data, and inflation.",
+        "Watch EUR inflation and activity for evidence that its negative readings are changing."
+      ]
+    },
+    "GBP/AUD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "GBP's modest positive aggregate and trend readings contrast with AUD's negative fundamental trend, although AUD has a positive aggregate score.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors GBP on trend scores; both trend signals need monitoring, especially GBP's early trend.",
+      "momentum_view": "Favors GBP: 0.60 versus AUD 0.23.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
+        "Track AUD labor-market deterioration and GBP inflation."
+      ]
+    },
+    "GBP/NZD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "GBP has a positive but early fundamental trend; NZD's trend and short-term momentum are stronger despite its near-zero aggregate score.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors NZD on trend score, with confidence limited by stale NZD unemployment and elevated inflation.",
+      "momentum_view": "Favors NZD: 0.90 versus GBP 0.60.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Watch NZD inflation and GDP; unemployment input is annual for 2025.",
+        "GBP GDP release was above forecast, but its positive trend remains early."
+      ]
+    },
+    "GBP/USD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "GBP's short-term score and fundamental trend are stronger than USD's, despite USD's higher aggregate score.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors GBP relative to USD: GBP trend is positive and early; USD trend is strongly negative.",
+      "momentum_view": "Favors GBP: 0.60 versus USD 0.13.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "GBP monthly GDP was reported at 0.2% versus 0.0% forecast.",
+        "Supplied calendar lists high-impact US CPI releases with pending actuals."
+      ]
+    },
+    "GBP/CAD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "GBP's positive aggregate, momentum, and early trend contrast with CAD's negative readings and persistent deterioration.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors GBP over CAD on the supplied trend scores.",
+      "momentum_view": "Favors GBP: 0.60 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CAD GDP and unemployment, which are weakening.",
+        "GBP monthly GDP was reported above forecast, but GBP trend needs confirmation."
+      ]
+    },
+    "GBP/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "CHF's stronger fundamental trend and short-term score outweigh GBP's modest positive readings, while CHF's aggregate score is lower.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF on trend score; GBP trend is early, while CHF trend is persistent and broadening.",
+      "momentum_view": "Favors CHF: 1.12 versus GBP 0.60.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "CHF unemployment data are stale, limiting confidence in relative assessment.",
+        "GBP inflation has risen and its trend needs confirmation."
+      ]
+    },
+    "GBP/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "JPY's aggregate, momentum, and building trend scores are materially stronger than GBP's modest positive readings.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors JPY: building, aligned trend versus GBP's early trend.",
+      "momentum_view": "Favors JPY: 1.54 versus GBP 0.60.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor JPY GDP, labor data, and inflation.",
+        "GBP trend requires confirmation despite the above-forecast monthly GDP reading."
+      ]
+    },
+    "AUD/NZD": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "NZD's positive trend and stronger short-term score contrast with AUD's negative trend, although AUD's aggregate score is higher.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors NZD on trend score; stale NZD unemployment and elevated inflation are important caveats.",
+      "momentum_view": "Favors NZD: 0.90 versus AUD 0.23.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Compare NZD GDP and easing inflation with AUD's slowing GDP and rising unemployment.",
+        "NZD unemployment input is annual for 2025."
+      ]
+    },
+    "AUD/USD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "AUD has a higher aggregate score than USD, but both have negative fundamental trend scores and only slightly positive short-term readings.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Both trends are negative; AUD's score is equal to USD's, so fundamentals provide little relative separation.",
+      "momentum_view": "Slightly favors USD: AUD 0.23 versus USD 0.13 is actually marginally higher for AUD; relative momentum is weakly AUD-positive.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+        "Monitor AUD labor deterioration and the divergence between its aggregate score and negative trend."
+      ]
+    },
+    "AUD/CAD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Both currencies have negative trend scores, but AUD has a higher aggregate and short-term score than CAD.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Near-balanced negative trend scores; CAD's persistent deterioration is more pronounced in the supplied profile.",
+      "momentum_view": "Favors AUD: 0.23 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CAD GDP and unemployment deterioration against AUD's slowing growth and rising unemployment.",
+        "AUD inflation remains elevated but eased slightly in the latest supplied quarter."
+      ]
+    },
+    "AUD/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "CHF's stronger trend and momentum readings conflict with AUD's higher aggregate score and positive short-term reading.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF: positive persistent trend versus AUD's negative trend.",
+      "momentum_view": "Favors CHF: 1.12 versus AUD 0.23.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "CHF unemployment is an annual 2025 fallback.",
+        "AUD unemployment has risen in the supplied monthly history."
+      ]
+    },
+    "AUD/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "JPY's positive, building trend and stronger momentum contrast with AUD's negative fundamental trend.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors JPY: positive trend score versus AUD's negative score.",
+      "momentum_view": "Favors JPY: 1.54 versus AUD 0.23.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor AUD growth and unemployment deterioration.",
+        "Track JPY inflation, GDP, and labor readings."
+      ]
+    },
+    "NZD/USD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "NZD's positive trend and stronger short-term score contrast with USD's negative fundamental trend, despite a near-zero NZD aggregate score.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors NZD on trend score; NZD unemployment is stale and inflation remains elevated.",
+      "momentum_view": "Favors NZD: 0.90 versus USD 0.13.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists high-impact US CPI releases with pending actuals.",
+        "Watch NZD GDP and inflation alongside its annual 2025 unemployment input."
+      ]
+    },
+    "NZD/CAD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "NZD's positive trend and short-term score contrast with CAD's persistent negative trend and weak momentum.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors NZD on trend score, with caution for stale NZD labor data and CAD's weaker growth and employment.",
+      "momentum_view": "Favors NZD: 0.90 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CAD GDP and unemployment deterioration.",
+        "NZD unemployment input is annual for 2025; GDP and inflation are more recent."
+      ]
+    },
+    "NZD/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Both currencies have positive trend and momentum readings, but CHF's trend and short-term scores are stronger; NZD's aggregate score is near zero.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF on trend score, with its annual unemployment input a material data limitation.",
+      "momentum_view": "Favors CHF: 1.12 versus NZD 0.90.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Compare CHF GDP and inflation with NZD growth and elevated inflation.",
+        "Both CHF and NZD unemployment inputs are stale for short-term analysis."
+      ]
+    },
+    "NZD/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Both profiles are positive on trend and momentum, but JPY has stronger aggregate, short-term, and trend scores.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors JPY on trend strength; NZD has stronger supplied GDP growth but elevated inflation and stale labor data.",
+      "momentum_view": "Favors JPY: 1.54 versus NZD 0.90.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor JPY labor and GDP readings against NZD GDP and inflation.",
+        "NZD unemployment input is annual for 2025."
+      ]
+    },
+    "USD/CAD": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "USD's aggregate and short-term scores are stronger than CAD's, while both fundamental trend scores are negative.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Both trends are negative; USD's deterioration is slightly stronger by trend score, offsetting its stronger aggregate reading.",
+      "momentum_view": "Favors USD: 0.13 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists pending high-impact US CPI actuals.",
+        "Monitor CAD GDP and unemployment deterioration and the USD trend-score divergence."
+      ]
+    },
+    "USD/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "CHF's positive trend and stronger short-term score contrast with USD's negative fundamental trend, though USD's aggregate score is higher.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF on trend score; CHF unemployment is stale.",
+      "momentum_view": "Favors CHF: 1.12 versus USD 0.13.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists pending high-impact US CPI actuals.",
+        "Monitor CHF growth and inflation; its unemployment data are annual for 2025."
+      ]
+    },
+    "USD/JPY": {
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "JPY's positive trend and momentum are stronger, but USD's aggregate score is lower than JPY's? The supplied aggregate scores favor JPY; relative view is therefore JPY-positive despite mixed USD readings.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors JPY: positive building trend versus USD's negative trend.",
+      "momentum_view": "Favors JPY: 1.54 versus USD 0.13.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Supplied calendar lists pending high-impact US CPI actuals.",
+        "Monitor JPY GDP, inflation, and labor data."
+      ]
+    },
+    "CAD/CHF": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "CAD's negative trend and momentum contrast with CHF's positive trend and momentum, despite CAD's higher policy rate.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Favors CHF: CAD trend is negative and persistent, while CHF trend is positive and broadening.",
+      "momentum_view": "Favors CHF: 1.12 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "CAD unemployment rose to 6.7% in 2026-10.",
+        "CHF unemployment input is annual for 2025."
+      ]
+    },
+    "CAD/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "JPY's positive aggregate, momentum, and trend readings contrast with CAD's negative readings.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Strongly favors JPY on supplied trend scores.",
+      "momentum_view": "Favors JPY: 1.54 versus CAD -1.01.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "Monitor CAD growth and unemployment deterioration.",
+        "Track JPY GDP and labor improvement and rising inflation."
+      ]
+    },
+    "CHF/JPY": {
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Both currencies have positive trend and momentum scores, but JPY has stronger aggregate and short-term readings; CHF's GDP level is stronger in the supplied data.",
+      "drivers": "",
+      "risks": "",
+      "fundamental_view": "Trend scores are equal; CHF has stronger latest GDP growth, while JPY has more timely labor data.",
+      "momentum_view": "Favors JPY: 1.54 versus CHF 1.12.",
+      "d1_view": "Unavailable: no daily indicators supplied, so no D1 inference is possible.",
+      "h4_watch": "No H4 data supplied; watch for price confirmation and a defined setup rather than assuming one exists.",
+      "key_catalysts": [
+        "CHF unemployment input is annual for 2025; JPY unemployment is 2026-09.",
+        "Monitor relative GDP and inflation developments."
+      ]
+    }
+  },
   "methodology": "Independent qualitative overlays on the same frozen data snapshot. Consensus is categorical agreement, not probability or a validated trading signal."
 }
