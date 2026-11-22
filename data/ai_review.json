@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-22T16:54:48.830790+00:00",
-  "input_snapshot_generated_at": "2026-11-22T16:45:42.683048+00:00",
-  "input_fingerprint": "52e074ec62d54c395094fdae7b9245f3e6a6a6b522c0222d9838f475402e006d",
+  "generated_at": "2026-11-22T20:52:41.227543+00:00",
+  "input_snapshot_generated_at": "2026-11-22T20:31:17.776074+00:00",
+  "input_fingerprint": "1804432bd7aa633a0959af90a98f2d69e0c7649ace52d3a6aaab38365385a1d1",
   "status": "partial",
   "providers": {
     "chatgpt": {
       "status": "error",
       "model": "gpt-6-luna",
-      "message": "HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-iuMa3nJdd7nfJU66rMTgAlfJ on tokens per min (TPM): Limit 100000, Used 92208, Requested 16423. Please try again in 62h8m35.52s. Visit https://platform.openai.com/account/rate-limits ",
+      "message": "HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-iuMa3nJdd7nfJU66rMTgAlfJ on tokens per min (TPM): Limit 100000, Used 91657, Requested 16421. Please try again in 58h9m41.76s. Visit https://platform.openai.com/account/rate-limits ",
       "review": {
         "currency_reviews": {
           "USD": {
