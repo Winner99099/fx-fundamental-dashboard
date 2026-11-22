@@ -1,1397 +1,1425 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-11-22T20:52:41.227543+00:00",
-  "input_snapshot_generated_at": "2026-11-22T20:31:17.776074+00:00",
-  "input_fingerprint": "1804432bd7aa633a0959af90a98f2d69e0c7649ace52d3a6aaab38365385a1d1",
-  "status": "partial",
+  "schema_version": 2,
+  "status": "ok",
+  "generated_at": "2026-11-22T23:03:51.472359+00:00",
+  "last_attempt_at": "2026-11-22T23:03:51.472359+00:00",
+  "input_snapshot_generated_at": "2026-11-22T22:46:48.801890+00:00",
+  "input_fingerprint": "0438d4303bc5459942b9e73fcb1729abe3bcb48b417228198bc2d074842f97e9",
+  "model": "gpt-6-luna",
   "providers": {
     "chatgpt": {
-      "status": "error",
+      "status": "ok",
       "model": "gpt-6-luna",
-      "message": "HTTP 429: {\n  \"error\": {\n    \"code\": \"rate_limit_exceeded\",\n    \"message\": \"Rate limit reached for gpt-6-luna in organization org-iuMa3nJdd7nfJU66rMTgAlfJ on tokens per min (TPM): Limit 100000, Used 91657, Requested 16421. Please try again in 58h9m41.76s. Visit https://platform.openai.com/account/rate-limits ",
+      "message": "Review completed.",
       "review": {
         "currency_reviews": {
           "USD": {
             "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Mixed macro picture: the aggregate score is positive, while the supplied fundamental trend is deteriorating. No direct currency spot data is supplied to establish USD momentum.",
+            "confidence": "LOW",
+            "summary": "Macro trend is deteriorating despite a positive overall score. No recent release momentum is confirmed; the latest listed release has no captured actual.",
             "drivers": [
-              "The dashboard reports a positive aggregate score (0.64) but a negative fundamental-trend score (-0.83), citing deteriorating GDP growth and inflation alongside improving unemployment.",
-              "Latest listed data: September 2026 inflation 3.74%, Q3 GDP growth 2.07%, and October unemployment 4.1%. These are macro indicators, not direct spot-price evidence."
+              "GDP growth deteriorating",
+              "Inflation deteriorating",
+              "Unemployment improving"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "The November 10 Core CPI and CPI m/m entries have no actual values; their forecasts are pending, not results."
+              "Provisional data coverage",
+              "No economic-surprise data"
             ]
           },
           "EUR": {
-            "bias": "BEARISH",
-            "confidence": "Low",
-            "summary": "The aggregate dashboard score is negative, while the supplied fundamental-trend score is neutral and recent changes are described as mixed. No direct currency spot data is supplied to establish EUR momentum.",
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "Macro trend is mixed, with improving GDP growth but deteriorating inflation. The latest listed release has no captured actual, so recent release momentum is unconfirmed.",
             "drivers": [
-              "Aggregate score -1.37; fundamental-trend score 0.00, with GDP growth improving but inflation deteriorating and no aligned recent changes.",
-              "Latest listed data: October 2026 inflation 4.0%, Q3 GDP growth 1.30%, and September unemployment 6.5%. These describe macro conditions, not spot momentum."
+              "GDP growth improving",
+              "Inflation deteriorating"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "Recent listed EUR events show no confirmed actual-versus-forecast surprise; entries with missing actuals must not be treated as results."
+              "0/7 recent changes aligned",
+              "Provisional data coverage"
             ]
           },
           "GBP": {
             "bias": "BULLISH",
-            "confidence": "Low",
-            "summary": "Aggregate and short-term dashboard scores are positive, and the supplied fundamental trend is building. This is a macro/dashboard assessment only; no direct GBP spot series is supplied here.",
+            "confidence": "LOW",
+            "summary": "Macro trend is improving, though inflation is deteriorating. Retail Sales actual is not captured, so recent release momentum is unconfirmed.",
             "drivers": [
-              "Aggregate score 0.47, short-term score 0.60, and fundamental-trend score 0.83; the dashboard cites improving GDP growth and unemployment, with inflation deteriorating.",
-              "The November 12, 2026 Forex Factory release “GDP m/m” reports actual 0.2% versus forecast 0.0% (previous 0.0%, August revised), a positive confirmed release surprise."
+              "GDP growth improving",
+              "Unemployment improving",
+              "Positive trend persistence"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "Other November 12 GBP calendar entries have null actuals and remain pending in the supplied snapshot."
+              "Inflation deteriorating",
+              "Provisional data coverage"
             ]
           },
           "JPY": {
             "bias": "BULLISH",
-            "confidence": "Low",
-            "summary": "The aggregate, short-term, and fundamental-trend dashboard scores are positive, with the trend described as building. This does not establish JPY spot momentum; direct currency-level price data is not supplied.",
+            "confidence": "LOW",
+            "summary": "Macro trend is strongly improving, with GDP growth and unemployment improving. The latest listed CPI actual is not captured, so recent release momentum is unconfirmed.",
             "drivers": [
-              "Aggregate score 1.03, short-term score 1.54, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and unemployment.",
-              "Latest listed data: September 2026 inflation 2.1%, Q3 GDP growth 1.16%, and September unemployment 2.4%."
+              "Strong fundamental trend score",
+              "GDP growth improving",
+              "Unemployment improving"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "The November 12 PPI y/y entry has no actual value; its 6.5% forecast is not a release result."
+              "Latest CPI actual unavailable",
+              "Provisional data coverage"
             ]
           },
           "CHF": {
             "bias": "BULLISH",
-            "confidence": "Low",
-            "summary": "Aggregate and short-term dashboard scores are positive, and the fundamental trend is described as persistent and broadening. No direct CHF spot series is supplied to confirm currency-level momentum.",
+            "confidence": "LOW",
+            "summary": "Macro trend is strongly improving, with GDP growth and inflation improving. Latest listed PPI actual is unavailable; unemployment data is stale.",
             "drivers": [
-              "Aggregate score 0.41, short-term score 1.14, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and inflation.",
-              "Latest listed data include October 2026 inflation 1.6% and Q3 GDP growth 3.04%."
+              "GDP growth improving",
+              "Inflation improving",
+              "Persistent broadening trend"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis."
+              "Stale unemployment data",
+              "Latest PPI actual unavailable"
             ]
           },
           "CAD": {
             "bias": "BEARISH",
-            "confidence": "Low",
-            "summary": "Aggregate and short-term dashboard scores are negative, and the fundamental trend is described as persistent deterioration. No direct CAD spot series is supplied to establish currency-level price momentum.",
+            "confidence": "LOW",
+            "summary": "Macro trend is deteriorating, with GDP growth and unemployment worsening. Latest listed CPI actual is unavailable, so recent release momentum is unconfirmed.",
             "drivers": [
-              "Aggregate score -1.00, short-term score -0.94, and fundamental-trend score -0.83; the dashboard cites deteriorating GDP growth and unemployment.",
-              "Latest listed data: October 2026 inflation 3.09%, Q3 GDP growth 0.95%, and October unemployment 6.7%."
+              "GDP growth deteriorating",
+              "Unemployment deteriorating",
+              "Persistent broadening trend"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "The November 10 BOC Summary of Deliberations entry has no supplied actual or detail; do not infer its contents."
+              "Inflation improving",
+              "Latest CPI actual unavailable"
             ]
           },
           "AUD": {
-            "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Aggregate and short-term scores are positive, but the supplied fundamental-trend score is negative, reflecting deterioration in GDP growth and unemployment. The latest listed labour release is a negative catalyst; currency-level spot momentum cannot be established from currency scores.",
+            "bias": "BEARISH",
+            "confidence": "LOW",
+            "summary": "Macro trend is deteriorating, and captured Employment Change was -43.5K versus a 25.5K forecast. The recent release provides confirmed negative momentum.",
             "drivers": [
-              "Aggregate score 0.83 and short-term score 0.25 contrast with fundamental-trend score -0.83.",
-              "Australian Bureau of Statistics labour data in the dashboard is dated November 19, 2026: October unemployment 4.9% and employment change -43.5. This is a confirmed supplied release, but no forecast co"
+              "Employment Change missed forecast",
+              "GDP growth deteriorating",
+              "Unemployment deteriorating"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "Other AUD calendar entries in the snapshot have null actuals and cannot be treated as results."
+              "Inflation improving",
+              "Provisional data coverage"
             ]
           },
           "NZD": {
-            "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "The fundamental-trend score is positive and persistent, but the aggregate score is only 0.08. These macro indicators do not establish NZD spot momentum, and unemployment data is stale.",
+            "bias": "BULLISH",
+            "confidence": "LOW",
+            "summary": "Macro trend is strongly improving, with GDP growth and inflation improving. Latest listed Inflation Expectations actual is unavailable; unemployment data is stale.",
             "drivers": [
-              "Short-term score 0.93 and fundamental-trend score 2.50, with the dashboard citing improving GDP growth and inflation.",
-              "Latest listed data include Q3 2026 inflation 3.71% and Q2 GDP growth 2.55%."
+              "GDP growth improving",
+              "Inflation improving",
+              "Persistent broadening trend"
             ],
             "risks": [
-              "Dashboard data is provisional and confidence is low.",
-              "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis; the November 12 Visitor Arrivals entry has no actual."
+              "Stale unemployment data",
+              "Latest release actual unavailable"
             ]
           }
         },
         "pair_reviews": {
           "EUR/GBP": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "Direct pair momentum cannot be assessed because the supplied daily technical snapshot is stale.",
+            "bias": "NEUTRAL",
+            "confidence": "MEDIUM",
+            "summary": "Mixed daily signals: positive 5-day return and MACD crossover, but negative 20-day return and price below SMA50.",
             "drivers": [
-              "The November 12, 2026 Forex Factory “GDP m/m” release reports GBP actual 0.2% versus 0.0% forecast; this is a secondary catalyst, not a substitute for current pair-price confirmation."
+              "Price above SMA20",
+              "MACD above signal",
+              "Mixed return horizons"
             ],
             "risks": [
-              "The supplied technical timestamp is more than 36 hours old."
+              "Price remains below SMA50",
+              "1-day return negative"
             ],
-            "fundamental_view": "EUR dashboard aggregate score is negative and GBP is modestly positive; these macro assessments do not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale pair data prevents a short-term momentum assessment.",
-            "d1_view": "Last supplied close 0.83799, updated 2026-11-20 00:00 UTC: 1d +0.413%, 5d +0.356%, 20d +0.106%; above SMA20 0.83523 but below SMA50 0.84464; RSI14 65.2; MACD -0.00244 above signal -0.003239. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; monitor only for fresh daily price confirmation.",
+            "fundamental_view": "EUR trend mixed; GBP trend improving; macro does not resolve price conflict.",
+            "momentum_view": "Conflicting signals; neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.032%, 5d +0.430%, 20d -0.092%; above SMA20, below SMA50; RSI 61.1; MACD above signal.",
+            "h4_watch": "No H4 data; watch for sustained movement beyond the 20-day range.",
             "key_catalysts": [
-              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/AUD": {
             "bias": "BULLISH",
-            "confidence": "Medium",
-            "summary": "Strong positive short-term pair momentum, although the sharply overbought RSI and price at the reported 20-day resistance raise reversal risk.",
+            "confidence": "HIGH",
+            "summary": "Strong positive returns across all measured horizons, with price above both averages and MACD above signal.",
             "drivers": [
-              "Price is up over 1, 5, and 20 days, well above both moving averages, with MACD above signal."
+              "20d return +3.758%",
+              "Above SMA20 and SMA50",
+              "MACD above signal"
             ],
             "risks": [
-              "RSI14 86.0 is extremely overbought; price is at the reported 20-day resistance."
+              "RSI 85.7, overbought",
+              "Near 20-day resistance"
             ],
-            "fundamental_view": "EUR aggregate dashboard score -1.37 versus AUD 0.83, but macro scores do not override the pair's observed price direction.",
-            "momentum_view": "Bullish short-term momentum, with strong 5d/20d gains and positive MACD configuration; overextension tempers confidence.",
-            "d1_view": "Close 1.6569, updated 2026-11-21 12:44 UTC: 1d +0.559%, 5d +1.886%, 20d +3.839%; above SMA20 1.61539 and SMA50 1.61353; RSI14 86.0; MACD 0.010052 above signal 0.005469.",
-            "h4_watch": "No H4 data supplied; watch for whether price sustains above the reported resistance or retreats from it.",
+            "fundamental_view": "EUR and AUD macro views are mixed; price action is decisive.",
+            "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d +0.480%, 5d +1.806%, 20d +3.758%; above SMA20 and SMA50; RSI 85.7; MACD above signal.",
+            "h4_watch": "No H4 data; watch whether price holds above the 20-day resistance area.",
             "key_catalysts": [
-              "No confirmed recent AUD or EUR actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/NZD": {
             "bias": "BULLISH",
-            "confidence": "Medium",
-            "summary": "Positive short-term pair momentum across the reported horizons, with price above SMA20 and MACD above signal; price remains just below SMA50.",
+            "confidence": "MEDIUM",
+            "summary": "Positive returns across all horizons, price above SMA20 and MACD above signal; price remains slightly below SMA50.",
             "drivers": [
-              "Positive 1d, 5d, and 20d returns and RSI14 above 50 support the upward momentum reading."
+              "20d return +1.856%",
+              "Above SMA20",
+              "MACD above signal"
             ],
             "risks": [
-              "Price is below SMA50 1.99548, a mixed trend signal."
+              "Below SMA50",
+              "Near 20-day resistance"
             ],
-            "fundamental_view": "EUR aggregate score is negative versus NZD near neutral, but macro scores do not set the pair bias.",
-            "momentum_view": "Bullish: all supplied returns are positive and MACD is above signal; the SMA50 position is a counter-signal.",
-            "d1_view": "Close 2.0049, updated 2026-11-21 12:44 UTC: 1d +0.199%, 5d +0.539%, 20d +1.908%; above SMA20 1.99231 and slightly above SMA50 1.99548; RSI14 61.1; MACD 0.003371 above signal 0.002155.",
-            "h4_watch": "No H4 data supplied; watch for continued support above SMA20 and confirmation relative to SMA50.",
+            "fundamental_view": "EUR macro is mixed and NZD trend is improving; price evidence supports bullish bias.",
+            "momentum_view": "Bullish, with some resistance from SMA50.",
+            "d1_view": "2026-11-22T22:46:55Z; 1d +0.147%, 5d +0.487%, 20d +1.856%; above SMA20, below SMA50; RSI 60.4; MACD above signal.",
+            "h4_watch": "No H4 data; watch for a sustained move above SMA50 or rejection.",
             "key_catalysts": [
-              "No confirmed recent EUR or NZD actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/USD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied daily technical data is stale, so current short-term pair momentum is not assigned.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Price is below both averages, 5d and 20d returns are negative, and MACD is below signal. RSI is oversold, but does not reverse the broader daily evidence.",
             "drivers": [
-              "The snapshot has no confirmed recent EUR or USD actual-versus-forecast release surprise that could replace direct price confirmation."
+              "20d return -2.156%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old; the listed USD CPI entries have null actuals and remain pending."
+              "RSI 26.7, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "EUR's dashboard aggregate score is negative versus positive USD aggregate score, but neither determines pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale price data cannot support a current directional bias.",
-            "d1_view": "Last supplied close 1.09697, updated 2026-11-20 00:00 UTC: 1d -0.021%, 5d -0.728%, 20d -2.243%; below SMA20 1.1126 and SMA50 1.12441; RSI14 31.0; MACD -0.007417 below signal -0.005882. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "EUR and USD macro indicators are mixed; price action leads the pair view.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:47Z; 1d +0.055%, 5d -0.446%, 20d -2.156%; below SMA20 and SMA50; RSI 26.7; MACD below signal.",
+            "h4_watch": "No H4 data; watch for support response or sustained weakness below it.",
             "key_catalysts": [
-              "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/CAD": {
             "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Mixed technical signals: short-term returns are nearly flat and price is near SMA20, while its position below SMA50 conflicts with positive RSI and MACD crossover.",
+            "confidence": "LOW",
+            "summary": "Returns are nearly flat, while price is above SMA20 but below SMA50 and MACD is above signal. Signals are mixed.",
             "drivers": [
-              "Price is slightly above SMA20 and MACD is above signal, but the 1d and 5d returns are marginally negative."
+              "Price above SMA20",
+              "MACD above signal",
+              "20d return nearly flat"
             ],
             "risks": [
-              "Below SMA50 1.58699; returns and trend indicators do not align cleanly."
+              "Below SMA50",
+              "1d and 5d returns slightly negative"
             ],
-            "fundamental_view": "EUR and CAD dashboard aggregate scores are both negative; macro scores do not override conflicting pair price signals.",
-            "momentum_view": "NEUTRAL because near-flat returns, SMA20/SMA50 positioning, RSI, and MACD give a mixed picture.",
-            "d1_view": "Close 1.5727, updated 2026-11-21 12:44 UTC: 1d -0.021%, 5d -0.014%, 20d +0.063%; above SMA20 1.5711 but below SMA50 1.58699; RSI14 61.6; MACD -0.003086 above signal -0.004074.",
-            "h4_watch": "No H4 data supplied; watch for a clearer sustained move relative to SMA20 and SMA50.",
+            "fundamental_view": "EUR macro is mixed and CAD trend is deteriorating; price signals remain mixed.",
+            "momentum_view": "Neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:54Z; 1d -0.013%, 5d -0.006%, 20d +0.071%; above SMA20, below SMA50; RSI 61.8; MACD above signal.",
+            "h4_watch": "No H4 data; watch for a clear move beyond the 20-day range.",
             "key_catalysts": [
-              "No confirmed recent EUR or CAD actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/CHF": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The daily technical snapshot is stale; no current pair momentum bias is assigned.",
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "All measured returns are negative, but price is just above SMA20 and MACD is above signal. Daily signals conflict.",
             "drivers": [
-              "The supplied CHF and EUR macro dashboard values are not a substitute for fresh pair-price confirmation."
+              "Negative returns across horizons",
+              "Above SMA20",
+              "MACD above signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "Below SMA50",
+              "1d return -0.456%"
             ],
-            "fundamental_view": "EUR aggregate score is negative versus CHF positive; this relative macro picture cannot establish pair direction.",
-            "momentum_view": "INSUFFICIENT: stale pair data.",
-            "d1_view": "Last supplied close 0.92592, updated 2026-11-20 00:00 UTC: 1d +0.055%, 5d +0.241%, 20d +0.649%; above SMA20 0.92149 but below SMA50 0.93048; RSI14 61.2; MACD -0.001052 above signal -0.002432. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "EUR macro is mixed and CHF trend is improving; the pair signals conflict.",
+            "momentum_view": "Neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.456%, 5d -0.364%, 20d -0.258%; above SMA20, below SMA50; RSI 60.8; MACD above signal.",
+            "h4_watch": "No H4 data; watch whether SMA20 holds or price resumes lower.",
             "key_catalysts": [
-              "No confirmed recent EUR or CHF actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "EUR/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "No supplied confirmed recent release surprise provides direct price confirmation."
+              "20d return -1.204%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 30.9",
+              "Near 20-day support"
             ],
-            "fundamental_view": "EUR and JPY dashboard scores differ, but macro scores must not determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale pair data.",
-            "d1_view": "Last supplied close 175.168, updated 2026-11-20 00:00 UTC: 1d +0.172%, 5d -0.844%, 20d -0.244%; below SMA20 176.35285 and SMA50 177.47008; RSI14 44.7; MACD -0.616964 below signal -0.504494. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "EUR macro is mixed and JPY trend is improving; daily price action is bearish.",
+            "momentum_view": "Bearish short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.782%, 5d -1.339%, 20d -1.204%; below SMA20 and SMA50; RSI 30.9; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness.",
             "key_catalysts": [
-              "No confirmed recent EUR or JPY actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/AUD": {
             "bias": "BULLISH",
-            "confidence": "Medium",
-            "summary": "Strong upward pair momentum across the reported horizons, with price above both moving averages and MACD above signal; extreme RSI and resistance warrant caution.",
+            "confidence": "HIGH",
+            "summary": "Strong positive returns across horizons, price above both averages, and MACD above signal.",
             "drivers": [
-              "1d, 5d, and 20d returns are positive; price is above SMA20 and SMA50."
+              "20d return +3.787%",
+              "Above SMA20 and SMA50",
+              "MACD above signal"
             ],
             "risks": [
-              "RSI14 87.1 is extremely overbought; price is at the reported 20-day resistance."
+              "RSI 86.8, overbought",
+              "Near 20-day resistance"
             ],
-            "fundamental_view": "GBP and AUD aggregate dashboard scores are both positive, but these macro scores do not determine this pair's bias.",
-            "momentum_view": "Bullish momentum supported by price trend and MACD; overbought readings increase pullback risk.",
-            "d1_view": "Close 1.97705, updated 2026-11-21 13:13 UTC: 1d +0.567%, 5d +1.417%, 20d +3.896%; above SMA20 1.93394 and SMA50 1.91124; RSI14 87.1; MACD 0.016644 above signal 0.013347.",
-            "h4_watch": "No H4 data supplied; watch whether price sustains above the reported resistance or reverses.",
+            "fundamental_view": "GBP trend improving and AUD trend deteriorating; price action is consistent.",
+            "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d +0.461%, 5d +1.311%, 20d +3.787%; above SMA20 and SMA50; RSI 86.8; MACD above signal.",
+            "h4_watch": "No H4 data; watch whether price holds above the 20-day resistance area.",
             "key_catalysts": [
-              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/NZD": {
             "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Mixed but mildly constructive price signals: positive 1d and 20d returns, but almost flat 5d performance and MACD below signal.",
+            "confidence": "LOW",
+            "summary": "Positive 20d return and price above SMA50 conflict with MACD below signal and nearly flat shorter returns.",
             "drivers": [
-              "Price is above both moving averages and RSI14 is slightly above 50."
+              "20d return +1.899%",
+              "Above SMA20 and SMA50",
+              "RSI 52.3"
             ],
             "risks": [
-              "MACD is below signal and 5d return is only +0.041%, limiting momentum confirmation."
+              "MACD below signal",
+              "5d return approximately flat"
             ],
-            "fundamental_view": "GBP and NZD dashboard scores are both modestly positive, but macro scores cannot resolve mixed pair momentum.",
-            "momentum_view": "NEUTRAL given mixed returns and MACD despite price above moving averages.",
-            "d1_view": "Close 2.39162, updated 2026-11-21 13:13 UTC: 1d +0.176%, 5d +0.041%, 20d +1.941%; above SMA20 2.38527 and SMA50 2.36361; RSI14 52.8; MACD 0.009725 below signal 0.011004.",
-            "h4_watch": "No H4 data supplied; watch for MACD confirmation and sustained price action above moving averages.",
+            "fundamental_view": "GBP and NZD macro trends are improving; they do not resolve mixed pair signals.",
+            "momentum_view": "Neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:52Z; 1d +0.134%, 5d -0.000%, 20d +1.899%; above SMA20 and SMA50; RSI 52.3; MACD below signal.",
+            "h4_watch": "No H4 data; watch for confirmation from returns and MACD.",
             "key_catalysts": [
-              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/USD": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The latest supplied quote is fresh, but the snapshot does not provide an aligned daily close timestamp for its return and indicator series; use caution and do not treat the mixed timing as confirmed current momentum.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Negative 5d and 20d returns, price below both averages, and MACD below signal. RSI is oversold but does not overturn the daily trend.",
             "drivers": [
-              "The supplied indicator set shows negative 1d, 5d, and 20d returns and price below both moving averages, but it is not timestamp-aligned with the latest price."
+              "20d return -2.157%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Latest price timestamp is intraday while the indicator series timestamp is not separately specified; the November 10 USD CPI entries have no actuals."
+              "RSI 25.9, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "GBP aggregate dashboard score is positive versus USD positive but with deteriorating trend; these macro factors do not override pair-price evidence.",
-            "momentum_view": "INSUFFICIENT pending a clearly timestamp-aligned pair technical record; the listed indicators lean bearish but are not treated as fully confirmed.",
-            "d1_view": "Latest price 1.30818, updated 2026-11-21 15:05 UTC. Supplied indicators: 1d -0.035%, 5d -1.019%, 20d -2.212%; below SMA20 1.3305 and SMA50 1.33026; RSI14 25.4; MACD -0.005907 below signal -0.002682. Indicator timestamp alignment is unspecified.",
-            "h4_watch": "No H4 data supplied; seek timestamp-aligned fresh daily confirmation.",
+            "fundamental_view": "GBP trend improves while USD macro trend deteriorates; price action is bearish.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:47Z; 1d +0.021%, 5d -0.963%, 20d -2.157%; below SMA20 and SMA50; RSI 25.9; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or sustained weakness below it.",
             "key_catalysts": [
-              "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are pending values."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/CAD": {
             "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Price is near both moving averages with small returns and mixed MACD configuration, giving no strong short-term directional confirmation.",
+            "confidence": "LOW",
+            "summary": "Returns are mixed and small; price is below both averages and MACD is below signal, against RSI near 52.",
             "drivers": [
-              "20d return is slightly positive, but 1d and 5d returns are negative; price sits just below SMA20 and SMA50."
+              "20d return +0.128%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 51.2 is neutral and MACD is below signal."
+              "1d and 5d returns negative",
+              "Mixed momentum measures"
             ],
-            "fundamental_view": "GBP aggregate score is positive and CAD negative, but that relative macro contrast cannot set the short-term pair bias.",
-            "momentum_view": "NEUTRAL: weak returns and near-moving-average price action conflict with the small positive 20d change.",
-            "d1_view": "Close 1.87611, updated 2026-11-21 13:13 UTC: 1d -0.038%, 5d -0.503%, 20d +0.095%; below SMA20 1.8809 and SMA50 1.8796; RSI14 51.2; MACD 0.000859 below signal 0.001856.",
-            "h4_watch": "No H4 data supplied; watch for sustained separation from the moving averages.",
+            "fundamental_view": "GBP trend improves while CAD trend deteriorates; pair price signals remain mixed.",
+            "momentum_view": "Neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.006%, 5d -0.470%, 20d +0.128%; below SMA20 and SMA50; RSI 51.9; MACD below signal.",
+            "h4_watch": "No H4 data; watch for consistent returns and MACD confirmation.",
             "key_catalysts": [
-              "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/CHF": {
             "bias": "BEARISH",
-            "confidence": "Low",
-            "summary": "The latest daily return is sharply negative, with negative 5d and 20d returns and price below both moving averages; longer-horizon MACD is nearly at signal, and RSI is neutral.",
+            "confidence": "MEDIUM",
+            "summary": "Returns are negative across horizons and price is below both averages; MACD is just below signal.",
             "drivers": [
-              "1d -0.515%, 5d -0.910%, and 20d -0.291%; price below SMA20 and SMA50."
+              "20d return -0.263%",
+              "Below SMA20 and SMA50",
+              "Negative returns across horizons"
             ],
             "risks": [
-              "RSI14 is 51.6 and MACD is only marginally below signal, so the broader momentum confirmation is mixed."
+              "RSI 52.0 is not strongly bearish",
+              "MACD-signal gap is small"
             ],
-            "fundamental_view": "GBP and CHF macro dashboard scores are both positive; macro factors do not override the pair's negative price action.",
-            "momentum_view": "Bearish near-term price momentum, tempered by neutral RSI and a very small MACD/signal difference.",
-            "d1_view": "Close 1.0988, updated 2026-11-21 12:44 UTC: 1d -0.515%, 5d -0.910%, 20d -0.291%; below SMA20 1.10296 and SMA50 1.1014; RSI14 51.6; MACD 0.001273 below signal 0.001322.",
-            "h4_watch": "No H4 data supplied; monitor whether price holds above the reported support or resumes decline.",
+            "fundamental_view": "GBP and CHF macro trends are improving; daily price evidence is weaker for GBP/CHF.",
+            "momentum_view": "Bearish short-term price momentum, with modest signal strength.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.487%, 5d -0.882%, 20d -0.263%; below SMA20 and SMA50; RSI 52.0; MACD below signal.",
+            "h4_watch": "No H4 data; watch for price recovery above averages or continued weakness.",
             "key_catalysts": [
-              "No confirmed recent CHF release surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "GBP/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The daily technical record is stale; current short-term pair momentum cannot be assigned.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "The supplied technical indicators lean negative, but their age prevents using them as current confirmation."
+              "20d return -1.169%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 29.1, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "GBP and JPY dashboard macro scores are positive; they cannot determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale technical data.",
-            "d1_view": "Last supplied close 208.993, updated 2026-11-20 00:00 UTC: 1d -0.254%, 5d -1.202%, 20d -0.365%; below SMA20 211.1232 and SMA50 210.10606; RSI14 39.2; MACD -0.125343 below signal 0.211231. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "GBP trend improves and JPY trend is strongly positive; price action agrees with bearish pair momentum.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.791%, 5d -1.814%, 20d -1.169%; below SMA20 and SMA50; RSI 29.1; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness.",
             "key_catalysts": [
-              "No confirmed recent GBP or JPY actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "AUD/NZD": {
             "bias": "BEARISH",
-            "confidence": "Medium",
-            "summary": "Strong negative pair momentum across all reported horizons, with price below both moving averages and MACD below signal. Very low RSI raises rebound risk.",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "1d, 5d, and 20d returns are negative; price is at the reported support and below SMA20/SMA50."
+              "20d return -1.863%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 12.6 is extremely oversold and price is at reported 20-day support."
+              "RSI 12.8, deeply oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "AUD and NZD macro dashboard scores are both positive, but do not override observed bearish pair price action.",
-            "momentum_view": "Bearish; persistent negative returns and moving-average/MACD configuration outweigh oversold rebound risk.",
-            "d1_view": "Close 1.20941, updated 2026-11-21 13:12 UTC: 1d -0.404%, 5d -1.374%, 20d -1.905%; below SMA20 1.23342 and SMA50 1.23669; RSI14 12.6; MACD -0.005547 below signal -0.002808.",
-            "h4_watch": "No H4 data supplied; watch whether support holds or price confirms a continued decline.",
+            "fundamental_view": "AUD macro trend deteriorates while NZD trend improves; price action is consistent.",
+            "momentum_view": "Bearish short-term price momentum; deeply oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:55Z; 1d -0.361%, 5d -1.332%, 20d -1.863%; below SMA20 and SMA50; RSI 12.8; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or renewed downside.",
             "key_catalysts": [
-              "No confirmed recent AUD or NZD actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "AUD/USD": {
             "bias": "BEARISH",
-            "confidence": "Medium",
-            "summary": "Strongly negative price momentum across the reported horizons, with price well below both moving averages and MACD below signal; oversold RSI and support proximity raise rebound risk.",
+            "confidence": "HIGH",
+            "summary": "Returns are sharply negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "1d -0.559%, 5d -2.360%, and 20d -5.842%; price below SMA20 and SMA50."
+              "20d return -5.742%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 16.2 and price at reported 20-day support indicate elevated short-term rebound risk."
+              "RSI 16.4, deeply oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "AUD and USD aggregate scores are positive but their dashboard trend scores are negative; macro assessments do not set pair momentum.",
-            "momentum_view": "Bearish based on all reported returns, moving averages, and MACD; extreme oversold conditions are a counter-risk.",
-            "d1_view": "Close 0.6619, updated 2026-11-21 13:13 UTC: 1d -0.559%, 5d -2.360%, 20d -5.842%; below SMA20 0.6881 and SMA50 0.69612; RSI14 16.2; MACD -0.008929 below signal -0.006163.",
-            "h4_watch": "No H4 data supplied; watch for support failure or a reversal confirmed by fresh price action.",
+            "fundamental_view": "AUD trend deteriorates and its latest employment result missed forecast; USD macro trend is deteriorating, but price governs.",
+            "momentum_view": "Strong bearish short-term price momentum; deeply oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:45:47Z; 1d -0.453%, 5d -2.257%, 20d -5.742%; below SMA20 and SMA50; RSI 16.4; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness below it.",
             "key_catalysts": [
-              "Australian October labour figures dated 2026-11-19 in the dashboard report unemployment 4.9% and employment change -43.5; no forecast comparison supplied.",
-              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null, so no confirmed release surprise."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "AUD/CAD": {
             "bias": "BEARISH",
-            "confidence": "Medium",
-            "summary": "Broadly negative momentum across all reported horizons, with price below both moving averages and MACD below signal; the oversold reading and support proximity are counter-risks.",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "1d -0.691%, 5d -1.976%, and 20d -3.745%; price is below SMA20 and SMA50."
+              "20d return -3.585%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 21.0 and price at reported 20-day support may precede a short-term bounce."
+              "RSI 21.6, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "AUD aggregate dashboard score is positive and CAD negative, but these macro scores do not override the bearish pair price action.",
-            "momentum_view": "Bearish, with returns, moving averages, and MACD aligned lower.",
-            "d1_view": "Close 0.94804, updated 2026-11-21 13:12 UTC: 1d -0.691%, 5d -1.976%, 20d -3.745%; below SMA20 0.97257 and SMA50 0.9835; RSI14 21.0; MACD -0.008007 below signal -0.005826.",
-            "h4_watch": "No H4 data supplied; watch whether reported support holds or breaks.",
+            "fundamental_view": "Both macro trends deteriorate, with AUD's latest employment result a confirmed miss; daily price action is bearish.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:57Z; 1d -0.526%, 5d -1.813%, 20d -3.585%; below SMA20 and SMA50; RSI 21.6; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness.",
             "key_catalysts": [
-              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "AUD/CHF": {
             "bias": "BEARISH",
-            "confidence": "Medium",
-            "summary": "Strong downward momentum across the reported horizons, with price below both moving averages and MACD below signal; oversold RSI increases rebound risk.",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "All reported returns are negative and price is at reported 20-day support."
+              "20d return -4.000%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 25.7 and support proximity may prompt a reversal or consolidation."
+              "RSI 25.9, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "AUD and CHF aggregate dashboard scores are positive; macro scores do not override the pair's bearish price trend.",
-            "momentum_view": "Bearish across returns, moving averages, and MACD, with oversold conditions as a counter-signal.",
-            "d1_view": "Close 0.5557, updated 2026-11-21 12:44 UTC: 1d -1.102%, 5d -2.300%, 20d -4.043%; below SMA20 0.57038 and SMA50 0.57634; RSI14 25.7; MACD -0.004248 below signal -0.003277.",
-            "h4_watch": "No H4 data supplied; watch for support failure versus a rebound from support.",
+            "fundamental_view": "AUD trend deteriorates and CHF trend improves; price action is consistent.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -1.057%, 5d -2.256%, 20d -4.000%; below SMA20 and SMA50; RSI 25.9; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness.",
             "key_catalysts": [
-              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "AUD/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied daily technical record is stale, preventing a current short-term pair momentum assessment.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are sharply negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "The old indicator set is bearish but cannot establish the present direction under the freshness rule."
+              "20d return -4.782%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 16.6, deeply oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "AUD and JPY dashboard macro scores differ, but that relative picture cannot determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale pair technical data.",
-            "d1_view": "Last supplied close 106.295, updated 2026-11-20 00:00 UTC: 1d -0.638%, 5d -2.321%, 20d -3.239%; below SMA20 109.38105 and SMA50 110.03064; RSI14 19.0; MACD -0.93243 below signal -0.602858. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "AUD trend deteriorates and JPY trend improves; price action is consistent.",
+            "momentum_view": "Strong bearish short-term price momentum; deeply oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -1.250%, 5d -3.088%, 20d -4.782%; below SMA20 and SMA50; RSI 16.6; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or renewed downside.",
             "key_catalysts": [
-              "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "NZD/USD": {
             "bias": "BEARISH",
-            "confidence": "Medium",
-            "summary": "Negative momentum across all reported horizons, with price below both moving averages and MACD below signal; RSI near oversold territory is a counter-risk.",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
+              "20d return -3.994%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "RSI14 29.6 suggests a stretched decline that could rebound."
+              "RSI 29.9, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "NZD dashboard aggregate score is near neutral versus positive USD; this macro comparison does not set pair momentum.",
-            "momentum_view": "Bearish based on returns, moving averages, and MACD, tempered by near-oversold RSI.",
-            "d1_view": "Close 0.54705, updated 2026-11-21 13:13 UTC: 1d -0.200%, 5d -1.046%, 20d -4.057%; below SMA20 0.55782 and SMA50 0.56282; RSI14 29.6; MACD -0.004772 below signal -0.003738.",
-            "h4_watch": "No H4 data supplied; watch for continued weakness or a confirmed rebound from oversold levels.",
+            "fundamental_view": "NZD trend is improving while USD macro trend deteriorates; pair price action remains bearish.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:45:47Z; 1d -0.135%, 5d -0.981%, 20d -3.994%; below SMA20 and SMA50; RSI 29.9; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or continued weakness.",
             "key_catalysts": [
-              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "NZD/CAD": {
             "bias": "BEARISH",
-            "confidence": "Low",
-            "summary": "Returns are negative and price is below both moving averages, but RSI is near neutral and MACD is almost exactly at signal, limiting conviction.",
+            "confidence": "MEDIUM",
+            "summary": "Returns are negative across horizons and price is below both averages; MACD is nearly at signal.",
             "drivers": [
-              "All reported returns are negative, with price below SMA20 and SMA50."
+              "20d return -1.769%",
+              "Below SMA20 and SMA50",
+              "Negative returns across horizons"
             ],
             "risks": [
-              "MACD and signal are nearly equal; RSI14 47.7 is not strongly directional."
+              "MACD nearly at signal",
+              "RSI 48.5"
             ],
-            "fundamental_view": "NZD aggregate dashboard score is near neutral and CAD negative; these macro scores do not override the price evidence.",
-            "momentum_view": "Bearish, but with low confidence because MACD and RSI provide little confirmation.",
-            "d1_view": "Close 0.78414, updated 2026-11-21 13:12 UTC: 1d -0.238%, 5d -0.552%, 20d -1.829%; below SMA20 0.78838 and SMA50 0.79507; RSI14 47.7; MACD -0.002894 just below signal -0.002903.",
-            "h4_watch": "No H4 data supplied; monitor for stronger directional confirmation around the moving averages.",
+            "fundamental_view": "NZD trend improves while CAD trend deteriorates; price action is bearish.",
+            "momentum_view": "Bearish short-term price momentum, with limited MACD confirmation.",
+            "d1_view": "2026-11-22T22:46:55Z; 1d -0.177%, 5d -0.491%, 20d -1.769%; below SMA20 and SMA50; RSI 48.5; MACD slightly above signal.",
+            "h4_watch": "No H4 data; watch for MACD confirmation or a recovery above averages.",
             "key_catalysts": [
-              "No confirmed recent NZD or CAD actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "NZD/CHF": {
-            "bias": "NEUTRAL",
-            "confidence": "Low",
-            "summary": "Returns are negative and price sits below both moving averages, but MACD is above signal and RSI is near neutral, creating conflicting momentum signals.",
+            "bias": "BEARISH",
+            "confidence": "MEDIUM",
+            "summary": "Returns are negative across horizons and price is below both averages; MACD is slightly above signal, tempering the bearish case.",
             "drivers": [
-              "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
+              "20d return -2.255%",
+              "Below SMA20 and SMA50",
+              "Negative returns across horizons"
             ],
             "risks": [
-              "MACD is above signal and RSI14 48.8 is near neutral, conflicting with the price trend."
+              "MACD above signal",
+              "RSI 48.1"
             ],
-            "fundamental_view": "NZD and CHF macro dashboard scores are both positive, but neither determines pair direction.",
-            "momentum_view": "NEUTRAL because weak price action conflicts with a positive MACD crossover.",
-            "d1_view": "Close 0.4593, updated 2026-11-21 12:44 UTC: 1d -0.718%, 5d -0.960%, 20d -2.193%; below SMA20 0.4623 and SMA50 0.46588; RSI14 48.8; MACD -0.001362 above signal -0.001594.",
-            "h4_watch": "No H4 data supplied; watch for price and MACD alignment.",
+            "fundamental_view": "NZD and CHF macro trends improve; price action leans bearish but is not fully aligned.",
+            "momentum_view": "Bearish short-term price momentum, with MACD divergence as a caution.",
+            "d1_view": "2026-11-22T22:46:54Z; 1d -0.780%, 5d -1.022%, 20d -2.255%; below SMA20 and SMA50; RSI 48.1; MACD slightly above signal.",
+            "h4_watch": "No H4 data; watch for MACD alignment or a recovery above averages.",
             "key_catalysts": [
-              "No confirmed recent NZD or CHF actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "NZD/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied daily technical record is stale, so no current pair momentum bias is assigned.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "The stale indicators lean bearish, but cannot confirm current price direction."
+              "20d return -3.022%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 30.3",
+              "Near 20-day support"
             ],
-            "fundamental_view": "NZD and JPY macro scores cannot substitute for fresh pair-price data.",
-            "momentum_view": "INSUFFICIENT: stale technical data.",
-            "d1_view": "Last supplied close 87.531, updated 2026-11-20 00:00 UTC: 1d +0.081%, 5d -1.238%, 20d -1.593%; below SMA20 88.58415 and SMA50 88.92536; RSI14 36.9; MACD -0.438995 below signal -0.33726. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "NZD trend improves while JPY trend strengthens; pair price action is bearish.",
+            "momentum_view": "Bearish short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:55Z; 1d -0.947%, 5d -1.826%, 20d -3.022%; below SMA20 and SMA50; RSI 30.3; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or sustained weakness.",
             "key_catalysts": [
-              "No confirmed recent NZD or JPY actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "USD/CAD": {
             "bias": "BULLISH",
-            "confidence": "Medium",
-            "summary": "Positive 5d and 20d momentum, price above both moving averages, and MACD above signal support an upward bias despite a slightly negative 1d return and extremely overbought RSI.",
+            "confidence": "HIGH",
+            "summary": "Strong positive 5d and 20d returns, price above both averages, and MACD above signal; RSI is extremely high.",
             "drivers": [
-              "5d +0.500% and 20d +2.337%; price above SMA20 and SMA50; MACD above signal."
+              "20d return +2.351%",
+              "Above SMA20 and SMA50",
+              "MACD above signal"
             ],
             "risks": [
-              "RSI14 91.5 is exceptionally overbought; price is near reported 20-day resistance and 1d return is negative."
+              "RSI 91.9, extremely overbought",
+              "Near 20-day resistance"
             ],
-            "fundamental_view": "USD dashboard aggregate score is positive and CAD negative, but this does not override or create the pair momentum reading.",
-            "momentum_view": "Bullish from medium-horizon returns, moving averages, and MACD; overbought conditions reduce confidence.",
-            "d1_view": "Close 1.434, updated 2026-11-21 12:44 UTC: 1d -0.024%, 5d +0.500%, 20d +2.337%; above SMA20 1.41397 and SMA50 1.41328; RSI14 91.5; MACD 0.006926 above signal 0.004234.",
-            "h4_watch": "No H4 data supplied; watch for follow-through versus reversal near reported resistance.",
+            "fundamental_view": "USD macro trend deteriorates and CAD trend deteriorates; price evidence supports bullish USD/CAD.",
+            "momentum_view": "Bullish short-term price momentum; extreme RSI is a risk.",
+            "d1_view": "2026-11-22T22:46:55Z; 1d -0.010%, 5d +0.514%, 20d +2.351%; above SMA20 and SMA50; RSI 91.9; MACD above signal.",
+            "h4_watch": "No H4 data; watch for resistance breakout or rejection.",
             "key_catalysts": [
-              "No confirmed recent USD or CAD actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "USD/CHF": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied technical record is stale, so no current pair momentum bias is assigned.",
+            "bias": "BULLISH",
+            "confidence": "HIGH",
+            "summary": "Positive 5d and 20d returns, price above both averages, and MACD above signal.",
             "drivers": [
-              "The stale price indicators lean bullish but are not current enough to confirm the direction."
+              "20d return +1.908%",
+              "Above SMA20 and SMA50",
+              "MACD above signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 77.7, overbought",
+              "Near 20-day resistance"
             ],
-            "fundamental_view": "USD and CHF dashboard scores are both positive; macro comparisons do not establish pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale technical data.",
-            "d1_view": "Last supplied close 0.8441, updated 2026-11-20 00:00 UTC: 1d +0.074%, 5d +0.977%, 20d +2.963%; above SMA20 0.8283 and SMA50 0.8276; RSI14 74.1; MACD 0.004591 above signal 0.00218. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "USD macro trend deteriorates while CHF trend improves; pair price action remains bullish.",
+            "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:58Z; 1d -0.539%, 5d +0.052%, 20d +1.908%; above SMA20 and SMA50; RSI 77.7; MACD above signal.",
+            "h4_watch": "No H4 data; watch whether price holds above averages or rejects resistance.",
             "key_catalysts": [
-              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; no confirmed surprise."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "USD/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
+            "bias": "NEUTRAL",
+            "confidence": "LOW",
+            "summary": "Positive 20d return and MACD above signal conflict with negative 1d and 5d returns and price below SMA20.",
             "drivers": [
-              "The stale indicators show positive 20d performance and price above moving averages, but are not valid current confirmation."
+              "20d return +1.088%",
+              "Above SMA50",
+              "MACD above signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "1d and 5d returns negative",
+              "Below SMA20"
             ],
-            "fundamental_view": "USD and JPY dashboard macro scores are both positive; they cannot determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale pair data.",
-            "d1_view": "Last supplied close 159.707, updated 2026-11-20 00:00 UTC: 1d +0.205%, 5d -0.105%, 20d +2.053%; above SMA20 158.5194 and SMA50 157.85516; RSI14 68.2; MACD 0.501967 above signal 0.381212. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "USD macro trend deteriorates while JPY trend improves; price signals remain mixed.",
+            "momentum_view": "Neutral short-term price momentum.",
+            "d1_view": "2026-11-22T22:46:51Z; 1d -0.733%, 5d -0.778%, 20d +1.088%; below SMA20, above SMA50; RSI 54.8; MACD above signal.",
+            "h4_watch": "No H4 data; watch for alignment of short- and medium-term price signals.",
             "key_catalysts": [
-              "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are pending, not results."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "CAD/CHF": {
             "bias": "BEARISH",
-            "confidence": "Low",
-            "summary": "Negative returns across the reported horizons and price just below both moving averages lean bearish, but positive MACD and neutral RSI conflict.",
+            "confidence": "MEDIUM",
+            "summary": "Returns are negative across horizons and price is below both averages; MACD is above signal, tempering the bearish case.",
             "drivers": [
-              "1d -0.498%, 5d -0.413%, and 20d -0.388%; price is slightly below SMA20 and SMA50."
+              "20d return -0.572%",
+              "Below SMA20 and SMA50",
+              "Negative returns across horizons"
             ],
             "risks": [
-              "MACD is above signal and RSI14 50.8 is neutral, weakening bearish confirmation."
+              "MACD above signal",
+              "RSI 47.8"
             ],
-            "fundamental_view": "CAD dashboard aggregate score is negative versus positive CHF, but macro scores do not determine the pair bias.",
-            "momentum_view": "Bearish with low confidence: price returns conflict with MACD and neutral RSI.",
-            "d1_view": "Close 0.5856, updated 2026-11-21 12:44 UTC: 1d -0.498%, 5d -0.413%, 20d -0.388%; below SMA20 0.58636 and SMA50 0.58584; RSI14 50.8; MACD 0.00044 above signal 0.000161.",
-            "h4_watch": "No H4 data supplied; watch for alignment between returns, moving averages, and MACD.",
+            "fundamental_view": "CAD trend deteriorates while CHF trend improves; price leans bearish.",
+            "momentum_view": "Bearish short-term price momentum, with MACD divergence as a caution.",
+            "d1_view": "2026-11-22T22:46:53Z; 1d -0.681%, 5d -0.597%, 20d -0.572%; below SMA20 and SMA50; RSI 47.8; MACD above signal.",
+            "h4_watch": "No H4 data; watch for MACD alignment or recovery above averages.",
             "key_catalysts": [
-              "No confirmed recent CAD or CHF actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "CAD/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied daily data is stale; the current pair momentum bias is therefore insufficient.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "The old indicators are mostly negative, but cannot be used as fresh price confirmation."
+              "20d return -1.293%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 19.5, oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "CAD and JPY macro dashboard scores do not substitute for fresh pair-price evidence.",
-            "momentum_view": "INSUFFICIENT: stale technical record.",
-            "d1_view": "Last supplied close 111.35, updated 2026-11-20 00:00 UTC: 1d +0.112%, 5d -0.660%, 20d -0.366%; below SMA20 112.24175 and below SMA50 111.77044; RSI14 26.4; MACD -0.162165 below signal -0.013378. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "CAD trend deteriorates while JPY trend improves; price action agrees.",
+            "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.791%, 5d -1.348%, 20d -1.293%; below SMA20 and SMA50; RSI 19.5; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or sustained weakness.",
             "key_catalysts": [
-              "No confirmed recent CAD or JPY actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           },
           "CHF/JPY": {
-            "bias": "INSUFFICIENT",
-            "confidence": "Low",
-            "summary": "The supplied daily technical record is stale, preventing a current short-term momentum assessment.",
+            "bias": "BEARISH",
+            "confidence": "HIGH",
+            "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
             "drivers": [
-              "Old returns and moving-average positioning lean negative, but are not valid current confirmation."
+              "20d return -0.956%",
+              "Below SMA20 and SMA50",
+              "MACD below signal"
             ],
             "risks": [
-              "Technical timestamp is more than 36 hours old."
+              "RSI 18.7, deeply oversold",
+              "Near 20-day support"
             ],
-            "fundamental_view": "CHF and JPY macro dashboard scores cannot determine pair momentum.",
-            "momentum_view": "INSUFFICIENT: stale technical data.",
-            "d1_view": "Last supplied close 189.16499, updated 2026-11-20 00:00 UTC: 1d +0.114%, 5d -1.074%, 20d -0.884%; below SMA20 191.35854 and SMA50 190.70904; RSI14 37.4; MACD -0.447795 below signal -0.041072. Stale under the 36-hour rule.",
-            "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+            "fundamental_view": "CHF and JPY macro trends are both improving; price action is bearish for CHF/JPY.",
+            "momentum_view": "Bearish short-term price momentum; deeply oversold conditions are a risk.",
+            "d1_view": "2026-11-22T22:46:56Z; 1d -0.335%, 5d -0.974%, 20d -0.956%; below SMA20 and SMA50; RSI 18.7; MACD below signal.",
+            "h4_watch": "No H4 data; watch support response or renewed downside.",
             "key_catalysts": [
-              "No confirmed recent CHF or JPY actual-versus-forecast surprise is supplied."
+              "Upcoming releases; actuals not captured"
             ]
           }
         }
       }
-    },
-    "gemini": {
-      "status": "error",
-      "model": "gemini-3.8-flash",
-      "message": "HTTP 503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n",
-      "review": null
-    }
-  },
-  "currency_consensus": {
-    "USD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "EUR": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "GBP": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "AUD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "NZD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    }
-  },
-  "pair_consensus": {
-    "EUR/GBP": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "EUR/AUD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "EUR/NZD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "EUR/USD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "EUR/CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "EUR/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "EUR/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "GBP/AUD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "GBP/NZD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "GBP/USD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "GBP/CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "GBP/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "GBP/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "AUD/NZD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "AUD/USD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "AUD/CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "AUD/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "AUD/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "NZD/USD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "NZD/CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "NZD/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "NEUTRAL"
-    },
-    "NZD/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "USD/CAD": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BULLISH"
-    },
-    "USD/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "USD/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "CAD/CHF": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "BEARISH"
-    },
-    "CAD/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
-    },
-    "CHF/JPY": {
-      "status": "ONE_MODEL_ONLY",
-      "bias": "INSUFFICIENT"
     }
   },
   "currency_reviews": {
     "USD": {
       "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Mixed macro picture: the aggregate score is positive, while the supplied fundamental trend is deteriorating. No direct currency spot data is supplied to establish USD momentum.",
+      "confidence": "LOW",
+      "summary": "Macro trend is deteriorating despite a positive overall score. No recent release momentum is confirmed; the latest listed release has no captured actual.",
       "drivers": [
-        "The dashboard reports a positive aggregate score (0.64) but a negative fundamental-trend score (-0.83), citing deteriorating GDP growth and inflation alongside improving unemployment.",
-        "Latest listed data: September 2026 inflation 3.74%, Q3 GDP growth 2.07%, and October unemployment 4.1%. These are macro indicators, not direct spot-price evidence."
+        "GDP growth deteriorating",
+        "Inflation deteriorating",
+        "Unemployment improving"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "The November 10 Core CPI and CPI m/m entries have no actual values; their forecasts are pending, not results."
+        "Provisional data coverage",
+        "No economic-surprise data"
       ]
     },
     "EUR": {
-      "bias": "BEARISH",
-      "confidence": "Low",
-      "summary": "The aggregate dashboard score is negative, while the supplied fundamental-trend score is neutral and recent changes are described as mixed. No direct currency spot data is supplied to establish EUR momentum.",
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "Macro trend is mixed, with improving GDP growth but deteriorating inflation. The latest listed release has no captured actual, so recent release momentum is unconfirmed.",
       "drivers": [
-        "Aggregate score -1.37; fundamental-trend score 0.00, with GDP growth improving but inflation deteriorating and no aligned recent changes.",
-        "Latest listed data: October 2026 inflation 4.0%, Q3 GDP growth 1.30%, and September unemployment 6.5%. These describe macro conditions, not spot momentum."
+        "GDP growth improving",
+        "Inflation deteriorating"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "Recent listed EUR events show no confirmed actual-versus-forecast surprise; entries with missing actuals must not be treated as results."
+        "0/7 recent changes aligned",
+        "Provisional data coverage"
       ]
     },
     "GBP": {
       "bias": "BULLISH",
-      "confidence": "Low",
-      "summary": "Aggregate and short-term dashboard scores are positive, and the supplied fundamental trend is building. This is a macro/dashboard assessment only; no direct GBP spot series is supplied here.",
+      "confidence": "LOW",
+      "summary": "Macro trend is improving, though inflation is deteriorating. Retail Sales actual is not captured, so recent release momentum is unconfirmed.",
       "drivers": [
-        "Aggregate score 0.47, short-term score 0.60, and fundamental-trend score 0.83; the dashboard cites improving GDP growth and unemployment, with inflation deteriorating.",
-        "The November 12, 2026 Forex Factory release “GDP m/m” reports actual 0.2% versus forecast 0.0% (previous 0.0%, August revised), a positive confirmed release surprise."
+        "GDP growth improving",
+        "Unemployment improving",
+        "Positive trend persistence"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "Other November 12 GBP calendar entries have null actuals and remain pending in the supplied snapshot."
+        "Inflation deteriorating",
+        "Provisional data coverage"
       ]
     },
     "JPY": {
       "bias": "BULLISH",
-      "confidence": "Low",
-      "summary": "The aggregate, short-term, and fundamental-trend dashboard scores are positive, with the trend described as building. This does not establish JPY spot momentum; direct currency-level price data is not supplied.",
+      "confidence": "LOW",
+      "summary": "Macro trend is strongly improving, with GDP growth and unemployment improving. The latest listed CPI actual is not captured, so recent release momentum is unconfirmed.",
       "drivers": [
-        "Aggregate score 1.03, short-term score 1.54, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and unemployment.",
-        "Latest listed data: September 2026 inflation 2.1%, Q3 GDP growth 1.16%, and September unemployment 2.4%."
+        "Strong fundamental trend score",
+        "GDP growth improving",
+        "Unemployment improving"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "The November 12 PPI y/y entry has no actual value; its 6.5% forecast is not a release result."
+        "Latest CPI actual unavailable",
+        "Provisional data coverage"
       ]
     },
     "CHF": {
       "bias": "BULLISH",
-      "confidence": "Low",
-      "summary": "Aggregate and short-term dashboard scores are positive, and the fundamental trend is described as persistent and broadening. No direct CHF spot series is supplied to confirm currency-level momentum.",
+      "confidence": "LOW",
+      "summary": "Macro trend is strongly improving, with GDP growth and inflation improving. Latest listed PPI actual is unavailable; unemployment data is stale.",
       "drivers": [
-        "Aggregate score 0.41, short-term score 1.14, and fundamental-trend score 2.50; the dashboard cites improving GDP growth and inflation.",
-        "Latest listed data include October 2026 inflation 1.6% and Q3 GDP growth 3.04%."
+        "GDP growth improving",
+        "Inflation improving",
+        "Persistent broadening trend"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis."
+        "Stale unemployment data",
+        "Latest PPI actual unavailable"
       ]
     },
     "CAD": {
       "bias": "BEARISH",
-      "confidence": "Low",
-      "summary": "Aggregate and short-term dashboard scores are negative, and the fundamental trend is described as persistent deterioration. No direct CAD spot series is supplied to establish currency-level price momentum.",
+      "confidence": "LOW",
+      "summary": "Macro trend is deteriorating, with GDP growth and unemployment worsening. Latest listed CPI actual is unavailable, so recent release momentum is unconfirmed.",
       "drivers": [
-        "Aggregate score -1.00, short-term score -0.94, and fundamental-trend score -0.83; the dashboard cites deteriorating GDP growth and unemployment.",
-        "Latest listed data: October 2026 inflation 3.09%, Q3 GDP growth 0.95%, and October unemployment 6.7%."
+        "GDP growth deteriorating",
+        "Unemployment deteriorating",
+        "Persistent broadening trend"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "The November 10 BOC Summary of Deliberations entry has no supplied actual or detail; do not infer its contents."
+        "Inflation improving",
+        "Latest CPI actual unavailable"
       ]
     },
     "AUD": {
-      "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Aggregate and short-term scores are positive, but the supplied fundamental-trend score is negative, reflecting deterioration in GDP growth and unemployment. The latest listed labour release is a negative catalyst; currency-level spot momentum cannot be established from currency scores.",
+      "bias": "BEARISH",
+      "confidence": "LOW",
+      "summary": "Macro trend is deteriorating, and captured Employment Change was -43.5K versus a 25.5K forecast. The recent release provides confirmed negative momentum.",
       "drivers": [
-        "Aggregate score 0.83 and short-term score 0.25 contrast with fundamental-trend score -0.83.",
-        "Australian Bureau of Statistics labour data in the dashboard is dated November 19, 2026: October unemployment 4.9% and employment change -43.5. This is a confirmed supplied release, but no forecast co"
+        "Employment Change missed forecast",
+        "GDP growth deteriorating",
+        "Unemployment deteriorating"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "Other AUD calendar entries in the snapshot have null actuals and cannot be treated as results."
+        "Inflation improving",
+        "Provisional data coverage"
       ]
     },
     "NZD": {
-      "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "The fundamental-trend score is positive and persistent, but the aggregate score is only 0.08. These macro indicators do not establish NZD spot momentum, and unemployment data is stale.",
+      "bias": "BULLISH",
+      "confidence": "LOW",
+      "summary": "Macro trend is strongly improving, with GDP growth and inflation improving. Latest listed Inflation Expectations actual is unavailable; unemployment data is stale.",
       "drivers": [
-        "Short-term score 0.93 and fundamental-trend score 2.50, with the dashboard citing improving GDP growth and inflation.",
-        "Latest listed data include Q3 2026 inflation 3.71% and Q2 GDP growth 2.55%."
+        "GDP growth improving",
+        "Inflation improving",
+        "Persistent broadening trend"
       ],
       "risks": [
-        "Dashboard data is provisional and confidence is low.",
-        "Unemployment is an annual 2025 fallback, explicitly stale for short-term analysis; the November 12 Visitor Arrivals entry has no actual."
+        "Stale unemployment data",
+        "Latest release actual unavailable"
       ]
     }
   },
   "pair_reviews": {
     "EUR/GBP": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "Direct pair momentum cannot be assessed because the supplied daily technical snapshot is stale.",
+      "bias": "NEUTRAL",
+      "confidence": "MEDIUM",
+      "summary": "Mixed daily signals: positive 5-day return and MACD crossover, but negative 20-day return and price below SMA50.",
       "drivers": [
-        "The November 12, 2026 Forex Factory “GDP m/m” release reports GBP actual 0.2% versus 0.0% forecast; this is a secondary catalyst, not a substitute for current pair-price confirmation."
+        "Price above SMA20",
+        "MACD above signal",
+        "Mixed return horizons"
       ],
       "risks": [
-        "The supplied technical timestamp is more than 36 hours old."
+        "Price remains below SMA50",
+        "1-day return negative"
       ],
-      "fundamental_view": "EUR dashboard aggregate score is negative and GBP is modestly positive; these macro assessments do not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale pair data prevents a short-term momentum assessment.",
-      "d1_view": "Last supplied close 0.83799, updated 2026-11-20 00:00 UTC: 1d +0.413%, 5d +0.356%, 20d +0.106%; above SMA20 0.83523 but below SMA50 0.84464; RSI14 65.2; MACD -0.00244 above signal -0.003239. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; monitor only for fresh daily price confirmation.",
+      "fundamental_view": "EUR trend mixed; GBP trend improving; macro does not resolve price conflict.",
+      "momentum_view": "Conflicting signals; neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.032%, 5d +0.430%, 20d -0.092%; above SMA20, below SMA50; RSI 61.1; MACD above signal.",
+      "h4_watch": "No H4 data; watch for sustained movement beyond the 20-day range.",
       "key_catalysts": [
-        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/AUD": {
       "bias": "BULLISH",
-      "confidence": "Medium",
-      "summary": "Strong positive short-term pair momentum, although the sharply overbought RSI and price at the reported 20-day resistance raise reversal risk.",
+      "confidence": "HIGH",
+      "summary": "Strong positive returns across all measured horizons, with price above both averages and MACD above signal.",
       "drivers": [
-        "Price is up over 1, 5, and 20 days, well above both moving averages, with MACD above signal."
+        "20d return +3.758%",
+        "Above SMA20 and SMA50",
+        "MACD above signal"
       ],
       "risks": [
-        "RSI14 86.0 is extremely overbought; price is at the reported 20-day resistance."
+        "RSI 85.7, overbought",
+        "Near 20-day resistance"
       ],
-      "fundamental_view": "EUR aggregate dashboard score -1.37 versus AUD 0.83, but macro scores do not override the pair's observed price direction.",
-      "momentum_view": "Bullish short-term momentum, with strong 5d/20d gains and positive MACD configuration; overextension tempers confidence.",
-      "d1_view": "Close 1.6569, updated 2026-11-21 12:44 UTC: 1d +0.559%, 5d +1.886%, 20d +3.839%; above SMA20 1.61539 and SMA50 1.61353; RSI14 86.0; MACD 0.010052 above signal 0.005469.",
-      "h4_watch": "No H4 data supplied; watch for whether price sustains above the reported resistance or retreats from it.",
+      "fundamental_view": "EUR and AUD macro views are mixed; price action is decisive.",
+      "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d +0.480%, 5d +1.806%, 20d +3.758%; above SMA20 and SMA50; RSI 85.7; MACD above signal.",
+      "h4_watch": "No H4 data; watch whether price holds above the 20-day resistance area.",
       "key_catalysts": [
-        "No confirmed recent AUD or EUR actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/NZD": {
       "bias": "BULLISH",
-      "confidence": "Medium",
-      "summary": "Positive short-term pair momentum across the reported horizons, with price above SMA20 and MACD above signal; price remains just below SMA50.",
+      "confidence": "MEDIUM",
+      "summary": "Positive returns across all horizons, price above SMA20 and MACD above signal; price remains slightly below SMA50.",
       "drivers": [
-        "Positive 1d, 5d, and 20d returns and RSI14 above 50 support the upward momentum reading."
+        "20d return +1.856%",
+        "Above SMA20",
+        "MACD above signal"
       ],
       "risks": [
-        "Price is below SMA50 1.99548, a mixed trend signal."
+        "Below SMA50",
+        "Near 20-day resistance"
       ],
-      "fundamental_view": "EUR aggregate score is negative versus NZD near neutral, but macro scores do not set the pair bias.",
-      "momentum_view": "Bullish: all supplied returns are positive and MACD is above signal; the SMA50 position is a counter-signal.",
-      "d1_view": "Close 2.0049, updated 2026-11-21 12:44 UTC: 1d +0.199%, 5d +0.539%, 20d +1.908%; above SMA20 1.99231 and slightly above SMA50 1.99548; RSI14 61.1; MACD 0.003371 above signal 0.002155.",
-      "h4_watch": "No H4 data supplied; watch for continued support above SMA20 and confirmation relative to SMA50.",
+      "fundamental_view": "EUR macro is mixed and NZD trend is improving; price evidence supports bullish bias.",
+      "momentum_view": "Bullish, with some resistance from SMA50.",
+      "d1_view": "2026-11-22T22:46:55Z; 1d +0.147%, 5d +0.487%, 20d +1.856%; above SMA20, below SMA50; RSI 60.4; MACD above signal.",
+      "h4_watch": "No H4 data; watch for a sustained move above SMA50 or rejection.",
       "key_catalysts": [
-        "No confirmed recent EUR or NZD actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/USD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied daily technical data is stale, so current short-term pair momentum is not assigned.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Price is below both averages, 5d and 20d returns are negative, and MACD is below signal. RSI is oversold, but does not reverse the broader daily evidence.",
       "drivers": [
-        "The snapshot has no confirmed recent EUR or USD actual-versus-forecast release surprise that could replace direct price confirmation."
+        "20d return -2.156%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old; the listed USD CPI entries have null actuals and remain pending."
+        "RSI 26.7, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "EUR's dashboard aggregate score is negative versus positive USD aggregate score, but neither determines pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale price data cannot support a current directional bias.",
-      "d1_view": "Last supplied close 1.09697, updated 2026-11-20 00:00 UTC: 1d -0.021%, 5d -0.728%, 20d -2.243%; below SMA20 1.1126 and SMA50 1.12441; RSI14 31.0; MACD -0.007417 below signal -0.005882. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "EUR and USD macro indicators are mixed; price action leads the pair view.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:47Z; 1d +0.055%, 5d -0.446%, 20d -2.156%; below SMA20 and SMA50; RSI 26.7; MACD below signal.",
+      "h4_watch": "No H4 data; watch for support response or sustained weakness below it.",
       "key_catalysts": [
-        "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/CAD": {
       "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Mixed technical signals: short-term returns are nearly flat and price is near SMA20, while its position below SMA50 conflicts with positive RSI and MACD crossover.",
+      "confidence": "LOW",
+      "summary": "Returns are nearly flat, while price is above SMA20 but below SMA50 and MACD is above signal. Signals are mixed.",
       "drivers": [
-        "Price is slightly above SMA20 and MACD is above signal, but the 1d and 5d returns are marginally negative."
+        "Price above SMA20",
+        "MACD above signal",
+        "20d return nearly flat"
       ],
       "risks": [
-        "Below SMA50 1.58699; returns and trend indicators do not align cleanly."
+        "Below SMA50",
+        "1d and 5d returns slightly negative"
       ],
-      "fundamental_view": "EUR and CAD dashboard aggregate scores are both negative; macro scores do not override conflicting pair price signals.",
-      "momentum_view": "NEUTRAL because near-flat returns, SMA20/SMA50 positioning, RSI, and MACD give a mixed picture.",
-      "d1_view": "Close 1.5727, updated 2026-11-21 12:44 UTC: 1d -0.021%, 5d -0.014%, 20d +0.063%; above SMA20 1.5711 but below SMA50 1.58699; RSI14 61.6; MACD -0.003086 above signal -0.004074.",
-      "h4_watch": "No H4 data supplied; watch for a clearer sustained move relative to SMA20 and SMA50.",
+      "fundamental_view": "EUR macro is mixed and CAD trend is deteriorating; price signals remain mixed.",
+      "momentum_view": "Neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:54Z; 1d -0.013%, 5d -0.006%, 20d +0.071%; above SMA20, below SMA50; RSI 61.8; MACD above signal.",
+      "h4_watch": "No H4 data; watch for a clear move beyond the 20-day range.",
       "key_catalysts": [
-        "No confirmed recent EUR or CAD actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/CHF": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The daily technical snapshot is stale; no current pair momentum bias is assigned.",
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "All measured returns are negative, but price is just above SMA20 and MACD is above signal. Daily signals conflict.",
       "drivers": [
-        "The supplied CHF and EUR macro dashboard values are not a substitute for fresh pair-price confirmation."
+        "Negative returns across horizons",
+        "Above SMA20",
+        "MACD above signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "Below SMA50",
+        "1d return -0.456%"
       ],
-      "fundamental_view": "EUR aggregate score is negative versus CHF positive; this relative macro picture cannot establish pair direction.",
-      "momentum_view": "INSUFFICIENT: stale pair data.",
-      "d1_view": "Last supplied close 0.92592, updated 2026-11-20 00:00 UTC: 1d +0.055%, 5d +0.241%, 20d +0.649%; above SMA20 0.92149 but below SMA50 0.93048; RSI14 61.2; MACD -0.001052 above signal -0.002432. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "EUR macro is mixed and CHF trend is improving; the pair signals conflict.",
+      "momentum_view": "Neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.456%, 5d -0.364%, 20d -0.258%; above SMA20, below SMA50; RSI 60.8; MACD above signal.",
+      "h4_watch": "No H4 data; watch whether SMA20 holds or price resumes lower.",
       "key_catalysts": [
-        "No confirmed recent EUR or CHF actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "EUR/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "No supplied confirmed recent release surprise provides direct price confirmation."
+        "20d return -1.204%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 30.9",
+        "Near 20-day support"
       ],
-      "fundamental_view": "EUR and JPY dashboard scores differ, but macro scores must not determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale pair data.",
-      "d1_view": "Last supplied close 175.168, updated 2026-11-20 00:00 UTC: 1d +0.172%, 5d -0.844%, 20d -0.244%; below SMA20 176.35285 and SMA50 177.47008; RSI14 44.7; MACD -0.616964 below signal -0.504494. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "EUR macro is mixed and JPY trend is improving; daily price action is bearish.",
+      "momentum_view": "Bearish short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.782%, 5d -1.339%, 20d -1.204%; below SMA20 and SMA50; RSI 30.9; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness.",
       "key_catalysts": [
-        "No confirmed recent EUR or JPY actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/AUD": {
       "bias": "BULLISH",
-      "confidence": "Medium",
-      "summary": "Strong upward pair momentum across the reported horizons, with price above both moving averages and MACD above signal; extreme RSI and resistance warrant caution.",
+      "confidence": "HIGH",
+      "summary": "Strong positive returns across horizons, price above both averages, and MACD above signal.",
       "drivers": [
-        "1d, 5d, and 20d returns are positive; price is above SMA20 and SMA50."
+        "20d return +3.787%",
+        "Above SMA20 and SMA50",
+        "MACD above signal"
       ],
       "risks": [
-        "RSI14 87.1 is extremely overbought; price is at the reported 20-day resistance."
+        "RSI 86.8, overbought",
+        "Near 20-day resistance"
       ],
-      "fundamental_view": "GBP and AUD aggregate dashboard scores are both positive, but these macro scores do not determine this pair's bias.",
-      "momentum_view": "Bullish momentum supported by price trend and MACD; overbought readings increase pullback risk.",
-      "d1_view": "Close 1.97705, updated 2026-11-21 13:13 UTC: 1d +0.567%, 5d +1.417%, 20d +3.896%; above SMA20 1.93394 and SMA50 1.91124; RSI14 87.1; MACD 0.016644 above signal 0.013347.",
-      "h4_watch": "No H4 data supplied; watch whether price sustains above the reported resistance or reverses.",
+      "fundamental_view": "GBP trend improving and AUD trend deteriorating; price action is consistent.",
+      "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d +0.461%, 5d +1.311%, 20d +3.787%; above SMA20 and SMA50; RSI 86.8; MACD above signal.",
+      "h4_watch": "No H4 data; watch whether price holds above the 20-day resistance area.",
       "key_catalysts": [
-        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/NZD": {
       "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Mixed but mildly constructive price signals: positive 1d and 20d returns, but almost flat 5d performance and MACD below signal.",
+      "confidence": "LOW",
+      "summary": "Positive 20d return and price above SMA50 conflict with MACD below signal and nearly flat shorter returns.",
       "drivers": [
-        "Price is above both moving averages and RSI14 is slightly above 50."
+        "20d return +1.899%",
+        "Above SMA20 and SMA50",
+        "RSI 52.3"
       ],
       "risks": [
-        "MACD is below signal and 5d return is only +0.041%, limiting momentum confirmation."
+        "MACD below signal",
+        "5d return approximately flat"
       ],
-      "fundamental_view": "GBP and NZD dashboard scores are both modestly positive, but macro scores cannot resolve mixed pair momentum.",
-      "momentum_view": "NEUTRAL given mixed returns and MACD despite price above moving averages.",
-      "d1_view": "Close 2.39162, updated 2026-11-21 13:13 UTC: 1d +0.176%, 5d +0.041%, 20d +1.941%; above SMA20 2.38527 and SMA50 2.36361; RSI14 52.8; MACD 0.009725 below signal 0.011004.",
-      "h4_watch": "No H4 data supplied; watch for MACD confirmation and sustained price action above moving averages.",
+      "fundamental_view": "GBP and NZD macro trends are improving; they do not resolve mixed pair signals.",
+      "momentum_view": "Neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:52Z; 1d +0.134%, 5d -0.000%, 20d +1.899%; above SMA20 and SMA50; RSI 52.3; MACD below signal.",
+      "h4_watch": "No H4 data; watch for confirmation from returns and MACD.",
       "key_catalysts": [
-        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/USD": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The latest supplied quote is fresh, but the snapshot does not provide an aligned daily close timestamp for its return and indicator series; use caution and do not treat the mixed timing as confirmed current momentum.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Negative 5d and 20d returns, price below both averages, and MACD below signal. RSI is oversold but does not overturn the daily trend.",
       "drivers": [
-        "The supplied indicator set shows negative 1d, 5d, and 20d returns and price below both moving averages, but it is not timestamp-aligned with the latest price."
+        "20d return -2.157%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Latest price timestamp is intraday while the indicator series timestamp is not separately specified; the November 10 USD CPI entries have no actuals."
+        "RSI 25.9, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "GBP aggregate dashboard score is positive versus USD positive but with deteriorating trend; these macro factors do not override pair-price evidence.",
-      "momentum_view": "INSUFFICIENT pending a clearly timestamp-aligned pair technical record; the listed indicators lean bearish but are not treated as fully confirmed.",
-      "d1_view": "Latest price 1.30818, updated 2026-11-21 15:05 UTC. Supplied indicators: 1d -0.035%, 5d -1.019%, 20d -2.212%; below SMA20 1.3305 and SMA50 1.33026; RSI14 25.4; MACD -0.005907 below signal -0.002682. Indicator timestamp alignment is unspecified.",
-      "h4_watch": "No H4 data supplied; seek timestamp-aligned fresh daily confirmation.",
+      "fundamental_view": "GBP trend improves while USD macro trend deteriorates; price action is bearish.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:47Z; 1d +0.021%, 5d -0.963%, 20d -2.157%; below SMA20 and SMA50; RSI 25.9; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or sustained weakness below it.",
       "key_catalysts": [
-        "USD Core CPI m/m and CPI m/m, 2026-11-10, Forex Factory: actuals null; forecasts are pending values."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/CAD": {
       "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Price is near both moving averages with small returns and mixed MACD configuration, giving no strong short-term directional confirmation.",
+      "confidence": "LOW",
+      "summary": "Returns are mixed and small; price is below both averages and MACD is below signal, against RSI near 52.",
       "drivers": [
-        "20d return is slightly positive, but 1d and 5d returns are negative; price sits just below SMA20 and SMA50."
+        "20d return +0.128%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 51.2 is neutral and MACD is below signal."
+        "1d and 5d returns negative",
+        "Mixed momentum measures"
       ],
-      "fundamental_view": "GBP aggregate score is positive and CAD negative, but that relative macro contrast cannot set the short-term pair bias.",
-      "momentum_view": "NEUTRAL: weak returns and near-moving-average price action conflict with the small positive 20d change.",
-      "d1_view": "Close 1.87611, updated 2026-11-21 13:13 UTC: 1d -0.038%, 5d -0.503%, 20d +0.095%; below SMA20 1.8809 and SMA50 1.8796; RSI14 51.2; MACD 0.000859 below signal 0.001856.",
-      "h4_watch": "No H4 data supplied; watch for sustained separation from the moving averages.",
+      "fundamental_view": "GBP trend improves while CAD trend deteriorates; pair price signals remain mixed.",
+      "momentum_view": "Neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.006%, 5d -0.470%, 20d +0.128%; below SMA20 and SMA50; RSI 51.9; MACD below signal.",
+      "h4_watch": "No H4 data; watch for consistent returns and MACD confirmation.",
       "key_catalysts": [
-        "GBP GDP m/m, 2026-11-12, Forex Factory: actual 0.2% vs forecast 0.0%; secondary catalyst."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/CHF": {
       "bias": "BEARISH",
-      "confidence": "Low",
-      "summary": "The latest daily return is sharply negative, with negative 5d and 20d returns and price below both moving averages; longer-horizon MACD is nearly at signal, and RSI is neutral.",
+      "confidence": "MEDIUM",
+      "summary": "Returns are negative across horizons and price is below both averages; MACD is just below signal.",
       "drivers": [
-        "1d -0.515%, 5d -0.910%, and 20d -0.291%; price below SMA20 and SMA50."
+        "20d return -0.263%",
+        "Below SMA20 and SMA50",
+        "Negative returns across horizons"
       ],
       "risks": [
-        "RSI14 is 51.6 and MACD is only marginally below signal, so the broader momentum confirmation is mixed."
+        "RSI 52.0 is not strongly bearish",
+        "MACD-signal gap is small"
       ],
-      "fundamental_view": "GBP and CHF macro dashboard scores are both positive; macro factors do not override the pair's negative price action.",
-      "momentum_view": "Bearish near-term price momentum, tempered by neutral RSI and a very small MACD/signal difference.",
-      "d1_view": "Close 1.0988, updated 2026-11-21 12:44 UTC: 1d -0.515%, 5d -0.910%, 20d -0.291%; below SMA20 1.10296 and SMA50 1.1014; RSI14 51.6; MACD 0.001273 below signal 0.001322.",
-      "h4_watch": "No H4 data supplied; monitor whether price holds above the reported support or resumes decline.",
+      "fundamental_view": "GBP and CHF macro trends are improving; daily price evidence is weaker for GBP/CHF.",
+      "momentum_view": "Bearish short-term price momentum, with modest signal strength.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.487%, 5d -0.882%, 20d -0.263%; below SMA20 and SMA50; RSI 52.0; MACD below signal.",
+      "h4_watch": "No H4 data; watch for price recovery above averages or continued weakness.",
       "key_catalysts": [
-        "No confirmed recent CHF release surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "GBP/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The daily technical record is stale; current short-term pair momentum cannot be assigned.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "The supplied technical indicators lean negative, but their age prevents using them as current confirmation."
+        "20d return -1.169%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 29.1, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "GBP and JPY dashboard macro scores are positive; they cannot determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale technical data.",
-      "d1_view": "Last supplied close 208.993, updated 2026-11-20 00:00 UTC: 1d -0.254%, 5d -1.202%, 20d -0.365%; below SMA20 211.1232 and SMA50 210.10606; RSI14 39.2; MACD -0.125343 below signal 0.211231. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "GBP trend improves and JPY trend is strongly positive; price action agrees with bearish pair momentum.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.791%, 5d -1.814%, 20d -1.169%; below SMA20 and SMA50; RSI 29.1; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness.",
       "key_catalysts": [
-        "No confirmed recent GBP or JPY actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "AUD/NZD": {
       "bias": "BEARISH",
-      "confidence": "Medium",
-      "summary": "Strong negative pair momentum across all reported horizons, with price below both moving averages and MACD below signal. Very low RSI raises rebound risk.",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "1d, 5d, and 20d returns are negative; price is at the reported support and below SMA20/SMA50."
+        "20d return -1.863%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 12.6 is extremely oversold and price is at reported 20-day support."
+        "RSI 12.8, deeply oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "AUD and NZD macro dashboard scores are both positive, but do not override observed bearish pair price action.",
-      "momentum_view": "Bearish; persistent negative returns and moving-average/MACD configuration outweigh oversold rebound risk.",
-      "d1_view": "Close 1.20941, updated 2026-11-21 13:12 UTC: 1d -0.404%, 5d -1.374%, 20d -1.905%; below SMA20 1.23342 and SMA50 1.23669; RSI14 12.6; MACD -0.005547 below signal -0.002808.",
-      "h4_watch": "No H4 data supplied; watch whether support holds or price confirms a continued decline.",
+      "fundamental_view": "AUD macro trend deteriorates while NZD trend improves; price action is consistent.",
+      "momentum_view": "Bearish short-term price momentum; deeply oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:55Z; 1d -0.361%, 5d -1.332%, 20d -1.863%; below SMA20 and SMA50; RSI 12.8; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or renewed downside.",
       "key_catalysts": [
-        "No confirmed recent AUD or NZD actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "AUD/USD": {
       "bias": "BEARISH",
-      "confidence": "Medium",
-      "summary": "Strongly negative price momentum across the reported horizons, with price well below both moving averages and MACD below signal; oversold RSI and support proximity raise rebound risk.",
+      "confidence": "HIGH",
+      "summary": "Returns are sharply negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "1d -0.559%, 5d -2.360%, and 20d -5.842%; price below SMA20 and SMA50."
+        "20d return -5.742%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 16.2 and price at reported 20-day support indicate elevated short-term rebound risk."
+        "RSI 16.4, deeply oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "AUD and USD aggregate scores are positive but their dashboard trend scores are negative; macro assessments do not set pair momentum.",
-      "momentum_view": "Bearish based on all reported returns, moving averages, and MACD; extreme oversold conditions are a counter-risk.",
-      "d1_view": "Close 0.6619, updated 2026-11-21 13:13 UTC: 1d -0.559%, 5d -2.360%, 20d -5.842%; below SMA20 0.6881 and SMA50 0.69612; RSI14 16.2; MACD -0.008929 below signal -0.006163.",
-      "h4_watch": "No H4 data supplied; watch for support failure or a reversal confirmed by fresh price action.",
+      "fundamental_view": "AUD trend deteriorates and its latest employment result missed forecast; USD macro trend is deteriorating, but price governs.",
+      "momentum_view": "Strong bearish short-term price momentum; deeply oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:45:47Z; 1d -0.453%, 5d -2.257%, 20d -5.742%; below SMA20 and SMA50; RSI 16.4; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness below it.",
       "key_catalysts": [
-        "Australian October labour figures dated 2026-11-19 in the dashboard report unemployment 4.9% and employment change -43.5; no forecast comparison supplied.",
-        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null, so no confirmed release surprise."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "AUD/CAD": {
       "bias": "BEARISH",
-      "confidence": "Medium",
-      "summary": "Broadly negative momentum across all reported horizons, with price below both moving averages and MACD below signal; the oversold reading and support proximity are counter-risks.",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "1d -0.691%, 5d -1.976%, and 20d -3.745%; price is below SMA20 and SMA50."
+        "20d return -3.585%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 21.0 and price at reported 20-day support may precede a short-term bounce."
+        "RSI 21.6, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "AUD aggregate dashboard score is positive and CAD negative, but these macro scores do not override the bearish pair price action.",
-      "momentum_view": "Bearish, with returns, moving averages, and MACD aligned lower.",
-      "d1_view": "Close 0.94804, updated 2026-11-21 13:12 UTC: 1d -0.691%, 5d -1.976%, 20d -3.745%; below SMA20 0.97257 and SMA50 0.9835; RSI14 21.0; MACD -0.008007 below signal -0.005826.",
-      "h4_watch": "No H4 data supplied; watch whether reported support holds or breaks.",
+      "fundamental_view": "Both macro trends deteriorate, with AUD's latest employment result a confirmed miss; daily price action is bearish.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:57Z; 1d -0.526%, 5d -1.813%, 20d -3.585%; below SMA20 and SMA50; RSI 21.6; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness.",
       "key_catalysts": [
-        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "AUD/CHF": {
       "bias": "BEARISH",
-      "confidence": "Medium",
-      "summary": "Strong downward momentum across the reported horizons, with price below both moving averages and MACD below signal; oversold RSI increases rebound risk.",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "All reported returns are negative and price is at reported 20-day support."
+        "20d return -4.000%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 25.7 and support proximity may prompt a reversal or consolidation."
+        "RSI 25.9, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "AUD and CHF aggregate dashboard scores are positive; macro scores do not override the pair's bearish price trend.",
-      "momentum_view": "Bearish across returns, moving averages, and MACD, with oversold conditions as a counter-signal.",
-      "d1_view": "Close 0.5557, updated 2026-11-21 12:44 UTC: 1d -1.102%, 5d -2.300%, 20d -4.043%; below SMA20 0.57038 and SMA50 0.57634; RSI14 25.7; MACD -0.004248 below signal -0.003277.",
-      "h4_watch": "No H4 data supplied; watch for support failure versus a rebound from support.",
+      "fundamental_view": "AUD trend deteriorates and CHF trend improves; price action is consistent.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -1.057%, 5d -2.256%, 20d -4.000%; below SMA20 and SMA50; RSI 25.9; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness.",
       "key_catalysts": [
-        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "AUD/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied daily technical record is stale, preventing a current short-term pair momentum assessment.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are sharply negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "The old indicator set is bearish but cannot establish the present direction under the freshness rule."
+        "20d return -4.782%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 16.6, deeply oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "AUD and JPY dashboard macro scores differ, but that relative picture cannot determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale pair technical data.",
-      "d1_view": "Last supplied close 106.295, updated 2026-11-20 00:00 UTC: 1d -0.638%, 5d -2.321%, 20d -3.239%; below SMA20 109.38105 and SMA50 110.03064; RSI14 19.0; MACD -0.93243 below signal -0.602858. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "AUD trend deteriorates and JPY trend improves; price action is consistent.",
+      "momentum_view": "Strong bearish short-term price momentum; deeply oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -1.250%, 5d -3.088%, 20d -4.782%; below SMA20 and SMA50; RSI 16.6; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or renewed downside.",
       "key_catalysts": [
-        "Australian October labour figures dated 2026-11-19 in the dashboard: unemployment 4.9%, employment change -43.5; no forecast comparison supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "NZD/USD": {
       "bias": "BEARISH",
-      "confidence": "Medium",
-      "summary": "Negative momentum across all reported horizons, with price below both moving averages and MACD below signal; RSI near oversold territory is a counter-risk.",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
+        "20d return -3.994%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "RSI14 29.6 suggests a stretched decline that could rebound."
+        "RSI 29.9, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "NZD dashboard aggregate score is near neutral versus positive USD; this macro comparison does not set pair momentum.",
-      "momentum_view": "Bearish based on returns, moving averages, and MACD, tempered by near-oversold RSI.",
-      "d1_view": "Close 0.54705, updated 2026-11-21 13:13 UTC: 1d -0.200%, 5d -1.046%, 20d -4.057%; below SMA20 0.55782 and SMA50 0.56282; RSI14 29.6; MACD -0.004772 below signal -0.003738.",
-      "h4_watch": "No H4 data supplied; watch for continued weakness or a confirmed rebound from oversold levels.",
+      "fundamental_view": "NZD trend is improving while USD macro trend deteriorates; pair price action remains bearish.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:45:47Z; 1d -0.135%, 5d -0.981%, 20d -3.994%; below SMA20 and SMA50; RSI 29.9; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or continued weakness.",
       "key_catalysts": [
-        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are not results."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "NZD/CAD": {
       "bias": "BEARISH",
-      "confidence": "Low",
-      "summary": "Returns are negative and price is below both moving averages, but RSI is near neutral and MACD is almost exactly at signal, limiting conviction.",
+      "confidence": "MEDIUM",
+      "summary": "Returns are negative across horizons and price is below both averages; MACD is nearly at signal.",
       "drivers": [
-        "All reported returns are negative, with price below SMA20 and SMA50."
+        "20d return -1.769%",
+        "Below SMA20 and SMA50",
+        "Negative returns across horizons"
       ],
       "risks": [
-        "MACD and signal are nearly equal; RSI14 47.7 is not strongly directional."
+        "MACD nearly at signal",
+        "RSI 48.5"
       ],
-      "fundamental_view": "NZD aggregate dashboard score is near neutral and CAD negative; these macro scores do not override the price evidence.",
-      "momentum_view": "Bearish, but with low confidence because MACD and RSI provide little confirmation.",
-      "d1_view": "Close 0.78414, updated 2026-11-21 13:12 UTC: 1d -0.238%, 5d -0.552%, 20d -1.829%; below SMA20 0.78838 and SMA50 0.79507; RSI14 47.7; MACD -0.002894 just below signal -0.002903.",
-      "h4_watch": "No H4 data supplied; monitor for stronger directional confirmation around the moving averages.",
+      "fundamental_view": "NZD trend improves while CAD trend deteriorates; price action is bearish.",
+      "momentum_view": "Bearish short-term price momentum, with limited MACD confirmation.",
+      "d1_view": "2026-11-22T22:46:55Z; 1d -0.177%, 5d -0.491%, 20d -1.769%; below SMA20 and SMA50; RSI 48.5; MACD slightly above signal.",
+      "h4_watch": "No H4 data; watch for MACD confirmation or a recovery above averages.",
       "key_catalysts": [
-        "No confirmed recent NZD or CAD actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "NZD/CHF": {
-      "bias": "NEUTRAL",
-      "confidence": "Low",
-      "summary": "Returns are negative and price sits below both moving averages, but MACD is above signal and RSI is near neutral, creating conflicting momentum signals.",
+      "bias": "BEARISH",
+      "confidence": "MEDIUM",
+      "summary": "Returns are negative across horizons and price is below both averages; MACD is slightly above signal, tempering the bearish case.",
       "drivers": [
-        "1d, 5d, and 20d returns are negative; price is below SMA20 and SMA50."
+        "20d return -2.255%",
+        "Below SMA20 and SMA50",
+        "Negative returns across horizons"
       ],
       "risks": [
-        "MACD is above signal and RSI14 48.8 is near neutral, conflicting with the price trend."
+        "MACD above signal",
+        "RSI 48.1"
       ],
-      "fundamental_view": "NZD and CHF macro dashboard scores are both positive, but neither determines pair direction.",
-      "momentum_view": "NEUTRAL because weak price action conflicts with a positive MACD crossover.",
-      "d1_view": "Close 0.4593, updated 2026-11-21 12:44 UTC: 1d -0.718%, 5d -0.960%, 20d -2.193%; below SMA20 0.4623 and SMA50 0.46588; RSI14 48.8; MACD -0.001362 above signal -0.001594.",
-      "h4_watch": "No H4 data supplied; watch for price and MACD alignment.",
+      "fundamental_view": "NZD and CHF macro trends improve; price action leans bearish but is not fully aligned.",
+      "momentum_view": "Bearish short-term price momentum, with MACD divergence as a caution.",
+      "d1_view": "2026-11-22T22:46:54Z; 1d -0.780%, 5d -1.022%, 20d -2.255%; below SMA20 and SMA50; RSI 48.1; MACD slightly above signal.",
+      "h4_watch": "No H4 data; watch for MACD alignment or a recovery above averages.",
       "key_catalysts": [
-        "No confirmed recent NZD or CHF actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "NZD/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied daily technical record is stale, so no current pair momentum bias is assigned.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "The stale indicators lean bearish, but cannot confirm current price direction."
+        "20d return -3.022%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 30.3",
+        "Near 20-day support"
       ],
-      "fundamental_view": "NZD and JPY macro scores cannot substitute for fresh pair-price data.",
-      "momentum_view": "INSUFFICIENT: stale technical data.",
-      "d1_view": "Last supplied close 87.531, updated 2026-11-20 00:00 UTC: 1d +0.081%, 5d -1.238%, 20d -1.593%; below SMA20 88.58415 and SMA50 88.92536; RSI14 36.9; MACD -0.438995 below signal -0.33726. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "NZD trend improves while JPY trend strengthens; pair price action is bearish.",
+      "momentum_view": "Bearish short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:55Z; 1d -0.947%, 5d -1.826%, 20d -3.022%; below SMA20 and SMA50; RSI 30.3; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or sustained weakness.",
       "key_catalysts": [
-        "No confirmed recent NZD or JPY actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "USD/CAD": {
       "bias": "BULLISH",
-      "confidence": "Medium",
-      "summary": "Positive 5d and 20d momentum, price above both moving averages, and MACD above signal support an upward bias despite a slightly negative 1d return and extremely overbought RSI.",
+      "confidence": "HIGH",
+      "summary": "Strong positive 5d and 20d returns, price above both averages, and MACD above signal; RSI is extremely high.",
       "drivers": [
-        "5d +0.500% and 20d +2.337%; price above SMA20 and SMA50; MACD above signal."
+        "20d return +2.351%",
+        "Above SMA20 and SMA50",
+        "MACD above signal"
       ],
       "risks": [
-        "RSI14 91.5 is exceptionally overbought; price is near reported 20-day resistance and 1d return is negative."
+        "RSI 91.9, extremely overbought",
+        "Near 20-day resistance"
       ],
-      "fundamental_view": "USD dashboard aggregate score is positive and CAD negative, but this does not override or create the pair momentum reading.",
-      "momentum_view": "Bullish from medium-horizon returns, moving averages, and MACD; overbought conditions reduce confidence.",
-      "d1_view": "Close 1.434, updated 2026-11-21 12:44 UTC: 1d -0.024%, 5d +0.500%, 20d +2.337%; above SMA20 1.41397 and SMA50 1.41328; RSI14 91.5; MACD 0.006926 above signal 0.004234.",
-      "h4_watch": "No H4 data supplied; watch for follow-through versus reversal near reported resistance.",
+      "fundamental_view": "USD macro trend deteriorates and CAD trend deteriorates; price evidence supports bullish USD/CAD.",
+      "momentum_view": "Bullish short-term price momentum; extreme RSI is a risk.",
+      "d1_view": "2026-11-22T22:46:55Z; 1d -0.010%, 5d +0.514%, 20d +2.351%; above SMA20 and SMA50; RSI 91.9; MACD above signal.",
+      "h4_watch": "No H4 data; watch for resistance breakout or rejection.",
       "key_catalysts": [
-        "No confirmed recent USD or CAD actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "USD/CHF": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied technical record is stale, so no current pair momentum bias is assigned.",
+      "bias": "BULLISH",
+      "confidence": "HIGH",
+      "summary": "Positive 5d and 20d returns, price above both averages, and MACD above signal.",
       "drivers": [
-        "The stale price indicators lean bullish but are not current enough to confirm the direction."
+        "20d return +1.908%",
+        "Above SMA20 and SMA50",
+        "MACD above signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 77.7, overbought",
+        "Near 20-day resistance"
       ],
-      "fundamental_view": "USD and CHF dashboard scores are both positive; macro comparisons do not establish pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale technical data.",
-      "d1_view": "Last supplied close 0.8441, updated 2026-11-20 00:00 UTC: 1d +0.074%, 5d +0.977%, 20d +2.963%; above SMA20 0.8283 and SMA50 0.8276; RSI14 74.1; MACD 0.004591 above signal 0.00218. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "USD macro trend deteriorates while CHF trend improves; pair price action remains bullish.",
+      "momentum_view": "Bullish short-term price momentum; overbought conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:58Z; 1d -0.539%, 5d +0.052%, 20d +1.908%; above SMA20 and SMA50; RSI 77.7; MACD above signal.",
+      "h4_watch": "No H4 data; watch whether price holds above averages or rejects resistance.",
       "key_catalysts": [
-        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; no confirmed surprise."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "USD/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The daily technical data is stale, so current pair momentum cannot be established.",
+      "bias": "NEUTRAL",
+      "confidence": "LOW",
+      "summary": "Positive 20d return and MACD above signal conflict with negative 1d and 5d returns and price below SMA20.",
       "drivers": [
-        "The stale indicators show positive 20d performance and price above moving averages, but are not valid current confirmation."
+        "20d return +1.088%",
+        "Above SMA50",
+        "MACD above signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "1d and 5d returns negative",
+        "Below SMA20"
       ],
-      "fundamental_view": "USD and JPY dashboard macro scores are both positive; they cannot determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale pair data.",
-      "d1_view": "Last supplied close 159.707, updated 2026-11-20 00:00 UTC: 1d +0.205%, 5d -0.105%, 20d +2.053%; above SMA20 158.5194 and SMA50 157.85516; RSI14 68.2; MACD 0.501967 above signal 0.381212. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "USD macro trend deteriorates while JPY trend improves; price signals remain mixed.",
+      "momentum_view": "Neutral short-term price momentum.",
+      "d1_view": "2026-11-22T22:46:51Z; 1d -0.733%, 5d -0.778%, 20d +1.088%; below SMA20, above SMA50; RSI 54.8; MACD above signal.",
+      "h4_watch": "No H4 data; watch for alignment of short- and medium-term price signals.",
       "key_catalysts": [
-        "USD CPI and Core CPI, 2026-11-10, Forex Factory: actuals null; forecasts are pending, not results."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "CAD/CHF": {
       "bias": "BEARISH",
-      "confidence": "Low",
-      "summary": "Negative returns across the reported horizons and price just below both moving averages lean bearish, but positive MACD and neutral RSI conflict.",
+      "confidence": "MEDIUM",
+      "summary": "Returns are negative across horizons and price is below both averages; MACD is above signal, tempering the bearish case.",
       "drivers": [
-        "1d -0.498%, 5d -0.413%, and 20d -0.388%; price is slightly below SMA20 and SMA50."
+        "20d return -0.572%",
+        "Below SMA20 and SMA50",
+        "Negative returns across horizons"
       ],
       "risks": [
-        "MACD is above signal and RSI14 50.8 is neutral, weakening bearish confirmation."
+        "MACD above signal",
+        "RSI 47.8"
       ],
-      "fundamental_view": "CAD dashboard aggregate score is negative versus positive CHF, but macro scores do not determine the pair bias.",
-      "momentum_view": "Bearish with low confidence: price returns conflict with MACD and neutral RSI.",
-      "d1_view": "Close 0.5856, updated 2026-11-21 12:44 UTC: 1d -0.498%, 5d -0.413%, 20d -0.388%; below SMA20 0.58636 and SMA50 0.58584; RSI14 50.8; MACD 0.00044 above signal 0.000161.",
-      "h4_watch": "No H4 data supplied; watch for alignment between returns, moving averages, and MACD.",
+      "fundamental_view": "CAD trend deteriorates while CHF trend improves; price leans bearish.",
+      "momentum_view": "Bearish short-term price momentum, with MACD divergence as a caution.",
+      "d1_view": "2026-11-22T22:46:53Z; 1d -0.681%, 5d -0.597%, 20d -0.572%; below SMA20 and SMA50; RSI 47.8; MACD above signal.",
+      "h4_watch": "No H4 data; watch for MACD alignment or recovery above averages.",
       "key_catalysts": [
-        "No confirmed recent CAD or CHF actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "CAD/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied daily data is stale; the current pair momentum bias is therefore insufficient.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "The old indicators are mostly negative, but cannot be used as fresh price confirmation."
+        "20d return -1.293%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 19.5, oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "CAD and JPY macro dashboard scores do not substitute for fresh pair-price evidence.",
-      "momentum_view": "INSUFFICIENT: stale technical record.",
-      "d1_view": "Last supplied close 111.35, updated 2026-11-20 00:00 UTC: 1d +0.112%, 5d -0.660%, 20d -0.366%; below SMA20 112.24175 and below SMA50 111.77044; RSI14 26.4; MACD -0.162165 below signal -0.013378. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "CAD trend deteriorates while JPY trend improves; price action agrees.",
+      "momentum_view": "Bearish short-term price momentum; oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.791%, 5d -1.348%, 20d -1.293%; below SMA20 and SMA50; RSI 19.5; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or sustained weakness.",
       "key_catalysts": [
-        "No confirmed recent CAD or JPY actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     },
     "CHF/JPY": {
-      "bias": "INSUFFICIENT",
-      "confidence": "Low",
-      "summary": "The supplied daily technical record is stale, preventing a current short-term momentum assessment.",
+      "bias": "BEARISH",
+      "confidence": "HIGH",
+      "summary": "Returns are negative across horizons, price is below both averages, and MACD is below signal.",
       "drivers": [
-        "Old returns and moving-average positioning lean negative, but are not valid current confirmation."
+        "20d return -0.956%",
+        "Below SMA20 and SMA50",
+        "MACD below signal"
       ],
       "risks": [
-        "Technical timestamp is more than 36 hours old."
+        "RSI 18.7, deeply oversold",
+        "Near 20-day support"
       ],
-      "fundamental_view": "CHF and JPY macro dashboard scores cannot determine pair momentum.",
-      "momentum_view": "INSUFFICIENT: stale technical data.",
-      "d1_view": "Last supplied close 189.16499, updated 2026-11-20 00:00 UTC: 1d +0.114%, 5d -1.074%, 20d -0.884%; below SMA20 191.35854 and SMA50 190.70904; RSI14 37.4; MACD -0.447795 below signal -0.041072. Stale under the 36-hour rule.",
-      "h4_watch": "No H4 data supplied; await fresh daily pair data.",
+      "fundamental_view": "CHF and JPY macro trends are both improving; price action is bearish for CHF/JPY.",
+      "momentum_view": "Bearish short-term price momentum; deeply oversold conditions are a risk.",
+      "d1_view": "2026-11-22T22:46:56Z; 1d -0.335%, 5d -0.974%, 20d -0.956%; below SMA20 and SMA50; RSI 18.7; MACD below signal.",
+      "h4_watch": "No H4 data; watch support response or renewed downside.",
       "key_catalysts": [
-        "No confirmed recent CHF or JPY actual-versus-forecast surprise is supplied."
+        "Upcoming releases; actuals not captured"
       ]
     }
   },
-  "methodology": "Independent qualitative overlays on the same frozen data snapshot. Consensus is categorical agreement, not probability or a validated trading signal."
+  "methodology": "Single-provider ChatGPT review of a compact frozen dashboard snapshot. Pair momentum is determined from pair-specific D1 price data; macro scores do not override price action."
 }
