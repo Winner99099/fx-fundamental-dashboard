@@ -1,4 +1,4 @@
-name: AI currency and pair review
+name: ChatGPT FX momentum review
 on:
   push:
     paths:
@@ -22,10 +22,9 @@ jobs:
           python-version: "3.12"
       - name: Validate AI review script
         run: python -m py_compile scripts/ai_review.py
-      - name: Generate independent AI reviews
+      - name: Generate ChatGPT-only FX review
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/ai_review.py
       - name: Commit AI review snapshot
         run: |
@@ -36,7 +35,7 @@ jobs:
             echo "AI review unchanged."
             exit 0
           fi
-          git commit -m "Refresh ChatGPT and Gemini FX reviews"
+          git commit -m "Refresh ChatGPT FX momentum review"
           git fetch origin main
           git rebase origin/main
           git push origin HEAD:main
