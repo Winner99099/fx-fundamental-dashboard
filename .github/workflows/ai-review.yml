@@ -1,9 +1,5 @@
 name: ChatGPT FX momentum review
 on:
-  push:
-    paths:
-      - 'scripts/ai_review.py'
-      - '.github/workflows/ai-review.yml'
   workflow_dispatch:
   schedule:
     - cron: "17 */4 * * *"
@@ -37,5 +33,11 @@ jobs:
           fi
           git commit -m "Refresh ChatGPT FX momentum review"
           git fetch origin main
-          git rebase origin/main
+          git reset --soft origin/main
+          git add data/ai_review.json
+          if git diff --cached --quiet; then
+            echo "AI review already up to date."
+            exit 0
+          fi
+          git commit -m "Refresh ChatGPT FX momentum review"
           git push origin HEAD:main
