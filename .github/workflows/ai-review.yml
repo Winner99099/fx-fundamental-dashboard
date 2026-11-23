@@ -1,6 +1,12 @@
 name: ChatGPT FX momentum review
 on:
   workflow_dispatch:
+    inputs:
+      pairs:
+        description: "Selected pairs, comma-separated (e.g. EUR/USD,GBP/CAD). Leave blank for currency momentum only."
+        required: false
+        type: string
+        default: ""
   schedule:
     - cron: "17 */4 * * *"
 permissions:
@@ -18,9 +24,10 @@ jobs:
           python-version: "3.12"
       - name: Validate AI review script
         run: python -m py_compile scripts/ai_review.py
-      - name: Generate ChatGPT-only FX review
+      - name: Generate selected ChatGPT review
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
+          AI_PAIRS: \${{ inputs.pairs }}
         run: python scripts/ai_review.py
       - name: Commit AI review snapshot
         run: |
@@ -31,7 +38,7 @@ jobs:
             echo "AI review unchanged."
             exit 0
           fi
-          git commit -m "Refresh ChatGPT FX momentum review"
+          git commit -m "Refresh selected ChatGPT FX momentum review"
           git fetch origin main
           git reset --soft origin/main
           git add data/ai_review.json
@@ -39,5 +46,5 @@ jobs:
             echo "AI review already up to date."
             exit 0
           fi
-          git commit -m "Refresh ChatGPT FX momentum review"
+          git commit -m "Refresh selected ChatGPT FX momentum review"
           git push origin HEAD:main
