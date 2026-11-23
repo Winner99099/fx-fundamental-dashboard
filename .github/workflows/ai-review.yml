@@ -26,8 +26,8 @@ jobs:
         run: python -m py_compile scripts/ai_review.py
       - name: Generate selected ChatGPT review
         env:
-          OPENAI_API_KEY: \${{ secrets.OPENAI_API_KEY }}
-          AI_PAIRS: \${{ inputs.pairs }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AI_PAIRS: ${{ inputs.pairs }}
         run: python scripts/ai_review.py
       - name: Commit AI review snapshot
         run: |
