@@ -196,16 +196,23 @@ function selectedAIPairs(){
  return pairs;
 }
 function setupAICurrencyFilter(){
- const checks=[...document.querySelectorAll('.ai-currency-check')];
- if(!checks.length||checks[0].dataset.ready)return;
- checks.forEach(box=>{box.dataset.ready='1';box.addEventListener('change',()=>renderAIReview());});
- $('ai-select-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=true);renderAIReview();});
- $('ai-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);renderAIReview();});
- $('ai-copy-pairs')?.addEventListener('click',async()=>{
-  const pairs=selectedAIPairs(),target=$('ai-copy-status');
-  if(!pairs.length){if(target)target.textContent='Select at least two currencies first.';return;}
-  try{await navigator.clipboard.writeText(pairs.join(','));if(target)target.textContent=pairs.length+' pairs copied. Paste them into the GitHub Actions “pairs” field.';}
-  catch(e){if(target)target.textContent='Clipboard access unavailable. Selected pairs: '+pairs.join(', ');}
+ const root=$('ai-review-panel');if(!root||root.dataset.aiEvents)return;
+ root.dataset.aiEvents='1';
+ root.addEventListener('change',event=>{
+  if(event.target?.classList?.contains('ai-currency-check'))renderAIReview();
+ });
+ root.addEventListener('click',async event=>{
+  const id=event.target?.id;
+  if(id==='ai-select-all'||id==='ai-clear-all'){
+   root.querySelectorAll('.ai-currency-check').forEach(x=>x.checked=id==='ai-select-all');
+   renderAIReview();
+  }
+  if(id==='ai-copy-pairs'){
+   const pairs=selectedAIPairs(),target=$('ai-copy-status');
+   if(!pairs.length){if(target)target.textContent='Select at least two currencies first.';return;}
+   try{await navigator.clipboard.writeText(pairs.join(','));if(target)target.textContent=pairs.length+' pairs copied. Paste them into the GitHub Actions “pairs” field.';}
+   catch(e){if(target)target.textContent='Clipboard access unavailable. Selected pairs: '+pairs.join(', ');}
+  }
  });
 }
 function renderAIReview(){
