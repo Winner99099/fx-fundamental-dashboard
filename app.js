@@ -208,15 +208,40 @@ function setupAICurrencyFilter(){
    renderAIReview();
   }
   if(id==='ai-run-selected'){
-   const pairs=selectedAIPairs(),target=$('ai-copy-status');
+   const pairs=selectedAIPairs(),target=$('ai-copy-status'),button=$('ai-run-selected');
    if(!pairs.length){if(target)target.textContent='Select at least two currencies first.';return;}
-   const runTab=window.open('https://github.com/Winner99099/fx-fundamental-dashboard/actions/workflows/ai-review.yml','_blank');
+   const endpoint=$('ai-worker-url')?.value.trim()||localStorage.getItem('macropulse-ai-worker-url')||'';
+   if(!endpoint){if(target)target.textContent='Please enter your Cloudflare Worker URL first.';return;}
+   localStorage.setItem('macropulse-ai-worker-url',endpoint);
+   let pin=sessionStorage.getItem('macropulse-ai-worker-pin')||'';
+   if(!pin){pin=window.prompt('Enter your private AI Review access PIN:')||'';if(!pin)return;sessionStorage.setItem('macropulse-ai-worker-pin',pin);}
+   const previousGenerated=aiReview?.generated_at||'';
+   if(button){button.disabled=true;button.textContent='Submitting analysis…';}
+   if(target)target.textContent='Sending '+pairs.length+' selected pair(s) securely…';
    try{
-    await navigator.clipboard.writeText(pairs.join(','));
-    if(target)target.textContent=pairs.length+' selected pairs copied. Paste into the GitHub Actions “pairs” field, then click Run workflow.';
-   }catch(e){
-    if(target)target.textContent='Automatic copy failed. Pair list: '+pairs.join(', ');
-   }
+    const response=await fetch(endpoint.replace(/\/$/, '')+'/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({pairs,pin})});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok)throw new Error(result.error||('Worker returned HTTP '+response.status));
+    if(target)target.textContent='Analysis started. Waiting for ChatGPT to finish…';
+    const started=Date.now();let completed=false;
+    while(Date.now()-started<240000){
+     await new Promise(resolve=>setTimeout(resolve,7000));
+     const r=await fetch('data/ai_review.json?ts='+Date.now(),{cache:'no-store'});
+     if(r.ok){
+      const fresh=await r.json(),requested=fresh.last_requested_pairs||[];
+      const newer=!previousGenerated||new Date(fresh.generated_at).getTime()>new Date(previousGenerated).getTime();
+      const matches=pairs.every(p=>requested.includes(p));
+      if(fresh.status==='ok'&&newer&&matches){aiReview=fresh;renderAIReview();completed=true;break;}
+      if(fresh.status==='error'&&newer){aiReview=fresh;renderAIReview();throw new Error(fresh.last_error||'AI review failed');}
+     }
+     if(target)target.textContent='ChatGPT is analysing '+pairs.join(', ')+' · checking for results…';
+    }
+    if(!completed)throw new Error('The workflow has not finished within four minutes. Leave this page open and refresh AI Review shortly.');
+    if(target)target.textContent='Analysis completed. Results updated below.';
+   }catch(error){
+    if(target)target.textContent='Analysis could not be completed: '+error.message;
+    if(/401|403|PIN/i.test(error.message))sessionStorage.removeItem('macropulse-ai-worker-pin');
+   }finally{if(button){button.disabled=false;button.textContent='Analyse Selected Pair(s)';}}
   }
  });
 }
@@ -248,7 +273,7 @@ function renderAIReview(){
  const failed=aiReview.status==="error"||chat.status==="error";
  const stale=failed||aiReview.cache_is_stale||!inputFresh;
  const statusText=failed?(Object.keys(pairReviews).length?"ERROR · SHOWING LAST SUCCESSFUL REVIEW":"AI REVIEW FAILED"):(inputFresh?"INPUT CURRENT":"INPUT STALE");
- root.innerHTML='<div class="panel"><div class="panel-head"><div><b>AI Momentum Review</b><p>Last successful review: '+generated+' · Market-data snapshot: '+inputText+'</p></div><span class="tag tag-neutral">'+statusText+'</span></div>'+(failed?'<div class="notice notice-warn"><b>ChatGPT could not complete the latest review</b><p>'+escapeHtml(aiReview.last_error||chat.message||"API request failed")+'. The last successful review is retained.</p></div>':"")+(stale&&!failed?'<div class="notice notice-warn"><b>Market-data snapshot may be stale</b><p>Refresh the underlying dashboard data before relying on this interpretation.</p></div>':"")+'<div class="bias-signal-grid">'+provider(chat)+'</div><p class="bias-scoreline">Currency momentum impact is maintained for all eight currencies. Pair-specific analysis is generated only for the pairs submitted for review. Pair direction is based on its own D1 price evidence; macro scores do not override price action.</p><div class="bias-label">INDIVIDUAL CURRENCY MOMENTUM IMPACT · ALL 8</div><div class="bias-signal-grid">'+currencyRows+'</div><div class="bias-label">SELECT CURRENCIES FOR PAIR ANALYSIS</div><div class="strength-filter bias-currency-filter"><div class="strength-filter-options">'+CURRENCIES.map(code=>'<label><input type="checkbox" class="ai-currency-check" value="'+code+'" '+(selected.includes(code)?"checked":"")+'><span>'+code+'</span></label>').join("")+'</div><div class="strength-filter-actions"><span class="tag tag-neutral">'+selected.length+' / 8 SELECTED · '+selectedPairs.length+' PAIRS</span><button type="button" class="text-button" id="ai-select-all">Select all</button><button type="button" class="text-button" id="ai-clear-all">Clear</button></div></div><div class="notice notice-info"><b>Run analysis for selected pairs</b><p>Click the button to copy your selected pairs and open the secure GitHub Actions run page. In GitHub, click “Run workflow”, paste the copied list into the “pairs” field, then confirm “Run workflow”. This extra confirmation is required by GitHub sign-in; your dashboard does not store a GitHub access token.</p><div class="heading-actions"><button type="button" class="btn btn-primary" id="ai-run-selected">Prepare &amp; open selected-pair run</button></div><p id="ai-copy-status" class="muted">Selected pairs: '+(selectedPairs.join(", ")||"none")+'</p></div><div class="bias-label">SELECTED PAIR REVIEWS · '+selectedPairs.length+'</div><div class="bias-grid">'+(pairRows||'<div class="empty">Select at least two currencies to display pair choices.</div>')+'</div></div>';
+ root.innerHTML='<div class="panel"><div class="panel-head"><div><b>AI Momentum Review</b><p>Last successful review: '+generated+' · Market-data snapshot: '+inputText+'</p></div><span class="tag tag-neutral">'+statusText+'</span></div>'+(failed?'<div class="notice notice-warn"><b>ChatGPT could not complete the latest review</b><p>'+escapeHtml(aiReview.last_error||chat.message||"API request failed")+'. The last successful review is retained.</p></div>':"")+(stale&&!failed?'<div class="notice notice-warn"><b>Market-data snapshot may be stale</b><p>Refresh the underlying dashboard data before relying on this interpretation.</p></div>':"")+'<div class="bias-signal-grid">'+provider(chat)+'</div><p class="bias-scoreline">Currency momentum impact is maintained for all eight currencies. Pair-specific analysis is generated only for the pairs submitted for review. Pair direction is based on its own D1 price evidence; macro scores do not override price action.</p><div class="bias-label">INDIVIDUAL CURRENCY MOMENTUM IMPACT · ALL 8</div><div class="bias-signal-grid">'+currencyRows+'</div><div class="bias-label">SELECT CURRENCIES FOR PAIR ANALYSIS</div><div class="strength-filter bias-currency-filter"><div class="strength-filter-options">'+CURRENCIES.map(code=>'<label><input type="checkbox" class="ai-currency-check" value="'+code+'" '+(selected.includes(code)?"checked":"")+'><span>'+code+'</span></label>').join("")+'</div><div class="strength-filter-actions"><span class="tag tag-neutral">'+selected.length+' / 8 SELECTED · '+selectedPairs.length+' PAIRS</span><button type="button" class="text-button" id="ai-select-all">Select all</button><button type="button" class="text-button" id="ai-clear-all">Clear</button></div></div><div class="notice notice-info"><b>One-click pair analysis</b><p>Enter your Cloudflare Worker URL once. Select currencies above and click Analyse; results appear here automatically. Your GitHub token and OpenAI key stay on the server.</p><label style="display:block;margin:12px 0">Secure Worker URL <input id="ai-worker-url" type="url" placeholder="https://your-worker.your-subdomain.workers.dev" value="'+escapeHtml(localStorage.getItem('macropulse-ai-worker-url')||'')+'" style="width:100%;margin-top:6px"></label><div class="heading-actions"><button type="button" class="btn btn-primary" id="ai-run-selected">Analyse Selected Pair(s)</button></div><p id="ai-copy-status" class="muted">Selected pairs: '+(selectedPairs.join(", ")||"none")+'</p></div><div class="bias-label">SELECTED PAIR REVIEWS · '+selectedPairs.length+'</div><div class="bias-grid">'+(pairRows||'<div class="empty">Select at least two currencies to display pair choices.</div>')+'</div></div>';
  setupAICurrencyFilter();
 }
 function renderBiasCards(){
