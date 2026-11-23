@@ -13,7 +13,7 @@ def read(path,default):
     except Exception:return default
 def requested_pairs():
     raw=os.getenv("AI_PAIRS","").upper().strip()
-    pairs=[x for x in re.split(r"[,;\\s]+",raw) if x]
+    pairs=[x for x in re.split(r"[,;\s]+",raw) if x]
     bad=[x for x in pairs if x not in ALL_PAIRS]
     if bad:raise SystemExit("Invalid pair(s): "+", ".join(bad))
     return list(dict.fromkeys(pairs))
@@ -56,7 +56,7 @@ def call(api_key,data,prompt,pairs):
     req=urllib.request.Request("https://api.openai.com/v1/responses",data=json.dumps(body).encode(),headers={"Authorization":"Bearer "+api_key,"Content-Type":"application/json"},method="POST")
     with urllib.request.urlopen(req,timeout=180) as r:payload=json.loads(r.read().decode())
     chunks=[v.get("text","") for item in payload.get("output",[]) for v in item.get("content",[]) if v.get("type")=="output_text"]
-    return validate(parse("\\n".join(chunks) or payload.get("output_text","")),pairs)
+    return validate(parse("\n".join(chunks) or payload.get("output_text","")),pairs)
 def main():
     snap=read(SNAP,{})
     if not snap.get("currencies"):raise SystemExit("No currency snapshot found")
