@@ -186,16 +186,44 @@ function setupBiasCurrencyFilter(){
 }
 function currencyMomentumLabel(c){const n=c?.fundamental_trend_score==null?null:Number(c.fundamental_trend_score);return n==null||!Number.isFinite(n)?"N/A":n>=0.75?"Strong":n<=-0.75?"Weak":"Neutral";}
 
+function selectedAICurrencies(){return [...document.querySelectorAll('.ai-currency-check:checked')].map(x=>x.value);}
+function selectedAIPairs(){
+ const selected=selectedAICurrencies(),pairs=[];
+ for(let i=0;i<PAIR_ORDER.length;i++)for(let j=i+1;j<PAIR_ORDER.length;j++){
+  const base=PAIR_ORDER[i],quote=PAIR_ORDER[j];
+  if(selected.includes(base)&&selected.includes(quote))pairs.push(base+'/'+quote);
+ }
+ return pairs;
+}
+function setupAICurrencyFilter(){
+ const checks=[...document.querySelectorAll('.ai-currency-check')];
+ if(!checks.length||checks[0].dataset.ready)return;
+ checks.forEach(box=>{box.dataset.ready='1';box.addEventListener('change',()=>renderAIReview());});
+ $('ai-select-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=true);renderAIReview();});
+ $('ai-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);renderAIReview();});
+ $('ai-copy-pairs')?.addEventListener('click',async()=>{
+  const pairs=selectedAIPairs(),target=$('ai-copy-status');
+  if(!pairs.length){if(target)target.textContent='Select at least two currencies first.';return;}
+  try{await navigator.clipboard.writeText(pairs.join(','));if(target)target.textContent=pairs.length+' pairs copied. Paste them into the GitHub Actions “pairs” field.';}
+  catch(e){if(target)target.textContent='Clipboard access unavailable. Selected pairs: '+pairs.join(', ');}
+ });
+}
 function renderAIReview(){
  const root=$("ai-review-panel");if(!root)return;
+ setupAICurrencyFilter();
  const providers=aiReview&&aiReview.providers?aiReview.providers:{},chat=providers.chatgpt||{};
  const label=s=>s==="ok"?"Ready":s==="not_configured"?"API key needed":s==="error"?"Error":"Pending";
  const provider=(p)=>'<div class="bias-signal"><small>CHATGPT</small><b>'+label(p.status)+'</b><span>'+escapeHtml(p.model||"Model pending")+' · '+escapeHtml(p.message||"No review yet")+'</span></div>';
- if(!aiReview){root.innerHTML='<div class="panel"><div class="panel-head"><b>ChatGPT AI Momentum Review</b><span class="tag tag-neutral">AWAITING FIRST RUN</span></div><p>Configure OPENAI_API_KEY as a GitHub Actions secret, then run the AI review workflow.</p>'+provider(chat)+'</div>';return;}
+ if(!aiReview){root.innerHTML='<div class="panel"><div class="panel-head"><b>ChatGPT AI Momentum Review</b><span class="tag tag-neutral">AWAITING FIRST RUN</span></div><p>Currency momentum will refresh automatically. Select pairs below and use the GitHub Actions workflow to request pair analysis.</p>'+provider(chat)+'</div>';return;}
  const currencyReviews=aiReview.currency_reviews||chat.review?.currency_reviews||{};
  const pairReviews=aiReview.pair_reviews||chat.review?.pair_reviews||{};
  const currencyRows=CURRENCIES.map(code=>{const c=currencyReviews[code]||{};return '<article class="bias-signal"><b>'+code+' · ChatGPT: '+escapeHtml(c.bias||"N/A")+'</b><small>CONFIDENCE · '+escapeHtml(c.confidence||"—")+'</small><span>'+escapeHtml(c.summary||"No currency review available.")+'</span></article>';}).join("");
- const pairRows=PAIR_ORDER.flatMap((base,i)=>PAIR_ORDER.slice(i+1).map(quote=>{const pair=base+'/'+quote,c=pairReviews[pair]||{};return '<article class="bias-card bias-neutral"><div class="bias-card-head"><div><h3>'+pair+'</h3><small>CHATGPT MOMENTUM REVIEW</small></div><div class="bias-status"><b>'+escapeHtml(c.bias||"N/A")+'</b><small>'+escapeHtml(c.confidence||"—")+'</small></div></div><div class="bias-card-body"><p><b>ChatGPT:</b> '+escapeHtml(c.summary||"No review available")+'</p><div class="bias-label">FUNDAMENTAL CONTEXT</div><p>'+escapeHtml(c.fundamental_view||"Not available")+'</p><div class="bias-label">SHORT-TERM MOMENTUM</div><p>'+escapeHtml(c.momentum_view||"Not available")+'</p><div class="bias-label">D1 CONTEXT</div><p>'+escapeHtml(c.d1_view||"Not available")+'</p><div class="bias-label">H4 WATCHLIST</div><p>'+escapeHtml(c.h4_watch||"No H4 data supplied; wait for chart confirmation.")+'</p><div class="bias-label">RISKS</div><p>'+escapeHtml((c.risks||[]).join(" · ")||"Not specified")+'</p></div></article>';})).join("");
+ const selected=selectedAICurrencies(),selectedPairs=selectedAIPairs();
+ const pairRows=selectedPairs.map(pair=>{
+  const c=pairReviews[pair]||{};
+  const hasReview=!!(c.overall_conclusion||c.chatgpt_assessment||c.fundamental_view||c.momentum_view);
+  return '<article class="bias-card bias-neutral"><div class="bias-card-head"><div><h3>'+pair+'</h3><small>SELECTED PAIR · CHATGPT</small></div><div class="bias-status"><b>'+escapeHtml(c.bias||"NOT REVIEWED")+'</b><small>'+escapeHtml(c.confidence||"—")+'</small></div></div><div class="bias-card-body">'+(hasReview?'<div class="bias-label">1 · FUNDAMENTAL BIAS</div><p>'+escapeHtml(c.fundamental_view||"Not available")+'</p><div class="bias-label">2 · SHORT-TERM MOMENTUM</div><p>'+escapeHtml(c.momentum_view||"Not available")+'</p><div class="bias-label">5 · CHATGPT ASSESSMENT</div><p>'+escapeHtml(c.chatgpt_assessment||c.summary||"Not available")+'</p><div class="bias-label">6 · OVERALL CONCLUSION</div><p>'+escapeHtml(c.overall_conclusion||"Not available")+'</p>':'<p>No pair-specific review yet. Copy the selected pair list and submit it through GitHub Actions.</p>')+'</div></article>';
+ }).join("");
  const generated=aiReview.generated_at?new Date(aiReview.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT":"No successful review yet";
  const inputStamp=aiReview.input_snapshot_generated_at?new Date(aiReview.input_snapshot_generated_at):null;
  const inputAge=inputStamp?Date.now()-inputStamp.getTime():Infinity;
@@ -203,10 +231,10 @@ function renderAIReview(){
  const inputText=inputStamp?inputStamp.toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT":"timestamp unavailable";
  const failed=aiReview.status==="error"||chat.status==="error";
  const stale=failed||aiReview.cache_is_stale||!inputFresh;
- const statusText=failed?(pairReviews&&Object.keys(pairReviews).length?"ERROR · SHOWING LAST SUCCESSFUL REVIEW":"AI REVIEW FAILED"):(inputFresh?"INPUT CURRENT":"INPUT STALE");
- root.innerHTML='<div class="panel"><div class="panel-head"><div><b>AI Momentum Review</b><p>Last successful review: '+generated+' · Market-data snapshot: '+inputText+'</p></div><span class="tag tag-neutral">'+statusText+'</span></div>'+(failed?'<div class="notice notice-warn"><b>ChatGPT could not complete the latest review</b><p>'+escapeHtml(aiReview.last_error||chat.message||"API request failed")+'. '+(pairReviews&&Object.keys(pairReviews).length?"The previous successful review is retained and has not been given a new timestamp.":"No successful cached review is available.")+'</p></div>':"")+(stale&&!failed?'<div class="notice notice-warn"><b>Market-data snapshot may be stale</b><p>Refresh the underlying dashboard data and rerun the AI review before relying on this interpretation.</p></div>':"")+'<div class="bias-signal-grid">'+provider(chat)+'</div><p class="bias-scoreline">Single-provider ChatGPT analysis of the supplied dashboard snapshot. Pair momentum is assessed from pair-specific D1 price action; macro scores do not override price action. This is research commentary, not a trading signal.</p><div class="bias-label">CURRENCY RELEASE & MOMENTUM IMPACT</div><div class="bias-signal-grid">'+currencyRows+'</div><div class="bias-label">28-PAIR MOMENTUM WATCH</div><div class="bias-grid">'+pairRows+'</div></div>';
+ const statusText=failed?(Object.keys(pairReviews).length?"ERROR · SHOWING LAST SUCCESSFUL REVIEW":"AI REVIEW FAILED"):(inputFresh?"INPUT CURRENT":"INPUT STALE");
+ root.innerHTML='<div class="panel"><div class="panel-head"><div><b>AI Momentum Review</b><p>Last successful review: '+generated+' · Market-data snapshot: '+inputText+'</p></div><span class="tag tag-neutral">'+statusText+'</span></div>'+(failed?'<div class="notice notice-warn"><b>ChatGPT could not complete the latest review</b><p>'+escapeHtml(aiReview.last_error||chat.message||"API request failed")+'. The last successful review is retained.</p></div>':"")+(stale&&!failed?'<div class="notice notice-warn"><b>Market-data snapshot may be stale</b><p>Refresh the underlying dashboard data before relying on this interpretation.</p></div>':"")+'<div class="bias-signal-grid">'+provider(chat)+'</div><p class="bias-scoreline">Currency momentum impact is maintained for all eight currencies. Pair-specific analysis is generated only for the pairs submitted for review. Pair direction is based on its own D1 price evidence; macro scores do not override price action.</p><div class="bias-label">INDIVIDUAL CURRENCY MOMENTUM IMPACT · ALL 8</div><div class="bias-signal-grid">'+currencyRows+'</div><div class="bias-label">SELECT CURRENCIES FOR PAIR ANALYSIS</div><div class="strength-filter bias-currency-filter"><div class="strength-filter-options">'+CURRENCIES.map(code=>'<label><input type="checkbox" class="ai-currency-check" value="'+code+'" '+(selected.includes(code)?"checked":"")+'><span>'+code+'</span></label>').join("")+'</div><div class="strength-filter-actions"><span class="tag tag-neutral">'+selected.length+' / 8 SELECTED · '+selectedPairs.length+' PAIRS</span><button type="button" class="text-button" id="ai-select-all">Select all</button><button type="button" class="text-button" id="ai-clear-all">Clear</button></div></div><div class="notice notice-info"><b>Run analysis for selected pairs</b><p>1. Click “Copy selected pairs”. 2. Open the GitHub Actions workflow. 3. Click “Run workflow”, paste the copied list into the “pairs” field, then run it. Your selection is sent to ChatGPT; unselected pairs are not analysed.</p><div class="heading-actions"><button type="button" class="btn btn-primary" id="ai-copy-pairs">Copy selected pairs</button><a class="btn btn-quiet" href="https://github.com/Winner99099/fx-fundamental-dashboard/actions/workflows/ai-review.yml" target="_blank" rel="noopener">Open GitHub Actions ↗</a></div><p id="ai-copy-status" class="muted">Selected pairs: '+(selectedPairs.join(", ")||"none")+'</p></div><div class="bias-label">SELECTED PAIR REVIEWS · '+selectedPairs.length+'</div><div class="bias-grid">'+(pairRows||'<div class="empty">Select at least two currencies to display pair choices.</div>')+'</div></div>';
+ setupAICurrencyFilter();
 }
-
 function renderBiasCards(){
  setupBiasCurrencyFilter();
  const m=ccyMap(),pairs=[];for(let i=0;i<PAIR_ORDER.length;i++)for(let j=i+1;j<PAIR_ORDER.length;j++){const b=m[PAIR_ORDER[i]],q=m[PAIR_ORDER[j]],ok=b?.short_term_score!=null&&q?.short_term_score!=null,s=ok?Number(b.short_term_score)-Number(q.short_term_score):null;pairs.push({pair:b.code+'/'+q.code,b,q,s,market:snapshot?.pair_technical?.[b.code+'/'+q.code]||null,bias:s==null?'UNVERIFIED':s>.35?'BULLISH':s<-.35?'BEARISH':'NEUTRAL'});}
