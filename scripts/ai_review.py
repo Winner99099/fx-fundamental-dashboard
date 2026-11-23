@@ -28,13 +28,19 @@ def compact(snapshot,pairs):
         pair_data[pair]={k:t.get(k) for k in ("status","source","symbol","updated_at","price","change_1d_pct","change_5d_pct","change_20d_pct","sma20","sma50","rsi14","macd","macd_signal","support_20d","resistance_20d")} if t else {"status":"unavailable"}
     return {"snapshot_generated_at":snapshot.get("generated_at"),"currencies":currencies,"recent_events":events,"selected_pair_d1_technical":pair_data}
 def prompt_for(pairs):
-    p="""You are an FX momentum analyst. Use ONLY the supplied dashboard snapshot. Return ONLY valid JSON with exactly two maps: currency_reviews (all 8 currency codes) and pair_reviews (only requested pair keys; empty map if none).
-For each currency return bias (BULLISH/BEARISH/NEUTRAL/INSUFFICIENT), confidence, summary (max 2 concise sentences), drivers (max 3), risks (max 2). Distinguish macro trend from confirmed recent release momentum. Do not claim spot momentum without pair-price evidence."""
+    p="""You are a careful, evidence-led FX analyst. Use ONLY the supplied dashboard snapshot. Return ONLY valid JSON with exactly two maps: currency_reviews (all 8 currency codes) and pair_reviews (only requested pair keys; empty map if none).
+For each currency return bias (BULLISH/BEARISH/NEUTRAL/INSUFFICIENT), confidence, summary (max 2 concise sentences), drivers (max 3), risks (max 2). Distinguish macro trend from confirmed recent release momentum. Never claim spot momentum from currency macro scores alone."""
     if pairs:
         p+="""
-For each requested pair return bias, confidence, and ONLY four analysis sections: fundamental_view (relative macro bias of base vs quote), momentum_view (short-term momentum), chatgpt_assessment (integrated assessment), overall_conclusion (clear direction and confidence, or WAIT/INSUFFICIENT). Pair direction is determined primarily by its own D1 data: 1d/5d/20d returns, price vs SMA20/SMA50, RSI14 and MACD vs signal. Macro scores NEVER override contradictory price action. Missing/unavailable or older-than-36h technical data means INSUFFICIENT. Conflicting signals mean NEUTRAL. Upcoming events are pending, never results. No H4 data is supplied; do not claim H4 confirmation. Do not invent facts."""
-    else:p+="\nNo pair review requested; return an empty pair_reviews map."
-    return p+"\nKeep concise. Research commentary, not a trade instruction."
+For EACH requested pair return bias, confidence, and exactly these four detailed sections as strings. Use readable Markdown inside strings, including blank lines, **bold labels**, and numbered observations:
+1) fundamental_view: 2-3 concise paragraphs explaining the relative fundamental bias of base versus quote, the most relevant supplied macro factors and event risks. Distinguish structural backdrop from fresh momentum; do not invent missing macro values.
+2) momentum_view: Start with a direct sentence such as "My assessment is that [PAIR] currently has a bearish short-term bias." Then explain the evidence in 3 numbered observations where the data permits: (a) price performance, quote exact 1d/5d/20d percentage changes; (b) moving-average structure, compare latest price with SMA20 and SMA50 and quantify distance in percent where possible; (c) momentum indicators, quote RSI14 and whether MACD is above/below its signal line. Explain what each observation means. If a metric is missing, explicitly say it is unavailable and do not replace it with an estimate. Use actual supplied values; never copy example numbers from instructions.
+3) chatgpt_assessment: 2-3 paragraphs weighing the evidence, explicitly noting any conflict between fundamentals and D1 price momentum. Explain which evidence currently carries more weight and why.
+4) overall_conclusion: concise directional conclusion (BULLISH/BEARISH/NEUTRAL/WAIT), confidence, what would strengthen the view, and the key risk or invalidation condition. Avoid pretending there is an entry signal.
+PAIR DIRECTION MUST be based primarily on that pair's own D1 price evidence. Macro scores NEVER override contradictory price action. Technical data missing/unavailable or older than 36 hours means INSUFFICIENT for technical direction; explicitly flag stale data. Conflicting D1 signals mean NEUTRAL/WAIT. Treat upcoming events as pending, never as results. No H4 data is supplied; do not claim H4 confirmation. Do not invent facts or numeric values."""
+    else:
+        p+="\nNo pair review requested; return an empty pair_reviews map."
+    return p+"\nBe analytical and specific, but avoid repetitive filler. Research commentary only, not a trade instruction."
 def parse(text):
     text=(text or "").strip(); a,b=text.find("{"),text.rfind("}")
     if a<0 or b<=a:raise ValueError("No JSON object returned")
@@ -48,11 +54,12 @@ def validate(review,pairs):
         if bias not in allowed:bias="INSUFFICIENT"
         out={"bias":bias,"confidence":str(x.get("confidence","Low"))[:20],"summary":str(x.get("summary",""))[:500],"drivers":[str(v)[:260] for v in x.get("drivers",[])[:3]] if isinstance(x.get("drivers",[]),list) else [],"risks":[str(v)[:260] for v in x.get("risks",[])[:2]] if isinstance(x.get("risks",[]),list) else []}
         if pair:
-            for k in ("fundamental_view","momentum_view","chatgpt_assessment","overall_conclusion"):out[k]=str(x.get(k,""))[:650]
+            limits={"fundamental_view":1800,"momentum_view":2600,"chatgpt_assessment":1800,"overall_conclusion":1200}
+            for k,limit in limits.items():out[k]=str(x.get(k,""))[:limit]
         return out
     return {"currency_reviews":{c:clean(cr[c]) for c in CC},"pair_reviews":{p:clean(pr[p],True) for p in pairs}}
 def call(api_key,data,prompt,pairs):
-    body={"model":MODEL,"reasoning":{"effort":"low"},"instructions":prompt,"input":json.dumps(data,ensure_ascii=False,separators=(",",":")),"max_output_tokens":min(10000,2600+950*len(pairs))}
+    body={"model":MODEL,"reasoning":{"effort":"low"},"instructions":prompt,"input":json.dumps(data,ensure_ascii=False,separators=(",",":")),"max_output_tokens":min(30000,3000+1400*len(pairs))}
     req=urllib.request.Request("https://api.openai.com/v1/responses",data=json.dumps(body).encode(),headers={"Authorization":"Bearer "+api_key,"Content-Type":"application/json"},method="POST")
     with urllib.request.urlopen(req,timeout=180) as r:payload=json.loads(r.read().decode())
     chunks=[v.get("text","") for item in payload.get("output",[]) for v in item.get("content",[]) if v.get("type")=="output_text"]
