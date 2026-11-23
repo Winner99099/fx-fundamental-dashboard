@@ -2,6 +2,11 @@ name: ChatGPT FX momentum review
 on:
   workflow_dispatch:
     inputs:
+      force:
+        description: "Force a fresh analysis even if the input snapshot is unchanged"
+        required: false
+        type: boolean
+        default: false
       pairs:
         description: "Selected pairs, comma-separated (e.g. EUR/USD,GBP/CAD). Leave blank for currency momentum only."
         required: false
@@ -27,7 +32,8 @@ jobs:
       - name: Generate selected ChatGPT review
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          AI_PAIRS: ${{ inputs.pairs }}\n          AI_FORCE: ${{ inputs.force }}
+          AI_PAIRS: ${{ inputs.pairs }}
+          AI_FORCE: ${{ inputs.force }}
         run: python scripts/ai_review.py
       - name: Commit AI review snapshot
         run: |
