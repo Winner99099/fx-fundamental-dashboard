@@ -210,13 +210,13 @@ function setupAICurrencyFilter(){
   if(id==='ai-run-selected'){
    const pairs=selectedAIPairs(),target=$('ai-copy-status');
    if(!pairs.length){if(target)target.textContent='Select at least two currencies first.';return;}
+   const runTab=window.open('https://github.com/Winner99099/fx-fundamental-dashboard/actions/workflows/ai-review.yml','_blank');
    try{
     await navigator.clipboard.writeText(pairs.join(','));
     if(target)target.textContent=pairs.length+' selected pairs copied. Paste into the GitHub Actions “pairs” field, then click Run workflow.';
    }catch(e){
     if(target)target.textContent='Automatic copy failed. Pair list: '+pairs.join(', ');
    }
-   window.open('https://github.com/Winner99099/fx-fundamental-dashboard/actions/workflows/ai-review.yml','_blank','noopener');
   }
  });
 }
