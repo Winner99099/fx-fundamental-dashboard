@@ -73,7 +73,7 @@ def main():
     oldrev=provider.get("review") or {"currency_reviews":old.get("currency_reviews",{}),"pair_reviews":old.get("pair_reviews",{})}
     try:age=(NOW-dt.datetime.fromisoformat(old.get("generated_at","").replace("Z","+00:00"))).total_seconds()/3600
     except Exception:age=999999
-    if old.get("input_fingerprint")==fp and age<4 and old.get("status")=="ok":
+    if os.getenv("AI_FORCE","").lower() not in ("1","true","yes") and old.get("input_fingerprint")==fp and age<4 and old.get("status")=="ok":
         print("Skipped: unchanged successful inputs younger than four hours");return
     key=os.getenv("OPENAI_API_KEY")
     if not key:raise SystemExit("OPENAI_API_KEY is not configured")
