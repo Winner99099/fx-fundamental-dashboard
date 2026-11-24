@@ -8,7 +8,12 @@ on:
         type: boolean
         default: false
       pairs:
-        description: "Selected pairs, comma-separated (e.g. EUR/USD,GBP/CAD). Leave blank for currency momentum only."
+        description: "Selected pairs, comma-separated (e.g. EUR/USD,GBP/CAD). Leave blank for currency-only analysis."
+        required: false
+        type: string
+        default: ""
+      currencies:
+        description: "Currencies to analyse, comma-separated (e.g. GBP or GBP,USD). Blank means all eight."
         required: false
         type: string
         default: ""
@@ -33,6 +38,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           AI_PAIRS: ${{ inputs.pairs }}
+          AI_CURRENCIES: ${{ inputs.currencies }}
           AI_FORCE: ${{ inputs.force }}
         run: python scripts/ai_review.py
       - name: Commit AI review snapshot
