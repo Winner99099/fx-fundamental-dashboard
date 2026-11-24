@@ -69,10 +69,9 @@ function renderOverviewCoreRows() {
     <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
     <td>${metric2(c.gdp_growth)}<small>${safeText(c.gdp_growth_period||c.gdp_growth_year,"")}</small></td>
     <td>${metric2(c.unemployment)}<small>${safeText(c.unemployment_period||c.unemployment_year,"")}</small></td>
-    <td>${safeText(c.confidence,"Low")} · ${safeText(c.data_status,"Not connected")}</td>
   </tr>`).join("");
   const target=$("currency-rows");
-  if(target) target.innerHTML=rows||'<tr><td colspan="9" class="empty">No core currency data in snapshot.</td></tr>';
+  if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No core currency data in snapshot.</td></tr>';
 }
 function renderCurrencyStrengthRows() {
   const selected=selectedStrengthCurrencies();
