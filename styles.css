@@ -278,38 +278,24 @@
 }
 
 
-/* Pair Bias layout override: pin Select all / Clear to the far right. */
-#view-bias #bias-currency-filter{
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) auto !important;
-  align-items:center !important;
-  justify-content:initial !important;
-  column-gap:16px !important;
+/* Pair Bias: put bulk actions on their own row and align them to the far right. */
+.bias-currency-filter{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  gap:10px !important;
 }
-#view-bias #bias-currency-filter .strength-filter-options{
-  grid-column:1;
-  min-width:0;
-  flex:initial;
+.bias-currency-filter .strength-filter-options{
+  display:flex;
+  width:100%;
+  flex:0 0 auto !important;
 }
-#view-bias #bias-currency-filter .strength-filter-actions{
-  grid-column:2;
-  justify-self:end;
+.bias-currency-filter .strength-filter-actions{
+  display:flex;
+  width:100% !important;
+  flex:0 0 auto !important;
+  justify-content:flex-end !important;
+  align-self:stretch !important;
   margin:0 !important;
-  width:auto !important;
   white-space:nowrap;
-}
-@media(max-width:720px){
-  #view-bias #bias-currency-filter{
-    grid-template-columns:minmax(0,1fr) !important;
-    row-gap:10px;
-  }
-  #view-bias #bias-currency-filter .strength-filter-options{
-    grid-column:1;
-    width:100%;
-  }
-  #view-bias #bias-currency-filter .strength-filter-actions{
-    grid-column:1;
-    justify-self:end;
-    width:100% !important;
-  }
 }
