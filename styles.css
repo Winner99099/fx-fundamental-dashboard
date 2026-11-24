@@ -260,3 +260,19 @@
 :root[data-theme="grey"] .news-item p,:root[data-theme="grey"] .news-bias{color:#d0d7df}
 :root[data-theme="grey"] .tag-neutral{background:#525d69;color:#e1e6ec}
 @media(max-width:720px){.theme-picker{margin-left:auto}.top-actions{flex-wrap:wrap;justify-content:flex-end}}
+
+
+/* Pair Bias: keep bulk-selection controls anchored to the right edge. */
+.bias-currency-filter .strength-filter-actions{
+  flex:0 0 auto;
+  margin-left:auto;
+  justify-content:flex-end;
+  white-space:nowrap;
+}
+@media(max-width:720px){
+  .bias-currency-filter .strength-filter-actions{
+    width:100%;
+    margin-left:0;
+    justify-content:flex-end;
+  }
+}
