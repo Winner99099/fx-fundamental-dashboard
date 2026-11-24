@@ -337,3 +337,21 @@
   justify-content:flex-start !important;
   align-self:flex-start !important;
 }
+
+
+/* MacroPulse overview readability pass — larger type, cleaner scorecard. */
+body{font-size:15px}
+.topbar h1{font-size:28px}
+.nav-item{font-size:13px}
+.metric-label{font-size:11px}
+.metric-value{font-size:31px}
+.metric-note{font-size:12px;line-height:1.55}
+.section-heading h2{font-size:21px}
+.section-heading p,.panel-head p{font-size:12px;line-height:1.65}
+.panel-head b{font-size:14px}
+#view-overview .table-wrap th{font-size:11px;padding:15px 14px;white-space:nowrap}
+#view-overview .table-wrap td{font-size:14px;line-height:1.55;padding:16px 14px}
+#view-overview .table-wrap td:first-child{font-size:15px}
+#view-overview .table-wrap td small{font-size:11px;line-height:1.55}
+#view-overview .empty{font-size:13px}
+@media(max-width:720px){body{font-size:14px}.topbar h1{font-size:23px}.metric-note{font-size:11px}#view-overview .table-wrap td{font-size:13px;padding:13px 11px}}
