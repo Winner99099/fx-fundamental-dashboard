@@ -326,3 +326,14 @@
   width:100% !important;
   flex:0 0 auto !important;
 }
+
+
+/* Pair Bias: place Select all / Clear controls BELOW the currency tick boxes. */
+.bias-currency-filter .strength-filter-options{
+  order:0 !important;
+}
+.bias-currency-filter .strength-filter-actions{
+  order:1 !important;
+  justify-content:flex-start !important;
+  align-self:flex-start !important;
+}
