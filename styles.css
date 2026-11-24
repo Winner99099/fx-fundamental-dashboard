@@ -278,24 +278,28 @@
 }
 
 
-/* Pair Bias: put bulk actions on their own row and align them to the far right. */
+/* Pair Bias: bulk-selection controls on the LEFT, currency checkboxes after them. */
 .bias-currency-filter{
   display:flex !important;
-  flex-direction:column !important;
-  align-items:stretch !important;
-  gap:10px !important;
-}
-.bias-currency-filter .strength-filter-options{
-  display:flex;
-  width:100%;
-  flex:0 0 auto !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
 }
 .bias-currency-filter .strength-filter-actions{
-  display:flex;
-  width:100% !important;
+  order:0 !important;
+  display:flex !important;
+  width:auto !important;
   flex:0 0 auto !important;
-  justify-content:flex-end !important;
-  align-self:stretch !important;
+  justify-content:flex-start !important;
+  align-self:center !important;
   margin:0 !important;
   white-space:nowrap;
+}
+.bias-currency-filter .strength-filter-options{
+  order:1 !important;
+  display:flex !important;
+  width:auto !important;
+  flex:1 1 auto !important;
 }
