@@ -36,3 +36,15 @@ The Worker PIN is kept only in the current browser session. The Worker URL is sa
 - If you receive an incorrect PIN error, clear the browser session or reload and enter the correct PIN.
 - If GitHub rejects dispatch, verify that the token has Actions write permission and that the workflow is enabled.
 - Pair analysis can take a few minutes. Keep the AI Review page open while it waits for the new result.
+
+
+## Updating the Worker after dashboard code changes
+
+The Worker script deployed in Cloudflare does not update automatically when `cloudflare-worker/worker.js` changes in GitHub. After updating this repository's Worker code:
+
+1. Open Cloudflare Dashboard → **Workers & Pages** → your `macropulse-ai-review` Worker.
+2. Open **Edit code**.
+3. Replace the complete Worker code with the latest contents of `cloudflare-worker/worker.js` in this repository.
+4. Click **Deploy**.
+
+Keep the existing `GITHUB_TOKEN`, `WORKER_PIN` and `ALLOWED_ORIGIN` settings; do not paste secrets into the source code.
