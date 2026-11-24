@@ -18,6 +18,7 @@ from email.utils import parsedate_to_datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from html import unescape
+from html.parser import HTMLParser
 import statistics
 
 UTC = datetime.timezone.utc
@@ -663,6 +664,94 @@ try:
         ff_added += 1
 except Exception as error:
     ff_status = "error: " + str(error)[:160]
+
+# Secondary calendar verification: scrape Forex Factory's rendered weekly calendar.
+# The XML export can retain forecasts while leaving actuals blank after release.
+class FFCalendarHTMLParser(HTMLParser):
+    CELL_FIELDS = {
+        "calendar__actual": "actual",
+        "calendar__forecast": "forecast",
+        "calendar__previous": "previous",
+    }
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.rows, self.row, self.cell_class, self.cell_text = [], None, None, []
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "tr" and (a.get("data-eventid") or "calendar__row" in (a.get("class") or "")):
+            self.row = {"currency": (a.get("data-country") or "").upper(),
+                        "title": a.get("data-eventtitle") or "",
+                        "datetime": a.get("data-datetime") or "",
+                        "url": a.get("data-url") or ""}
+        elif tag == "td" and self.row is not None:
+            self.cell_class = a.get("class") or ""
+            self.cell_text = []
+    def handle_data(self, data):
+        if self.row is not None and self.cell_class is not None:
+            self.cell_text.append(data)
+    def handle_endtag(self, tag):
+        if tag == "td" and self.row is not None and self.cell_class is not None:
+            value = clean_text(" ".join(self.cell_text), 80)
+            for css, field in self.CELL_FIELDS.items():
+                if css in self.cell_class.split():
+                    if value:
+                        self.row[field] = value
+                    break
+            self.cell_class, self.cell_text = None, []
+        elif tag == "tr" and self.row is not None:
+            if self.row.get("currency") and self.row.get("title"):
+                self.rows.append(self.row)
+            self.row = None
+
+def normalized_event_title(value):
+    return re.sub(r"[^a-z0-9]+", "", (value or "").lower())
+
+html_calendar_pages = []
+week_start = now.date() - datetime.timedelta(days=now.weekday())
+for week_offset in (0, 7):
+    monday = week_start - datetime.timedelta(days=week_offset)
+    week_label = monday.strftime("%b%d.%Y").lower()
+    page_url = "https://www.forexfactory.com/calendar?week=" + urllib.parse.quote(week_label)
+    try:
+        page = fetch(page_url).decode("utf-8", errors="replace")
+        parser = FFCalendarHTMLParser()
+        parser.feed(page)
+        html_calendar_pages.extend(parser.rows)
+    except Exception as error:
+        print("Forex Factory HTML fallback unavailable for", week_label, ":", str(error)[:120])
+
+html_fallback_updates = 0
+for row in html_calendar_pages:
+    currency = row.get("currency")
+    title_key = normalized_event_title(row.get("title"))
+    row_time = parse_date(row.get("datetime"))
+    if currency not in CURRENCIES or not title_key:
+        continue
+    candidates = []
+    for event in events_by_id.values():
+        if event.get("source") != "Forex Factory" or event.get("currency") != currency:
+            continue
+        if normalized_event_title(event.get("title")) != title_key:
+            continue
+        event_time = parse_date(event.get("time"))
+        if row_time and event_time and abs((row_time - event_time).total_seconds()) > 18 * 3600:
+            continue
+        candidates.append(event)
+    if not candidates:
+        continue
+    target = candidates[0]
+    changed = False
+    for field in ("actual", "forecast", "previous"):
+        value = row.get(field)
+        if value and (not target.get(field) or field == "actual"):
+            if target.get(field) != value:
+                target[field] = value
+                changed = True
+    if changed:
+        target["actual_source"] = "Forex Factory rendered calendar (secondary verification)"
+        target["actual_verified_at"] = now.isoformat()
+        html_fallback_updates += 1
+
 news_sources.append({
     "name": "Forex Factory Economic Calendar",
     "url": FF_CALENDAR_URL,
@@ -670,6 +759,8 @@ news_sources.append({
     "checked_at": now.isoformat(),
     "events_in_rolling_window": ff_count,
     "new_or_updated_events": ff_added,
+    "html_secondary_rows_checked": len(html_calendar_pages),
+    "html_secondary_updates": html_fallback_updates,
     "timezone_basis": "America/New_York XML export; converted to UTC and displayed in SGT",
 })
 
