@@ -13,7 +13,7 @@ def read(path,default):
     except Exception:return default
 def requested_currencies():
     raw=os.getenv("AI_CURRENCIES","").upper().strip()
-    currencies=[x for x in re.split(r"[,;\\s]+",raw) if x]
+    currencies=[x for x in re.split(r"[,;\s]+",raw) if x]
     bad=[x for x in currencies if x not in CC]
     if bad: raise SystemExit("Invalid currency code(s): "+", ".join(bad))
     return list(dict.fromkeys(currencies)) if currencies else CC.copy()
@@ -70,12 +70,11 @@ def validate(review,currencies,pairs):
         x=x if isinstance(x,dict) else {}; bias=str(x.get("bias","INSUFFICIENT")).upper()
         if bias not in allowed: bias="INSUFFICIENT"
         out={"bias":bias,"confidence":str(x.get("confidence","Low"))[:20],"summary":str(x.get("summary",""))[:700],"drivers":[str(v)[:300] for v in x.get("drivers",[])[:4]] if isinstance(x.get("drivers",[]),list) else [],"risks":[str(v)[:300] for v in x.get("risks",[])[:3]] if isinstance(x.get("risks",[]),list) else []}
-        if True:
-            limits={"fundamental_view":2400,"momentum_view":3200,"chatgpt_assessment":2400,"overall_conclusion":1600}
-            for k,limit in limits.items():
-                value=x.get(k,"")
-                if not isinstance(value,str) or not value.strip(): raise ValueError("Missing required analysis section: "+k)
-                out[k]=value[:limit]
+        limits={"fundamental_view":2400,"momentum_view":3200,"chatgpt_assessment":2400,"overall_conclusion":1600}
+        for k,limit in limits.items():
+            value=x.get(k,"")
+            if not isinstance(value,str) or not value.strip(): raise ValueError("Missing required analysis section: "+k)
+            out[k]=value[:limit]
         return out
     return {"currency_reviews":{c:clean(cr[c]) for c in currencies},"pair_reviews":{p:clean(pr[p],True) for p in pairs}}
 def call(api_key,data,prompt,currencies,pairs):
