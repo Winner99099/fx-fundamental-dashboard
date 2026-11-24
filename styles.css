@@ -303,3 +303,26 @@
   width:auto !important;
   flex:1 1 auto !important;
 }
+
+
+/* Pair Bias: place bulk-selection controls ABOVE the currency tick boxes. */
+.bias-currency-filter{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  justify-content:flex-start !important;
+  gap:8px !important;
+}
+.bias-currency-filter .strength-filter-actions{
+  order:0 !important;
+  width:100% !important;
+  flex:0 0 auto !important;
+  justify-content:flex-start !important;
+  align-self:flex-start !important;
+  margin:0 !important;
+}
+.bias-currency-filter .strength-filter-options{
+  order:1 !important;
+  width:100% !important;
+  flex:0 0 auto !important;
+}
