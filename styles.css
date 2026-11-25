@@ -464,3 +464,101 @@ body{font-size:15px}
 
 /* Overview: restored individual strength readings for all eight currencies. */
 .overview-strength-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 16px 17px}.overview-strength-card{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.overview-strength-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.overview-strength-top>b{font:800 17px "DM Mono",monospace;color:var(--text)}.overview-strength-top>span{font-size:11px;font-weight:700}.overview-strength-main{display:grid;gap:4px;margin:12px 0}.overview-strength-main small{font:9px "DM Mono",monospace;letter-spacing:.55px;color:var(--muted)}.overview-strength-main strong{font:700 25px "DM Mono",monospace}.overview-strength-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:9px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.overview-strength-bottom b{font:700 13px "DM Mono",monospace}@media(max-width:900px){.overview-strength-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.overview-strength-grid{grid-template-columns:1fr}}
+
+
+/* Mobile-first navigation and layout improvements */
+.mobile-menu-toggle,.mobile-menu-backdrop{display:none}
+@media(max-width:720px){
+  .sidebar{
+    position:fixed;inset:0 auto 0 0;width:min(84vw,310px);height:100dvh;
+    padding:18px 14px;overflow-y:auto;overflow-x:hidden;display:flex;
+    transform:translateX(-105%);transition:transform .22s ease;z-index:30;
+    box-shadow:12px 0 35px rgba(0,0,0,.35)
+  }
+  .sidebar.mobile-open{transform:translateX(0)}
+  .sidebar .brand{margin:0 0 14px}
+  .sidebar .side-label{display:block;margin:22px 9px 9px}
+  .sidebar nav{display:grid;gap:4px;overflow:visible}
+  .sidebar .nav-item{white-space:normal;text-align:left;padding:12px 10px;font-size:13px}
+  .sidebar .nav-item span{width:25px}
+  .sidebar .sidebar-bottom{display:block;margin-top:auto}
+  .mobile-menu-backdrop{
+    position:fixed;inset:0;background:rgba(3,8,18,.62);border:0;z-index:29
+  }
+  .mobile-menu-backdrop.visible{display:block}
+  .mobile-menu-toggle{
+    display:inline-flex;align-items:center;justify-content:center;gap:7px;
+    min-height:40px;padding:0 11px;border:1px solid var(--line);border-radius:8px;
+    background:var(--panel);color:var(--text);font:700 11px Manrope;flex:0 0 auto
+  }
+  .topbar{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .topbar-title{min-width:0;flex:1}
+  .topbar h1{font-size:19px;line-height:1.2;overflow-wrap:anywhere}
+  .topbar .eyebrow{font-size:8px;letter-spacing:.8px}
+  .top-actions{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+  .top-actions .theme-picker{order:3;width:100%;justify-content:flex-end}
+  .top-actions .btn{padding:8px 9px;font-size:10px}
+  .top-actions .market-clock{display:none}
+  .main{margin:0;padding:13px 10px 22px;width:100%;max-width:none}
+  .status-strip{padding:10px 11px;margin-bottom:15px}
+  .status-strip>div:first-child{display:grid;grid-template-columns:10px 1fr;gap:3px 6px;align-items:center}
+  .status-strip .status-dot{grid-row:1 / span 2;margin:0}
+  .status-strip .muted{grid-column:2;margin:0;font-size:10px;line-height:1.4}
+  .status-right{font-size:8px;gap:9px;flex-wrap:wrap}
+  .section-heading{margin:18px 0 10px;gap:8px}
+  .section-heading h2{font-size:18px}
+  .section-heading p,.panel-head p{font-size:12px;line-height:1.55}
+  .panel{border-radius:8px;margin-bottom:11px}
+  .panel-head{padding:12px 12px;align-items:flex-start;flex-wrap:wrap}
+  .panel-head b{font-size:13px}
+  .overview-strength-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;padding:10px}
+  .overview-strength-card{padding:10px}
+  .overview-strength-main strong{font-size:22px}
+  .overview-strength-top>b{font-size:15px}
+  .overview-strength-top>span{font-size:10px}
+  .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+  .table-wrap table{min-width:720px}
+  #view-overview .table-wrap table{min-width:900px}
+  #view-overview .table-wrap th{font-size:10px;padding:11px 10px}
+  #view-overview .table-wrap td{font-size:12px;padding:11px 9px}
+  #view-overview .table-wrap td small{font-size:10px}
+  .high-impact-list{padding:0 11px}
+  .high-impact-event{padding:12px 0}
+  .high-impact-event-meta{font-size:10px;gap:7px}
+  .high-impact-figures{gap:6px}
+  .high-impact-figures>span{padding:6px 7px;gap:5px}
+  .high-impact-figures small{font-size:8px}
+  .high-impact-figures b{font-size:10px}
+  .strength-filter{padding:10px;gap:9px}
+  .strength-filter-options{gap:6px}
+  .strength-filter-options label{padding:8px 9px;font-size:11px}
+  .strength-filter-options input{width:16px;height:16px}
+  .divergence-filter .strength-filter-options label{font-size:12px;padding:9px}
+  #view-pair-divergence #overview-pairs .source-row{padding:12px;gap:8px;align-items:flex-start}
+  #view-pair-divergence #overview-pairs .source-row b{font-size:15px}
+  #view-pair-divergence #overview-pairs .source-row small{font-size:12px}
+  #view-bias .bias-card-head{padding:14px}
+  #view-bias .bias-card-body{padding:13px}
+  #view-bias .bias-card-head h3{font-size:20px}
+  #view-bias .bias-card-body p{font-size:13px;line-height:1.65}
+  #view-bias .bias-signal-grid{grid-template-columns:1fr 1fr;gap:7px}
+  #view-bias .bias-signal{padding:10px}
+  #view-bias .bias-signal small{font-size:10px}
+  #view-bias .bias-signal b{font-size:13px}
+  #view-bias .bias-signal span{font-size:12px}
+  .pair-toolbar{padding:12px;gap:9px}
+  .pair-toolbar-actions{align-items:flex-start;flex-wrap:wrap;gap:10px}
+  .two-col,.source-grid{grid-template-columns:1fr}
+  .journal-form{padding:12px}
+  .journal-form input,.journal-form textarea,.journal-form select,.select,input,textarea{font-size:16px;max-width:100%}
+  .notice{padding:12px}
+  .notice p{font-size:12px;line-height:1.6}
+  footer{font-size:8px;overflow-wrap:anywhere}
+}
+@media(max-width:380px){
+  .topbar{align-items:flex-start}
+  .mobile-menu-toggle{padding:0 8px;font-size:10px}
+  .top-actions .btn{font-size:9px;padding:7px}
+  .overview-strength-grid{grid-template-columns:1fr 1fr}
+  #view-bias .bias-signal-grid{grid-template-columns:1fr}
+}
