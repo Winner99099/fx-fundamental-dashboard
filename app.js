@@ -469,11 +469,11 @@ async function loadSnapshot() {
     renderOverviewCoreRows(); renderOverviewCurrencyStrength(); renderUpcomingHighImpactNews(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderAIReview(); renderWorkflow(); renderSources(); renderReleaseTracker();
-    $("metric-news").textContent=data.events.length;
+    const metricNews=$("metric-news"); if(metricNews) metricNews.textContent=data.events.length;
     const ok=(data.sources||[]).filter(s=>s.status==="ok").length;
     const macro=(data.sources||[]).filter(s=>(String(s.name||"").includes("World Bank") || String(s.name||"").includes("OECD")));
     const macroOk=macro.filter(s=>s.status==="ok"||s.status==="partial").length;
-    $("metric-feeds").textContent=`${ok}/${(data.sources||[]).length}`;
+    const metricFeeds=$("metric-feeds"); if(metricFeeds) metricFeeds.textContent=`${ok}/${(data.sources||[]).length}`;
     const builtSgt=data.generated_at?new Date(data.generated_at).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false}):"Time unavailable"; $("updated-at").textContent=`Data snapshot updated ${builtSgt} SGT`;
     $("footer-model").textContent=`Snapshot model: ${safeText(data.model)}`;
     const isStale=!data.generated_at || Date.now()-new Date(data.generated_at).getTime()>8*3600*1000;
