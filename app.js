@@ -57,13 +57,24 @@ function setupStrengthCurrencyFilter(){
  $('strength-clear-all')?.addEventListener('click',()=>{checks.forEach(x=>x.checked=false);updateStrengthSelectionCount();renderCurrencyStrengthRows();});
  updateStrengthSelectionCount();
 }
+function latestReleaseLine(c) {
+  const r=c.last_release_reference;
+  if (!r || !r.title) return '<small class="latest-release-inline">Latest release: Not captured</small>';
+  const event=(snapshot?.events||[]).find(e=>e.currency===c.code && e.title===r.title && e.time===r.time);
+  const stamp=r.time ? new Date(r.time).toLocaleString("en-SG",{timeZone:"Asia/Singapore",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",hour12:false})+" SGT" : "Time not supplied";
+  const previous=r.previous==null||r.previous===""?"—":r.previous;
+  const forecast=r.forecast==null||r.forecast===""?"—":r.forecast;
+  const actual=r.actual_captured && r.actual!=null && r.actual!==""?r.actual:"Not captured";
+  const scored=event && event.surprise_score!=null ? "1 scored" : "0 scored";
+  return '<small class="latest-release-inline" style="display:block;white-space:normal;max-width:230px;line-height:1.35;margin-top:5px;overflow-wrap:anywhere">Latest '+escapeHtml(r.title)+' · '+escapeHtml(stamp)+'<br>Previous: '+escapeHtml(previous)+' · Forecast: '+escapeHtml(forecast)+'<br>Actual: '+escapeHtml(actual)+' · '+scored+'</small>';
+}
 // One shared snapshot feeds every view. Overview displays the core macro readings;
 // Currency Strength displays derived interpretation only.
 function renderOverviewCoreRows() {
   const rows=(snapshot?.currencies||[]).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
     <td class="structural-score-cell">${scoreHistory(c)}</td>
-    <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small>${c.code==="USD"?'<small class="latest-release-inline" style="display:block;white-space:normal;font-weight:400;line-height:1.45;margin-top:5px">Latest CB Consumer Confidence · 24 Nov 2026, 23:00 SGT · Previous: 91.7 · Forecast: 92.4 · Actual: Not captured · 0 scored</small>':""}</td>
+    <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small>${latestReleaseLine(c)}</td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td>
     <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
     <td>${metric2(c.gdp_growth)}<small>${safeText(c.gdp_growth_period||c.gdp_growth_year,"")}</small></td>
