@@ -611,3 +611,59 @@ body{font-size:15px}
   .top-actions .theme-picker { margin-left:0; }
   .top-actions .btn { flex:0 0 auto; }
 }
+
+
+/* Definitive phone header fix: prevent title flex/grid compression. */
+@media screen and (max-width:720px){
+  header.topbar{
+    display:flex !important;
+    flex-flow:row wrap !important;
+    align-items:center !important;
+    justify-content:flex-start !important;
+    gap:9px !important;
+    width:100% !important;
+  }
+  header.topbar > .mobile-menu-toggle{
+    order:1 !important;
+    flex:0 0 auto !important;
+    width:auto !important;
+  }
+  header.topbar > .topbar-title{
+    order:2 !important;
+    display:block !important;
+    flex:1 1 180px !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:none !important;
+  }
+  header.topbar > .topbar-title > div{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+  header.topbar > .topbar-title h1,
+  header.topbar #page-title{
+    display:block !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    writing-mode:horizontal-tb !important;
+    text-orientation:mixed !important;
+    white-space:normal !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+    font-size:clamp(18px,5vw,22px) !important;
+    line-height:1.25 !important;
+    letter-spacing:normal !important;
+  }
+  header.topbar > .top-actions{
+    order:3 !important;
+    display:flex !important;
+    flex:1 0 100% !important;
+    width:100% !important;
+    min-width:0 !important;
+    justify-content:flex-end !important;
+    flex-wrap:wrap !important;
+    gap:7px !important;
+  }
+}
