@@ -538,3 +538,18 @@ $("journal-export").addEventListener("click",()=>{
   const url=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));const a=document.createElement("a");a.href=url;a.download="macropulse-journal.csv";a.click();URL.revokeObjectURL(url);
 });
 journalRender();
+
+
+/* Mobile navigation drawer */
+(()=>{
+ const sidebar=document.getElementById("mobile-sidebar");
+ const toggle=document.getElementById("mobile-menu-toggle");
+ const backdrop=document.getElementById("mobile-menu-backdrop");
+ if(!sidebar||!toggle||!backdrop)return;
+ const close=()=>{sidebar.classList.remove("mobile-open");backdrop.classList.remove("visible");toggle.setAttribute("aria-expanded","false");document.body.style.overflow="";};
+ const open=()=>{sidebar.classList.add("mobile-open");backdrop.classList.add("visible");toggle.setAttribute("aria-expanded","true");document.body.style.overflow="hidden";};
+ toggle.addEventListener("click",()=>sidebar.classList.contains("mobile-open")?close():open());
+ backdrop.addEventListener("click",close);
+ sidebar.querySelectorAll("[data-view]").forEach(button=>button.addEventListener("click",close));
+ document.addEventListener("keydown",event=>{if(event.key==="Escape")close();});
+})();
