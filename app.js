@@ -408,7 +408,7 @@ function renderPairs() {
       pairs.push({pair:base.code+"/"+quote.code,spread:Number.isFinite(Number(base.score))&&base.score!==null&&Number.isFinite(Number(quote.score))&&quote.score!==null?Number(base.score)-Number(quote.score):null});
     }
   }
-  pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:b.spread-a.spread);
+  pairs.sort((a,b)=>a.spread===null?1:b.spread===null?-1:Math.abs(b.spread)-Math.abs(a.spread));
   const renderDivergenceWatch=()=>{
     const chosen=[...document.querySelectorAll(".divergence-threshold-check:checked")].map(x=>Number(x.value)).filter(Number.isFinite);
     const threshold=chosen.length?Math.min(...chosen):null;
