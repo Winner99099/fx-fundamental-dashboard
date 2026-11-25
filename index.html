@@ -54,20 +54,14 @@
 <div class="panel"><div class="panel-head"><div><b>Pre-trade checklist</b><p>All eight checks must be satisfied before opening a position.</p></div><span class="tag tag-neutral" id="checklist-count">0 / 8</span></div><div id="pretrade-checklist" class="checklist"></div></div>
 </section>
 <section class="view" id="view-overview">
-      <div class="metric-grid">
-        <article class="metric-card"><div class="metric-label">CURRENCIES TRACKED</div><div class="metric-value">08</div><div class="metric-note">USD · EUR · GBP · JPY · CHF · CAD · AUD · NZD</div></article>
-        <article class="metric-card"><div class="metric-label">OFFICIAL NEWS ITEMS</div><div class="metric-value" id="metric-news">—</div><div class="metric-note">Central-bank news + scheduled macro releases</div></article>
-        <article class="metric-card"><div class="metric-label">FEEDS RESPONDING</div><div class="metric-value" id="metric-feeds">—</div><div class="metric-note">Official central-bank sources</div></article>
-        <article class="metric-card"><div class="metric-label">NEXT DATA BUILD</div><div class="metric-value">5M</div><div class="metric-note">GitHub Actions · best-effort schedule</div></article>
+      <div class="panel" id="overview-high-impact-panel">
+        <div class="panel-head"><div><b>Upcoming high-impact news</b><p>Forex Factory red-folder events · all eight tracked currencies · Singapore time</p></div><div class="high-impact-head-actions"><span class="tag impact-high">RED FOLDER</span><button type="button" class="text-button" id="high-impact-toggle" aria-expanded="false">Show all</button></div></div>
+        <div id="overview-high-impact-news" class="high-impact-list"><div class="empty">Loading high-impact calendar…</div></div>
       </div>
 <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
       <div class="panel">
         <div class="panel-head"><div><b>Eight-currency scorecard</b></div></div>
         <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Structural score</th><th>Short-term score</th><th>Fundamental interpretation</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th></tr></thead><tbody id="currency-rows"><tr><td colspan="8" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
-      </div>
-      <div class="panel" id="overview-high-impact-panel">
-        <div class="panel-head"><div><b>Upcoming high-impact news</b><p>Forex Factory red-folder events · all eight tracked currencies · Singapore time</p></div><div class="high-impact-head-actions"><span class="tag impact-high">RED FOLDER</span><button type="button" class="text-button" id="high-impact-toggle" aria-expanded="false">Show all</button></div></div>
-        <div id="overview-high-impact-news" class="high-impact-list"><div class="empty">Loading high-impact calendar…</div></div>
       </div>
       <div class="panel"><div class="panel-head"><div><b>Latest official releases</b><p>Source-linked central-bank news</p></div><button class="text-button" data-go="news">News wire ↗</button></div><div id="overview-news" class="news-list"><div class="empty">Loading releases…</div></div></div>
     </section>
