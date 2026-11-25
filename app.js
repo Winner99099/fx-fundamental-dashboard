@@ -70,18 +70,43 @@ function latestReleaseLine(c) {
 }
 // One shared snapshot feeds every view. Overview displays the core macro readings;
 // Currency Strength displays derived interpretation only.
+function fundamentalInterpretation(c) {
+  const structural=c?.score==null||c.score===""?null:Number(c.score);
+  const shortTerm=c?.short_term_score==null||c.short_term_score===""?null:Number(c.short_term_score);
+  if(structural===null||shortTerm===null||!Number.isFinite(structural)||!Number.isFinite(shortTerm)) {
+    return "Insufficient scored data to assess both dimensions.";
+  }
+  if(structural>0 && shortTerm>0) {
+    if(shortTerm>structural) return "Positive structural base; the short-term reading is stronger, reinforcing the positive bias.";
+    if(shortTerm<structural) return "Positive structural base; the short-term reading is softer, so momentum is not reinforcing it.";
+    return "Positive structural and short-term readings are aligned.";
+  }
+  if(structural<0 && shortTerm<0) {
+    if(shortTerm>structural) return "Negative structural base, but the short-term reading is less negative, suggesting some improvement.";
+    if(shortTerm<structural) return "Negative structural base; the short-term reading is more negative, indicating further deterioration.";
+    return "Negative structural and short-term readings are aligned.";
+  }
+  if(structural>0 && shortTerm<0) return "Positive structural base, but short-term pressure is negative; wait for the readings to realign.";
+  if(structural<0 && shortTerm>0) return "Negative structural base, but the short-term reading is positive; watch for a potential recovery.";
+  if(structural===0 && shortTerm>0) return "Neutral structural reading with positive short-term momentum.";
+  if(structural===0 && shortTerm<0) return "Neutral structural reading with negative short-term momentum.";
+  if(structural>0 && shortTerm===0) return "Positive structural base; short-term reading is currently neutral.";
+  if(structural<0 && shortTerm===0) return "Negative structural base; short-term reading is currently neutral.";
+  return "Both readings are neutral.";
+}
 function renderOverviewCoreRows() {
   const rows=(snapshot?.currencies||[]).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
     <td class="structural-score-cell">${scoreHistory(c)}</td>
     <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small>${latestReleaseLine(c)}</td>
+    <td><small class="fundamental-interpretation">${escapeHtml(fundamentalInterpretation(c))}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td>
     <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
     <td>${metric2(c.gdp_growth)}<small>${safeText(c.gdp_growth_period||c.gdp_growth_year,"")}</small></td>
     <td>${metric2(c.unemployment)}<small>${safeText(c.unemployment_period||c.unemployment_year,"")}</small></td>
   </tr>`).join("");
   const target=$("currency-rows");
-  if(target) target.innerHTML=rows||'<tr><td colspan="7" class="empty">No core currency data in snapshot.</td></tr>';
+  if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No core currency data in snapshot.</td></tr>';
 }
 function renderCurrencyStrengthRows() {
   const selected=selectedStrengthCurrencies();
