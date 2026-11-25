@@ -63,7 +63,6 @@ function renderOverviewCoreRows() {
   const rows=(snapshot?.currencies||[]).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
     <td class="structural-score-cell">${scoreHistory(c)}</td>
-    <td class="${c.event_score==null?"score-na":Number(c.event_score)>=0?"score-positive":"score-negative"}">${c.event_score==null?"No scored release":Number(c.event_score).toFixed(2)}<small>${c.last_release_reference?eventReleaseSummary(c.last_release_reference):"No completed data release in feed"} · ${Number(c.event_surprise_count||0)} scored</small></td>
     <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small></td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td>
     <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
@@ -71,7 +70,7 @@ function renderOverviewCoreRows() {
     <td>${metric2(c.unemployment)}<small>${safeText(c.unemployment_period||c.unemployment_year,"")}</small></td>
   </tr>`).join("");
   const target=$("currency-rows");
-  if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No core currency data in snapshot.</td></tr>';
+  if(target) target.innerHTML=rows||'<tr><td colspan="7" class="empty">No core currency data in snapshot.</td></tr>';
 }
 function renderCurrencyStrengthRows() {
   const selected=selectedStrengthCurrencies();
