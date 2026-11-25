@@ -436,3 +436,27 @@ body{font-size:15px}
   #view-pair-divergence #overview-pairs .source-row b{font-size:16px}
   #view-pair-divergence #overview-pairs .source-row small{font-size:13px}
 }
+
+
+/* Overview: compact Forex Factory red-folder calendar. */
+#overview-high-impact-panel .high-impact-head-actions{display:flex;align-items:center;gap:14px}
+#overview-high-impact-panel .high-impact-head-actions .impact-high{font-size:10px}
+.high-impact-list{padding:0 18px}
+.high-impact-event{padding:14px 0;border-bottom:1px solid var(--line)}
+.high-impact-event:last-child{border-bottom:0}
+.high-impact-event-meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:var(--muted);font:11px 'DM Mono';margin-bottom:7px}
+.high-impact-time{color:var(--text);font-weight:600}
+.high-impact-event-title a{color:var(--text);font-size:14px;font-weight:800;text-decoration:none}
+.high-impact-event-title a:hover{color:var(--cyan);text-decoration:underline}
+.high-impact-figures{display:flex;gap:9px;flex-wrap:wrap;margin-top:9px}
+.high-impact-figures>span{display:flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+.high-impact-figures small{font:9px 'DM Mono';letter-spacing:.6px;color:var(--muted)}
+.high-impact-figures b{font:600 12px 'DM Mono';color:var(--text)}
+.high-impact-figures .high-impact-actual{border-color:#7a343e;background:rgba(122,52,62,.15)}
+.high-impact-figures .high-impact-actual b{color:#ff9da5}
+@media(max-width:720px){
+ #overview-high-impact-panel .panel-head{align-items:flex-start}
+ #overview-high-impact-panel .high-impact-head-actions{gap:8px;flex-wrap:wrap;justify-content:flex-end}
+ .high-impact-list{padding:0 13px}
+ .high-impact-event-title a{font-size:13px}
+}
