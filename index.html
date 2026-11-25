@@ -70,7 +70,8 @@
 
     <section class="view" id="view-pair-divergence">
       <div class="section-heading"><div><div class="eyebrow">RELATIVE CURRENCY STRENGTH</div><h2>Pair Divergence Watch</h2><p>Rank currency pairs by the difference between their structural scores. A wider positive spread means the base currency has stronger structural fundamentals than the quote currency.</p></div><button class="text-button" data-go="pairs">Open full pair universe ↗</button></div>
-      <div class="panel"><div class="panel-head"><div><b>Top structural divergences</b><p>Highest relative score spreads across the eight tracked currencies · refreshed with the latest snapshot</p></div><span class="tag tag-neutral">TOP 5 PAIRS</span></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
+      <div class="strength-filter divergence-filter" id="divergence-threshold-filter"><div><b>Filter by absolute variance</b><small>Tick one or more thresholds to show qualifying positive and negative spreads.</small></div><div class="strength-filter-options"><label><input type="checkbox" class="divergence-threshold-check" value="2"><span>Variance ≥ +2.00 or ≤ −2.00</span></label><label><input type="checkbox" class="divergence-threshold-check" value="1"><span>Variance ≥ +1.00 or ≤ −1.00</span></label></div><button type="button" class="text-button" id="divergence-clear-filter">Clear filter</button></div>
+      <div class="panel"><div class="panel-head"><div><b>Structural divergences</b><p id="divergence-watch-description">Top 5 pairs ranked by positive structural score spread · refreshed with the latest snapshot</p></div><span class="tag tag-neutral" id="divergence-watch-count">TOP 5 PAIRS</span></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
       <div class="notice"><b>How to read this watchlist</b><p>The spread is calculated as the base currency's Structural Score minus the quote currency's Structural Score. Positive readings favour the base currency; negative readings favour the quote currency. This is a relative fundamental ranking, not an entry signal. Check Short-Term Score, event risk and technical structure before trading.</p></div>
     </section>
 
@@ -174,7 +175,7 @@
     <footer><span>MACROPULSE V7 · RESEARCH TOOL, NOT INVESTMENT ADVICE</span><span id="footer-model">Snapshot model: —</span></footer>
   </main>
 </div>
-<script src="app.js?v=20261125-fundamental-interpretation1" defer></script>
+<script src="app.js?v=20261125-divergence-thresholds1" defer></script>
 <script src="swap.js?v=20261117-swap1" defer></script>
 <script src="central-bank.js?v=20261119-integrated1" defer></script>
 </body></html>
