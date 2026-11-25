@@ -1179,17 +1179,32 @@ for currency in currencies:
     currency["last_event_surprise_at"] = (
         max((stamp for _, _, stamp in observations)).isoformat() if observations else None
     )
-    # Short-term score blends structural baseline with an independent recent-trend overlay.
+    # Short-term score combines the structural backdrop, dated macro trend and
+    # verified recent event surprises. Missing components are excluded and the
+    # remaining weights are renormalised; qualitative headlines are context only.
     trend_score = currency.get("fundamental_trend_score")
+    short_term_parts = [
+        ("structural", currency.get("score"), 0.50),
+        ("recent_macro_trend", trend_score, 0.25),
+        ("verified_event_surprise", event_score, 0.25),
+    ]
+    available_parts = [(name, float(value), weight) for name, value, weight in short_term_parts
+                       if value is not None]
+    available_weight = sum(weight for _, _, weight in available_parts)
     currency["short_term_score"] = (
-        round(0.65 * float(currency["score"]) + 0.35 * trend_score, 2)
-        if currency.get("score") is not None and trend_score is not None
-        else (round(float(currency["score"]), 2) if currency.get("score") is not None else None)
+        round(sum(value * weight for _, value, weight in available_parts) / available_weight, 2)
+        if available_weight > 0 else None
     )
+    currency["short_term_score_components"] = {
+        name: round(value, 2) for name, value, _ in available_parts
+    }
+    currency["short_term_score_weights"] = {
+        name: round(weight / available_weight * 100, 1)
+        for name, _, weight in available_parts
+    } if available_weight > 0 else {}
     currency["short_term_score_status"] = (
-        "65% structural + 35% recent macro trend"
-        if trend_score is not None
-        else "Structural baseline only · insufficient dated trend history"
+        "Weighted structural + macro trend + verified event surprises; available weights renormalised"
+        if available_weight > 0 else "Unavailable · no verified score components"
     )
     aligned = [item for item in observations if event_score is not None and item[0] * event_score > 0]
     aligned_count = len(aligned)
@@ -1401,7 +1416,7 @@ output = {
     "schema_version": 4,
     "generated_at": now.isoformat(),
     "timezone": "UTC (displayed in SGT)",
-    "model": "v7-pair-technical-snapshot",
+    "model": "v8-event-aware-short-term-score",
     "history_window_days": WINDOW_DAYS,
     "scoring": {
         "scale": "-5 to +5",
