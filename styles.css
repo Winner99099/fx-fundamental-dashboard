@@ -460,3 +460,7 @@ body{font-size:15px}
  .high-impact-list{padding:0 13px}
  .high-impact-event-title a{font-size:13px}
 }
+
+
+/* Overview: restored individual strength readings for all eight currencies. */
+.overview-strength-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:14px 16px 17px}.overview-strength-card{min-width:0;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}.overview-strength-top{display:flex;align-items:center;justify-content:space-between;gap:8px}.overview-strength-top>b{font:800 17px "DM Mono",monospace;color:var(--text)}.overview-strength-top>span{font-size:11px;font-weight:700}.overview-strength-main{display:grid;gap:4px;margin:12px 0}.overview-strength-main small{font:9px "DM Mono",monospace;letter-spacing:.55px;color:var(--muted)}.overview-strength-main strong{font:700 25px "DM Mono",monospace}.overview-strength-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:9px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.overview-strength-bottom b{font:700 13px "DM Mono",monospace}@media(max-width:900px){.overview-strength-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:420px){.overview-strength-grid{grid-template-columns:1fr}}
