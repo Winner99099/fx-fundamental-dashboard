@@ -108,6 +108,33 @@ function renderOverviewCoreRows() {
   const target=$("currency-rows");
   if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No core currency data in snapshot.</td></tr>';
 }
+let showAllHighImpactNews = false;
+function renderUpcomingHighImpactNews() {
+  const target=$("overview-high-impact-news");
+  const toggle=$("high-impact-toggle");
+  if(!target) return;
+  const now=Date.now();
+  const events=(snapshot?.events||[])
+    .filter(e=>e.source==="Forex Factory" && String(e.impact||"").toLowerCase()==="high" && e.time && new Date(e.time).getTime()>=now)
+    .sort((a,b)=>new Date(a.time)-new Date(b.time));
+  const visible=showAllHighImpactNews?events:events.slice(0,8);
+  if(toggle){
+    toggle.hidden=events.length<=8;
+    toggle.textContent=showAllHighImpactNews?"Show fewer":"Show all ("+events.length+")";
+    toggle.setAttribute("aria-expanded",showAllHighImpactNews?"true":"false");
+  }
+  if(!visible.length){
+    target.innerHTML='<div class="empty">No upcoming red-folder events found in the current Forex Factory feed.</div>';
+    return;
+  }
+  target.innerHTML=visible.map(e=>{
+    const d=new Date(e.time);
+    const when=d.toLocaleString("en-SG",{timeZone:"Asia/Singapore",weekday:"short",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false});
+    const href=/^https?:\/\//i.test(e.url||"")?e.url:"https://www.forexfactory.com/calendar";
+    const actual=e.actual||"Pending";
+    return '<article class="high-impact-event"><div class="high-impact-event-meta"><span class="ccy-pill">'+escapeHtml(e.currency)+'</span><span class="high-impact-time">'+escapeHtml(when)+' SGT</span><span class="impact-pill impact-high">HIGH</span></div><div class="high-impact-event-title"><a href="'+escapeHtml(href)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(e.title)+'</a></div><div class="high-impact-figures"><span><small>PREVIOUS</small><b>'+escapeHtml(e.previous||"—")+'</b></span><span><small>FORECAST</small><b>'+escapeHtml(e.forecast||"—")+'</b></span><span class="high-impact-actual"><small>ACTUAL</small><b>'+escapeHtml(actual)+'</b></span></div></article>';
+  }).join("");
+}
 function renderCurrencyStrengthRows() {
   const selected=selectedStrengthCurrencies();
   const visible=(snapshot?.currencies||[]).filter(c=>selected.includes(c.code));
@@ -426,7 +453,7 @@ async function loadSnapshot() {
     snapshot=data;
     try { const aiResponse=await fetch('data/ai_review.json?ts='+Date.now(),{cache:'no-store'}); aiReview=aiResponse.ok?await aiResponse.json():null; } catch(_aiError) { aiReview=null; }
     setupStrengthCurrencyFilter();
-    renderOverviewCoreRows(); renderCurrencyStrengthRows();
+    renderOverviewCoreRows(); renderUpcomingHighImpactNews(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderAIReview(); renderWorkflow(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
@@ -457,6 +484,7 @@ $("tech-evaluate")?.addEventListener("click",()=>{const p=$("tech-pair").value,d
 $("tech-reset")?.addEventListener("click",()=>{["tech-d1","tech-h4","tech-setup","tech-level","tech-atr","tech-entry","tech-stop","tech-target"].forEach(id=>$(id).value="");$("tech-output").innerHTML="<div class=\"empty\">Inputs reset.</div>";});
 $("risk-calc")?.addEventListener("click",()=>{const bal=+$("risk-account").value,pct=+$("risk-pct").value,e=+$("risk-entry").value,s=+$("risk-stop").value,pip=+$("risk-pip").value,pv=+$("risk-pipvalue").value;if(!(bal>0&&pct>0&&pct<=5&&e>0&&s>0&&e!==s&&pip>0&&pv>0)){$("risk-output").innerHTML="<div class=\"notice notice-warn\"><b>Check inputs</b><p>Enter valid balance, risk, entry, stop, pip size and pip value.</p></div>";return;}const cash=bal*pct/100,pips=Math.abs(e-s)/pip,lots=cash/(pips*pv);$("risk-output").innerHTML="<div class=\"panel\"><div class=\"panel-head\"><b>Position size estimate</b></div><div class=\"risk-result-grid\"><div><small>MAX CASH RISK</small><b>"+cash.toFixed(2)+"</b></div><div><small>STOP DISTANCE</small><b>"+pips.toFixed(1)+" pips</b></div><div><small>EST. LOT SIZE</small><b>"+lots.toFixed(3)+" lots</b></div></div></div>";});
 $("refresh-btn").addEventListener("click",loadSnapshot);
+$("high-impact-toggle")?.addEventListener("click",()=>{showAllHighImpactNews=!showAllHighImpactNews;renderUpcomingHighImpactNews();});
 $("news-filter").addEventListener("change",()=>renderNews("news-list",$("news-filter").value));
 $("release-currency-filter")?.addEventListener("change",renderReleaseTracker);
 function setupThemeSelector(){
