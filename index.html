@@ -18,6 +18,7 @@
     <nav id="navigation">
       <button class="nav-item active" data-view="workflow"><span>◈</span> Trading Workflow</button>
       <button class="nav-item" data-view="overview"><span>◫</span> Overview</button>
+      <button class="nav-item" data-view="pair-divergence"><span>⇄</span> Pair Divergence Watch</button>
       <button class="nav-item" data-view="bias"><span>⇄</span> Pair Bias</button>
       <button class="nav-item" data-view="ai-review"><span>✦</span> AI Momentum Review</button>
       <button class="nav-item" data-view="centralbank"><span>◎</span> Central Bank Intelligence</button>
@@ -65,9 +66,15 @@
         <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Structural score</th><th>Short-term score</th><th>Fundamental interpretation</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th></tr></thead><tbody id="currency-rows"><tr><td colspan="8" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
       </div>
       <div class="two-col">
-        <div class="panel"><div class="panel-head"><div><b>Pair divergence watch</b><p>Base currency relative to quote currency</p></div><button class="text-button" data-go="pairs">View pairs ↗</button></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
+        
         <div class="panel"><div class="panel-head"><div><b>Latest official releases</b><p>Source-linked central-bank news</p></div><button class="text-button" data-go="news">News wire ↗</button></div><div id="overview-news" class="news-list"><div class="empty">Loading releases…</div></div></div>
       </div>
+    </section>
+
+    <section class="view" id="view-pair-divergence">
+      <div class="section-heading"><div><div class="eyebrow">RELATIVE CURRENCY STRENGTH</div><h2>Pair Divergence Watch</h2><p>Rank currency pairs by the difference between their structural scores. A wider positive spread means the base currency has stronger structural fundamentals than the quote currency.</p></div><button class="text-button" data-go="pairs">Open full pair universe ↗</button></div>
+      <div class="panel"><div class="panel-head"><div><b>Top structural divergences</b><p>Highest relative score spreads across the eight tracked currencies · refreshed with the latest snapshot</p></div><span class="tag tag-neutral">TOP 5 PAIRS</span></div><div id="overview-pairs" class="empty">Pair ranking is unavailable until scored inputs exist.</div></div>
+      <div class="notice"><b>How to read this watchlist</b><p>The spread is calculated as the base currency's Structural Score minus the quote currency's Structural Score. Positive readings favour the base currency; negative readings favour the quote currency. This is a relative fundamental ranking, not an entry signal. Check Short-Term Score, event risk and technical structure before trading.</p></div>
     </section>
 
 
