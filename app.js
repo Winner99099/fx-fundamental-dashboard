@@ -94,6 +94,19 @@ function fundamentalInterpretation(c) {
   if(structural<0 && shortTerm===0) return "Negative structural base; short-term reading is currently neutral.";
   return "Both readings are neutral.";
 }
+function renderOverviewCurrencyStrength() {
+  const target=$("overview-currency-strength");
+  if(!target) return;
+  const currencies=(snapshot?.currencies||[]);
+  target.innerHTML=currencies.length?currencies.map(c=>{
+    const score=c.score==null?null:Number(c.score);
+    const short=c.short_term_score==null?null:Number(c.short_term_score);
+    const cls=score==null?"score-na":score>0?"score-positive":score<0?"score-negative":"score-na";
+    const shortCls=short==null?"score-na":short>0?"score-positive":short<0?"score-negative":"score-na";
+    const label=score==null?"Unavailable":score>0?"Stronger":score<0?"Weaker":"Neutral";
+    return '<article class="overview-strength-card"><div class="overview-strength-top"><b>'+escapeHtml(c.code)+'</b><span class="'+cls+'">'+label+'</span></div><div class="overview-strength-main"><small>STRUCTURAL SCORE</small><strong class="'+cls+'">'+(score==null||!Number.isFinite(score)?"N/A":score.toFixed(2))+'</strong></div><div class="overview-strength-bottom"><span>Short-term</span><b class="'+shortCls+'">'+(short==null||!Number.isFinite(short)?"N/A":short.toFixed(2))+'</b></div></article>';
+  }).join(""):'<div class="empty">No currency strength data in the current snapshot.</div>';
+}
 function renderOverviewCoreRows() {
   const rows=(snapshot?.currencies||[]).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
@@ -453,7 +466,7 @@ async function loadSnapshot() {
     snapshot=data;
     try { const aiResponse=await fetch('data/ai_review.json?ts='+Date.now(),{cache:'no-store'}); aiReview=aiResponse.ok?await aiResponse.json():null; } catch(_aiError) { aiReview=null; }
     setupStrengthCurrencyFilter();
-    renderOverviewCoreRows(); renderUpcomingHighImpactNews(); renderCurrencyStrengthRows();
+    renderOverviewCoreRows(); renderOverviewCurrencyStrength(); renderUpcomingHighImpactNews(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderAIReview(); renderWorkflow(); renderSources(); renderReleaseTracker();
     $("metric-news").textContent=data.events.length;
