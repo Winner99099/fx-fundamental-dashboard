@@ -355,3 +355,33 @@ body{font-size:15px}
 #view-overview .table-wrap td small{font-size:11px;line-height:1.55}
 #view-overview .empty{font-size:13px}
 @media(max-width:720px){body{font-size:14px}.topbar h1{font-size:23px}.metric-note{font-size:11px}#view-overview .table-wrap td{font-size:13px;padding:13px 11px}}
+
+
+/* Pair Divergence Watch: absolute variance threshold selector. */
+.divergence-filter{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  gap:16px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+}
+.divergence-filter>div:first-child{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:190px;
+}
+.divergence-filter>div:first-child b{font-size:13px}
+.divergence-filter>div:first-child small{font-size:11px;color:var(--muted,#8b98aa);line-height:1.45}
+.divergence-filter .strength-filter-options{display:flex;flex-wrap:wrap;gap:8px}
+.divergence-filter .strength-filter-options label{
+  display:flex;align-items:center;gap:7px;padding:9px 11px;
+  border:1px solid var(--line,#344052);border-radius:9px;font-size:12px;cursor:pointer;
+}
+.divergence-filter input{accent-color:var(--accent,#4aa3c7)}
+.divergence-filter #divergence-clear-filter{margin-left:auto}
+@media(max-width:720px){
+  .divergence-filter{align-items:flex-start;flex-direction:column}
+  .divergence-filter #divergence-clear-filter{margin-left:0}
+}
