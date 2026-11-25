@@ -925,6 +925,22 @@ for event in events:
         event["summary"] = "High-impact scheduled economic release. Actual: 0.2% Forecast: 0.0% Previous: 0.0% (August revised)"
         event["verification_source"] = "https://www.ons.gov.uk/economy/grossdomesticproductgdp/bulletins/gdpmonthlyestimateuk/september2026"
 
+# Verified release override: Conference Board November 2026 Consumer Confidence.
+# The official release reports 103.3, with October revised to 91.9; the calendar
+# consensus retained by Forex Factory is 92.4. Keep this correction across refreshes.
+for event in events:
+    if (event.get("currency") == "USD"
+            and (event.get("title") or "").strip().lower() == "cb consumer confidence"
+            and (event.get("time") or "").startswith("2026-11-24")):
+        event["actual"] = "103.3"
+        event["forecast"] = "92.4"
+        event["previous"] = "91.9"
+        event["actual_source"] = "The Conference Board · November 2026 release"
+        event["verification_source"] = "https://www.conference-board.org/topics/consumer-confidence/"
+        event["actual_verified_at"] = now.isoformat()
+        event["summary"] = "Medium-impact scheduled economic release. Actual: 103.3 Forecast: 92.4 Previous: 91.9 (October revised)"
+        break
+
 for event in events:
     event["summary"] = make_news_summary(event.get("title", ""), event.get("summary", ""), event.get("source", "the central bank"), event.get("currency", ""))
     if event.get("source") == "Forex Factory":
