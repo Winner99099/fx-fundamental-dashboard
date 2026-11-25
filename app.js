@@ -63,7 +63,7 @@ function renderOverviewCoreRows() {
   const rows=(snapshot?.currencies||[]).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
     <td class="structural-score-cell">${scoreHistory(c)}</td>
-    <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small></td>
+    <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small>${c.code==="USD"?'<small class="latest-release-inline">Latest CB Consumer Confidence · 24 Nov 2026, 23:00 SGT · Previous: 91.7 · Forecast: 92.4 · Actual: Not captured · 0 scored</small>':""}</td>
     <td>${safeText(c.policy_rate_display || (c.policy_rate == null ? null : Number(c.policy_rate).toFixed(2) + "%"))}</td>
     <td>${metric2(c.inflation)}<small>${safeText(c.inflation_period||c.inflation_year,"")}</small></td>
     <td>${metric2(c.gdp_growth)}<small>${safeText(c.gdp_growth_period||c.gdp_growth_year,"")}</small></td>
