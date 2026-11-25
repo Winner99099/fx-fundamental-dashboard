@@ -12,7 +12,8 @@
 </head>
 <body>
 <div class="app-shell">
-  <aside class="sidebar">
+  <button type="button" class="mobile-menu-backdrop" id="mobile-menu-backdrop" aria-label="Close navigation"></button>
+  <aside class="sidebar" id="mobile-sidebar">
     <a class="brand" href="#"><span class="brand-mark">M</span><span>MACROPULSE<small>FX INTELLIGENCE · V6</small></span></a>
     <div class="side-label">WORKFLOW</div>
     <nav id="navigation">
@@ -38,7 +39,8 @@
 
   <main class="main">
     <header class="topbar">
-      <div><div class="eyebrow">GLOBAL MACRO RESEARCH TERMINAL</div><h1 id="page-title">Trading workflow</h1></div>
+      <button type="button" class="mobile-menu-toggle" id="mobile-menu-toggle" aria-controls="mobile-sidebar" aria-expanded="false">☰ <span>MENU</span></button>
+      <div class="topbar-title"><div><div class="eyebrow">GLOBAL MACRO RESEARCH TERMINAL</div><h1 id="page-title">Trading workflow</h1></div></div>
       <div class="top-actions"><span class="market-clock" id="clock">--:--:-- SGT</span><label class="theme-picker" for="theme-select">THEME <select id="theme-select" class="select" aria-label="Choose dashboard theme"><option value="white">White</option><option value="grey">Grey</option><option value="dark">Dark</option></select></label><a class="btn btn-quiet" href="./us-macro.html">US Macro ↗</a><button class="btn btn-quiet" id="refresh-btn">↻ Refresh</button></div>
     </header>
 
