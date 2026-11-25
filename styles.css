@@ -414,3 +414,25 @@ body{font-size:15px}
   #view-bias .bias-signal b{font-size:15px}
   #view-bias .bias-signal span{font-size:13px}
 }
+
+
+/* Pair Divergence Watch: improve readability of headings, filters and pair rows. */
+#view-pair-divergence .section-heading p{font-size:14px;line-height:1.75}
+#view-pair-divergence .divergence-filter>div:first-child b{font-size:15px}
+#view-pair-divergence .divergence-filter>div:first-child small{font-size:13px;line-height:1.55}
+#view-pair-divergence .divergence-filter .strength-filter-options label{font-size:14px;padding:11px 13px}
+#view-pair-divergence .divergence-filter #divergence-clear-filter{font-size:13px}
+#view-pair-divergence .panel-head b{font-size:16px}
+#view-pair-divergence .panel-head p{font-size:13px;line-height:1.6}
+#view-pair-divergence #divergence-watch-count{font-size:12px}
+#view-pair-divergence #overview-pairs .source-row{padding:15px 18px;gap:14px}
+#view-pair-divergence #overview-pairs .source-row b{font-size:17px}
+#view-pair-divergence #overview-pairs .source-row small{font-size:14px;line-height:1.55}
+#view-pair-divergence #overview-pairs .source-row a{font-size:13px}
+#view-pair-divergence .notice b{font-size:15px}
+#view-pair-divergence .notice p{font-size:14px;line-height:1.75}
+@media(max-width:720px){
+  #view-pair-divergence .section-heading p{font-size:13px}
+  #view-pair-divergence #overview-pairs .source-row b{font-size:16px}
+  #view-pair-divergence #overview-pairs .source-row small{font-size:13px}
+}
