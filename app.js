@@ -448,7 +448,8 @@ function releaseTrackerRows(filter="ALL") {
       rows.push('<tr><td>'+safeText(c.code)+'</td><td>'+safeText(r.label)+'</td><td>'+releaseDateSgt(r.release_time||r.release_date)+'</td><td>'+safeText(r.actual)+'</td><td>'+safeText(r.previous)+'</td><td class="'+changeClass+'">'+changeText+'</td><td>'+status+'</td><td>'+link+'</td></tr>');
     }
   }
-  $("release-tracker-rows").innerHTML=rows.length?rows.join(""):'<tr><td colspan="8" class="empty">No verified release records available for this selection.</td></tr>';
+  const target=$("release-tracker-rows"); if(!target) return;
+  target.innerHTML=rows.length?rows.join(""):'<tr><td colspan="8" class="empty">No verified release records available for this selection.</td></tr>';
 }
 function renderReleaseTracker(){ const filter=$("release-currency-filter"); if(filter) releaseTrackerRows(filter.value); }
 
