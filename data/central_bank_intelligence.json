@@ -1,408 +1,301 @@
 {
-  "schema_version": 1,
-  "event_id": "FOMC-2026-10-27-28-MINUTES",
-  "title": "FOMC Meeting Minutes",
-  "meeting_dates": "27–28 October 2026",
-  "published_at": "2026-11-18T19:00:00Z",
-  "reviewed_at": "2026-11-19T03:00:00Z",
-  "timezone": "Publication time shown in UTC; dashboard clock uses SGT",
-  "currency": "USD",
-  "importance": "HIGH",
-  "policy_tone": "Hawkish forward guidance",
-  "decision": "Held target range at 3.75%–4.00%",
-  "vote": "10–2",
-  "dissent": "Lisa D. Cook and Beth M. Hammack preferred a 25 bp increase at the October meeting.",
-  "executive_summary": "The Committee held rates unchanged to gather more information, but the minutes show broad support for additional tightening under the baseline outlook. Inflation remained elevated, activity was expanding at a solid pace and labour conditions were broadly stable. This is hawkish forward guidance, not an October rate hike.",
-  "key_findings": [
-    {
-      "label": "Policy decision",
-      "value": "Hold at 3.75%–4.00%",
-      "detail": "10 members supported holding; two preferred a 25 bp increase."
-    },
-    {
-      "label": "Forward guidance",
-      "value": "Further increases likely appropriate",
-      "detail": "Almost all participants judged further increases would likely be appropriate under their baseline outlook."
-    },
-    {
-      "label": "December risk",
-      "value": "Larger than 25 bp not ruled out",
-      "detail": "A couple of participants said a move greater than 25 bp could be considered if incoming inflation data were unfavourable."
-    },
-    {
-      "label": "Inflation",
-      "value": "Still elevated",
-      "detail": "Staff estimated September total PCE at 3.6% and core PCE at 3.1%; both above the 2% goal."
-    },
-    {
-      "label": "Growth and labour",
-      "value": "Resilient",
-      "detail": "Economic activity was expanding at a solid pace; unemployment edged up to 4.2%, while payroll gains averaged about 50,000 over three months."
-    },
-    {
-      "label": "Market pricing",
-      "value": "Tightening already priced",
-      "detail": "Futures implied a high probability of a 25 bp hike by year-end and two more by summer 2027; the path was little changed over the intermeeting period."
-    }
-  ],
-  "interpretation": {
-    "stance": "Hawkish hold",
-    "strength": "High confidence in hawkish direction; medium confidence in the size and timing of the next move.",
-    "why": "The key surprise is not an immediate policy change. It is the breadth of support for additional tightening and the explicit willingness by a couple of participants to consider a larger move if inflation disappoints.",
-    "market_caveat": "Because markets already assigned a high probability to further tightening, the minutes alone may not generate a sustained USD rally. Follow-through depends on new inflation, labour-market data, front-end yields and whether other central banks turn relatively less hawkish."
-  },
-  "fx_implications": [
-    {
-      "pair": "EUR/USD",
-      "bias": "USD-positive conditional",
-      "reason": "Potential pressure if US front-end yields outperform euro-area yields; reassess against ECB guidance and euro-area growth/fiscal risks."
-    },
-    {
-      "pair": "GBP/USD",
-      "bias": "USD-positive conditional",
-      "reason": "Potential pressure if Fed tightening expectations rise relative to BoE expectations; UK inflation and wage data remain decisive."
-    },
-    {
-      "pair": "USD/JPY",
-      "bias": "USD-positive conditional",
-      "reason": "Higher US yields can support the pair, but BoJ tightening and intervention risk can materially offset the differential."
-    },
-    {
-      "pair": "AUD/USD",
-      "bias": "USD-positive conditional",
-      "reason": "Relative Fed/RBA repricing matters; AUD is also sensitive to China, commodities and global risk appetite."
-    },
-    {
-      "pair": "NZD/USD",
-      "bias": "USD-positive conditional",
-      "reason": "Relative Fed/RBNZ rate expectations matter; domestic growth and risk sentiment can dominate."
-    },
-    {
-      "pair": "USD/CAD",
-      "bias": "Two-way / conditional",
-      "reason": "Fed-BoC rate differentials matter, but oil prices and Canadian data can overwhelm the USD impulse."
-    },
-    {
-      "pair": "USD/CHF",
-      "bias": "Two-way / conditional",
-      "reason": "Rate differentials may favour USD, while safe-haven demand and SNB expectations can alter the response."
-    }
-  ],
-  "horizons": [
-    {
-      "period": "0–24 hours",
-      "focus": "Initial repricing",
-      "watch": "US 2-year Treasury yield, Fed funds futures and the first FX reaction. Avoid assuming the first move will persist."
-    },
-    {
-      "period": "1–7 days",
-      "focus": "Data confirmation",
-      "watch": "US CPI/PCE, employment releases, Fed speakers and whether market pricing shifts beyond what was already discounted."
-    },
-    {
-      "period": "1–4 weeks",
-      "focus": "Relative policy path",
-      "watch": "December FOMC decision, updated Fed guidance and policy expectations from the ECB, BoE, BoJ, SNB, BoC, RBA and RBNZ."
-    }
-  ],
-  "trader_plan": [
-    "Treat the minutes as a hawkish hold, not as a fresh rate hike.",
-    "Prioritise relative-value comparisons: Fed expectations versus each counterpart central bank.",
-    "Confirm the thesis with US 2-year yields and post-data market pricing before favouring USD trades.",
-    "For USD/JPY, explicitly account for BoJ repricing and Japanese intervention risk.",
-    "Wait for the existing D1/H4 structure, key levels and risk/reward rules; the minutes do not provide an entry price."
-  ],
-  "invalidation": [
-    "US inflation and wage data soften enough to reduce expected Fed tightening.",
-    "US front-end yields fall and Fed futures materially remove expected hikes.",
-    "Counterpart central banks reprice more hawkishly than the Fed.",
-    "Risk-off or safe-haven flows dominate the rate-differential channel."
-  ],
+  "schema_version": 2,
+  "coverage_reviewed_at": "27 Nov 2026",
+  "reviewed_at": "2026-11-27T07:00:00+08:00",
+  "timezone": "Singapore time (SGT)",
+  "coverage_note": "Reviewed against official central-bank releases and policy accounts available by 27 November 2026. Rates and operating frameworks differ. A policy-tone label is an editorial assessment, not a market-implied rate forecast. The next-meeting dates are scheduled dates and should be rechecked if a bank changes its calendar.",
   "methodology": {
-    "policy_momentum": "Qualitative editorial classification; not a calibrated numerical score.",
-    "currency_score": "Not added to the existing structural or economic event score. No double counting.",
-    "pair_bias": "Conditional macro implications only; not live signals or guaranteed forecasts.",
-    "refresh": "Eight-bank policy snapshots are manually curated from official central-bank sources and dated. This version does not yet auto-ingest speeches/minutes or regenerate AI summaries; refresh after each new decision or material communication."
+    "stance": "Hawkish / neutral / dovish describes the communication and balance of risks, not simply whether the last decision was a hike or hold.",
+    "next_direction": "A conditional directional assessment, not a promise or market pricing. Update after decisions, minutes, forecasts and material governor communications.",
+    "relative": "Pair comparison is ordinal and qualitative. A firmer tone supports a currency only if it is more hawkish than expected and than its counterpart; it is not a trade signal.",
+    "refresh": "This snapshot is manually curated. The dashboard does not yet automatically interpret new speeches or minutes. Review daily and refresh after material policy communication."
   },
-  "sources": [
-    {
-      "name": "Federal Reserve press release – minutes released 18 November 2026",
-      "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261118a.htm"
-    },
-    {
-      "name": "Official FOMC minutes – 27–28 October 2026",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm"
-    },
-    {
-      "name": "FOMC meeting calendar and future meetings",
-      "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
-    }
-  ],
-  "coverage_reviewed_at": "2026-11-19",
-  "coverage_note": "Eight-bank snapshot based on the latest available official policy decision or official policy communication identified as of 19 November 2026. Rates are not directly comparable across operating frameworks; ECB uses the deposit facility rate and the Fed uses the target range.",
   "central_banks": [
     {
-      "code": "FED",
+      "code": "USD",
       "name": "Federal Reserve",
       "currency": "USD",
-      "rate": "3.75%–4.00%",
+      "rate": "3.75–4.00%",
       "rate_basis": "Federal funds target range",
       "last_decision": "28 Oct 2026 · Held",
-      "tone": "Hawkish hold",
-      "tone_kind": "hawkish",
-      "summary": "October minutes show broad support for further tightening under the baseline outlook; two members preferred a 25 bp hike at that meeting.",
+      "stance": "Hawkish hold",
+      "stance_kind": "hawkish",
+      "next_direction": "Further hike remains a live risk",
+      "confidence": "Medium–High",
+      "communication_date": "18 Nov 2026 · FOMC minutes",
+      "summary": "The Committee held rates, but the October minutes showed broad support for further tightening under the baseline outlook; two members preferred a 25 bp increase at the meeting. Inflation remained elevated. This is a hawkish hold, not a rate increase.",
       "next_meeting": "8–9 Dec 2026",
-      "source_name": "October FOMC minutes",
+      "source_name": "FOMC minutes · 27–28 October",
       "source_url": "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm",
-      "tone_rank": 2
+      "tone_rank": 3
     },
     {
-      "code": "ECB",
+      "code": "EUR",
       "name": "European Central Bank",
       "currency": "EUR",
       "rate": "2.50%",
       "rate_basis": "Deposit facility rate",
       "last_decision": "29 Oct 2026 · Held",
-      "tone": "Data-dependent hold",
-      "tone_kind": "neutral",
-      "summary": "Energy shock raises inflation risks but also weighs on growth; underlying inflation broadly stable and no pre-commitment to a rate path.",
-      "next_meeting": "17 Dec 2026",
-      "source_name": "ECB monetary policy decision",
-      "source_url": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.mp261029~9a493adf17.en.html",
-      "tone_rank": 1
+      "stance": "Hawkish hold",
+      "stance_kind": "hawkish",
+      "next_direction": "Further hike risk elevated",
+      "confidence": "Medium–High",
+      "communication_date": "26 Nov 2026 · Account of 28–29 Oct meeting",
+      "summary": "The October account, published 26 November, says a large number of members could have supported a hike at the meeting; some argued a further increase was warranted unless the inflation outlook improved significantly. The Council nevertheless held at 2.50% and remains meeting-by-meeting. This is materially more hawkish than a plain neutral hold.",
+      "next_meeting": "16–17 Dec 2026",
+      "source_name": "ECB account · 28–29 October meeting",
+      "source_url": "https://www.ecb.europa.eu/press/accounts/2026/html/ecb.mg261126~ccf28c8071.en.html",
+      "tone_rank": 3
     },
     {
-      "code": "BOE",
+      "code": "GBP",
       "name": "Bank of England",
       "currency": "GBP",
       "rate": "4.00%",
       "rate_basis": "Bank Rate",
       "last_decision": "4 Nov 2026 · +25 bp",
-      "tone": "Hawkish tightening",
-      "tone_kind": "hawkish",
-      "summary": "MPC voted 8–1 to raise Bank Rate; energy-driven inflation pressures and UK CPI at 3.5% in September were key concerns.",
+      "stance": "Hawkish tightening",
+      "stance_kind": "hawkish",
+      "next_direction": "Further tightening conditional on inflation pass-through",
+      "confidence": "Medium–High",
+      "communication_date": "4 Nov 2026 · Monetary Policy Report",
+      "summary": "The MPC raised Bank Rate by 25 bp. The November report says UK CPI inflation reached 3.5% in September and is expected to rise further; higher energy prices and stronger activity supported the increase. The Committee stressed that policy is not on a pre-set path.",
       "next_meeting": "17 Dec 2026",
       "source_name": "November 2026 Monetary Policy Report",
       "source_url": "https://www.bankofengland.co.uk/monetary-policy-report/2026/November-2026",
-      "tone_rank": 3
+      "tone_rank": 4
     },
     {
-      "code": "BOJ",
+      "code": "JPY",
       "name": "Bank of Japan",
       "currency": "JPY",
       "rate": "1.25%",
-      "rate_basis": "Uncollateralized overnight call rate",
+      "rate_basis": "Uncollateralized overnight call-rate guideline",
       "last_decision": "30 Oct 2026 · Held",
-      "tone": "Cautiously hawkish bias",
-      "tone_kind": "hawkish",
-      "summary": "Held at around 1.25%; one board member proposed 1.50%. October outlook says the Bank will continue raising rates as activity, prices and financial conditions evolve.",
+      "stance": "Hawkish hold",
+      "stance_kind": "hawkish",
+      "next_direction": "Gradual further hikes remain possible",
+      "confidence": "Medium",
+      "communication_date": "16 Nov 2026 · October Outlook highlights",
+      "summary": "The BOJ maintained its call-rate guideline around 1.25%. Its October outlook and board discussion point to continued normalisation as its outlook is realised; one board member proposed 1.50%. The pace remains conditional on wages, prices and activity.",
       "next_meeting": "17–18 Dec 2026",
-      "source_name": "October 2026 Statement on Monetary Policy",
-      "source_url": "https://www.boj.or.jp/en/mopo/mpmdeci/mpr_2026/k261030a.pdf",
-      "tone_rank": 2
+      "source_name": "BOJ official policy releases and October outlook",
+      "source_url": "https://www.boj.or.jp/en/",
+      "tone_rank": 3
     },
     {
-      "code": "SNB",
+      "code": "CHF",
       "name": "Swiss National Bank",
       "currency": "CHF",
       "rate": "0.00%",
       "rate_basis": "SNB policy rate",
       "last_decision": "24 Sep 2026 · Held",
-      "tone": "Neutral / accommodative",
-      "tone_kind": "neutral",
-      "summary": "Rate unchanged; inflation remains within the price-stability range and the SNB remains willing to intervene in FX if needed.",
+      "stance": "Neutral / accommodative",
+      "stance_kind": "neutral",
+      "next_direction": "Hold likely; FX intervention remains available",
+      "confidence": "Medium",
+      "communication_date": "24 Sep 2026 · Monetary policy assessment",
+      "summary": "The SNB held at 0%. It judged policy appropriate for price stability and economic development; medium-term inflation pressure had increased only slightly. It remains willing to intervene in foreign exchange markets when necessary.",
       "next_meeting": "10 Dec 2026",
-      "source_name": "September 2026 monetary policy assessment",
-      "source_url": "https://www.snb.ch/en/publications/communication/summaries/zus_20261022",
-      "tone_rank": 0
+      "source_name": "SNB monetary policy assessment · 24 September",
+      "source_url": "https://www.snb.ch/en/publications/communication/press-releases-restricted/pre_20260924",
+      "tone_rank": 1
     },
     {
-      "code": "RBA",
-      "name": "Reserve Bank of Australia",
-      "currency": "AUD",
-      "rate": "4.85%",
-      "rate_basis": "Cash rate target",
-      "last_decision": "3 Nov 2026 · +25 bp",
-      "tone": "Strongly hawkish",
-      "tone_kind": "hawkish",
-      "summary": "Raised by 25 bp with a 6–3 vote; broad-based inflation and domestic capacity pressures drove the decision.",
-      "next_meeting": "8 Dec 2026",
-      "source_name": "RBA monetary policy decision, 3 Nov 2026",
-      "source_url": "https://www.rba.gov.au/media-releases/2026/mr-26-30.html",
-      "tone_rank": 4
-    },
-    {
-      "code": "RBNZ",
-      "name": "Reserve Bank of New Zealand",
-      "currency": "NZD",
-      "rate": "2.75%",
-      "rate_basis": "Official Cash Rate",
-      "last_decision": "2 Sep 2026 · +25 bp",
-      "tone": "Cautious tightening",
-      "tone_kind": "hawkish",
-      "summary": "Raised OCR to 2.75%; inflation rose to 4.1% in Q2, while the Bank expected underlying inflation to return toward target over time.",
-      "next_meeting": "9 Dec 2026",
-      "source_name": "September 2026 Monetary Policy Statement",
-      "source_url": "https://www.rbnz.govt.nz/monetary-policy/monetary-policy-statement/monetary-policy-statements/2026/sep-0209/monetary-policy-statement-september-2026/web-version",
-      "tone_rank": 2
-    },
-    {
-      "code": "BOC",
+      "code": "CAD",
       "name": "Bank of Canada",
       "currency": "CAD",
       "rate": "2.50%",
       "rate_basis": "Overnight rate target",
       "last_decision": "28 Oct 2026 · +25 bp",
-      "tone": "Measured tightening",
-      "tone_kind": "hawkish",
-      "summary": "Raised the overnight rate by 25 bp to 2.50%; global resilience and persistent energy-price pressures informed the decision.",
+      "stance": "Hawkish tightening",
+      "stance_kind": "hawkish",
+      "next_direction": "Further hike possible, proceed carefully",
+      "confidence": "Medium–High",
+      "communication_date": "28 Oct 2026 · Policy decision",
+      "summary": "The Bank raised its overnight rate by 25 bp to 2.50%. It said inflation is higher and more persistent than previously projected and that another increase may be needed, while emphasising a careful, data-dependent approach.",
       "next_meeting": "9 Dec 2026",
-      "source_name": "Bank of Canada policy decision, 28 Oct 2026",
+      "source_name": "Bank of Canada policy decision · 28 October",
       "source_url": "https://www.bankofcanada.ca/2026/10/fad-press-release-2026-10-28/",
+      "tone_rank": 4
+    },
+    {
+      "code": "AUD",
+      "name": "Reserve Bank of Australia",
+      "currency": "AUD",
+      "rate": "4.85%",
+      "rate_basis": "Cash rate target",
+      "last_decision": "3 Nov 2026 · +25 bp",
+      "stance": "Strongly hawkish",
+      "stance_kind": "hawkish",
+      "next_direction": "Further tightening risk if inflation stays broad-based",
+      "confidence": "High",
+      "communication_date": "3 Nov 2026 · Monetary Policy Decision",
+      "summary": "The RBA raised the cash rate by 25 bp to 4.85%. Six members voted to increase and three preferred a hold. Inflation was broad-based, capacity pressures remained tight and the Board judged tighter financial conditions warranted.",
+      "next_meeting": "8 Dec 2026",
+      "source_name": "RBA monetary policy decision · 3 November",
+      "source_url": "https://www.rba.gov.au/media-releases/2026/mr-26-30.html",
+      "tone_rank": 5
+    },
+    {
+      "code": "NZD",
+      "name": "Reserve Bank of New Zealand",
+      "currency": "NZD",
+      "rate": "2.75%",
+      "rate_basis": "Official Cash Rate",
+      "last_decision": "28 Oct 2026 · Held",
+      "stance": "Conditional / neutral",
+      "stance_kind": "neutral",
+      "next_direction": "Hold while assessing inflation and uneven recovery",
+      "confidence": "Medium",
+      "communication_date": "28 Oct 2026 · OCR update",
+      "summary": "The RBNZ maintained the OCR at 2.75%. Inflation is above target, largely reflecting global fuel costs, while the recovery remains gradual and uneven. The Bank says it will adjust the OCR as needed to return inflation to 2%.",
+      "next_meeting": "9 Dec 2026",
+      "source_name": "RBNZ official cash rate · updated 28 October",
+      "source_url": "https://www.rbnz.govt.nz/monetary-policy/about-monetary-policy/the-official-cash-rate",
       "tone_rank": 2
     }
   ],
-  "relative_policy_method": "Ordinal editorial comparison of the latest policy tone, not a numerical currency-strength score. A more hawkish tone can support a currency only if it is more hawkish than markets expected and than the counterpart central bank. The 28-pair watchlist is a research prompt, not a forecast or trade signal.",
   "relative_pairs": [
     {
       "pair": "USD/EUR",
-      "tilt": "USD policy tone firmer",
-      "detail": "Latest editorial tone favours USD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "tilt": "No clear policy-tone edge",
+      "detail": "Latest communications are broadly similar in policy direction. Compare expected rate paths, inflation, growth and market pricing."
     },
     {
       "pair": "USD/GBP",
       "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The GBP central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "USD/JPY",
       "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
+      "detail": "Latest communications are broadly similar in policy direction. Compare expected rate paths, inflation, growth and market pricing."
     },
     {
       "pair": "USD/CHF",
       "tilt": "USD policy tone firmer",
-      "detail": "Latest editorial tone favours USD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The USD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "USD/CAD",
+      "tilt": "CAD policy tone firmer",
+      "detail": "The CAD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "USD/AUD",
       "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "USD/NZD",
-      "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
-    },
-    {
-      "pair": "USD/CAD",
-      "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
+      "tilt": "USD policy tone firmer",
+      "detail": "The USD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "EUR/GBP",
       "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The GBP central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "EUR/JPY",
-      "tilt": "JPY policy tone firmer",
-      "detail": "Latest editorial tone favours JPY; validate against the next data releases, front-end yield spreads and what is already priced."
+      "tilt": "No clear policy-tone edge",
+      "detail": "Latest communications are broadly similar in policy direction. Compare expected rate paths, inflation, growth and market pricing."
     },
     {
       "pair": "EUR/CHF",
       "tilt": "EUR policy tone firmer",
-      "detail": "Latest editorial tone favours EUR; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "EUR/AUD",
-      "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "EUR/NZD",
-      "tilt": "NZD policy tone firmer",
-      "detail": "Latest editorial tone favours NZD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The EUR central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "EUR/CAD",
       "tilt": "CAD policy tone firmer",
-      "detail": "Latest editorial tone favours CAD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The CAD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "EUR/AUD",
+      "tilt": "AUD policy tone firmer",
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "EUR/NZD",
+      "tilt": "EUR policy tone firmer",
+      "detail": "The EUR central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "GBP/JPY",
       "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The GBP central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "GBP/CHF",
       "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The GBP central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "GBP/CAD",
+      "tilt": "No clear policy-tone edge",
+      "detail": "Latest communications are broadly similar in policy direction. Compare expected rate paths, inflation, growth and market pricing."
     },
     {
       "pair": "GBP/AUD",
       "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "GBP/NZD",
       "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "GBP/CAD",
-      "tilt": "GBP policy tone firmer",
-      "detail": "Latest editorial tone favours GBP; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The GBP central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "JPY/CHF",
       "tilt": "JPY policy tone firmer",
-      "detail": "Latest editorial tone favours JPY; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The JPY central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "JPY/CAD",
+      "tilt": "CAD policy tone firmer",
+      "detail": "The CAD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "JPY/AUD",
       "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "JPY/NZD",
-      "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
-    },
-    {
-      "pair": "JPY/CAD",
-      "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
-    },
-    {
-      "pair": "CHF/AUD",
-      "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "CHF/NZD",
-      "tilt": "NZD policy tone firmer",
-      "detail": "Latest editorial tone favours NZD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "tilt": "JPY policy tone firmer",
+      "detail": "The JPY central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "CHF/CAD",
       "tilt": "CAD policy tone firmer",
-      "detail": "Latest editorial tone favours CAD; validate against the next data releases, front-end yield spreads and what is already priced."
+      "detail": "The CAD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "CHF/AUD",
+      "tilt": "AUD policy tone firmer",
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "CHF/NZD",
+      "tilt": "NZD policy tone firmer",
+      "detail": "The NZD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "CAD/AUD",
+      "tilt": "AUD policy tone firmer",
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
+    },
+    {
+      "pair": "CAD/NZD",
+      "tilt": "CAD policy tone firmer",
+      "detail": "The CAD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     },
     {
       "pair": "AUD/NZD",
       "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "AUD/CAD",
-      "tilt": "AUD policy tone firmer",
-      "detail": "Latest editorial tone favours AUD; validate against the next data releases, front-end yield spreads and what is already priced."
-    },
-    {
-      "pair": "NZD/CAD",
-      "tilt": "No clear policy-tone edge",
-      "detail": "Latest policy communications are broadly similar in directional tone; use inflation, growth, yields and market pricing to distinguish."
+      "detail": "The AUD central bank currently communicates a relatively firmer policy stance. This is only a qualitative policy contrast; check what markets already price and the economic outlook on both sides."
     }
   ]
 }
