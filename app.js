@@ -107,8 +107,24 @@ function renderOverviewCurrencyStrength() {
     return '<article class="overview-strength-card"><div class="overview-strength-top"><b>'+escapeHtml(c.code)+'</b><span class="'+cls+'">'+label+'</span></div><div class="overview-strength-main"><small>STRUCTURAL SCORE</small><strong class="'+cls+'">'+(score==null||!Number.isFinite(score)?"N/A":score.toFixed(2))+'</strong></div><div class="overview-strength-bottom"><span>Short-term</span><b class="'+shortCls+'">'+(short==null||!Number.isFinite(short)?"N/A":short.toFixed(2))+'</b></div></article>';
   }).join(""):'<div class="empty">No currency strength data in the current snapshot.</div>';
 }
+function selectedOverviewCurrencies() {
+  return [...document.querySelectorAll(".overview-currency-check:checked")].map(x=>x.value);
+}
+function updateOverviewCurrencySelectionCount() {
+  const count=$("overview-currency-selection-count");
+  if(count) count.textContent=selectedOverviewCurrencies().length+" / 8 SELECTED";
+}
+function setupOverviewCurrencyFilter() {
+  const checks=[...document.querySelectorAll(".overview-currency-check")];
+  if(!checks.length||checks[0].dataset.ready) return;
+  checks.forEach(box=>{box.dataset.ready="1";box.addEventListener("change",()=>{updateOverviewCurrencySelectionCount();renderOverviewCoreRows();});});
+  $("overview-currency-select-all")?.addEventListener("click",()=>{checks.forEach(x=>x.checked=true);updateOverviewCurrencySelectionCount();renderOverviewCoreRows();});
+  $("overview-currency-clear-all")?.addEventListener("click",()=>{checks.forEach(x=>x.checked=false);updateOverviewCurrencySelectionCount();renderOverviewCoreRows();});
+  updateOverviewCurrencySelectionCount();
+}
 function renderOverviewCoreRows() {
-  const rows=(snapshot?.currencies||[]).map(c=>`<tr>
+  const selected=selectedOverviewCurrencies();
+  const rows=(snapshot?.currencies||[]).filter(c=>selected.includes(c.code)).map(c=>`<tr>
     <td>${safeText(c.code)}</td>
     <td class="structural-score-cell">${scoreHistory(c)}</td>
     <td class="${c.short_term_score==null?"score-na":Number(c.short_term_score)>=0?"score-positive":"score-negative"}">${c.short_term_score==null?"N/A":Number(c.short_term_score).toFixed(2)}<small>${c.short_term_score_status==="Structural baseline only · no verified event surprise captured"?"Structural baseline": "Event-adjusted"}</small>${latestReleaseLine(c)}</td>
@@ -119,7 +135,7 @@ function renderOverviewCoreRows() {
     <td>${metric2(c.unemployment)}<small>${safeText(c.unemployment_period||c.unemployment_year,"")}</small></td>
   </tr>`).join("");
   const target=$("currency-rows");
-  if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No core currency data in snapshot.</td></tr>';
+  if(target) target.innerHTML=rows||'<tr><td colspan="8" class="empty">No currencies selected. Tick one or more currencies above.</td></tr>';
 }
 let showAllHighImpactNews = false;
 function renderUpcomingHighImpactNews() {
@@ -467,6 +483,7 @@ async function loadSnapshot() {
     snapshot=data;
     try { const aiResponse=await fetch('data/ai_review.json?ts='+Date.now(),{cache:'no-store'}); aiReview=aiResponse.ok?await aiResponse.json():null; } catch(_aiError) { aiReview=null; }
     setupStrengthCurrencyFilter();
+    setupOverviewCurrencyFilter();
     renderOverviewCoreRows(); renderOverviewCurrencyStrength(); renderUpcomingHighImpactNews(); renderCurrencyStrengthRows();
     renderNews("overview-news","ALL",5); renderNews("news-list",$("news-filter").value); renderNews("calendar-list","ALL",100);
     renderPairs(); renderBiasCards(); renderAIReview(); renderWorkflow(); renderSources(); renderReleaseTracker();
