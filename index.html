@@ -21,7 +21,6 @@
       <button class="nav-item" data-view="workflow"><span>◈</span> Trading Workflow</button>
       <button class="nav-item" data-view="pair-divergence"><span>⇄</span> Pair Divergence Watch</button>
       <button class="nav-item" data-view="bias"><span>⇄</span> Pair Bias</button>
-      <button class="nav-item" data-view="ai-review"><span>✦</span> AI Momentum Review</button>
       <button class="nav-item" data-view="centralbank"><span>◎</span> Central Bank Intelligence</button>
       <button class="nav-item" data-view="currencies"><span>◎</span> Currency Strength</button>
       <button class="nav-item" data-view="calendar"><span>▦</span> Event Risk</button>
@@ -29,6 +28,7 @@
       <button class="nav-item" data-view="risk"><span>⚖</span> Risk Management</button>
     </nav>
     <div class="side-label">ADDITIONAL TOOLS</div><nav>
+      <button class="nav-item" data-view="ai-review"><span>✦</span> AI Momentum Review</button>
       <button class="nav-item" data-view="swap"><span>⇅</span> Swap Intelligence</button>
       <button class="nav-item" data-view="news"><span>▤</span> News Intelligence</button>
       <button class="nav-item" data-view="positioning"><span>◉</span> CFTC Positioning</button>
@@ -50,12 +50,7 @@
     </section>
 
 
-    <section class="view" id="view-workflow">
-<div class="section-heading"><div><div class="eyebrow">THE PROCESS</div><h2>Fundamental bias → technical timing</h2><p>Fundamentals decide which way; technicals decide when; risk management decides how much. Work through each gate before opening a position.</p></div></div>
-<div class="rule-banner"><div class="rule-banner-main">Fundamentals determine direction · Technicals determine timing · Risk management determines execution</div><div class="rule-banner-sub">Technical analysis is an entry-confirmation filter only. It can veto or delay a trade, never flip the fundamental bias.</div></div>
-<div id="workflow-steps" class="workflow-steps"></div>
-<div class="panel"><div class="panel-head"><div><b>Pre-trade checklist</b><p>All eight checks must be satisfied before opening a position.</p></div><span class="tag tag-neutral" id="checklist-count">0 / 8</span></div><div id="pretrade-checklist" class="checklist"></div></div>
-</section>
+    
 <section class="view active" id="view-overview">
       <div class="panel" id="overview-high-impact-panel">
         <div class="panel-head"><div><b>Upcoming high-impact news</b><p>Forex Factory red-folder events · all eight tracked currencies · Singapore time</p></div><div class="high-impact-head-actions"><span class="tag impact-high">RED FOLDER</span><button type="button" class="text-button" id="high-impact-toggle" aria-expanded="false">Show all</button></div></div>
@@ -87,6 +82,12 @@
       <div class="panel"><div class="panel-head"><div><b>Latest official releases</b><p>Source-linked central-bank news</p></div><button class="text-button" data-go="news">News wire ↗</button></div><div id="overview-news" class="news-list"><div class="empty">Loading releases…</div></div></div>
     </section>
 
+    <section class="view" id="view-workflow">
+<div class="section-heading"><div><div class="eyebrow">THE PROCESS</div><h2>Fundamental bias → technical timing</h2><p>Fundamentals decide which way; technicals decide when; risk management decides how much. Work through each gate before opening a position.</p></div></div>
+<div class="rule-banner"><div class="rule-banner-main">Fundamentals determine direction · Technicals determine timing · Risk management determines execution</div><div class="rule-banner-sub">Technical analysis is an entry-confirmation filter only. It can veto or delay a trade, never flip the fundamental bias.</div></div>
+<div id="workflow-steps" class="workflow-steps"></div>
+<div class="panel"><div class="panel-head"><div><b>Pre-trade checklist</b><p>All eight checks must be satisfied before opening a position.</p></div><span class="tag tag-neutral" id="checklist-count">0 / 8</span></div><div id="pretrade-checklist" class="checklist"></div></div>
+</section>
     <section class="view" id="view-pair-divergence">
       <div class="section-heading"><div><div class="eyebrow">RELATIVE CURRENCY STRENGTH</div><h2>Pair Divergence Watch</h2><p>Rank currency pairs by the difference between their structural scores. A wider positive spread means the base currency has stronger structural fundamentals than the quote currency.</p></div><button class="text-button" data-go="pairs">Open full pair universe ↗</button></div>
       <div class="strength-filter divergence-filter" id="divergence-threshold-filter"><div><b>Filter by absolute variance</b><small>Tick one or more thresholds to show qualifying positive and negative spreads.</small></div><div class="strength-filter-options"><label><input type="checkbox" class="divergence-threshold-check" value="2"><span>Variance ≥ +2.00 or ≤ −2.00</span></label><label><input type="checkbox" class="divergence-threshold-check" value="1"><span>Variance ≥ +1.00 or ≤ −1.00</span></label></div><button type="button" class="text-button" id="divergence-clear-filter">Clear filter</button></div>
