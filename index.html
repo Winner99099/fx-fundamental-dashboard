@@ -62,6 +62,23 @@
       </div>
       <div class="panel" id="overview-currency-strength-panel"><div class="panel-head"><div><b>Individual currency strength</b><p>All eight currencies · structural score and short-term score</p></div><button class="text-button" data-go="currencies">Full strength analysis ↗</button></div><div id="overview-currency-strength" class="overview-strength-grid"><div class="empty">Loading currency strength…</div></div></div>
 <div class="section-heading"><div><div class="eyebrow">RELATIVE MACRO BACKDROP</div><h2>Currency fundamentals</h2></div><button class="text-button" data-go="currencies">Full analysis ↗</button></div>
+      <div class="strength-filter overview-currency-filter" id="overview-currency-filter">
+        <div class="strength-filter-options">
+          <label><input type="checkbox" class="overview-currency-check" value="USD" checked><span>USD</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="EUR" checked><span>EUR</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="GBP" checked><span>GBP</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="JPY" checked><span>JPY</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="CHF" checked><span>CHF</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="CAD" checked><span>CAD</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="AUD" checked><span>AUD</span></label>
+          <label><input type="checkbox" class="overview-currency-check" value="NZD" checked><span>NZD</span></label>
+        </div>
+        <div class="strength-filter-actions">
+          <span class="tag tag-neutral" id="overview-currency-selection-count">8 / 8 SELECTED</span>
+          <button type="button" class="text-button" id="overview-currency-select-all">Select all</button>
+          <button type="button" class="text-button" id="overview-currency-clear-all">Clear</button>
+        </div>
+      </div>
       <div class="panel">
         <div class="panel-head"><div><b>Eight-currency scorecard</b></div></div>
         <div class="table-wrap"><table><thead><tr><th>CCY</th><th>Structural score</th><th>Short-term score</th><th>Fundamental interpretation</th><th>Policy rate</th><th>Inflation</th><th>GDP</th><th>Unemployment</th></tr></thead><tbody id="currency-rows"><tr><td colspan="8" class="empty">Loading currency snapshot…</td></tr></tbody></table></div>
