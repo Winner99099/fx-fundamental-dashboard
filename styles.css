@@ -667,3 +667,25 @@ body{font-size:15px}
     gap:7px !important;
   }
 }
+
+
+/* Overview currency filter: tick boxes on the left, bulk-selection controls below. */
+#view-overview .overview-currency-filter{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-start !important;
+  justify-content:flex-start !important;
+  gap:8px !important;
+}
+#view-overview .overview-currency-filter .strength-filter-options{
+  order:0 !important;
+  width:100% !important;
+  justify-content:flex-start !important;
+}
+#view-overview .overview-currency-filter .strength-filter-actions{
+  order:1 !important;
+  width:auto !important;
+  margin:0 !important;
+  justify-content:flex-start !important;
+  align-self:flex-start !important;
+}
